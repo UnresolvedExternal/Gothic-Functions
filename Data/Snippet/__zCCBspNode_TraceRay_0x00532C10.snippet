@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspNode::TraceRay(zVEC3 const&, zVEC3 const&, zCPolygon*&, zVEC3&): int]]></Title>
+			<Shortcut><![CDATA[__zCCBspNode_TraceRay_0x00532C10]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCCBspNode::TraceRay(zVEC3 const&, zVEC3 const&, zCPolygon*&, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspNode_TraceRay : zCCBspNode { int operator()(zVEC3 const&, zVEC3 const&, zCPolygon*&, zVEC3&); };
+BindedHook Ivk_zCCBspNode_TraceRay{ ZENFOR(0x0051FE00, 0x00535C60, 0x0052F8B0, 0x00532C10), &zCCBspNode_TraceRay::operator() };
+int zCCBspNode_TraceRay::operator()(zVEC3 const& a0, zVEC3 const& a1, zCPolygon*& a2, zVEC3& a3)
+{
+	int result = THISCALL(Ivk_zCCBspNode_TraceRay)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

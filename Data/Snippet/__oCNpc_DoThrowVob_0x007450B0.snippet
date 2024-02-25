@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::DoThrowVob(zCVob*, float): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_DoThrowVob_0x007450B0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCNpc::DoThrowVob(zCVob*, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_DoThrowVob : oCNpc { int operator()(zCVob*, float); };
+BindedHook Ivk_oCNpc_DoThrowVob{ ZENFOR(0x006A13C0, 0x006D3B30, 0x006E6620, 0x007450B0), &oCNpc_DoThrowVob::operator() };
+int oCNpc_DoThrowVob::operator()(zCVob* a0, float a1)
+{
+	int result = THISCALL(Ivk_oCNpc_DoThrowVob)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

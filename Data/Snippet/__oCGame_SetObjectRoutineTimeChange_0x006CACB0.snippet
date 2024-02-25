@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::SetObjectRoutineTimeChange(int, int, int, int): void]]></Title>
+			<Shortcut><![CDATA[__oCGame_SetObjectRoutineTimeChange_0x006CACB0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCGame::SetObjectRoutineTimeChange(int, int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_SetObjectRoutineTimeChange : oCGame { void operator()(int, int, int, int); };
+BindedHook Ivk_oCGame_SetObjectRoutineTimeChange{ ZENFOR(0x00640260, 0x00667280, 0x0066DF30, 0x006CACB0), &oCGame_SetObjectRoutineTimeChange::operator() };
+void oCGame_SetObjectRoutineTimeChange::operator()(int a0, int a1, int a2, int a3)
+{
+	THISCALL(Ivk_oCGame_SetObjectRoutineTimeChange)(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

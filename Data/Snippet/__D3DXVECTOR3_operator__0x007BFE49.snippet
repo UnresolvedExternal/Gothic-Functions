@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[D3DXVECTOR3::operator/(float): D3DXVECTOR3 [const]]]></Title>
+			<Shortcut><![CDATA[__D3DXVECTOR3_operator__0x007BFE49]]></Shortcut>
+			<Description><![CDATA[public: D3DXVECTOR3 __thiscall D3DXVECTOR3::operator/(float)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct D3DXVECTOR3_operator_ : D3DXVECTOR3 { D3DXVECTOR3 operator()(float) const; };
+BindedHook Ivk_D3DXVECTOR3_operator_{ ZENFOR(0x00766755, 0x00000000, 0x007B3983, 0x007BFE49), &D3DXVECTOR3_operator_::operator() };
+D3DXVECTOR3 D3DXVECTOR3_operator_::operator()(float a0) const
+{
+	D3DXVECTOR3 result = THISCALL(Ivk_D3DXVECTOR3_operator_)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

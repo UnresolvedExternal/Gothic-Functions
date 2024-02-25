@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetFromInv(int, int): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetFromInv_0x00749180]]></Shortcut>
+			<Description><![CDATA[public: oCItem* __thiscall oCNpc::GetFromInv(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetFromInv : oCNpc { oCItem* operator()(int, int); };
+BindedHook Ivk_oCNpc_GetFromInv{ ZENFOR(0x006A4E20, 0x006D78D0, 0x006EA6A0, 0x00749180), &oCNpc_GetFromInv::operator() };
+oCItem* oCNpc_GetFromInv::operator()(int a0, int a1)
+{
+	oCItem* result = THISCALL(Ivk_oCNpc_GetFromInv)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

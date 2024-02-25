@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCSoundManager::zCSoundEventData>::Search(zCSoundManager::zCSoundEventData const&): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCSoundManager__zCSoundEventData__Search_0x005EEA70]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCArraySort<zCSoundManager::zCSoundEventData>::Search(zCSoundManager::zCSoundEventData const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCSoundManager__zCSoundEventData__Search : zCArraySort<zCSoundManager::zCSoundEventData> { int operator()(zCSoundManager::zCSoundEventData const&) const; };
+BindedHook Ivk_zCArraySort_zCSoundManager__zCSoundEventData__Search{ ZENFOR(0x005C4070, 0x005E23B0, 0x005E7CC0, 0x005EEA70), &zCArraySort_zCSoundManager__zCSoundEventData__Search::operator() };
+int zCArraySort_zCSoundManager__zCSoundEventData__Search::operator()(zCSoundManager::zCSoundEventData const& a0) const
+{
+	int result = THISCALL(Ivk_zCArraySort_zCSoundManager__zCSoundEventData__Search)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

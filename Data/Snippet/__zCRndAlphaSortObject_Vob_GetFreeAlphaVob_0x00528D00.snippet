@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRndAlphaSortObject_Vob::GetFreeAlphaVob(): zCRndAlphaSortObject_Vob*]]></Title>
+			<Shortcut><![CDATA[__zCRndAlphaSortObject_Vob_GetFreeAlphaVob_0x00528D00]]></Shortcut>
+			<Description><![CDATA[public: static zCRndAlphaSortObject_Vob* __cdecl zCRndAlphaSortObject_Vob::GetFreeAlphaVob()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCRndAlphaSortObject_Vob* Hook_zCRndAlphaSortObject_Vob_GetFreeAlphaVob();
+BindedHook Ivk_zCRndAlphaSortObject_Vob_GetFreeAlphaVob{ ZENFOR(0x00517E80, 0x0052D890, 0x00525F10, 0x00528D00), Hook_zCRndAlphaSortObject_Vob_GetFreeAlphaVob };
+zCRndAlphaSortObject_Vob* Hook_zCRndAlphaSortObject_Vob_GetFreeAlphaVob()
+{
+	zCRndAlphaSortObject_Vob* result = Ivk_zCRndAlphaSortObject_Vob_GetFreeAlphaVob();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3dxFile::~CD3dxFile()]]></Title>
+			<Shortcut><![CDATA[__CD3dxFile__CD3dxFile_0x007BA792]]></Shortcut>
+			<Description><![CDATA[public: __thiscall CD3dxFile::~CD3dxFile()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3dxFile_Destructor : CD3dxFile { void operator()(); };
+BindedHook Ivk_CD3dxFile_Destructor{ ZENFOR(0x0076109E, 0x007A5CAA, 0x007AE2CC, 0x007BA792), &CD3dxFile_Destructor::operator() };
+void CD3dxFile_Destructor::operator()()
+{
+	THISCALL(Ivk_CD3dxFile_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

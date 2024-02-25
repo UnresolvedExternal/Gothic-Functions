@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::RbtReset(): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_RbtReset_0x00686560]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::RbtReset()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_RbtReset : oCNpc { void operator()(); };
+BindedHook Ivk_oCNpc_RbtReset{ ZENFOR(0x00750610, 0x007926D0, 0x0079D060, 0x00686560), &oCNpc_RbtReset::operator() };
+void oCNpc_RbtReset::operator()()
+{
+	THISCALL(Ivk_oCNpc_RbtReset)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

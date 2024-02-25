@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFont::GetPixel(int, int): int]]></Title>
+			<Shortcut><![CDATA[__zCFont_GetPixel_0x00789640]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCFont::GetPixel(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFont_GetPixel : zCFont { int operator()(int, int); };
+BindedHook Ivk_zCFont_GetPixel{ ZENFOR(0x006E0360, 0x00718990, 0x00729C00, 0x00789640), &zCFont_GetPixel::operator() };
+int zCFont_GetPixel::operator()(int a0, int a1)
+{
+	int result = THISCALL(Ivk_zCFont_GetPixel)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

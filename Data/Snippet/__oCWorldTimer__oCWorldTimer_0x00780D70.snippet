@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWorldTimer::~oCWorldTimer()]]></Title>
+			<Shortcut><![CDATA[__oCWorldTimer__oCWorldTimer_0x00780D70]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCWorldTimer::~oCWorldTimer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWorldTimer_Destructor : oCWorldTimer { void operator()(); };
+BindedHook Ivk_oCWorldTimer_Destructor{ ZENFOR(0x006D7B30, 0x0070F6C0, 0x00721330, 0x00780D70), &oCWorldTimer_Destructor::operator() };
+void oCWorldTimer_Destructor::operator()()
+{
+	THISCALL(Ivk_oCWorldTimer_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

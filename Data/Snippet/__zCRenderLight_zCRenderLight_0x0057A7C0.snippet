@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderLight::zCRenderLight()]]></Title>
+			<Shortcut><![CDATA[__zCRenderLight_zCRenderLight_0x0057A7C0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCRenderLight::zCRenderLight()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderLight_zCRenderLight : zCRenderLight { zCRenderLight* operator()(); };
+BindedHook Ivk_zCRenderLight_zCRenderLight{ ZENFOR(0x00560A00, 0x00578E60, 0x005752A0, 0x0057A7C0), &zCRenderLight_zCRenderLight::operator() };
+zCRenderLight* zCRenderLight_zCRenderLight::operator()()
+{
+	zCRenderLight* result = THISCALL(Ivk_zCRenderLight_zCRenderLight)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

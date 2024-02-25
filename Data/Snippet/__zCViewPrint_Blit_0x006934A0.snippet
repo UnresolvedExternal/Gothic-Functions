@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewPrint::Blit(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewPrint_Blit_0x006934A0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __fastcall zCViewPrint::Blit()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewPrint_Blit : zCViewPrint { void __fastcall operator()(); };
+BindedHook Ivk_zCViewPrint_Blit{ ZENFOR(0x00756970, 0x00798DF0, 0x007A36F0, 0x006934A0), &zCViewPrint_Blit::operator() };
+void __fastcall zCViewPrint_Blit::operator()()
+{
+	THISCALL(Ivk_zCViewPrint_Blit)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

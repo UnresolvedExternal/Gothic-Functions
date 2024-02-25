@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::GetSpawnManager(): oCSpawnManager*]]></Title>
+			<Shortcut><![CDATA[__oCGame_GetSpawnManager_0x006C2D00]]></Shortcut>
+			<Description><![CDATA[public: oCSpawnManager* __thiscall oCGame::GetSpawnManager()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_GetSpawnManager : oCGame { oCSpawnManager* operator()(); };
+BindedHook Ivk_oCGame_GetSpawnManager{ ZENFOR(0x00638B50, 0x0065F0A0, 0x00666200, 0x006C2D00), &oCGame_GetSpawnManager::operator() };
+oCSpawnManager* oCGame_GetSpawnManager::operator()()
+{
+	oCSpawnManager* result = THISCALL(Ivk_oCGame_GetSpawnManager)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

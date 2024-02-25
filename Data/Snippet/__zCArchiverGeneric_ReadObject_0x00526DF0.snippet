@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::ReadObject(zCObject*): zCObject*]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_ReadObject_0x00526DF0]]></Shortcut>
+			<Description><![CDATA[public: virtual zCObject* __fastcall zCArchiverGeneric::ReadObject(zCObject*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_ReadObject : zCArchiverGeneric { zCObject* __fastcall operator()(zCObject*); };
+BindedHook Ivk_zCArchiverGeneric_ReadObject{ ZENFOR(0x005161B0, 0x0052BA50, 0x00524020, 0x00526DF0), &zCArchiverGeneric_ReadObject::operator() };
+zCObject* __fastcall zCArchiverGeneric_ReadObject::operator()(zCObject* a0)
+{
+	zCObject* result = THISCALL(Ivk_zCArchiverGeneric_ReadObject)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

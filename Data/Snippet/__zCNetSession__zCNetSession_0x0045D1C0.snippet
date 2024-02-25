@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetSession::~zCNetSession()]]></Title>
+			<Shortcut><![CDATA[__zCNetSession__zCNetSession_0x0045D1C0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCNetSession::~zCNetSession()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetSession_Destructor : zCNetSession { void operator()(); };
+BindedHook Ivk_zCNetSession_Destructor{ ZENFOR(0x004580A0, 0x0045F160, 0x0045CA70, 0x0045D1C0), &zCNetSession_Destructor::operator() };
+void zCNetSession_Destructor::operator()()
+{
+	THISCALL(Ivk_zCNetSession_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

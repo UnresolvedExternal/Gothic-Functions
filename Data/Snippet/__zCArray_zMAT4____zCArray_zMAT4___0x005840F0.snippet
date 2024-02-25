@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zMAT4*>::~zCArray<zMAT4*>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zMAT4____zCArray_zMAT4___0x005840F0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zMAT4*>::~zCArray<zMAT4*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zMAT4___Destructor : zCArray<zMAT4*> { void operator()(); };
+BindedHook Ivk_zCArray_zMAT4___Destructor{ ZENFOR(0x00569750, 0x005825E0, 0x0057EB90, 0x005840F0), &zCArray_zMAT4___Destructor::operator() };
+void zCArray_zMAT4___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zMAT4___Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc_States::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_States_Unarchive_0x0076EFF0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCNpc_States::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_States_Unarchive : oCNpc_States { void operator()(zCArchiver&); };
+BindedHook Ivk_oCNpc_States_Unarchive{ ZENFOR(0x006C7990, 0x006FD4C0, 0x0070FA90, 0x0076EFF0), &oCNpc_States_Unarchive::operator() };
+void oCNpc_States_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCNpc_States_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

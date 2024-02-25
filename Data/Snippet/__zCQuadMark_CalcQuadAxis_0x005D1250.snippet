@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::CalcQuadAxis(zCPolygon*, zVEC3&, zVEC3&): void]]></Title>
+			<Shortcut><![CDATA[__zCQuadMark_CalcQuadAxis_0x005D1250]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCQuadMark::CalcQuadAxis(zCPolygon*, zVEC3&, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_CalcQuadAxis : zCQuadMark { void operator()(zCPolygon*, zVEC3&, zVEC3&); };
+BindedHook Ivk_zCQuadMark_CalcQuadAxis{ ZENFOR(0x005AC120, 0x005C8EC0, 0x005CA6B0, 0x005D1250), &zCQuadMark_CalcQuadAxis::operator() };
+void zCQuadMark_CalcQuadAxis::operator()(zCPolygon* a0, zVEC3& a1, zVEC3& a2)
+{
+	THISCALL(Ivk_zCQuadMark_CalcQuadAxis)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

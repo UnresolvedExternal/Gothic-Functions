@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspLeaf::AddVobsToRenderList(zTBBox2D*): void]]></Title>
+			<Shortcut><![CDATA[__zCBspLeaf_AddVobsToRenderList_0x0052E2D0]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall zCBspLeaf::AddVobsToRenderList(zTBBox2D*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspLeaf_AddVobsToRenderList : zCBspLeaf { void __fastcall operator()(zTBBox2D*); };
+BindedHook Ivk_zCBspLeaf_AddVobsToRenderList{ ZENFOR(0x0051B990, 0x00531640, 0x0052B380, 0x0052E2D0), &zCBspLeaf_AddVobsToRenderList::operator() };
+void __fastcall zCBspLeaf_AddVobsToRenderList::operator()(zTBBox2D* a0)
+{
+	THISCALL(Ivk_zCBspLeaf_AddVobsToRenderList)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

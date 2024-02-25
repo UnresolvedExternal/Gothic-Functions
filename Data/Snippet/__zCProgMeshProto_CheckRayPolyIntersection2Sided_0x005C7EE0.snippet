@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::CheckRayPolyIntersection2Sided(zCProgMeshProto::zCSubMesh*, int, zVEC3 const&, zVEC3 const&, zVEC3&, float&): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_CheckRayPolyIntersection2Sided_0x005C7EE0]]></Shortcut>
+			<Description><![CDATA[private: int __fastcall zCProgMeshProto::CheckRayPolyIntersection2Sided(zCProgMeshProto::zCSubMesh*, int, zVEC3 const&, zVEC3 const&, zVEC3&, float&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_CheckRayPolyIntersection2Sided : zCProgMeshProto { int __fastcall operator()(zCProgMeshProto::zCSubMesh*, int, zVEC3 const&, zVEC3 const&, zVEC3&, float&) const; };
+BindedHook Ivk_zCProgMeshProto_CheckRayPolyIntersection2Sided{ ZENFOR(0x005A5FD0, 0x005C28A0, 0x005C2320, 0x005C7EE0), &zCProgMeshProto_CheckRayPolyIntersection2Sided::operator() };
+int __fastcall zCProgMeshProto_CheckRayPolyIntersection2Sided::operator()(zCProgMeshProto::zCSubMesh* a0, int a1, zVEC3 const& a2, zVEC3 const& a3, zVEC3& a4, float& a5) const
+{
+	int result = THISCALL(Ivk_zCProgMeshProto_CheckRayPolyIntersection2Sided)(a0, a1, a2, a3, a4, a5);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

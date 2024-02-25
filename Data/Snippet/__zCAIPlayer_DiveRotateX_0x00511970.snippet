@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::DiveRotateX(float const&): void]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_DiveRotateX_0x00511970]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCAIPlayer::DiveRotateX(float const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_DiveRotateX : zCAIPlayer { void operator()(float const&); };
+BindedHook Ivk_zCAIPlayer_DiveRotateX{ ZENFOR(0x00501E10, 0x00515880, 0x0050EBA0, 0x00511970), &zCAIPlayer_DiveRotateX::operator() };
+void zCAIPlayer_DiveRotateX::operator()(float const& a0)
+{
+	THISCALL(Ivk_zCAIPlayer_DiveRotateX)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

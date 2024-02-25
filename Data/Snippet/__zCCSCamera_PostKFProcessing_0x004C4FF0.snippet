@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::PostKFProcessing(): void]]></Title>
+			<Shortcut><![CDATA[__zCCSCamera_PostKFProcessing_0x004C4FF0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCCSCamera::PostKFProcessing()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_PostKFProcessing : zCCSCamera { void operator()(); };
+BindedHook Ivk_zCCSCamera_PostKFProcessing{ ZENFOR(0x004BBC00, 0x004CB0F0, 0x004C2A80, 0x004C4FF0), &zCCSCamera_PostKFProcessing::operator() };
+void zCCSCamera_PostKFProcessing::operator()()
+{
+	THISCALL(Ivk_zCCSCamera_PostKFProcessing)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

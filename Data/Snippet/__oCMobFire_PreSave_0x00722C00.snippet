@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobFire::PreSave(): void]]></Title>
+			<Shortcut><![CDATA[__oCMobFire_PreSave_0x00722C00]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMobFire::PreSave()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobFire_PreSave : oCMobFire { void operator()(); };
+BindedHook Ivk_oCMobFire_PreSave{ ZENFOR(0x00681220, 0x006B0560, 0x006C4B70, 0x00722C00), &oCMobFire_PreSave::operator() };
+void oCMobFire_PreSave::operator()()
+{
+	THISCALL(Ivk_oCMobFire_PreSave)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

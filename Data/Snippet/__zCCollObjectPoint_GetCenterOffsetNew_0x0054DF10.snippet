@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectPoint::GetCenterOffsetNew(): zVEC3 [const]]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectPoint_GetCenterOffsetNew_0x0054DF10]]></Shortcut>
+			<Description><![CDATA[public: zVEC3 __fastcall zCCollObjectPoint::GetCenterOffsetNew()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectPoint_GetCenterOffsetNew : zCCollObjectPoint { zVEC3 __fastcall operator()() const; };
+BindedHook Ivk_zCCollObjectPoint_GetCenterOffsetNew{ ZENFOR(0x00539A60, 0x00550D20, 0x00548CF0, 0x0054DF10), &zCCollObjectPoint_GetCenterOffsetNew::operator() };
+zVEC3 __fastcall zCCollObjectPoint_GetCenterOffsetNew::operator()() const
+{
+	zVEC3 result = THISCALL(Ivk_zCCollObjectPoint_GetCenterOffsetNew)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

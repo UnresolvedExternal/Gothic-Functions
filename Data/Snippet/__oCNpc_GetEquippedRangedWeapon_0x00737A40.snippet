@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetEquippedRangedWeapon(): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetEquippedRangedWeapon_0x00737A40]]></Shortcut>
+			<Description><![CDATA[public: oCItem* __thiscall oCNpc::GetEquippedRangedWeapon()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetEquippedRangedWeapon : oCNpc { oCItem* operator()(); };
+BindedHook Ivk_oCNpc_GetEquippedRangedWeapon{ ZENFOR(0x00694690, 0x006C5F30, 0x006D9300, 0x00737A40), &oCNpc_GetEquippedRangedWeapon::operator() };
+oCItem* oCNpc_GetEquippedRangedWeapon::operator()()
+{
+	oCItem* result = THISCALL(Ivk_oCNpc_GetEquippedRangedWeapon)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

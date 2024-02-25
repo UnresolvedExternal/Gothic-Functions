@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVob::StartParticleEffects(zCTree<zCVob>*): void]]></Title>
+			<Shortcut><![CDATA[__oCVob_StartParticleEffects_0x0077D3A0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCVob::StartParticleEffects(zCTree<zCVob>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVob_StartParticleEffects : oCVob { void operator()(zCTree<zCVob>*); };
+BindedHook Ivk_oCVob_StartParticleEffects{ ZENFOR(0x006D4680, 0x0070B950, 0x0071D960, 0x0077D3A0), &oCVob_StartParticleEffects::operator() };
+void oCVob_StartParticleEffects::operator()(zCTree<zCVob>* a0)
+{
+	THISCALL(Ivk_oCVob_StartParticleEffects)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

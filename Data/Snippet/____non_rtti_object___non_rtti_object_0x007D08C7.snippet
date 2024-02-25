@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[__non_rtti_object::__non_rtti_object(char const*)]]></Title>
+			<Shortcut><![CDATA[____non_rtti_object___non_rtti_object_0x007D08C7]]></Shortcut>
+			<Description><![CDATA[public: __thiscall __non_rtti_object::__non_rtti_object(char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct __non_rtti_object___non_rtti_object : __non_rtti_object { __non_rtti_object* operator()(char const*); };
+BindedHook Ivk___non_rtti_object___non_rtti_object{ ZENFOR(0x00776F27, 0x007BACE7, 0x007C4407, 0x007D08C7), &__non_rtti_object___non_rtti_object::operator() };
+__non_rtti_object* __non_rtti_object___non_rtti_object::operator()(char const* a0)
+{
+	__non_rtti_object* result = THISCALL(Ivk___non_rtti_object___non_rtti_object)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

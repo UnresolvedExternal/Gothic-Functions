@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ios::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__ios_ScalarDeletingDestructor_0x007CE84D]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall ios::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ios_ScalarDeletingDestructor : ios { void* operator()(unsigned int); };
+BindedHook Ivk_ios_ScalarDeletingDestructor{ ZENFOR(0x00774EA3, 0x007B8C63, 0x007C238D, 0x007CE84D), &ios_ScalarDeletingDestructor::operator() };
+void* ios_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_ios_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

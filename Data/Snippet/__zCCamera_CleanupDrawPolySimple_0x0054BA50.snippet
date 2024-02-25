@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::CleanupDrawPolySimple(): void]]></Title>
+			<Shortcut><![CDATA[__zCCamera_CleanupDrawPolySimple_0x0054BA50]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCCamera::CleanupDrawPolySimple()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamera_CleanupDrawPolySimple : zCCamera { void operator()(); };
+BindedHook Ivk_zCCamera_CleanupDrawPolySimple{ ZENFOR(0x00537540, 0x0054E660, 0x00546830, 0x0054BA50), &zCCamera_CleanupDrawPolySimple::operator() };
+void zCCamera_CleanupDrawPolySimple::operator()()
+{
+	THISCALL(Ivk_zCCamera_CleanupDrawPolySimple)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

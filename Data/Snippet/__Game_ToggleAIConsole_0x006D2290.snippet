@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Game_ToggleAIConsole(): void]]></Title>
+			<Shortcut><![CDATA[__Game_ToggleAIConsole_0x006D2290]]></Shortcut>
+			<Description><![CDATA[void __cdecl Game_ToggleAIConsole()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Game_ToggleAIConsole();
+BindedHook Ivk_Game_ToggleAIConsole{ ZENFOR(0x00647320, 0x0066EFB0, 0x00675510, 0x006D2290), Hook_Game_ToggleAIConsole };
+void Hook_Game_ToggleAIConsole()
+{
+	Ivk_Game_ToggleAIConsole();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectBoxPassThrough::~zCCollObjectBoxPassThrough()]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectBoxPassThrough__zCCollObjectBoxPassThrough_0x0054DC10]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCCollObjectBoxPassThrough::~zCCollObjectBoxPassThrough()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectBoxPassThrough_Destructor : zCCollObjectBoxPassThrough { void operator()(); };
+BindedHook Ivk_zCCollObjectBoxPassThrough_Destructor{ ZENFOR(0x00539760, 0x00550A00, 0x005489F0, 0x0054DC10), &zCCollObjectBoxPassThrough_Destructor::operator() };
+void zCCollObjectBoxPassThrough_Destructor::operator()()
+{
+	THISCALL(Ivk_zCCollObjectBoxPassThrough_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

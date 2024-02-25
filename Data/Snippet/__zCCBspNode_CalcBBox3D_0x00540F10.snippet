@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspNode::CalcBBox3D(): void]]></Title>
+			<Shortcut><![CDATA[__zCCBspNode_CalcBBox3D_0x00540F10]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCCBspNode::CalcBBox3D()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspNode_CalcBBox3D : zCCBspNode { void operator()(); };
+BindedHook Ivk_zCCBspNode_CalcBBox3D{ ZENFOR(0x0052D3F0, 0x00543C70, 0x0053BE00, 0x00540F10), &zCCBspNode_CalcBBox3D::operator() };
+void zCCBspNode_CalcBBox3D::operator()()
+{
+	THISCALL(Ivk_zCCBspNode_CalcBBox3D)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

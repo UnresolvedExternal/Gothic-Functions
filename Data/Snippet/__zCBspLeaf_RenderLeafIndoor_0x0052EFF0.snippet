@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspLeaf::RenderLeafIndoor(int): void]]></Title>
+			<Shortcut><![CDATA[__zCBspLeaf_RenderLeafIndoor_0x0052EFF0]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall zCBspLeaf::RenderLeafIndoor(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspLeaf_RenderLeafIndoor : zCBspLeaf { void __fastcall operator()(int); };
+BindedHook Ivk_zCBspLeaf_RenderLeafIndoor{ ZENFOR(0x0051C5C0, 0x005322C0, 0x0052C0A0, 0x0052EFF0), &zCBspLeaf_RenderLeafIndoor::operator() };
+void __fastcall zCBspLeaf_RenderLeafIndoor::operator()(int a0)
+{
+	THISCALL(Ivk_zCBspLeaf_RenderLeafIndoor)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

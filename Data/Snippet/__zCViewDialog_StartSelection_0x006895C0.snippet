@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialog::StartSelection(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewDialog_StartSelection_0x006895C0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __fastcall zCViewDialog::StartSelection()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialog_StartSelection : zCViewDialog { void __fastcall operator()(); };
+BindedHook Ivk_zCViewDialog_StartSelection{ ZENFOR(0x00725110, 0x00762390, 0x007715A0, 0x006895C0), &zCViewDialog_StartSelection::operator() };
+void __fastcall zCViewDialog_StartSelection::operator()()
+{
+	THISCALL(Ivk_zCViewDialog_StartSelection)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

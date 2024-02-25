@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogItemContainer::~oCViewDialogItemContainer()]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogItemContainer__oCViewDialogItemContainer_0x00689AD0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCViewDialogItemContainer::~oCViewDialogItemContainer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogItemContainer_Destructor : oCViewDialogItemContainer { void operator()(); };
+BindedHook Ivk_oCViewDialogItemContainer_Destructor{ ZENFOR(0x00727520, 0x00764DB0, 0x00773D80, 0x00689AD0), &oCViewDialogItemContainer_Destructor::operator() };
+void oCViewDialogItemContainer_Destructor::operator()()
+{
+	THISCALL(Ivk_oCViewDialogItemContainer_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::GetControlValueByName(zSTRING const&): unsigned short]]></Title>
+			<Shortcut><![CDATA[__zCInput_GetControlValueByName_0x004D15D0]]></Shortcut>
+			<Description><![CDATA[public: static unsigned short __cdecl zCInput::GetControlValueByName(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned short Hook_zCInput_GetControlValueByName(zSTRING const&);
+BindedHook Ivk_zCInput_GetControlValueByName{ ZENFOR(0x004C68D0, 0x004D63A0, 0x004CF060, 0x004D15D0), Hook_zCInput_GetControlValueByName };
+unsigned short Hook_zCInput_GetControlValueByName(zSTRING const& a0)
+{
+	unsigned short result = Ivk_zCInput_GetControlValueByName(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

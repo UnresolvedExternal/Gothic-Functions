@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRndAlphaSortObject_Vob::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCRndAlphaSortObject_Vob_VectorDeletingDestructor_0x00525EC0]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCRndAlphaSortObject_Vob::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2
+struct zCRndAlphaSortObject_Vob_VectorDeletingDestructor : zCRndAlphaSortObject_Vob { void* operator()(unsigned int); };
+BindedHook Ivk_zCRndAlphaSortObject_Vob_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x0052D840, 0x00525EC0, 0x00000000), &zCRndAlphaSortObject_Vob_VectorDeletingDestructor::operator() };
+void* zCRndAlphaSortObject_Vob_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCRndAlphaSortObject_Vob_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

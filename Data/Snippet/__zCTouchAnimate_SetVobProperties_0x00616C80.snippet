@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchAnimate::SetVobProperties(): void]]></Title>
+			<Shortcut><![CDATA[__zCTouchAnimate_SetVobProperties_0x00616C80]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCTouchAnimate::SetVobProperties()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchAnimate_SetVobProperties : zCTouchAnimate { void operator()(); };
+BindedHook Ivk_zCTouchAnimate_SetVobProperties{ ZENFOR(0x005E9BD0, 0x0060A200, 0x0060F5C0, 0x00616C80), &zCTouchAnimate_SetVobProperties::operator() };
+void zCTouchAnimate_SetVobProperties::operator()()
+{
+	THISCALL(Ivk_zCTouchAnimate_SetVobProperties)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

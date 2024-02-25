@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::GetSurfaceLost(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCRenderer_GetSurfaceLost_0x0064A090]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCRenderer::GetSurfaceLost()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCRenderer_GetSurfaceLost : zCRenderer { int operator()() const; };
+BindedHook Ivk_zCRenderer_GetSurfaceLost{ ZENFOR(0x00000000, 0x00000000, 0x0075EAF0, 0x0064A090), &zCRenderer_GetSurfaceLost::operator() };
+int zCRenderer_GetSurfaceLost::operator()() const
+{
+	int result = THISCALL(Ivk_zCRenderer_GetSurfaceLost)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

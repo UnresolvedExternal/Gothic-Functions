@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::WriteChunkStart(char const*, char const*, unsigned short, unsigned long): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe_WriteChunkStart_0x0051DEE0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __fastcall zCArchiverBinSafe::WriteChunkStart(char const*, char const*, unsigned short, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_WriteChunkStart : zCArchiverBinSafe { void __fastcall operator()(char const*, char const*, unsigned short, unsigned long); };
+BindedHook Ivk_zCArchiverBinSafe_WriteChunkStart{ ZENFOR(0x0050DC30, 0x00522B60, 0x0051B110, 0x0051DEE0), &zCArchiverBinSafe_WriteChunkStart::operator() };
+void __fastcall zCArchiverBinSafe_WriteChunkStart::operator()(char const* a0, char const* a1, unsigned short a2, unsigned long a3)
+{
+	THISCALL(Ivk_zCArchiverBinSafe_WriteChunkStart)(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

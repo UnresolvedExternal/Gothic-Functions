@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectLevelPolys::zCCollObjectLevelPolys()]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectLevelPolys_zCCollObjectLevelPolys_0x0061ED80]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCCollObjectLevelPolys::zCCollObjectLevelPolys()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectLevelPolys_zCCollObjectLevelPolys : zCCollObjectLevelPolys { zCCollObjectLevelPolys* operator()(); };
+BindedHook Ivk_zCCollObjectLevelPolys_zCCollObjectLevelPolys{ ZENFOR(0x005F1800, 0x00612560, 0x00617630, 0x0061ED80), &zCCollObjectLevelPolys_zCCollObjectLevelPolys::operator() };
+zCCollObjectLevelPolys* zCCollObjectLevelPolys_zCCollObjectLevelPolys::operator()()
+{
+	zCCollObjectLevelPolys* result = THISCALL(Ivk_zCCollObjectLevelPolys_zCCollObjectLevelPolys)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

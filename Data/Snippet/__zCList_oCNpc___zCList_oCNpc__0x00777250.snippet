@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<oCNpc>::~zCList<oCNpc>()]]></Title>
+			<Shortcut><![CDATA[__zCList_oCNpc___zCList_oCNpc__0x00777250]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCList<oCNpc>::~zCList<oCNpc>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_oCNpc__Destructor : zCList<oCNpc> { void operator()(); };
+BindedHook Ivk_zCList_oCNpc__Destructor{ ZENFOR(0x006CF230, 0x007059A0, 0x00717CC0, 0x00777250), &zCList_oCNpc__Destructor::operator() };
+void zCList_oCNpc__Destructor::operator()()
+{
+	THISCALL(Ivk_zCList_oCNpc__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

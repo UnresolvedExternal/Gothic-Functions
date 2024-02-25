@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::GameSessionDone(): void]]></Title>
+			<Shortcut><![CDATA[__CGameManager_GameSessionDone_0x00426F70]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall CGameManager::GameSessionDone()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_GameSessionDone : CGameManager { void operator()(); };
+BindedHook Ivk_CGameManager_GameSessionDone{ ZENFOR(0x004260A0, 0x00428A80, 0x00426C30, 0x00426F70), &CGameManager_GameSessionDone::operator() };
+void CGameManager_GameSessionDone::operator()()
+{
+	THISCALL(Ivk_CGameManager_GameSessionDone)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

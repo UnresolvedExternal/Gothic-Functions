@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCutscene::GetProperties(): zCCSProps*]]></Title>
+			<Shortcut><![CDATA[__zCCutscene_GetProperties_0x0041D230]]></Shortcut>
+			<Description><![CDATA[public: zCCSProps* __thiscall zCCutscene::GetProperties()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCutscene_GetProperties : zCCutscene { zCCSProps* operator()(); };
+BindedHook Ivk_zCCutscene_GetProperties{ ZENFOR(0x0041CCF0, 0x0041EBF0, 0x0041CF00, 0x0041D230), &zCCutscene_GetProperties::operator() };
+zCCSProps* zCCutscene_GetProperties::operator()()
+{
+	zCCSProps* result = THISCALL(Ivk_zCCutscene_GetProperties)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

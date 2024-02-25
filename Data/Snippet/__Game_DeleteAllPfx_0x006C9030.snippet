@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Game_DeleteAllPfx(zCTree<zCVob>*): void]]></Title>
+			<Shortcut><![CDATA[__Game_DeleteAllPfx_0x006C9030]]></Shortcut>
+			<Description><![CDATA[void __cdecl Game_DeleteAllPfx(zCTree<zCVob>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Game_DeleteAllPfx(zCTree<zCVob>*);
+BindedHook Ivk_Game_DeleteAllPfx{ ZENFOR(0x0063E4B0, 0x006652B0, 0x0066C2B0, 0x006C9030), Hook_Game_DeleteAllPfx };
+void Hook_Game_DeleteAllPfx(zCTree<zCVob>* a0)
+{
+	Ivk_Game_DeleteAllPfx(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

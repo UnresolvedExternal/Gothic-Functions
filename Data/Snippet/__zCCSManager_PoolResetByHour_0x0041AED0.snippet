@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::PoolResetByHour(): void]]></Title>
+			<Shortcut><![CDATA[__zCCSManager_PoolResetByHour_0x0041AED0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCCSManager::PoolResetByHour()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_PoolResetByHour : zCCSManager { void operator()(); };
+BindedHook Ivk_zCCSManager_PoolResetByHour{ ZENFOR(0x0041AAA0, 0x0041CA90, 0x0041AED0, 0x0041AED0), &zCCSManager_PoolResetByHour::operator() };
+void zCCSManager_PoolResetByHour::operator()()
+{
+	THISCALL(Ivk_zCCSManager_PoolResetByHour)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

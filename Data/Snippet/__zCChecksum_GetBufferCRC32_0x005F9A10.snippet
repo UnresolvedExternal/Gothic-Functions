@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCChecksum::GetBufferCRC32(unsigned char*, unsigned long, unsigned long): unsigned long]]></Title>
+			<Shortcut><![CDATA[__zCChecksum_GetBufferCRC32_0x005F9A10]]></Shortcut>
+			<Description><![CDATA[public: static unsigned long __cdecl zCChecksum::GetBufferCRC32(unsigned char*, unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned long Hook_zCChecksum_GetBufferCRC32(unsigned char*, unsigned long, unsigned long);
+BindedHook Ivk_zCChecksum_GetBufferCRC32{ ZENFOR(0x005CE710, 0x005ED4B0, 0x005F2C20, 0x005F9A10), Hook_zCChecksum_GetBufferCRC32 };
+unsigned long Hook_zCChecksum_GetBufferCRC32(unsigned char* a0, unsigned long a1, unsigned long a2)
+{
+	unsigned long result = Ivk_zCChecksum_GetBufferCRC32(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

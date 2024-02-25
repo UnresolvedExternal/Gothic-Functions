@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::StopTargetEffects(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__oCSpell_StopTargetEffects_0x00485C40]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall oCSpell::StopTargetEffects(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_StopTargetEffects : oCSpell { void operator()(zCVob*); };
+BindedHook Ivk_oCSpell_StopTargetEffects{ ZENFOR(0x0047D790, 0x00487FF0, 0x00484620, 0x00485C40), &oCSpell_StopTargetEffects::operator() };
+void oCSpell_StopTargetEffects::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_oCSpell_StopTargetEffects)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

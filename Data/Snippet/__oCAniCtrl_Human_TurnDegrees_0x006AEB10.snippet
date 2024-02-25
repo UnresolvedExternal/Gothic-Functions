@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::TurnDegrees(float, int): void]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_TurnDegrees_0x006AEB10]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::TurnDegrees(float, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_TurnDegrees : oCAniCtrl_Human { void operator()(float, int); };
+BindedHook Ivk_oCAniCtrl_Human_TurnDegrees{ ZENFOR(0x00625FB0, 0x0064ADC0, 0x00652290, 0x006AEB10), &oCAniCtrl_Human_TurnDegrees::operator() };
+void oCAniCtrl_Human_TurnDegrees::operator()(float a0, int a1)
+{
+	THISCALL(Ivk_oCAniCtrl_Human_TurnDegrees)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

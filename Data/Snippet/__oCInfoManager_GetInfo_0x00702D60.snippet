@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInfoManager::GetInfo(oCNpc*, oCNpc*, int): oCInfo*]]></Title>
+			<Shortcut><![CDATA[__oCInfoManager_GetInfo_0x00702D60]]></Shortcut>
+			<Description><![CDATA[public: oCInfo* __thiscall oCInfoManager::GetInfo(oCNpc*, oCNpc*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInfoManager_GetInfo : oCInfoManager { oCInfo* operator()(oCNpc*, oCNpc*, int); };
+BindedHook Ivk_oCInfoManager_GetInfo{ ZENFOR(0x00664E50, 0x00692100, 0x006A52D0, 0x00702D60), &oCInfoManager_GetInfo::operator() };
+oCInfo* oCInfoManager_GetInfo::operator()(oCNpc* a0, oCNpc* a1, int a2)
+{
+	oCInfo* result = THISCALL(Ivk_oCInfoManager_GetInfo)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

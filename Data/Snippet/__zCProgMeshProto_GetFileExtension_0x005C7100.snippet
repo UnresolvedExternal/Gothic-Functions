@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::GetFileExtension(int): zSTRING const*]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_GetFileExtension_0x005C7100]]></Shortcut>
+			<Description><![CDATA[protected: virtual zSTRING const* __thiscall zCProgMeshProto::GetFileExtension(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_GetFileExtension : zCProgMeshProto { zSTRING const* operator()(int); };
+BindedHook Ivk_zCProgMeshProto_GetFileExtension{ ZENFOR(0x005A5200, 0x005C1990, 0x005C1580, 0x005C7100), &zCProgMeshProto_GetFileExtension::operator() };
+zSTRING const* zCProgMeshProto_GetFileExtension::operator()(int a0)
+{
+	zSTRING const* result = THISCALL(Ivk_zCProgMeshProto_GetFileExtension)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

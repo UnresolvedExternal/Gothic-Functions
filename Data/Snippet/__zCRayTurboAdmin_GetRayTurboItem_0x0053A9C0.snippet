@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRayTurboAdmin::GetRayTurboItem(zCBspNode const*): zCRayTurbo* [const]]]></Title>
+			<Shortcut><![CDATA[__zCRayTurboAdmin_GetRayTurboItem_0x0053A9C0]]></Shortcut>
+			<Description><![CDATA[protected: zCRayTurbo* __thiscall zCRayTurboAdmin::GetRayTurboItem(zCBspNode const*)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCRayTurboAdmin_GetRayTurboItem : zCRayTurboAdmin { zCRayTurbo* operator()(zCBspNode const*) const; };
+BindedHook Ivk_zCRayTurboAdmin_GetRayTurboItem{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x0053A9C0), &zCRayTurboAdmin_GetRayTurboItem::operator() };
+zCRayTurbo* zCRayTurboAdmin_GetRayTurboItem::operator()(zCBspNode const* a0) const
+{
+	zCRayTurbo* result = THISCALL(Ivk_zCRayTurboAdmin_GetRayTurboItem)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

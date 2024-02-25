@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRndAlphaSortObject::~zCRndAlphaSortObject()]]></Title>
+			<Shortcut><![CDATA[__zCRndAlphaSortObject__zCRndAlphaSortObject_0x00528C80]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCRndAlphaSortObject::~zCRndAlphaSortObject()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRndAlphaSortObject_Destructor : zCRndAlphaSortObject { void operator()(); };
+BindedHook Ivk_zCRndAlphaSortObject_Destructor{ ZENFOR(0x00517E00, 0x0052D810, 0x00525E90, 0x00528C80), &zCRndAlphaSortObject_Destructor::operator() };
+void zCRndAlphaSortObject_Destructor::operator()()
+{
+	THISCALL(Ivk_zCRndAlphaSortObject_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

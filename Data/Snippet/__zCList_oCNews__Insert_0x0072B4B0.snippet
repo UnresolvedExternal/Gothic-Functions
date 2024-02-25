@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<oCNews>::Insert(oCNews*): void]]></Title>
+			<Shortcut><![CDATA[__zCList_oCNews__Insert_0x0072B4B0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCList<oCNews>::Insert(oCNews*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_oCNews__Insert : zCList<oCNews> { void operator()(oCNews*); };
+BindedHook Ivk_zCList_oCNews__Insert{ ZENFOR(0x00689290, 0x006B9560, 0x006CD420, 0x0072B4B0), &zCList_oCNews__Insert::operator() };
+void zCList_oCNews__Insert::operator()(oCNews* a0)
+{
+	THISCALL(Ivk_zCList_oCNews__Insert)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

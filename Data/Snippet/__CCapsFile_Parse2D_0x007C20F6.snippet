@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CCapsFile::Parse2D(unsigned long, _DDCAPS_DX7*, char**): long]]></Title>
+			<Shortcut><![CDATA[__CCapsFile_Parse2D_0x007C20F6]]></Shortcut>
+			<Description><![CDATA[protected: long __thiscall CCapsFile::Parse2D(unsigned long, _DDCAPS_DX7*, char**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CCapsFile_Parse2D : CCapsFile { long operator()(unsigned long, _DDCAPS_DX7*, char**); };
+BindedHook Ivk_CCapsFile_Parse2D{ ZENFOR(0x00768A02, 0x007B09A5, 0x007B5C30, 0x007C20F6), &CCapsFile_Parse2D::operator() };
+long CCapsFile_Parse2D::operator()(unsigned long a0, _DDCAPS_DX7* a1, char** a2)
+{
+	long result = THISCALL(Ivk_CCapsFile_Parse2D)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

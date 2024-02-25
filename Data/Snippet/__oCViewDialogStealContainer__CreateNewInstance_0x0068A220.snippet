@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogStealContainer::_CreateNewInstance(): zCObject*]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogStealContainer__CreateNewInstance_0x0068A220]]></Shortcut>
+			<Description><![CDATA[private: static zCObject* __cdecl oCViewDialogStealContainer::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_oCViewDialogStealContainer__CreateNewInstance();
+BindedHook Ivk_oCViewDialogStealContainer__CreateNewInstance{ ZENFOR(0x00727DE0, 0x00765910, 0x007744D0, 0x0068A220), Hook_oCViewDialogStealContainer__CreateNewInstance };
+zCObject* Hook_oCViewDialogStealContainer__CreateNewInstance()
+{
+	zCObject* result = Ivk_oCViewDialogStealContainer__CreateNewInstance();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

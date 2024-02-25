@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::FindNext(char*): void]]></Title>
+			<Shortcut><![CDATA[__zCParser_FindNext_0x00798310]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCParser::FindNext(char*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_FindNext : zCParser { void operator()(char*); };
+BindedHook Ivk_zCParser_FindNext{ ZENFOR(0x006EE7F0, 0x00727E60, 0x007388D0, 0x00798310), &zCParser_FindNext::operator() };
+void zCParser_FindNext::operator()(char* a0)
+{
+	THISCALL(Ivk_zCParser_FindNext)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

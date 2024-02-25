@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[RegisterLine(TArray<LINEENTRY>**, unsigned long, void*): void]]></Title>
+			<Shortcut><![CDATA[__RegisterLine_0x007C416B]]></Shortcut>
+			<Description><![CDATA[void __cdecl RegisterLine(TArray<LINEENTRY>**, unsigned long, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_RegisterLine(TArray<LINEENTRY>**, unsigned long, void*);
+BindedHook Ivk_RegisterLine{ ZENFOR(0x0076AA77, 0x007AA627, 0x007B7CA5, 0x007C416B), Hook_RegisterLine };
+void Hook_RegisterLine(TArray<LINEENTRY>** a0, unsigned long a1, void* a2)
+{
+	Ivk_RegisterLine(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

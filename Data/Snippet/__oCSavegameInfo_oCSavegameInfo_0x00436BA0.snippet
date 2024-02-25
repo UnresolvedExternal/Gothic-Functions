@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSavegameInfo::oCSavegameInfo()]]></Title>
+			<Shortcut><![CDATA[__oCSavegameInfo_oCSavegameInfo_0x00436BA0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCSavegameInfo::oCSavegameInfo()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSavegameInfo_oCSavegameInfo : oCSavegameInfo { oCSavegameInfo* operator()(); };
+BindedHook Ivk_oCSavegameInfo_oCSavegameInfo{ ZENFOR(0x00433E00, 0x00437D70, 0x004366A0, 0x00436BA0), &oCSavegameInfo_oCSavegameInfo::operator() };
+oCSavegameInfo* oCSavegameInfo_oCSavegameInfo::operator()()
+{
+	oCSavegameInfo* result = THISCALL(Ivk_oCSavegameInfo_oCSavegameInfo)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

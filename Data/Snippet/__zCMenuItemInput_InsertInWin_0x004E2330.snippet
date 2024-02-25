@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemInput::InsertInWin(zCView*): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItemInput_InsertInWin_0x004E2330]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCMenuItemInput::InsertInWin(zCView*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemInput_InsertInWin : zCMenuItemInput { void operator()(zCView*); };
+BindedHook Ivk_zCMenuItemInput_InsertInWin{ ZENFOR(0x004D5370, 0x004E5EF0, 0x004DF980, 0x004E2330), &zCMenuItemInput_InsertInWin::operator() };
+void zCMenuItemInput_InsertInWin::operator()(zCView* a0)
+{
+	THISCALL(Ivk_zCMenuItemInput_InsertInWin)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

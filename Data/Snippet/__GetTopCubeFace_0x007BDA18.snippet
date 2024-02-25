@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[GetTopCubeFace(IDirectDrawSurface7*, unsigned long, IDirectDrawSurface7**): long]]></Title>
+			<Shortcut><![CDATA[__GetTopCubeFace_0x007BDA18]]></Shortcut>
+			<Description><![CDATA[long __cdecl GetTopCubeFace(IDirectDrawSurface7*, unsigned long, IDirectDrawSurface7**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook_GetTopCubeFace(IDirectDrawSurface7*, unsigned long, IDirectDrawSurface7**);
+BindedHook Ivk_GetTopCubeFace{ ZENFOR(0x00764324, 0x007AB9F0, 0x007B1552, 0x007BDA18), Hook_GetTopCubeFace };
+long Hook_GetTopCubeFace(IDirectDrawSurface7* a0, unsigned long a1, IDirectDrawSurface7** a2)
+{
+	long result = Ivk_GetTopCubeFace(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

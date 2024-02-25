@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::_InitViewport(): void]]></Title>
+			<Shortcut><![CDATA[__CD3duContext__InitViewport_0x007B8C86]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall CD3duContext::_InitViewport()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext__InitViewport : CD3duContext { void operator()(); };
+BindedHook Ivk_CD3duContext__InitViewport{ ZENFOR(0x0075F592, 0x007A4636, 0x007AC7C0, 0x007B8C86), &CD3duContext__InitViewport::operator() };
+void CD3duContext__InitViewport::operator()()
+{
+	THISCALL(Ivk_CD3duContext__InitViewport)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

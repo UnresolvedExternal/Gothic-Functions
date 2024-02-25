@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::GetFoundLedge(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_GetFoundLedge_0x0050FD00]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCAIPlayer::GetFoundLedge()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_GetFoundLedge : zCAIPlayer { int operator()() const; };
+BindedHook Ivk_zCAIPlayer_GetFoundLedge{ ZENFOR(0x005001A0, 0x00513770, 0x0050CF30, 0x0050FD00), &zCAIPlayer_GetFoundLedge::operator() };
+int zCAIPlayer_GetFoundLedge::operator()() const
+{
+	int result = THISCALL(Ivk_zCAIPlayer_GetFoundLedge)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

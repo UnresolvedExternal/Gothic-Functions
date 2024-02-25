@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Triangle::ComputeNormal(): int]]></Title>
+			<Shortcut><![CDATA[__Triangle_ComputeNormal_0x005C0A80]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall Triangle::ComputeNormal()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct Triangle_ComputeNormal : Triangle { int operator()(); };
+BindedHook Ivk_Triangle_ComputeNormal{ ZENFOR(0x0059EBE0, 0x005BB1D0, 0x005BAF10, 0x005C0A80), &Triangle_ComputeNormal::operator() };
+int Triangle_ComputeNormal::operator()()
+{
+	int result = THISCALL(Ivk_Triangle_ComputeNormal)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

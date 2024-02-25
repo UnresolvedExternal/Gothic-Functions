@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMeshSoftSkin::SetupLowestLOD(zTRenderContext&, zCArray<zMAT4*>const&, float, int&): void]]></Title>
+			<Shortcut><![CDATA[__zCMeshSoftSkin_SetupLowestLOD_0x005CF530]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall zCMeshSoftSkin::SetupLowestLOD(zTRenderContext&, zCArray<zMAT4*>const&, float, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCMeshSoftSkin_SetupLowestLOD : zCMeshSoftSkin { void __fastcall operator()(zTRenderContext&, zCArray<zMAT4*>const&, float, int&); };
+BindedHook Ivk_zCMeshSoftSkin_SetupLowestLOD{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x005CF530), &zCMeshSoftSkin_SetupLowestLOD::operator() };
+void __fastcall zCMeshSoftSkin_SetupLowestLOD::operator()(zTRenderContext& a0, zCArray<zMAT4*>const& a1, float a2, int& a3)
+{
+	THISCALL(Ivk_zCMeshSoftSkin_SetupLowestLOD)(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

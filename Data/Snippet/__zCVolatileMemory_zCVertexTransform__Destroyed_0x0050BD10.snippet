@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVolatileMemory<zCVertexTransform>::Destroyed(void*): void]]></Title>
+			<Shortcut><![CDATA[__zCVolatileMemory_zCVertexTransform__Destroyed_0x0050BD10]]></Shortcut>
+			<Description><![CDATA[private: virtual void __thiscall zCVolatileMemory<zCVertexTransform>::Destroyed(void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVolatileMemory_zCVertexTransform__Destroyed : zCVolatileMemory<zCVertexTransform> { void operator()(void*); };
+BindedHook Ivk_zCVolatileMemory_zCVertexTransform__Destroyed{ ZENFOR(0x004FC2D0, 0x0050F3A0, 0x00508F60, 0x0050BD10), &zCVolatileMemory_zCVertexTransform__Destroyed::operator() };
+void zCVolatileMemory_zCVertexTransform__Destroyed::operator()(void* a0)
+{
+	THISCALL(Ivk_zCVolatileMemory_zCVertexTransform__Destroyed)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::Init(zSTRING, bool): int]]></Title>
+			<Shortcut><![CDATA[__zCOption_Init_0x00463C20]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCOption::Init(zSTRING, bool)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2A
+struct zCOption_Init : zCOption { int operator()(zSTRING, bool); };
+BindedHook Ivk_zCOption_Init{ ZENFOR(0x0045E5D0, 0x00000000, 0x00000000, 0x00463C20), &zCOption_Init::operator() };
+int zCOption_Init::operator()(zSTRING a0, bool a1)
+{
+	int result = THISCALL(Ivk_zCOption_Init)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

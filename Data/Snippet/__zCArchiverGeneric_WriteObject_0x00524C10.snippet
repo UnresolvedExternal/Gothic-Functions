@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::WriteObject(char const*, zCObject&): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_WriteObject_0x00524C10]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __fastcall zCArchiverGeneric::WriteObject(char const*, zCObject&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_WriteObject : zCArchiverGeneric { void __fastcall operator()(char const*, zCObject&); };
+BindedHook Ivk_zCArchiverGeneric_WriteObject{ ZENFOR(0x00514060, 0x00529650, 0x00521E40, 0x00524C10), &zCArchiverGeneric_WriteObject::operator() };
+void __fastcall zCArchiverGeneric_WriteObject::operator()(char const* a0, zCObject& a1)
+{
+	THISCALL(Ivk_zCArchiverGeneric_WriteObject)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::GetVisualName(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zCMorphMesh_GetVisualName_0x005A6290]]></Shortcut>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zCMorphMesh::GetVisualName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_GetVisualName : zCMorphMesh { zSTRING operator()(); };
+BindedHook Ivk_zCMorphMesh_GetVisualName{ ZENFOR(0x005868F0, 0x005A17F0, 0x005A0D30, 0x005A6290), &zCMorphMesh_GetVisualName::operator() };
+zSTRING zCMorphMesh_GetVisualName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCMorphMesh_GetVisualName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchDamage::~zCTouchDamage()]]></Title>
+			<Shortcut><![CDATA[__zCTouchDamage__zCTouchDamage_0x00615B60]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCTouchDamage::~zCTouchDamage()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchDamage_Destructor : zCTouchDamage { void operator()(); };
+BindedHook Ivk_zCTouchDamage_Destructor{ ZENFOR(0x005E8AB0, 0x00608F00, 0x0060E4A0, 0x00615B60), &zCTouchDamage_Destructor::operator() };
+void zCTouchDamage_Destructor::operator()()
+{
+	THISCALL(Ivk_zCTouchDamage_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollisionObject::CalcIntermediateTrafo(float, zMAT4&): void]]></Title>
+			<Shortcut><![CDATA[__zCCollisionObject_CalcIntermediateTrafo_0x0054D400]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall zCCollisionObject::CalcIntermediateTrafo(float, zMAT4&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollisionObject_CalcIntermediateTrafo : zCCollisionObject { void __fastcall operator()(float, zMAT4&); };
+BindedHook Ivk_zCCollisionObject_CalcIntermediateTrafo{ ZENFOR(0x00538F40, 0x00550180, 0x005481E0, 0x0054D400), &zCCollisionObject_CalcIntermediateTrafo::operator() };
+void __fastcall zCCollisionObject_CalcIntermediateTrafo::operator()(float a0, zMAT4& a1)
+{
+	THISCALL(Ivk_zCCollisionObject_CalcIntermediateTrafo)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

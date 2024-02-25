@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyLayer::CreateSkyDomeMesh(): zCMesh*]]></Title>
+			<Shortcut><![CDATA[__zCSkyLayer_CreateSkyDomeMesh_0x005E4670]]></Shortcut>
+			<Description><![CDATA[public: static zCMesh* __cdecl zCSkyLayer::CreateSkyDomeMesh()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+zCMesh* Hook_zCSkyLayer_CreateSkyDomeMesh();
+BindedHook Ivk_zCSkyLayer_CreateSkyDomeMesh{ ZENFOR(0x00000000, 0x00000000, 0x005DD8C0, 0x005E4670), Hook_zCSkyLayer_CreateSkyDomeMesh };
+zCMesh* Hook_zCSkyLayer_CreateSkyDomeMesh()
+{
+	zCMesh* result = Ivk_zCSkyLayer_CreateSkyDomeMesh();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

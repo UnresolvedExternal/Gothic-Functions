@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenuSavegame::GetMenuItemSlotNr(zCMenuItem*): int]]></Title>
+			<Shortcut><![CDATA[__oCMenuSavegame_GetMenuItemSlotNr_0x0042FF30]]></Shortcut>
+			<Description><![CDATA[protected: int __thiscall oCMenuSavegame::GetMenuItemSlotNr(zCMenuItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenuSavegame_GetMenuItemSlotNr : oCMenuSavegame { int operator()(zCMenuItem*); };
+BindedHook Ivk_oCMenuSavegame_GetMenuItemSlotNr{ ZENFOR(0x0042D6E0, 0x00430930, 0x0042FC10, 0x0042FF30), &oCMenuSavegame_GetMenuItemSlotNr::operator() };
+int oCMenuSavegame_GetMenuItemSlotNr::operator()(zCMenuItem* a0)
+{
+	int result = THISCALL(Ivk_oCMenuSavegame_GetMenuItemSlotNr)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

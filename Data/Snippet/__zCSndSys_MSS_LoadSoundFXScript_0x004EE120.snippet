@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::LoadSoundFXScript(zSTRING const&): zCSoundFX*]]></Title>
+			<Shortcut><![CDATA[__zCSndSys_MSS_LoadSoundFXScript_0x004EE120]]></Shortcut>
+			<Description><![CDATA[public: virtual zCSoundFX* __thiscall zCSndSys_MSS::LoadSoundFXScript(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_LoadSoundFXScript : zCSndSys_MSS { zCSoundFX* operator()(zSTRING const&); };
+BindedHook Ivk_zCSndSys_MSS_LoadSoundFXScript{ ZENFOR(0x004E0B50, 0x004F2510, 0x004EB4A0, 0x004EE120), &zCSndSys_MSS_LoadSoundFXScript::operator() };
+zCSoundFX* zCSndSys_MSS_LoadSoundFXScript::operator()(zSTRING const& a0)
+{
+	zCSoundFX* result = THISCALL(Ivk_zCSndSys_MSS_LoadSoundFXScript)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

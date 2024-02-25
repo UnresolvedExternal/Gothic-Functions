@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCHandleManager::Alloc3DSample(): h3DPOBJECT*]]></Title>
+			<Shortcut><![CDATA[__zCHandleManager_Alloc3DSample_0x004FC300]]></Shortcut>
+			<Description><![CDATA[public: h3DPOBJECT* __thiscall zCHandleManager::Alloc3DSample()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCHandleManager_Alloc3DSample : zCHandleManager { h3DPOBJECT* operator()(); };
+BindedHook Ivk_zCHandleManager_Alloc3DSample{ ZENFOR(0x004EDCB0, 0x00500480, 0x004F9680, 0x004FC300), &zCHandleManager_Alloc3DSample::operator() };
+h3DPOBJECT* zCHandleManager_Alloc3DSample::operator()()
+{
+	h3DPOBJECT* result = THISCALL(Ivk_zCHandleManager_Alloc3DSample)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

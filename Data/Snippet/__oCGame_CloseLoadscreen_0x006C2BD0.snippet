@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::CloseLoadscreen(): void]]></Title>
+			<Shortcut><![CDATA[__oCGame_CloseLoadscreen_0x006C2BD0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCGame::CloseLoadscreen()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_CloseLoadscreen : oCGame { void operator()(); };
+BindedHook Ivk_oCGame_CloseLoadscreen{ ZENFOR(0x00638A30, 0x0065EF80, 0x006660D0, 0x006C2BD0), &oCGame_CloseLoadscreen::operator() };
+void oCGame_CloseLoadscreen::operator()()
+{
+	THISCALL(Ivk_oCGame_CloseLoadscreen)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

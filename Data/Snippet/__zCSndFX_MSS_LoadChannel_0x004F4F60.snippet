@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::LoadChannel(int): void]]></Title>
+			<Shortcut><![CDATA[__zCSndFX_MSS_LoadChannel_0x004F4F60]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCSndFX_MSS::LoadChannel(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_LoadChannel : zCSndFX_MSS { void operator()(int); };
+BindedHook Ivk_zCSndFX_MSS_LoadChannel{ ZENFOR(0x004E6D50, 0x004F8E20, 0x004F22E0, 0x004F4F60), &zCSndFX_MSS_LoadChannel::operator() };
+void zCSndFX_MSS_LoadChannel::operator()(int a0)
+{
+	THISCALL(Ivk_zCSndFX_MSS_LoadChannel)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

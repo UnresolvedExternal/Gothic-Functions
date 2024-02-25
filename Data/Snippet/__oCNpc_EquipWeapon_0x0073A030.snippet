@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EquipWeapon(oCItem*): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_EquipWeapon_0x0073A030]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::EquipWeapon(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_EquipWeapon : oCNpc { void operator()(oCItem*); };
+BindedHook Ivk_oCNpc_EquipWeapon{ ZENFOR(0x00696C20, 0x006C8770, 0x006DB870, 0x0073A030), &oCNpc_EquipWeapon::operator() };
+void oCNpc_EquipWeapon::operator()(oCItem* a0)
+{
+	THISCALL(Ivk_oCNpc_EquipWeapon)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

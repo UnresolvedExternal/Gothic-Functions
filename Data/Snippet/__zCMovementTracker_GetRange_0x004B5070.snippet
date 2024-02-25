@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::GetRange(zVEC3 const&): float]]></Title>
+			<Shortcut><![CDATA[__zCMovementTracker_GetRange_0x004B5070]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall zCMovementTracker::GetRange(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_GetRange : zCMovementTracker { float operator()(zVEC3 const&); };
+BindedHook Ivk_zCMovementTracker_GetRange{ ZENFOR(0x004AC720, 0x004BA6F0, 0x004B2B40, 0x004B5070), &zCMovementTracker_GetRange::operator() };
+float zCMovementTracker_GetRange::operator()(zVEC3 const& a0)
+{
+	float result = THISCALL(Ivk_zCMovementTracker_GetRange)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

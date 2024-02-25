@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMgcEigenD::EigenStuff(): void]]></Title>
+			<Shortcut><![CDATA[__zCMgcEigenD_EigenStuff_0x00558420]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCMgcEigenD::EigenStuff()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMgcEigenD_EigenStuff : zCMgcEigenD { void operator()(); };
+BindedHook Ivk_zCMgcEigenD_EigenStuff{ ZENFOR(0x00543B80, 0x0055B550, 0x00553200, 0x00558420), &zCMgcEigenD_EigenStuff::operator() };
+void zCMgcEigenD_EigenStuff::operator()()
+{
+	THISCALL(Ivk_zCMgcEigenD_EigenStuff)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

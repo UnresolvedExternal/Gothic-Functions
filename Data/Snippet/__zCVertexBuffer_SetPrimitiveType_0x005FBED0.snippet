@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer::SetPrimitiveType(zTVBufferPrimitiveType): int]]></Title>
+			<Shortcut><![CDATA[__zCVertexBuffer_SetPrimitiveType_0x005FBED0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCVertexBuffer::SetPrimitiveType(zTVBufferPrimitiveType)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_SetPrimitiveType : zCVertexBuffer { int operator()(zTVBufferPrimitiveType); };
+BindedHook Ivk_zCVertexBuffer_SetPrimitiveType{ ZENFOR(0x005D0DD0, 0x005EFF30, 0x005F50E0, 0x005FBED0), &zCVertexBuffer_SetPrimitiveType::operator() };
+int zCVertexBuffer_SetPrimitiveType::operator()(zTVBufferPrimitiveType a0)
+{
+	int result = THISCALL(Ivk_zCVertexBuffer_SetPrimitiveType)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

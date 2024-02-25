@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetSoundMaterial_MH_HM(zCSoundManager::zTSndManMedium&, oTSndMaterial&): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetSoundMaterial_MH_HM_0x0073EC50]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCNpc::GetSoundMaterial_MH_HM(zCSoundManager::zTSndManMedium&, oTSndMaterial&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetSoundMaterial_MH_HM : oCNpc { void operator()(zCSoundManager::zTSndManMedium&, oTSndMaterial&); };
+BindedHook Ivk_oCNpc_GetSoundMaterial_MH_HM{ ZENFOR(0x0069B600, 0x006CD5D0, 0x006E0360, 0x0073EC50), &oCNpc_GetSoundMaterial_MH_HM::operator() };
+void oCNpc_GetSoundMaterial_MH_HM::operator()(zCSoundManager::zTSndManMedium& a0, oTSndMaterial& a1)
+{
+	THISCALL(Ivk_oCNpc_GetSoundMaterial_MH_HM)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

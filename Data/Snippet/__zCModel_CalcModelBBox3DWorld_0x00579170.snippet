@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::CalcModelBBox3DWorld(): void]]></Title>
+			<Shortcut><![CDATA[__zCModel_CalcModelBBox3DWorld_0x00579170]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModel::CalcModelBBox3DWorld()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_CalcModelBBox3DWorld : zCModel { void operator()(); };
+BindedHook Ivk_zCModel_CalcModelBBox3DWorld{ ZENFOR(0x0055F8F0, 0x00577D10, 0x00573EC0, 0x00579170), &zCModel_CalcModelBBox3DWorld::operator() };
+void zCModel_CalcModelBBox3DWorld::operator()()
+{
+	THISCALL(Ivk_zCModel_CalcModelBBox3DWorld)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

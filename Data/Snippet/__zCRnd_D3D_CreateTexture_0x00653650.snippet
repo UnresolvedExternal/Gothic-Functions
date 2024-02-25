@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::CreateTexture(): zCTexture*]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_CreateTexture_0x00653650]]></Shortcut>
+			<Description><![CDATA[public: virtual zCTexture* __thiscall zCRnd_D3D::CreateTexture()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_CreateTexture : zCRnd_D3D { zCTexture* operator()(); };
+BindedHook Ivk_zCRnd_D3D_CreateTexture{ ZENFOR(0x0071AEE0, 0x00757200, 0x00766CF0, 0x00653650), &zCRnd_D3D_CreateTexture::operator() };
+zCTexture* zCRnd_D3D_CreateTexture::operator()()
+{
+	zCTexture* result = THISCALL(Ivk_zCRnd_D3D_CreateTexture)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

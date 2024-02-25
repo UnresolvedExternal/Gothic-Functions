@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::CreateText(int, int, zSTRING const&, float, zCOLOR&, int, int): zCViewText*]]></Title>
+			<Shortcut><![CDATA[__zCView_CreateText_0x007A7AB0]]></Shortcut>
+			<Description><![CDATA[public: zCViewText* __thiscall zCView::CreateText(int, int, zSTRING const&, float, zCOLOR&, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_CreateText : zCView { zCViewText* operator()(int, int, zSTRING const&, float, zCOLOR&, int, int); };
+BindedHook Ivk_zCView_CreateText{ ZENFOR(0x006FDF10, 0x00738300, 0x00747FB0, 0x007A7AB0), &zCView_CreateText::operator() };
+zCViewText* zCView_CreateText::operator()(int a0, int a1, zSTRING const& a2, float a3, zCOLOR& a4, int a5, int a6)
+{
+	zCViewText* result = THISCALL(Ivk_zCView_CreateText)(a0, a1, a2, a3, a4, a5, a6);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

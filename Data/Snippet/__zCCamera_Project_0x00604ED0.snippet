@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::Project(zVEC3 const* const, float, float&, float&): void [const]]]></Title>
+			<Shortcut><![CDATA[__zCCamera_Project_0x00604ED0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCCamera::Project(zVEC3 const* const, float, float&, float&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCCamera_Project : zCCamera { void operator()(zVEC3 const* const, float, float&, float&) const; };
+BindedHook Ivk_zCCamera_Project{ ZENFOR(0x00000000, 0x00000000, 0x005FE050, 0x00604ED0), &zCCamera_Project::operator() };
+void zCCamera_Project::operator()(zVEC3 const* const a0, float a1, float& a2, float& a3) const
+{
+	THISCALL(Ivk_zCCamera_Project)(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

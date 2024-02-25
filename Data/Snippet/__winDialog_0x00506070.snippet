@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[winDialog(unsigned short, int(__stdcall*)(HWND__*, unsigned int, unsigned int, long)): long]]></Title>
+			<Shortcut><![CDATA[__winDialog_0x00506070]]></Shortcut>
+			<Description><![CDATA[long __cdecl winDialog(unsigned short, int(__stdcall*)(HWND__*, unsigned int, unsigned int, long))]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook_winDialog(unsigned short, int(__stdcall*)(HWND__*, unsigned int, unsigned int, long));
+BindedHook Ivk_winDialog{ ZENFOR(0x004F75A0, 0x00509ED0, 0x00503370, 0x00506070), Hook_winDialog };
+long Hook_winDialog(unsigned short a0, int(__stdcall* a1)(HWND__*, unsigned int, unsigned int, long))
+{
+	long result = Ivk_winDialog(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

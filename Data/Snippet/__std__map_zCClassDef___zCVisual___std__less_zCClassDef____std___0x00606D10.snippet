@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>>::map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>>(std::less<zCClassDef*>const&, std::allocator<zCVisual*>const&)]]></Title>
+			<Shortcut><![CDATA[__std__map_zCClassDef___zCVisual___std__less_zCClassDef____std___0x00606D10]]></Shortcut>
+			<Description><![CDATA[public: __thiscall std::map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>>::map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>>(std::less<zCClassDef*>const&, std::allocator<zCVisual*>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual___ : std::map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>> { void operator()(std::less<zCClassDef*>const&, std::allocator<zCVisual*>const&); };
+BindedHook Ivk_std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual___{ ZENFOR(0x005DA410, 0x005F9D90, 0x005FFE60, 0x00606D10), &std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual___::operator() };
+void std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual___::operator()(std::less<zCClassDef*>const& a0, std::allocator<zCVisual*>const& a1)
+{
+	THISCALL(Ivk_std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual___)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

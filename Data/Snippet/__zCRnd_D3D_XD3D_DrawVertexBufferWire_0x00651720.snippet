@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::XD3D_DrawVertexBufferWire(zCVertexBuffer*, int, int, unsigned short*, unsigned long): int]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_XD3D_DrawVertexBufferWire_0x00651720]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCRnd_D3D::XD3D_DrawVertexBufferWire(zCVertexBuffer*, int, int, unsigned short*, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_XD3D_DrawVertexBufferWire : zCRnd_D3D { int operator()(zCVertexBuffer*, int, int, unsigned short*, unsigned long); };
+BindedHook Ivk_zCRnd_D3D_XD3D_DrawVertexBufferWire{ ZENFOR(0x00719440, 0x007555E0, 0x00764DC0, 0x00651720), &zCRnd_D3D_XD3D_DrawVertexBufferWire::operator() };
+int zCRnd_D3D_XD3D_DrawVertexBufferWire::operator()(zCVertexBuffer* a0, int a1, int a2, unsigned short* a3, unsigned long a4)
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_XD3D_DrawVertexBufferWire)(a0, a1, a2, a3, a4);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

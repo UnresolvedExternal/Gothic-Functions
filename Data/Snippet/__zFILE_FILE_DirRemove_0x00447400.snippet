@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::DirRemove(): bool]]></Title>
+			<Shortcut><![CDATA[__zFILE_FILE_DirRemove_0x00447400]]></Shortcut>
+			<Description><![CDATA[public: virtual bool __thiscall zFILE_FILE::DirRemove()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_DirRemove : zFILE_FILE { bool operator()(); };
+BindedHook Ivk_zFILE_FILE_DirRemove{ ZENFOR(0x004434A0, 0x00448F30, 0x00446DD0, 0x00447400), &zFILE_FILE_DirRemove::operator() };
+bool zFILE_FILE_DirRemove::operator()()
+{
+	bool result = THISCALL(Ivk_zFILE_FILE_DirRemove)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

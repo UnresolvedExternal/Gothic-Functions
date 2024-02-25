@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::TraceRayFirstHitCache(zVEC3 const&, zVEC3 const&, zCArray<zCVob*>const*, int, zCRayCache*): int]]></Title>
+			<Shortcut><![CDATA[__zCWorld_TraceRayFirstHitCache_0x006220D0]]></Shortcut>
+			<Description><![CDATA[public: int __fastcall zCWorld::TraceRayFirstHitCache(zVEC3 const&, zVEC3 const&, zCArray<zCVob*>const*, int, zCRayCache*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_TraceRayFirstHitCache : zCWorld { int __fastcall operator()(zVEC3 const&, zVEC3 const&, zCArray<zCVob*>const*, int, zCRayCache*); };
+BindedHook Ivk_zCWorld_TraceRayFirstHitCache{ ZENFOR(0x005F4830, 0x00615740, 0x0061A940, 0x006220D0), &zCWorld_TraceRayFirstHitCache::operator() };
+int __fastcall zCWorld_TraceRayFirstHitCache::operator()(zVEC3 const& a0, zVEC3 const& a1, zCArray<zCVob*>const* a2, int a3, zCRayCache* a4)
+{
+	int result = THISCALL(Ivk_zCWorld_TraceRayFirstHitCache)(a0, a1, a2, a3, a4);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

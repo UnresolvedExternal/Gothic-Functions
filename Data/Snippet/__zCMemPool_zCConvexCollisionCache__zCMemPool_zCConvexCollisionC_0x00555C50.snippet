@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPool<zCConvexCollisionCache>::zCMemPool<zCConvexCollisionCache>(unsigned int, unsigned int)]]></Title>
+			<Shortcut><![CDATA[__zCMemPool_zCConvexCollisionCache__zCMemPool_zCConvexCollisionC_0x00555C50]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCMemPool<zCConvexCollisionCache>::zCMemPool<zCConvexCollisionCache>(unsigned int, unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPool_zCConvexCollisionCache__zCMemPool_zCConvexCollisionCache_ : zCMemPool<zCConvexCollisionCache> { zCMemPool<zCConvexCollisionCache>* operator()(unsigned int, unsigned int); };
+BindedHook Ivk_zCMemPool_zCConvexCollisionCache__zCMemPool_zCConvexCollisionCache_{ ZENFOR(0x00541500, 0x00558E40, 0x00550A30, 0x00555C50), &zCMemPool_zCConvexCollisionCache__zCMemPool_zCConvexCollisionCache_::operator() };
+zCMemPool<zCConvexCollisionCache>* zCMemPool_zCConvexCollisionCache__zCMemPool_zCConvexCollisionCache_::operator()(unsigned int a0, unsigned int a1)
+{
+	zCMemPool<zCConvexCollisionCache>* result = THISCALL(Ivk_zCMemPool_zCConvexCollisionCache__zCMemPool_zCConvexCollisionCache_)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

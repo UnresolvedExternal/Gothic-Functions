@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectCharacter_ScalarDeletingDestructor_0x0054F930]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCCollObjectCharacter::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A, G2A
+struct zCCollObjectCharacter_ScalarDeletingDestructor : zCCollObjectCharacter { void* operator()(unsigned int); };
+BindedHook Ivk_zCCollObjectCharacter_ScalarDeletingDestructor{ ZENFOR(0x0053B430, 0x005527D0, 0x00000000, 0x0054F930), &zCCollObjectCharacter_ScalarDeletingDestructor::operator() };
+void* zCCollObjectCharacter_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCCollObjectCharacter_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

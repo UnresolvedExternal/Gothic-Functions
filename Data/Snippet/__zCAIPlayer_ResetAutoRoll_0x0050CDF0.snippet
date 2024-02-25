@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::ResetAutoRoll(): void]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_ResetAutoRoll_0x0050CDF0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCAIPlayer::ResetAutoRoll()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_ResetAutoRoll : zCAIPlayer { void operator()(); };
+BindedHook Ivk_zCAIPlayer_ResetAutoRoll{ ZENFOR(0x004FD390, 0x005104E0, 0x0050A040, 0x0050CDF0), &zCAIPlayer_ResetAutoRoll::operator() };
+void zCAIPlayer_ResetAutoRoll::operator()()
+{
+	THISCALL(Ivk_zCAIPlayer_ResetAutoRoll)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

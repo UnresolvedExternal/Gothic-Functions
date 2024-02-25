@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<zCCacheIndex, zCConvexCollisionCache>::PurgeCache(): void]]></Title>
+			<Shortcut><![CDATA[__zCCache_zCCacheIndex__zCConvexCollisionCache__PurgeCache_0x00555F40]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCache<zCCacheIndex, zCConvexCollisionCache>::PurgeCache()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_zCCacheIndex__zCConvexCollisionCache__PurgeCache : zCCache<zCCacheIndex, zCConvexCollisionCache> { void operator()(); };
+BindedHook Ivk_zCCache_zCCacheIndex__zCConvexCollisionCache__PurgeCache{ ZENFOR(0x005417F0, 0x00559140, 0x00550D20, 0x00555F40), &zCCache_zCCacheIndex__zCConvexCollisionCache__PurgeCache::operator() };
+void zCCache_zCCacheIndex__zCConvexCollisionCache__PurgeCache::operator()()
+{
+	THISCALL(Ivk_zCCache_zCCacheIndex__zCConvexCollisionCache__PurgeCache)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

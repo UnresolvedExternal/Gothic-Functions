@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelTexAniState::AddTexListFromMesh(zCMesh*, zCArray<zCTexture*>&): void]]></Title>
+			<Shortcut><![CDATA[__zCModelTexAniState_AddTexListFromMesh_0x00577430]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModelTexAniState::AddTexListFromMesh(zCMesh*, zCArray<zCTexture*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelTexAniState_AddTexListFromMesh : zCModelTexAniState { void operator()(zCMesh*, zCArray<zCTexture*>&); };
+BindedHook Ivk_zCModelTexAniState_AddTexListFromMesh{ ZENFOR(0x0055DC70, 0x00575FF0, 0x00572180, 0x00577430), &zCModelTexAniState_AddTexListFromMesh::operator() };
+void zCModelTexAniState_AddTexListFromMesh::operator()(zCMesh* a0, zCArray<zCTexture*>& a1)
+{
+	THISCALL(Ivk_zCModelTexAniState_AddTexListFromMesh)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

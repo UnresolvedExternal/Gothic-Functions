@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspNode::CountDepthRec(int, int&, int&, int&): void]]></Title>
+			<Shortcut><![CDATA[__zCCBspNode_CountDepthRec_0x00541390]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCCBspNode::CountDepthRec(int, int&, int&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspNode_CountDepthRec : zCCBspNode { void operator()(int, int&, int&, int&); };
+BindedHook Ivk_zCCBspNode_CountDepthRec{ ZENFOR(0x0052D810, 0x00544090, 0x0053C280, 0x00541390), &zCCBspNode_CountDepthRec::operator() };
+void zCCBspNode_CountDepthRec::operator()(int a0, int& a1, int& a2, int& a3)
+{
+	THISCALL(Ivk_zCCBspNode_CountDepthRec)(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

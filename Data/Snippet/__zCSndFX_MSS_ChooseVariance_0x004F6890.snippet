@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::ChooseVariance(): void]]></Title>
+			<Shortcut><![CDATA[__zCSndFX_MSS_ChooseVariance_0x004F6890]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCSndFX_MSS::ChooseVariance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_ChooseVariance : zCSndFX_MSS { void operator()(); };
+BindedHook Ivk_zCSndFX_MSS_ChooseVariance{ ZENFOR(0x004E8600, 0x004FA7E0, 0x004F3C10, 0x004F6890), &zCSndFX_MSS_ChooseVariance::operator() };
+void zCSndFX_MSS_ChooseVariance::operator()()
+{
+	THISCALL(Ivk_zCSndFX_MSS_ChooseVariance)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

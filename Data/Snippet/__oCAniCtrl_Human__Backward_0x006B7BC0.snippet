@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::_Backward(): void]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human__Backward_0x006B7BC0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::_Backward()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human__Backward : oCAniCtrl_Human { void operator()(); };
+BindedHook Ivk_oCAniCtrl_Human__Backward{ ZENFOR(0x0062E420, 0x00653C30, 0x0065B230, 0x006B7BC0), &oCAniCtrl_Human__Backward::operator() };
+void oCAniCtrl_Human__Backward::operator()()
+{
+	THISCALL(Ivk_oCAniCtrl_Human__Backward)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

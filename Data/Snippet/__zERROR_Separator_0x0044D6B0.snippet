@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zERROR::Separator(zSTRING): void]]></Title>
+			<Shortcut><![CDATA[__zERROR_Separator_0x0044D6B0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zERROR::Separator(zSTRING)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zERROR_Separator : zERROR { void operator()(zSTRING); };
+BindedHook Ivk_zERROR_Separator{ ZENFOR(0x00448F90, 0x0044F160, 0x0044CF60, 0x0044D6B0), &zERROR_Separator::operator() };
+void zERROR_Separator::operator()(zSTRING a0)
+{
+	THISCALL(Ivk_zERROR_Separator)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

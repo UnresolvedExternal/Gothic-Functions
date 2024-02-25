@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zSEvasionSearchDesc>::~zCArray<zSEvasionSearchDesc>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zSEvasionSearchDesc___zCArray_zSEvasionSearchDesc__0x004B0BF0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zSEvasionSearchDesc>::~zCArray<zSEvasionSearchDesc>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zSEvasionSearchDesc__Destructor : zCArray<zSEvasionSearchDesc> { void operator()(); };
+BindedHook Ivk_zCArray_zSEvasionSearchDesc__Destructor{ ZENFOR(0x004A8940, 0x004B6840, 0x004AE6C0, 0x004B0BF0), &zCArray_zSEvasionSearchDesc__Destructor::operator() };
+void zCArray_zSEvasionSearchDesc__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zSEvasionSearchDesc__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

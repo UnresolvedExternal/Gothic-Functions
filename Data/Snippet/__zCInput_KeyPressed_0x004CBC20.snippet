@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::KeyPressed(int): int]]></Title>
+			<Shortcut><![CDATA[__zCInput_KeyPressed_0x004CBC20]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCInput::KeyPressed(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_KeyPressed : zCInput { int operator()(int); };
+BindedHook Ivk_zCInput_KeyPressed{ ZENFOR(0x004C28E0, 0x004D21F0, 0x004C96B0, 0x004CBC20), &zCInput_KeyPressed::operator() };
+int zCInput_KeyPressed::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCInput_KeyPressed)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

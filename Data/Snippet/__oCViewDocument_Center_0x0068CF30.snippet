@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDocument::Center(): void]]></Title>
+			<Shortcut><![CDATA[__oCViewDocument_Center_0x0068CF30]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall oCViewDocument::Center()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDocument_Center : oCViewDocument { void __fastcall operator()(); };
+BindedHook Ivk_oCViewDocument_Center{ ZENFOR(0x00725B50, 0x00762DE0, 0x00771F00, 0x0068CF30), &oCViewDocument_Center::operator() };
+void __fastcall oCViewDocument_Center::operator()()
+{
+	THISCALL(Ivk_oCViewDocument_Center)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

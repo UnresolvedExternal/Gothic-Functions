@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRndAlphaSortObject_WorldPoly::~zCRndAlphaSortObject_WorldPoly()]]></Title>
+			<Shortcut><![CDATA[__zCRndAlphaSortObject_WorldPoly__zCRndAlphaSortObject_WorldPoly_0x005D6F20]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCRndAlphaSortObject_WorldPoly::~zCRndAlphaSortObject_WorldPoly()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRndAlphaSortObject_WorldPoly_Destructor : zCRndAlphaSortObject_WorldPoly { void operator()(); };
+BindedHook Ivk_zCRndAlphaSortObject_WorldPoly_Destructor{ ZENFOR(0x005B11A0, 0x005CE360, 0x005D0360, 0x005D6F20), &zCRndAlphaSortObject_WorldPoly_Destructor::operator() };
+void zCRndAlphaSortObject_WorldPoly_Destructor::operator()()
+{
+	THISCALL(Ivk_zCRndAlphaSortObject_WorldPoly_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

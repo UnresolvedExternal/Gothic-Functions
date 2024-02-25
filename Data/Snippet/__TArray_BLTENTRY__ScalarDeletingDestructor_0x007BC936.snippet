@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[TArray<BLTENTRY>::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__TArray_BLTENTRY__ScalarDeletingDestructor_0x007BC936]]></Shortcut>
+			<Description><![CDATA[public: void* __thiscall TArray<BLTENTRY>::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct TArray_BLTENTRY__ScalarDeletingDestructor : TArray<BLTENTRY> { void* operator()(unsigned int); };
+BindedHook Ivk_TArray_BLTENTRY__ScalarDeletingDestructor{ ZENFOR(0x00763242, 0x00000000, 0x007B0470, 0x007BC936), &TArray_BLTENTRY__ScalarDeletingDestructor::operator() };
+void* TArray_BLTENTRY__ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_TArray_BLTENTRY__ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

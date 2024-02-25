@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[default_exit(): void]]></Title>
+			<Shortcut><![CDATA[__default_exit_0x0044B8C0]]></Shortcut>
+			<Description><![CDATA[void __cdecl default_exit()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_default_exit();
+BindedHook Ivk_default_exit{ ZENFOR(0x004472A0, 0x0044D210, 0x0044B170, 0x0044B8C0), Hook_default_exit };
+void Hook_default_exit()
+{
+	Ivk_default_exit();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

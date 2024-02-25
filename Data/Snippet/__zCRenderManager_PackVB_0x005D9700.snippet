@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderManager::PackVB(zCArray<zCPolygon*>const&, zCShader*): void]]></Title>
+			<Shortcut><![CDATA[__zCRenderManager_PackVB_0x005D9700]]></Shortcut>
+			<Description><![CDATA[private: void __fastcall zCRenderManager::PackVB(zCArray<zCPolygon*>const&, zCShader*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderManager_PackVB : zCRenderManager { void __fastcall operator()(zCArray<zCPolygon*>const&, zCShader*); };
+BindedHook Ivk_zCRenderManager_PackVB{ ZENFOR(0x005B2D60, 0x005CFFD0, 0x005D2940, 0x005D9700), &zCRenderManager_PackVB::operator() };
+void __fastcall zCRenderManager_PackVB::operator()(zCArray<zCPolygon*>const& a0, zCShader* a1)
+{
+	THISCALL(Ivk_zCRenderManager_PackVB)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneReverb::ProcessZoneList(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*): void]]></Title>
+			<Shortcut><![CDATA[__zCZoneReverb_ProcessZoneList_0x0063F6D0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCZoneReverb::ProcessZoneList(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZoneReverb_ProcessZoneList : zCZoneReverb { void operator()(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*); };
+BindedHook Ivk_zCZoneReverb_ProcessZoneList{ ZENFOR(0x0060EB30, 0x006312C0, 0x00637EE0, 0x0063F6D0), &zCZoneReverb_ProcessZoneList::operator() };
+void zCZoneReverb_ProcessZoneList::operator()(zCArraySort<zCZone*>const& a0, zCArraySort<zCZone*>const& a1, zCWorld* a2)
+{
+	THISCALL(Ivk_zCZoneReverb_ProcessZoneList)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

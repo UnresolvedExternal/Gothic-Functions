@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTPlane::Print(): zSTRING [const]]]></Title>
+			<Shortcut><![CDATA[__zTPlane_Print_0x005FB490]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall zTPlane::Print()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTPlane_Print : zTPlane { zSTRING operator()() const; };
+BindedHook Ivk_zTPlane_Print{ ZENFOR(0x005D02E0, 0x005EF2E0, 0x005F46A0, 0x005FB490), &zTPlane_Print::operator() };
+zSTRING zTPlane_Print::operator()() const
+{
+	zSTRING result = THISCALL(Ivk_zTPlane_Print)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

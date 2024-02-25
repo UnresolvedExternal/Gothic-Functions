@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPoolBase::DisablePools(int): void]]></Title>
+			<Shortcut><![CDATA[__zCMemPoolBase_DisablePools_0x00566AA0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCMemPoolBase::DisablePools(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCMemPoolBase_DisablePools(int);
+BindedHook Ivk_zCMemPoolBase_DisablePools{ ZENFOR(0x0054F6D0, 0x00567C10, 0x00561880, 0x00566AA0), Hook_zCMemPoolBase_DisablePools };
+void Hook_zCMemPoolBase_DisablePools(int a0)
+{
+	Ivk_zCMemPoolBase_DisablePools(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

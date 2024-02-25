@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EV_SndPlay(oCMsgConversation*): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_EV_SndPlay_0x007590A0]]></Shortcut>
+			<Description><![CDATA[protected: int __thiscall oCNpc::EV_SndPlay(oCMsgConversation*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2, G2A
+struct oCNpc_EV_SndPlay : oCNpc { int operator()(oCMsgConversation*); };
+BindedHook Ivk_oCNpc_EV_SndPlay{ ZENFOR(0x00000000, 0x006E77E0, 0x006FA180, 0x007590A0), &oCNpc_EV_SndPlay::operator() };
+int oCNpc_EV_SndPlay::operator()(oCMsgConversation* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_EV_SndPlay)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

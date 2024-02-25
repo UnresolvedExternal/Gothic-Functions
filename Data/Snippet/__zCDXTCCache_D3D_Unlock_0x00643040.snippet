@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDXTCCache_D3D::Unlock(int, int, int, IDirectDrawSurface7*): int]]></Title>
+			<Shortcut><![CDATA[__zCDXTCCache_D3D_Unlock_0x00643040]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCDXTCCache_D3D::Unlock(int, int, int, IDirectDrawSurface7*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCDXTCCache_D3D_Unlock : zCDXTCCache_D3D { int operator()(int, int, int, IDirectDrawSurface7*); };
+BindedHook Ivk_zCDXTCCache_D3D_Unlock{ ZENFOR(0x0070D800, 0x00748950, 0x00757AA0, 0x00643040), &zCDXTCCache_D3D_Unlock::operator() };
+int zCDXTCCache_D3D_Unlock::operator()(int a0, int a1, int a2, IDirectDrawSurface7* a3)
+{
+	int result = THISCALL(Ivk_zCDXTCCache_D3D_Unlock)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

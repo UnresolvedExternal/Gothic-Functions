@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3DXException::CD3DXException(long, char*, int)]]></Title>
+			<Shortcut><![CDATA[__CD3DXException_CD3DXException_0x007B4BB2]]></Shortcut>
+			<Description><![CDATA[public: __thiscall CD3DXException::CD3DXException(long, char*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct CD3DXException_CD3DXException : CD3DXException { CD3DXException* operator()(long, char*, int); };
+BindedHook Ivk_CD3DXException_CD3DXException{ ZENFOR(0x0075B4BE, 0x00000000, 0x007A86EC, 0x007B4BB2), &CD3DXException_CD3DXException::operator() };
+CD3DXException* CD3DXException_CD3DXException::operator()(long a0, char* a1, int a2)
+{
+	CD3DXException* result = THISCALL(Ivk_CD3DXException_CD3DXException)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::CalcLODRenderArgs(zTRenderContext const&, zCProgMeshProto::zTLODRenderArgs&): int]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_CalcLODRenderArgs_0x005C8FA0]]></Shortcut>
+			<Description><![CDATA[public: int __fastcall zCProgMeshProto::CalcLODRenderArgs(zTRenderContext const&, zCProgMeshProto::zTLODRenderArgs&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_CalcLODRenderArgs : zCProgMeshProto { int __fastcall operator()(zTRenderContext const&, zCProgMeshProto::zTLODRenderArgs&); };
+BindedHook Ivk_zCProgMeshProto_CalcLODRenderArgs{ ZENFOR(0x005A6870, 0x005C31D0, 0x005C31F0, 0x005C8FA0), &zCProgMeshProto_CalcLODRenderArgs::operator() };
+int __fastcall zCProgMeshProto_CalcLODRenderArgs::operator()(zTRenderContext const& a0, zCProgMeshProto::zTLODRenderArgs& a1)
+{
+	int result = THISCALL(Ivk_zCProgMeshProto_CalcLODRenderArgs)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

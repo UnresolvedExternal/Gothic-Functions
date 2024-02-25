@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIDrop::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCAIDrop_Unarchive_0x006A2720]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCAIDrop::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIDrop_Unarchive : oCAIDrop { void operator()(zCArchiver&); };
+BindedHook Ivk_oCAIDrop_Unarchive{ ZENFOR(0x0061A2B0, 0x0063D8A0, 0x00645EA0, 0x006A2720), &oCAIDrop_Unarchive::operator() };
+void oCAIDrop_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCAIDrop_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

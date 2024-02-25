@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::PushTree(zCPar_TreeNode*): void]]></Title>
+			<Shortcut><![CDATA[__zCParser_PushTree_0x00790820]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCParser::PushTree(zCPar_TreeNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_PushTree : zCParser { void operator()(zCPar_TreeNode*); };
+BindedHook Ivk_zCParser_PushTree{ ZENFOR(0x006E7580, 0x007202D0, 0x00730DE0, 0x00790820), &zCParser_PushTree::operator() };
+void zCParser_PushTree::operator()(zCPar_TreeNode* a0)
+{
+	THISCALL(Ivk_zCParser_PushTree)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

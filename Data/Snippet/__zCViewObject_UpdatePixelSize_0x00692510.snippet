@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewObject::UpdatePixelSize(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewObject_UpdatePixelSize_0x00692510]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall zCViewObject::UpdatePixelSize()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewObject_UpdatePixelSize : zCViewObject { void __fastcall operator()(); };
+BindedHook Ivk_zCViewObject_UpdatePixelSize{ ZENFOR(0x007559C0, 0x00797DE0, 0x007A2760, 0x00692510), &zCViewObject_UpdatePixelSize::operator() };
+void __fastcall zCViewObject_UpdatePixelSize::operator()()
+{
+	THISCALL(Ivk_zCViewObject_UpdatePixelSize)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

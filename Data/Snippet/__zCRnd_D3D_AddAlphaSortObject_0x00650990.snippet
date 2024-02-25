@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::AddAlphaSortObject(zCRndAlphaSortObject*): void]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_AddAlphaSortObject_0x00650990]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::AddAlphaSortObject(zCRndAlphaSortObject*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_AddAlphaSortObject : zCRnd_D3D { void operator()(zCRndAlphaSortObject*); };
+BindedHook Ivk_zCRnd_D3D_AddAlphaSortObject{ ZENFOR(0x007186A0, 0x00754790, 0x00764030, 0x00650990), &zCRnd_D3D_AddAlphaSortObject::operator() };
+void zCRnd_D3D_AddAlphaSortObject::operator()(zCRndAlphaSortObject* a0)
+{
+	THISCALL(Ivk_zCRnd_D3D_AddAlphaSortObject)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

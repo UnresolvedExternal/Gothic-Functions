@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCBinkPlayer::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCBinkPlayer_VectorDeletingDestructor_0x00422320]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall oCBinkPlayer::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1
+struct oCBinkPlayer_VectorDeletingDestructor : oCBinkPlayer { void* operator()(unsigned int); };
+BindedHook Ivk_oCBinkPlayer_VectorDeletingDestructor{ ZENFOR(0x00422320, 0x00000000, 0x00000000, 0x00000000), &oCBinkPlayer_VectorDeletingDestructor::operator() };
+void* oCBinkPlayer_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCBinkPlayer_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

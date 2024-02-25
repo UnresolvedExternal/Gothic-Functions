@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::GetClassDefByString(zSTRING const&): zCClassDef*]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe_GetClassDefByString_0x0051F030]]></Shortcut>
+			<Description><![CDATA[protected: virtual zCClassDef* __fastcall zCArchiverBinSafe::GetClassDefByString(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_GetClassDefByString : zCArchiverBinSafe { zCClassDef* __fastcall operator()(zSTRING const&); };
+BindedHook Ivk_zCArchiverBinSafe_GetClassDefByString{ ZENFOR(0x0050EC60, 0x00523CC0, 0x0051C260, 0x0051F030), &zCArchiverBinSafe_GetClassDefByString::operator() };
+zCClassDef* __fastcall zCArchiverBinSafe_GetClassDefByString::operator()(zSTRING const& a0)
+{
+	zCClassDef* result = THISCALL(Ivk_zCArchiverBinSafe_GetClassDefByString)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectUndef::GetCollObjClass(): zCCollisionObjectDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectUndef_GetCollObjClass_0x0054D640]]></Shortcut>
+			<Description><![CDATA[public: virtual zCCollisionObjectDef* __thiscall zCCollObjectUndef::GetCollObjClass()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectUndef_GetCollObjClass : zCCollObjectUndef { zCCollisionObjectDef* operator()() const; };
+BindedHook Ivk_zCCollObjectUndef_GetCollObjClass{ ZENFOR(0x00539180, 0x00550420, 0x00548420, 0x0054D640), &zCCollObjectUndef_GetCollObjClass::operator() };
+zCCollisionObjectDef* zCCollObjectUndef_GetCollObjClass::operator()() const
+{
+	zCCollisionObjectDef* result = THISCALL(Ivk_zCCollObjectUndef_GetCollObjClass)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

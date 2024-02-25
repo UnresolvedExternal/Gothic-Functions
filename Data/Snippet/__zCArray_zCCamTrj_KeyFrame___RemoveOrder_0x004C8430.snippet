@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCCamTrj_KeyFrame*>::RemoveOrder(zCCamTrj_KeyFrame* const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCCamTrj_KeyFrame___RemoveOrder_0x004C8430]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCCamTrj_KeyFrame*>::RemoveOrder(zCCamTrj_KeyFrame* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCCamTrj_KeyFrame___RemoveOrder : zCArray<zCCamTrj_KeyFrame*> { void operator()(zCCamTrj_KeyFrame* const&); };
+BindedHook Ivk_zCArray_zCCamTrj_KeyFrame___RemoveOrder{ ZENFOR(0x004BF090, 0x004CE790, 0x004C5EC0, 0x004C8430), &zCArray_zCCamTrj_KeyFrame___RemoveOrder::operator() };
+void zCArray_zCCamTrj_KeyFrame___RemoveOrder::operator()(zCCamTrj_KeyFrame* const& a0)
+{
+	THISCALL(Ivk_zCArray_zCCamTrj_KeyFrame___RemoveOrder)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

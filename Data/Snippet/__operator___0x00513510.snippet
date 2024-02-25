@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[operator<<(ostream&, zVEC4&): ostream&]]></Title>
+			<Shortcut><![CDATA[__operator___0x00513510]]></Shortcut>
+			<Description><![CDATA[ostream& __cdecl operator<<(ostream&, zVEC4&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[ostream& Hook_operator__(ostream&, zVEC4&);
+BindedHook Ivk_operator__{ ZENFOR(0x00503900, 0x00517460, 0x00510740, 0x00513510), Hook_operator__ };
+ostream& Hook_operator__(ostream& a0, zVEC4& a1)
+{
+	ostream& result = Ivk_operator__(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

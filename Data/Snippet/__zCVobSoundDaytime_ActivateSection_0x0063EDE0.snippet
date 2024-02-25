@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobSoundDaytime::ActivateSection(int): void]]></Title>
+			<Shortcut><![CDATA[__zCVobSoundDaytime_ActivateSection_0x0063EDE0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCVobSoundDaytime::ActivateSection(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobSoundDaytime_ActivateSection : zCVobSoundDaytime { void operator()(int); };
+BindedHook Ivk_zCVobSoundDaytime_ActivateSection{ ZENFOR(0x0060E240, 0x006309B0, 0x006375F0, 0x0063EDE0), &zCVobSoundDaytime_ActivateSection::operator() };
+void zCVobSoundDaytime_ActivateSection::operator()(int a0)
+{
+	THISCALL(Ivk_zCVobSoundDaytime_ActivateSection)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

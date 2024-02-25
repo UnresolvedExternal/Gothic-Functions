@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Apply_Options_Audio(): int]]></Title>
+			<Shortcut><![CDATA[__Apply_Options_Audio_0x0042D4E0]]></Shortcut>
+			<Description><![CDATA[int __cdecl Apply_Options_Audio()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_Apply_Options_Audio();
+BindedHook Ivk_Apply_Options_Audio{ ZENFOR(0x0042B0F0, 0x0042E010, 0x0042D1C0, 0x0042D4E0), Hook_Apply_Options_Audio };
+int Hook_Apply_Options_Audio()
+{
+	int result = Ivk_Apply_Options_Audio();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

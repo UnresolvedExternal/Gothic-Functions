@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerInfo::CreateDistinctPlayer(): zCPlayerInfo*]]></Title>
+			<Shortcut><![CDATA[__zCPlayerInfo_CreateDistinctPlayer_0x00467CD0]]></Shortcut>
+			<Description><![CDATA[public: zCPlayerInfo* __thiscall zCPlayerInfo::CreateDistinctPlayer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerInfo_CreateDistinctPlayer : zCPlayerInfo { zCPlayerInfo* operator()(); };
+BindedHook Ivk_zCPlayerInfo_CreateDistinctPlayer{ ZENFOR(0x00462650, 0x0046A090, 0x004670A0, 0x00467CD0), &zCPlayerInfo_CreateDistinctPlayer::operator() };
+zCPlayerInfo* zCPlayerInfo_CreateDistinctPlayer::operator()()
+{
+	zCPlayerInfo* result = THISCALL(Ivk_zCPlayerInfo_CreateDistinctPlayer)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

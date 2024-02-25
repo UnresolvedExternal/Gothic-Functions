@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCZone*>::InsertAtPos(zCZone* const&, int): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCZone___InsertAtPos_0x00628B20]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCZone*>::InsertAtPos(zCZone* const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCZone___InsertAtPos : zCArray<zCZone*> { void operator()(zCZone* const&, int); };
+BindedHook Ivk_zCArray_zCZone___InsertAtPos{ ZENFOR(0x005FA350, 0x0061B930, 0x006213A0, 0x00628B20), &zCArray_zCZone___InsertAtPos::operator() };
+void zCArray_zCZone___InsertAtPos::operator()(zCZone* const& a0, int a1)
+{
+	THISCALL(Ivk_zCArray_zCZone___InsertAtPos)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

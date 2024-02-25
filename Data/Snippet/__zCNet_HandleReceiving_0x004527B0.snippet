@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::HandleReceiving(): int]]></Title>
+			<Shortcut><![CDATA[__zCNet_HandleReceiving_0x004527B0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCNet::HandleReceiving()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_HandleReceiving : zCNet { int operator()(); };
+BindedHook Ivk_zCNet_HandleReceiving{ ZENFOR(0x0044DF90, 0x00454690, 0x00452060, 0x004527B0), &zCNet_HandleReceiving::operator() };
+int zCNet_HandleReceiving::operator()()
+{
+	int result = THISCALL(Ivk_zCNet_HandleReceiving)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

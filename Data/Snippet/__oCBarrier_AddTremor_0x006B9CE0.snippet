@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCBarrier::AddTremor(zTRenderContext&): void]]></Title>
+			<Shortcut><![CDATA[__oCBarrier_AddTremor_0x006B9CE0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall oCBarrier::AddTremor(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCBarrier_AddTremor : oCBarrier { void operator()(zTRenderContext&); };
+BindedHook Ivk_oCBarrier_AddTremor{ ZENFOR(0x00630570, 0x00655E90, 0x0065D350, 0x006B9CE0), &oCBarrier_AddTremor::operator() };
+void oCBarrier_AddTremor::operator()(zTRenderContext& a0)
+{
+	THISCALL(Ivk_oCBarrier_AddTremor)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

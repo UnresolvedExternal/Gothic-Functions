@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCTransfer>::~zCArray<zCTransfer>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCTransfer___zCArray_zCTransfer__0x00600E70]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCTransfer>::~zCArray<zCTransfer>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1
+struct zCArray_zCTransfer__Destructor : zCArray<zCTransfer> { void operator()(); };
+BindedHook Ivk_zCArray_zCTransfer__Destructor{ ZENFOR(0x00600E70, 0x00000000, 0x00000000, 0x00000000), &zCArray_zCTransfer__Destructor::operator() };
+void zCArray_zCTransfer__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCTransfer__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

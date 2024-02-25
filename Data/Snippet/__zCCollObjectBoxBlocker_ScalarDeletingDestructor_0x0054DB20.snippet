@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectBoxBlocker::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectBoxBlocker_ScalarDeletingDestructor_0x0054DB20]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCCollObjectBoxBlocker::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectBoxBlocker_ScalarDeletingDestructor : zCCollObjectBoxBlocker { void* operator()(unsigned int); };
+BindedHook Ivk_zCCollObjectBoxBlocker_ScalarDeletingDestructor{ ZENFOR(0x00539670, 0x00550910, 0x00548900, 0x0054DB20), &zCCollObjectBoxBlocker_ScalarDeletingDestructor::operator() };
+void* zCCollObjectBoxBlocker_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCCollObjectBoxBlocker_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcFocus::~oCNpcFocus()]]></Title>
+			<Shortcut><![CDATA[__oCNpcFocus__oCNpcFocus_0x006BEDF0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCNpcFocus::~oCNpcFocus()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcFocus_Destructor : oCNpcFocus { void operator()(); };
+BindedHook Ivk_oCNpcFocus_Destructor{ ZENFOR(0x00635030, 0x0065B1D0, 0x00662460, 0x006BEDF0), &oCNpcFocus_Destructor::operator() };
+void oCNpcFocus_Destructor::operator()()
+{
+	THISCALL(Ivk_oCNpcFocus_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

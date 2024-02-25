@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInformationManager::Update(): void]]></Title>
+			<Shortcut><![CDATA[__oCInformationManager_Update_0x00660BB0]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall oCInformationManager::Update()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInformationManager_Update : oCInformationManager { void __fastcall operator()(); };
+BindedHook Ivk_oCInformationManager_Update{ ZENFOR(0x0072BE90, 0x0076A3E0, 0x00777990, 0x00660BB0), &oCInformationManager_Update::operator() };
+void __fastcall oCInformationManager_Update::operator()()
+{
+	THISCALL(Ivk_oCInformationManager_Update)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

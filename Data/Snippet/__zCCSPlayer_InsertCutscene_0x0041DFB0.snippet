@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPlayer::InsertCutscene(zCCSCutsceneContext*): void]]></Title>
+			<Shortcut><![CDATA[__zCCSPlayer_InsertCutscene_0x0041DFB0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSPlayer::InsertCutscene(zCCSCutsceneContext*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPlayer_InsertCutscene : zCCSPlayer { void operator()(zCCSCutsceneContext*); };
+BindedHook Ivk_zCCSPlayer_InsertCutscene{ ZENFOR(0x0041D9A0, 0x0041F9C0, 0x0041DC80, 0x0041DFB0), &zCCSPlayer_InsertCutscene::operator() };
+void zCCSPlayer_InsertCutscene::operator()(zCCSCutsceneContext* a0)
+{
+	THISCALL(Ivk_zCCSPlayer_InsertCutscene)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

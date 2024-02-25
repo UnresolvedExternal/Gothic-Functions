@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler::zCSkyControler()]]></Title>
+			<Shortcut><![CDATA[__zCSkyControler_zCSkyControler_0x005DF6B0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCSkyControler::zCSkyControler()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_zCSkyControler : zCSkyControler { zCSkyControler* operator()(); };
+BindedHook Ivk_zCSkyControler_zCSkyControler{ ZENFOR(0x005BA160, 0x005D7C90, 0x005D88F0, 0x005DF6B0), &zCSkyControler_zCSkyControler::operator() };
+zCSkyControler* zCSkyControler_zCSkyControler::operator()()
+{
+	zCSkyControler* result = THISCALL(Ivk_zCSkyControler_zCSkyControler)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

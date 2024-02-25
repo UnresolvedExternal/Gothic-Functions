@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIBase::AICollisionResponseSelfDetected(zVEC3 const&, int&): void]]></Title>
+			<Shortcut><![CDATA[__zCAIBase_AICollisionResponseSelfDetected_0x0048BD50]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCAIBase::AICollisionResponseSelfDetected(zVEC3 const&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIBase_AICollisionResponseSelfDetected : zCAIBase { void operator()(zVEC3 const&, int&); };
+BindedHook Ivk_zCAIBase_AICollisionResponseSelfDetected{ ZENFOR(0x00484110, 0x0048F230, 0x0048A3F0, 0x0048BD50), &zCAIBase_AICollisionResponseSelfDetected::operator() };
+void zCAIBase_AICollisionResponseSelfDetected::operator()(zVEC3 const& a0, int& a1)
+{
+	THISCALL(Ivk_zCAIBase_AICollisionResponseSelfDetected)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

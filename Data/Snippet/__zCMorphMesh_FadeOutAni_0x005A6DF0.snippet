@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::FadeOutAni(zCMorphMeshAni*): void]]></Title>
+			<Shortcut><![CDATA[__zCMorphMesh_FadeOutAni_0x005A6DF0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCMorphMesh::FadeOutAni(zCMorphMeshAni*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_FadeOutAni : zCMorphMesh { void operator()(zCMorphMeshAni*); };
+BindedHook Ivk_zCMorphMesh_FadeOutAni{ ZENFOR(0x00587450, 0x005A2420, 0x005A1890, 0x005A6DF0), &zCMorphMesh_FadeOutAni::operator() };
+void zCMorphMesh_FadeOutAni::operator()(zCMorphMeshAni* a0)
+{
+	THISCALL(Ivk_zCMorphMesh_FadeOutAni)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

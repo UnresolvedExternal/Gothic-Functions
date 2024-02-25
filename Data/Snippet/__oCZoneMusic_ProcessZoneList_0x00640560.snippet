@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCZoneMusic::ProcessZoneList(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*): void]]></Title>
+			<Shortcut><![CDATA[__oCZoneMusic_ProcessZoneList_0x00640560]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCZoneMusic::ProcessZoneList(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCZoneMusic_ProcessZoneList : oCZoneMusic { void operator()(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*); };
+BindedHook Ivk_oCZoneMusic_ProcessZoneList{ ZENFOR(0x0070AE80, 0x00745D40, 0x00754FC0, 0x00640560), &oCZoneMusic_ProcessZoneList::operator() };
+void oCZoneMusic_ProcessZoneList::operator()(zCArraySort<zCZone*>const& a0, zCArraySort<zCZone*>const& a1, zCWorld* a2)
+{
+	THISCALL(Ivk_oCZoneMusic_ProcessZoneList)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

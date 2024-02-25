@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[istream_withassign::~istream_withassign()]]></Title>
+			<Shortcut><![CDATA[__istream_withassign__istream_withassign_0x007CE6D3]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall istream_withassign::~istream_withassign()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct istream_withassign_Destructor : istream_withassign { void operator()(); };
+BindedHook Ivk_istream_withassign_Destructor{ ZENFOR(0x00774D29, 0x007B8AE9, 0x007C2213, 0x007CE6D3), &istream_withassign_Destructor::operator() };
+void istream_withassign_Destructor::operator()()
+{
+	THISCALL(Ivk_istream_withassign_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::CloseSteal(): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_CloseSteal_0x00762950]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::CloseSteal()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_CloseSteal : oCNpc { void operator()(); };
+BindedHook Ivk_oCNpc_CloseSteal{ ZENFOR(0x006BB860, 0x006F0860, 0x00703410, 0x00762950), &oCNpc_CloseSteal::operator() };
+void oCNpc_CloseSteal::operator()()
+{
+	THISCALL(Ivk_oCNpc_CloseSteal)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

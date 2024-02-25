@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitiveScaleTrans::DrawVirtual(): void [const]]]></Title>
+			<Shortcut><![CDATA[__zCConvexPrimitiveScaleTrans_DrawVirtual_0x00555990]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCConvexPrimitiveScaleTrans::DrawVirtual()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConvexPrimitiveScaleTrans_DrawVirtual : zCConvexPrimitiveScaleTrans { void operator()() const; };
+BindedHook Ivk_zCConvexPrimitiveScaleTrans_DrawVirtual{ ZENFOR(0x00541240, 0x00558B60, 0x00550770, 0x00555990), &zCConvexPrimitiveScaleTrans_DrawVirtual::operator() };
+void zCConvexPrimitiveScaleTrans_DrawVirtual::operator()() const
+{
+	THISCALL(Ivk_zCConvexPrimitiveScaleTrans_DrawVirtual)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

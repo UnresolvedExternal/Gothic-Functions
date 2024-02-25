@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCDummyVobGenerator::~oCDummyVobGenerator()]]></Title>
+			<Shortcut><![CDATA[__oCDummyVobGenerator__oCDummyVobGenerator_0x0071AE00]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall oCDummyVobGenerator::~oCDummyVobGenerator()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCDummyVobGenerator_Destructor : oCDummyVobGenerator { void operator()(); };
+BindedHook Ivk_oCDummyVobGenerator_Destructor{ ZENFOR(0x00679C70, 0x006A82D0, 0x006BCD70, 0x0071AE00), &oCDummyVobGenerator_Destructor::operator() };
+void oCDummyVobGenerator_Destructor::operator()()
+{
+	THISCALL(Ivk_oCDummyVobGenerator_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspTree::GetFileVersion(): unsigned short]]></Title>
+			<Shortcut><![CDATA[__zCBspTree_GetFileVersion_0x00537D90]]></Shortcut>
+			<Description><![CDATA[public: static unsigned short __cdecl zCBspTree::GetFileVersion()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned short Hook_zCBspTree_GetFileVersion();
+BindedHook Ivk_zCBspTree_GetFileVersion{ ZENFOR(0x00524220, 0x0053A540, 0x00534A30, 0x00537D90), Hook_zCBspTree_GetFileVersion };
+unsigned short Hook_zCBspTree_GetFileVersion()
+{
+	unsigned short result = Ivk_zCBspTree_GetFileVersion();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMover::DoClose(): void]]></Title>
+			<Shortcut><![CDATA[__zCMover_DoClose_0x00612770]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCMover::DoClose()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMover_DoClose : zCMover { void operator()(); };
+BindedHook Ivk_zCMover_DoClose{ ZENFOR(0x005E5840, 0x00605A00, 0x0060B0B0, 0x00612770), &zCMover_DoClose::operator() };
+void zCMover_DoClose::operator()()
+{
+	THISCALL(Ivk_zCMover_DoClose)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

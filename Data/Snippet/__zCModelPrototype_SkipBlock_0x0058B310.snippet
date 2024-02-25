@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::SkipBlock(): void]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_SkipBlock_0x0058B310]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::SkipBlock()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_SkipBlock : zCModelPrototype { void operator()(); };
+BindedHook Ivk_zCModelPrototype_SkipBlock{ ZENFOR(0x00570BD0, 0x0058A120, 0x00585DB0, 0x0058B310), &zCModelPrototype_SkipBlock::operator() };
+void zCModelPrototype_SkipBlock::operator()()
+{
+	THISCALL(Ivk_zCModelPrototype_SkipBlock)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

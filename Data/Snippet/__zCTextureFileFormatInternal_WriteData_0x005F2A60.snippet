@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureFileFormatInternal::WriteData(zFILE&, zCTextureExchange*): int]]></Title>
+			<Shortcut><![CDATA[__zCTextureFileFormatInternal_WriteData_0x005F2A60]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCTextureFileFormatInternal::WriteData(zFILE&, zCTextureExchange*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureFileFormatInternal_WriteData : zCTextureFileFormatInternal { int operator()(zFILE&, zCTextureExchange*); };
+BindedHook Ivk_zCTextureFileFormatInternal_WriteData{ ZENFOR(0x005C7F30, 0x005E6730, 0x005EBCB0, 0x005F2A60), &zCTextureFileFormatInternal_WriteData::operator() };
+int zCTextureFileFormatInternal_WriteData::operator()(zFILE& a0, zCTextureExchange* a1)
+{
+	int result = THISCALL(Ivk_zCTextureFileFormatInternal_WriteData)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

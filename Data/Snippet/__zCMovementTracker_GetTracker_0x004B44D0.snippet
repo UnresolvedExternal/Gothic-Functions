@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::GetTracker(): zCMovementTracker*]]></Title>
+			<Shortcut><![CDATA[__zCMovementTracker_GetTracker_0x004B44D0]]></Shortcut>
+			<Description><![CDATA[public: static zCMovementTracker* __cdecl zCMovementTracker::GetTracker()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCMovementTracker* Hook_zCMovementTracker_GetTracker();
+BindedHook Ivk_zCMovementTracker_GetTracker{ ZENFOR(0x004ABB60, 0x004B9A80, 0x004B1FA0, 0x004B44D0), Hook_zCMovementTracker_GetTracker };
+zCMovementTracker* Hook_zCMovementTracker_GetTracker()
+{
+	zCMovementTracker* result = Ivk_zCMovementTracker_GetTracker();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

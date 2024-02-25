@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Indoor::SetFarZScalability(float): void]]></Title>
+			<Shortcut><![CDATA[__zCSkyControler_Indoor_SetFarZScalability_0x005E0790]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCSkyControler_Indoor::SetFarZScalability(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Indoor_SetFarZScalability : zCSkyControler_Indoor { void operator()(float); };
+BindedHook Ivk_zCSkyControler_Indoor_SetFarZScalability{ ZENFOR(0x005BB720, 0x005D92B0, 0x005D99E0, 0x005E0790), &zCSkyControler_Indoor_SetFarZScalability::operator() };
+void zCSkyControler_Indoor_SetFarZScalability::operator()(float a0)
+{
+	THISCALL(Ivk_zCSkyControler_Indoor_SetFarZScalability)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

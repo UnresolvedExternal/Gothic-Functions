@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duDeviceNode::~CD3duDeviceNode()]]></Title>
+			<Shortcut><![CDATA[__CD3duDeviceNode__CD3duDeviceNode_0x007B73E9]]></Shortcut>
+			<Description><![CDATA[public: __thiscall CD3duDeviceNode::~CD3duDeviceNode()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duDeviceNode_Destructor : CD3duDeviceNode { void operator()(); };
+BindedHook Ivk_CD3duDeviceNode_Destructor{ ZENFOR(0x0075DCF5, 0x007A1F3E, 0x007AAF23, 0x007B73E9), &CD3duDeviceNode_Destructor::operator() };
+void CD3duDeviceNode_Destructor::operator()()
+{
+	THISCALL(Ivk_CD3duDeviceNode_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCRtnEntry::oCRtnEntry(int, int, int, int, int, zSTRING const&, int)]]></Title>
+			<Shortcut><![CDATA[__oCRtnEntry_oCRtnEntry_0x00774300]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCRtnEntry::oCRtnEntry(int, int, int, int, int, zSTRING const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCRtnEntry_oCRtnEntry : oCRtnEntry { oCRtnEntry* operator()(int, int, int, int, int, zSTRING const&, int); };
+BindedHook Ivk_oCRtnEntry_oCRtnEntry{ ZENFOR(0x006CC5A0, 0x00702C30, 0x00714D70, 0x00774300), &oCRtnEntry_oCRtnEntry::operator() };
+oCRtnEntry* oCRtnEntry_oCRtnEntry::operator()(int a0, int a1, int a2, int a3, int a4, zSTRING const& a5, int a6)
+{
+	oCRtnEntry* result = THISCALL(Ivk_oCRtnEntry_oCRtnEntry)(a0, a1, a2, a3, a4, a5, a6);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

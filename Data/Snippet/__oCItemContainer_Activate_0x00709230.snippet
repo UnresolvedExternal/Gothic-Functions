@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::Activate(): void]]></Title>
+			<Shortcut><![CDATA[__oCItemContainer_Activate_0x00709230]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCItemContainer::Activate()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemContainer_Activate : oCItemContainer { void operator()(); };
+BindedHook Ivk_oCItemContainer_Activate{ ZENFOR(0x00668F60, 0x00696AE0, 0x006AB740, 0x00709230), &oCItemContainer_Activate::operator() };
+void oCItemContainer_Activate::operator()()
+{
+	THISCALL(Ivk_oCItemContainer_Activate)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

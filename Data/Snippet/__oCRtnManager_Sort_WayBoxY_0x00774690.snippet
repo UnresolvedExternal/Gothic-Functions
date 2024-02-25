@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCRtnManager::Sort_WayBoxY(oCRtnManager::TRtn_WayBox*, oCRtnManager::TRtn_WayBox*): int]]></Title>
+			<Shortcut><![CDATA[__oCRtnManager_Sort_WayBoxY_0x00774690]]></Shortcut>
+			<Description><![CDATA[private: static int __cdecl oCRtnManager::Sort_WayBoxY(oCRtnManager::TRtn_WayBox*, oCRtnManager::TRtn_WayBox*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_oCRtnManager_Sort_WayBoxY(oCRtnManager::TRtn_WayBox*, oCRtnManager::TRtn_WayBox*);
+BindedHook Ivk_oCRtnManager_Sort_WayBoxY{ ZENFOR(0x006CC930, 0x00702FC0, 0x00715100, 0x00774690), Hook_oCRtnManager_Sort_WayBoxY };
+int Hook_oCRtnManager_Sort_WayBoxY(oCRtnManager::TRtn_WayBox* a0, oCRtnManager::TRtn_WayBox* a1)
+{
+	int result = Ivk_oCRtnManager_Sort_WayBoxY(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

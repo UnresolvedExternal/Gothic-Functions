@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlock::Play(zCArray<zCEventManager*>const&, float, float): void]]></Title>
+			<Shortcut><![CDATA[__zCCSBlock_Play_0x0040D6D0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSBlock::Play(zCArray<zCEventManager*>const&, float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlock_Play : zCCSBlock { void operator()(zCArray<zCEventManager*>const&, float, float); };
+BindedHook Ivk_zCCSBlock_Play{ ZENFOR(0x0040D2E0, 0x0040E580, 0x0040D6D0, 0x0040D6D0), &zCCSBlock_Play::operator() };
+void zCCSBlock_Play::operator()(zCArray<zCEventManager*>const& a0, float a1, float a2)
+{
+	THISCALL(Ivk_zCCSBlock_Play)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

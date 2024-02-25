@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::LightPolyList(zCArray<zCVobLight*>const&, zCPolygon**, int, zMAT4*): void]]></Title>
+			<Shortcut><![CDATA[__zCPolygon_LightPolyList_0x005B8B30]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCPolygon::LightPolyList(zCArray<zCVobLight*>const&, zCPolygon**, int, zMAT4*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCPolygon_LightPolyList(zCArray<zCVobLight*>const&, zCPolygon**, int, zMAT4*);
+BindedHook Ivk_zCPolygon_LightPolyList{ ZENFOR(0x00596A90, 0x005B2A40, 0x005B2FC0, 0x005B8B30), Hook_zCPolygon_LightPolyList };
+void Hook_zCPolygon_LightPolyList(zCArray<zCVobLight*>const& a0, zCPolygon** a1, int a2, zMAT4* a3)
+{
+	Ivk_zCPolygon_LightPolyList(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

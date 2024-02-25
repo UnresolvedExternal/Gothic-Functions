@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCGfx::LoadTga(zSTRING const&): TGfx_Gfx*]]></Title>
+			<Shortcut><![CDATA[__zCGfx_LoadTga_0x0078B510]]></Shortcut>
+			<Description><![CDATA[private: TGfx_Gfx* __thiscall zCGfx::LoadTga(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCGfx_LoadTga : zCGfx { TGfx_Gfx* operator()(zSTRING const&); };
+BindedHook Ivk_zCGfx_LoadTga{ ZENFOR(0x006E2240, 0x0071A950, 0x0072BAD0, 0x0078B510), &zCGfx_LoadTga::operator() };
+TGfx_Gfx* zCGfx_LoadTga::operator()(zSTRING const& a0)
+{
+	TGfx_Gfx* result = THISCALL(Ivk_zCGfx_LoadTga)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

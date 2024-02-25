@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCObjectGenerator::SetObjectSpeed(float): void]]></Title>
+			<Shortcut><![CDATA[__oCObjectGenerator_SetObjectSpeed_0x0043CEB0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCObjectGenerator::SetObjectSpeed(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCObjectGenerator_SetObjectSpeed : oCObjectGenerator { void operator()(float); };
+BindedHook Ivk_oCObjectGenerator_SetObjectSpeed{ ZENFOR(0x00439420, 0x0043DEB0, 0x0043C880, 0x0043CEB0), &oCObjectGenerator_SetObjectSpeed::operator() };
+void oCObjectGenerator_SetObjectSpeed::operator()(float a0)
+{
+	THISCALL(Ivk_oCObjectGenerator_SetObjectSpeed)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

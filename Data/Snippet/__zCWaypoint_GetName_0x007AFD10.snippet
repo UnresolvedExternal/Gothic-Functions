@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWaypoint::GetName(): zSTRING const&]]></Title>
+			<Shortcut><![CDATA[__zCWaypoint_GetName_0x007AFD10]]></Shortcut>
+			<Description><![CDATA[public: zSTRING const& __thiscall zCWaypoint::GetName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWaypoint_GetName : zCWaypoint { zSTRING const& operator()(); };
+BindedHook Ivk_zCWaypoint_GetName{ ZENFOR(0x00706110, 0x00740C00, 0x00750210, 0x007AFD10), &zCWaypoint_GetName::operator() };
+zSTRING const& zCWaypoint_GetName::operator()()
+{
+	zSTRING const& result = THISCALL(Ivk_zCWaypoint_GetName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

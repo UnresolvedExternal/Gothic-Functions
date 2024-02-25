@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCOutdoorRainFX::zSParticle*>::~zCArray<zCOutdoorRainFX::zSParticle*>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCOutdoorRainFX__zSParticle____zCArray_zCOutdoorRainFX_0x005EBA90]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCOutdoorRainFX::zSParticle*>::~zCArray<zCOutdoorRainFX::zSParticle*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCOutdoorRainFX__zSParticle___Destructor : zCArray<zCOutdoorRainFX::zSParticle*> { void operator()(); };
+BindedHook Ivk_zCArray_zCOutdoorRainFX__zSParticle___Destructor{ ZENFOR(0x005C13E0, 0x005DF300, 0x005E4CE0, 0x005EBA90), &zCArray_zCOutdoorRainFX__zSParticle___Destructor::operator() };
+void zCArray_zCOutdoorRainFX__zSParticle___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCOutdoorRainFX__zSParticle___Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

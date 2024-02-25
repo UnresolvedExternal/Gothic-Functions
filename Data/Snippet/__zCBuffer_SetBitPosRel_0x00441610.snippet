@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::SetBitPosRel(int): unsigned long]]></Title>
+			<Shortcut><![CDATA[__zCBuffer_SetBitPosRel_0x00441610]]></Shortcut>
+			<Description><![CDATA[public: unsigned long __thiscall zCBuffer::SetBitPosRel(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_SetBitPosRel : zCBuffer { unsigned long operator()(int); };
+BindedHook Ivk_zCBuffer_SetBitPosRel{ ZENFOR(0x0043D810, 0x00442A20, 0x00440FE0, 0x00441610), &zCBuffer_SetBitPosRel::operator() };
+unsigned long zCBuffer_SetBitPosRel::operator()(int a0)
+{
+	unsigned long result = THISCALL(Ivk_zCBuffer_SetBitPosRel)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

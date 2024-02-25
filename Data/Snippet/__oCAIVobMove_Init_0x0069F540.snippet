@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIVobMove::Init(zCVob*, zCVob*, zVEC3&, float, float, zMAT4*): void]]></Title>
+			<Shortcut><![CDATA[__oCAIVobMove_Init_0x0069F540]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCAIVobMove::Init(zCVob*, zCVob*, zVEC3&, float, float, zMAT4*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIVobMove_Init : oCAIVobMove { void operator()(zCVob*, zCVob*, zVEC3&, float, float, zMAT4*); };
+BindedHook Ivk_oCAIVobMove_Init{ ZENFOR(0x006179E0, 0x0063AC80, 0x00642D70, 0x0069F540), &oCAIVobMove_Init::operator() };
+void oCAIVobMove_Init::operator()(zCVob* a0, zCVob* a1, zVEC3& a2, float a3, float a4, zMAT4* a5)
+{
+	THISCALL(Ivk_oCAIVobMove_Init)(a0, a1, a2, a3, a4, a5);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

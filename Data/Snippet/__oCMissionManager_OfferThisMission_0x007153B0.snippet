@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMissionManager::OfferThisMission(oCNpc*, oCNpc*, int): oCMission*]]></Title>
+			<Shortcut><![CDATA[__oCMissionManager_OfferThisMission_0x007153B0]]></Shortcut>
+			<Description><![CDATA[public: oCMission* __thiscall oCMissionManager::OfferThisMission(oCNpc*, oCNpc*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMissionManager_OfferThisMission : oCMissionManager { oCMission* operator()(oCNpc*, oCNpc*, int); };
+BindedHook Ivk_oCMissionManager_OfferThisMission{ ZENFOR(0x006741D0, 0x006A2260, 0x006B7320, 0x007153B0), &oCMissionManager_OfferThisMission::operator() };
+oCMission* oCMissionManager_OfferThisMission::operator()(oCNpc* a0, oCNpc* a1, int a2)
+{
+	oCMission* result = THISCALL(Ivk_oCMissionManager_OfferThisMission)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

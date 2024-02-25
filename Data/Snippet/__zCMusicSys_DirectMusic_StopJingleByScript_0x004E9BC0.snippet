@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSys_DirectMusic::StopJingleByScript(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCMusicSys_DirectMusic_StopJingleByScript_0x004E9BC0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCMusicSys_DirectMusic::StopJingleByScript(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSys_DirectMusic_StopJingleByScript : zCMusicSys_DirectMusic { void operator()(zSTRING const&); };
+BindedHook Ivk_zCMusicSys_DirectMusic_StopJingleByScript{ ZENFOR(0x004DC880, 0x004EDD40, 0x004E70B0, 0x004E9BC0), &zCMusicSys_DirectMusic_StopJingleByScript::operator() };
+void zCMusicSys_DirectMusic_StopJingleByScript::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCMusicSys_DirectMusic_StopJingleByScript)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

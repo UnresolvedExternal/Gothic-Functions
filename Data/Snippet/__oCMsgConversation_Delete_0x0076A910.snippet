@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgConversation::Delete(): void]]></Title>
+			<Shortcut><![CDATA[__oCMsgConversation_Delete_0x0076A910]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMsgConversation::Delete()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgConversation_Delete : oCMsgConversation { void operator()(); };
+BindedHook Ivk_oCMsgConversation_Delete{ ZENFOR(0x006C3770, 0x006F8B80, 0x0070B3D0, 0x0076A910), &oCMsgConversation_Delete::operator() };
+void oCMsgConversation_Delete::operator()()
+{
+	THISCALL(Ivk_oCMsgConversation_Delete)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

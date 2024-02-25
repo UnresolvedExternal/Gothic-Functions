@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::zCStaticPfxList::TouchPfx(zCParticleFX*): void]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX__zCStaticPfxList_TouchPfx_0x005AD330]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCParticleFX::zCStaticPfxList::TouchPfx(zCParticleFX*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX__zCStaticPfxList_TouchPfx : zCParticleFX::zCStaticPfxList { void operator()(zCParticleFX*); };
+BindedHook Ivk_zCParticleFX__zCStaticPfxList_TouchPfx{ ZENFOR(0x0058D590, 0x005A8B30, 0x005A7CB0, 0x005AD330), &zCParticleFX__zCStaticPfxList_TouchPfx::operator() };
+void zCParticleFX__zCStaticPfxList_TouchPfx::operator()(zCParticleFX* a0)
+{
+	THISCALL(Ivk_zCParticleFX__zCStaticPfxList_TouchPfx)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

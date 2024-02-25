@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEvMsgCutscene::IsDeleted(): int]]></Title>
+			<Shortcut><![CDATA[__zCEvMsgCutscene_IsDeleted_0x0040B8A0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCEvMsgCutscene::IsDeleted()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEvMsgCutscene_IsDeleted : zCEvMsgCutscene { int operator()(); };
+BindedHook Ivk_zCEvMsgCutscene_IsDeleted{ ZENFOR(0x0040B580, 0x0040C6B0, 0x0040B8A0, 0x0040B8A0), &zCEvMsgCutscene_IsDeleted::operator() };
+int zCEvMsgCutscene_IsDeleted::operator()()
+{
+	int result = THISCALL(Ivk_zCEvMsgCutscene_IsDeleted)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

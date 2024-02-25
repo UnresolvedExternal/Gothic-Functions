@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::EV_SetDuration(zCCSCamera_EventMsg*): int]]></Title>
+			<Shortcut><![CDATA[__zCCSCamera_EV_SetDuration_0x004C13D0]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCCSCamera::EV_SetDuration(zCCSCamera_EventMsg*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_EV_SetDuration : zCCSCamera { int operator()(zCCSCamera_EventMsg*); };
+BindedHook Ivk_zCCSCamera_EV_SetDuration{ ZENFOR(0x004B80D0, 0x004C73C0, 0x004BEE60, 0x004C13D0), &zCCSCamera_EV_SetDuration::operator() };
+int zCCSCamera_EV_SetDuration::operator()(zCCSCamera_EventMsg* a0)
+{
+	int result = THISCALL(Ivk_zCCSCamera_EV_SetDuration)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

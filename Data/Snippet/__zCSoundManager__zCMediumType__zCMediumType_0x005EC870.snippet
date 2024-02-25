@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundManager::zCMediumType::~zCMediumType()]]></Title>
+			<Shortcut><![CDATA[__zCSoundManager__zCMediumType__zCMediumType_0x005EC870]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCSoundManager::zCMediumType::~zCMediumType()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundManager__zCMediumType_Destructor : zCSoundManager::zCMediumType { void operator()(); };
+BindedHook Ivk_zCSoundManager__zCMediumType_Destructor{ ZENFOR(0x005C1F80, 0x005DFF60, 0x005E5AC0, 0x005EC870), &zCSoundManager__zCMediumType_Destructor::operator() };
+void zCSoundManager__zCMediumType_Destructor::operator()()
+{
+	THISCALL(Ivk_zCSoundManager__zCMediumType_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPositionKey::SetMat(zMAT4 const&): void]]></Title>
+			<Shortcut><![CDATA[__zCPositionKey_SetMat_0x00490F20]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCPositionKey::SetMat(zMAT4 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct zCPositionKey_SetMat : zCPositionKey { void operator()(zMAT4 const&); };
+BindedHook Ivk_zCPositionKey_SetMat{ ZENFOR(0x004890E0, 0x00000000, 0x0048F580, 0x00490F20), &zCPositionKey_SetMat::operator() };
+void zCPositionKey_SetMat::operator()(zMAT4 const& a0)
+{
+	THISCALL(Ivk_zCPositionKey_SetMat)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

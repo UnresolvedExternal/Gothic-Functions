@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPose::SetInertiaRot(float): void]]></Title>
+			<Shortcut><![CDATA[__zCPose_SetInertiaRot_0x004D90E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCPose::SetInertiaRot(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPose_SetInertiaRot : zCPose { void operator()(float); };
+BindedHook Ivk_zCPose_SetInertiaRot{ ZENFOR(0x004CC4F0, 0x004DCC10, 0x004D6B20, 0x004D90E0), &zCPose_SetInertiaRot::operator() };
+void zCPose_SetInertiaRot::operator()(float a0)
+{
+	THISCALL(Ivk_zCPose_SetInertiaRot)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

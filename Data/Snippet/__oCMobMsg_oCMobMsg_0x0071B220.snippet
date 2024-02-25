@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobMsg::oCMobMsg(oCMobMsg::TMobMsgSubType, oCNpc*)]]></Title>
+			<Shortcut><![CDATA[__oCMobMsg_oCMobMsg_0x0071B220]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCMobMsg::oCMobMsg(oCMobMsg::TMobMsgSubType, oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobMsg_oCMobMsg : oCMobMsg { oCMobMsg* operator()(oCMobMsg::TMobMsgSubType, oCNpc*); };
+BindedHook Ivk_oCMobMsg_oCMobMsg{ ZENFOR(0x0067A040, 0x006A86B0, 0x006BD190, 0x0071B220), &oCMobMsg_oCMobMsg::operator() };
+oCMobMsg* oCMobMsg_oCMobMsg::operator()(oCMobMsg::TMobMsgSubType a0, oCNpc* a1)
+{
+	oCMobMsg* result = THISCALL(Ivk_oCMobMsg_oCMobMsg)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

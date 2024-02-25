@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::ClipQuadPolyToWorldPoly(zCQuadMark::zTQuadMarkPoly&, zCPolygon*, zCArray<int>&): void]]></Title>
+			<Shortcut><![CDATA[__zCQuadMark_ClipQuadPolyToWorldPoly_0x005D0FF0]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCQuadMark::ClipQuadPolyToWorldPoly(zCQuadMark::zTQuadMarkPoly&, zCPolygon*, zCArray<int>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_ClipQuadPolyToWorldPoly : zCQuadMark { void operator()(zCQuadMark::zTQuadMarkPoly&, zCPolygon*, zCArray<int>&); };
+BindedHook Ivk_zCQuadMark_ClipQuadPolyToWorldPoly{ ZENFOR(0x005ABEC0, 0x005C8C20, 0x005CA450, 0x005D0FF0), &zCQuadMark_ClipQuadPolyToWorldPoly::operator() };
+void zCQuadMark_ClipQuadPolyToWorldPoly::operator()(zCQuadMark::zTQuadMarkPoly& a0, zCPolygon* a1, zCArray<int>& a2)
+{
+	THISCALL(Ivk_zCQuadMark_ClipQuadPolyToWorldPoly)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

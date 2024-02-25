@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[GetFirstStackTraceString(unsigned long, _EXCEPTION_POINTERS*): char const*]]></Title>
+			<Shortcut><![CDATA[__GetFirstStackTraceString_0x007B4732]]></Shortcut>
+			<Description><![CDATA[char const* __stdcall GetFirstStackTraceString(unsigned long, _EXCEPTION_POINTERS*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[char const* __stdcall Hook_GetFirstStackTraceString(unsigned long, _EXCEPTION_POINTERS*);
+BindedHook Ivk_GetFirstStackTraceString{ ZENFOR(0x0075B49A, 0x0079DDC0, 0x007A826C, 0x007B4732), Hook_GetFirstStackTraceString };
+char const* __stdcall Hook_GetFirstStackTraceString(unsigned long a0, _EXCEPTION_POINTERS* a1)
+{
+	char const* result = Ivk_GetFirstStackTraceString(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::GetLightColorDyn(): zCOLOR]]></Title>
+			<Shortcut><![CDATA[__zCVob_GetLightColorDyn_0x00600470]]></Shortcut>
+			<Description><![CDATA[public: zCOLOR __thiscall zCVob::GetLightColorDyn()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_GetLightColorDyn : zCVob { zCOLOR operator()(); };
+BindedHook Ivk_zCVob_GetLightColorDyn{ ZENFOR(0x005D4FE0, 0x005F43C0, 0x005F9670, 0x00600470), &zCVob_GetLightColorDyn::operator() };
+zCOLOR zCVob_GetLightColorDyn::operator()()
+{
+	zCOLOR result = THISCALL(Ivk_zCVob_GetLightColorDyn)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

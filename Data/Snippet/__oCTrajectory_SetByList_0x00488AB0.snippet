@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTrajectory::SetByList(zCArray<zCVob*>): void]]></Title>
+			<Shortcut><![CDATA[__oCTrajectory_SetByList_0x00488AB0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCTrajectory::SetByList(zCArray<zCVob*>)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTrajectory_SetByList : oCTrajectory { void operator()(zCArray<zCVob*>); };
+BindedHook Ivk_oCTrajectory_SetByList{ ZENFOR(0x004810D0, 0x0048BF80, 0x00487450, 0x00488AB0), &oCTrajectory_SetByList::operator() };
+void oCTrajectory_SetByList::operator()(zCArray<zCVob*> a0)
+{
+	THISCALL(Ivk_oCTrajectory_SetByList)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSystemInfo::AnalyseGcard(): void]]></Title>
+			<Shortcut><![CDATA[__zCSystemInfo_AnalyseGcard_0x0046DA80]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCSystemInfo::AnalyseGcard()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSystemInfo_AnalyseGcard : zCSystemInfo { void operator()(); };
+BindedHook Ivk_zCSystemInfo_AnalyseGcard{ ZENFOR(0x004688B0, 0x00470880, 0x0046CE50, 0x0046DA80), &zCSystemInfo_AnalyseGcard::operator() };
+void zCSystemInfo_AnalyseGcard::operator()()
+{
+	THISCALL(Ivk_zCSystemInfo_AnalyseGcard)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

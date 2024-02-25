@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelMeshLib::~zCModelMeshLib()]]></Title>
+			<Shortcut><![CDATA[__zCModelMeshLib__zCModelMeshLib_0x0059EFC0]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall zCModelMeshLib::~zCModelMeshLib()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelMeshLib_Destructor : zCModelMeshLib { void operator()(); };
+BindedHook Ivk_zCModelMeshLib_Destructor{ ZENFOR(0x0057F4A0, 0x00599E30, 0x00599A60, 0x0059EFC0), &zCModelMeshLib_Destructor::operator() };
+void zCModelMeshLib_Destructor::operator()()
+{
+	THISCALL(Ivk_zCModelMeshLib_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::DebugMarkOccluderPolys(): void]]></Title>
+			<Shortcut><![CDATA[__zCWorld_DebugMarkOccluderPolys_0x006263D0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCWorld::DebugMarkOccluderPolys()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_DebugMarkOccluderPolys : zCWorld { void operator()(); };
+BindedHook Ivk_zCWorld_DebugMarkOccluderPolys{ ZENFOR(0x005F7D70, 0x00618F40, 0x0061EC40, 0x006263D0), &zCWorld_DebugMarkOccluderPolys::operator() };
+void zCWorld_DebugMarkOccluderPolys::operator()()
+{
+	THISCALL(Ivk_zCWorld_DebugMarkOccluderPolys)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

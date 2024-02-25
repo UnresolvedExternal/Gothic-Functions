@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[D3DXVec3Cross(D3DXVECTOR3*, D3DXVECTOR3 const*, D3DXVECTOR3 const*): D3DXVECTOR3*]]></Title>
+			<Shortcut><![CDATA[__D3DXVec3Cross_0x007C0C40]]></Shortcut>
+			<Description><![CDATA[D3DXVECTOR3* __cdecl D3DXVec3Cross(D3DXVECTOR3*, D3DXVECTOR3 const*, D3DXVECTOR3 const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[D3DXVECTOR3* Hook_D3DXVec3Cross(D3DXVECTOR3*, D3DXVECTOR3 const*, D3DXVECTOR3 const*);
+BindedHook Ivk_D3DXVec3Cross{ ZENFOR(0x0076754C, 0x007AF8AD, 0x007B477A, 0x007C0C40), Hook_D3DXVec3Cross };
+D3DXVECTOR3* Hook_D3DXVec3Cross(D3DXVECTOR3* a0, D3DXVECTOR3 const* a1, D3DXVECTOR3 const* a2)
+{
+	D3DXVECTOR3* result = Ivk_D3DXVec3Cross(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

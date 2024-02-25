@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::ClipToPlane_Occluder(zCVertex**, int, zCVertex**, int&, zTPlane const&): int]]></Title>
+			<Shortcut><![CDATA[__zCPolygon_ClipToPlane_Occluder_0x005B7790]]></Shortcut>
+			<Description><![CDATA[public: int __fastcall zCPolygon::ClipToPlane_Occluder(zCVertex**, int, zCVertex**, int&, zTPlane const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCPolygon_ClipToPlane_Occluder : zCPolygon { int __fastcall operator()(zCVertex**, int, zCVertex**, int&, zTPlane const&); };
+BindedHook Ivk_zCPolygon_ClipToPlane_Occluder{ ZENFOR(0x00000000, 0x00000000, 0x005B1C20, 0x005B7790), &zCPolygon_ClipToPlane_Occluder::operator() };
+int __fastcall zCPolygon_ClipToPlane_Occluder::operator()(zCVertex** a0, int a1, zCVertex** a2, int& a3, zTPlane const& a4)
+{
+	int result = THISCALL(Ivk_zCPolygon_ClipToPlane_Occluder)(a0, a1, a2, a3, a4);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

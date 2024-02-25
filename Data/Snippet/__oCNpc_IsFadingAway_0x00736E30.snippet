@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsFadingAway(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_IsFadingAway_0x00736E30]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::IsFadingAway()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsFadingAway : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_IsFadingAway{ ZENFOR(0x00693A60, 0x006C5210, 0x006D86D0, 0x00736E30), &oCNpc_IsFadingAway::operator() };
+int oCNpc_IsFadingAway::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_IsFadingAway)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

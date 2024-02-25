@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_TreeNode::SetNext(zCPar_TreeNode*): void]]></Title>
+			<Shortcut><![CDATA[__zCPar_TreeNode_SetNext_0x00797C80]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCPar_TreeNode::SetNext(zCPar_TreeNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_TreeNode_SetNext : zCPar_TreeNode { void operator()(zCPar_TreeNode*); };
+BindedHook Ivk_zCPar_TreeNode_SetNext{ ZENFOR(0x006EE140, 0x00727790, 0x00738240, 0x00797C80), &zCPar_TreeNode_SetNext::operator() };
+void zCPar_TreeNode_SetNext::operator()(zCPar_TreeNode* a0)
+{
+	THISCALL(Ivk_zCPar_TreeNode_SetNext)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSystemInfo::AnalyseNow(): void]]></Title>
+			<Shortcut><![CDATA[__oCSystemInfo_AnalyseNow_0x00439AF0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCSystemInfo::AnalyseNow()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSystemInfo_AnalyseNow : oCSystemInfo { void operator()(); };
+BindedHook Ivk_oCSystemInfo_AnalyseNow{ ZENFOR(0x00436510, 0x0043A9B0, 0x004394C0, 0x00439AF0), &oCSystemInfo_AnalyseNow::operator() };
+void oCSystemInfo_AnalyseNow::operator()()
+{
+	THISCALL(Ivk_oCSystemInfo_AnalyseNow)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

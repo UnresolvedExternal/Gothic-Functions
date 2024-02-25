@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCMorphMeshAni*>::zCArraySort<zCMorphMeshAni*>()]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCMorphMeshAni___zCArraySort_zCMorphMeshAni___0x005A34E0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArraySort<zCMorphMeshAni*>::zCArraySort<zCMorphMeshAni*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCArraySort_zCMorphMeshAni___zCArraySort_zCMorphMeshAni__ : zCArraySort<zCMorphMeshAni*> { zCArraySort<zCMorphMeshAni*>* operator()(); };
+BindedHook Ivk_zCArraySort_zCMorphMeshAni___zCArraySort_zCMorphMeshAni__{ ZENFOR(0x005883B0, 0x005A34E0, 0x00000000, 0x00000000), &zCArraySort_zCMorphMeshAni___zCArraySort_zCMorphMeshAni__::operator() };
+zCArraySort<zCMorphMeshAni*>* zCArraySort_zCMorphMeshAni___zCArraySort_zCMorphMeshAni__::operator()()
+{
+	zCArraySort<zCMorphMeshAni*>* result = THISCALL(Ivk_zCArraySort_zCMorphMeshAni___zCArraySort_zCMorphMeshAni__)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

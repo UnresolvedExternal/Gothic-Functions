@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspLeaf::AddVobsToRenderListOutdoor(zCBspSector*, zTBBox2D const&): void]]></Title>
+			<Shortcut><![CDATA[__zCBspLeaf_AddVobsToRenderListOutdoor_0x0052E840]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall zCBspLeaf::AddVobsToRenderListOutdoor(zCBspSector*, zTBBox2D const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspLeaf_AddVobsToRenderListOutdoor : zCBspLeaf { void __fastcall operator()(zCBspSector*, zTBBox2D const&); };
+BindedHook Ivk_zCBspLeaf_AddVobsToRenderListOutdoor{ ZENFOR(0x0051BEF0, 0x00531BA0, 0x0052B8F0, 0x0052E840), &zCBspLeaf_AddVobsToRenderListOutdoor::operator() };
+void __fastcall zCBspLeaf_AddVobsToRenderListOutdoor::operator()(zCBspSector* a0, zTBBox2D const& a1)
+{
+	THISCALL(Ivk_zCBspLeaf_AddVobsToRenderListOutdoor)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

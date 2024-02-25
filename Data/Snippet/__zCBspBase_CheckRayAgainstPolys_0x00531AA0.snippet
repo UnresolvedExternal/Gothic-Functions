@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspBase::CheckRayAgainstPolys(zVEC3 const&, zVEC3 const&, zVEC3&, zCRayTurbo*): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCBspBase_CheckRayAgainstPolys_0x00531AA0]]></Shortcut>
+			<Description><![CDATA[protected: int __fastcall zCBspBase::CheckRayAgainstPolys(zVEC3 const&, zVEC3 const&, zVEC3&, zCRayTurbo*)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCBspBase_CheckRayAgainstPolys : zCBspBase { int __fastcall operator()(zVEC3 const&, zVEC3 const&, zVEC3&, zCRayTurbo*) const; };
+BindedHook Ivk_zCBspBase_CheckRayAgainstPolys{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x00531AA0), &zCBspBase_CheckRayAgainstPolys::operator() };
+int __fastcall zCBspBase_CheckRayAgainstPolys::operator()(zVEC3 const& a0, zVEC3 const& a1, zVEC3& a2, zCRayTurbo* a3) const
+{
+	int result = THISCALL(Ivk_zCBspBase_CheckRayAgainstPolys)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

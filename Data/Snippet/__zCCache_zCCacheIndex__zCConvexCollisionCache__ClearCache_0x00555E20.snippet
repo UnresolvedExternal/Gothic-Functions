@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<zCCacheIndex, zCConvexCollisionCache>::ClearCache(): void]]></Title>
+			<Shortcut><![CDATA[__zCCache_zCCacheIndex__zCConvexCollisionCache__ClearCache_0x00555E20]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCache<zCCacheIndex, zCConvexCollisionCache>::ClearCache()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_zCCacheIndex__zCConvexCollisionCache__ClearCache : zCCache<zCCacheIndex, zCConvexCollisionCache> { void operator()(); };
+BindedHook Ivk_zCCache_zCCacheIndex__zCConvexCollisionCache__ClearCache{ ZENFOR(0x005416D0, 0x00559020, 0x00550C00, 0x00555E20), &zCCache_zCCacheIndex__zCConvexCollisionCache__ClearCache::operator() };
+void zCCache_zCCacheIndex__zCConvexCollisionCache__ClearCache::operator()()
+{
+	THISCALL(Ivk_zCCache_zCCacheIndex__zCConvexCollisionCache__ClearCache)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

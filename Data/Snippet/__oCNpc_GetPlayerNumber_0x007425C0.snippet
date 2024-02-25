@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetPlayerNumber(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetPlayerNumber_0x007425C0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCNpc::GetPlayerNumber()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetPlayerNumber : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_GetPlayerNumber{ ZENFOR(0x0069E9F0, 0x006D0D90, 0x006E3BB0, 0x007425C0), &oCNpc_GetPlayerNumber::operator() };
+int oCNpc_GetPlayerNumber::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_GetPlayerNumber)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

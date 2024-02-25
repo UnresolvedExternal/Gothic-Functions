@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLight::CleanupVobLight(): void]]></Title>
+			<Shortcut><![CDATA[__zCVobLight_CleanupVobLight_0x00607FE0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCVobLight::CleanupVobLight()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCVobLight_CleanupVobLight();
+BindedHook Ivk_zCVobLight_CleanupVobLight{ ZENFOR(0x005DB640, 0x005FB160, 0x00601090, 0x00607FE0), Hook_zCVobLight_CleanupVobLight };
+void Hook_zCVobLight_CleanupVobLight()
+{
+	Ivk_zCVobLight_CleanupVobLight();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

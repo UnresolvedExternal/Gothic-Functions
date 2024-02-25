@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWorldTimer::IsLater(int, int): int]]></Title>
+			<Shortcut><![CDATA[__oCWorldTimer_IsLater_0x00781110]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCWorldTimer::IsLater(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWorldTimer_IsLater : oCWorldTimer { int operator()(int, int); };
+BindedHook Ivk_oCWorldTimer_IsLater{ ZENFOR(0x006D7E60, 0x0070FA20, 0x007216D0, 0x00781110), &oCWorldTimer_IsLater::operator() };
+int oCWorldTimer_IsLater::operator()(int a0, int a1)
+{
+	int result = THISCALL(Ivk_oCWorldTimer_IsLater)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

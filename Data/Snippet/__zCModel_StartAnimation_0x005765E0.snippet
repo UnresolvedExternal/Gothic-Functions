@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::StartAnimation(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCModel_StartAnimation_0x005765E0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCModel::StartAnimation(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_StartAnimation : zCModel { void operator()(zSTRING const&); };
+BindedHook Ivk_zCModel_StartAnimation{ ZENFOR(0x0055CE40, 0x005751D0, 0x00571330, 0x005765E0), &zCModel_StartAnimation::operator() };
+void zCModel_StartAnimation::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCModel_StartAnimation)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

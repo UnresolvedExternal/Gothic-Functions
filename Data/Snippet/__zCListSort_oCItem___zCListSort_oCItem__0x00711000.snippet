@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCListSort<oCItem>::~zCListSort<oCItem>()]]></Title>
+			<Shortcut><![CDATA[__zCListSort_oCItem___zCListSort_oCItem__0x00711000]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCListSort<oCItem>::~zCListSort<oCItem>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCListSort_oCItem__Destructor : zCListSort<oCItem> { void operator()(); };
+BindedHook Ivk_zCListSort_oCItem__Destructor{ ZENFOR(0x00670B60, 0x0069E430, 0x006B3360, 0x00711000), &zCListSort_oCItem__Destructor::operator() };
+void zCListSort_oCItem__Destructor::operator()()
+{
+	THISCALL(Ivk_zCListSort_oCItem__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[netListenStream(zTNetAddress*, int(__cdecl*)(void*)): void*]]></Title>
+			<Shortcut><![CDATA[__netListenStream_0x00455400]]></Shortcut>
+			<Description><![CDATA[void* __cdecl netListenStream(zTNetAddress*, int(__cdecl*)(void*))]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void* Hook_netListenStream(zTNetAddress*, int(__cdecl*)(void*));
+BindedHook Ivk_netListenStream{ ZENFOR(0x00450770, 0x00457110, 0x00454CB0, 0x00455400), Hook_netListenStream };
+void* Hook_netListenStream(zTNetAddress* a0, int(__cdecl* a1)(void*))
+{
+	void* result = Ivk_netListenStream(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

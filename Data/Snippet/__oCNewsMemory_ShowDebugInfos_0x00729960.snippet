@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNewsMemory::ShowDebugInfos(): void]]></Title>
+			<Shortcut><![CDATA[__oCNewsMemory_ShowDebugInfos_0x00729960]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNewsMemory::ShowDebugInfos()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNewsMemory_ShowDebugInfos : oCNewsMemory { void operator()(); };
+BindedHook Ivk_oCNewsMemory_ShowDebugInfos{ ZENFOR(0x00687850, 0x006B7940, 0x006CB8D0, 0x00729960), &oCNewsMemory_ShowDebugInfos::operator() };
+void oCNewsMemory_ShowDebugInfos::operator()()
+{
+	THISCALL(Ivk_oCNewsMemory_ShowDebugInfos)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenu::Unregister(): void]]></Title>
+			<Shortcut><![CDATA[__zCMenu_Unregister_0x004DB020]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCMenu::Unregister()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenu_Unregister : zCMenu { void operator()(); };
+BindedHook Ivk_zCMenu_Unregister{ ZENFOR(0x004CE420, 0x004DEC30, 0x004D8980, 0x004DB020), &zCMenu_Unregister::operator() };
+void zCMenu_Unregister::operator()()
+{
+	THISCALL(Ivk_zCMenu_Unregister)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

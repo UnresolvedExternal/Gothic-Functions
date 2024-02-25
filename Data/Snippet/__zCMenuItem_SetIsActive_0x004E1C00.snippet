@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::SetIsActive(int): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItem_SetIsActive_0x004E1C00]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCMenuItem::SetIsActive(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItem_SetIsActive : zCMenuItem { void operator()(int); };
+BindedHook Ivk_zCMenuItem_SetIsActive{ ZENFOR(0x004D4C50, 0x004E5790, 0x004DF250, 0x004E1C00), &zCMenuItem_SetIsActive::operator() };
+void zCMenuItem_SetIsActive::operator()(int a0)
+{
+	THISCALL(Ivk_zCMenuItem_SetIsActive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

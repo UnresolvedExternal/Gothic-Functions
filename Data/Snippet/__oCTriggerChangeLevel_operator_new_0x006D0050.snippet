@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTriggerChangeLevel::operator new(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCTriggerChangeLevel_operator_new_0x006D0050]]></Shortcut>
+			<Description><![CDATA[public: static void* __cdecl oCTriggerChangeLevel::operator new(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+void* Hook_oCTriggerChangeLevel_operator_new(unsigned int);
+BindedHook Ivk_oCTriggerChangeLevel_operator_new{ ZENFOR(0x00000000, 0x00000000, 0x006732D0, 0x006D0050), Hook_oCTriggerChangeLevel_operator_new };
+void* Hook_oCTriggerChangeLevel_operator_new(unsigned int a0)
+{
+	void* result = Ivk_oCTriggerChangeLevel_operator_new(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

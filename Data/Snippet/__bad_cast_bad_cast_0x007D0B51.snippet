@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[bad_cast::bad_cast(char const* const&)]]></Title>
+			<Shortcut><![CDATA[__bad_cast_bad_cast_0x007D0B51]]></Shortcut>
+			<Description><![CDATA[public: __thiscall bad_cast::bad_cast(char const* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct bad_cast_bad_cast : bad_cast { bad_cast* operator()(char const* const&); };
+BindedHook Ivk_bad_cast_bad_cast{ ZENFOR(0x007771B1, 0x007BAF71, 0x007C4691, 0x007D0B51), &bad_cast_bad_cast::operator() };
+bad_cast* bad_cast_bad_cast::operator()(char const* const& a0)
+{
+	bad_cast* result = THISCALL(Ivk_bad_cast_bad_cast)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

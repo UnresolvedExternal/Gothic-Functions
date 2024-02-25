@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverFactory::WriteLine(char const* const, zCBuffer*, zFILE*): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverFactory_WriteLine_0x0051A390]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCArchiverFactory::WriteLine(char const* const, zCBuffer*, zFILE*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverFactory_WriteLine : zCArchiverFactory { void operator()(char const* const, zCBuffer*, zFILE*); };
+BindedHook Ivk_zCArchiverFactory_WriteLine{ ZENFOR(0x0050A520, 0x0051F230, 0x005175C0, 0x0051A390), &zCArchiverFactory_WriteLine::operator() };
+void zCArchiverFactory_WriteLine::operator()(char const* const a0, zCBuffer* a1, zFILE* a2)
+{
+	THISCALL(Ivk_zCArchiverFactory_WriteLine)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

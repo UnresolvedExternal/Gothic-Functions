@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::IsRunning(zCEventMessage*): int]]></Title>
+			<Shortcut><![CDATA[__zCEventManager_IsRunning_0x007877E0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCEventManager::IsRunning(zCEventMessage*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventManager_IsRunning : zCEventManager { int operator()(zCEventMessage*); };
+BindedHook Ivk_zCEventManager_IsRunning{ ZENFOR(0x006DE550, 0x007168B0, 0x00727DA0, 0x007877E0), &zCEventManager_IsRunning::operator() };
+int zCEventManager_IsRunning::operator()(zCEventMessage* a0)
+{
+	int result = THISCALL(Ivk_zCEventManager_IsRunning)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

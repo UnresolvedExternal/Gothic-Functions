@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsNear(oCNpc*): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_IsNear_0x0073FCC0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::IsNear(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsNear : oCNpc { int operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_IsNear{ ZENFOR(0x0069C570, 0x006CE6A0, 0x006E13D0, 0x0073FCC0), &oCNpc_IsNear::operator() };
+int oCNpc_IsNear::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_IsNear)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::DefineExternals_Ulfi(zCParser*): void]]></Title>
+			<Shortcut><![CDATA[__oCGame_DefineExternals_Ulfi_0x006D4780]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall oCGame::DefineExternals_Ulfi(zCParser*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_DefineExternals_Ulfi : oCGame { void operator()(zCParser*); };
+BindedHook Ivk_oCGame_DefineExternals_Ulfi{ ZENFOR(0x006495B0, 0x006715F0, 0x00677A00, 0x006D4780), &oCGame_DefineExternals_Ulfi::operator() };
+void oCGame_DefineExternals_Ulfi::operator()(zCParser* a0)
+{
+	THISCALL(Ivk_oCGame_DefineExternals_Ulfi)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

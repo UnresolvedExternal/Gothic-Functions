@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::GetSpellInstanceName(int): zSTRING [const]]]></Title>
+			<Shortcut><![CDATA[__oCSpell_GetSpellInstanceName_0x00484150]]></Shortcut>
+			<Description><![CDATA[private: zSTRING __thiscall oCSpell::GetSpellInstanceName(int)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_GetSpellInstanceName : oCSpell { zSTRING operator()(int) const; };
+BindedHook Ivk_oCSpell_GetSpellInstanceName{ ZENFOR(0x0047BD40, 0x004863D0, 0x00482B10, 0x00484150), &oCSpell_GetSpellInstanceName::operator() };
+zSTRING oCSpell_GetSpellInstanceName::operator()(int a0) const
+{
+	zSTRING result = THISCALL(Ivk_oCSpell_GetSpellInstanceName)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

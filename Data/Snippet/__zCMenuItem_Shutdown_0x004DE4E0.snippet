@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::Shutdown(): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItem_Shutdown_0x004DE4E0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCMenuItem::Shutdown()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCMenuItem_Shutdown();
+BindedHook Ivk_zCMenuItem_Shutdown{ ZENFOR(0x004D1690, 0x004E1DF0, 0x004DBB30, 0x004DE4E0), Hook_zCMenuItem_Shutdown };
+void Hook_zCMenuItem_Shutdown()
+{
+	Ivk_zCMenuItem_Shutdown();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

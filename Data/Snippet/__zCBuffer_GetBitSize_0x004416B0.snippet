@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::GetBitSize(): unsigned long [const]]]></Title>
+			<Shortcut><![CDATA[__zCBuffer_GetBitSize_0x004416B0]]></Shortcut>
+			<Description><![CDATA[public: unsigned long __thiscall zCBuffer::GetBitSize()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_GetBitSize : zCBuffer { unsigned long operator()() const; };
+BindedHook Ivk_zCBuffer_GetBitSize{ ZENFOR(0x0043D8B0, 0x00442AC0, 0x00441080, 0x004416B0), &zCBuffer_GetBitSize::operator() };
+unsigned long zCBuffer_GetBitSize::operator()() const
+{
+	unsigned long result = THISCALL(Ivk_zCBuffer_GetBitSize)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

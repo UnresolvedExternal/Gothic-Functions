@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCShrinkHelper>>::IndexPtr(unsigned long): void* [const]]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrink_0x00760CA0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void* __thiscall zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCShrinkHelper>>::IndexPtr(unsigned long)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___IndexPtr : zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCShrinkHelper>> { void* operator()(unsigned long) const; };
+BindedHook Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___IndexPtr{ ZENFOR(0x006BA0B0, 0x006EECA0, 0x00701A60, 0x00760CA0), &zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___IndexPtr::operator() };
+void* zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___IndexPtr::operator()(unsigned long a0) const
+{
+	void* result = THISCALL(Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___IndexPtr)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

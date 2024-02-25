@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::ApplySomeSettings(): void]]></Title>
+			<Shortcut><![CDATA[__CGameManager_ApplySomeSettings_0x004276B0]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall CGameManager::ApplySomeSettings()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_ApplySomeSettings : CGameManager { void operator()(); };
+BindedHook Ivk_CGameManager_ApplySomeSettings{ ZENFOR(0x004267C0, 0x004291E0, 0x00427370, 0x004276B0), &CGameManager_ApplySomeSettings::operator() };
+void CGameManager_ApplySomeSettings::operator()()
+{
+	THISCALL(Ivk_CGameManager_ApplySomeSettings)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

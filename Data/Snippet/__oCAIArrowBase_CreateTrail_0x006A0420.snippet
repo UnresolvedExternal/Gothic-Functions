@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrowBase::CreateTrail(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__oCAIArrowBase_CreateTrail_0x006A0420]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCAIArrowBase::CreateTrail(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIArrowBase_CreateTrail : oCAIArrowBase { void operator()(zCVob*); };
+BindedHook Ivk_oCAIArrowBase_CreateTrail{ ZENFOR(0x00618830, 0x0063BBD0, 0x00643C40, 0x006A0420), &oCAIArrowBase_CreateTrail::operator() };
+void oCAIArrowBase_CreateTrail::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_oCAIArrowBase_CreateTrail)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

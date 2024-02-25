@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::SetTextureWrapEnabled(int): void]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_SetTextureWrapEnabled_0x00652320]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::SetTextureWrapEnabled(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_SetTextureWrapEnabled : zCRnd_D3D { void operator()(int); };
+BindedHook Ivk_zCRnd_D3D_SetTextureWrapEnabled{ ZENFOR(0x00719D00, 0x00755EE0, 0x007659C0, 0x00652320), &zCRnd_D3D_SetTextureWrapEnabled::operator() };
+void zCRnd_D3D_SetTextureWrapEnabled::operator()(int a0)
+{
+	THISCALL(Ivk_zCRnd_D3D_SetTextureWrapEnabled)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

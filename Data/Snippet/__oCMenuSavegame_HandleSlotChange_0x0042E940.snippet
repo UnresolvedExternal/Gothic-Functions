@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenuSavegame::HandleSlotChange(int): void]]></Title>
+			<Shortcut><![CDATA[__oCMenuSavegame_HandleSlotChange_0x0042E940]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMenuSavegame::HandleSlotChange(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenuSavegame_HandleSlotChange : oCMenuSavegame { void operator()(int); };
+BindedHook Ivk_oCMenuSavegame_HandleSlotChange{ ZENFOR(0x0042C420, 0x0042F500, 0x0042E620, 0x0042E940), &oCMenuSavegame_HandleSlotChange::operator() };
+void oCMenuSavegame_HandleSlotChange::operator()(int a0)
+{
+	THISCALL(Ivk_oCMenuSavegame_HandleSlotChange)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::SetMasterVolume(float): void]]></Title>
+			<Shortcut><![CDATA[__zCSndSys_MSS_SetMasterVolume_0x004ED8E0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCSndSys_MSS::SetMasterVolume(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_SetMasterVolume : zCSndSys_MSS { void operator()(float); };
+BindedHook Ivk_zCSndSys_MSS_SetMasterVolume{ ZENFOR(0x004E02E0, 0x004F1BB0, 0x004EAC60, 0x004ED8E0), &zCSndSys_MSS_SetMasterVolume::operator() };
+void zCSndSys_MSS_SetMasterVolume::operator()(float a0)
+{
+	THISCALL(Ivk_zCSndSys_MSS_SetMasterVolume)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

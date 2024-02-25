@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundFX::IsLooping(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCSoundFX_IsLooping_0x004EE040]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCSoundFX::IsLooping()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundFX_IsLooping : zCSoundFX { int operator()() const; };
+BindedHook Ivk_zCSoundFX_IsLooping{ ZENFOR(0x004E0AB0, 0x004F2470, 0x004EB3C0, 0x004EE040), &zCSoundFX_IsLooping::operator() };
+int zCSoundFX_IsLooping::operator()() const
+{
+	int result = THISCALL(Ivk_zCSoundFX_IsLooping)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

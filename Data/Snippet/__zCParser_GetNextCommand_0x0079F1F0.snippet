@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::GetNextCommand(zSTRING&): void]]></Title>
+			<Shortcut><![CDATA[__zCParser_GetNextCommand_0x0079F1F0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCParser::GetNextCommand(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_GetNextCommand : zCParser { void operator()(zSTRING&); };
+BindedHook Ivk_zCParser_GetNextCommand{ ZENFOR(0x006F59E0, 0x0072F780, 0x0073F7B0, 0x0079F1F0), &zCParser_GetNextCommand::operator() };
+void zCParser_GetNextCommand::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_zCParser_GetNextCommand)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

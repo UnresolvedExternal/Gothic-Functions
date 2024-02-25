@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::IsInClosed(zCWaypoint*): int]]></Title>
+			<Shortcut><![CDATA[__zCWayNet_IsInClosed_0x007B0780]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCWayNet::IsInClosed(zCWaypoint*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_IsInClosed : zCWayNet { int operator()(zCWaypoint*); };
+BindedHook Ivk_zCWayNet_IsInClosed{ ZENFOR(0x00706B80, 0x00741690, 0x00750C80, 0x007B0780), &zCWayNet_IsInClosed::operator() };
+int zCWayNet_IsInClosed::operator()(zCWaypoint* a0)
+{
+	int result = THISCALL(Ivk_zCWayNet_IsInClosed)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

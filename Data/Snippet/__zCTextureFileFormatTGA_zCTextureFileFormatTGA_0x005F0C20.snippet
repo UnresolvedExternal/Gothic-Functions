@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureFileFormatTGA::zCTextureFileFormatTGA()]]></Title>
+			<Shortcut><![CDATA[__zCTextureFileFormatTGA_zCTextureFileFormatTGA_0x005F0C20]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCTextureFileFormatTGA::zCTextureFileFormatTGA()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureFileFormatTGA_zCTextureFileFormatTGA : zCTextureFileFormatTGA { zCTextureFileFormatTGA* operator()(); };
+BindedHook Ivk_zCTextureFileFormatTGA_zCTextureFileFormatTGA{ ZENFOR(0x005C61A0, 0x005E45C0, 0x005E9E70, 0x005F0C20), &zCTextureFileFormatTGA_zCTextureFileFormatTGA::operator() };
+zCTextureFileFormatTGA* zCTextureFileFormatTGA_zCTextureFileFormatTGA::operator()()
+{
+	zCTextureFileFormatTGA* result = THISCALL(Ivk_zCTextureFileFormatTGA_zCTextureFileFormatTGA)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

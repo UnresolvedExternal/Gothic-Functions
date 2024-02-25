@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::GetSpellID(): int]]></Title>
+			<Shortcut><![CDATA[__oCSpell_GetSpellID_0x00486480]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCSpell::GetSpellID()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_GetSpellID : oCSpell { int operator()(); };
+BindedHook Ivk_oCSpell_GetSpellID{ ZENFOR(0x0047E180, 0x00488AB0, 0x00484E60, 0x00486480), &oCSpell_GetSpellID::operator() };
+int oCSpell_GetSpellID::operator()()
+{
+	int result = THISCALL(Ivk_oCSpell_GetSpellID)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

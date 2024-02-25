@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemText::HandleEvent(int): int]]></Title>
+			<Shortcut><![CDATA[__zCMenuItemText_HandleEvent_0x004E3340]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCMenuItemText::HandleEvent(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemText_HandleEvent : zCMenuItemText { int operator()(int); };
+BindedHook Ivk_zCMenuItemText_HandleEvent{ ZENFOR(0x004D6280, 0x004E6FB0, 0x004E0990, 0x004E3340), &zCMenuItemText_HandleEvent::operator() };
+int zCMenuItemText_HandleEvent::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCMenuItemText_HandleEvent)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

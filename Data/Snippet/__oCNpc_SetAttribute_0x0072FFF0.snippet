@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetAttribute(int, int): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_SetAttribute_0x0072FFF0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetAttribute(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetAttribute : oCNpc { void operator()(int, int); };
+BindedHook Ivk_oCNpc_SetAttribute{ ZENFOR(0x0068D840, 0x006BE0C0, 0x006D1C20, 0x0072FFF0), &oCNpc_SetAttribute::operator() };
+void oCNpc_SetAttribute::operator()(int a0, int a1)
+{
+	THISCALL(Ivk_oCNpc_SetAttribute)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFlash::Create(zVEC3, zVEC3, float): void]]></Title>
+			<Shortcut><![CDATA[__zCFlash_Create_0x004CB890]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCFlash::Create(zVEC3, zVEC3, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFlash_Create : zCFlash { void operator()(zVEC3, zVEC3, float); };
+BindedHook Ivk_zCFlash_Create{ ZENFOR(0x004C2540, 0x004D1E60, 0x004C9320, 0x004CB890), &zCFlash_Create::operator() };
+void zCFlash_Create::operator()(zVEC3 a0, zVEC3 a1, float a2)
+{
+	THISCALL(Ivk_zCFlash_Create)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

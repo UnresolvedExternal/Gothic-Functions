@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobSound::OnUntrigger(zCVob*, zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCVobSound_OnUntrigger_0x0063E370]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCVobSound::OnUntrigger(zCVob*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobSound_OnUntrigger : zCVobSound { void operator()(zCVob*, zCVob*); };
+BindedHook Ivk_zCVobSound_OnUntrigger{ ZENFOR(0x0060D850, 0x0062FF70, 0x00636B80, 0x0063E370), &zCVobSound_OnUntrigger::operator() };
+void zCVobSound_OnUntrigger::operator()(zCVob* a0, zCVob* a1)
+{
+	THISCALL(Ivk_zCVobSound_OnUntrigger)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

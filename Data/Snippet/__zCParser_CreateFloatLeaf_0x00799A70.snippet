@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::CreateFloatLeaf(): zCPar_TreeNode*]]></Title>
+			<Shortcut><![CDATA[__zCParser_CreateFloatLeaf_0x00799A70]]></Shortcut>
+			<Description><![CDATA[private: zCPar_TreeNode* __thiscall zCParser::CreateFloatLeaf()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_CreateFloatLeaf : zCParser { zCPar_TreeNode* operator()(); };
+BindedHook Ivk_zCParser_CreateFloatLeaf{ ZENFOR(0x006EFF30, 0x00729770, 0x0073A030, 0x00799A70), &zCParser_CreateFloatLeaf::operator() };
+zCPar_TreeNode* zCParser_CreateFloatLeaf::operator()()
+{
+	zCPar_TreeNode* result = THISCALL(Ivk_zCParser_CreateFloatLeaf)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

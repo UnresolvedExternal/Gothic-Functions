@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetEventManager::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCNetEventManager_Unarchive_0x00459EE0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCNetEventManager::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetEventManager_Unarchive : zCNetEventManager { void operator()(zCArchiver&); };
+BindedHook Ivk_zCNetEventManager_Unarchive{ ZENFOR(0x00454E70, 0x0045BC80, 0x00459790, 0x00459EE0), &zCNetEventManager_Unarchive::operator() };
+void zCNetEventManager_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCNetEventManager_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

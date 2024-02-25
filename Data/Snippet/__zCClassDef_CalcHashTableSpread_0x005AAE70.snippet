@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCClassDef::CalcHashTableSpread(): float]]></Title>
+			<Shortcut><![CDATA[__zCClassDef_CalcHashTableSpread_0x005AAE70]]></Shortcut>
+			<Description><![CDATA[private: float __thiscall zCClassDef::CalcHashTableSpread()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCClassDef_CalcHashTableSpread : zCClassDef { float operator()(); };
+BindedHook Ivk_zCClassDef_CalcHashTableSpread{ ZENFOR(0x0058B340, 0x005A6860, 0x005A5910, 0x005AAE70), &zCClassDef_CalcHashTableSpread::operator() };
+float zCClassDef_CalcHashTableSpread::operator()()
+{
+	float result = THISCALL(Ivk_zCClassDef_CalcHashTableSpread)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

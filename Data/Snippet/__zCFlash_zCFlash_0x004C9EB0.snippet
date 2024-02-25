@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFlash::zCFlash()]]></Title>
+			<Shortcut><![CDATA[__zCFlash_zCFlash_0x004C9EB0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCFlash::zCFlash()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFlash_zCFlash : zCFlash { zCFlash* operator()(); };
+BindedHook Ivk_zCFlash_zCFlash{ ZENFOR(0x004C0B70, 0x004D0480, 0x004C7940, 0x004C9EB0), &zCFlash_zCFlash::operator() };
+zCFlash* zCFlash_zCFlash::operator()()
+{
+	zCFlash* result = THISCALL(Ivk_zCFlash_zCFlash)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

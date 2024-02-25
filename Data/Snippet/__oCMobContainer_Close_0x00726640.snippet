@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobContainer::Close(oCNpc*): void]]></Title>
+			<Shortcut><![CDATA[__oCMobContainer_Close_0x00726640]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMobContainer::Close(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobContainer_Close : oCMobContainer { void operator()(oCNpc*); };
+BindedHook Ivk_oCMobContainer_Close{ ZENFOR(0x00684490, 0x006B4080, 0x006C85B0, 0x00726640), &oCMobContainer_Close::operator() };
+void oCMobContainer_Close::operator()(oCNpc* a0)
+{
+	THISCALL(Ivk_oCMobContainer_Close)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

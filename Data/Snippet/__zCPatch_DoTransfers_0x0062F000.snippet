@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPatch::DoTransfers(): void]]></Title>
+			<Shortcut><![CDATA[__zCPatch_DoTransfers_0x0062F000]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCPatch::DoTransfers()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPatch_DoTransfers : zCPatch { void operator()(); };
+BindedHook Ivk_zCPatch_DoTransfers{ ZENFOR(0x006000D0, 0x00621CF0, 0x00627880, 0x0062F000), &zCPatch_DoTransfers::operator() };
+void zCPatch_DoTransfers::operator()()
+{
+	THISCALL(Ivk_zCPatch_DoTransfers)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

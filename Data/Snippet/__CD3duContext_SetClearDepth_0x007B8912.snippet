@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::SetClearDepth(float): long]]></Title>
+			<Shortcut><![CDATA[__CD3duContext_SetClearDepth_0x007B8912]]></Shortcut>
+			<Description><![CDATA[public: virtual long __stdcall CD3duContext::SetClearDepth(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext_SetClearDepth : CD3duContext { long __stdcall operator()(float); };
+BindedHook Ivk_CD3duContext_SetClearDepth{ ZENFOR(0x0075F21E, 0x007A3AF9, 0x007AC44C, 0x007B8912), &CD3duContext_SetClearDepth::operator() };
+long __stdcall CD3duContext_SetClearDepth::operator()(float a0)
+{
+	long result = THISCALL(Ivk_CD3duContext_SetClearDepth)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

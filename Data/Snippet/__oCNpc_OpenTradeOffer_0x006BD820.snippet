@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::OpenTradeOffer(oCNpc*): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_OpenTradeOffer_0x006BD820]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::OpenTradeOffer(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_OpenTradeOffer : oCNpc { void operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_OpenTradeOffer{ ZENFOR(0x00633E40, 0x00659CC0, 0x00660E90, 0x006BD820), &oCNpc_OpenTradeOffer::operator() };
+void oCNpc_OpenTradeOffer::operator()(oCNpc* a0)
+{
+	THISCALL(Ivk_oCNpc_OpenTradeOffer)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

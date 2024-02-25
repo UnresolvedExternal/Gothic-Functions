@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogStealContainer::RemoveSelectedItem(): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogStealContainer_RemoveSelectedItem_0x0068A440]]></Shortcut>
+			<Description><![CDATA[public: oCItem* __fastcall oCViewDialogStealContainer::RemoveSelectedItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogStealContainer_RemoveSelectedItem : oCViewDialogStealContainer { oCItem* __fastcall operator()(); };
+BindedHook Ivk_oCViewDialogStealContainer_RemoveSelectedItem{ ZENFOR(0x00728010, 0x00765B40, 0x007746F0, 0x0068A440), &oCViewDialogStealContainer_RemoveSelectedItem::operator() };
+oCItem* __fastcall oCViewDialogStealContainer_RemoveSelectedItem::operator()()
+{
+	oCItem* result = THISCALL(Ivk_oCViewDialogStealContainer_RemoveSelectedItem)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

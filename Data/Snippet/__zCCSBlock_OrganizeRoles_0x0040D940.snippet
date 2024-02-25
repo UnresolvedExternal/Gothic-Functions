@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlock::OrganizeRoles(zCArray<zCVob*>&, zCArray<zCCSRole*>&): void]]></Title>
+			<Shortcut><![CDATA[__zCCSBlock_OrganizeRoles_0x0040D940]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSBlock::OrganizeRoles(zCArray<zCVob*>&, zCArray<zCCSRole*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlock_OrganizeRoles : zCCSBlock { void operator()(zCArray<zCVob*>&, zCArray<zCCSRole*>&); };
+BindedHook Ivk_zCCSBlock_OrganizeRoles{ ZENFOR(0x0040D550, 0x0040E810, 0x0040D940, 0x0040D940), &zCCSBlock_OrganizeRoles::operator() };
+void zCCSBlock_OrganizeRoles::operator()(zCArray<zCVob*>& a0, zCArray<zCCSRole*>& a1)
+{
+	THISCALL(Ivk_zCCSBlock_OrganizeRoles)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[EncodeBlockRGB(S3TC_COLOR* const, S3TCBlockRGB*): void]]></Title>
+			<Shortcut><![CDATA[__EncodeBlockRGB_0x007C3FB6]]></Shortcut>
+			<Description><![CDATA[void __cdecl EncodeBlockRGB(S3TC_COLOR* const, S3TCBlockRGB*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_EncodeBlockRGB(S3TC_COLOR* const, S3TCBlockRGB*);
+BindedHook Ivk_EncodeBlockRGB{ ZENFOR(0x0076A8C2, 0x007A99AD, 0x007B7AF0, 0x007C3FB6), Hook_EncodeBlockRGB };
+void Hook_EncodeBlockRGB(S3TC_COLOR* const a0, S3TCBlockRGB* a1)
+{
+	Ivk_EncodeBlockRGB(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

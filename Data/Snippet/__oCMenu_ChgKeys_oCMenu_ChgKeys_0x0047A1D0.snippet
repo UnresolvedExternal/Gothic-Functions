@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenu_ChgKeys::oCMenu_ChgKeys(zSTRING const&)]]></Title>
+			<Shortcut><![CDATA[__oCMenu_ChgKeys_oCMenu_ChgKeys_0x0047A1D0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCMenu_ChgKeys::oCMenu_ChgKeys(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenu_ChgKeys_oCMenu_ChgKeys : oCMenu_ChgKeys { oCMenu_ChgKeys* operator()(zSTRING const&); };
+BindedHook Ivk_oCMenu_ChgKeys_oCMenu_ChgKeys{ ZENFOR(0x00473400, 0x0047C6D0, 0x00478E30, 0x0047A1D0), &oCMenu_ChgKeys_oCMenu_ChgKeys::operator() };
+oCMenu_ChgKeys* oCMenu_ChgKeys_oCMenu_ChgKeys::operator()(zSTRING const& a0)
+{
+	oCMenu_ChgKeys* result = THISCALL(Ivk_oCMenu_ChgKeys_oCMenu_ChgKeys)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

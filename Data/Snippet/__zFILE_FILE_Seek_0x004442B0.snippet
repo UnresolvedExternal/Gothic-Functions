@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::Seek(long): int]]></Title>
+			<Shortcut><![CDATA[__zFILE_FILE_Seek_0x004442B0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zFILE_FILE::Seek(long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_Seek : zFILE_FILE { int operator()(long); };
+BindedHook Ivk_zFILE_FILE_Seek{ ZENFOR(0x00440390, 0x00445960, 0x00443C80, 0x004442B0), &zFILE_FILE_Seek::operator() };
+int zFILE_FILE_Seek::operator()(long a0)
+{
+	int result = THISCALL(Ivk_zFILE_FILE_Seek)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

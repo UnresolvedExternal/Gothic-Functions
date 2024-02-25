@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCRenderLightContainer::zTLightScore>::InsertEnd(zCRenderLightContainer::zTLightScore const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCRenderLightContainer__zTLightScore__InsertEnd_0x005D6870]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zCRenderLightContainer::zTLightScore>::InsertEnd(zCRenderLightContainer::zTLightScore const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCRenderLightContainer__zTLightScore__InsertEnd : zCArraySort<zCRenderLightContainer::zTLightScore> { void operator()(zCRenderLightContainer::zTLightScore const&); };
+BindedHook Ivk_zCArraySort_zCRenderLightContainer__zTLightScore__InsertEnd{ ZENFOR(0x005B0F40, 0x005CE0F0, 0x005CFCB0, 0x005D6870), &zCArraySort_zCRenderLightContainer__zTLightScore__InsertEnd::operator() };
+void zCArraySort_zCRenderLightContainer__zTLightScore__InsertEnd::operator()(zCRenderLightContainer::zTLightScore const& a0)
+{
+	THISCALL(Ivk_zCArraySort_zCRenderLightContainer__zTLightScore__InsertEnd)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

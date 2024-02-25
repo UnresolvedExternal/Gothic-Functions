@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::QueryInterface(_GUID const&, void**): long]]></Title>
+			<Shortcut><![CDATA[__CD3duContext_QueryInterface_0x007B93CC]]></Shortcut>
+			<Description><![CDATA[public: virtual long __stdcall CD3duContext::QueryInterface(_GUID const&, void**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext_QueryInterface : CD3duContext { long __stdcall operator()(_GUID const&, void**); };
+BindedHook Ivk_CD3duContext_QueryInterface{ ZENFOR(0x0075FCD8, 0x007A2C49, 0x007ACF06, 0x007B93CC), &CD3duContext_QueryInterface::operator() };
+long __stdcall CD3duContext_QueryInterface::operator()(_GUID const& a0, void** a1)
+{
+	long result = THISCALL(Ivk_CD3duContext_QueryInterface)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

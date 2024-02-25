@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConsole::GetParser(): zCParser*]]></Title>
+			<Shortcut><![CDATA[__zCConsole_GetParser_0x00782400]]></Shortcut>
+			<Description><![CDATA[public: zCParser* __thiscall zCConsole::GetParser()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConsole_GetParser : zCConsole { zCParser* operator()(); };
+BindedHook Ivk_zCConsole_GetParser{ ZENFOR(0x006D9260, 0x00710E70, 0x007229C0, 0x00782400), &zCConsole_GetParser::operator() };
+zCParser* zCConsole_GetParser::operator()()
+{
+	zCParser* result = THISCALL(Ivk_zCConsole_GetParser)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

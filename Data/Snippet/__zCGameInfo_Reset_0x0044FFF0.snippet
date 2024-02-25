@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCGameInfo::Reset(): void]]></Title>
+			<Shortcut><![CDATA[__zCGameInfo_Reset_0x0044FFF0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCGameInfo::Reset()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCGameInfo_Reset : zCGameInfo { void operator()(); };
+BindedHook Ivk_zCGameInfo_Reset{ ZENFOR(0x0044B870, 0x00451DC0, 0x0044F8A0, 0x0044FFF0), &zCGameInfo_Reset::operator() };
+void zCGameInfo_Reset::operator()()
+{
+	THISCALL(Ivk_zCGameInfo_Reset)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

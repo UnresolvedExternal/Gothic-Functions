@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCWorld_Unarchive_0x006269D0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCWorld::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_Unarchive : zCWorld { void operator()(zCArchiver&); };
+BindedHook Ivk_zCWorld_Unarchive{ ZENFOR(0x005F8300, 0x00619770, 0x0061F240, 0x006269D0), &zCWorld_Unarchive::operator() };
+void zCWorld_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCWorld_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

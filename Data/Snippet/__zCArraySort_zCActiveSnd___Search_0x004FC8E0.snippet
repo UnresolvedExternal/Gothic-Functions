@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCActiveSnd*>::Search(zCActiveSnd* const&): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCActiveSnd___Search_0x004FC8E0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCArraySort<zCActiveSnd*>::Search(zCActiveSnd* const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCActiveSnd___Search : zCArraySort<zCActiveSnd*> { int operator()(zCActiveSnd* const&) const; };
+BindedHook Ivk_zCArraySort_zCActiveSnd___Search{ ZENFOR(0x004EE2E0, 0x00500B00, 0x004F9C60, 0x004FC8E0), &zCArraySort_zCActiveSnd___Search::operator() };
+int zCArraySort_zCActiveSnd___Search::operator()(zCActiveSnd* const& a0) const
+{
+	int result = THISCALL(Ivk_zCArraySort_zCActiveSnd___Search)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

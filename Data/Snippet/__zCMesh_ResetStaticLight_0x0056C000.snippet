@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::ResetStaticLight(): void]]></Title>
+			<Shortcut><![CDATA[__zCMesh_ResetStaticLight_0x0056C000]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCMesh::ResetStaticLight()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_ResetStaticLight : zCMesh { void operator()(); };
+BindedHook Ivk_zCMesh_ResetStaticLight{ ZENFOR(0x00553F50, 0x0056C620, 0x00566DB0, 0x0056C000), &zCMesh_ResetStaticLight::operator() };
+void zCMesh_ResetStaticLight::operator()()
+{
+	THISCALL(Ivk_zCMesh_ResetStaticLight)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

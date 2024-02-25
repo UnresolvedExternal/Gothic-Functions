@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zGetHighestBit(int): int]]></Title>
+			<Shortcut><![CDATA[__zGetHighestBit_0x004CAB80]]></Shortcut>
+			<Description><![CDATA[int __cdecl zGetHighestBit(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zGetHighestBit(int);
+BindedHook Ivk_zGetHighestBit{ ZENFOR(0x004C1840, 0x004D11B0, 0x004C8610, 0x004CAB80), Hook_zGetHighestBit };
+int Hook_zGetHighestBit(int a0)
+{
+	int result = Ivk_zGetHighestBit(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

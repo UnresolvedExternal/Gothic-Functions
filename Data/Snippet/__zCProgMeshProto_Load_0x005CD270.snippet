@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::Load(zCFileBIN&): int]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_Load_0x005CD270]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCProgMeshProto::Load(zCFileBIN&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_Load : zCProgMeshProto { int operator()(zCFileBIN&); };
+BindedHook Ivk_zCProgMeshProto_Load{ ZENFOR(0x005A8F20, 0x005C5A20, 0x005C72C0, 0x005CD270), &zCProgMeshProto_Load::operator() };
+int zCProgMeshProto_Load::operator()(zCFileBIN& a0)
+{
+	int result = THISCALL(Ivk_zCProgMeshProto_Load)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

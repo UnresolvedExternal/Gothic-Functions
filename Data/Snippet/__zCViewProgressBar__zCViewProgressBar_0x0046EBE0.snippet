@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewProgressBar::~zCViewProgressBar()]]></Title>
+			<Shortcut><![CDATA[__zCViewProgressBar__zCViewProgressBar_0x0046EBE0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCViewProgressBar::~zCViewProgressBar()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewProgressBar_Destructor : zCViewProgressBar { void operator()(); };
+BindedHook Ivk_zCViewProgressBar_Destructor{ ZENFOR(0x00469900, 0x00471A40, 0x0046DFB0, 0x0046EBE0), &zCViewProgressBar_Destructor::operator() };
+void zCViewProgressBar_Destructor::operator()()
+{
+	THISCALL(Ivk_zCViewProgressBar_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

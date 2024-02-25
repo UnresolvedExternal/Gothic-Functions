@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::ResetXZRotationsLocal(): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_ResetXZRotationsLocal_0x0061BE20]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCVob::ResetXZRotationsLocal()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_ResetXZRotationsLocal : zCVob { void operator()(); };
+BindedHook Ivk_zCVob_ResetXZRotationsLocal{ ZENFOR(0x005EE8E0, 0x0060F1E0, 0x00614720, 0x0061BE20), &zCVob_ResetXZRotationsLocal::operator() };
+void zCVob_ResetXZRotationsLocal::operator()()
+{
+	THISCALL(Ivk_zCVob_ResetXZRotationsLocal)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

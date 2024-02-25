@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDocumentMap::UpdatePosition(): void]]></Title>
+			<Shortcut><![CDATA[__oCViewDocumentMap_UpdatePosition_0x0068D7B0]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall oCViewDocumentMap::UpdatePosition()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDocumentMap_UpdatePosition : oCViewDocumentMap { void __fastcall operator()(); };
+BindedHook Ivk_oCViewDocumentMap_UpdatePosition{ ZENFOR(0x00726030, 0x00763590, 0x00772780, 0x0068D7B0), &oCViewDocumentMap_UpdatePosition::operator() };
+void __fastcall oCViewDocumentMap_UpdatePosition::operator()()
+{
+	THISCALL(Ivk_oCViewDocumentMap_UpdatePosition)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundFX::GetPlayingTimeMSEC(): float [const]]]></Title>
+			<Shortcut><![CDATA[__zCSoundFX_GetPlayingTimeMSEC_0x004EDFC0]]></Shortcut>
+			<Description><![CDATA[public: virtual float __thiscall zCSoundFX::GetPlayingTimeMSEC()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundFX_GetPlayingTimeMSEC : zCSoundFX { float operator()() const; };
+BindedHook Ivk_zCSoundFX_GetPlayingTimeMSEC{ ZENFOR(0x004E0A30, 0x004F23F0, 0x004EB340, 0x004EDFC0), &zCSoundFX_GetPlayingTimeMSEC::operator() };
+float zCSoundFX_GetPlayingTimeMSEC::operator()() const
+{
+	float result = THISCALL(Ivk_zCSoundFX_GetPlayingTimeMSEC)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

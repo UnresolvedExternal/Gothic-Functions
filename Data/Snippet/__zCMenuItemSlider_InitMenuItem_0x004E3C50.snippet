@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemSlider::InitMenuItem(): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItemSlider_InitMenuItem_0x004E3C50]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCMenuItemSlider::InitMenuItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemSlider_InitMenuItem : zCMenuItemSlider { void operator()(); };
+BindedHook Ivk_zCMenuItemSlider_InitMenuItem{ ZENFOR(0x004D6AF0, 0x004E78A0, 0x004E12A0, 0x004E3C50), &zCMenuItemSlider_InitMenuItem::operator() };
+void zCMenuItemSlider_InitMenuItem::operator()()
+{
+	THISCALL(Ivk_zCMenuItemSlider_InitMenuItem)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

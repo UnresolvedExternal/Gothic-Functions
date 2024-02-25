@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput_Win32::ResetRepeatKey(int): void]]></Title>
+			<Shortcut><![CDATA[__zCInput_Win32_ResetRepeatKey_0x004D5330]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCInput_Win32::ResetRepeatKey(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_Win32_ResetRepeatKey : zCInput_Win32 { void operator()(int); };
+BindedHook Ivk_zCInput_Win32_ResetRepeatKey{ ZENFOR(0x004C8860, 0x004D8880, 0x004D2D70, 0x004D5330), &zCInput_Win32_ResetRepeatKey::operator() };
+void zCInput_Win32_ResetRepeatKey::operator()(int a0)
+{
+	THISCALL(Ivk_zCInput_Win32_ResetRepeatKey)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

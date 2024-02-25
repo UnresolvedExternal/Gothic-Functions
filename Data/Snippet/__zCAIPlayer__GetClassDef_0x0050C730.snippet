@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer__GetClassDef_0x0050C730]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCAIPlayer::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer__GetClassDef : zCAIPlayer { zCClassDef* operator()() const; };
+BindedHook Ivk_zCAIPlayer__GetClassDef{ ZENFOR(0x004FCD00, 0x0050FE40, 0x00509980, 0x0050C730), &zCAIPlayer__GetClassDef::operator() };
+zCClassDef* zCAIPlayer__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCAIPlayer__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCListSort<oCRtnEntry>::InsertSort(oCRtnEntry*): void]]></Title>
+			<Shortcut><![CDATA[__zCListSort_oCRtnEntry__InsertSort_0x007770E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCListSort<oCRtnEntry>::InsertSort(oCRtnEntry*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCListSort_oCRtnEntry__InsertSort : zCListSort<oCRtnEntry> { void operator()(oCRtnEntry*); };
+BindedHook Ivk_zCListSort_oCRtnEntry__InsertSort{ ZENFOR(0x006CF0B0, 0x00705840, 0x00717B50, 0x007770E0), &zCListSort_oCRtnEntry__InsertSort::operator() };
+void zCListSort_oCRtnEntry__InsertSort::operator()(oCRtnEntry* a0)
+{
+	THISCALL(Ivk_zCListSort_oCRtnEntry__InsertSort)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

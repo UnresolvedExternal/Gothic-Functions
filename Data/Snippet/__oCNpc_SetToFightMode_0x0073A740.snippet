@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetToFightMode(oCItem*, int): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_SetToFightMode_0x0073A740]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetToFightMode(oCItem*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetToFightMode : oCNpc { void operator()(oCItem*, int); };
+BindedHook Ivk_oCNpc_SetToFightMode{ ZENFOR(0x00697330, 0x006C8F20, 0x006DBF70, 0x0073A740), &oCNpc_SetToFightMode::operator() };
+void oCNpc_SetToFightMode::operator()(oCItem* a0, int a1)
+{
+	THISCALL(Ivk_oCNpc_SetToFightMode)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

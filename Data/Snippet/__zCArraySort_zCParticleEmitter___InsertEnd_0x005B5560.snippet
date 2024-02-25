@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCParticleEmitter*>::InsertEnd(zCParticleEmitter* const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCParticleEmitter___InsertEnd_0x005B5560]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zCParticleEmitter*>::InsertEnd(zCParticleEmitter* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCParticleEmitter___InsertEnd : zCArraySort<zCParticleEmitter*> { void operator()(zCParticleEmitter* const&); };
+BindedHook Ivk_zCArraySort_zCParticleEmitter___InsertEnd{ ZENFOR(0x005941F0, 0x005AFF50, 0x005AF9F0, 0x005B5560), &zCArraySort_zCParticleEmitter___InsertEnd::operator() };
+void zCArraySort_zCParticleEmitter___InsertEnd::operator()(zCParticleEmitter* const& a0)
+{
+	THISCALL(Ivk_zCArraySort_zCParticleEmitter___InsertEnd)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

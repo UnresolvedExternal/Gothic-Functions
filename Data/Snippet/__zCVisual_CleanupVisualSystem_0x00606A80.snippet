@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVisual::CleanupVisualSystem(): void]]></Title>
+			<Shortcut><![CDATA[__zCVisual_CleanupVisualSystem_0x00606A80]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCVisual::CleanupVisualSystem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCVisual_CleanupVisualSystem();
+BindedHook Ivk_zCVisual_CleanupVisualSystem{ ZENFOR(0x005DA1A0, 0x005F9B20, 0x005FFBF0, 0x00606A80), Hook_zCVisual_CleanupVisualSystem };
+void Hook_zCVisual_CleanupVisualSystem()
+{
+	Ivk_zCVisual_CleanupVisualSystem();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

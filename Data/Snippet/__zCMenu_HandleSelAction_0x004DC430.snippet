@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenu::HandleSelAction(zTMenuItemSelAction, zSTRING const&, zCMenuItem*): int]]></Title>
+			<Shortcut><![CDATA[__zCMenu_HandleSelAction_0x004DC430]]></Shortcut>
+			<Description><![CDATA[protected: virtual int __thiscall zCMenu::HandleSelAction(zTMenuItemSelAction, zSTRING const&, zCMenuItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenu_HandleSelAction : zCMenu { int operator()(zTMenuItemSelAction, zSTRING const&, zCMenuItem*); };
+BindedHook Ivk_zCMenu_HandleSelAction{ ZENFOR(0x004CF6E0, 0x004DFF70, 0x004D9D90, 0x004DC430), &zCMenu_HandleSelAction::operator() };
+int zCMenu_HandleSelAction::operator()(zTMenuItemSelAction a0, zSTRING const& a1, zCMenuItem* a2)
+{
+	int result = THISCALL(Ivk_zCMenu_HandleSelAction)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

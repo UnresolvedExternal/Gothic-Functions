@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Game_PlaySound(zSTRING&): void]]></Title>
+			<Shortcut><![CDATA[__Game_PlaySound_0x006CBFD0]]></Shortcut>
+			<Description><![CDATA[void __cdecl Game_PlaySound(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Game_PlaySound(zSTRING&);
+BindedHook Ivk_Game_PlaySound{ ZENFOR(0x00641350, 0x006684F0, 0x0066F250, 0x006CBFD0), Hook_Game_PlaySound };
+void Hook_Game_PlaySound(zSTRING& a0)
+{
+	Ivk_Game_PlaySound(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

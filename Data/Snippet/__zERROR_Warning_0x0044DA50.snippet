@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zERROR::Warning(zSTRING const&): int]]></Title>
+			<Shortcut><![CDATA[__zERROR_Warning_0x0044DA50]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zERROR::Warning(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zERROR_Warning : zERROR { int operator()(zSTRING const&); };
+BindedHook Ivk_zERROR_Warning{ ZENFOR(0x00449330, 0x0044F550, 0x0044D300, 0x0044DA50), &zERROR_Warning::operator() };
+int zERROR_Warning::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_zERROR_Warning)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::Init(): void]]></Title>
+			<Shortcut><![CDATA[__zCBuffer_Init_0x00440C40]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCBuffer::Init()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_Init : zCBuffer { void operator()(); };
+BindedHook Ivk_zCBuffer_Init{ ZENFOR(0x0043CEA0, 0x00442070, 0x00440610, 0x00440C40), &zCBuffer_Init::operator() };
+void zCBuffer_Init::operator()()
+{
+	THISCALL(Ivk_zCBuffer_Init)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

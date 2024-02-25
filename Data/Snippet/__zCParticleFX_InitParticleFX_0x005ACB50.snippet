@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::InitParticleFX(): void]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX_InitParticleFX_0x005ACB50]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCParticleFX::InitParticleFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCParticleFX_InitParticleFX();
+BindedHook Ivk_zCParticleFX_InitParticleFX{ ZENFOR(0x0058CD50, 0x005A82B0, 0x005A74D0, 0x005ACB50), Hook_zCParticleFX_InitParticleFX };
+void Hook_zCParticleFX_InitParticleFX()
+{
+	Ivk_zCParticleFX_InitParticleFX();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

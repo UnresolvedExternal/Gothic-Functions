@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNewsMemory::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCNewsMemory_Unarchive_0x0072A1C0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCNewsMemory::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNewsMemory_Unarchive : oCNewsMemory { void operator()(zCArchiver&); };
+BindedHook Ivk_oCNewsMemory_Unarchive{ ZENFOR(0x00688040, 0x006B8190, 0x006CC130, 0x0072A1C0), &oCNewsMemory_Unarchive::operator() };
+void oCNewsMemory_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCNewsMemory_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

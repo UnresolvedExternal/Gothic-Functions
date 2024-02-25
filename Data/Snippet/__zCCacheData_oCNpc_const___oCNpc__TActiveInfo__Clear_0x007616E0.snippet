@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCacheData<oCNpc const*, oCNpc::TActiveInfo>::Clear(): void]]></Title>
+			<Shortcut><![CDATA[__zCCacheData_oCNpc_const___oCNpc__TActiveInfo__Clear_0x007616E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCCacheData<oCNpc const*, oCNpc::TActiveInfo>::Clear()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCacheData_oCNpc_const___oCNpc__TActiveInfo__Clear : zCCacheData<oCNpc const*, oCNpc::TActiveInfo> { void operator()(); };
+BindedHook Ivk_zCCacheData_oCNpc_const___oCNpc__TActiveInfo__Clear{ ZENFOR(0x006BA930, 0x006EF550, 0x007023C0, 0x007616E0), &zCCacheData_oCNpc_const___oCNpc__TActiveInfo__Clear::operator() };
+void zCCacheData_oCNpc_const___oCNpc__TActiveInfo__Clear::operator()()
+{
+	THISCALL(Ivk_zCCacheData_oCNpc_const___oCNpc__TActiveInfo__Clear)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

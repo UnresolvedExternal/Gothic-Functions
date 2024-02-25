@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCDocumentManager::SetPages(int, int): void]]></Title>
+			<Shortcut><![CDATA[__oCDocumentManager_SetPages_0x0065F0C0]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall oCDocumentManager::SetPages(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCDocumentManager_SetPages : oCDocumentManager { void __fastcall operator()(int, int); };
+BindedHook Ivk_oCDocumentManager_SetPages{ ZENFOR(0x007248D0, 0x00761840, 0x00770B70, 0x0065F0C0), &oCDocumentManager_SetPages::operator() };
+void __fastcall oCDocumentManager_SetPages::operator()(int a0, int a1)
+{
+	THISCALL(Ivk_oCDocumentManager_SetPages)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

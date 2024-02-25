@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpawnManager::GetInsertRange(): float]]></Title>
+			<Shortcut><![CDATA[__oCSpawnManager_GetInsertRange_0x00777830]]></Shortcut>
+			<Description><![CDATA[public: static float __cdecl oCSpawnManager::GetInsertRange()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[float Hook_oCSpawnManager_GetInsertRange();
+BindedHook Ivk_oCSpawnManager_GetInsertRange{ ZENFOR(0x006CF5E0, 0x00705FF0, 0x007182A0, 0x00777830), Hook_oCSpawnManager_GetInsertRange };
+float Hook_oCSpawnManager_GetInsertRange()
+{
+	float result = Ivk_oCSpawnManager_GetInsertRange();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

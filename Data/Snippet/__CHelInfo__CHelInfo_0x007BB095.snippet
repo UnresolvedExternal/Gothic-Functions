@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CHelInfo::~CHelInfo()]]></Title>
+			<Shortcut><![CDATA[__CHelInfo__CHelInfo_0x007BB095]]></Shortcut>
+			<Description><![CDATA[public: __thiscall CHelInfo::~CHelInfo()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CHelInfo_Destructor : CHelInfo { void operator()(); };
+BindedHook Ivk_CHelInfo_Destructor{ ZENFOR(0x007619A1, 0x007A590B, 0x007AEBCF, 0x007BB095), &CHelInfo_Destructor::operator() };
+void CHelInfo_Destructor::operator()()
+{
+	THISCALL(Ivk_CHelInfo_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFlash::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCFlash_VectorDeletingDestructor_0x004CA390]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCFlash::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCFlash_VectorDeletingDestructor : zCFlash { void* operator()(unsigned int); };
+BindedHook Ivk_zCFlash_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x004C7E20, 0x004CA390), &zCFlash_VectorDeletingDestructor::operator() };
+void* zCFlash_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCFlash_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

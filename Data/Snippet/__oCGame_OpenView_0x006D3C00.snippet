@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::OpenView(oCGame::oEGameDialogView): int]]></Title>
+			<Shortcut><![CDATA[__oCGame_OpenView_0x006D3C00]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCGame::OpenView(oCGame::oEGameDialogView)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_OpenView : oCGame { int operator()(oCGame::oEGameDialogView); };
+BindedHook Ivk_oCGame_OpenView{ ZENFOR(0x00648CD0, 0x006709F0, 0x00676E80, 0x006D3C00), &oCGame_OpenView::operator() };
+int oCGame_OpenView::operator()(oCGame::oEGameDialogView a0)
+{
+	int result = THISCALL(Ivk_oCGame_OpenView)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

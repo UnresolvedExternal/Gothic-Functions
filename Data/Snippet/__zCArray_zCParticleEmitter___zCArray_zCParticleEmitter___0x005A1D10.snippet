@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCParticleEmitter*>::zCArray<zCParticleEmitter*>(int)]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCParticleEmitter___zCArray_zCParticleEmitter___0x005A1D10]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCParticleEmitter*>::zCArray<zCParticleEmitter*>(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCParticleEmitter___zCArray_zCParticleEmitter__ : zCArray<zCParticleEmitter*> { zCArray<zCParticleEmitter*>* operator()(int); };
+BindedHook Ivk_zCArray_zCParticleEmitter___zCArray_zCParticleEmitter__{ ZENFOR(0x00582230, 0x0059CD40, 0x0059C7B0, 0x005A1D10), &zCArray_zCParticleEmitter___zCArray_zCParticleEmitter__::operator() };
+zCArray<zCParticleEmitter*>* zCArray_zCParticleEmitter___zCArray_zCParticleEmitter__::operator()(int a0)
+{
+	zCArray<zCParticleEmitter*>* result = THISCALL(Ivk_zCArray_zCParticleEmitter___zCArray_zCParticleEmitter__)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

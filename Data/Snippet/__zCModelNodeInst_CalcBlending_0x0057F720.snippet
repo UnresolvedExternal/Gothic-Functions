@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelNodeInst::CalcBlending(zCModel*): void]]></Title>
+			<Shortcut><![CDATA[__zCModelNodeInst_CalcBlending_0x0057F720]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModelNodeInst::CalcBlending(zCModel*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelNodeInst_CalcBlending : zCModelNodeInst { void operator()(zCModel*); };
+BindedHook Ivk_zCModelNodeInst_CalcBlending{ ZENFOR(0x005656A0, 0x0057E030, 0x0057A200, 0x0057F720), &zCModelNodeInst_CalcBlending::operator() };
+void zCModelNodeInst_CalcBlending::operator()(zCModel* a0)
+{
+	THISCALL(Ivk_zCModelNodeInst_CalcBlending)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

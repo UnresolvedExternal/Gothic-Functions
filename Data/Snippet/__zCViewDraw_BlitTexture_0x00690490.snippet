@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDraw::BlitTexture(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewDraw_BlitTexture_0x00690490]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __fastcall zCViewDraw::BlitTexture()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDraw_BlitTexture : zCViewDraw { void __fastcall operator()(); };
+BindedHook Ivk_zCViewDraw_BlitTexture{ ZENFOR(0x00753950, 0x00795E00, 0x007A06E0, 0x00690490), &zCViewDraw_BlitTexture::operator() };
+void __fastcall zCViewDraw_BlitTexture::operator()()
+{
+	THISCALL(Ivk_zCViewDraw_BlitTexture)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

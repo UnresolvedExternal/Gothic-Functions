@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexConGeneric::CopyTextureDataTo(int, void*, int): int]]></Title>
+			<Shortcut><![CDATA[__zCTexConGeneric_CopyTextureDataTo_0x0065B480]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCTexConGeneric::CopyTextureDataTo(int, void*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTexConGeneric_CopyTextureDataTo : zCTexConGeneric { int operator()(int, void*, int); };
+BindedHook Ivk_zCTexConGeneric_CopyTextureDataTo{ ZENFOR(0x007228B0, 0x0075F300, 0x0076E950, 0x0065B480), &zCTexConGeneric_CopyTextureDataTo::operator() };
+int zCTexConGeneric_CopyTextureDataTo::operator()(int a0, void* a1, int a2)
+{
+	int result = THISCALL(Ivk_zCTexConGeneric_CopyTextureDataTo)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

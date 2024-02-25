@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::AssessGivenItem(oCItem*, oCNpc*): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_AssessGivenItem_0x006BD3B0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::AssessGivenItem(oCItem*, oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_AssessGivenItem : oCNpc { int operator()(oCItem*, oCNpc*); };
+BindedHook Ivk_oCNpc_AssessGivenItem{ ZENFOR(0x00633A10, 0x00659880, 0x00660A20, 0x006BD3B0), &oCNpc_AssessGivenItem::operator() };
+int oCNpc_AssessGivenItem::operator()(oCItem* a0, oCNpc* a1)
+{
+	int result = THISCALL(Ivk_oCNpc_AssessGivenItem)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

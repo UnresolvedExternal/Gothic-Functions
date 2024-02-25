@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPlayer::Interrupt(): void]]></Title>
+			<Shortcut><![CDATA[__zCCSPlayer_Interrupt_0x0041DEB0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCCSPlayer::Interrupt()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPlayer_Interrupt : zCCSPlayer { void operator()(); };
+BindedHook Ivk_zCCSPlayer_Interrupt{ ZENFOR(0x0041D8A0, 0x0041F8D0, 0x0041DB80, 0x0041DEB0), &zCCSPlayer_Interrupt::operator() };
+void zCCSPlayer_Interrupt::operator()()
+{
+	THISCALL(Ivk_zCCSPlayer_Interrupt)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

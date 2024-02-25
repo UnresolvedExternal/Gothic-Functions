@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCodeMaster::OnMessage(zCEventMessage*, zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCCodeMaster_OnMessage_0x00619600]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCodeMaster::OnMessage(zCEventMessage*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCodeMaster_OnMessage : zCCodeMaster { void operator()(zCEventMessage*, zCVob*); };
+BindedHook Ivk_zCCodeMaster_OnMessage{ ZENFOR(0x005EC340, 0x0060C980, 0x00611F40, 0x00619600), &zCCodeMaster_OnMessage::operator() };
+void zCCodeMaster_OnMessage::operator()(zCEventMessage* a0, zCVob* a1)
+{
+	THISCALL(Ivk_zCCodeMaster_OnMessage)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

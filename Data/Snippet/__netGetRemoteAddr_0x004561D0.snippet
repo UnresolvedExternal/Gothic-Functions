@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[netGetRemoteAddr(void*): zTNetAddress*]]></Title>
+			<Shortcut><![CDATA[__netGetRemoteAddr_0x004561D0]]></Shortcut>
+			<Description><![CDATA[zTNetAddress* __cdecl netGetRemoteAddr(void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zTNetAddress* Hook_netGetRemoteAddr(void*);
+BindedHook Ivk_netGetRemoteAddr{ ZENFOR(0x00451540, 0x00457F20, 0x00455A80, 0x004561D0), Hook_netGetRemoteAddr };
+zTNetAddress* Hook_netGetRemoteAddr(void* a0)
+{
+	zTNetAddress* result = Ivk_netGetRemoteAddr(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCRtnManager::SetDailyRoutinePos(int): void]]></Title>
+			<Shortcut><![CDATA[__oCRtnManager_SetDailyRoutinePos_0x007764D0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCRtnManager::SetDailyRoutinePos(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCRtnManager_SetDailyRoutinePos : oCRtnManager { void operator()(int); };
+BindedHook Ivk_oCRtnManager_SetDailyRoutinePos{ ZENFOR(0x006CE3F0, 0x00704B80, 0x00716F40, 0x007764D0), &oCRtnManager_SetDailyRoutinePos::operator() };
+void oCRtnManager_SetDailyRoutinePos::operator()(int a0)
+{
+	THISCALL(Ivk_oCRtnManager_SetDailyRoutinePos)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCHandleManager::DisposeAllSamples(): void]]></Title>
+			<Shortcut><![CDATA[__zCHandleManager_DisposeAllSamples_0x004FC520]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCHandleManager::DisposeAllSamples()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCHandleManager_DisposeAllSamples : zCHandleManager { void operator()(); };
+BindedHook Ivk_zCHandleManager_DisposeAllSamples{ ZENFOR(0x004EDF00, 0x005006E0, 0x004F98A0, 0x004FC520), &zCHandleManager_DisposeAllSamples::operator() };
+void zCHandleManager_DisposeAllSamples::operator()()
+{
+	THISCALL(Ivk_zCHandleManager_DisposeAllSamples)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

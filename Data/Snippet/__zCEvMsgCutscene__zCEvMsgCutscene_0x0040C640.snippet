@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEvMsgCutscene::~zCEvMsgCutscene()]]></Title>
+			<Shortcut><![CDATA[__zCEvMsgCutscene__zCEvMsgCutscene_0x0040C640]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCEvMsgCutscene::~zCEvMsgCutscene()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEvMsgCutscene_Destructor : zCEvMsgCutscene { void operator()(); };
+BindedHook Ivk_zCEvMsgCutscene_Destructor{ ZENFOR(0x0040C250, 0x0040D490, 0x0040C640, 0x0040C640), &zCEvMsgCutscene_Destructor::operator() };
+void zCEvMsgCutscene_Destructor::operator()()
+{
+	THISCALL(Ivk_zCEvMsgCutscene_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

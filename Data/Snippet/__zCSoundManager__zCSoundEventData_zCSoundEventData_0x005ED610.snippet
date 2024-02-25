@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundManager::zCSoundEventData::zCSoundEventData()]]></Title>
+			<Shortcut><![CDATA[__zCSoundManager__zCSoundEventData_zCSoundEventData_0x005ED610]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCSoundManager::zCSoundEventData::zCSoundEventData()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundManager__zCSoundEventData_zCSoundEventData : zCSoundManager::zCSoundEventData { void operator()(); };
+BindedHook Ivk_zCSoundManager__zCSoundEventData_zCSoundEventData{ ZENFOR(0x005C2CB0, 0x005E0DE0, 0x005E6860, 0x005ED610), &zCSoundManager__zCSoundEventData_zCSoundEventData::operator() };
+void zCSoundManager__zCSoundEventData_zCSoundEventData::operator()()
+{
+	THISCALL(Ivk_zCSoundManager__zCSoundEventData_zCSoundEventData)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

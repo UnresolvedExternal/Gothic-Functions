@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLensFlare::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCVobLensFlare_VectorDeletingDestructor_0x0060FD00]]></Shortcut>
+			<Description><![CDATA[protected: virtual void* __thiscall zCVobLensFlare::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2
+struct zCVobLensFlare_VectorDeletingDestructor : zCVobLensFlare { void* operator()(unsigned int); };
+BindedHook Ivk_zCVobLensFlare_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x0060FD00, 0x00000000), &zCVobLensFlare_VectorDeletingDestructor::operator() };
+void* zCVobLensFlare_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCVobLensFlare_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

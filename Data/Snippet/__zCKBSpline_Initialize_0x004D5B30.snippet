@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCKBSpline::Initialize(zCArray<zCPositionKey*>&, int): void]]></Title>
+			<Shortcut><![CDATA[__zCKBSpline_Initialize_0x004D5B30]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCKBSpline::Initialize(zCArray<zCPositionKey*>&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCKBSpline_Initialize : zCKBSpline { void operator()(zCArray<zCPositionKey*>&, int); };
+BindedHook Ivk_zCKBSpline_Initialize{ ZENFOR(0x004C8F00, 0x004D9130, 0x004D3570, 0x004D5B30), &zCKBSpline_Initialize::operator() };
+void zCKBSpline_Initialize::operator()(zCArray<zCPositionKey*>& a0, int a1)
+{
+	THISCALL(Ivk_zCKBSpline_Initialize)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSystemInfo::ScoreNow(): void]]></Title>
+			<Shortcut><![CDATA[__oCSystemInfo_ScoreNow_0x0043A3F0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCSystemInfo::ScoreNow()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSystemInfo_ScoreNow : oCSystemInfo { void operator()(); };
+BindedHook Ivk_oCSystemInfo_ScoreNow{ ZENFOR(0x00436D70, 0x0043B2A0, 0x00439DC0, 0x0043A3F0), &oCSystemInfo_ScoreNow::operator() };
+void oCSystemInfo_ScoreNow::operator()()
+{
+	THISCALL(Ivk_oCSystemInfo_ScoreNow)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::GetAzimuth(zVEC3 const&): float]]></Title>
+			<Shortcut><![CDATA[__zCMovementTracker_GetAzimuth_0x004B4AC0]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall zCMovementTracker::GetAzimuth(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_GetAzimuth : zCMovementTracker { float operator()(zVEC3 const&); };
+BindedHook Ivk_zCMovementTracker_GetAzimuth{ ZENFOR(0x004AC150, 0x004BA070, 0x004B2590, 0x004B4AC0), &zCMovementTracker_GetAzimuth::operator() };
+float zCMovementTracker_GetAzimuth::operator()(zVEC3 const& a0)
+{
+	float result = THISCALL(Ivk_zCMovementTracker_GetAzimuth)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

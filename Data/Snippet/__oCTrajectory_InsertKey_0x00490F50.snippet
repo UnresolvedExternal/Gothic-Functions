@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTrajectory::InsertKey(zMAT4&): void]]></Title>
+			<Shortcut><![CDATA[__oCTrajectory_InsertKey_0x00490F50]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCTrajectory::InsertKey(zMAT4&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTrajectory_InsertKey : oCTrajectory { void operator()(zMAT4&); };
+BindedHook Ivk_oCTrajectory_InsertKey{ ZENFOR(0x00489110, 0x004942C0, 0x0048F5B0, 0x00490F50), &oCTrajectory_InsertKey::operator() };
+void oCTrajectory_InsertKey::operator()(zMAT4& a0)
+{
+	THISCALL(Ivk_oCTrajectory_InsertKey)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

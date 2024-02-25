@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBBox3DSorterBase::zTBoxSortHandle::ClearActive(): void]]></Title>
+			<Shortcut><![CDATA[__zCBBox3DSorterBase__zTBoxSortHandle_ClearActive_0x00620010]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCBBox3DSorterBase::zTBoxSortHandle::ClearActive()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBBox3DSorterBase__zTBoxSortHandle_ClearActive : zCBBox3DSorterBase::zTBoxSortHandle { void operator()(); };
+BindedHook Ivk_zCBBox3DSorterBase__zTBoxSortHandle_ClearActive{ ZENFOR(0x005F2930, 0x00613700, 0x006188C0, 0x00620010), &zCBBox3DSorterBase__zTBoxSortHandle_ClearActive::operator() };
+void zCBBox3DSorterBase__zTBoxSortHandle_ClearActive::operator()()
+{
+	THISCALL(Ivk_zCBBox3DSorterBase__zTBoxSortHandle_ClearActive)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

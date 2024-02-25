@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCPar_Symbol*>::~zCArray<zCPar_Symbol*>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCPar_Symbol____zCArray_zCPar_Symbol___0x007A0D90]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCPar_Symbol*>::~zCArray<zCPar_Symbol*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCPar_Symbol___Destructor : zCArray<zCPar_Symbol*> { void operator()(); };
+BindedHook Ivk_zCArray_zCPar_Symbol___Destructor{ ZENFOR(0x006F73E0, 0x007314F0, 0x00741350, 0x007A0D90), &zCArray_zCPar_Symbol___Destructor::operator() };
+void zCArray_zCPar_Symbol___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCPar_Symbol___Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CSurfaceLock::~CSurfaceLock()]]></Title>
+			<Shortcut><![CDATA[__CSurfaceLock__CSurfaceLock_0x007C433B]]></Shortcut>
+			<Description><![CDATA[public: __thiscall CSurfaceLock::~CSurfaceLock()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CSurfaceLock_Destructor : CSurfaceLock { void operator()(); };
+BindedHook Ivk_CSurfaceLock_Destructor{ ZENFOR(0x0076AC47, 0x007AA89A, 0x007B7E75, 0x007C433B), &CSurfaceLock_Destructor::operator() };
+void CSurfaceLock_Destructor::operator()()
+{
+	THISCALL(Ivk_CSurfaceLock_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

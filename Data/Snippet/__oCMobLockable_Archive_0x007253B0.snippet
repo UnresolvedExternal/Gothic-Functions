@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobLockable::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCMobLockable_Archive_0x007253B0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall oCMobLockable::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobLockable_Archive : oCMobLockable { void operator()(zCArchiver&); };
+BindedHook Ivk_oCMobLockable_Archive{ ZENFOR(0x006835F0, 0x006B2FE0, 0x006C7320, 0x007253B0), &oCMobLockable_Archive::operator() };
+void oCMobLockable_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCMobLockable_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

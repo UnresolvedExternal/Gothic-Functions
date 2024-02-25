@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTriggerChangeLevel::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCTriggerChangeLevel_Unarchive_0x0043C3B0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCTriggerChangeLevel::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTriggerChangeLevel_Unarchive : oCTriggerChangeLevel { void operator()(zCArchiver&); };
+BindedHook Ivk_oCTriggerChangeLevel_Unarchive{ ZENFOR(0x00438920, 0x0043D300, 0x0043BD80, 0x0043C3B0), &oCTriggerChangeLevel_Unarchive::operator() };
+void oCTriggerChangeLevel_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCTriggerChangeLevel_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

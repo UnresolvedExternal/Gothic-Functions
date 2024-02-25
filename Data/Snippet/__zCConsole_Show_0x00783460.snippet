@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConsole::Show(): void]]></Title>
+			<Shortcut><![CDATA[__zCConsole_Show_0x00783460]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCConsole::Show()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConsole_Show : zCConsole { void operator()(); };
+BindedHook Ivk_zCConsole_Show{ ZENFOR(0x006DA2D0, 0x007120D0, 0x00723A20, 0x00783460), &zCConsole_Show::operator() };
+void zCConsole_Show::operator()()
+{
+	THISCALL(Ivk_zCConsole_Show)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

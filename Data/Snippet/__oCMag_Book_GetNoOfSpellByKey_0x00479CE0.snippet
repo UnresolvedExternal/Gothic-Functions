@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::GetNoOfSpellByKey(int): int]]></Title>
+			<Shortcut><![CDATA[__oCMag_Book_GetNoOfSpellByKey_0x00479CE0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCMag_Book::GetNoOfSpellByKey(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_GetNoOfSpellByKey : oCMag_Book { int operator()(int); };
+BindedHook Ivk_oCMag_Book_GetNoOfSpellByKey{ ZENFOR(0x00472F20, 0x0047C1D0, 0x00478940, 0x00479CE0), &oCMag_Book_GetNoOfSpellByKey::operator() };
+int oCMag_Book_GetNoOfSpellByKey::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCMag_Book_GetNoOfSpellByKey)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

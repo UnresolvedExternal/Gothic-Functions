@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetSpellItem(int): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetSpellItem_0x00680270]]></Shortcut>
+			<Description><![CDATA[public: oCItem* __thiscall oCNpc::GetSpellItem(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetSpellItem : oCNpc { oCItem* operator()(int); };
+BindedHook Ivk_oCNpc_GetSpellItem{ ZENFOR(0x0074AE90, 0x0078C380, 0x00796D90, 0x00680270), &oCNpc_GetSpellItem::operator() };
+oCItem* oCNpc_GetSpellItem::operator()(int a0)
+{
+	oCItem* result = THISCALL(Ivk_oCNpc_GetSpellItem)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

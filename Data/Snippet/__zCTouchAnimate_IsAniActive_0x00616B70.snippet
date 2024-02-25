@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchAnimate::IsAniActive(): int]]></Title>
+			<Shortcut><![CDATA[__zCTouchAnimate_IsAniActive_0x00616B70]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCTouchAnimate::IsAniActive()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchAnimate_IsAniActive : zCTouchAnimate { int operator()(); };
+BindedHook Ivk_zCTouchAnimate_IsAniActive{ ZENFOR(0x005E9AC0, 0x0060A0F0, 0x0060F4B0, 0x00616B70), &zCTouchAnimate_IsAniActive::operator() };
+int zCTouchAnimate_IsAniActive::operator()()
+{
+	int result = THISCALL(Ivk_zCTouchAnimate_IsAniActive)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

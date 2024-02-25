@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::SetFileSourceType(zCModelPrototype::zTFileSourceType): void]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_SetFileSourceType_0x005890D0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModelPrototype::SetFileSourceType(zCModelPrototype::zTFileSourceType)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_SetFileSourceType : zCModelPrototype { void operator()(zCModelPrototype::zTFileSourceType); };
+BindedHook Ivk_zCModelPrototype_SetFileSourceType{ ZENFOR(0x0056E900, 0x00587C90, 0x00583B70, 0x005890D0), &zCModelPrototype_SetFileSourceType::operator() };
+void zCModelPrototype_SetFileSourceType::operator()(zCModelPrototype::zTFileSourceType a0)
+{
+	THISCALL(Ivk_zCModelPrototype_SetFileSourceType)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

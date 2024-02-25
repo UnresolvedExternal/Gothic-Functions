@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::SplitItem(int): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCItem_SplitItem_0x00712BA0]]></Shortcut>
+			<Description><![CDATA[public: oCItem* __thiscall oCItem::SplitItem(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_SplitItem : oCItem { oCItem* operator()(int); };
+BindedHook Ivk_oCItem_SplitItem{ ZENFOR(0x00672440, 0x0069FE00, 0x006B4DA0, 0x00712BA0), &oCItem_SplitItem::operator() };
+oCItem* oCItem_SplitItem::operator()(int a0)
+{
+	oCItem* result = THISCALL(Ivk_oCItem_SplitItem)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCKBSpline::InitVars(): void]]></Title>
+			<Shortcut><![CDATA[__zCKBSpline_InitVars_0x00487CD0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCKBSpline::InitVars()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCKBSpline_InitVars : zCKBSpline { void operator()(); };
+BindedHook Ivk_zCKBSpline_InitVars{ ZENFOR(0x00480300, 0x0048B160, 0x00486670, 0x00487CD0), &zCKBSpline_InitVars::operator() };
+void zCKBSpline_InitVars::operator()()
+{
+	THISCALL(Ivk_zCKBSpline_InitVars)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

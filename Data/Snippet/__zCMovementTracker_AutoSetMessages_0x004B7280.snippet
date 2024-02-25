@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::AutoSetMessages(): void]]></Title>
+			<Shortcut><![CDATA[__zCMovementTracker_AutoSetMessages_0x004B7280]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCMovementTracker::AutoSetMessages()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_AutoSetMessages : zCMovementTracker { void operator()(); };
+BindedHook Ivk_zCMovementTracker_AutoSetMessages{ ZENFOR(0x004AE9F0, 0x004BCBE0, 0x004B4D50, 0x004B7280), &zCMovementTracker_AutoSetMessages::operator() };
+void zCMovementTracker_AutoSetMessages::operator()()
+{
+	THISCALL(Ivk_zCMovementTracker_AutoSetMessages)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

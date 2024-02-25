@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zSVisualFXColl>::~zCArray<zSVisualFXColl>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zSVisualFXColl___zCArray_zSVisualFXColl__0x0049A320]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zSVisualFXColl>::~zCArray<zSVisualFXColl>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zSVisualFXColl__Destructor : zCArray<zSVisualFXColl> { void operator()(); };
+BindedHook Ivk_zCArray_zSVisualFXColl__Destructor{ ZENFOR(0x0048FF60, 0x0049BDE0, 0x004981B0, 0x0049A320), &zCArray_zSVisualFXColl__Destructor::operator() };
+void zCArray_zSVisualFXColl__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zSVisualFXColl__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

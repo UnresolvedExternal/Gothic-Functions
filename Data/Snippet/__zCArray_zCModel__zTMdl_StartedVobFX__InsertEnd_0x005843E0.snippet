@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCModel::zTMdl_StartedVobFX>::InsertEnd(zCModel::zTMdl_StartedVobFX const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCModel__zTMdl_StartedVobFX__InsertEnd_0x005843E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCModel::zTMdl_StartedVobFX>::InsertEnd(zCModel::zTMdl_StartedVobFX const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCModel__zTMdl_StartedVobFX__InsertEnd : zCArray<zCModel::zTMdl_StartedVobFX> { void operator()(zCModel::zTMdl_StartedVobFX const&); };
+BindedHook Ivk_zCArray_zCModel__zTMdl_StartedVobFX__InsertEnd{ ZENFOR(0x00569AB0, 0x00582950, 0x0057EE80, 0x005843E0), &zCArray_zCModel__zTMdl_StartedVobFX__InsertEnd::operator() };
+void zCArray_zCModel__zTMdl_StartedVobFX__InsertEnd::operator()(zCModel::zTMdl_StartedVobFX const& a0)
+{
+	THISCALL(Ivk_zCArray_zCModel__zTMdl_StartedVobFX__InsertEnd)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

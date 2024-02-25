@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamTrj_KeyFrame::~zCCamTrj_KeyFrame()]]></Title>
+			<Shortcut><![CDATA[__zCCamTrj_KeyFrame__zCCamTrj_KeyFrame_0x004BDF10]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall zCCamTrj_KeyFrame::~zCCamTrj_KeyFrame()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamTrj_KeyFrame_Destructor : zCCamTrj_KeyFrame { void operator()(); };
+BindedHook Ivk_zCCamTrj_KeyFrame_Destructor{ ZENFOR(0x004B4BD0, 0x004C3DC0, 0x004BB9A0, 0x004BDF10), &zCCamTrj_KeyFrame_Destructor::operator() };
+void zCCamTrj_KeyFrame_Destructor::operator()()
+{
+	THISCALL(Ivk_zCCamTrj_KeyFrame_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

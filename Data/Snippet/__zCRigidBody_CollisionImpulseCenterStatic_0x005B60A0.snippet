@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRigidBody::CollisionImpulseCenterStatic(zVEC3 const&, float): void]]></Title>
+			<Shortcut><![CDATA[__zCRigidBody_CollisionImpulseCenterStatic_0x005B60A0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCRigidBody::CollisionImpulseCenterStatic(zVEC3 const&, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRigidBody_CollisionImpulseCenterStatic : zCRigidBody { void operator()(zVEC3 const&, float); };
+BindedHook Ivk_zCRigidBody_CollisionImpulseCenterStatic{ ZENFOR(0x00594D50, 0x005B0B60, 0x005B0530, 0x005B60A0), &zCRigidBody_CollisionImpulseCenterStatic::operator() };
+void zCRigidBody_CollisionImpulseCenterStatic::operator()(zVEC3 const& a0, float a1)
+{
+	THISCALL(Ivk_zCRigidBody_CollisionImpulseCenterStatic)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectPoint::SetUpVectorNew(zVEC3 const&): void]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectPoint_SetUpVectorNew_0x0054E070]]></Shortcut>
+			<Description><![CDATA[private: void __fastcall zCCollObjectPoint::SetUpVectorNew(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectPoint_SetUpVectorNew : zCCollObjectPoint { void __fastcall operator()(zVEC3 const&); };
+BindedHook Ivk_zCCollObjectPoint_SetUpVectorNew{ ZENFOR(0x00539BC0, 0x00550F50, 0x00548E50, 0x0054E070), &zCCollObjectPoint_SetUpVectorNew::operator() };
+void __fastcall zCCollObjectPoint_SetUpVectorNew::operator()(zVEC3 const& a0)
+{
+	THISCALL(Ivk_zCCollObjectPoint_SetUpVectorNew)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

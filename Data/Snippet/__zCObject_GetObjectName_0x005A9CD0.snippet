@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCObject::GetObjectName(): zSTRING const& [const]]]></Title>
+			<Shortcut><![CDATA[__zCObject_GetObjectName_0x005A9CD0]]></Shortcut>
+			<Description><![CDATA[public: zSTRING const& __thiscall zCObject::GetObjectName()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCObject_GetObjectName : zCObject { zSTRING const& operator()() const; };
+BindedHook Ivk_zCObject_GetObjectName{ ZENFOR(0x0058A160, 0x005A54F0, 0x005A4770, 0x005A9CD0), &zCObject_GetObjectName::operator() };
+zSTRING const& zCObject_GetObjectName::operator()() const
+{
+	zSTRING const& result = THISCALL(Ivk_zCObject_GetObjectName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

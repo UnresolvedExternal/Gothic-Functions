@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCMaterial*>::IsInList(zCMaterial* const&): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCMaterial___IsInList_0x005607D0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCArray<zCMaterial*>::IsInList(zCMaterial* const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCMaterial___IsInList : zCArray<zCMaterial*> { int operator()(zCMaterial* const&) const; };
+BindedHook Ivk_zCArray_zCMaterial___IsInList{ ZENFOR(0x00549AD0, 0x00561AD0, 0x0055B5B0, 0x005607D0), &zCArray_zCMaterial___IsInList::operator() };
+int zCArray_zCMaterial___IsInList::operator()(zCMaterial* const& a0) const
+{
+	int result = THISCALL(Ivk_zCArray_zCMaterial___IsInList)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

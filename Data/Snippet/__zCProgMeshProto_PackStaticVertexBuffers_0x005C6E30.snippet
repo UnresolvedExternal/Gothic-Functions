@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::PackStaticVertexBuffers(): void]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_PackStaticVertexBuffers_0x005C6E30]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCProgMeshProto::PackStaticVertexBuffers()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_PackStaticVertexBuffers : zCProgMeshProto { void operator()(); };
+BindedHook Ivk_zCProgMeshProto_PackStaticVertexBuffers{ ZENFOR(0x005A4FE0, 0x005C1780, 0x005C12B0, 0x005C6E30), &zCProgMeshProto_PackStaticVertexBuffers::operator() };
+void zCProgMeshProto_PackStaticVertexBuffers::operator()()
+{
+	THISCALL(Ivk_zCProgMeshProto_PackStaticVertexBuffers)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSession::GetCameraAI(): zCAICamera* [const]]]></Title>
+			<Shortcut><![CDATA[__zCSession_GetCameraAI_0x005DE7A0]]></Shortcut>
+			<Description><![CDATA[public: virtual zCAICamera* __thiscall zCSession::GetCameraAI()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSession_GetCameraAI : zCSession { zCAICamera* operator()() const; };
+BindedHook Ivk_zCSession_GetCameraAI{ ZENFOR(0x005B7280, 0x005D4BF0, 0x005D79E0, 0x005DE7A0), &zCSession_GetCameraAI::operator() };
+zCAICamera* zCSession_GetCameraAI::operator()() const
+{
+	zCAICamera* result = THISCALL(Ivk_zCSession_GetCameraAI)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

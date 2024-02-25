@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::ReportCollision(zCCollisionReport const&): void]]></Title>
+			<Shortcut><![CDATA[__oCVisualFX_ReportCollision_0x00494E80]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCVisualFX::ReportCollision(zCCollisionReport const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_ReportCollision : oCVisualFX { void operator()(zCCollisionReport const&); };
+BindedHook Ivk_oCVisualFX_ReportCollision{ ZENFOR(0x0048C6F0, 0x004980A0, 0x004932A0, 0x00494E80), &oCVisualFX_ReportCollision::operator() };
+void oCVisualFX_ReportCollision::operator()(zCCollisionReport const& a0)
+{
+	THISCALL(Ivk_oCVisualFX_ReportCollision)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

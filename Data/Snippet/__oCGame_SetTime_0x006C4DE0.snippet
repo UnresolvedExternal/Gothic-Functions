@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::SetTime(int, int, int): void]]></Title>
+			<Shortcut><![CDATA[__oCGame_SetTime_0x006C4DE0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCGame::SetTime(int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_SetTime : oCGame { void operator()(int, int, int); };
+BindedHook Ivk_oCGame_SetTime{ ZENFOR(0x0063A910, 0x006611F0, 0x00668160, 0x006C4DE0), &oCGame_SetTime::operator() };
+void oCGame_SetTime::operator()(int a0, int a1, int a2)
+{
+	THISCALL(Ivk_oCGame_SetTime)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

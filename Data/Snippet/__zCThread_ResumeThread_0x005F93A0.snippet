@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCThread::ResumeThread(): int]]></Title>
+			<Shortcut><![CDATA[__zCThread_ResumeThread_0x005F93A0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCThread::ResumeThread()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCThread_ResumeThread : zCThread { int operator()(); };
+BindedHook Ivk_zCThread_ResumeThread{ ZENFOR(0x005CE250, 0x005ECFA0, 0x005F25B0, 0x005F93A0), &zCThread_ResumeThread::operator() };
+int zCThread_ResumeThread::operator()()
+{
+	int result = THISCALL(Ivk_zCThread_ResumeThread)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

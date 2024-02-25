@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zERROR::BlockEnd(char*, int): void]]></Title>
+			<Shortcut><![CDATA[__zERROR_BlockEnd_0x0044D290]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zERROR::BlockEnd(char*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zERROR_BlockEnd : zERROR { void operator()(char*, int); };
+BindedHook Ivk_zERROR_BlockEnd{ ZENFOR(0x00448BF0, 0x0044ED70, 0x0044CB40, 0x0044D290), &zERROR_BlockEnd::operator() };
+void zERROR_BlockEnd::operator()(char* a0, int a1)
+{
+	THISCALL(Ivk_zERROR_BlockEnd)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

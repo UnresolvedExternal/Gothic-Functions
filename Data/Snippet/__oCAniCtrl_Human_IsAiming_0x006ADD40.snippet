@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::IsAiming(): int]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_IsAiming_0x006ADD40]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCAniCtrl_Human::IsAiming()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_IsAiming : oCAniCtrl_Human { int operator()(); };
+BindedHook Ivk_oCAniCtrl_Human_IsAiming{ ZENFOR(0x00625440, 0x0064A150, 0x006514C0, 0x006ADD40), &oCAniCtrl_Human_IsAiming::operator() };
+int oCAniCtrl_Human_IsAiming::operator()()
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_IsAiming)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleEmitter::String2Vec2(zSTRING const&): zVEC2]]></Title>
+			<Shortcut><![CDATA[__zCParticleEmitter_String2Vec2_0x005B3490]]></Shortcut>
+			<Description><![CDATA[private: static zVEC2 __cdecl zCParticleEmitter::String2Vec2(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zVEC2 Hook_zCParticleEmitter_String2Vec2(zSTRING const&);
+BindedHook Ivk_zCParticleEmitter_String2Vec2{ ZENFOR(0x00592930, 0x005AE420, 0x005ADE00, 0x005B3490), Hook_zCParticleEmitter_String2Vec2 };
+zVEC2 Hook_zCParticleEmitter_String2Vec2(zSTRING const& a0)
+{
+	zVEC2 result = Ivk_zCParticleEmitter_String2Vec2(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

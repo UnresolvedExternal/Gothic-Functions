@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetVersion::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCNetVersion_ScalarDeletingDestructor_0x00458190]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCNetVersion::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1
+struct zCNetVersion_ScalarDeletingDestructor : zCNetVersion { void* operator()(unsigned int); };
+BindedHook Ivk_zCNetVersion_ScalarDeletingDestructor{ ZENFOR(0x00458190, 0x00000000, 0x00000000, 0x00000000), &zCNetVersion_ScalarDeletingDestructor::operator() };
+void* zCNetVersion_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCNetVersion_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

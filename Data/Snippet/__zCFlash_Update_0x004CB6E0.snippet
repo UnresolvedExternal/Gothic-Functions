@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFlash::Update(float): void]]></Title>
+			<Shortcut><![CDATA[__zCFlash_Update_0x004CB6E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCFlash::Update(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFlash_Update : zCFlash { void operator()(float); };
+BindedHook Ivk_zCFlash_Update{ ZENFOR(0x004C2390, 0x004D1CC0, 0x004C9170, 0x004CB6E0), &zCFlash_Update::operator() };
+void zCFlash_Update::operator()(float a0)
+{
+	THISCALL(Ivk_zCFlash_Update)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

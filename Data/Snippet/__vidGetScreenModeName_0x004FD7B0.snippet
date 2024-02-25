@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[vidGetScreenModeName(int): char*]]></Title>
+			<Shortcut><![CDATA[__vidGetScreenModeName_0x004FD7B0]]></Shortcut>
+			<Description><![CDATA[char* __cdecl vidGetScreenModeName(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[char* Hook_vidGetScreenModeName(int);
+BindedHook Ivk_vidGetScreenModeName{ ZENFOR(0x004EF270, 0x00501AF0, 0x004FAB30, 0x004FD7B0), Hook_vidGetScreenModeName };
+char* Hook_vidGetScreenModeName(int a0)
+{
+	char* result = Ivk_vidGetScreenModeName(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

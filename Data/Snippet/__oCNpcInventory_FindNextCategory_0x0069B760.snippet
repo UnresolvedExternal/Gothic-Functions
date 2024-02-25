@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcInventory::FindNextCategory(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpcInventory_FindNextCategory_0x0069B760]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpcInventory::FindNextCategory()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct oCNpcInventory_FindNextCategory : oCNpcInventory { int operator()(); };
+BindedHook Ivk_oCNpcInventory_FindNextCategory{ ZENFOR(0x0066DF50, 0x0069B760, 0x00000000, 0x00000000), &oCNpcInventory_FindNextCategory::operator() };
+int oCNpcInventory_FindNextCategory::operator()()
+{
+	int result = THISCALL(Ivk_oCNpcInventory_FindNextCategory)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

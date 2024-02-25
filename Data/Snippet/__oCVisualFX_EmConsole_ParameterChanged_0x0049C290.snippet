@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::EmConsole_ParameterChanged(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__oCVisualFX_EmConsole_ParameterChanged_0x0049C290]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl oCVisualFX::EmConsole_ParameterChanged(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCVisualFX_EmConsole_ParameterChanged(zSTRING const&);
+BindedHook Ivk_oCVisualFX_EmConsole_ParameterChanged{ ZENFOR(0x00491DC0, 0x0049E2D0, 0x0049A0F0, 0x0049C290), Hook_oCVisualFX_EmConsole_ParameterChanged };
+void Hook_oCVisualFX_EmConsole_ParameterChanged(zSTRING const& a0)
+{
+	Ivk_oCVisualFX_EmConsole_ParameterChanged(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

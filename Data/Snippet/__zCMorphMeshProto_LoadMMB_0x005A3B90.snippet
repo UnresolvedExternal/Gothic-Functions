@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMeshProto::LoadMMB(zSTRING const&): int]]></Title>
+			<Shortcut><![CDATA[__zCMorphMeshProto_LoadMMB_0x005A3B90]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCMorphMeshProto::LoadMMB(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMeshProto_LoadMMB : zCMorphMeshProto { int operator()(zSTRING const&); };
+BindedHook Ivk_zCMorphMeshProto_LoadMMB{ ZENFOR(0x00584230, 0x0059EDD0, 0x0059E630, 0x005A3B90), &zCMorphMeshProto_LoadMMB::operator() };
+int zCMorphMeshProto_LoadMMB::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_zCMorphMeshProto_LoadMMB)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

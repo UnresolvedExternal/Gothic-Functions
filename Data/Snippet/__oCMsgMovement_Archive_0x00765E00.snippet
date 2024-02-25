@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgMovement::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCMsgMovement_Archive_0x00765E00]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall oCMsgMovement::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgMovement_Archive : oCMsgMovement { void operator()(zCArchiver&); };
+BindedHook Ivk_oCMsgMovement_Archive{ ZENFOR(0x006BEC60, 0x006F3FB0, 0x007068C0, 0x00765E00), &oCMsgMovement_Archive::operator() };
+void oCMsgMovement_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCMsgMovement_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

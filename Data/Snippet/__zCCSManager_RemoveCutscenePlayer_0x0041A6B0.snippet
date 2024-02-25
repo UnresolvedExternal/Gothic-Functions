@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::RemoveCutscenePlayer(zCCSPlayer*): void]]></Title>
+			<Shortcut><![CDATA[__zCCSManager_RemoveCutscenePlayer_0x0041A6B0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSManager::RemoveCutscenePlayer(zCCSPlayer*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_RemoveCutscenePlayer : zCCSManager { void operator()(zCCSPlayer*); };
+BindedHook Ivk_zCCSManager_RemoveCutscenePlayer{ ZENFOR(0x0041A1E0, 0x0041C1D0, 0x0041A6B0, 0x0041A6B0), &zCCSManager_RemoveCutscenePlayer::operator() };
+void zCCSManager_RemoveCutscenePlayer::operator()(zCCSPlayer* a0)
+{
+	THISCALL(Ivk_zCCSManager_RemoveCutscenePlayer)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

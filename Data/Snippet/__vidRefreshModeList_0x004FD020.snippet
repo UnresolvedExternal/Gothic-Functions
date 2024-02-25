@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[vidRefreshModeList(): void]]></Title>
+			<Shortcut><![CDATA[__vidRefreshModeList_0x004FD020]]></Shortcut>
+			<Description><![CDATA[void __cdecl vidRefreshModeList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_vidRefreshModeList();
+BindedHook Ivk_vidRefreshModeList{ ZENFOR(0x004EEAE0, 0x00501340, 0x004FA3A0, 0x004FD020), Hook_vidRefreshModeList };
+void Hook_vidRefreshModeList()
+{
+	Ivk_vidRefreshModeList();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

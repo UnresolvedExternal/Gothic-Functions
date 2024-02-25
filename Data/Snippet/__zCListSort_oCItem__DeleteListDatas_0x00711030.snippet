@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCListSort<oCItem>::DeleteListDatas(): void]]></Title>
+			<Shortcut><![CDATA[__zCListSort_oCItem__DeleteListDatas_0x00711030]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCListSort<oCItem>::DeleteListDatas()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCListSort_oCItem__DeleteListDatas : zCListSort<oCItem> { void operator()(); };
+BindedHook Ivk_zCListSort_oCItem__DeleteListDatas{ ZENFOR(0x00670B90, 0x0069E460, 0x006B3390, 0x00711030), &zCListSort_oCItem__DeleteListDatas::operator() };
+void zCListSort_oCItem__DeleteListDatas::operator()()
+{
+	THISCALL(Ivk_zCListSort_oCItem__DeleteListDatas)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

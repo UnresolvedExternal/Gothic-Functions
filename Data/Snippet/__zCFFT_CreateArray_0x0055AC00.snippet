@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFFT::CreateArray(): zComplex**]]></Title>
+			<Shortcut><![CDATA[__zCFFT_CreateArray_0x0055AC00]]></Shortcut>
+			<Description><![CDATA[protected: zComplex** __thiscall zCFFT::CreateArray()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCFFT_CreateArray : zCFFT { zComplex** operator()(); };
+BindedHook Ivk_zCFFT_CreateArray{ ZENFOR(0x00000000, 0x00000000, 0x005559E0, 0x0055AC00), &zCFFT_CreateArray::operator() };
+zComplex** zCFFT_CreateArray::operator()()
+{
+	zComplex** result = THISCALL(Ivk_zCFFT_CreateArray)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

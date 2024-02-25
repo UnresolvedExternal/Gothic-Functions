@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMeshProto::Load3DSMAXAsc(zSTRING const&, float&, int, int): zCMesh*]]></Title>
+			<Shortcut><![CDATA[__zCMorphMeshProto_Load3DSMAXAsc_0x005A4BF0]]></Shortcut>
+			<Description><![CDATA[protected: zCMesh* __thiscall zCMorphMeshProto::Load3DSMAXAsc(zSTRING const&, float&, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMeshProto_Load3DSMAXAsc : zCMorphMeshProto { zCMesh* operator()(zSTRING const&, float&, int, int); };
+BindedHook Ivk_zCMorphMeshProto_Load3DSMAXAsc{ ZENFOR(0x005852F0, 0x0059FF90, 0x0059F690, 0x005A4BF0), &zCMorphMeshProto_Load3DSMAXAsc::operator() };
+zCMesh* zCMorphMeshProto_Load3DSMAXAsc::operator()(zSTRING const& a0, float& a1, int a2, int a3)
+{
+	zCMesh* result = THISCALL(Ivk_zCMorphMeshProto_Load3DSMAXAsc)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWaypoint::Draw(): void]]></Title>
+			<Shortcut><![CDATA[__zCWaypoint_Draw_0x007B0250]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCWaypoint::Draw()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWaypoint_Draw : zCWaypoint { void operator()(); };
+BindedHook Ivk_zCWaypoint_Draw{ ZENFOR(0x00706650, 0x00741160, 0x00750750, 0x007B0250), &zCWaypoint_Draw::operator() };
+void zCWaypoint_Draw::operator()()
+{
+	THISCALL(Ivk_zCWaypoint_Draw)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

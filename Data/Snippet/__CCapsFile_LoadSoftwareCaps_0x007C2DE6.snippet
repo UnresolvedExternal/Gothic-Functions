@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CCapsFile::LoadSoftwareCaps(CHelInfo*): long]]></Title>
+			<Shortcut><![CDATA[__CCapsFile_LoadSoftwareCaps_0x007C2DE6]]></Shortcut>
+			<Description><![CDATA[public: long __thiscall CCapsFile::LoadSoftwareCaps(CHelInfo*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CCapsFile_LoadSoftwareCaps : CCapsFile { long operator()(CHelInfo*); };
+BindedHook Ivk_CCapsFile_LoadSoftwareCaps{ ZENFOR(0x007696F2, 0x007B004F, 0x007B6920, 0x007C2DE6), &CCapsFile_LoadSoftwareCaps::operator() };
+long CCapsFile_LoadSoftwareCaps::operator()(CHelInfo* a0)
+{
+	long result = THISCALL(Ivk_CCapsFile_LoadSoftwareCaps)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

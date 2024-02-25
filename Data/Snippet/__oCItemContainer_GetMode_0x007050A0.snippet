@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::GetMode(): int]]></Title>
+			<Shortcut><![CDATA[__oCItemContainer_GetMode_0x007050A0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCItemContainer::GetMode()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCItemContainer_GetMode : oCItemContainer { int operator()(); };
+BindedHook Ivk_oCItemContainer_GetMode{ ZENFOR(0x00000000, 0x00000000, 0x006A7610, 0x007050A0), &oCItemContainer_GetMode::operator() };
+int oCItemContainer_GetMode::operator()()
+{
+	int result = THISCALL(Ivk_oCItemContainer_GetMode)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

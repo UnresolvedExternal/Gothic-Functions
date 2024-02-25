@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::TraverseTriggerMobs(zCTree<zCVob>*): void]]></Title>
+			<Shortcut><![CDATA[__oCMobInter_TraverseTriggerMobs_0x0071CF50]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl oCMobInter::TraverseTriggerMobs(zCTree<zCVob>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCMobInter_TraverseTriggerMobs(zCTree<zCVob>*);
+BindedHook Ivk_oCMobInter_TraverseTriggerMobs{ ZENFOR(0x0067BD50, 0x006AA560, 0x006BEEC0, 0x0071CF50), Hook_oCMobInter_TraverseTriggerMobs };
+void Hook_oCMobInter_TraverseTriggerMobs(zCTree<zCVob>* a0)
+{
+	Ivk_oCMobInter_TraverseTriggerMobs(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

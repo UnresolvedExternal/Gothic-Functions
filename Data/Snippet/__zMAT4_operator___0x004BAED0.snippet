@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zMAT4::operator[](int): zVEC4 [const]]]></Title>
+			<Shortcut><![CDATA[__zMAT4_operator___0x004BAED0]]></Shortcut>
+			<Description><![CDATA[public: zVEC4 __thiscall zMAT4::operator[](int)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2, G2A
+struct zMAT4_operator__ : zMAT4 { zVEC4 operator()(int) const; };
+BindedHook Ivk_zMAT4_operator__{ ZENFOR(0x00000000, 0x004C0AF0, 0x004B8960, 0x004BAED0), &zMAT4_operator__::operator() };
+zVEC4 zMAT4_operator__::operator()(int a0) const
+{
+	zVEC4 result = THISCALL(Ivk_zMAT4_operator__)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::SetRotationWorld(zCQuat const&): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_SetRotationWorld_0x0061B4C0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCVob::SetRotationWorld(zCQuat const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_SetRotationWorld : zCVob { void operator()(zCQuat const&); };
+BindedHook Ivk_zCVob_SetRotationWorld{ ZENFOR(0x005EDFB0, 0x0060E770, 0x00613DF0, 0x0061B4C0), &zCVob_SetRotationWorld::operator() };
+void zCVob_SetRotationWorld::operator()(zCQuat const& a0)
+{
+	THISCALL(Ivk_zCVob_SetRotationWorld)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

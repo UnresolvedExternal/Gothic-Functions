@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::SetTextureVar(int, int, zSTRING*): void]]></Title>
+			<Shortcut><![CDATA[__zCMorphMesh_SetTextureVar_0x005A73E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCMorphMesh::SetTextureVar(int, int, zSTRING*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_SetTextureVar : zCMorphMesh { void operator()(int, int, zSTRING*); };
+BindedHook Ivk_zCMorphMesh_SetTextureVar{ ZENFOR(0x00587A70, 0x005A2A60, 0x005A1E80, 0x005A73E0), &zCMorphMesh_SetTextureVar::operator() };
+void zCMorphMesh_SetTextureVar::operator()(int a0, int a1, zSTRING* a2)
+{
+	THISCALL(Ivk_zCMorphMesh_SetTextureVar)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

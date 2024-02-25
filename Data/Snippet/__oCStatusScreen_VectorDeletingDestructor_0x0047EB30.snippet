@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCStatusScreen::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCStatusScreen_VectorDeletingDestructor_0x0047EB30]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall oCStatusScreen::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A, G2A
+struct oCStatusScreen_VectorDeletingDestructor : oCStatusScreen { void* operator()(unsigned int); };
+BindedHook Ivk_oCStatusScreen_VectorDeletingDestructor{ ZENFOR(0x00477600, 0x00481160, 0x00000000, 0x0047EB30), &oCStatusScreen_VectorDeletingDestructor::operator() };
+void* oCStatusScreen_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCStatusScreen_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

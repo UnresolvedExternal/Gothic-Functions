@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::RemoveVobSubtree_r(zCTree<zCVob>*, int): void]]></Title>
+			<Shortcut><![CDATA[__zCWorld_RemoveVobSubtree_r_0x00624BC0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCWorld::RemoveVobSubtree_r(zCTree<zCVob>*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_RemoveVobSubtree_r : zCWorld { void operator()(zCTree<zCVob>*, int); };
+BindedHook Ivk_zCWorld_RemoveVobSubtree_r{ ZENFOR(0x005F6710, 0x006176E0, 0x0061D430, 0x00624BC0), &zCWorld_RemoveVobSubtree_r::operator() };
+void zCWorld_RemoveVobSubtree_r::operator()(zCTree<zCVob>* a0, int a1)
+{
+	THISCALL(Ivk_zCWorld_RemoveVobSubtree_r)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

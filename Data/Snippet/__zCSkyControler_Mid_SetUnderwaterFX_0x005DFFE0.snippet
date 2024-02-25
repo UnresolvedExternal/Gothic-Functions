@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Mid::SetUnderwaterFX(int): void]]></Title>
+			<Shortcut><![CDATA[__zCSkyControler_Mid_SetUnderwaterFX_0x005DFFE0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCSkyControler_Mid::SetUnderwaterFX(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Mid_SetUnderwaterFX : zCSkyControler_Mid { void operator()(int); };
+BindedHook Ivk_zCSkyControler_Mid_SetUnderwaterFX{ ZENFOR(0x005BAA30, 0x005D8590, 0x005D9230, 0x005DFFE0), &zCSkyControler_Mid_SetUnderwaterFX::operator() };
+void zCSkyControler_Mid_SetUnderwaterFX::operator()(int a0)
+{
+	THISCALL(Ivk_zCSkyControler_Mid_SetUnderwaterFX)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

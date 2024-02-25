@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspTree::LoadBIN(zCFileBIN&, int): int]]></Title>
+			<Shortcut><![CDATA[__zCBspTree_LoadBIN_0x00538E10]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCBspTree::LoadBIN(zCFileBIN&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspTree_LoadBIN : zCBspTree { int operator()(zCFileBIN&, int); };
+BindedHook Ivk_zCBspTree_LoadBIN{ ZENFOR(0x00525330, 0x0053B550, 0x00535AB0, 0x00538E10), &zCBspTree_LoadBIN::operator() };
+int zCBspTree_LoadBIN::operator()(zCFileBIN& a0, int a1)
+{
+	int result = THISCALL(Ivk_zCBspTree_LoadBIN)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

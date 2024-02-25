@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchAnimate::SetVisual(zCVisual*): void]]></Title>
+			<Shortcut><![CDATA[__zCTouchAnimate_SetVisual_0x00616C30]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCTouchAnimate::SetVisual(zCVisual*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchAnimate_SetVisual : zCTouchAnimate { void operator()(zCVisual*); };
+BindedHook Ivk_zCTouchAnimate_SetVisual{ ZENFOR(0x005E9B80, 0x0060A1B0, 0x0060F570, 0x00616C30), &zCTouchAnimate_SetVisual::operator() };
+void zCTouchAnimate_SetVisual::operator()(zCVisual* a0)
+{
+	THISCALL(Ivk_zCTouchAnimate_SetVisual)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

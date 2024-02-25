@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMission::Unarchive(zCArchiver&): oCMission*]]></Title>
+			<Shortcut><![CDATA[__oCMission_Unarchive_0x00717BB0]]></Shortcut>
+			<Description><![CDATA[public: virtual oCMission* __thiscall oCMission::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMission_Unarchive : oCMission { oCMission* operator()(zCArchiver&); };
+BindedHook Ivk_oCMission_Unarchive{ ZENFOR(0x00676B70, 0x006A4D50, 0x006B9B20, 0x00717BB0), &oCMission_Unarchive::operator() };
+oCMission* oCMission_Unarchive::operator()(zCArchiver& a0)
+{
+	oCMission* result = THISCALL(Ivk_oCMission_Unarchive)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

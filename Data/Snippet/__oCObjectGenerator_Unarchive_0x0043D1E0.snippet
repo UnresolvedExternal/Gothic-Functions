@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCObjectGenerator::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCObjectGenerator_Unarchive_0x0043D1E0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCObjectGenerator::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCObjectGenerator_Unarchive : oCObjectGenerator { void operator()(zCArchiver&); };
+BindedHook Ivk_oCObjectGenerator_Unarchive{ ZENFOR(0x00439760, 0x0043E230, 0x0043CBB0, 0x0043D1E0), &oCObjectGenerator_Unarchive::operator() };
+void oCObjectGenerator_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCObjectGenerator_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

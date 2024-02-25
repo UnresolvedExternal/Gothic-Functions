@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundSystem::IsSoundActive(int const&): int]]></Title>
+			<Shortcut><![CDATA[__zCSoundSystem_IsSoundActive_0x004EB420]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCSoundSystem::IsSoundActive(int const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundSystem_IsSoundActive : zCSoundSystem { int operator()(int const&); };
+BindedHook Ivk_zCSoundSystem_IsSoundActive{ ZENFOR(0x004DDEA0, 0x004EF350, 0x004E87A0, 0x004EB420), &zCSoundSystem_IsSoundActive::operator() };
+int zCSoundSystem_IsSoundActive::operator()(int const& a0)
+{
+	int result = THISCALL(Ivk_zCSoundSystem_IsSoundActive)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

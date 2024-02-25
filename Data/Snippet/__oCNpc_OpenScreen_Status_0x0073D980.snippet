@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::OpenScreen_Status(): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_OpenScreen_Status_0x0073D980]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::OpenScreen_Status()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_OpenScreen_Status : oCNpc { void operator()(); };
+BindedHook Ivk_oCNpc_OpenScreen_Status{ ZENFOR(0x0069A400, 0x006CC370, 0x006DF160, 0x0073D980), &oCNpc_OpenScreen_Status::operator() };
+void oCNpc_OpenScreen_Status::operator()()
+{
+	THISCALL(Ivk_oCNpc_OpenScreen_Status)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::GetFrequency(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCSndFX_MSS_GetFrequency_0x004EE0E0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCSndFX_MSS::GetFrequency()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_GetFrequency : zCSndFX_MSS { int operator()() const; };
+BindedHook Ivk_zCSndFX_MSS_GetFrequency{ ZENFOR(0x004E0B30, 0x004F24F0, 0x004EB460, 0x004EE0E0), &zCSndFX_MSS_GetFrequency::operator() };
+int zCSndFX_MSS_GetFrequency::operator()() const
+{
+	int result = THISCALL(Ivk_zCSndFX_MSS_GetFrequency)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

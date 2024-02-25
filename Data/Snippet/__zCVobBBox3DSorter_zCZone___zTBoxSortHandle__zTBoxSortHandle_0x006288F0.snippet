@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobBBox3DSorter<zCZone>::zTBoxSortHandle::~zTBoxSortHandle()]]></Title>
+			<Shortcut><![CDATA[__zCVobBBox3DSorter_zCZone___zTBoxSortHandle__zTBoxSortHandle_0x006288F0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCVobBBox3DSorter<zCZone>::zTBoxSortHandle::~zTBoxSortHandle()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobBBox3DSorter_zCZone___zTBoxSortHandle_Destructor : zCVobBBox3DSorter<zCZone>::zTBoxSortHandle { void operator()(); };
+BindedHook Ivk_zCVobBBox3DSorter_zCZone___zTBoxSortHandle_Destructor{ ZENFOR(0x005FA100, 0x0061B650, 0x00621170, 0x006288F0), &zCVobBBox3DSorter_zCZone___zTBoxSortHandle_Destructor::operator() };
+void zCVobBBox3DSorter_zCZone___zTBoxSortHandle_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVobBBox3DSorter_zCZone___zTBoxSortHandle_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

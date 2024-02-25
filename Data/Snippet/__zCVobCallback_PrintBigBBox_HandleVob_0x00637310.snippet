@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobCallback_PrintBigBBox::HandleVob(zCVob*, void*): void]]></Title>
+			<Shortcut><![CDATA[__zCVobCallback_PrintBigBBox_HandleVob_0x00637310]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCVobCallback_PrintBigBBox::HandleVob(zCVob*, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobCallback_PrintBigBBox_HandleVob : zCVobCallback_PrintBigBBox { void operator()(zCVob*, void*); };
+BindedHook Ivk_zCVobCallback_PrintBigBBox_HandleVob{ ZENFOR(0x00607800, 0x00629AB0, 0x0062FB40, 0x00637310), &zCVobCallback_PrintBigBBox_HandleVob::operator() };
+void zCVobCallback_PrintBigBBox_HandleVob::operator()(zCVob* a0, void* a1)
+{
+	THISCALL(Ivk_zCVobCallback_PrintBigBBox_HandleVob)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

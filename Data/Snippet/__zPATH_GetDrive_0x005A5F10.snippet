@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zPATH::GetDrive(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zPATH_GetDrive_0x005A5F10]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall zPATH::GetDrive()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zPATH_GetDrive : zPATH { zSTRING operator()(); };
+BindedHook Ivk_zPATH_GetDrive{ ZENFOR(0x00586570, 0x005A1440, 0x005A09B0, 0x005A5F10), &zPATH_GetDrive::operator() };
+zSTRING zPATH_GetDrive::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zPATH_GetDrive)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

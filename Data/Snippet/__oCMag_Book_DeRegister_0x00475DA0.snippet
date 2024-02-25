@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::DeRegister(int): int]]></Title>
+			<Shortcut><![CDATA[__oCMag_Book_DeRegister_0x00475DA0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCMag_Book::DeRegister(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_DeRegister : oCMag_Book { int operator()(int); };
+BindedHook Ivk_oCMag_Book_DeRegister{ ZENFOR(0x0046F1C0, 0x00478010, 0x00474A00, 0x00475DA0), &oCMag_Book_DeRegister::operator() };
+int oCMag_Book_DeRegister::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCMag_Book_DeRegister)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

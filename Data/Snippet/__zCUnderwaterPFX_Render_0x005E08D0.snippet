@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCUnderwaterPFX::Render(zTRenderContext&): int]]></Title>
+			<Shortcut><![CDATA[__zCUnderwaterPFX_Render_0x005E08D0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCUnderwaterPFX::Render(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCUnderwaterPFX_Render : zCUnderwaterPFX { int operator()(zTRenderContext&); };
+BindedHook Ivk_zCUnderwaterPFX_Render{ ZENFOR(0x005BADA0, 0x005D8910, 0x005D9B20, 0x005E08D0), &zCUnderwaterPFX_Render::operator() };
+int zCUnderwaterPFX_Render::operator()(zTRenderContext& a0)
+{
+	int result = THISCALL(Ivk_zCUnderwaterPFX_Render)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::CreateWay(zCWaypoint*, zCWaypoint*): void]]></Title>
+			<Shortcut><![CDATA[__zCWayNet_CreateWay_0x007AD420]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCWayNet::CreateWay(zCWaypoint*, zCWaypoint*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_CreateWay : zCWayNet { void operator()(zCWaypoint*, zCWaypoint*); };
+BindedHook Ivk_zCWayNet_CreateWay{ ZENFOR(0x00703810, 0x0073E000, 0x0074D920, 0x007AD420), &zCWayNet_CreateWay::operator() };
+void zCWayNet_CreateWay::operator()(zCWaypoint* a0, zCWaypoint* a1)
+{
+	THISCALL(Ivk_zCWayNet_CreateWay)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

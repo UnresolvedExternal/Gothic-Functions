@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::PoolHasFlags(zSTRING&, int): int]]></Title>
+			<Shortcut><![CDATA[__zCCSManager_PoolHasFlags_0x0041ABB0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCCSManager::PoolHasFlags(zSTRING&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_PoolHasFlags : zCCSManager { int operator()(zSTRING&, int); };
+BindedHook Ivk_zCCSManager_PoolHasFlags{ ZENFOR(0x0041A770, 0x0041C770, 0x0041ABB0, 0x0041ABB0), &zCCSManager_PoolHasFlags::operator() };
+int zCCSManager_PoolHasFlags::operator()(zSTRING& a0, int a1)
+{
+	int result = THISCALL(Ivk_zCCSManager_PoolHasFlags)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

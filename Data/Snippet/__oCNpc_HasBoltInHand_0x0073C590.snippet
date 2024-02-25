@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::HasBoltInHand(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_HasBoltInHand_0x0073C590]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::HasBoltInHand()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_HasBoltInHand : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_HasBoltInHand{ ZENFOR(0x00699140, 0x006CAF50, 0x006DDDC0, 0x0073C590), &oCNpc_HasBoltInHand::operator() };
+int oCNpc_HasBoltInHand::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_HasBoltInHand)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::MsgSendFromQueue(): int]]></Title>
+			<Shortcut><![CDATA[__zCNet_MsgSendFromQueue_0x004526B0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCNet::MsgSendFromQueue()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_MsgSendFromQueue : zCNet { int operator()(); };
+BindedHook Ivk_zCNet_MsgSendFromQueue{ ZENFOR(0x0044DE90, 0x00454590, 0x00451F60, 0x004526B0), &zCNet_MsgSendFromQueue::operator() };
+int zCNet_MsgSendFromQueue::operator()()
+{
+	int result = THISCALL(Ivk_zCNet_MsgSendFromQueue)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

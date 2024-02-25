@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResourceManager::PrintStatusDebug(): void]]></Title>
+			<Shortcut><![CDATA[__zCResourceManager_PrintStatusDebug_0x005DD9D0]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCResourceManager::PrintStatusDebug()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResourceManager_PrintStatusDebug : zCResourceManager { void operator()(); };
+BindedHook Ivk_zCResourceManager_PrintStatusDebug{ ZENFOR(0x005B6630, 0x005D3E40, 0x005D6C10, 0x005DD9D0), &zCResourceManager_PrintStatusDebug::operator() };
+void zCResourceManager_PrintStatusDebug::operator()()
+{
+	THISCALL(Ivk_zCResourceManager_PrintStatusDebug)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

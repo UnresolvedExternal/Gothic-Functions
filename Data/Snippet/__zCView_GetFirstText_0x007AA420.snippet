@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::GetFirstText(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zCView_GetFirstText_0x007AA420]]></Shortcut>
+			<Description><![CDATA[private: zSTRING __thiscall zCView::GetFirstText()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_GetFirstText : zCView { zSTRING operator()(); };
+BindedHook Ivk_zCView_GetFirstText{ ZENFOR(0x00700880, 0x0073AED0, 0x0074A920, 0x007AA420), &zCView_GetFirstText::operator() };
+zSTRING zCView_GetFirstText::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCView_GetFirstText)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

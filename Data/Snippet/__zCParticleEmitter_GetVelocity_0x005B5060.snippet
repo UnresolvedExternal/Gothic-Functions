@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleEmitter::GetVelocity(zSParticle*, zCParticleFX*): zVEC3]]></Title>
+			<Shortcut><![CDATA[__zCParticleEmitter_GetVelocity_0x005B5060]]></Shortcut>
+			<Description><![CDATA[private: zVEC3 __fastcall zCParticleEmitter::GetVelocity(zSParticle*, zCParticleFX*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleEmitter_GetVelocity : zCParticleEmitter { zVEC3 __fastcall operator()(zSParticle*, zCParticleFX*); };
+BindedHook Ivk_zCParticleEmitter_GetVelocity{ ZENFOR(0x00593CD0, 0x005AF9B0, 0x005AF500, 0x005B5060), &zCParticleEmitter_GetVelocity::operator() };
+zVEC3 __fastcall zCParticleEmitter_GetVelocity::operator()(zSParticle* a0, zCParticleFX* a1)
+{
+	zVEC3 result = THISCALL(Ivk_zCParticleEmitter_GetVelocity)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zMAT4::SetAtVector(zVEC3 const&): void]]></Title>
+			<Shortcut><![CDATA[__zMAT4_SetAtVector_0x0056B960]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zMAT4::SetAtVector(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zMAT4_SetAtVector : zMAT4 { void operator()(zVEC3 const&); };
+BindedHook Ivk_zMAT4_SetAtVector{ ZENFOR(0x00497390, 0x004A42B0, 0x00566710, 0x0056B960), &zMAT4_SetAtVector::operator() };
+void zMAT4_SetAtVector::operator()(zVEC3 const& a0)
+{
+	THISCALL(Ivk_zMAT4_SetAtVector)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

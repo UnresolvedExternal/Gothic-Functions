@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBBox3DSorterBase::zCBBox3DSorterBase()]]></Title>
+			<Shortcut><![CDATA[__zCBBox3DSorterBase_zCBBox3DSorterBase_0x0063B080]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCBBox3DSorterBase::zCBBox3DSorterBase()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBBox3DSorterBase_zCBBox3DSorterBase : zCBBox3DSorterBase { zCBBox3DSorterBase* operator()(); };
+BindedHook Ivk_zCBBox3DSorterBase_zCBBox3DSorterBase{ ZENFOR(0x0060AA00, 0x0062CF20, 0x006338B0, 0x0063B080), &zCBBox3DSorterBase_zCBBox3DSorterBase::operator() };
+zCBBox3DSorterBase* zCBBox3DSorterBase_zCBBox3DSorterBase::operator()()
+{
+	zCBBox3DSorterBase* result = THISCALL(Ivk_zCBBox3DSorterBase_zCBBox3DSorterBase)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

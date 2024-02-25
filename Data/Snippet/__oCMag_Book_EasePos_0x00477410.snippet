@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::EasePos(float, zVEC3&, zVEC3&): zVEC3]]></Title>
+			<Shortcut><![CDATA[__oCMag_Book_EasePos_0x00477410]]></Shortcut>
+			<Description><![CDATA[public: zVEC3 __thiscall oCMag_Book::EasePos(float, zVEC3&, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_EasePos : oCMag_Book { zVEC3 operator()(float, zVEC3&, zVEC3&); };
+BindedHook Ivk_oCMag_Book_EasePos{ ZENFOR(0x00470750, 0x00479640, 0x00476070, 0x00477410), &oCMag_Book_EasePos::operator() };
+zVEC3 oCMag_Book_EasePos::operator()(float a0, zVEC3& a1, zVEC3& a2)
+{
+	zVEC3 result = THISCALL(Ivk_oCMag_Book_EasePos)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

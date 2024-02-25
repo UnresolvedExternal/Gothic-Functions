@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCLogTopic::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCLogTopic_Unarchive_0x00663B40]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall oCLogTopic::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCLogTopic_Unarchive : oCLogTopic { void __fastcall operator()(zCArchiver&); };
+BindedHook Ivk_oCLogTopic_Unarchive{ ZENFOR(0x0072ED60, 0x0076D3C0, 0x0077A900, 0x00663B40), &oCLogTopic_Unarchive::operator() };
+void __fastcall oCLogTopic_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCLogTopic_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

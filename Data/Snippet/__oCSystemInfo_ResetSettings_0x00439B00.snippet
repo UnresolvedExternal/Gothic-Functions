@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSystemInfo::ResetSettings(float): void]]></Title>
+			<Shortcut><![CDATA[__oCSystemInfo_ResetSettings_0x00439B00]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCSystemInfo::ResetSettings(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSystemInfo_ResetSettings : oCSystemInfo { void operator()(float); };
+BindedHook Ivk_oCSystemInfo_ResetSettings{ ZENFOR(0x00436520, 0x0043A9C0, 0x004394D0, 0x00439B00), &oCSystemInfo_ResetSettings::operator() };
+void oCSystemInfo_ResetSettings::operator()(float a0)
+{
+	THISCALL(Ivk_oCSystemInfo_ResetSettings)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsConditionValid(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_IsConditionValid_0x00735130]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::IsConditionValid()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsConditionValid : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_IsConditionValid{ ZENFOR(0x00691F40, 0x006C3570, 0x006D6A60, 0x00735130), &oCNpc_IsConditionValid::operator() };
+int oCNpc_IsConditionValid::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_IsConditionValid)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

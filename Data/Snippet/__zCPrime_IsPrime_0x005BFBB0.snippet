@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPrime::IsPrime(unsigned long): int]]></Title>
+			<Shortcut><![CDATA[__zCPrime_IsPrime_0x005BFBB0]]></Shortcut>
+			<Description><![CDATA[public: static int __cdecl zCPrime::IsPrime(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCPrime_IsPrime(unsigned long);
+BindedHook Ivk_zCPrime_IsPrime{ ZENFOR(0x0059DCF0, 0x005BA2E0, 0x005BA040, 0x005BFBB0), Hook_zCPrime_IsPrime };
+int Hook_zCPrime_IsPrime(unsigned long a0)
+{
+	int result = Ivk_zCPrime_IsPrime(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCPortalRoomManager::oCPortalRoomManager()]]></Title>
+			<Shortcut><![CDATA[__oCPortalRoomManager_oCPortalRoomManager_0x00772690]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCPortalRoomManager::oCPortalRoomManager()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCPortalRoomManager_oCPortalRoomManager : oCPortalRoomManager { oCPortalRoomManager* operator()(); };
+BindedHook Ivk_oCPortalRoomManager_oCPortalRoomManager{ ZENFOR(0x006CAC50, 0x00700EB0, 0x00713100, 0x00772690), &oCPortalRoomManager_oCPortalRoomManager::operator() };
+oCPortalRoomManager* oCPortalRoomManager_oCPortalRoomManager::operator()()
+{
+	oCPortalRoomManager* result = THISCALL(Ivk_oCPortalRoomManager_oCPortalRoomManager)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

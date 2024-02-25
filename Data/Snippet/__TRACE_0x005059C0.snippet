@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[TRACE(char*, ...): void]]></Title>
+			<Shortcut><![CDATA[__TRACE_0x005059C0]]></Shortcut>
+			<Description><![CDATA[void __cdecl TRACE(char*, ...)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_TRACE(char*, ...);
+BindedHook Ivk_TRACE{ ZENFOR(0x004F6D90, 0x005097F0, 0x00502CD0, 0x005059C0), Hook_TRACE };
+void Hook_TRACE(char* a0, ... a1)
+{
+	Ivk_TRACE(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

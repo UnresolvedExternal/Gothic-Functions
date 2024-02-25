@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConsole::AddSkip(int): void]]></Title>
+			<Shortcut><![CDATA[__zCConsole_AddSkip_0x007838B0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCConsole::AddSkip(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConsole_AddSkip : zCConsole { void operator()(int); };
+BindedHook Ivk_zCConsole_AddSkip{ ZENFOR(0x006DA730, 0x00712540, 0x00723E70, 0x007838B0), &zCConsole_AddSkip::operator() };
+void zCConsole_AddSkip::operator()(int a0)
+{
+	THISCALL(Ivk_zCConsole_AddSkip)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

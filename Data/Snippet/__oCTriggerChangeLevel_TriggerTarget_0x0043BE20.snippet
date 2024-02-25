@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTriggerChangeLevel::TriggerTarget(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__oCTriggerChangeLevel_TriggerTarget_0x0043BE20]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCTriggerChangeLevel::TriggerTarget(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTriggerChangeLevel_TriggerTarget : oCTriggerChangeLevel { void operator()(zCVob*); };
+BindedHook Ivk_oCTriggerChangeLevel_TriggerTarget{ ZENFOR(0x00438370, 0x0043CD10, 0x0043B7F0, 0x0043BE20), &oCTriggerChangeLevel_TriggerTarget::operator() };
+void oCTriggerChangeLevel_TriggerTarget::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_oCTriggerChangeLevel_TriggerTarget)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

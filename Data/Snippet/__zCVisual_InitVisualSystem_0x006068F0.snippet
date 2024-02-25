@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVisual::InitVisualSystem(): void]]></Title>
+			<Shortcut><![CDATA[__zCVisual_InitVisualSystem_0x006068F0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCVisual::InitVisualSystem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCVisual_InitVisualSystem();
+BindedHook Ivk_zCVisual_InitVisualSystem{ ZENFOR(0x005DA000, 0x005F9970, 0x005FFA60, 0x006068F0), Hook_zCVisual_InitVisualSystem };
+void Hook_zCVisual_InitVisualSystem()
+{
+	Ivk_zCVisual_InitVisualSystem();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

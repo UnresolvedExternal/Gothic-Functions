@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlockBase::BlockCorrection(): void]]></Title>
+			<Shortcut><![CDATA[__zCCSBlockBase_BlockCorrection_0x0040CA40]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSBlockBase::BlockCorrection()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlockBase_BlockCorrection : zCCSBlockBase { void operator()(); };
+BindedHook Ivk_zCCSBlockBase_BlockCorrection{ ZENFOR(0x0040C650, 0x0040D8A0, 0x0040CA40, 0x0040CA40), &zCCSBlockBase_BlockCorrection::operator() };
+void zCCSBlockBase_BlockCorrection::operator()()
+{
+	THISCALL(Ivk_zCCSBlockBase_BlockCorrection)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLightning::zCBolt::Generate_R(zVEC3 const&, zVEC3 const&, float): void]]></Title>
+			<Shortcut><![CDATA[__zCLightning__zCBolt_Generate_R_0x005BF430]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCLightning::zCBolt::Generate_R(zVEC3 const&, zVEC3 const&, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCLightning__zCBolt_Generate_R : zCLightning::zCBolt { void operator()(zVEC3 const&, zVEC3 const&, float); };
+BindedHook Ivk_zCLightning__zCBolt_Generate_R{ ZENFOR(0x0059D560, 0x005B9B30, 0x005B98C0, 0x005BF430), &zCLightning__zCBolt_Generate_R::operator() };
+void zCLightning__zCBolt_Generate_R::operator()(zVEC3 const& a0, zVEC3 const& a1, float a2)
+{
+	THISCALL(Ivk_zCLightning__zCBolt_Generate_R)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

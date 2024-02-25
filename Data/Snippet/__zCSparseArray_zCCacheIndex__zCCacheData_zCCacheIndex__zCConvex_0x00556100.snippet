@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCCacheIndex, zCCacheData<zCCacheIndex, zCConvexCollisionCache>>::ManDatPtr(unsigned long): zCSparseArrayManDat* [const]]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvex_0x00556100]]></Shortcut>
+			<Description><![CDATA[protected: virtual zCSparseArrayManDat* __thiscall zCSparseArray<zCCacheIndex, zCCacheData<zCCacheIndex, zCConvexCollisionCache>>::ManDatPtr(unsigned long)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___ManDatPtr : zCSparseArray<zCCacheIndex, zCCacheData<zCCacheIndex, zCConvexCollisionCache>> { zCSparseArrayManDat* operator()(unsigned long) const; };
+BindedHook Ivk_zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___ManDatPtr{ ZENFOR(0x005419B0, 0x00559310, 0x00550EE0, 0x00556100), &zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___ManDatPtr::operator() };
+zCSparseArrayManDat* zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___ManDatPtr::operator()(unsigned long a0) const
+{
+	zCSparseArrayManDat* result = THISCALL(Ivk_zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___ManDatPtr)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInformationManager::CollectChoices(oCInfo*): int]]></Title>
+			<Shortcut><![CDATA[__oCInformationManager_CollectChoices_0x00661CD0]]></Shortcut>
+			<Description><![CDATA[protected: int __fastcall oCInformationManager::CollectChoices(oCInfo*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInformationManager_CollectChoices : oCInformationManager { int __fastcall operator()(oCInfo*); };
+BindedHook Ivk_oCInformationManager_CollectChoices{ ZENFOR(0x0072CFC0, 0x0076B590, 0x00778AB0, 0x00661CD0), &oCInformationManager_CollectChoices::operator() };
+int __fastcall oCInformationManager_CollectChoices::operator()(oCInfo* a0)
+{
+	int result = THISCALL(Ivk_oCInformationManager_CollectChoices)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

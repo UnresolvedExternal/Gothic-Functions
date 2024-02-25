@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::OnTick(): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_OnTick_0x00404270]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCVob::OnTick()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_OnTick : zCVob { void operator()(); };
+BindedHook Ivk_zCVob_OnTick{ ZENFOR(0x00404130, 0x004048C0, 0x00404270, 0x00404270), &zCVob_OnTick::operator() };
+void zCVob_OnTick::operator()()
+{
+	THISCALL(Ivk_zCVob_OnTick)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

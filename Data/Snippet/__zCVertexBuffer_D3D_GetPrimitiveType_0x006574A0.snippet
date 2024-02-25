@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer_D3D::GetPrimitiveType(): zTVBufferPrimitiveType]]></Title>
+			<Shortcut><![CDATA[__zCVertexBuffer_D3D_GetPrimitiveType_0x006574A0]]></Shortcut>
+			<Description><![CDATA[public: virtual zTVBufferPrimitiveType __thiscall zCVertexBuffer_D3D::GetPrimitiveType()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_D3D_GetPrimitiveType : zCVertexBuffer_D3D { zTVBufferPrimitiveType operator()(); };
+BindedHook Ivk_zCVertexBuffer_D3D_GetPrimitiveType{ ZENFOR(0x0071EBB0, 0x0075B350, 0x0076A970, 0x006574A0), &zCVertexBuffer_D3D_GetPrimitiveType::operator() };
+zTVBufferPrimitiveType zCVertexBuffer_D3D_GetPrimitiveType::operator()()
+{
+	zTVBufferPrimitiveType result = THISCALL(Ivk_zCVertexBuffer_D3D_GetPrimitiveType)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

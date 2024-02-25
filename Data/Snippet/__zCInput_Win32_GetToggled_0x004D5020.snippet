@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput_Win32::GetToggled(unsigned short): int]]></Title>
+			<Shortcut><![CDATA[__zCInput_Win32_GetToggled_0x004D5020]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCInput_Win32::GetToggled(unsigned short)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_Win32_GetToggled : zCInput_Win32 { int operator()(unsigned short); };
+BindedHook Ivk_zCInput_Win32_GetToggled{ ZENFOR(0x004C8630, 0x004D85F0, 0x004D2A60, 0x004D5020), &zCInput_Win32_GetToggled::operator() };
+int zCInput_Win32_GetToggled::operator()(unsigned short a0)
+{
+	int result = THISCALL(Ivk_zCInput_Win32_GetToggled)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

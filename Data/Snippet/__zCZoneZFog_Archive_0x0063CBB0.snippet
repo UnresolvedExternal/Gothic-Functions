@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneZFog::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCZoneZFog_Archive_0x0063CBB0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCZoneZFog::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZoneZFog_Archive : zCZoneZFog { void operator()(zCArchiver&); };
+BindedHook Ivk_zCZoneZFog_Archive{ ZENFOR(0x0060C180, 0x0062E720, 0x006353D0, 0x0063CBB0), &zCZoneZFog_Archive::operator() };
+void zCZoneZFog_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCZoneZFog_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zERROR::ShowSpy(int): void]]></Title>
+			<Shortcut><![CDATA[__zERROR_ShowSpy_0x0044D8C0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zERROR::ShowSpy(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zERROR_ShowSpy : zERROR { void operator()(int); };
+BindedHook Ivk_zERROR_ShowSpy{ ZENFOR(0x004491A0, 0x0044F3B0, 0x0044D170, 0x0044D8C0), &zERROR_ShowSpy::operator() };
+void zERROR_ShowSpy::operator()(int a0)
+{
+	THISCALL(Ivk_zERROR_ShowSpy)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

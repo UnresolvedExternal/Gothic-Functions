@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::ReleasePFXMesh(): void]]></Title>
+			<Shortcut><![CDATA[__oCVisualFX_ReleasePFXMesh_0x00499D10]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall oCVisualFX::ReleasePFXMesh()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct oCVisualFX_ReleasePFXMesh : oCVisualFX { void operator()(); };
+BindedHook Ivk_oCVisualFX_ReleasePFXMesh{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x00499D10), &oCVisualFX_ReleasePFXMesh::operator() };
+void oCVisualFX_ReleasePFXMesh::operator()()
+{
+	THISCALL(Ivk_oCVisualFX_ReleasePFXMesh)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

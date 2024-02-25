@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobFire::PostSave(): void]]></Title>
+			<Shortcut><![CDATA[__oCMobFire_PostSave_0x00722D40]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMobFire::PostSave()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobFire_PostSave : oCMobFire { void operator()(); };
+BindedHook Ivk_oCMobFire_PostSave{ ZENFOR(0x00681360, 0x006B06A0, 0x006C4CB0, 0x00722D40), &oCMobFire_PostSave::operator() };
+void oCMobFire_PostSave::operator()()
+{
+	THISCALL(Ivk_oCMobFire_PostSave)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

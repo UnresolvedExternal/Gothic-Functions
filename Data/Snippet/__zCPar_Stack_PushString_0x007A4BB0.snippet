@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_Stack::PushString(zSTRING&): void]]></Title>
+			<Shortcut><![CDATA[__zCPar_Stack_PushString_0x007A4BB0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCPar_Stack::PushString(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_Stack_PushString : zCPar_Stack { void operator()(zSTRING&); };
+BindedHook Ivk_zCPar_Stack_PushString{ ZENFOR(0x006FB100, 0x00735550, 0x00745170, 0x007A4BB0), &zCPar_Stack_PushString::operator() };
+void zCPar_Stack_PushString::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_zCPar_Stack_PushString)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

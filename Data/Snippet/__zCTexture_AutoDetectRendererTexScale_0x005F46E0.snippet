@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexture::AutoDetectRendererTexScale(): void]]></Title>
+			<Shortcut><![CDATA[__zCTexture_AutoDetectRendererTexScale_0x005F46E0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCTexture::AutoDetectRendererTexScale()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCTexture_AutoDetectRendererTexScale();
+BindedHook Ivk_zCTexture_AutoDetectRendererTexScale{ ZENFOR(0x005C98E0, 0x005E8230, 0x005ED930, 0x005F46E0), Hook_zCTexture_AutoDetectRendererTexScale };
+void Hook_zCTexture_AutoDetectRendererTexScale()
+{
+	Ivk_zCTexture_AutoDetectRendererTexScale();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

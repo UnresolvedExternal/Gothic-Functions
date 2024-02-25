@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::BBox3DInFrustum(zTBBox3D const&, int&): zTCam_ClipType]]></Title>
+			<Shortcut><![CDATA[__zCCamera_BBox3DInFrustum_0x0054B410]]></Shortcut>
+			<Description><![CDATA[public: zTCam_ClipType __thiscall zCCamera::BBox3DInFrustum(zTBBox3D const&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamera_BBox3DInFrustum : zCCamera { zTCam_ClipType operator()(zTBBox3D const&, int&); };
+BindedHook Ivk_zCCamera_BBox3DInFrustum{ ZENFOR(0x00536EF0, 0x0054DEA0, 0x005461F0, 0x0054B410), &zCCamera_BBox3DInFrustum::operator() };
+zTCam_ClipType zCCamera_BBox3DInFrustum::operator()(zTBBox3D const& a0, int& a1)
+{
+	zTCam_ClipType result = THISCALL(Ivk_zCCamera_BBox3DInFrustum)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

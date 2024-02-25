@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::CreateAssessUseMob(): void]]></Title>
+			<Shortcut><![CDATA[__oCAIHuman_CreateAssessUseMob_0x0069B260]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall oCAIHuman::CreateAssessUseMob()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_CreateAssessUseMob : oCAIHuman { void operator()(); };
+BindedHook Ivk_oCAIHuman_CreateAssessUseMob{ ZENFOR(0x00614FE0, 0x00637E70, 0x0063EA90, 0x0069B260), &oCAIHuman_CreateAssessUseMob::operator() };
+void oCAIHuman_CreateAssessUseMob::operator()()
+{
+	THISCALL(Ivk_oCAIHuman_CreateAssessUseMob)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

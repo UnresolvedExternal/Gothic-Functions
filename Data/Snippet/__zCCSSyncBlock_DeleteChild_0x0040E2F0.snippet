@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSSyncBlock::DeleteChild(int): void]]></Title>
+			<Shortcut><![CDATA[__zCCSSyncBlock_DeleteChild_0x0040E2F0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSSyncBlock::DeleteChild(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSSyncBlock_DeleteChild : zCCSSyncBlock { void operator()(int); };
+BindedHook Ivk_zCCSSyncBlock_DeleteChild{ ZENFOR(0x0040DF00, 0x0040F190, 0x0040E2F0, 0x0040E2F0), &zCCSSyncBlock_DeleteChild::operator() };
+void zCCSSyncBlock_DeleteChild::operator()(int a0)
+{
+	THISCALL(Ivk_zCCSSyncBlock_DeleteChild)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

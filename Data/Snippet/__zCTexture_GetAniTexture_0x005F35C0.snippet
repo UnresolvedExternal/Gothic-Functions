@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexture::GetAniTexture(): zCTexture*]]></Title>
+			<Shortcut><![CDATA[__zCTexture_GetAniTexture_0x005F35C0]]></Shortcut>
+			<Description><![CDATA[public: zCTexture* __thiscall zCTexture::GetAniTexture()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTexture_GetAniTexture : zCTexture { zCTexture* operator()(); };
+BindedHook Ivk_zCTexture_GetAniTexture{ ZENFOR(0x005C8A10, 0x005E72F0, 0x005EC810, 0x005F35C0), &zCTexture_GetAniTexture::operator() };
+zCTexture* zCTexture_GetAniTexture::operator()()
+{
+	zCTexture* result = THISCALL(Ivk_zCTexture_GetAniTexture)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

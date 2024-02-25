@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::oSActionBlock::InitBlock(zCParser*, int, int): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc__oSActionBlock_InitBlock_0x0067C170]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::oSActionBlock::InitBlock(zCParser*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc__oSActionBlock_InitBlock : oCNpc::oSActionBlock { void operator()(zCParser*, int, int); };
+BindedHook Ivk_oCNpc__oSActionBlock_InitBlock{ ZENFOR(0x007480A0, 0x007890C0, 0x00792DA0, 0x0067C170), &oCNpc__oSActionBlock_InitBlock::operator() };
+void oCNpc__oSActionBlock_InitBlock::operator()(zCParser* a0, int a1, int a2)
+{
+	THISCALL(Ivk_oCNpc__oSActionBlock_InitBlock)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

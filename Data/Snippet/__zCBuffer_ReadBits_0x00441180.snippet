@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::ReadBits(void*, unsigned long): unsigned long]]></Title>
+			<Shortcut><![CDATA[__zCBuffer_ReadBits_0x00441180]]></Shortcut>
+			<Description><![CDATA[public: unsigned long __thiscall zCBuffer::ReadBits(void*, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_ReadBits : zCBuffer { unsigned long operator()(void*, unsigned long); };
+BindedHook Ivk_zCBuffer_ReadBits{ ZENFOR(0x0043D380, 0x00442560, 0x00440B50, 0x00441180), &zCBuffer_ReadBits::operator() };
+unsigned long zCBuffer_ReadBits::operator()(void* a0, unsigned long a1)
+{
+	unsigned long result = THISCALL(Ivk_zCBuffer_ReadBits)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

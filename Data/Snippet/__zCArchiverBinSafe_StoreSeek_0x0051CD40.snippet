@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::StoreSeek(unsigned long): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe_StoreSeek_0x0051CD40]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __fastcall zCArchiverBinSafe::StoreSeek(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_StoreSeek : zCArchiverBinSafe { void __fastcall operator()(unsigned long); };
+BindedHook Ivk_zCArchiverBinSafe_StoreSeek{ ZENFOR(0x0050CBD0, 0x005219B0, 0x00519F70, 0x0051CD40), &zCArchiverBinSafe_StoreSeek::operator() };
+void __fastcall zCArchiverBinSafe_StoreSeek::operator()(unsigned long a0)
+{
+	THISCALL(Ivk_zCArchiverBinSafe_StoreSeek)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

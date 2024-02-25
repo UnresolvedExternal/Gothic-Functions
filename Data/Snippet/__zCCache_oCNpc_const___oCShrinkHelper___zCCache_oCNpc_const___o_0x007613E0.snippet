@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<oCNpc const*, oCShrinkHelper>::~zCCache<oCNpc const*, oCShrinkHelper>()]]></Title>
+			<Shortcut><![CDATA[__zCCache_oCNpc_const___oCShrinkHelper___zCCache_oCNpc_const___o_0x007613E0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCCache<oCNpc const*, oCShrinkHelper>::~zCCache<oCNpc const*, oCShrinkHelper>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_oCNpc_const___oCShrinkHelper__Destructor : zCCache<oCNpc const*, oCShrinkHelper> { void operator()(); };
+BindedHook Ivk_zCCache_oCNpc_const___oCShrinkHelper__Destructor{ ZENFOR(0x006BA660, 0x006EF270, 0x007020C0, 0x007613E0), &zCCache_oCNpc_const___oCShrinkHelper__Destructor::operator() };
+void zCCache_oCNpc_const___oCShrinkHelper__Destructor::operator()()
+{
+	THISCALL(Ivk_zCCache_oCNpc_const___oCShrinkHelper__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPool<zCPortal>::zCMemPool<zCPortal>()]]></Title>
+			<Shortcut><![CDATA[__zCMemPool_zCPortal__zCMemPool_zCPortal__0x0050BCD0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCMemPool<zCPortal>::zCMemPool<zCPortal>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPool_zCPortal__zCMemPool_zCPortal_ : zCMemPool<zCPortal> { zCMemPool<zCPortal>* operator()(); };
+BindedHook Ivk_zCMemPool_zCPortal__zCMemPool_zCPortal_{ ZENFOR(0x004FC290, 0x0050F360, 0x00508F20, 0x0050BCD0), &zCMemPool_zCPortal__zCMemPool_zCPortal_::operator() };
+zCMemPool<zCPortal>* zCMemPool_zCPortal__zCMemPool_zCPortal_::operator()()
+{
+	zCMemPool<zCPortal>* result = THISCALL(Ivk_zCMemPool_zCPortal__zCMemPool_zCPortal_)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

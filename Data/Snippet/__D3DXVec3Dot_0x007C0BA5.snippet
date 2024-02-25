@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[D3DXVec3Dot(D3DXVECTOR3 const*, D3DXVECTOR3 const*): float]]></Title>
+			<Shortcut><![CDATA[__D3DXVec3Dot_0x007C0BA5]]></Shortcut>
+			<Description><![CDATA[float __cdecl D3DXVec3Dot(D3DXVECTOR3 const*, D3DXVECTOR3 const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+float Hook_D3DXVec3Dot(D3DXVECTOR3 const*, D3DXVECTOR3 const*);
+BindedHook Ivk_D3DXVec3Dot{ ZENFOR(0x007674B1, 0x00000000, 0x007B46DF, 0x007C0BA5), Hook_D3DXVec3Dot };
+float Hook_D3DXVec3Dot(D3DXVECTOR3 const* a0, D3DXVECTOR3 const* a1)
+{
+	float result = Ivk_D3DXVec3Dot(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

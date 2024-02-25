@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CDDrawDeviceNode::CreatePrimary(int, unsigned long): void]]></Title>
+			<Shortcut><![CDATA[__CDDrawDeviceNode_CreatePrimary_0x007BB5A5]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall CDDrawDeviceNode::CreatePrimary(int, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CDDrawDeviceNode_CreatePrimary : CDDrawDeviceNode { void operator()(int, unsigned long); };
+BindedHook Ivk_CDDrawDeviceNode_CreatePrimary{ ZENFOR(0x00761EB1, 0x007A66FE, 0x007AF0DF, 0x007BB5A5), &CDDrawDeviceNode_CreatePrimary::operator() };
+void CDDrawDeviceNode_CreatePrimary::operator()(int a0, unsigned long a1)
+{
+	THISCALL(Ivk_CDDrawDeviceNode_CreatePrimary)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

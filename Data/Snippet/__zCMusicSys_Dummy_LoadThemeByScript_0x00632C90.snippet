@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSys_Dummy::LoadThemeByScript(zSTRING const&): zCMusicTheme*]]></Title>
+			<Shortcut><![CDATA[__zCMusicSys_Dummy_LoadThemeByScript_0x00632C90]]></Shortcut>
+			<Description><![CDATA[public: virtual zCMusicTheme* __thiscall zCMusicSys_Dummy::LoadThemeByScript(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSys_Dummy_LoadThemeByScript : zCMusicSys_Dummy { zCMusicTheme* operator()(zSTRING const&); };
+BindedHook Ivk_zCMusicSys_Dummy_LoadThemeByScript{ ZENFOR(0x00603930, 0x00625980, 0x0062B4C0, 0x00632C90), &zCMusicSys_Dummy_LoadThemeByScript::operator() };
+zCMusicTheme* zCMusicSys_Dummy_LoadThemeByScript::operator()(zSTRING const& a0)
+{
+	zCMusicTheme* result = THISCALL(Ivk_zCMusicSys_Dummy_LoadThemeByScript)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

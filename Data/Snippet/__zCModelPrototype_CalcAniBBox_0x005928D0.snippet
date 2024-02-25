@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::CalcAniBBox(zCModelAni*): void]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_CalcAniBBox_0x005928D0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::CalcAniBBox(zCModelAni*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_CalcAniBBox : zCModelPrototype { void operator()(zCModelAni*); };
+BindedHook Ivk_zCModelPrototype_CalcAniBBox{ ZENFOR(0x00577FF0, 0x00591E80, 0x0058D370, 0x005928D0), &zCModelPrototype_CalcAniBBox::operator() };
+void zCModelPrototype_CalcAniBBox::operator()(zCModelAni* a0)
+{
+	THISCALL(Ivk_zCModelPrototype_CalcAniBBox)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

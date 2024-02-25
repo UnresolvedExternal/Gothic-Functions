@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFont::NextPixelXAlpha(int, int, int&): int]]></Title>
+			<Shortcut><![CDATA[__zCFont_NextPixelXAlpha_0x00789980]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCFont::NextPixelXAlpha(int, int, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFont_NextPixelXAlpha : zCFont { int operator()(int, int, int&); };
+BindedHook Ivk_zCFont_NextPixelXAlpha{ ZENFOR(0x006E0560, 0x00718B90, 0x00729F40, 0x00789980), &zCFont_NextPixelXAlpha::operator() };
+int zCFont_NextPixelXAlpha::operator()(int a0, int a1, int& a2)
+{
+	int result = THISCALL(Ivk_zCFont_NextPixelXAlpha)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

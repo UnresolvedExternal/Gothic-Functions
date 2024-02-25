@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::LoadMDH(zCFileBIN&): int]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_LoadMDH_0x0058A560]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCModelPrototype::LoadMDH(zCFileBIN&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_LoadMDH : zCModelPrototype { int operator()(zCFileBIN&); };
+BindedHook Ivk_zCModelPrototype_LoadMDH{ ZENFOR(0x0056FDF0, 0x00589250, 0x00585000, 0x0058A560), &zCModelPrototype_LoadMDH::operator() };
+int zCModelPrototype_LoadMDH::operator()(zCFileBIN& a0)
+{
+	int result = THISCALL(Ivk_zCModelPrototype_LoadMDH)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

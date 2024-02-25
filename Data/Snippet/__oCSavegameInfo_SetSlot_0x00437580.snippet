@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSavegameInfo::SetSlot(int): void]]></Title>
+			<Shortcut><![CDATA[__oCSavegameInfo_SetSlot_0x00437580]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCSavegameInfo::SetSlot(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSavegameInfo_SetSlot : oCSavegameInfo { void operator()(int); };
+BindedHook Ivk_oCSavegameInfo_SetSlot{ ZENFOR(0x004345B0, 0x00438520, 0x00437080, 0x00437580), &oCSavegameInfo_SetSlot::operator() };
+void oCSavegameInfo_SetSlot::operator()(int a0)
+{
+	THISCALL(Ivk_oCSavegameInfo_SetSlot)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zRandom_Gauss::UnRandomUniform(): float]]></Title>
+			<Shortcut><![CDATA[__zRandom_Gauss_UnRandomUniform_0x0055B070]]></Shortcut>
+			<Description><![CDATA[protected: float __thiscall zRandom_Gauss::UnRandomUniform()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zRandom_Gauss_UnRandomUniform : zRandom_Gauss { float operator()(); };
+BindedHook Ivk_zRandom_Gauss_UnRandomUniform{ ZENFOR(0x00000000, 0x00000000, 0x00555E50, 0x0055B070), &zRandom_Gauss_UnRandomUniform::operator() };
+float zRandom_Gauss_UnRandomUniform::operator()()
+{
+	float result = THISCALL(Ivk_zRandom_Gauss_UnRandomUniform)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFPUControler::ComputeDefaultControlWord(): void]]></Title>
+			<Shortcut><![CDATA[__zCFPUControler_ComputeDefaultControlWord_0x005F9F00]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCFPUControler::ComputeDefaultControlWord()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFPUControler_ComputeDefaultControlWord : zCFPUControler { void operator()(); };
+BindedHook Ivk_zCFPUControler_ComputeDefaultControlWord{ ZENFOR(0x005CEC20, 0x005ED9E0, 0x005F3110, 0x005F9F00), &zCFPUControler_ComputeDefaultControlWord::operator() };
+void zCFPUControler_ComputeDefaultControlWord::operator()()
+{
+	THISCALL(Ivk_zCFPUControler_ComputeDefaultControlWord)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duGlobals::IsInitialized(): int]]></Title>
+			<Shortcut><![CDATA[__CD3duGlobals_IsInitialized_0x007B7838]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall CD3duGlobals::IsInitialized()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duGlobals_IsInitialized : CD3duGlobals { int operator()(); };
+BindedHook Ivk_CD3duGlobals_IsInitialized{ ZENFOR(0x0075E144, 0x007A1240, 0x007AB372, 0x007B7838), &CD3duGlobals_IsInitialized::operator() };
+int CD3duGlobals_IsInitialized::operator()()
+{
+	int result = THISCALL(Ivk_CD3duGlobals_IsInitialized)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

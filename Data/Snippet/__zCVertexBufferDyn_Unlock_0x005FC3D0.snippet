@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBufferDyn::Unlock(): void]]></Title>
+			<Shortcut><![CDATA[__zCVertexBufferDyn_Unlock_0x005FC3D0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCVertexBufferDyn::Unlock()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBufferDyn_Unlock : zCVertexBufferDyn { void operator()(); };
+BindedHook Ivk_zCVertexBufferDyn_Unlock{ ZENFOR(0x005D1360, 0x005F04F0, 0x005F55E0, 0x005FC3D0), &zCVertexBufferDyn_Unlock::operator() };
+void zCVertexBufferDyn_Unlock::operator()()
+{
+	THISCALL(Ivk_zCVertexBufferDyn_Unlock)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

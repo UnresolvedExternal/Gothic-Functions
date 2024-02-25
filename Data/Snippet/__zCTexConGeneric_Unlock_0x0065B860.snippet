@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexConGeneric::Unlock(): int]]></Title>
+			<Shortcut><![CDATA[__zCTexConGeneric_Unlock_0x0065B860]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCTexConGeneric::Unlock()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTexConGeneric_Unlock : zCTexConGeneric { int operator()(); };
+BindedHook Ivk_zCTexConGeneric_Unlock{ ZENFOR(0x00722C90, 0x0075F760, 0x0076ED30, 0x0065B860), &zCTexConGeneric_Unlock::operator() };
+int zCTexConGeneric_Unlock::operator()()
+{
+	int result = THISCALL(Ivk_zCTexConGeneric_Unlock)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

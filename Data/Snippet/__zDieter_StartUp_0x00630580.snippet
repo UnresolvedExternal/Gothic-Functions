@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zDieter_StartUp(HWND__**): void]]></Title>
+			<Shortcut><![CDATA[__zDieter_StartUp_0x00630580]]></Shortcut>
+			<Description><![CDATA[void __cdecl zDieter_StartUp(HWND__**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zDieter_StartUp(HWND__**);
+BindedHook Ivk_zDieter_StartUp{ ZENFOR(0x006013D0, 0x00623100, 0x00628E00, 0x00630580), Hook_zDieter_StartUp };
+void Hook_zDieter_StartUp(HWND__** a0)
+{
+	Ivk_zDieter_StartUp(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

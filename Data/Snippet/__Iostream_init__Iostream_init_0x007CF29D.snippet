@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Iostream_init::~Iostream_init()]]></Title>
+			<Shortcut><![CDATA[__Iostream_init__Iostream_init_0x007CF29D]]></Shortcut>
+			<Description><![CDATA[public: __thiscall Iostream_init::~Iostream_init()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct Iostream_init_Destructor : Iostream_init { void operator()(); };
+BindedHook Ivk_Iostream_init_Destructor{ ZENFOR(0x007758F3, 0x007B96B3, 0x007C2DDD, 0x007CF29D), &Iostream_init_Destructor::operator() };
+void Iostream_init_Destructor::operator()()
+{
+	THISCALL(Ivk_Iostream_init_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

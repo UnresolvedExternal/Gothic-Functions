@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::NumInList(): int]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_NumInList_0x00588F10]]></Shortcut>
+			<Description><![CDATA[public: static int __cdecl zCModelPrototype::NumInList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCModelPrototype_NumInList();
+BindedHook Ivk_zCModelPrototype_NumInList{ ZENFOR(0x0056E740, 0x00587AC0, 0x005839B0, 0x00588F10), Hook_zCModelPrototype_NumInList };
+int Hook_zCModelPrototype_NumInList()
+{
+	int result = Ivk_zCModelPrototype_NumInList();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

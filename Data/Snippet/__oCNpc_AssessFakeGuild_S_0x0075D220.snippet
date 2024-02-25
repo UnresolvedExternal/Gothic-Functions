@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::AssessFakeGuild_S(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_AssessFakeGuild_S_0x0075D220]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::AssessFakeGuild_S()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_AssessFakeGuild_S : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_AssessFakeGuild_S{ ZENFOR(0x006B68E0, 0x006EB210, 0x006FE2A0, 0x0075D220), &oCNpc_AssessFakeGuild_S::operator() };
+int oCNpc_AssessFakeGuild_S::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_AssessFakeGuild_S)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

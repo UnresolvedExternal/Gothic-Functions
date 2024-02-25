@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::_Lockit::~_Lockit()]]></Title>
+			<Shortcut><![CDATA[__std___Lockit___Lockit_0x007CFE3E]]></Shortcut>
+			<Description><![CDATA[public: __thiscall std::_Lockit::~_Lockit()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std___Lockit_Destructor : std::_Lockit { void operator()(); };
+BindedHook Ivk_std___Lockit_Destructor{ ZENFOR(0x00776494, 0x007BA254, 0x007C397E, 0x007CFE3E), &std___Lockit_Destructor::operator() };
+void std___Lockit_Destructor::operator()()
+{
+	THISCALL(Ivk_std___Lockit_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

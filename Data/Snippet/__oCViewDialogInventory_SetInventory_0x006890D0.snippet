@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogInventory::SetInventory(oCNpcInventory*): void]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogInventory_SetInventory_0x006890D0]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall oCViewDialogInventory::SetInventory(oCNpcInventory*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogInventory_SetInventory : oCViewDialogInventory { void __fastcall operator()(oCNpcInventory*); };
+BindedHook Ivk_oCViewDialogInventory_SetInventory{ ZENFOR(0x00726AD0, 0x00764320, 0x007733B0, 0x006890D0), &oCViewDialogInventory_SetInventory::operator() };
+void __fastcall oCViewDialogInventory_SetInventory::operator()(oCNpcInventory* a0)
+{
+	THISCALL(Ivk_oCViewDialogInventory_SetInventory)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

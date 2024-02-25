@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetStatistics::AddPacketRecv(double): void]]></Title>
+			<Shortcut><![CDATA[__zCNetStatistics_AddPacketRecv_0x00453010]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCNetStatistics::AddPacketRecv(double)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetStatistics_AddPacketRecv : zCNetStatistics { void operator()(double); };
+BindedHook Ivk_zCNetStatistics_AddPacketRecv{ ZENFOR(0x0044E7F0, 0x00454F20, 0x004528C0, 0x00453010), &zCNetStatistics_AddPacketRecv::operator() };
+void zCNetStatistics_AddPacketRecv::operator()(double a0)
+{
+	THISCALL(Ivk_zCNetStatistics_AddPacketRecv)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

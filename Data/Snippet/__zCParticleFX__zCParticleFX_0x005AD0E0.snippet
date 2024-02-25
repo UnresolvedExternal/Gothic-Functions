@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::~zCParticleFX()]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX__zCParticleFX_0x005AD0E0]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall zCParticleFX::~zCParticleFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX_Destructor : zCParticleFX { void operator()(); };
+BindedHook Ivk_zCParticleFX_Destructor{ ZENFOR(0x0058D340, 0x005A88D0, 0x005A7A60, 0x005AD0E0), &zCParticleFX_Destructor::operator() };
+void zCParticleFX_Destructor::operator()()
+{
+	THISCALL(Ivk_zCParticleFX_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

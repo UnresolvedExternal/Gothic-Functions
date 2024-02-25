@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventScreenFX::Pack(zCBuffer&, zCEventManager*): void]]></Title>
+			<Shortcut><![CDATA[__zCEventScreenFX_Pack_0x00617940]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCEventScreenFX::Pack(zCBuffer&, zCEventManager*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventScreenFX_Pack : zCEventScreenFX { void operator()(zCBuffer&, zCEventManager*); };
+BindedHook Ivk_zCEventScreenFX_Pack{ ZENFOR(0x005EA890, 0x0060AEC0, 0x00610280, 0x00617940), &zCEventScreenFX_Pack::operator() };
+void zCEventScreenFX_Pack::operator()(zCBuffer& a0, zCEventManager* a1)
+{
+	THISCALL(Ivk_zCEventScreenFX_Pack)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

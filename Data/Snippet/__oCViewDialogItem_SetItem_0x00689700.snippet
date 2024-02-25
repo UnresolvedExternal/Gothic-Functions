@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogItem::SetItem(oCItem*): void]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogItem_SetItem_0x00689700]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall oCViewDialogItem::SetItem(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogItem_SetItem : oCViewDialogItem { void __fastcall operator()(oCItem*); };
+BindedHook Ivk_oCViewDialogItem_SetItem{ ZENFOR(0x00727140, 0x007649B0, 0x007739B0, 0x00689700), &oCViewDialogItem_SetItem::operator() };
+void __fastcall oCViewDialogItem_SetItem::operator()(oCItem* a0)
+{
+	THISCALL(Ivk_oCViewDialogItem_SetItem)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

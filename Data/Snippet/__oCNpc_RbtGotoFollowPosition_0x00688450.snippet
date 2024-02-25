@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::RbtGotoFollowPosition(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_RbtGotoFollowPosition_0x00688450]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall oCNpc::RbtGotoFollowPosition()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_RbtGotoFollowPosition : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_RbtGotoFollowPosition{ ZENFOR(0x007524F0, 0x007947E0, 0x0079EF70, 0x00688450), &oCNpc_RbtGotoFollowPosition::operator() };
+int oCNpc_RbtGotoFollowPosition::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_RbtGotoFollowPosition)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

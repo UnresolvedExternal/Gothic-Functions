@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcInventory::CreateFromPackString(zSTRING const&): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCNpcInventory_CreateFromPackString_0x0070F860]]></Shortcut>
+			<Description><![CDATA[protected: oCItem* __thiscall oCNpcInventory::CreateFromPackString(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcInventory_CreateFromPackString : oCNpcInventory { oCItem* operator()(zSTRING const&); };
+BindedHook Ivk_oCNpcInventory_CreateFromPackString{ ZENFOR(0x0066FD60, 0x0069D4D0, 0x006B1CD0, 0x0070F860), &oCNpcInventory_CreateFromPackString::operator() };
+oCItem* oCNpcInventory_CreateFromPackString::operator()(zSTRING const& a0)
+{
+	oCItem* result = THISCALL(Ivk_oCNpcInventory_CreateFromPackString)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

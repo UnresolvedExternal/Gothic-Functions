@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::SetScriptValues(): void]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_SetScriptValues_0x006A5110]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::SetScriptValues()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_SetScriptValues : oCAniCtrl_Human { void operator()(); };
+BindedHook Ivk_oCAniCtrl_Human_SetScriptValues{ ZENFOR(0x0061CAF0, 0x006405A0, 0x00648890, 0x006A5110), &oCAniCtrl_Human_SetScriptValues::operator() };
+void oCAniCtrl_Human_SetScriptValues::operator()()
+{
+	THISCALL(Ivk_oCAniCtrl_Human_SetScriptValues)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

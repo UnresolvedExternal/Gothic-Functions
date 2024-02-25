@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Mid::RenderSkyPre(): void]]></Title>
+			<Shortcut><![CDATA[__zCSkyControler_Mid_RenderSkyPre_0x005E0060]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCSkyControler_Mid::RenderSkyPre()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Mid_RenderSkyPre : zCSkyControler_Mid { void operator()(); };
+BindedHook Ivk_zCSkyControler_Mid_RenderSkyPre{ ZENFOR(0x005BAAB0, 0x005D8610, 0x005D92B0, 0x005E0060), &zCSkyControler_Mid_RenderSkyPre::operator() };
+void zCSkyControler_Mid_RenderSkyPre::operator()()
+{
+	THISCALL(Ivk_zCSkyControler_Mid_RenderSkyPre)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

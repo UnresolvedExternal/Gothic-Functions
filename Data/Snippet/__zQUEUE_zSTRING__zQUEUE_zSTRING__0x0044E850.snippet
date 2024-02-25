@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zQUEUE<zSTRING>::zQUEUE<zSTRING>()]]></Title>
+			<Shortcut><![CDATA[__zQUEUE_zSTRING__zQUEUE_zSTRING__0x0044E850]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zQUEUE<zSTRING>::zQUEUE<zSTRING>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zQUEUE_zSTRING__zQUEUE_zSTRING_ : zQUEUE<zSTRING> { zQUEUE<zSTRING>* operator()(); };
+BindedHook Ivk_zQUEUE_zSTRING__zQUEUE_zSTRING_{ ZENFOR(0x0044A0C0, 0x004503D0, 0x0044E100, 0x0044E850), &zQUEUE_zSTRING__zQUEUE_zSTRING_::operator() };
+zQUEUE<zSTRING>* zQUEUE_zSTRING__zQUEUE_zSTRING_::operator()()
+{
+	zQUEUE<zSTRING>* result = THISCALL(Ivk_zQUEUE_zSTRING__zQUEUE_zSTRING_)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

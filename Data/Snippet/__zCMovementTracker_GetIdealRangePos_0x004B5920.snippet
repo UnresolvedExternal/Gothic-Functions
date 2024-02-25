@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::GetIdealRangePos(): zVEC3]]></Title>
+			<Shortcut><![CDATA[__zCMovementTracker_GetIdealRangePos_0x004B5920]]></Shortcut>
+			<Description><![CDATA[public: zVEC3 __thiscall zCMovementTracker::GetIdealRangePos()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_GetIdealRangePos : zCMovementTracker { zVEC3 operator()(); };
+BindedHook Ivk_zCMovementTracker_GetIdealRangePos{ ZENFOR(0x004ACFD0, 0x004BB0C0, 0x004B33F0, 0x004B5920), &zCMovementTracker_GetIdealRangePos::operator() };
+zVEC3 zCMovementTracker_GetIdealRangePos::operator()()
+{
+	zVEC3 result = THISCALL(Ivk_zCMovementTracker_GetIdealRangePos)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CVideoModeNode>::LeftBelongsCloserToListHead(CVideoModeNode*, CVideoModeNode*): int]]></Title>
+			<Shortcut><![CDATA[__ListT_CVideoModeNode__LeftBelongsCloserToListHead_0x007BB3AC]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall ListT<CVideoModeNode>::LeftBelongsCloserToListHead(CVideoModeNode*, CVideoModeNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CVideoModeNode__LeftBelongsCloserToListHead : ListT<CVideoModeNode> { int operator()(CVideoModeNode*, CVideoModeNode*); };
+BindedHook Ivk_ListT_CVideoModeNode__LeftBelongsCloserToListHead{ ZENFOR(0x00761CB8, 0x007A746F, 0x007AEEE6, 0x007BB3AC), &ListT_CVideoModeNode__LeftBelongsCloserToListHead::operator() };
+int ListT_CVideoModeNode__LeftBelongsCloserToListHead::operator()(CVideoModeNode* a0, CVideoModeNode* a1)
+{
+	int result = THISCALL(Ivk_ListT_CVideoModeNode__LeftBelongsCloserToListHead)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

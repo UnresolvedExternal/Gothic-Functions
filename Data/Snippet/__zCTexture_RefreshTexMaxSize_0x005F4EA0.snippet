@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexture::RefreshTexMaxSize(int): void]]></Title>
+			<Shortcut><![CDATA[__zCTexture_RefreshTexMaxSize_0x005F4EA0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCTexture::RefreshTexMaxSize(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCTexture_RefreshTexMaxSize(int);
+BindedHook Ivk_zCTexture_RefreshTexMaxSize{ ZENFOR(0x005C9F70, 0x005E89A0, 0x005EE0F0, 0x005F4EA0), Hook_zCTexture_RefreshTexMaxSize };
+void Hook_zCTexture_RefreshTexMaxSize(int a0)
+{
+	Ivk_zCTexture_RefreshTexMaxSize(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

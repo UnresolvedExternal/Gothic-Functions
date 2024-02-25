@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::zCStaticPfxList::ProcessList(): void]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX__zCStaticPfxList_ProcessList_0x005AD3F0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCParticleFX::zCStaticPfxList::ProcessList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX__zCStaticPfxList_ProcessList : zCParticleFX::zCStaticPfxList { void operator()(); };
+BindedHook Ivk_zCParticleFX__zCStaticPfxList_ProcessList{ ZENFOR(0x0058D650, 0x005A8C00, 0x005A7D70, 0x005AD3F0), &zCParticleFX__zCStaticPfxList_ProcessList::operator() };
+void zCParticleFX__zCStaticPfxList_ProcessList::operator()()
+{
+	THISCALL(Ivk_zCParticleFX__zCStaticPfxList_ProcessList)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

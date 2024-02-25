@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::NotifyCollisionPair(zCCollisionReport*, zCArray<zCCollisionReport*>const&, int): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_NotifyCollisionPair_0x0061EEB0]]></Shortcut>
+			<Description><![CDATA[private: void __fastcall zCVob::NotifyCollisionPair(zCCollisionReport*, zCArray<zCCollisionReport*>const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_NotifyCollisionPair : zCVob { void __fastcall operator()(zCCollisionReport*, zCArray<zCCollisionReport*>const&, int); };
+BindedHook Ivk_zCVob_NotifyCollisionPair{ ZENFOR(0x005F1930, 0x00612690, 0x00617760, 0x0061EEB0), &zCVob_NotifyCollisionPair::operator() };
+void __fastcall zCVob_NotifyCollisionPair::operator()(zCCollisionReport* a0, zCArray<zCCollisionReport*>const& a1, int a2)
+{
+	THISCALL(Ivk_zCVob_NotifyCollisionPair)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

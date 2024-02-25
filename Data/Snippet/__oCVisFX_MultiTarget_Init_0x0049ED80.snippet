@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisFX_MultiTarget::Init(zCArray<zCVob*>): void]]></Title>
+			<Shortcut><![CDATA[__oCVisFX_MultiTarget_Init_0x0049ED80]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCVisFX_MultiTarget::Init(zCArray<zCVob*>)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisFX_MultiTarget_Init : oCVisFX_MultiTarget { void operator()(zCArray<zCVob*>); };
+BindedHook Ivk_oCVisFX_MultiTarget_Init{ ZENFOR(0x004979A0, 0x004A49D0, 0x0049CA20, 0x0049ED80), &oCVisFX_MultiTarget_Init::operator() };
+void oCVisFX_MultiTarget_Init::operator()(zCArray<zCVob*> a0)
+{
+	THISCALL(Ivk_oCVisFX_MultiTarget_Init)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

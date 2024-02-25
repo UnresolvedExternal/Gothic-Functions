@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobFire::OnTrigger(zCVob*, zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__oCMobFire_OnTrigger_0x00722980]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMobFire::OnTrigger(zCVob*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobFire_OnTrigger : oCMobFire { void operator()(zCVob*, zCVob*); };
+BindedHook Ivk_oCMobFire_OnTrigger{ ZENFOR(0x00680FB0, 0x006B02B0, 0x006C48F0, 0x00722980), &oCMobFire_OnTrigger::operator() };
+void oCMobFire_OnTrigger::operator()(zCVob* a0, zCVob* a1)
+{
+	THISCALL(Ivk_oCMobFire_OnTrigger)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

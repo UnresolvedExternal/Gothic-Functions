@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialogChoice::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCViewDialogChoice__GetClassDef_0x0068EA50]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCViewDialogChoice::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialogChoice__GetClassDef : zCViewDialogChoice { zCClassDef* operator()() const; };
+BindedHook Ivk_zCViewDialogChoice__GetClassDef{ ZENFOR(0x00758910, 0x0079AE70, 0x007A57C0, 0x0068EA50), &zCViewDialogChoice__GetClassDef::operator() };
+zCClassDef* zCViewDialogChoice__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCViewDialogChoice__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

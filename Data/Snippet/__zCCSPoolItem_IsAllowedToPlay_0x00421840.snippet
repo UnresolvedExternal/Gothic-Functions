@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPoolItem::IsAllowedToPlay(): int]]></Title>
+			<Shortcut><![CDATA[__zCCSPoolItem_IsAllowedToPlay_0x00421840]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCCSPoolItem::IsAllowedToPlay()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPoolItem_IsAllowedToPlay : zCCSPoolItem { int operator()(); };
+BindedHook Ivk_zCCSPoolItem_IsAllowedToPlay{ ZENFOR(0x00421100, 0x00423510, 0x00421510, 0x00421840), &zCCSPoolItem_IsAllowedToPlay::operator() };
+int zCCSPoolItem_IsAllowedToPlay::operator()()
+{
+	int result = THISCALL(Ivk_zCCSPoolItem_IsAllowedToPlay)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

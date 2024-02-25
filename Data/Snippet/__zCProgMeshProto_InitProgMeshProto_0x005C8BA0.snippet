@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::InitProgMeshProto(): void]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_InitProgMeshProto_0x005C8BA0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCProgMeshProto::InitProgMeshProto()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCProgMeshProto_InitProgMeshProto();
+BindedHook Ivk_zCProgMeshProto_InitProgMeshProto{ ZENFOR(0x005A6490, 0x005C2D90, 0x005C2DF0, 0x005C8BA0), Hook_zCProgMeshProto_InitProgMeshProto };
+void Hook_zCProgMeshProto_InitProgMeshProto()
+{
+	Ivk_zCProgMeshProto_InitProgMeshProto();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

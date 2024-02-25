@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogInventory::HandleEvent(int): int]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogInventory_HandleEvent_0x00689220]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCViewDialogInventory::HandleEvent(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogInventory_HandleEvent : oCViewDialogInventory { int operator()(int); };
+BindedHook Ivk_oCViewDialogInventory_HandleEvent{ ZENFOR(0x00726C60, 0x007644B0, 0x00773500, 0x00689220), &oCViewDialogInventory_HandleEvent::operator() };
+int oCViewDialogInventory_HandleEvent::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCViewDialogInventory_HandleEvent)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

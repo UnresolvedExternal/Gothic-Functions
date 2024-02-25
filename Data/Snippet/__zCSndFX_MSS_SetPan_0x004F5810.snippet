@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::SetPan(float): void]]></Title>
+			<Shortcut><![CDATA[__zCSndFX_MSS_SetPan_0x004F5810]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCSndFX_MSS::SetPan(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_SetPan : zCSndFX_MSS { void operator()(float); };
+BindedHook Ivk_zCSndFX_MSS_SetPan{ ZENFOR(0x004E7580, 0x004F9710, 0x004F2B90, 0x004F5810), &zCSndFX_MSS_SetPan::operator() };
+void zCSndFX_MSS_SetPan::operator()(float a0)
+{
+	THISCALL(Ivk_zCSndFX_MSS_SetPan)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

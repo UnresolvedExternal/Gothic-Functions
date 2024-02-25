@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVolatileMemoryBase::zCVolatileMemoryBase(unsigned int, zTVolatileOverflowMode)]]></Title>
+			<Shortcut><![CDATA[__zCVolatileMemoryBase_zCVolatileMemoryBase_0x005660D0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCVolatileMemoryBase::zCVolatileMemoryBase(unsigned int, zTVolatileOverflowMode)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVolatileMemoryBase_zCVolatileMemoryBase : zCVolatileMemoryBase { zCVolatileMemoryBase* operator()(unsigned int, zTVolatileOverflowMode); };
+BindedHook Ivk_zCVolatileMemoryBase_zCVolatileMemoryBase{ ZENFOR(0x0054ED30, 0x00567230, 0x00560EB0, 0x005660D0), &zCVolatileMemoryBase_zCVolatileMemoryBase::operator() };
+zCVolatileMemoryBase* zCVolatileMemoryBase_zCVolatileMemoryBase::operator()(unsigned int a0, zTVolatileOverflowMode a1)
+{
+	zCVolatileMemoryBase* result = THISCALL(Ivk_zCVolatileMemoryBase_zCVolatileMemoryBase)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

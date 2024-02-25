@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::GetType(): zTMenuItem]]></Title>
+			<Shortcut><![CDATA[__zCMenuItem_GetType_0x004E0460]]></Shortcut>
+			<Description><![CDATA[public: zTMenuItem __thiscall zCMenuItem::GetType()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItem_GetType : zCMenuItem { zTMenuItem operator()(); };
+BindedHook Ivk_zCMenuItem_GetType{ ZENFOR(0x004D3520, 0x004E3E70, 0x004DDAB0, 0x004E0460), &zCMenuItem_GetType::operator() };
+zTMenuItem zCMenuItem_GetType::operator()()
+{
+	zTMenuItem result = THISCALL(Ivk_zCMenuItem_GetType)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

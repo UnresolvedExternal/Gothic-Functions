@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[LogStatisticsRead(zSTRING const&): bool]]></Title>
+			<Shortcut><![CDATA[__LogStatisticsRead_0x00435CA0]]></Shortcut>
+			<Description><![CDATA[bool __cdecl LogStatisticsRead(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[bool Hook_LogStatisticsRead(zSTRING const&);
+BindedHook Ivk_LogStatisticsRead{ ZENFOR(0x004330D0, 0x00436D30, 0x004357A0, 0x00435CA0), Hook_LogStatisticsRead };
+bool Hook_LogStatisticsRead(zSTRING const& a0)
+{
+	bool result = Ivk_LogStatisticsRead(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMeshOctreeNode::CopyPolys(zCArray<unsigned char>const&, zCArray<zCPolygon*>const&, int, zCArray<zCPolygon*>&): void]]></Title>
+			<Shortcut><![CDATA[__zCMeshOctreeNode_CopyPolys_0x0053B3F0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCMeshOctreeNode::CopyPolys(zCArray<unsigned char>const&, zCArray<zCPolygon*>const&, int, zCArray<zCPolygon*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCMeshOctreeNode_CopyPolys : zCMeshOctreeNode { void operator()(zCArray<unsigned char>const&, zCArray<zCPolygon*>const&, int, zCArray<zCPolygon*>&); };
+BindedHook Ivk_zCMeshOctreeNode_CopyPolys{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x0053B3F0), &zCMeshOctreeNode_CopyPolys::operator() };
+void zCMeshOctreeNode_CopyPolys::operator()(zCArray<unsigned char>const& a0, zCArray<zCPolygon*>const& a1, int a2, zCArray<zCPolygon*>& a3)
+{
+	THISCALL(Ivk_zCMeshOctreeNode_CopyPolys)(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

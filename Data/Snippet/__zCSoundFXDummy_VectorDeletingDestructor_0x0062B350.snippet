@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundFXDummy::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCSoundFXDummy_VectorDeletingDestructor_0x0062B350]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCSoundFXDummy::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2
+struct zCSoundFXDummy_VectorDeletingDestructor : zCSoundFXDummy { void* operator()(unsigned int); };
+BindedHook Ivk_zCSoundFXDummy_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x0062B350, 0x00000000), &zCSoundFXDummy_VectorDeletingDestructor::operator() };
+void* zCSoundFXDummy_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCSoundFXDummy_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

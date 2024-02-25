@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInfoManager::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCInfoManager_Unarchive_0x00703240]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCInfoManager::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInfoManager_Unarchive : oCInfoManager { void operator()(zCArchiver&); };
+BindedHook Ivk_oCInfoManager_Unarchive{ ZENFOR(0x00665330, 0x00692610, 0x006A57B0, 0x00703240), &oCInfoManager_Unarchive::operator() };
+void oCInfoManager_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCInfoManager_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

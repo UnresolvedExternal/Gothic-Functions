@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duGlobals::DetermineD3DXSurfaceClasses(_DDPIXELFORMAT*, _D3DX_SURFACEFORMAT, IDirect3D7*, IDirectDraw7*, _GUID): unsigned long]]></Title>
+			<Shortcut><![CDATA[__CD3duGlobals_DetermineD3DXSurfaceClasses_0x007B7852]]></Shortcut>
+			<Description><![CDATA[public: unsigned long __thiscall CD3duGlobals::DetermineD3DXSurfaceClasses(_DDPIXELFORMAT*, _D3DX_SURFACEFORMAT, IDirect3D7*, IDirectDraw7*, _GUID)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duGlobals_DetermineD3DXSurfaceClasses : CD3duGlobals { unsigned long operator()(_DDPIXELFORMAT*, _D3DX_SURFACEFORMAT, IDirect3D7*, IDirectDraw7*, _GUID); };
+BindedHook Ivk_CD3duGlobals_DetermineD3DXSurfaceClasses{ ZENFOR(0x0075E15E, 0x007A170D, 0x007AB38C, 0x007B7852), &CD3duGlobals_DetermineD3DXSurfaceClasses::operator() };
+unsigned long CD3duGlobals_DetermineD3DXSurfaceClasses::operator()(_DDPIXELFORMAT* a0, _D3DX_SURFACEFORMAT a1, IDirect3D7* a2, IDirectDraw7* a3, _GUID a4)
+{
+	unsigned long result = THISCALL(Ivk_CD3duGlobals_DetermineD3DXSurfaceClasses)(a0, a1, a2, a3, a4);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

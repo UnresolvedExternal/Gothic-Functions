@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::DoSparks(zVEC3&, zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_DoSparks_0x006AFC50]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall oCAniCtrl_Human::DoSparks(zVEC3&, zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_DoSparks : oCAniCtrl_Human { void operator()(zVEC3&, zSTRING const&); };
+BindedHook Ivk_oCAniCtrl_Human_DoSparks{ ZENFOR(0x006270F0, 0x0064C120, 0x006533D0, 0x006AFC50), &oCAniCtrl_Human_DoSparks::operator() };
+void oCAniCtrl_Human_DoSparks::operator()(zVEC3& a0, zSTRING const& a1)
+{
+	THISCALL(Ivk_oCAniCtrl_Human_DoSparks)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

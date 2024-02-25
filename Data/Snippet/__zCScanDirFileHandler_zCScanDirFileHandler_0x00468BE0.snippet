@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCScanDirFileHandler::zCScanDirFileHandler()]]></Title>
+			<Shortcut><![CDATA[__zCScanDirFileHandler_zCScanDirFileHandler_0x00468BE0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCScanDirFileHandler::zCScanDirFileHandler()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCScanDirFileHandler_zCScanDirFileHandler : zCScanDirFileHandler { zCScanDirFileHandler* operator()(); };
+BindedHook Ivk_zCScanDirFileHandler_zCScanDirFileHandler{ ZENFOR(0x00463500, 0x0046B010, 0x00467FB0, 0x00468BE0), &zCScanDirFileHandler_zCScanDirFileHandler::operator() };
+zCScanDirFileHandler* zCScanDirFileHandler_zCScanDirFileHandler::operator()()
+{
+	zCScanDirFileHandler* result = THISCALL(Ivk_zCScanDirFileHandler_zCScanDirFileHandler)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

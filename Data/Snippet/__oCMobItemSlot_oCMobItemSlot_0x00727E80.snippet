@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobItemSlot::oCMobItemSlot()]]></Title>
+			<Shortcut><![CDATA[__oCMobItemSlot_oCMobItemSlot_0x00727E80]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCMobItemSlot::oCMobItemSlot()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobItemSlot_oCMobItemSlot : oCMobItemSlot { oCMobItemSlot* operator()(); };
+BindedHook Ivk_oCMobItemSlot_oCMobItemSlot{ ZENFOR(0x00685E00, 0x006B5B00, 0x006C9DF0, 0x00727E80), &oCMobItemSlot_oCMobItemSlot::operator() };
+oCMobItemSlot* oCMobItemSlot_oCMobItemSlot::operator()()
+{
+	oCMobItemSlot* result = THISCALL(Ivk_oCMobItemSlot_oCMobItemSlot)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::GetResSizeBytes(): unsigned long]]></Title>
+			<Shortcut><![CDATA[__zCSndFX_MSS_GetResSizeBytes_0x004F63C0]]></Shortcut>
+			<Description><![CDATA[public: virtual unsigned long __thiscall zCSndFX_MSS::GetResSizeBytes()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_GetResSizeBytes : zCSndFX_MSS { unsigned long operator()(); };
+BindedHook Ivk_zCSndFX_MSS_GetResSizeBytes{ ZENFOR(0x004E8130, 0x004FA310, 0x004F3740, 0x004F63C0), &zCSndFX_MSS_GetResSizeBytes::operator() };
+unsigned long zCSndFX_MSS_GetResSizeBytes::operator()()
+{
+	unsigned long result = THISCALL(Ivk_zCSndFX_MSS_GetResSizeBytes)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

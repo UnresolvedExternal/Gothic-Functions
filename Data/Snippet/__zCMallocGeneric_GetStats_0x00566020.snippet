@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMallocGeneric::GetStats(zTMallocStats&): int]]></Title>
+			<Shortcut><![CDATA[__zCMallocGeneric_GetStats_0x00566020]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCMallocGeneric::GetStats(zTMallocStats&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMallocGeneric_GetStats : zCMallocGeneric { int operator()(zTMallocStats&); };
+BindedHook Ivk_zCMallocGeneric_GetStats{ ZENFOR(0x0054EC70, 0x00567170, 0x00560E00, 0x00566020), &zCMallocGeneric_GetStats::operator() };
+int zCMallocGeneric_GetStats::operator()(zTMallocStats& a0)
+{
+	int result = THISCALL(Ivk_zCMallocGeneric_GetStats)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

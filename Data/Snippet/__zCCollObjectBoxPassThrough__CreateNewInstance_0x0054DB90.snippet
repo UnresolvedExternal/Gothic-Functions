@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectBoxPassThrough::_CreateNewInstance(): zCCollisionObject*]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectBoxPassThrough__CreateNewInstance_0x0054DB90]]></Shortcut>
+			<Description><![CDATA[private: static zCCollisionObject* __cdecl zCCollObjectBoxPassThrough::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCCollisionObject* Hook_zCCollObjectBoxPassThrough__CreateNewInstance();
+BindedHook Ivk_zCCollObjectBoxPassThrough__CreateNewInstance{ ZENFOR(0x005396E0, 0x00550980, 0x00548970, 0x0054DB90), Hook_zCCollObjectBoxPassThrough__CreateNewInstance };
+zCCollisionObject* Hook_zCCollObjectBoxPassThrough__CreateNewInstance()
+{
+	zCCollisionObject* result = Ivk_zCCollObjectBoxPassThrough__CreateNewInstance();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

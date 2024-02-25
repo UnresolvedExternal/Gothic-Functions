@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::CompareNames(void const*, void const*): int]]></Title>
+			<Shortcut><![CDATA[__zCMenuItem_CompareNames_0x004DE400]]></Shortcut>
+			<Description><![CDATA[public: static int __cdecl zCMenuItem::CompareNames(void const*, void const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCMenuItem_CompareNames(void const*, void const*);
+BindedHook Ivk_zCMenuItem_CompareNames{ ZENFOR(0x004D15A0, 0x004E1D00, 0x004DBA50, 0x004DE400), Hook_zCMenuItem_CompareNames };
+int Hook_zCMenuItem_CompareNames(void const* a0, void const* a1)
+{
+	int result = Ivk_zCMenuItem_CompareNames(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

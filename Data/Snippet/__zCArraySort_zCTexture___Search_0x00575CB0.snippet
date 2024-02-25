@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCTexture*>::Search(zCTexture* const&): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCTexture___Search_0x00575CB0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCArraySort<zCTexture*>::Search(zCTexture* const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCTexture___Search : zCArraySort<zCTexture*> { int operator()(zCTexture* const&) const; };
+BindedHook Ivk_zCArraySort_zCTexture___Search{ ZENFOR(0x0055C480, 0x00574540, 0x00570A00, 0x00575CB0), &zCArraySort_zCTexture___Search::operator() };
+int zCArraySort_zCTexture___Search::operator()(zCTexture* const& a0) const
+{
+	int result = THISCALL(Ivk_zCArraySort_zCTexture___Search)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

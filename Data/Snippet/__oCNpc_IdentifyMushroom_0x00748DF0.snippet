@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IdentifyMushroom(oCItem*): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCNpc_IdentifyMushroom_0x00748DF0]]></Shortcut>
+			<Description><![CDATA[public: oCItem* __thiscall oCNpc::IdentifyMushroom(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IdentifyMushroom : oCNpc { oCItem* operator()(oCItem*); };
+BindedHook Ivk_oCNpc_IdentifyMushroom{ ZENFOR(0x006A4A70, 0x006D7530, 0x006EA310, 0x00748DF0), &oCNpc_IdentifyMushroom::operator() };
+oCItem* oCNpc_IdentifyMushroom::operator()(oCItem* a0)
+{
+	oCItem* result = THISCALL(Ivk_oCNpc_IdentifyMushroom)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

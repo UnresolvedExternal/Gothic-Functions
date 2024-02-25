@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zDYNAMIC_CAST(zCObject const*): zCProgMeshProto*]]></Title>
+			<Shortcut><![CDATA[__zDYNAMIC_CAST_0x005A2A70]]></Shortcut>
+			<Description><![CDATA[zCProgMeshProto* __cdecl zDYNAMIC_CAST(zCObject const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+zCProgMeshProto* Hook_zDYNAMIC_CAST(zCObject const*);
+BindedHook Ivk_zDYNAMIC_CAST{ ZENFOR(0x00000000, 0x00000000, 0x0059D510, 0x005A2A70), Hook_zDYNAMIC_CAST };
+zCProgMeshProto* Hook_zDYNAMIC_CAST(zCObject const* a0)
+{
+	zCProgMeshProto* result = Ivk_zDYNAMIC_CAST(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

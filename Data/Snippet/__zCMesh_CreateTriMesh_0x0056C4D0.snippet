@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::CreateTriMesh(): zCMesh*]]></Title>
+			<Shortcut><![CDATA[__zCMesh_CreateTriMesh_0x0056C4D0]]></Shortcut>
+			<Description><![CDATA[public: static zCMesh* __cdecl zCMesh::CreateTriMesh()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCMesh* Hook_zCMesh_CreateTriMesh();
+BindedHook Ivk_zCMesh_CreateTriMesh{ ZENFOR(0x00554440, 0x0056CB10, 0x00567280, 0x0056C4D0), Hook_zCMesh_CreateTriMesh };
+zCMesh* Hook_zCMesh_CreateTriMesh()
+{
+	zCMesh* result = Ivk_zCMesh_CreateTriMesh();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

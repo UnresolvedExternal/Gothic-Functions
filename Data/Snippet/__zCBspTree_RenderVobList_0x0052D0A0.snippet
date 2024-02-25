@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspTree::RenderVobList(): void]]></Title>
+			<Shortcut><![CDATA[__zCBspTree_RenderVobList_0x0052D0A0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCBspTree::RenderVobList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspTree_RenderVobList : zCBspTree { void operator()(); };
+BindedHook Ivk_zCBspTree_RenderVobList{ ZENFOR(0x0051A7E0, 0x005304A0, 0x0052A150, 0x0052D0A0), &zCBspTree_RenderVobList::operator() };
+void zCBspTree_RenderVobList::operator()()
+{
+	THISCALL(Ivk_zCBspTree_RenderVobList)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

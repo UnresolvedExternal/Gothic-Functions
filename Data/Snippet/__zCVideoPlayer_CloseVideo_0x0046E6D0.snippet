@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVideoPlayer::CloseVideo(): int]]></Title>
+			<Shortcut><![CDATA[__zCVideoPlayer_CloseVideo_0x0046E6D0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCVideoPlayer::CloseVideo()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVideoPlayer_CloseVideo : zCVideoPlayer { int operator()(); };
+BindedHook Ivk_zCVideoPlayer_CloseVideo{ ZENFOR(0x004693F0, 0x00471510, 0x0046DAA0, 0x0046E6D0), &zCVideoPlayer_CloseVideo::operator() };
+int zCVideoPlayer_CloseVideo::operator()()
+{
+	int result = THISCALL(Ivk_zCVideoPlayer_CloseVideo)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

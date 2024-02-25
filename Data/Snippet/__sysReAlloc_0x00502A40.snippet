@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[sysReAlloc(void*, unsigned long): void*]]></Title>
+			<Shortcut><![CDATA[__sysReAlloc_0x00502A40]]></Shortcut>
+			<Description><![CDATA[void* __cdecl sysReAlloc(void*, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void* Hook_sysReAlloc(void*, unsigned long);
+BindedHook Ivk_sysReAlloc{ ZENFOR(0x004F3BC0, 0x005065A0, 0x004FFDC0, 0x00502A40), Hook_sysReAlloc };
+void* Hook_sysReAlloc(void* a0, unsigned long a1)
+{
+	void* result = Ivk_sysReAlloc(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[SetAndCopyArrayAdapt(unsigned char*&, zCArrayAdapt<float>&, zCArray<float>const&): void]]></Title>
+			<Shortcut><![CDATA[__SetAndCopyArrayAdapt_0x005C6300]]></Shortcut>
+			<Description><![CDATA[void __cdecl SetAndCopyArrayAdapt(unsigned char*&, zCArrayAdapt<float>&, zCArray<float>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_SetAndCopyArrayAdapt(unsigned char*&, zCArrayAdapt<float>&, zCArray<float>const&);
+BindedHook Ivk_SetAndCopyArrayAdapt{ ZENFOR(0x005A44E0, 0x005C0C60, 0x005C0790, 0x005C6300), Hook_SetAndCopyArrayAdapt };
+void Hook_SetAndCopyArrayAdapt(unsigned char*& a0, zCArrayAdapt<float>& a1, zCArray<float>const& a2)
+{
+	Ivk_SetAndCopyArrayAdapt(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::SkipChunk(int): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_SkipChunk_0x00526E00]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __fastcall zCArchiverGeneric::SkipChunk(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_SkipChunk : zCArchiverGeneric { void __fastcall operator()(int); };
+BindedHook Ivk_zCArchiverGeneric_SkipChunk{ ZENFOR(0x005161C0, 0x0052BA60, 0x00524030, 0x00526E00), &zCArchiverGeneric_SkipChunk::operator() };
+void __fastcall zCArchiverGeneric_SkipChunk::operator()(int a0)
+{
+	THISCALL(Ivk_zCArchiverGeneric_SkipChunk)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

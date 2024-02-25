@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetVisualHead(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetVisualHead_0x00738810]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall oCNpc::GetVisualHead()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetVisualHead : oCNpc { zSTRING operator()(); };
+BindedHook Ivk_oCNpc_GetVisualHead{ ZENFOR(0x006953F0, 0x006C6DD0, 0x006DA0D0, 0x00738810), &oCNpc_GetVisualHead::operator() };
+zSTRING oCNpc_GetVisualHead::operator()()
+{
+	zSTRING result = THISCALL(Ivk_oCNpc_GetVisualHead)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

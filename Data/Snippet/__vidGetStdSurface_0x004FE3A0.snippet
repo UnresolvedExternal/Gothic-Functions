@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[vidGetStdSurface(int, int): SURFACE*]]></Title>
+			<Shortcut><![CDATA[__vidGetStdSurface_0x004FE3A0]]></Shortcut>
+			<Description><![CDATA[SURFACE* __cdecl vidGetStdSurface(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[SURFACE* Hook_vidGetStdSurface(int, int);
+BindedHook Ivk_vidGetStdSurface{ ZENFOR(0x004EFE60, 0x00502700, 0x004FB720, 0x004FE3A0), Hook_vidGetStdSurface };
+SURFACE* Hook_vidGetStdSurface(int a0, int a1)
+{
+	SURFACE* result = Ivk_vidGetStdSurface(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

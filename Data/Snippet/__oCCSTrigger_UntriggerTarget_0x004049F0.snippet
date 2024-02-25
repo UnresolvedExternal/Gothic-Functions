@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCCSTrigger::UntriggerTarget(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__oCCSTrigger_UntriggerTarget_0x004049F0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCCSTrigger::UntriggerTarget(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCCSTrigger_UntriggerTarget : oCCSTrigger { void operator()(zCVob*); };
+BindedHook Ivk_oCCSTrigger_UntriggerTarget{ ZENFOR(0x004048B0, 0x004050B0, 0x004049F0, 0x004049F0), &oCCSTrigger_UntriggerTarget::operator() };
+void oCCSTrigger_UntriggerTarget::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_oCCSTrigger_UntriggerTarget)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWaveData::CheckForCorrectFormat(int): int]]></Title>
+			<Shortcut><![CDATA[__zCWaveData_CheckForCorrectFormat_0x004FBFE0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCWaveData::CheckForCorrectFormat(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWaveData_CheckForCorrectFormat : zCWaveData { int operator()(int); };
+BindedHook Ivk_zCWaveData_CheckForCorrectFormat{ ZENFOR(0x004ED990, 0x00500110, 0x004F9360, 0x004FBFE0), &zCWaveData_CheckForCorrectFormat::operator() };
+int zCWaveData_CheckForCorrectFormat::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCWaveData_CheckForCorrectFormat)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

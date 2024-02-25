@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::WriteObject(zCObject*): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe_WriteObject_0x0051E830]]></Shortcut>
+			<Description><![CDATA[public: virtual void __fastcall zCArchiverBinSafe::WriteObject(zCObject*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_WriteObject : zCArchiverBinSafe { void __fastcall operator()(zCObject*); };
+BindedHook Ivk_zCArchiverBinSafe_WriteObject{ ZENFOR(0x0050E4E0, 0x005234F0, 0x0051BA60, 0x0051E830), &zCArchiverBinSafe_WriteObject::operator() };
+void __fastcall zCArchiverBinSafe_WriteObject::operator()(zCObject* a0)
+{
+	THISCALL(Ivk_zCArchiverBinSafe_WriteObject)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

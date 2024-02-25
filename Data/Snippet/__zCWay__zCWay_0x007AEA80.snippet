@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWay::~zCWay()]]></Title>
+			<Shortcut><![CDATA[__zCWay__zCWay_0x007AEA80]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCWay::~zCWay()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWay_Destructor : zCWay { void operator()(); };
+BindedHook Ivk_zCWay_Destructor{ ZENFOR(0x00704E90, 0x0073F7A0, 0x0074EF80, 0x007AEA80), &zCWay_Destructor::operator() };
+void zCWay_Destructor::operator()()
+{
+	THISCALL(Ivk_zCWay_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

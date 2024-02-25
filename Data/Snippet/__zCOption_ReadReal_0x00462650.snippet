@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::ReadReal(zSTRING const&, char const*, float): float]]></Title>
+			<Shortcut><![CDATA[__zCOption_ReadReal_0x00462650]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall zCOption::ReadReal(zSTRING const&, char const*, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_ReadReal : zCOption { float operator()(zSTRING const&, char const*, float); };
+BindedHook Ivk_zCOption_ReadReal{ ZENFOR(0x0045CF90, 0x004647D0, 0x00461E40, 0x00462650), &zCOption_ReadReal::operator() };
+float zCOption_ReadReal::operator()(zSTRING const& a0, char const* a1, float a2)
+{
+	float result = THISCALL(Ivk_zCOption_ReadReal)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

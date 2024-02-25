@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<oCNpc const*, oCShrinkHelper>::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCCache_oCNpc_const___oCShrinkHelper__VectorDeletingDestructor_0x006BA640]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCCache<oCNpc const*, oCShrinkHelper>::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1
+struct zCCache_oCNpc_const___oCShrinkHelper__VectorDeletingDestructor : zCCache<oCNpc const*, oCShrinkHelper> { void* operator()(unsigned int); };
+BindedHook Ivk_zCCache_oCNpc_const___oCShrinkHelper__VectorDeletingDestructor{ ZENFOR(0x006BA640, 0x00000000, 0x00000000, 0x00000000), &zCCache_oCNpc_const___oCShrinkHelper__VectorDeletingDestructor::operator() };
+void* zCCache_oCNpc_const___oCShrinkHelper__VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCCache_oCNpc_const___oCShrinkHelper__VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

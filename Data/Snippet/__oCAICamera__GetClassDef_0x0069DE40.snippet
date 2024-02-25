@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAICamera::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__oCAICamera__GetClassDef_0x0069DE40]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall oCAICamera::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAICamera__GetClassDef : oCAICamera { zCClassDef* operator()() const; };
+BindedHook Ivk_oCAICamera__GetClassDef{ ZENFOR(0x00616640, 0x00639590, 0x00641670, 0x0069DE40), &oCAICamera__GetClassDef::operator() };
+zCClassDef* oCAICamera__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_oCAICamera__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

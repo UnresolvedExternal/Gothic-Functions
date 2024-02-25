@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler::GetDaylightColorFromIntensity(int): zCOLOR]]></Title>
+			<Shortcut><![CDATA[__zCSkyControler_GetDaylightColorFromIntensity_0x005DF490]]></Shortcut>
+			<Description><![CDATA[public: virtual zCOLOR __thiscall zCSkyControler::GetDaylightColorFromIntensity(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_GetDaylightColorFromIntensity : zCSkyControler { zCOLOR operator()(int); };
+BindedHook Ivk_zCSkyControler_GetDaylightColorFromIntensity{ ZENFOR(0x005B7F10, 0x005D58F0, 0x005D86D0, 0x005DF490), &zCSkyControler_GetDaylightColorFromIntensity::operator() };
+zCOLOR zCSkyControler_GetDaylightColorFromIntensity::operator()(int a0)
+{
+	zCOLOR result = THISCALL(Ivk_zCSkyControler_GetDaylightColorFromIntensity)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

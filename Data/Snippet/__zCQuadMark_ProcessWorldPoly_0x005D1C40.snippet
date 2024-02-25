@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::ProcessWorldPoly(zCPolygon*): void]]></Title>
+			<Shortcut><![CDATA[__zCQuadMark_ProcessWorldPoly_0x005D1C40]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCQuadMark::ProcessWorldPoly(zCPolygon*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_ProcessWorldPoly : zCQuadMark { void operator()(zCPolygon*); };
+BindedHook Ivk_zCQuadMark_ProcessWorldPoly{ ZENFOR(0x005ACB10, 0x005C9990, 0x005CB0A0, 0x005D1C40), &zCQuadMark_ProcessWorldPoly::operator() };
+void zCQuadMark_ProcessWorldPoly::operator()(zCPolygon* a0)
+{
+	THISCALL(Ivk_zCQuadMark_ProcessWorldPoly)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

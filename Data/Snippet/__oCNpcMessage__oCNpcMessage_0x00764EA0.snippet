@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcMessage::~oCNpcMessage()]]></Title>
+			<Shortcut><![CDATA[__oCNpcMessage__oCNpcMessage_0x00764EA0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCNpcMessage::~oCNpcMessage()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcMessage_Destructor : oCNpcMessage { void operator()(); };
+BindedHook Ivk_oCNpcMessage_Destructor{ ZENFOR(0x006BDD00, 0x006F3040, 0x00705960, 0x00764EA0), &oCNpcMessage_Destructor::operator() };
+void oCNpcMessage_Destructor::operator()()
+{
+	THISCALL(Ivk_oCNpcMessage_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

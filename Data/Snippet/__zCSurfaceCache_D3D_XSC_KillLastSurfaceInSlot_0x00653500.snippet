@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSurfaceCache_D3D::XSC_KillLastSurfaceInSlot(zCSurfaceCache_D3D::zD3D_SlotHeader*): void]]></Title>
+			<Shortcut><![CDATA[__zCSurfaceCache_D3D_XSC_KillLastSurfaceInSlot_0x00653500]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCSurfaceCache_D3D::XSC_KillLastSurfaceInSlot(zCSurfaceCache_D3D::zD3D_SlotHeader*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSurfaceCache_D3D_XSC_KillLastSurfaceInSlot : zCSurfaceCache_D3D { void operator()(zCSurfaceCache_D3D::zD3D_SlotHeader*); };
+BindedHook Ivk_zCSurfaceCache_D3D_XSC_KillLastSurfaceInSlot{ ZENFOR(0x0071ADB0, 0x007570C0, 0x00766BA0, 0x00653500), &zCSurfaceCache_D3D_XSC_KillLastSurfaceInSlot::operator() };
+void zCSurfaceCache_D3D_XSC_KillLastSurfaceInSlot::operator()(zCSurfaceCache_D3D::zD3D_SlotHeader* a0)
+{
+	THISCALL(Ivk_zCSurfaceCache_D3D_XSC_KillLastSurfaceInSlot)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

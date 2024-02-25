@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::~zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>()]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry_0x005288F0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::~zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Destructor : zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry> { void operator()(); };
+BindedHook Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Destructor{ ZENFOR(0x00517AE0, 0x0052D4F0, 0x00525B20, 0x005288F0), &zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Destructor::operator() };
+void zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Destructor::operator()()
+{
+	THISCALL(Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

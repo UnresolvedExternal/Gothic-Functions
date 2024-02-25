@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZone::ProcessZoneList(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*): void]]></Title>
+			<Shortcut><![CDATA[__zCZone_ProcessZoneList_0x00639750]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCZone::ProcessZoneList(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZone_ProcessZoneList : zCZone { void operator()(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*); };
+BindedHook Ivk_zCZone_ProcessZoneList{ ZENFOR(0x00609040, 0x0062B510, 0x00631F80, 0x00639750), &zCZone_ProcessZoneList::operator() };
+void zCZone_ProcessZoneList::operator()(zCArraySort<zCZone*>const& a0, zCArraySort<zCZone*>const& a1, zCWorld* a2)
+{
+	THISCALL(Ivk_zCZone_ProcessZoneList)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

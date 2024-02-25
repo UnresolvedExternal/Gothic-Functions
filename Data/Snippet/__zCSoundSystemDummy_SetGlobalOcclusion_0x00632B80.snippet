@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundSystemDummy::SetGlobalOcclusion(float): void]]></Title>
+			<Shortcut><![CDATA[__zCSoundSystemDummy_SetGlobalOcclusion_0x00632B80]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCSoundSystemDummy::SetGlobalOcclusion(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundSystemDummy_SetGlobalOcclusion : zCSoundSystemDummy { void operator()(float); };
+BindedHook Ivk_zCSoundSystemDummy_SetGlobalOcclusion{ ZENFOR(0x00603820, 0x00625860, 0x0062B3B0, 0x00632B80), &zCSoundSystemDummy_SetGlobalOcclusion::operator() };
+void zCSoundSystemDummy_SetGlobalOcclusion::operator()(float a0)
+{
+	THISCALL(Ivk_zCSoundSystemDummy_SetGlobalOcclusion)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

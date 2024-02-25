@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPlayer::SetOwnerWorld(zCWorld*): void]]></Title>
+			<Shortcut><![CDATA[__zCCSPlayer_SetOwnerWorld_0x0041CD80]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSPlayer::SetOwnerWorld(zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPlayer_SetOwnerWorld : zCCSPlayer { void operator()(zCWorld*); };
+BindedHook Ivk_zCCSPlayer_SetOwnerWorld{ ZENFOR(0x0041C830, 0x0041E6C0, 0x0041CA50, 0x0041CD80), &zCCSPlayer_SetOwnerWorld::operator() };
+void zCCSPlayer_SetOwnerWorld::operator()(zCWorld* a0)
+{
+	THISCALL(Ivk_zCCSPlayer_SetOwnerWorld)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

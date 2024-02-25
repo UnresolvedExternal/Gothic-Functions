@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRndAlphaSortObject_Vob::zCRndAlphaSortObject_Vob()]]></Title>
+			<Shortcut><![CDATA[__zCRndAlphaSortObject_Vob_zCRndAlphaSortObject_Vob_0x00528BE0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCRndAlphaSortObject_Vob::zCRndAlphaSortObject_Vob()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRndAlphaSortObject_Vob_zCRndAlphaSortObject_Vob : zCRndAlphaSortObject_Vob { zCRndAlphaSortObject_Vob* operator()(); };
+BindedHook Ivk_zCRndAlphaSortObject_Vob_zCRndAlphaSortObject_Vob{ ZENFOR(0x00517D60, 0x0052D770, 0x00525DF0, 0x00528BE0), &zCRndAlphaSortObject_Vob_zCRndAlphaSortObject_Vob::operator() };
+zCRndAlphaSortObject_Vob* zCRndAlphaSortObject_Vob_zCRndAlphaSortObject_Vob::operator()()
+{
+	zCRndAlphaSortObject_Vob* result = THISCALL(Ivk_zCRndAlphaSortObject_Vob_zCRndAlphaSortObject_Vob)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::BeamTo(zSTRING const&): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_BeamTo_0x00736EE0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::BeamTo(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_BeamTo : oCNpc { int operator()(zSTRING const&); };
+BindedHook Ivk_oCNpc_BeamTo{ ZENFOR(0x00693B10, 0x006C52B0, 0x006D8780, 0x00736EE0), &oCNpc_BeamTo::operator() };
+int oCNpc_BeamTo::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_oCNpc_BeamTo)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

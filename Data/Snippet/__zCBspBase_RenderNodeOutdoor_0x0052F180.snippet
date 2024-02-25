@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspBase::RenderNodeOutdoor(int): void]]></Title>
+			<Shortcut><![CDATA[__zCBspBase_RenderNodeOutdoor_0x0052F180]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall zCBspBase::RenderNodeOutdoor(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspBase_RenderNodeOutdoor : zCBspBase { void __fastcall operator()(int); };
+BindedHook Ivk_zCBspBase_RenderNodeOutdoor{ ZENFOR(0x0051C860, 0x00532560, 0x0052C230, 0x0052F180), &zCBspBase_RenderNodeOutdoor::operator() };
+void __fastcall zCBspBase_RenderNodeOutdoor::operator()(int a0)
+{
+	THISCALL(Ivk_zCBspBase_RenderNodeOutdoor)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

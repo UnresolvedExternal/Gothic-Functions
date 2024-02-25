@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::GetState(): int]]></Title>
+			<Shortcut><![CDATA[__oCMobInter_GetState_0x00718C80]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCMobInter::GetState()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_GetState : oCMobInter { int operator()(); };
+BindedHook Ivk_oCMobInter_GetState{ ZENFOR(0x00677A80, 0x006A5FF0, 0x006BABF0, 0x00718C80), &oCMobInter_GetState::operator() };
+int oCMobInter_GetState::operator()()
+{
+	int result = THISCALL(Ivk_oCMobInter_GetState)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

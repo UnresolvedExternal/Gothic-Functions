@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlock::GetNumOfChilds(): int]]></Title>
+			<Shortcut><![CDATA[__zCCSBlock_GetNumOfChilds_0x0040D450]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCCSBlock::GetNumOfChilds()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlock_GetNumOfChilds : zCCSBlock { int operator()(); };
+BindedHook Ivk_zCCSBlock_GetNumOfChilds{ ZENFOR(0x0040D060, 0x0040E330, 0x0040D450, 0x0040D450), &zCCSBlock_GetNumOfChilds::operator() };
+int zCCSBlock_GetNumOfChilds::operator()()
+{
+	int result = THISCALL(Ivk_zCCSBlock_GetNumOfChilds)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

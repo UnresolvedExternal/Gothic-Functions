@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::AI_Normal(): void]]></Title>
+			<Shortcut><![CDATA[__zCAICamera_AI_Normal_0x004A4370]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCAICamera::AI_Normal()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAICamera_AI_Normal : zCAICamera { void operator()(); };
+BindedHook Ivk_zCAICamera_AI_Normal{ ZENFOR(0x0049C990, 0x004A9EC0, 0x004A1E90, 0x004A4370), &zCAICamera_AI_Normal::operator() };
+void zCAICamera_AI_Normal::operator()()
+{
+	THISCALL(Ivk_zCAICamera_AI_Normal)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

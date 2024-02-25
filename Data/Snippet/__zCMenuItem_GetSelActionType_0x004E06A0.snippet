@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::GetSelActionType(int): zTMenuItemSelAction]]></Title>
+			<Shortcut><![CDATA[__zCMenuItem_GetSelActionType_0x004E06A0]]></Shortcut>
+			<Description><![CDATA[public: zTMenuItemSelAction __thiscall zCMenuItem::GetSelActionType(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItem_GetSelActionType : zCMenuItem { zTMenuItemSelAction operator()(int); };
+BindedHook Ivk_zCMenuItem_GetSelActionType{ ZENFOR(0x004D3760, 0x004E40C0, 0x004DDCF0, 0x004E06A0), &zCMenuItem_GetSelActionType::operator() };
+zTMenuItemSelAction zCMenuItem_GetSelActionType::operator()(int a0)
+{
+	zTMenuItemSelAction result = THISCALL(Ivk_zCMenuItem_GetSelActionType)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

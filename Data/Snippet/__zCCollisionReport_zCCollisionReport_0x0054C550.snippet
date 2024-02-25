@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollisionReport::zCCollisionReport()]]></Title>
+			<Shortcut><![CDATA[__zCCollisionReport_zCCollisionReport_0x0054C550]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCCollisionReport::zCCollisionReport()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollisionReport_zCCollisionReport : zCCollisionReport { zCCollisionReport* operator()(); };
+BindedHook Ivk_zCCollisionReport_zCCollisionReport{ ZENFOR(0x00537FD0, 0x0054F1A0, 0x00547330, 0x0054C550), &zCCollisionReport_zCCollisionReport::operator() };
+zCCollisionReport* zCCollisionReport_zCCollisionReport::operator()()
+{
+	zCCollisionReport* result = THISCALL(Ivk_zCCollisionReport_zCCollisionReport)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

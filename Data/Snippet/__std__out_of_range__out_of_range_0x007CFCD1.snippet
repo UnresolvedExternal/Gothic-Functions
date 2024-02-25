@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::out_of_range::~out_of_range()]]></Title>
+			<Shortcut><![CDATA[__std__out_of_range__out_of_range_0x007CFCD1]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall std::out_of_range::~out_of_range()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__out_of_range_Destructor : std::out_of_range { void operator()(); };
+BindedHook Ivk_std__out_of_range_Destructor{ ZENFOR(0x00776327, 0x007BA0E7, 0x007C3811, 0x007CFCD1), &std__out_of_range_Destructor::operator() };
+void std__out_of_range_Destructor::operator()()
+{
+	THISCALL(Ivk_std__out_of_range_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

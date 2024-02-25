@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::Close(): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_Close_0x00522470]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCArchiverGeneric::Close()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_Close : zCArchiverGeneric { void operator()(); };
+BindedHook Ivk_zCArchiverGeneric_Close{ ZENFOR(0x00512080, 0x005273D0, 0x0051F6A0, 0x00522470), &zCArchiverGeneric_Close::operator() };
+void zCArchiverGeneric_Close::operator()()
+{
+	THISCALL(Ivk_zCArchiverGeneric_Close)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

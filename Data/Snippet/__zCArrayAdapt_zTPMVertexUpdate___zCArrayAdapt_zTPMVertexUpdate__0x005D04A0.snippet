@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArrayAdapt<zTPMVertexUpdate>::~zCArrayAdapt<zTPMVertexUpdate>()]]></Title>
+			<Shortcut><![CDATA[__zCArrayAdapt_zTPMVertexUpdate___zCArrayAdapt_zTPMVertexUpdate__0x005D04A0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArrayAdapt<zTPMVertexUpdate>::~zCArrayAdapt<zTPMVertexUpdate>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArrayAdapt_zTPMVertexUpdate__Destructor : zCArrayAdapt<zTPMVertexUpdate> { void operator()(); };
+BindedHook Ivk_zCArrayAdapt_zTPMVertexUpdate__Destructor{ ZENFOR(0x005AB400, 0x005C8060, 0x005C9900, 0x005D04A0), &zCArrayAdapt_zTPMVertexUpdate__Destructor::operator() };
+void zCArrayAdapt_zTPMVertexUpdate__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArrayAdapt_zTPMVertexUpdate__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

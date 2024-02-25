@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobScreenFX::~zCVobScreenFX()]]></Title>
+			<Shortcut><![CDATA[__zCVobScreenFX__zCVobScreenFX_0x00617C80]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCVobScreenFX::~zCVobScreenFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobScreenFX_Destructor : zCVobScreenFX { void operator()(); };
+BindedHook Ivk_zCVobScreenFX_Destructor{ ZENFOR(0x005EAAB0, 0x0060B0E0, 0x006105C0, 0x00617C80), &zCVobScreenFX_Destructor::operator() };
+void zCVobScreenFX_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVobScreenFX_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

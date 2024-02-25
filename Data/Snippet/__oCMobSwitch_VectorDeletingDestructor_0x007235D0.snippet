@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobSwitch::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCMobSwitch_VectorDeletingDestructor_0x007235D0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void* __thiscall oCMobSwitch::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2, G2A
+struct oCMobSwitch_VectorDeletingDestructor : oCMobSwitch { void* operator()(unsigned int); };
+BindedHook Ivk_oCMobSwitch_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x006B0F70, 0x006C5540, 0x007235D0), &oCMobSwitch_VectorDeletingDestructor::operator() };
+void* oCMobSwitch_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCMobSwitch_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

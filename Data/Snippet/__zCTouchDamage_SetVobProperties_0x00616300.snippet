@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchDamage::SetVobProperties(): void]]></Title>
+			<Shortcut><![CDATA[__zCTouchDamage_SetVobProperties_0x00616300]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCTouchDamage::SetVobProperties()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchDamage_SetVobProperties : zCTouchDamage { void operator()(); };
+BindedHook Ivk_zCTouchDamage_SetVobProperties{ ZENFOR(0x005E9250, 0x00609830, 0x0060EC40, 0x00616300), &zCTouchDamage_SetVobProperties::operator() };
+void zCTouchDamage_SetVobProperties::operator()()
+{
+	THISCALL(Ivk_zCTouchDamage_SetVobProperties)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

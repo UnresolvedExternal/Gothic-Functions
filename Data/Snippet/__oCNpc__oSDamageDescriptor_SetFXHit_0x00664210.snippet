@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::oSDamageDescriptor::SetFXHit(oCVisualFX*): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc__oSDamageDescriptor_SetFXHit_0x00664210]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::oSDamageDescriptor::SetFXHit(oCVisualFX*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc__oSDamageDescriptor_SetFXHit : oCNpc::oSDamageDescriptor { void operator()(oCVisualFX*); };
+BindedHook Ivk_oCNpc__oSDamageDescriptor_SetFXHit{ ZENFOR(0x0072F240, 0x0076DB70, 0x0077AFA0, 0x00664210), &oCNpc__oSDamageDescriptor_SetFXHit::operator() };
+void oCNpc__oSDamageDescriptor_SetFXHit::operator()(oCVisualFX* a0)
+{
+	THISCALL(Ivk_oCNpc__oSDamageDescriptor_SetFXHit)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

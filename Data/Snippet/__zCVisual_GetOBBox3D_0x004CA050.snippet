@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVisual::GetOBBox3D(): zCOBBox3D*]]></Title>
+			<Shortcut><![CDATA[__zCVisual_GetOBBox3D_0x004CA050]]></Shortcut>
+			<Description><![CDATA[public: virtual zCOBBox3D* __thiscall zCVisual::GetOBBox3D()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVisual_GetOBBox3D : zCVisual { zCOBBox3D* operator()(); };
+BindedHook Ivk_zCVisual_GetOBBox3D{ ZENFOR(0x004C0D30, 0x004D0660, 0x004C7AE0, 0x004CA050), &zCVisual_GetOBBox3D::operator() };
+zCOBBox3D* zCVisual_GetOBBox3D::operator()()
+{
+	zCOBBox3D* result = THISCALL(Ivk_zCVisual_GetOBBox3D)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

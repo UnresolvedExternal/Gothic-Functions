@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[vidSetFrameReady(): void]]></Title>
+			<Shortcut><![CDATA[__vidSetFrameReady_0x004FDCA0]]></Shortcut>
+			<Description><![CDATA[void __cdecl vidSetFrameReady()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_vidSetFrameReady();
+BindedHook Ivk_vidSetFrameReady{ ZENFOR(0x004EF760, 0x00502000, 0x004FB020, 0x004FDCA0), Hook_vidSetFrameReady };
+void Hook_vidSetFrameReady()
+{
+	Ivk_vidSetFrameReady();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

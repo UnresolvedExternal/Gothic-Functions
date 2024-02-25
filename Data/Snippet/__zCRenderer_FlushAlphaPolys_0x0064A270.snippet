@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::FlushAlphaPolys(): void]]></Title>
+			<Shortcut><![CDATA[__zCRenderer_FlushAlphaPolys_0x0064A270]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRenderer::FlushAlphaPolys()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCRenderer_FlushAlphaPolys : zCRenderer { void operator()(); };
+BindedHook Ivk_zCRenderer_FlushAlphaPolys{ ZENFOR(0x00000000, 0x00000000, 0x0075ECD0, 0x0064A270), &zCRenderer_FlushAlphaPolys::operator() };
+void zCRenderer_FlushAlphaPolys::operator()()
+{
+	THISCALL(Ivk_zCRenderer_FlushAlphaPolys)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

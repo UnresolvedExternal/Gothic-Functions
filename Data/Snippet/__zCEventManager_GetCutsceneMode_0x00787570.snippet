@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::GetCutsceneMode(): int]]></Title>
+			<Shortcut><![CDATA[__zCEventManager_GetCutsceneMode_0x00787570]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCEventManager::GetCutsceneMode()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventManager_GetCutsceneMode : zCEventManager { int operator()(); };
+BindedHook Ivk_zCEventManager_GetCutsceneMode{ ZENFOR(0x006DE2E0, 0x00716620, 0x00727B30, 0x00787570), &zCEventManager_GetCutsceneMode::operator() };
+int zCEventManager_GetCutsceneMode::operator()()
+{
+	int result = THISCALL(Ivk_zCEventManager_GetCutsceneMode)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

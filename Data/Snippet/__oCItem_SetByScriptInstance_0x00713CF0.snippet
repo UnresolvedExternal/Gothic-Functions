@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::SetByScriptInstance(zSTRING const*, int): int]]></Title>
+			<Shortcut><![CDATA[__oCItem_SetByScriptInstance_0x00713CF0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCItem::SetByScriptInstance(zSTRING const*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_SetByScriptInstance : oCItem { int operator()(zSTRING const*, int); };
+BindedHook Ivk_oCItem_SetByScriptInstance{ ZENFOR(0x006731B0, 0x006A0C60, 0x006B5C60, 0x00713CF0), &oCItem_SetByScriptInstance::operator() };
+int oCItem_SetByScriptInstance::operator()(zSTRING const* a0, int a1)
+{
+	int result = THISCALL(Ivk_oCItem_SetByScriptInstance)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

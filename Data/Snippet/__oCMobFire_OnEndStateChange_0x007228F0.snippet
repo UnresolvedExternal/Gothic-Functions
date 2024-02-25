@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobFire::OnEndStateChange(oCNpc*, int, int): void]]></Title>
+			<Shortcut><![CDATA[__oCMobFire_OnEndStateChange_0x007228F0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMobFire::OnEndStateChange(oCNpc*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobFire_OnEndStateChange : oCMobFire { void operator()(oCNpc*, int, int); };
+BindedHook Ivk_oCMobFire_OnEndStateChange{ ZENFOR(0x00680F20, 0x006B0220, 0x006C4860, 0x007228F0), &oCMobFire_OnEndStateChange::operator() };
+void oCMobFire_OnEndStateChange::operator()(oCNpc* a0, int a1, int a2)
+{
+	THISCALL(Ivk_oCMobFire_OnEndStateChange)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

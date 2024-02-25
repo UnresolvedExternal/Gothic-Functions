@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zRandom_Gauss::unRand24(): unsigned int]]></Title>
+			<Shortcut><![CDATA[__zRandom_Gauss_unRand24_0x0055B210]]></Shortcut>
+			<Description><![CDATA[public: unsigned int __thiscall zRandom_Gauss::unRand24()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zRandom_Gauss_unRand24 : zRandom_Gauss { unsigned int operator()(); };
+BindedHook Ivk_zRandom_Gauss_unRand24{ ZENFOR(0x00000000, 0x00000000, 0x00555FF0, 0x0055B210), &zRandom_Gauss_unRand24::operator() };
+unsigned int zRandom_Gauss_unRand24::operator()()
+{
+	unsigned int result = THISCALL(Ivk_zRandom_Gauss_unRand24)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

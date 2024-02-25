@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCScanDirFileHandler>::Insert(zCScanDirFileHandler*): void]]></Title>
+			<Shortcut><![CDATA[__zCList_zCScanDirFileHandler__Insert_0x0046A7D0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCList<zCScanDirFileHandler>::Insert(zCScanDirFileHandler*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCScanDirFileHandler__Insert : zCList<zCScanDirFileHandler> { void operator()(zCScanDirFileHandler*); };
+BindedHook Ivk_zCList_zCScanDirFileHandler__Insert{ ZENFOR(0x00465050, 0x0046CD30, 0x00469BA0, 0x0046A7D0), &zCList_zCScanDirFileHandler__Insert::operator() };
+void zCList_zCScanDirFileHandler__Insert::operator()(zCScanDirFileHandler* a0)
+{
+	THISCALL(Ivk_zCList_zCScanDirFileHandler__Insert)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureFileFormatInternal::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCTextureFileFormatInternal_VectorDeletingDestructor_0x005F24D0]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCTextureFileFormatInternal::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureFileFormatInternal_VectorDeletingDestructor : zCTextureFileFormatInternal { void* operator()(unsigned int); };
+BindedHook Ivk_zCTextureFileFormatInternal_VectorDeletingDestructor{ ZENFOR(0x005C79A0, 0x005E6180, 0x005EB720, 0x005F24D0), &zCTextureFileFormatInternal_VectorDeletingDestructor::operator() };
+void* zCTextureFileFormatInternal_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCTextureFileFormatInternal_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[SearchVobByInstance(zCTree<zCVob>*, int&): oCVob*]]></Title>
+			<Shortcut><![CDATA[__SearchVobByInstance_0x006BF7A0]]></Shortcut>
+			<Description><![CDATA[oCVob* __cdecl SearchVobByInstance(zCTree<zCVob>*, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[oCVob* Hook_SearchVobByInstance(zCTree<zCVob>*, int&);
+BindedHook Ivk_SearchVobByInstance{ ZENFOR(0x00635640, 0x0065BA80, 0x00662E10, 0x006BF7A0), Hook_SearchVobByInstance };
+oCVob* Hook_SearchVobByInstance(zCTree<zCVob>* a0, int& a1)
+{
+	oCVob* result = Ivk_SearchVobByInstance(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

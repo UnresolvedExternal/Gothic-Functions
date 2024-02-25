@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgState::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCMsgState_Archive_0x00768340]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall oCMsgState::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgState_Archive : oCMsgState { void operator()(zCArchiver&); };
+BindedHook Ivk_oCMsgState_Archive{ ZENFOR(0x006C11A0, 0x006F64F0, 0x00708E00, 0x00768340), &oCMsgState_Archive::operator() };
+void oCMsgState_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCMsgState_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

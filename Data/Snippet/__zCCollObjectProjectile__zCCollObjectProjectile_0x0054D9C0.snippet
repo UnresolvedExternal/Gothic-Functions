@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectProjectile::~zCCollObjectProjectile()]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectProjectile__zCCollObjectProjectile_0x0054D9C0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCCollObjectProjectile::~zCCollObjectProjectile()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectProjectile_Destructor : zCCollObjectProjectile { void operator()(); };
+BindedHook Ivk_zCCollObjectProjectile_Destructor{ ZENFOR(0x00539510, 0x005507B0, 0x005487A0, 0x0054D9C0), &zCCollObjectProjectile_Destructor::operator() };
+void zCCollObjectProjectile_Destructor::operator()()
+{
+	THISCALL(Ivk_zCCollObjectProjectile_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

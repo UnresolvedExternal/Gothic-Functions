@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::DoLogicInvestEffect(): void]]></Title>
+			<Shortcut><![CDATA[__oCSpell_DoLogicInvestEffect_0x00486950]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall oCSpell::DoLogicInvestEffect()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_DoLogicInvestEffect : oCSpell { void operator()(); };
+BindedHook Ivk_oCSpell_DoLogicInvestEffect{ ZENFOR(0x0047E690, 0x00489040, 0x00485330, 0x00486950), &oCSpell_DoLogicInvestEffect::operator() };
+void oCSpell_DoLogicInvestEffect::operator()()
+{
+	THISCALL(Ivk_oCSpell_DoLogicInvestEffect)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

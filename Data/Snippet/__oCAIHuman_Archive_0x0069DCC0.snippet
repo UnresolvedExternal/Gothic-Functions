@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCAIHuman_Archive_0x0069DCC0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall oCAIHuman::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_Archive : oCAIHuman { void operator()(zCArchiver&); };
+BindedHook Ivk_oCAIHuman_Archive{ ZENFOR(0x006164C0, 0x00639410, 0x006414F0, 0x0069DCC0), &oCAIHuman_Archive::operator() };
+void oCAIHuman_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCAIHuman_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

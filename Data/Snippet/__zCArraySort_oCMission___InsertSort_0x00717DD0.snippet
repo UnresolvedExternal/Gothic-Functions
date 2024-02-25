@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<oCMission*>::InsertSort(oCMission* const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_oCMission___InsertSort_0x00717DD0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArraySort<oCMission*>::InsertSort(oCMission* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_oCMission___InsertSort : zCArraySort<oCMission*> { void operator()(oCMission* const&); };
+BindedHook Ivk_zCArraySort_oCMission___InsertSort{ ZENFOR(0x00676DC0, 0x006A4F90, 0x006B9D40, 0x00717DD0), &zCArraySort_oCMission___InsertSort::operator() };
+void zCArraySort_oCMission___InsertSort::operator()(oCMission* const& a0)
+{
+	THISCALL(Ivk_zCArraySort_oCMission___InsertSort)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

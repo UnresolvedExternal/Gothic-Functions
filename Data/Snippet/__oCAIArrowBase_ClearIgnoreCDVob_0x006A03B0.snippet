@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrowBase::ClearIgnoreCDVob(): void]]></Title>
+			<Shortcut><![CDATA[__oCAIArrowBase_ClearIgnoreCDVob_0x006A03B0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCAIArrowBase::ClearIgnoreCDVob()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIArrowBase_ClearIgnoreCDVob : oCAIArrowBase { void operator()(); };
+BindedHook Ivk_oCAIArrowBase_ClearIgnoreCDVob{ ZENFOR(0x006187C0, 0x0063BB60, 0x00643BD0, 0x006A03B0), &oCAIArrowBase_ClearIgnoreCDVob::operator() };
+void oCAIArrowBase_ClearIgnoreCDVob::operator()()
+{
+	THISCALL(Ivk_oCAIArrowBase_ClearIgnoreCDVob)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

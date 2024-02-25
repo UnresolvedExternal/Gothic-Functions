@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::basic_string<char, std::char_traits<char>, std::allocator<char>>::basic_string<char, std::char_traits<char>, std::allocator<char>>(unsigned int, char, std::allocator<char>const&)]]></Title>
+			<Shortcut><![CDATA[__std__basic_string_char__std__char_traits_char___std__allocator_0x0044E760]]></Shortcut>
+			<Description><![CDATA[public: __thiscall std::basic_string<char, std::char_traits<char>, std::allocator<char>>::basic_string<char, std::char_traits<char>, std::allocator<char>>(unsigned int, char, std::allocator<char>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__basic_string_char__std__char_traits_char___std__allocator_char___basic_string_char__std__char_traits_char___std__allocator_char__ : std::basic_string<char, std::char_traits<char>, std::allocator<char>> { void operator()(unsigned int, char, std::allocator<char>const&); };
+BindedHook Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___basic_string_char__std__char_traits_char___std__allocator_char__{ ZENFOR(0x00449FD0, 0x004502E0, 0x0044E010, 0x0044E760), &std__basic_string_char__std__char_traits_char___std__allocator_char___basic_string_char__std__char_traits_char___std__allocator_char__::operator() };
+void std__basic_string_char__std__char_traits_char___std__allocator_char___basic_string_char__std__char_traits_char___std__allocator_char__::operator()(unsigned int a0, char a1, std::allocator<char>const& a2)
+{
+	THISCALL(Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___basic_string_char__std__char_traits_char___std__allocator_char__)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

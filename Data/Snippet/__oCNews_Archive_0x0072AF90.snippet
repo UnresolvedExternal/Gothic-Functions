@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNews::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCNews_Archive_0x0072AF90]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCNews::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNews_Archive : oCNews { void operator()(zCArchiver&); };
+BindedHook Ivk_oCNews_Archive{ ZENFOR(0x00688D70, 0x006B8FB0, 0x006CCF00, 0x0072AF90), &oCNews_Archive::operator() };
+void oCNews_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCNews_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

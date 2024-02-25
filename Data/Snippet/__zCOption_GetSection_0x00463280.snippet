@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::GetSection(int): zCOptionSection*]]></Title>
+			<Shortcut><![CDATA[__zCOption_GetSection_0x00463280]]></Shortcut>
+			<Description><![CDATA[public: zCOptionSection* __thiscall zCOption::GetSection(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_GetSection : zCOption { zCOptionSection* operator()(int); };
+BindedHook Ivk_zCOption_GetSection{ ZENFOR(0x0045DB60, 0x00465430, 0x00462A70, 0x00463280), &zCOption_GetSection::operator() };
+zCOptionSection* zCOption_GetSection::operator()(int a0)
+{
+	zCOptionSection* result = THISCALL(Ivk_zCOption_GetSection)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetTrueGuild(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetTrueGuild_0x00730770]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::GetTrueGuild()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetTrueGuild : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_GetTrueGuild{ ZENFOR(0x0068DFC0, 0x006BE950, 0x006D23A0, 0x00730770), &oCNpc_GetTrueGuild::operator() };
+int oCNpc_GetTrueGuild::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_GetTrueGuild)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

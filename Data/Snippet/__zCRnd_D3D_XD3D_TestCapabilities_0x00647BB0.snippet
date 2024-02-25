@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::XD3D_TestCapabilities(): int]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_XD3D_TestCapabilities_0x00647BB0]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCRnd_D3D::XD3D_TestCapabilities()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_XD3D_TestCapabilities : zCRnd_D3D { int operator()(); };
+BindedHook Ivk_zCRnd_D3D_XD3D_TestCapabilities{ ZENFOR(0x00711780, 0x0074D170, 0x0075C610, 0x00647BB0), &zCRnd_D3D_XD3D_TestCapabilities::operator() };
+int zCRnd_D3D_XD3D_TestCapabilities::operator()()
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_XD3D_TestCapabilities)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

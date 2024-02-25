@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::CanToggleWalkModeTo(int): int]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_CanToggleWalkModeTo_0x006ABFB0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCAniCtrl_Human::CanToggleWalkModeTo(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_CanToggleWalkModeTo : oCAniCtrl_Human { int operator()(int); };
+BindedHook Ivk_oCAniCtrl_Human_CanToggleWalkModeTo{ ZENFOR(0x006238E0, 0x00648200, 0x0064F730, 0x006ABFB0), &oCAniCtrl_Human_CanToggleWalkModeTo::operator() };
+int oCAniCtrl_Human_CanToggleWalkModeTo::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_CanToggleWalkModeTo)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

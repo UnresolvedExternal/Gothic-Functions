@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::CallScriptInvestedMana(): void]]></Title>
+			<Shortcut><![CDATA[__oCSpell_CallScriptInvestedMana_0x00485D30]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall oCSpell::CallScriptInvestedMana()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_CallScriptInvestedMana : oCSpell { void operator()(); };
+BindedHook Ivk_oCSpell_CallScriptInvestedMana{ ZENFOR(0x0047D930, 0x004881D0, 0x00484710, 0x00485D30), &oCSpell_CallScriptInvestedMana::operator() };
+void oCSpell_CallScriptInvestedMana::operator()()
+{
+	THISCALL(Ivk_oCSpell_CallScriptInvestedMana)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

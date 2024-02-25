@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFileBIN::BinEndChunk(): void]]></Title>
+			<Shortcut><![CDATA[__zCFileBIN_BinEndChunk_0x00570080]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCFileBIN::BinEndChunk()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFileBIN_BinEndChunk : zCFileBIN { void operator()(); };
+BindedHook Ivk_zCFileBIN_BinEndChunk{ ZENFOR(0x0056DA20, 0x00586D50, 0x0056ADF0, 0x00570080), &zCFileBIN_BinEndChunk::operator() };
+void zCFileBIN_BinEndChunk::operator()()
+{
+	THISCALL(Ivk_zCFileBIN_BinEndChunk)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

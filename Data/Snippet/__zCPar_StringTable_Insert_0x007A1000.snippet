@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_StringTable::Insert(zSTRING&): zSTRING*]]></Title>
+			<Shortcut><![CDATA[__zCPar_StringTable_Insert_0x007A1000]]></Shortcut>
+			<Description><![CDATA[public: zSTRING* __thiscall zCPar_StringTable::Insert(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_StringTable_Insert : zCPar_StringTable { zSTRING* operator()(zSTRING&); };
+BindedHook Ivk_zCPar_StringTable_Insert{ ZENFOR(0x006F7680, 0x007317B0, 0x007415C0, 0x007A1000), &zCPar_StringTable_Insert::operator() };
+zSTRING* zCPar_StringTable_Insert::operator()(zSTRING& a0)
+{
+	zSTRING* result = THISCALL(Ivk_zCPar_StringTable_Insert)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

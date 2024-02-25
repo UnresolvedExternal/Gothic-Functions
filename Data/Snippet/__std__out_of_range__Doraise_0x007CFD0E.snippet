@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::out_of_range::_Doraise(): void [const]]]></Title>
+			<Shortcut><![CDATA[__std__out_of_range__Doraise_0x007CFD0E]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall std::out_of_range::_Doraise()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__out_of_range__Doraise : std::out_of_range { void operator()() const; };
+BindedHook Ivk_std__out_of_range__Doraise{ ZENFOR(0x00776364, 0x007BA124, 0x007C384E, 0x007CFD0E), &std__out_of_range__Doraise::operator() };
+void std__out_of_range__Doraise::operator()() const
+{
+	THISCALL(Ivk_std__out_of_range__Doraise)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

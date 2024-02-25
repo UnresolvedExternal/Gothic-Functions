@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCSpell_VectorDeletingDestructor_0x00483DA0]]></Shortcut>
+			<Description><![CDATA[private: virtual void* __thiscall oCSpell::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct oCSpell_VectorDeletingDestructor : oCSpell { void* operator()(unsigned int); };
+BindedHook Ivk_oCSpell_VectorDeletingDestructor{ ZENFOR(0x0047B9C0, 0x00000000, 0x00482790, 0x00483DA0), &oCSpell_VectorDeletingDestructor::operator() };
+void* oCSpell_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCSpell_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

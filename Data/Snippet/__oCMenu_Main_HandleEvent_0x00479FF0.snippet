@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenu_Main::HandleEvent(int): int]]></Title>
+			<Shortcut><![CDATA[__oCMenu_Main_HandleEvent_0x00479FF0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCMenu_Main::HandleEvent(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenu_Main_HandleEvent : oCMenu_Main { int operator()(int); };
+BindedHook Ivk_oCMenu_Main_HandleEvent{ ZENFOR(0x00473220, 0x0047C4E0, 0x00478C50, 0x00479FF0), &oCMenu_Main_HandleEvent::operator() };
+int oCMenu_Main_HandleEvent::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCMenu_Main_HandleEvent)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

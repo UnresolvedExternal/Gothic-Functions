@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWaveData::Init(): void]]></Title>
+			<Shortcut><![CDATA[__zCWaveData_Init_0x004FB8C0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCWaveData::Init()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWaveData_Init : zCWaveData { void operator()(); };
+BindedHook Ivk_zCWaveData_Init{ ZENFOR(0x004ED240, 0x004FF920, 0x004F8C40, 0x004FB8C0), &zCWaveData_Init::operator() };
+void zCWaveData_Init::operator()()
+{
+	THISCALL(Ivk_zCWaveData_Init)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTex_D3D::~zCTex_D3D()]]></Title>
+			<Shortcut><![CDATA[__zCTex_D3D__zCTex_D3D_0x00653930]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCTex_D3D::~zCTex_D3D()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTex_D3D_Destructor : zCTex_D3D { void operator()(); };
+BindedHook Ivk_zCTex_D3D_Destructor{ ZENFOR(0x0071B1E0, 0x00757500, 0x00766FD0, 0x00653930), &zCTex_D3D_Destructor::operator() };
+void zCTex_D3D_Destructor::operator()()
+{
+	THISCALL(Ivk_zCTex_D3D_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

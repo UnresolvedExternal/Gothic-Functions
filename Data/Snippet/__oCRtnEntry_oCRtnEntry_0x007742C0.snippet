@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCRtnEntry::oCRtnEntry()]]></Title>
+			<Shortcut><![CDATA[__oCRtnEntry_oCRtnEntry_0x007742C0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCRtnEntry::oCRtnEntry()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCRtnEntry_oCRtnEntry : oCRtnEntry { oCRtnEntry* operator()(); };
+BindedHook Ivk_oCRtnEntry_oCRtnEntry{ ZENFOR(0x006CC560, 0x00702BF0, 0x00714D30, 0x007742C0), &oCRtnEntry_oCRtnEntry::operator() };
+oCRtnEntry* oCRtnEntry_oCRtnEntry::operator()()
+{
+	oCRtnEntry* result = THISCALL(Ivk_oCRtnEntry_oCRtnEntry)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

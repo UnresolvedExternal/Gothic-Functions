@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLight::SetByPresetInUse(): int]]></Title>
+			<Shortcut><![CDATA[__zCVobLight_SetByPresetInUse_0x00608E60]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCVobLight::SetByPresetInUse()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobLight_SetByPresetInUse : zCVobLight { int operator()(); };
+BindedHook Ivk_zCVobLight_SetByPresetInUse{ ZENFOR(0x005DC650, 0x005FC1A0, 0x00602080, 0x00608E60), &zCVobLight_SetByPresetInUse::operator() };
+int zCVobLight_SetByPresetInUse::operator()()
+{
+	int result = THISCALL(Ivk_zCVobLight_SetByPresetInUse)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

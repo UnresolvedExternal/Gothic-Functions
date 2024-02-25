@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpawnManager::SetSpawnTime(float): void]]></Title>
+			<Shortcut><![CDATA[__oCSpawnManager_SetSpawnTime_0x00777860]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl oCSpawnManager::SetSpawnTime(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCSpawnManager_SetSpawnTime(float);
+BindedHook Ivk_oCSpawnManager_SetSpawnTime{ ZENFOR(0x006CF610, 0x00706020, 0x007182D0, 0x00777860), Hook_oCSpawnManager_SetSpawnTime };
+void Hook_oCSpawnManager_SetSpawnTime(float a0)
+{
+	Ivk_oCSpawnManager_SetSpawnTime(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

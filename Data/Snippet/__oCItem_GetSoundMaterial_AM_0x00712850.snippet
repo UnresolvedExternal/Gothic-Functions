@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::GetSoundMaterial_AM(zCSoundManager::zTSndManMedium&, oTSndMaterial&, int): void]]></Title>
+			<Shortcut><![CDATA[__oCItem_GetSoundMaterial_AM_0x00712850]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCItem::GetSoundMaterial_AM(zCSoundManager::zTSndManMedium&, oTSndMaterial&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_GetSoundMaterial_AM : oCItem { void operator()(zCSoundManager::zTSndManMedium&, oTSndMaterial&, int); };
+BindedHook Ivk_oCItem_GetSoundMaterial_AM{ ZENFOR(0x00672140, 0x0069FAA0, 0x006B4AA0, 0x00712850), &oCItem_GetSoundMaterial_AM::operator() };
+void oCItem_GetSoundMaterial_AM::operator()(zCSoundManager::zTSndManMedium& a0, oTSndMaterial& a1, int a2)
+{
+	THISCALL(Ivk_oCItem_GetSoundMaterial_AM)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

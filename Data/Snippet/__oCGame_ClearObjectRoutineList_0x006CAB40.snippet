@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::ClearObjectRoutineList(): void]]></Title>
+			<Shortcut><![CDATA[__oCGame_ClearObjectRoutineList_0x006CAB40]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCGame::ClearObjectRoutineList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_ClearObjectRoutineList : oCGame { void operator()(); };
+BindedHook Ivk_oCGame_ClearObjectRoutineList{ ZENFOR(0x006400F0, 0x00667110, 0x0066DDC0, 0x006CAB40), &oCGame_ClearObjectRoutineList::operator() };
+void oCGame_ClearObjectRoutineList::operator()()
+{
+	THISCALL(Ivk_oCGame_ClearObjectRoutineList)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

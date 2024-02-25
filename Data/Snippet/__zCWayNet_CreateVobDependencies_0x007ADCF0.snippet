@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::CreateVobDependencies(zCWorld*): void]]></Title>
+			<Shortcut><![CDATA[__zCWayNet_CreateVobDependencies_0x007ADCF0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCWayNet::CreateVobDependencies(zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_CreateVobDependencies : zCWayNet { void operator()(zCWorld*); };
+BindedHook Ivk_zCWayNet_CreateVobDependencies{ ZENFOR(0x007040E0, 0x0073E8E0, 0x0074E1F0, 0x007ADCF0), &zCWayNet_CreateVobDependencies::operator() };
+void zCWayNet_CreateVobDependencies::operator()(zCWorld* a0)
+{
+	THISCALL(Ivk_zCWayNet_CreateVobDependencies)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

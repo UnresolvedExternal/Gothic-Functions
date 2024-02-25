@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zPATH::SearchFile(zSTRING const&, zSTRING const&, int): int]]></Title>
+			<Shortcut><![CDATA[__zPATH_SearchFile_0x00588270]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zPATH::SearchFile(zSTRING const&, zSTRING const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zPATH_SearchFile : zPATH { int operator()(zSTRING const&, zSTRING const&, int); };
+BindedHook Ivk_zPATH_SearchFile{ ZENFOR(0x0056DA10, 0x00586D30, 0x00582D10, 0x00588270), &zPATH_SearchFile::operator() };
+int zPATH_SearchFile::operator()(zSTRING const& a0, zSTRING const& a1, int a2)
+{
+	int result = THISCALL(Ivk_zPATH_SearchFile)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

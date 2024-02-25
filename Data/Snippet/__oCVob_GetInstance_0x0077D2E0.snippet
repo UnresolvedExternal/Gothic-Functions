@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVob::GetInstance(): int]]></Title>
+			<Shortcut><![CDATA[__oCVob_GetInstance_0x0077D2E0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCVob::GetInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVob_GetInstance : oCVob { int operator()(); };
+BindedHook Ivk_oCVob_GetInstance{ ZENFOR(0x006D45C0, 0x0070B890, 0x0071D8A0, 0x0077D2E0), &oCVob_GetInstance::operator() };
+int oCVob_GetInstance::operator()()
+{
+	int result = THISCALL(Ivk_oCVob_GetInstance)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

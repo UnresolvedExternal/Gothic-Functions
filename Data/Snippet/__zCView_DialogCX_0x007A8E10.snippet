@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::DialogCX(int, zSTRING const&, float, zCOLOR*): void]]></Title>
+			<Shortcut><![CDATA[__zCView_DialogCX_0x007A8E10]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCView::DialogCX(int, zSTRING const&, float, zCOLOR*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_DialogCX : zCView { void operator()(int, zSTRING const&, float, zCOLOR*); };
+BindedHook Ivk_zCView_DialogCX{ ZENFOR(0x006FF280, 0x00739820, 0x00749310, 0x007A8E10), &zCView_DialogCX::operator() };
+void zCView_DialogCX::operator()(int a0, zSTRING const& a1, float a2, zCOLOR* a3)
+{
+	THISCALL(Ivk_zCView_DialogCX)(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMagFrontier::DisposeShootFX(): void]]></Title>
+			<Shortcut><![CDATA[__oCMagFrontier_DisposeShootFX_0x004751A0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCMagFrontier::DisposeShootFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMagFrontier_DisposeShootFX : oCMagFrontier { void operator()(); };
+BindedHook Ivk_oCMagFrontier_DisposeShootFX{ ZENFOR(0x0046E8A0, 0x00477440, 0x00473E00, 0x004751A0), &oCMagFrontier_DisposeShootFX::operator() };
+void oCMagFrontier_DisposeShootFX::operator()()
+{
+	THISCALL(Ivk_oCMagFrontier_DisposeShootFX)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

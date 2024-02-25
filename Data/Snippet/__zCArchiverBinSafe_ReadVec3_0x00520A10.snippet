@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::ReadVec3(char const*): zVEC3]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe_ReadVec3_0x00520A10]]></Shortcut>
+			<Description><![CDATA[public: virtual zVEC3 __fastcall zCArchiverBinSafe::ReadVec3(char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_ReadVec3 : zCArchiverBinSafe { zVEC3 __fastcall operator()(char const*); };
+BindedHook Ivk_zCArchiverBinSafe_ReadVec3{ ZENFOR(0x005105D0, 0x00525810, 0x0051DC40, 0x00520A10), &zCArchiverBinSafe_ReadVec3::operator() };
+zVEC3 __fastcall zCArchiverBinSafe_ReadVec3::operator()(char const* a0)
+{
+	zVEC3 result = THISCALL(Ivk_zCArchiverBinSafe_ReadVec3)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

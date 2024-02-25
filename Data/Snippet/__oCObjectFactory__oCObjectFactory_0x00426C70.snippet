@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCObjectFactory::~oCObjectFactory()]]></Title>
+			<Shortcut><![CDATA[__oCObjectFactory__oCObjectFactory_0x00426C70]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCObjectFactory::~oCObjectFactory()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCObjectFactory_Destructor : oCObjectFactory { void operator()(); };
+BindedHook Ivk_oCObjectFactory_Destructor{ ZENFOR(0x00425D90, 0x00428750, 0x00426930, 0x00426C70), &oCObjectFactory_Destructor::operator() };
+void oCObjectFactory_Destructor::operator()()
+{
+	THISCALL(Ivk_oCObjectFactory_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

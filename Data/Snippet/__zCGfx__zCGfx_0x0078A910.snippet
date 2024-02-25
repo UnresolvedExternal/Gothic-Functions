@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCGfx::~zCGfx()]]></Title>
+			<Shortcut><![CDATA[__zCGfx__zCGfx_0x0078A910]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCGfx::~zCGfx()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCGfx_Destructor : zCGfx { void operator()(); };
+BindedHook Ivk_zCGfx_Destructor{ ZENFOR(0x006E15E0, 0x00719CA0, 0x0072AED0, 0x0078A910), &zCGfx_Destructor::operator() };
+void zCGfx_Destructor::operator()()
+{
+	THISCALL(Ivk_zCGfx_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EV_Jump(oCMsgMovement*): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_EV_Jump_0x00683C20]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::EV_Jump(oCMsgMovement*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_EV_Jump : oCNpc { int operator()(oCMsgMovement*); };
+BindedHook Ivk_oCNpc_EV_Jump{ ZENFOR(0x0074E740, 0x00790530, 0x0079A720, 0x00683C20), &oCNpc_EV_Jump::operator() };
+int oCNpc_EV_Jump::operator()(oCMsgMovement* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_EV_Jump)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

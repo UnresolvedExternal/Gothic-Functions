@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDraw::GetScreen(): zCViewDraw&]]></Title>
+			<Shortcut><![CDATA[__zCViewDraw_GetScreen_0x006905C0]]></Shortcut>
+			<Description><![CDATA[public: static zCViewDraw& __cdecl zCViewDraw::GetScreen()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCViewDraw& Hook_zCViewDraw_GetScreen();
+BindedHook Ivk_zCViewDraw_GetScreen{ ZENFOR(0x00753A60, 0x00795F10, 0x007A0810, 0x006905C0), Hook_zCViewDraw_GetScreen };
+zCViewDraw& Hook_zCViewDraw_GetScreen()
+{
+	zCViewDraw& result = Ivk_zCViewDraw_GetScreen();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

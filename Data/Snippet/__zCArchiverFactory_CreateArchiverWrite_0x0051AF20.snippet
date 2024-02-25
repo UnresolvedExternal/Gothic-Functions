@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverFactory::CreateArchiverWrite(zSTRING const&, zTArchiveMode, int, int): zCArchiver*]]></Title>
+			<Shortcut><![CDATA[__zCArchiverFactory_CreateArchiverWrite_0x0051AF20]]></Shortcut>
+			<Description><![CDATA[public: virtual zCArchiver* __thiscall zCArchiverFactory::CreateArchiverWrite(zSTRING const&, zTArchiveMode, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverFactory_CreateArchiverWrite : zCArchiverFactory { zCArchiver* operator()(zSTRING const&, zTArchiveMode, int, int); };
+BindedHook Ivk_zCArchiverFactory_CreateArchiverWrite{ ZENFOR(0x0050AF80, 0x0051FD30, 0x00518150, 0x0051AF20), &zCArchiverFactory_CreateArchiverWrite::operator() };
+zCArchiver* zCArchiverFactory_CreateArchiverWrite::operator()(zSTRING const& a0, zTArchiveMode a1, int a2, int a3)
+{
+	zCArchiver* result = THISCALL(Ivk_zCArchiverFactory_CreateArchiverWrite)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

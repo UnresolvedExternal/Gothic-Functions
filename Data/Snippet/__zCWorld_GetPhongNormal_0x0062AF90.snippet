@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::GetPhongNormal(zCPolygon*, zVEC3 const&): zVEC3]]></Title>
+			<Shortcut><![CDATA[__zCWorld_GetPhongNormal_0x0062AF90]]></Shortcut>
+			<Description><![CDATA[private: zVEC3 __thiscall zCWorld::GetPhongNormal(zCPolygon*, zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_GetPhongNormal : zCWorld { zVEC3 operator()(zCPolygon*, zVEC3 const&); };
+BindedHook Ivk_zCWorld_GetPhongNormal{ ZENFOR(0x005FC350, 0x0061DB90, 0x00623810, 0x0062AF90), &zCWorld_GetPhongNormal::operator() };
+zVEC3 zCWorld_GetPhongNormal::operator()(zCPolygon* a0, zVEC3 const& a1)
+{
+	zVEC3 result = THISCALL(Ivk_zCWorld_GetPhongNormal)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

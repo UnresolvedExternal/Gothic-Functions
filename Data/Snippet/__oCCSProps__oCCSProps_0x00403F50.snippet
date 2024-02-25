@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCCSProps::~oCCSProps()]]></Title>
+			<Shortcut><![CDATA[__oCCSProps__oCCSProps_0x00403F50]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCCSProps::~oCCSProps()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCCSProps_Destructor : oCCSProps { void operator()(); };
+BindedHook Ivk_oCCSProps_Destructor{ ZENFOR(0x00403DF0, 0x00404560, 0x00403F50, 0x00403F50), &oCCSProps_Destructor::operator() };
+void oCCSProps_Destructor::operator()()
+{
+	THISCALL(Ivk_oCCSProps_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

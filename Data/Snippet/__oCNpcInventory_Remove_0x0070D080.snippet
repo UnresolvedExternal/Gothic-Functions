@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcInventory::Remove(int, int): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCNpcInventory_Remove_0x0070D080]]></Shortcut>
+			<Description><![CDATA[public: virtual oCItem* __thiscall oCNpcInventory::Remove(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcInventory_Remove : oCNpcInventory { oCItem* operator()(int, int); };
+BindedHook Ivk_oCNpcInventory_Remove{ ZENFOR(0x0066D410, 0x0069ABA0, 0x006AF590, 0x0070D080), &oCNpcInventory_Remove::operator() };
+oCItem* oCNpcInventory_Remove::operator()(int a0, int a1)
+{
+	oCItem* result = THISCALL(Ivk_oCNpcInventory_Remove)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

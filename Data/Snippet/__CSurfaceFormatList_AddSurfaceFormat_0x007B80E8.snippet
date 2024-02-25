@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CSurfaceFormatList::AddSurfaceFormat(_DDPIXELFORMAT*, IDirect3D7*, IDirectDraw7*, _GUID): int]]></Title>
+			<Shortcut><![CDATA[__CSurfaceFormatList_AddSurfaceFormat_0x007B80E8]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall CSurfaceFormatList::AddSurfaceFormat(_DDPIXELFORMAT*, IDirect3D7*, IDirectDraw7*, _GUID)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CSurfaceFormatList_AddSurfaceFormat : CSurfaceFormatList { int operator()(_DDPIXELFORMAT*, IDirect3D7*, IDirectDraw7*, _GUID); };
+BindedHook Ivk_CSurfaceFormatList_AddSurfaceFormat{ ZENFOR(0x0075E9F4, 0x007A1D3A, 0x007ABC22, 0x007B80E8), &CSurfaceFormatList_AddSurfaceFormat::operator() };
+int CSurfaceFormatList_AddSurfaceFormat::operator()(_DDPIXELFORMAT* a0, IDirect3D7* a1, IDirectDraw7* a2, _GUID a3)
+{
+	int result = THISCALL(Ivk_CSurfaceFormatList_AddSurfaceFormat)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

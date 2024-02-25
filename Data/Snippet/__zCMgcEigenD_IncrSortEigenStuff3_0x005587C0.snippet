@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMgcEigenD::IncrSortEigenStuff3(): void]]></Title>
+			<Shortcut><![CDATA[__zCMgcEigenD_IncrSortEigenStuff3_0x005587C0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCMgcEigenD::IncrSortEigenStuff3()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMgcEigenD_IncrSortEigenStuff3 : zCMgcEigenD { void operator()(); };
+BindedHook Ivk_zCMgcEigenD_IncrSortEigenStuff3{ ZENFOR(0x00543F20, 0x0055B900, 0x005535A0, 0x005587C0), &zCMgcEigenD_IncrSortEigenStuff3::operator() };
+void zCMgcEigenD_IncrSortEigenStuff3::operator()()
+{
+	THISCALL(Ivk_zCMgcEigenD_IncrSortEigenStuff3)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobItemSlot::GetInsertedItem(): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCMobItemSlot_GetInsertedItem_0x00728110]]></Shortcut>
+			<Description><![CDATA[public: virtual oCItem* __thiscall oCMobItemSlot::GetInsertedItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobItemSlot_GetInsertedItem : oCMobItemSlot { oCItem* operator()(); };
+BindedHook Ivk_oCMobItemSlot_GetInsertedItem{ ZENFOR(0x00686090, 0x006B5DC0, 0x006CA080, 0x00728110), &oCMobItemSlot_GetInsertedItem::operator() };
+oCItem* oCMobItemSlot_GetInsertedItem::operator()()
+{
+	oCItem* result = THISCALL(Ivk_oCMobItemSlot_GetInsertedItem)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

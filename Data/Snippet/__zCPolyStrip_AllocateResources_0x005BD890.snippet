@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolyStrip::AllocateResources(int): void]]></Title>
+			<Shortcut><![CDATA[__zCPolyStrip_AllocateResources_0x005BD890]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCPolyStrip::AllocateResources(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolyStrip_AllocateResources : zCPolyStrip { void operator()(int); };
+BindedHook Ivk_zCPolyStrip_AllocateResources{ ZENFOR(0x0059BB50, 0x005B7F50, 0x005B7D20, 0x005BD890), &zCPolyStrip_AllocateResources::operator() };
+void zCPolyStrip_AllocateResources::operator()(int a0)
+{
+	THISCALL(Ivk_zCPolyStrip_AllocateResources)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

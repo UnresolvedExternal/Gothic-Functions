@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetMessage::GetDataPtr(): unsigned char*]]></Title>
+			<Shortcut><![CDATA[__zCNetMessage_GetDataPtr_0x0045CFC0]]></Shortcut>
+			<Description><![CDATA[public: unsigned char* __thiscall zCNetMessage::GetDataPtr()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetMessage_GetDataPtr : zCNetMessage { unsigned char* operator()(); };
+BindedHook Ivk_zCNetMessage_GetDataPtr{ ZENFOR(0x00457EA0, 0x0045EF60, 0x0045C870, 0x0045CFC0), &zCNetMessage_GetDataPtr::operator() };
+unsigned char* zCNetMessage_GetDataPtr::operator()()
+{
+	unsigned char* result = THISCALL(Ivk_zCNetMessage_GetDataPtr)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgConversation::_CreateNewInstance(): zCObject*]]></Title>
+			<Shortcut><![CDATA[__oCMsgConversation__CreateNewInstance_0x007649A0]]></Shortcut>
+			<Description><![CDATA[private: static zCObject* __cdecl oCMsgConversation::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_oCMsgConversation__CreateNewInstance();
+BindedHook Ivk_oCMsgConversation__CreateNewInstance{ ZENFOR(0x006BD7E0, 0x006F2AF0, 0x00705460, 0x007649A0), Hook_oCMsgConversation__CreateNewInstance };
+zCObject* Hook_oCMsgConversation__CreateNewInstance()
+{
+	zCObject* result = Ivk_oCMsgConversation__CreateNewInstance();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

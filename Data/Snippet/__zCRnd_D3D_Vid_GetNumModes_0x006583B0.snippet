@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::Vid_GetNumModes(): int]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_Vid_GetNumModes_0x006583B0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCRnd_D3D::Vid_GetNumModes()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_Vid_GetNumModes : zCRnd_D3D { int operator()(); };
+BindedHook Ivk_zCRnd_D3D_Vid_GetNumModes{ ZENFOR(0x0071FA90, 0x0075C2F0, 0x0076B880, 0x006583B0), &zCRnd_D3D_Vid_GetNumModes::operator() };
+int zCRnd_D3D_Vid_GetNumModes::operator()()
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_Vid_GetNumModes)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

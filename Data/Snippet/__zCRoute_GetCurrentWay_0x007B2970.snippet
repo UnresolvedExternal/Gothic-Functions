@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRoute::GetCurrentWay(): zCWay*]]></Title>
+			<Shortcut><![CDATA[__zCRoute_GetCurrentWay_0x007B2970]]></Shortcut>
+			<Description><![CDATA[public: zCWay* __thiscall zCRoute::GetCurrentWay()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRoute_GetCurrentWay : zCRoute { zCWay* operator()(); };
+BindedHook Ivk_zCRoute_GetCurrentWay{ ZENFOR(0x00708C70, 0x00743990, 0x00752E70, 0x007B2970), &zCRoute_GetCurrentWay::operator() };
+zCWay* zCRoute_GetCurrentWay::operator()()
+{
+	zCWay* result = THISCALL(Ivk_zCRoute_GetCurrentWay)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

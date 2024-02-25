@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNews::IsGossip(): int]]></Title>
+			<Shortcut><![CDATA[__oCNews_IsGossip_0x0072AE60]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNews::IsGossip()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNews_IsGossip : oCNews { int operator()(); };
+BindedHook Ivk_oCNews_IsGossip{ ZENFOR(0x00688C40, 0x006B8E80, 0x006CCDD0, 0x0072AE60), &oCNews_IsGossip::operator() };
+int oCNews_IsGossip::operator()()
+{
+	int result = THISCALL(Ivk_oCNews_IsGossip)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

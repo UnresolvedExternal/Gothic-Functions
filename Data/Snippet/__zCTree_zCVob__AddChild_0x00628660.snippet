@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTree<zCVob>::AddChild(zCVob*): zCTree<zCVob>*]]></Title>
+			<Shortcut><![CDATA[__zCTree_zCVob__AddChild_0x00628660]]></Shortcut>
+			<Description><![CDATA[public: zCTree<zCVob>* __thiscall zCTree<zCVob>::AddChild(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTree_zCVob__AddChild : zCTree<zCVob> { zCTree<zCVob>* operator()(zCVob*); };
+BindedHook Ivk_zCTree_zCVob__AddChild{ ZENFOR(0x005F9E40, 0x0061B3A0, 0x00620EE0, 0x00628660), &zCTree_zCVob__AddChild::operator() };
+zCTree<zCVob>* zCTree_zCVob__AddChild::operator()(zCVob* a0)
+{
+	zCTree<zCVob>* result = THISCALL(Ivk_zCTree_zCVob__AddChild)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

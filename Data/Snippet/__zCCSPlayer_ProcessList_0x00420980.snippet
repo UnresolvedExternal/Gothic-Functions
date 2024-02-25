@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPlayer::ProcessList(zVEC3 const&, int, int, int): void]]></Title>
+			<Shortcut><![CDATA[__zCCSPlayer_ProcessList_0x00420980]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCCSPlayer::ProcessList(zVEC3 const&, int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPlayer_ProcessList : zCCSPlayer { void operator()(zVEC3 const&, int, int, int); };
+BindedHook Ivk_zCCSPlayer_ProcessList{ ZENFOR(0x00420230, 0x00422600, 0x00420650, 0x00420980), &zCCSPlayer_ProcessList::operator() };
+void zCCSPlayer_ProcessList::operator()(zVEC3 const& a0, int a1, int a2, int a3)
+{
+	THISCALL(Ivk_zCCSPlayer_ProcessList)(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

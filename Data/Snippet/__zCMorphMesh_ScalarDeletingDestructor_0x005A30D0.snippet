@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCMorphMesh_ScalarDeletingDestructor_0x005A30D0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void* __thiscall zCMorphMesh::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCMorphMesh_ScalarDeletingDestructor : zCMorphMesh { void* operator()(unsigned int); };
+BindedHook Ivk_zCMorphMesh_ScalarDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x005A30D0), &zCMorphMesh_ScalarDeletingDestructor::operator() };
+void* zCMorphMesh_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCMorphMesh_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

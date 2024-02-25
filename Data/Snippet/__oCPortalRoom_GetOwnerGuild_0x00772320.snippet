@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCPortalRoom::GetOwnerGuild(): int]]></Title>
+			<Shortcut><![CDATA[__oCPortalRoom_GetOwnerGuild_0x00772320]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCPortalRoom::GetOwnerGuild()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCPortalRoom_GetOwnerGuild : oCPortalRoom { int operator()(); };
+BindedHook Ivk_oCPortalRoom_GetOwnerGuild{ ZENFOR(0x006CA9A0, 0x00700BD0, 0x00712D90, 0x00772320), &oCPortalRoom_GetOwnerGuild::operator() };
+int oCPortalRoom_GetOwnerGuild::operator()()
+{
+	int result = THISCALL(Ivk_oCPortalRoom_GetOwnerGuild)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

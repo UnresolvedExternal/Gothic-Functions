@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::DrawLine(float, float, float, float, zCOLOR): void]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_DrawLine_0x0064D8E0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::DrawLine(float, float, float, float, zCOLOR)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_DrawLine : zCRnd_D3D { void operator()(float, float, float, float, zCOLOR); };
+BindedHook Ivk_zCRnd_D3D_DrawLine{ ZENFOR(0x00716B00, 0x00752A70, 0x00762340, 0x0064D8E0), &zCRnd_D3D_DrawLine::operator() };
+void zCRnd_D3D_DrawLine::operator()(float a0, float a1, float a2, float a3, zCOLOR a4)
+{
+	THISCALL(Ivk_zCRnd_D3D_DrawLine)(a0, a1, a2, a3, a4);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

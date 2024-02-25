@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duGlobals::D3duStrDup(char*): char*]]></Title>
+			<Shortcut><![CDATA[__CD3duGlobals_D3duStrDup_0x007B7A9C]]></Shortcut>
+			<Description><![CDATA[public: char* __thiscall CD3duGlobals::D3duStrDup(char*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duGlobals_D3duStrDup : CD3duGlobals { char* operator()(char*); };
+BindedHook Ivk_CD3duGlobals_D3duStrDup{ ZENFOR(0x0075E3A8, 0x007A199F, 0x007AB5D6, 0x007B7A9C), &CD3duGlobals_D3duStrDup::operator() };
+char* CD3duGlobals_D3duStrDup::operator()(char* a0)
+{
+	char* result = THISCALL(Ivk_CD3duGlobals_D3duStrDup)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

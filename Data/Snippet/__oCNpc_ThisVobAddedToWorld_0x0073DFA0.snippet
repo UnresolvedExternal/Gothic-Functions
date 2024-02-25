@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::ThisVobAddedToWorld(zCWorld*): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_ThisVobAddedToWorld_0x0073DFA0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall oCNpc::ThisVobAddedToWorld(zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_ThisVobAddedToWorld : oCNpc { void operator()(zCWorld*); };
+BindedHook Ivk_oCNpc_ThisVobAddedToWorld{ ZENFOR(0x0069AA40, 0x006CC9F0, 0x006DF780, 0x0073DFA0), &oCNpc_ThisVobAddedToWorld::operator() };
+void oCNpc_ThisVobAddedToWorld::operator()(zCWorld* a0)
+{
+	THISCALL(Ivk_oCNpc_ThisVobAddedToWorld)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

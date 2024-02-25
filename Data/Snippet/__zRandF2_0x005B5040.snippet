@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zRandF2(): float]]></Title>
+			<Shortcut><![CDATA[__zRandF2_0x005B5040]]></Shortcut>
+			<Description><![CDATA[float __cdecl zRandF2()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[float Hook_zRandF2();
+BindedHook Ivk_zRandF2{ ZENFOR(0x00593CB0, 0x005AF990, 0x005AF4E0, 0x005B5040), Hook_zRandF2 };
+float Hook_zRandF2()
+{
+	float result = Ivk_zRandF2();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

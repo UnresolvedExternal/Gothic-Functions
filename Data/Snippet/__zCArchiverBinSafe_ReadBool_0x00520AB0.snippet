@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::ReadBool(char const*): int]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe_ReadBool_0x00520AB0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __fastcall zCArchiverBinSafe::ReadBool(char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_ReadBool : zCArchiverBinSafe { int __fastcall operator()(char const*); };
+BindedHook Ivk_zCArchiverBinSafe_ReadBool{ ZENFOR(0x00510670, 0x005258B0, 0x0051DCE0, 0x00520AB0), &zCArchiverBinSafe_ReadBool::operator() };
+int __fastcall zCArchiverBinSafe_ReadBool::operator()(char const* a0)
+{
+	int result = THISCALL(Ivk_zCArchiverBinSafe_ReadBool)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

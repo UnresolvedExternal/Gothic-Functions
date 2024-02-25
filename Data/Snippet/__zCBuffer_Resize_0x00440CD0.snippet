@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::Resize(unsigned long): void]]></Title>
+			<Shortcut><![CDATA[__zCBuffer_Resize_0x00440CD0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCBuffer::Resize(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_Resize : zCBuffer { void operator()(unsigned long); };
+BindedHook Ivk_zCBuffer_Resize{ ZENFOR(0x0043CF30, 0x00442100, 0x004406A0, 0x00440CD0), &zCBuffer_Resize::operator() };
+void zCBuffer_Resize::operator()(unsigned long a0)
+{
+	THISCALL(Ivk_zCBuffer_Resize)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

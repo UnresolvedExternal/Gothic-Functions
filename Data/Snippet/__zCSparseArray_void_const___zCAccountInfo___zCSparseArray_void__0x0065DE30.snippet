@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<void const*, zCAccountInfo>::~zCSparseArray<void const*, zCAccountInfo>()]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_void_const___zCAccountInfo___zCSparseArray_void__0x0065DE30]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCSparseArray<void const*, zCAccountInfo>::~zCSparseArray<void const*, zCAccountInfo>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_void_const___zCAccountInfo__Destructor : zCSparseArray<void const*, zCAccountInfo> { void operator()(); };
+BindedHook Ivk_zCSparseArray_void_const___zCAccountInfo__Destructor{ ZENFOR(0x0075A370, 0x0079C9B0, 0x007A72C0, 0x0065DE30), &zCSparseArray_void_const___zCAccountInfo__Destructor::operator() };
+void zCSparseArray_void_const___zCAccountInfo__Destructor::operator()()
+{
+	THISCALL(Ivk_zCSparseArray_void_const___zCAccountInfo__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResourceManager::LoadResource(zCResource*): void]]></Title>
+			<Shortcut><![CDATA[__zCResourceManager_LoadResource_0x005DCF60]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCResourceManager::LoadResource(zCResource*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResourceManager_LoadResource : zCResourceManager { void operator()(zCResource*); };
+BindedHook Ivk_zCResourceManager_LoadResource{ ZENFOR(0x005B5BD0, 0x005D3360, 0x005D61A0, 0x005DCF60), &zCResourceManager_LoadResource::operator() };
+void zCResourceManager_LoadResource::operator()(zCResource* a0)
+{
+	THISCALL(Ivk_zCResourceManager_LoadResource)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

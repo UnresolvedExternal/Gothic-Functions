@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCListSort<oCItem>::zCListSort<oCItem>()]]></Title>
+			<Shortcut><![CDATA[__zCListSort_oCItem__zCListSort_oCItem__0x0069E420]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCListSort<oCItem>::zCListSort<oCItem>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCListSort_oCItem__zCListSort_oCItem_ : zCListSort<oCItem> { zCListSort<oCItem>* operator()(); };
+BindedHook Ivk_zCListSort_oCItem__zCListSort_oCItem_{ ZENFOR(0x00670B50, 0x0069E420, 0x00000000, 0x00000000), &zCListSort_oCItem__zCListSort_oCItem_::operator() };
+zCListSort<oCItem>* zCListSort_oCItem__zCListSort_oCItem_::operator()()
+{
+	zCListSort<oCItem>* result = THISCALL(Ivk_zCListSort_oCItem__zCListSort_oCItem_)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

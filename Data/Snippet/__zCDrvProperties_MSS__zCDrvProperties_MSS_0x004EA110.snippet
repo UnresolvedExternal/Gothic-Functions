@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDrvProperties_MSS::~zCDrvProperties_MSS()]]></Title>
+			<Shortcut><![CDATA[__zCDrvProperties_MSS__zCDrvProperties_MSS_0x004EA110]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCDrvProperties_MSS::~zCDrvProperties_MSS()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCDrvProperties_MSS_Destructor : zCDrvProperties_MSS { void operator()(); };
+BindedHook Ivk_zCDrvProperties_MSS_Destructor{ ZENFOR(0x004DCDC0, 0x004EE2C0, 0x004E7600, 0x004EA110), &zCDrvProperties_MSS_Destructor::operator() };
+void zCDrvProperties_MSS_Destructor::operator()()
+{
+	THISCALL(Ivk_zCDrvProperties_MSS_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

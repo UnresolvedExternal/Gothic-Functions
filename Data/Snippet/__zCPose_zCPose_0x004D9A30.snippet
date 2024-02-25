@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPose::zCPose()]]></Title>
+			<Shortcut><![CDATA[__zCPose_zCPose_0x004D9A30]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCPose::zCPose()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPose_zCPose : zCPose { zCPose* operator()(); };
+BindedHook Ivk_zCPose_zCPose{ ZENFOR(0x004CCE40, 0x004DD5A0, 0x004D7470, 0x004D9A30), &zCPose_zCPose::operator() };
+zCPose* zCPose_zCPose::operator()()
+{
+	zCPose* result = THISCALL(Ivk_zCPose_zCPose)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobSound::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCVobSound_Unarchive_0x0063E540]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCVobSound::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobSound_Unarchive : zCVobSound { void operator()(zCArchiver&); };
+BindedHook Ivk_zCVobSound_Unarchive{ ZENFOR(0x0060DA20, 0x00630140, 0x00636D50, 0x0063E540), &zCVobSound_Unarchive::operator() };
+void zCVobSound_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCVobSound_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

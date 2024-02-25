@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ClearLogStatistics(): void]]></Title>
+			<Shortcut><![CDATA[__ClearLogStatistics_0x00434990]]></Shortcut>
+			<Description><![CDATA[void __cdecl ClearLogStatistics()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_ClearLogStatistics();
+BindedHook Ivk_ClearLogStatistics{ ZENFOR(0x00432230, 0x00435CD0, 0x00434490, 0x00434990), Hook_ClearLogStatistics };
+void Hook_ClearLogStatistics()
+{
+	Ivk_ClearLogStatistics();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

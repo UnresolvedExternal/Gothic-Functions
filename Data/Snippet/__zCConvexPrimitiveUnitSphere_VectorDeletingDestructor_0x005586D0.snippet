@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitiveUnitSphere::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCConvexPrimitiveUnitSphere_VectorDeletingDestructor_0x005586D0]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCConvexPrimitiveUnitSphere::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A
+struct zCConvexPrimitiveUnitSphere_VectorDeletingDestructor : zCConvexPrimitiveUnitSphere { void* operator()(unsigned int); };
+BindedHook Ivk_zCConvexPrimitiveUnitSphere_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x005586D0, 0x00000000, 0x00000000), &zCConvexPrimitiveUnitSphere_VectorDeletingDestructor::operator() };
+void* zCConvexPrimitiveUnitSphere_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCConvexPrimitiveUnitSphere_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

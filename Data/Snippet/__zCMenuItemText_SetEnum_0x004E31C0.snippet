@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemText::SetEnum(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItemText_SetEnum_0x004E31C0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCMenuItemText::SetEnum(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemText_SetEnum : zCMenuItemText { void operator()(zSTRING const&); };
+BindedHook Ivk_zCMenuItemText_SetEnum{ ZENFOR(0x004D6100, 0x004E6E10, 0x004E0810, 0x004E31C0), &zCMenuItemText_SetEnum::operator() };
+void zCMenuItemText_SetEnum::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCMenuItemText_SetEnum)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

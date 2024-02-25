@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCOptionSection*>::AllocDelta(int): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCOptionSection___AllocDelta_0x00465F50]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCOptionSection*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCOptionSection___AllocDelta : zCArray<zCOptionSection*> { void operator()(int); };
+BindedHook Ivk_zCArray_zCOptionSection___AllocDelta{ ZENFOR(0x00460900, 0x00468240, 0x00465320, 0x00465F50), &zCArray_zCOptionSection___AllocDelta::operator() };
+void zCArray_zCOptionSection___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zCOptionSection___AllocDelta)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

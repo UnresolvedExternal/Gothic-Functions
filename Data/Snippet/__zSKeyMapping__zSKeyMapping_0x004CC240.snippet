@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSKeyMapping::~zSKeyMapping()]]></Title>
+			<Shortcut><![CDATA[__zSKeyMapping__zSKeyMapping_0x004CC240]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zSKeyMapping::~zSKeyMapping()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSKeyMapping_Destructor : zSKeyMapping { void operator()(); };
+BindedHook Ivk_zSKeyMapping_Destructor{ ZENFOR(0x004C2F20, 0x004D2860, 0x004C9CD0, 0x004CC240), &zSKeyMapping_Destructor::operator() };
+void zSKeyMapping_Destructor::operator()()
+{
+	THISCALL(Ivk_zSKeyMapping_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

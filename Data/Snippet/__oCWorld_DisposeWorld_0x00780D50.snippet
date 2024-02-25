@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWorld::DisposeWorld(): void]]></Title>
+			<Shortcut><![CDATA[__oCWorld_DisposeWorld_0x00780D50]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCWorld::DisposeWorld()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWorld_DisposeWorld : oCWorld { void operator()(); };
+BindedHook Ivk_oCWorld_DisposeWorld{ ZENFOR(0x006D7B10, 0x0070F690, 0x00721310, 0x00780D50), &oCWorld_DisposeWorld::operator() };
+void oCWorld_DisposeWorld::operator()()
+{
+	THISCALL(Ivk_oCWorld_DisposeWorld)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

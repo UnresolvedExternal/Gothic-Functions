@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::IsMoveInvalid(zVEC3 const&, zVEC3 const&, zVEC3&, zCCollObjectCharacter::zTSpatialState&, zVEC3&): int]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectCharacter_IsMoveInvalid_0x00511060]]></Shortcut>
+			<Description><![CDATA[public: int __fastcall zCCollObjectCharacter::IsMoveInvalid(zVEC3 const&, zVEC3 const&, zVEC3&, zCCollObjectCharacter::zTSpatialState&, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectCharacter_IsMoveInvalid : zCCollObjectCharacter { int __fastcall operator()(zVEC3 const&, zVEC3 const&, zVEC3&, zCCollObjectCharacter::zTSpatialState&, zVEC3&); };
+BindedHook Ivk_zCCollObjectCharacter_IsMoveInvalid{ ZENFOR(0x00501500, 0x00514CB0, 0x0050E290, 0x00511060), &zCCollObjectCharacter_IsMoveInvalid::operator() };
+int __fastcall zCCollObjectCharacter_IsMoveInvalid::operator()(zVEC3 const& a0, zVEC3 const& a1, zVEC3& a2, zCCollObjectCharacter::zTSpatialState& a3, zVEC3& a4)
+{
+	int result = THISCALL(Ivk_zCCollObjectCharacter_IsMoveInvalid)(a0, a1, a2, a3, a4);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

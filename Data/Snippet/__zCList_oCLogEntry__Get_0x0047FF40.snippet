@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<oCLogEntry>::Get(int): oCLogEntry* [const]]]></Title>
+			<Shortcut><![CDATA[__zCList_oCLogEntry__Get_0x0047FF40]]></Shortcut>
+			<Description><![CDATA[public: oCLogEntry* __thiscall zCList<oCLogEntry>::Get(int)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_oCLogEntry__Get : zCList<oCLogEntry> { oCLogEntry* operator()(int) const; };
+BindedHook Ivk_zCList_oCLogEntry__Get{ ZENFOR(0x00478A20, 0x00482720, 0x0047EA60, 0x0047FF40), &zCList_oCLogEntry__Get::operator() };
+oCLogEntry* zCList_oCLogEntry__Get::operator()(int a0) const
+{
+	oCLogEntry* result = THISCALL(Ivk_zCList_oCLogEntry__Get)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

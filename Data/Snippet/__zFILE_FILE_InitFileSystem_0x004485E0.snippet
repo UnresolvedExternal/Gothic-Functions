@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::InitFileSystem(): bool]]></Title>
+			<Shortcut><![CDATA[__zFILE_FILE_InitFileSystem_0x004485E0]]></Shortcut>
+			<Description><![CDATA[public: static bool __cdecl zFILE_FILE::InitFileSystem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[bool Hook_zFILE_FILE_InitFileSystem();
+BindedHook Ivk_zFILE_FILE_InitFileSystem{ ZENFOR(0x00444530, 0x0044A130, 0x00447FB0, 0x004485E0), Hook_zFILE_FILE_InitFileSystem };
+bool Hook_zFILE_FILE_InitFileSystem()
+{
+	bool result = Ivk_zFILE_FILE_InitFileSystem();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetVobControl::~zCNetVobControl()]]></Title>
+			<Shortcut><![CDATA[__zCNetVobControl__zCNetVobControl_0x0045DE30]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall zCNetVobControl::~zCNetVobControl()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetVobControl_Destructor : zCNetVobControl { void operator()(); };
+BindedHook Ivk_zCNetVobControl_Destructor{ ZENFOR(0x00458B60, 0x0045FCE0, 0x0045D6E0, 0x0045DE30), &zCNetVobControl_Destructor::operator() };
+void zCNetVobControl_Destructor::operator()()
+{
+	THISCALL(Ivk_zCNetVobControl_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

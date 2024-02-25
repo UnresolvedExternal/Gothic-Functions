@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zD3D_alphaPoly::zD3D_alphaPoly()]]></Title>
+			<Shortcut><![CDATA[__zD3D_alphaPoly_zD3D_alphaPoly_0x0064A520]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zD3D_alphaPoly::zD3D_alphaPoly()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zD3D_alphaPoly_zD3D_alphaPoly : zD3D_alphaPoly { zD3D_alphaPoly* operator()(); };
+BindedHook Ivk_zD3D_alphaPoly_zD3D_alphaPoly{ ZENFOR(0x00713CE0, 0x0074FA00, 0x0075EF80, 0x0064A520), &zD3D_alphaPoly_zD3D_alphaPoly::operator() };
+zD3D_alphaPoly* zD3D_alphaPoly_zD3D_alphaPoly::operator()()
+{
+	zD3D_alphaPoly* result = THISCALL(Ivk_zD3D_alphaPoly_zD3D_alphaPoly)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

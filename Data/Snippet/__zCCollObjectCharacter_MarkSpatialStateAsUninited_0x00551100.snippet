@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::MarkSpatialStateAsUninited(int): void]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectCharacter_MarkSpatialStateAsUninited_0x00551100]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCCollObjectCharacter::MarkSpatialStateAsUninited(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectCharacter_MarkSpatialStateAsUninited : zCCollObjectCharacter { void operator()(int); };
+BindedHook Ivk_zCCollObjectCharacter_MarkSpatialStateAsUninited{ ZENFOR(0x0053CC10, 0x005541F0, 0x0054BEE0, 0x00551100), &zCCollObjectCharacter_MarkSpatialStateAsUninited::operator() };
+void zCCollObjectCharacter_MarkSpatialStateAsUninited::operator()(int a0)
+{
+	THISCALL(Ivk_zCCollObjectCharacter_MarkSpatialStateAsUninited)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

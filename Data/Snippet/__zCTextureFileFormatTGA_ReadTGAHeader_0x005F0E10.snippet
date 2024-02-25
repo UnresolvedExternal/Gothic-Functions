@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureFileFormatTGA::ReadTGAHeader(zFILE*): int]]></Title>
+			<Shortcut><![CDATA[__zCTextureFileFormatTGA_ReadTGAHeader_0x005F0E10]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCTextureFileFormatTGA::ReadTGAHeader(zFILE*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureFileFormatTGA_ReadTGAHeader : zCTextureFileFormatTGA { int operator()(zFILE*); };
+BindedHook Ivk_zCTextureFileFormatTGA_ReadTGAHeader{ ZENFOR(0x005C6390, 0x005E47C0, 0x005EA060, 0x005F0E10), &zCTextureFileFormatTGA_ReadTGAHeader::operator() };
+int zCTextureFileFormatTGA_ReadTGAHeader::operator()(zFILE* a0)
+{
+	int result = THISCALL(Ivk_zCTextureFileFormatTGA_ReadTGAHeader)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

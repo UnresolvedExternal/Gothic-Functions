@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::InitEmitterVars(): void]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX_InitEmitterVars_0x005ADC10]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCParticleFX::InitEmitterVars()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX_InitEmitterVars : zCParticleFX { void operator()(); };
+BindedHook Ivk_zCParticleFX_InitEmitterVars{ ZENFOR(0x0058DCF0, 0x005A9320, 0x005A8550, 0x005ADC10), &zCParticleFX_InitEmitterVars::operator() };
+void zCParticleFX_InitEmitterVars::operator()()
+{
+	THISCALL(Ivk_zCParticleFX_InitEmitterVars)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemText::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCMenuItemText_VectorDeletingDestructor_0x004E6380]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCMenuItemText::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCMenuItemText_VectorDeletingDestructor : zCMenuItemText { void* operator()(unsigned int); };
+BindedHook Ivk_zCMenuItemText_VectorDeletingDestructor{ ZENFOR(0x004D5780, 0x004E6380, 0x00000000, 0x00000000), &zCMenuItemText_VectorDeletingDestructor::operator() };
+void* zCMenuItemText_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCMenuItemText_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList2<zTPolyNode>::Delete(zTPolyNode*): void]]></Title>
+			<Shortcut><![CDATA[__zCList2_zTPolyNode__Delete_0x00541C20]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCList2<zTPolyNode>::Delete(zTPolyNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList2_zTPolyNode__Delete : zCList2<zTPolyNode> { void operator()(zTPolyNode*); };
+BindedHook Ivk_zCList2_zTPolyNode__Delete{ ZENFOR(0x0052DF10, 0x00544880, 0x0053CB10, 0x00541C20), &zCList2_zTPolyNode__Delete::operator() };
+void zCList2_zTPolyNode__Delete::operator()(zTPolyNode* a0)
+{
+	THISCALL(Ivk_zCList2_zTPolyNode__Delete)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

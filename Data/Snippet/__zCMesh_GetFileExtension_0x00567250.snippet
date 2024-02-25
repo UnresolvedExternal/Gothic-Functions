@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::GetFileExtension(int): zSTRING const*]]></Title>
+			<Shortcut><![CDATA[__zCMesh_GetFileExtension_0x00567250]]></Shortcut>
+			<Description><![CDATA[protected: virtual zSTRING const* __thiscall zCMesh::GetFileExtension(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_GetFileExtension : zCMesh { zSTRING const* operator()(int); };
+BindedHook Ivk_zCMesh_GetFileExtension{ ZENFOR(0x0054FDD0, 0x00568340, 0x00562030, 0x00567250), &zCMesh_GetFileExtension::operator() };
+zSTRING const* zCMesh_GetFileExtension::operator()(int a0)
+{
+	zSTRING const* result = THISCALL(Ivk_zCMesh_GetFileExtension)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

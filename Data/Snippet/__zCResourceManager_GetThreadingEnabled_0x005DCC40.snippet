@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResourceManager::GetThreadingEnabled(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCResourceManager_GetThreadingEnabled_0x005DCC40]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCResourceManager::GetThreadingEnabled()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResourceManager_GetThreadingEnabled : zCResourceManager { int operator()() const; };
+BindedHook Ivk_zCResourceManager_GetThreadingEnabled{ ZENFOR(0x005B58B0, 0x005D3010, 0x005D5E80, 0x005DCC40), &zCResourceManager_GetThreadingEnabled::operator() };
+int zCResourceManager_GetThreadingEnabled::operator()() const
+{
+	int result = THISCALL(Ivk_zCResourceManager_GetThreadingEnabled)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

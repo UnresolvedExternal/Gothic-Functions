@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[D3DXMATRIX::D3DXMATRIX()]]></Title>
+			<Shortcut><![CDATA[__D3DXMATRIX_D3DXMATRIX_0x007B855F]]></Shortcut>
+			<Description><![CDATA[public: __thiscall D3DXMATRIX::D3DXMATRIX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct D3DXMATRIX_D3DXMATRIX : D3DXMATRIX { D3DXMATRIX* operator()(); };
+BindedHook Ivk_D3DXMATRIX_D3DXMATRIX{ ZENFOR(0x0075EE6B, 0x00000000, 0x007AC099, 0x007B855F), &D3DXMATRIX_D3DXMATRIX::operator() };
+D3DXMATRIX* D3DXMATRIX_D3DXMATRIX::operator()()
+{
+	D3DXMATRIX* result = THISCALL(Ivk_D3DXMATRIX_D3DXMATRIX)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

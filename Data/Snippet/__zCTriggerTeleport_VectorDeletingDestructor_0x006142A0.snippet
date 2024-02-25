@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTriggerTeleport::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCTriggerTeleport_VectorDeletingDestructor_0x006142A0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void* __thiscall zCTriggerTeleport::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCTriggerTeleport_VectorDeletingDestructor : zCTriggerTeleport { void* operator()(unsigned int); };
+BindedHook Ivk_zCTriggerTeleport_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x006142A0), &zCTriggerTeleport_VectorDeletingDestructor::operator() };
+void* zCTriggerTeleport_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCTriggerTeleport_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

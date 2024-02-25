@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zD3D_alphaPoly::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zD3D_alphaPoly_VectorDeletingDestructor_0x0075EFB0]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zD3D_alphaPoly::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2
+struct zD3D_alphaPoly_VectorDeletingDestructor : zD3D_alphaPoly { void* operator()(unsigned int); };
+BindedHook Ivk_zD3D_alphaPoly_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x0074FA30, 0x0075EFB0, 0x00000000), &zD3D_alphaPoly_VectorDeletingDestructor::operator() };
+void* zD3D_alphaPoly_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zD3D_alphaPoly_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

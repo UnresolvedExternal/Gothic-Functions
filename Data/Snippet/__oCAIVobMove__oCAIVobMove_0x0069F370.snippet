@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIVobMove::~oCAIVobMove()]]></Title>
+			<Shortcut><![CDATA[__oCAIVobMove__oCAIVobMove_0x0069F370]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall oCAIVobMove::~oCAIVobMove()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIVobMove_Destructor : oCAIVobMove { void operator()(); };
+BindedHook Ivk_oCAIVobMove_Destructor{ ZENFOR(0x00617810, 0x0063AAA0, 0x00642BA0, 0x0069F370), &oCAIVobMove_Destructor::operator() };
+void oCAIVobMove_Destructor::operator()()
+{
+	THISCALL(Ivk_oCAIVobMove_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

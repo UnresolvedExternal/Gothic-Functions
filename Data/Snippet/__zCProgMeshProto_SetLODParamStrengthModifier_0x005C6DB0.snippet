@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::SetLODParamStrengthModifier(float): void]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_SetLODParamStrengthModifier_0x005C6DB0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCProgMeshProto::SetLODParamStrengthModifier(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCProgMeshProto_SetLODParamStrengthModifier(float);
+BindedHook Ivk_zCProgMeshProto_SetLODParamStrengthModifier{ ZENFOR(0x005A4F60, 0x005C1700, 0x005C1230, 0x005C6DB0), Hook_zCProgMeshProto_SetLODParamStrengthModifier };
+void Hook_zCProgMeshProto_SetLODParamStrengthModifier(float a0)
+{
+	Ivk_zCProgMeshProto_SetLODParamStrengthModifier(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

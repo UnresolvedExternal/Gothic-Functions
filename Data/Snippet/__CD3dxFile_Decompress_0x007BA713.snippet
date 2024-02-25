@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3dxFile::Decompress(void*, unsigned long, void const*, unsigned long, unsigned long*): long]]></Title>
+			<Shortcut><![CDATA[__CD3dxFile_Decompress_0x007BA713]]></Shortcut>
+			<Description><![CDATA[public: static long __cdecl CD3dxFile::Decompress(void*, unsigned long, void const*, unsigned long, unsigned long*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook_CD3dxFile_Decompress(void*, unsigned long, void const*, unsigned long, unsigned long*);
+BindedHook Ivk_CD3dxFile_Decompress{ ZENFOR(0x0076101F, 0x007A632C, 0x007AE24D, 0x007BA713), Hook_CD3dxFile_Decompress };
+long Hook_CD3dxFile_Decompress(void* a0, unsigned long a1, void const* a2, unsigned long a3, unsigned long* a4)
+{
+	long result = Ivk_CD3dxFile_Decompress(a0, a1, a2, a3, a4);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

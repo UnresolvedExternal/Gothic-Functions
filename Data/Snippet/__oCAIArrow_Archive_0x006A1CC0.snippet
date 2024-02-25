@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrow::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCAIArrow_Archive_0x006A1CC0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCAIArrow::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIArrow_Archive : oCAIArrow { void operator()(zCArchiver&); };
+BindedHook Ivk_oCAIArrow_Archive{ ZENFOR(0x00619890, 0x0063CDA0, 0x00645440, 0x006A1CC0), &oCAIArrow_Archive::operator() };
+void oCAIArrow_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCAIArrow_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

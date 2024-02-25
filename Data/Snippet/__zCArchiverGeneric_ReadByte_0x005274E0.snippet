@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::ReadByte(char const*): unsigned char]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_ReadByte_0x005274E0]]></Shortcut>
+			<Description><![CDATA[public: virtual unsigned char __fastcall zCArchiverGeneric::ReadByte(char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_ReadByte : zCArchiverGeneric { unsigned char __fastcall operator()(char const*); };
+BindedHook Ivk_zCArchiverGeneric_ReadByte{ ZENFOR(0x005168A0, 0x0052C210, 0x00524710, 0x005274E0), &zCArchiverGeneric_ReadByte::operator() };
+unsigned char __fastcall zCArchiverGeneric_ReadByte::operator()(char const* a0)
+{
+	unsigned char result = THISCALL(Ivk_zCArchiverGeneric_ReadByte)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

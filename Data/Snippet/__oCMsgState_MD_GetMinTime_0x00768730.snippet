@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgState::MD_GetMinTime(): float]]></Title>
+			<Shortcut><![CDATA[__oCMsgState_MD_GetMinTime_0x00768730]]></Shortcut>
+			<Description><![CDATA[public: virtual float __thiscall oCMsgState::MD_GetMinTime()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgState_MD_GetMinTime : oCMsgState { float operator()(); };
+BindedHook Ivk_oCMsgState_MD_GetMinTime{ ZENFOR(0x006C1590, 0x006F68C0, 0x007091F0, 0x00768730), &oCMsgState_MD_GetMinTime::operator() };
+float oCMsgState_MD_GetMinTime::operator()()
+{
+	float result = THISCALL(Ivk_oCMsgState_MD_GetMinTime)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

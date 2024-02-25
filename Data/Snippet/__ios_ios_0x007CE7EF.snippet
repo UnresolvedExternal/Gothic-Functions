@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ios::ios()]]></Title>
+			<Shortcut><![CDATA[__ios_ios_0x007CE7EF]]></Shortcut>
+			<Description><![CDATA[protected: __thiscall ios::ios()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ios_ios : ios { ios* operator()(); };
+BindedHook Ivk_ios_ios{ ZENFOR(0x00774E45, 0x007B8C05, 0x007C232F, 0x007CE7EF), &ios_ios::operator() };
+ios* ios_ios::operator()()
+{
+	ios* result = THISCALL(Ivk_ios_ios)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

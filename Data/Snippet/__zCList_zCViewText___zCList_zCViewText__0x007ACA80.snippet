@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCViewText>::~zCList<zCViewText>()]]></Title>
+			<Shortcut><![CDATA[__zCList_zCViewText___zCList_zCViewText__0x007ACA80]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCList<zCViewText>::~zCList<zCViewText>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCViewText__Destructor : zCList<zCViewText> { void operator()(); };
+BindedHook Ivk_zCList_zCViewText__Destructor{ ZENFOR(0x00702E70, 0x0073D670, 0x0074CF80, 0x007ACA80), &zCList_zCViewText__Destructor::operator() };
+void zCList_zCViewText__Destructor::operator()()
+{
+	THISCALL(Ivk_zCList_zCViewText__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

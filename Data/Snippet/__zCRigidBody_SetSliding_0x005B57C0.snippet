@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRigidBody::SetSliding(zVEC3 const&): int]]></Title>
+			<Shortcut><![CDATA[__zCRigidBody_SetSliding_0x005B57C0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCRigidBody::SetSliding(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRigidBody_SetSliding : zCRigidBody { int operator()(zVEC3 const&); };
+BindedHook Ivk_zCRigidBody_SetSliding{ ZENFOR(0x00594470, 0x005B01E0, 0x005AFC50, 0x005B57C0), &zCRigidBody_SetSliding::operator() };
+int zCRigidBody_SetSliding::operator()(zVEC3 const& a0)
+{
+	int result = THISCALL(Ivk_zCRigidBody_SetSliding)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

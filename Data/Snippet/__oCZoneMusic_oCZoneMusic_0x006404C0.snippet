@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCZoneMusic::oCZoneMusic()]]></Title>
+			<Shortcut><![CDATA[__oCZoneMusic_oCZoneMusic_0x006404C0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCZoneMusic::oCZoneMusic()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCZoneMusic_oCZoneMusic : oCZoneMusic { oCZoneMusic* operator()(); };
+BindedHook Ivk_oCZoneMusic_oCZoneMusic{ ZENFOR(0x0070ADE0, 0x00745CA0, 0x00754F20, 0x006404C0), &oCZoneMusic_oCZoneMusic::operator() };
+oCZoneMusic* oCZoneMusic_oCZoneMusic::operator()()
+{
+	oCZoneMusic* result = THISCALL(Ivk_oCZoneMusic_oCZoneMusic)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

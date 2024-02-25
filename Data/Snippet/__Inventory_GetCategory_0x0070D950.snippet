@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Inventory_GetCategory(oCItem*): int]]></Title>
+			<Shortcut><![CDATA[__Inventory_GetCategory_0x0070D950]]></Shortcut>
+			<Description><![CDATA[int __cdecl Inventory_GetCategory(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+int Hook_Inventory_GetCategory(oCItem*);
+BindedHook Ivk_Inventory_GetCategory{ ZENFOR(0x00000000, 0x00000000, 0x006AFE30, 0x0070D950), Hook_Inventory_GetCategory };
+int Hook_Inventory_GetCategory(oCItem* a0)
+{
+	int result = Ivk_Inventory_GetCategory(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

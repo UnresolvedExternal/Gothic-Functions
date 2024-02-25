@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCWaveData*>::IsInList(zCWaveData* const&): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCWaveData___IsInList_0x004FCB40]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCArray<zCWaveData*>::IsInList(zCWaveData* const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCArray_zCWaveData___IsInList : zCArray<zCWaveData*> { int operator()(zCWaveData* const&) const; };
+BindedHook Ivk_zCArray_zCWaveData___IsInList{ ZENFOR(0x00000000, 0x00000000, 0x004F9EC0, 0x004FCB40), &zCArray_zCWaveData___IsInList::operator() };
+int zCArray_zCWaveData___IsInList::operator()(zCWaveData* const& a0) const
+{
+	int result = THISCALL(Ivk_zCArray_zCWaveData___IsInList)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

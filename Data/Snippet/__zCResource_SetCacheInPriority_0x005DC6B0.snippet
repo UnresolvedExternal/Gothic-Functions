@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResource::SetCacheInPriority(float): void]]></Title>
+			<Shortcut><![CDATA[__zCResource_SetCacheInPriority_0x005DC6B0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCResource::SetCacheInPriority(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResource_SetCacheInPriority : zCResource { void operator()(float); };
+BindedHook Ivk_zCResource_SetCacheInPriority{ ZENFOR(0x005B53A0, 0x005D2AE0, 0x005D58F0, 0x005DC6B0), &zCResource_SetCacheInPriority::operator() };
+void zCResource_SetCacheInPriority::operator()(float a0)
+{
+	THISCALL(Ivk_zCResource_SetCacheInPriority)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

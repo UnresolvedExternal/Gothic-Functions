@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetWalkStopChasm(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetWalkStopChasm_0x00688AB0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::GetWalkStopChasm()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetWalkStopChasm : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_GetWalkStopChasm{ ZENFOR(0x00752B60, 0x00794F80, 0x0079F5D0, 0x00688AB0), &oCNpc_GetWalkStopChasm::operator() };
+int oCNpc_GetWalkStopChasm::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_GetWalkStopChasm)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

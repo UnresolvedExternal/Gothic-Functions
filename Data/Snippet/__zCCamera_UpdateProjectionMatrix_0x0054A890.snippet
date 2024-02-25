@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::UpdateProjectionMatrix(): void]]></Title>
+			<Shortcut><![CDATA[__zCCamera_UpdateProjectionMatrix_0x0054A890]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCCamera::UpdateProjectionMatrix()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamera_UpdateProjectionMatrix : zCCamera { void operator()(); };
+BindedHook Ivk_zCCamera_UpdateProjectionMatrix{ ZENFOR(0x00536650, 0x0054D630, 0x00545670, 0x0054A890), &zCCamera_UpdateProjectionMatrix::operator() };
+void zCCamera_UpdateProjectionMatrix::operator()()
+{
+	THISCALL(Ivk_zCCamera_UpdateProjectionMatrix)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

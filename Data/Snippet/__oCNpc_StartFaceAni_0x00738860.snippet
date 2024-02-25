@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::StartFaceAni(zSTRING const&, float, float): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_StartFaceAni_0x00738860]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::StartFaceAni(zSTRING const&, float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_StartFaceAni : oCNpc { int operator()(zSTRING const&, float, float); };
+BindedHook Ivk_oCNpc_StartFaceAni{ ZENFOR(0x00695440, 0x006C6E20, 0x006DA120, 0x00738860), &oCNpc_StartFaceAni::operator() };
+int oCNpc_StartFaceAni::operator()(zSTRING const& a0, float a1, float a2)
+{
+	int result = THISCALL(Ivk_oCNpc_StartFaceAni)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

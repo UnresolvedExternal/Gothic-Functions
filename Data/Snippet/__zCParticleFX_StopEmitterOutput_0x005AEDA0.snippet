@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::StopEmitterOutput(): void]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX_StopEmitterOutput_0x005AEDA0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCParticleFX::StopEmitterOutput()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX_StopEmitterOutput : zCParticleFX { void operator()(); };
+BindedHook Ivk_zCParticleFX_StopEmitterOutput{ ZENFOR(0x0058ED60, 0x005AA460, 0x005A96C0, 0x005AEDA0), &zCParticleFX_StopEmitterOutput::operator() };
+void zCParticleFX_StopEmitterOutput::operator()()
+{
+	THISCALL(Ivk_zCParticleFX_StopEmitterOutput)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

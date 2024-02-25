@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMover::SetToKeyframe_KF(float): void]]></Title>
+			<Shortcut><![CDATA[__zCMover_SetToKeyframe_KF_0x00611400]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCMover::SetToKeyframe_KF(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMover_SetToKeyframe_KF : zCMover { void operator()(float); };
+BindedHook Ivk_zCMover_SetToKeyframe_KF{ ZENFOR(0x005E4560, 0x00604500, 0x00609D40, 0x00611400), &zCMover_SetToKeyframe_KF::operator() };
+void zCMover_SetToKeyframe_KF::operator()(float a0)
+{
+	THISCALL(Ivk_zCMover_SetToKeyframe_KF)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

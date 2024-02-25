@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::DirExists(): bool]]></Title>
+			<Shortcut><![CDATA[__zFILE_FILE_DirExists_0x00447500]]></Shortcut>
+			<Description><![CDATA[public: virtual bool __thiscall zFILE_FILE::DirExists()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_DirExists : zFILE_FILE { bool operator()(); };
+BindedHook Ivk_zFILE_FILE_DirExists{ ZENFOR(0x004435A0, 0x00449050, 0x00446ED0, 0x00447500), &zFILE_FILE_DirExists::operator() };
+bool zFILE_FILE_DirExists::operator()()
+{
+	bool result = THISCALL(Ivk_zFILE_FILE_DirExists)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

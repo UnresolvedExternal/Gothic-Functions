@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobItemSlot::RemoveItem(): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCMobItemSlot_RemoveItem_0x007283C0]]></Shortcut>
+			<Description><![CDATA[public: virtual oCItem* __thiscall oCMobItemSlot::RemoveItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobItemSlot_RemoveItem : oCMobItemSlot { oCItem* operator()(); };
+BindedHook Ivk_oCMobItemSlot_RemoveItem{ ZENFOR(0x00686340, 0x006B60D0, 0x006CA330, 0x007283C0), &oCMobItemSlot_RemoveItem::operator() };
+oCItem* oCMobItemSlot_RemoveItem::operator()()
+{
+	oCItem* result = THISCALL(Ivk_oCMobItemSlot_RemoveItem)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

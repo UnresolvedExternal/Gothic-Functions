@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[istream_withassign::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__istream_withassign_VectorDeletingDestructor_0x007CE64A]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall istream_withassign::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct istream_withassign_VectorDeletingDestructor : istream_withassign { void* operator()(unsigned int); };
+BindedHook Ivk_istream_withassign_VectorDeletingDestructor{ ZENFOR(0x00774CA0, 0x007B8A60, 0x007C218A, 0x007CE64A), &istream_withassign_VectorDeletingDestructor::operator() };
+void* istream_withassign_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_istream_withassign_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

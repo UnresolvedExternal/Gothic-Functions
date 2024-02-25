@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::ResetAssessUseMobCounter(): void]]></Title>
+			<Shortcut><![CDATA[__oCAIHuman_ResetAssessUseMobCounter_0x0069B250]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall oCAIHuman::ResetAssessUseMobCounter()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_ResetAssessUseMobCounter : oCAIHuman { void operator()(); };
+BindedHook Ivk_oCAIHuman_ResetAssessUseMobCounter{ ZENFOR(0x00614FD0, 0x00637E60, 0x0063EA80, 0x0069B250), &oCAIHuman_ResetAssessUseMobCounter::operator() };
+void oCAIHuman_ResetAssessUseMobCounter::operator()()
+{
+	THISCALL(Ivk_oCAIHuman_ResetAssessUseMobCounter)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

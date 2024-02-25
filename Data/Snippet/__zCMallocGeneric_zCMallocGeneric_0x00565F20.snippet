@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMallocGeneric::zCMallocGeneric()]]></Title>
+			<Shortcut><![CDATA[__zCMallocGeneric_zCMallocGeneric_0x00565F20]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCMallocGeneric::zCMallocGeneric()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMallocGeneric_zCMallocGeneric : zCMallocGeneric { zCMallocGeneric* operator()(); };
+BindedHook Ivk_zCMallocGeneric_zCMallocGeneric{ ZENFOR(0x0054EB70, 0x00567070, 0x00560D00, 0x00565F20), &zCMallocGeneric_zCMallocGeneric::operator() };
+zCMallocGeneric* zCMallocGeneric_zCMallocGeneric::operator()()
+{
+	zCMallocGeneric* result = THISCALL(Ivk_zCMallocGeneric_zCMallocGeneric)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

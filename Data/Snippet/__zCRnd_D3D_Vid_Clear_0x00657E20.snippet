@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::Vid_Clear(zCOLOR&, int): void]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_Vid_Clear_0x00657E20]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::Vid_Clear(zCOLOR&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_Vid_Clear : zCRnd_D3D { void operator()(zCOLOR&, int); };
+BindedHook Ivk_zCRnd_D3D_Vid_Clear{ ZENFOR(0x0071F550, 0x0075BD50, 0x0076B2F0, 0x00657E20), &zCRnd_D3D_Vid_Clear::operator() };
+void zCRnd_D3D_Vid_Clear::operator()(zCOLOR& a0, int a1)
+{
+	THISCALL(Ivk_zCRnd_D3D_Vid_Clear)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::GetCurrentFunc(): int]]></Title>
+			<Shortcut><![CDATA[__zCParser_GetCurrentFunc_0x00792F10]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCParser::GetCurrentFunc()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_GetCurrentFunc : zCParser { int operator()(); };
+BindedHook Ivk_zCParser_GetCurrentFunc{ ZENFOR(0x006E9B50, 0x00722B80, 0x007334D0, 0x00792F10), &zCParser_GetCurrentFunc::operator() };
+int zCParser_GetCurrentFunc::operator()()
+{
+	int result = THISCALL(Ivk_zCParser_GetCurrentFunc)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

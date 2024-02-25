@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZone::SetZoneVobFlags(): void]]></Title>
+			<Shortcut><![CDATA[__zCZone_SetZoneVobFlags_0x0063C390]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCZone::SetZoneVobFlags()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZone_SetZoneVobFlags : zCZone { void operator()(); };
+BindedHook Ivk_zCZone_SetZoneVobFlags{ ZENFOR(0x0060BD50, 0x0062E2F0, 0x00634BB0, 0x0063C390), &zCZone_SetZoneVobFlags::operator() };
+void zCZone_SetZoneVobFlags::operator()()
+{
+	THISCALL(Ivk_zCZone_SetZoneVobFlags)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

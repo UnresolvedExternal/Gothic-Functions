@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCSkyControler__GetClassDef_0x005DF6A0]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCSkyControler::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler__GetClassDef : zCSkyControler { zCClassDef* operator()() const; };
+BindedHook Ivk_zCSkyControler__GetClassDef{ ZENFOR(0x005B80A0, 0x005D5A90, 0x005D88E0, 0x005DF6A0), &zCSkyControler__GetClassDef::operator() };
+zCClassDef* zCSkyControler__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCSkyControler__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

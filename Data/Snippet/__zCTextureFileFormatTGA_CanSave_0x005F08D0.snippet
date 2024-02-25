@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureFileFormatTGA::CanSave(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCTextureFileFormatTGA_CanSave_0x005F08D0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCTextureFileFormatTGA::CanSave()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureFileFormatTGA_CanSave : zCTextureFileFormatTGA { int operator()() const; };
+BindedHook Ivk_zCTextureFileFormatTGA_CanSave{ ZENFOR(0x005C5E50, 0x005E4250, 0x005E9B20, 0x005F08D0), &zCTextureFileFormatTGA_CanSave::operator() };
+int zCTextureFileFormatTGA_CanSave::operator()() const
+{
+	int result = THISCALL(Ivk_zCTextureFileFormatTGA_CanSave)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::SetRotateEnabled(int): void]]></Title>
+			<Shortcut><![CDATA[__zCAICamera_SetRotateEnabled_0x004A54E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCAICamera::SetRotateEnabled(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAICamera_SetRotateEnabled : zCAICamera { void operator()(int); };
+BindedHook Ivk_zCAICamera_SetRotateEnabled{ ZENFOR(0x0049DBA0, 0x004AB370, 0x004A2FD0, 0x004A54E0), &zCAICamera_SetRotateEnabled::operator() };
+void zCAICamera_SetRotateEnabled::operator()(int a0)
+{
+	THISCALL(Ivk_zCAICamera_SetRotateEnabled)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

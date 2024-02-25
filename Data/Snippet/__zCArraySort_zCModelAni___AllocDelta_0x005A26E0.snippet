@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCModelAni*>::AllocDelta(int): void]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCModelAni___AllocDelta_0x005A26E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zCModelAni*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCModelAni___AllocDelta : zCArraySort<zCModelAni*> { void operator()(int); };
+BindedHook Ivk_zCArraySort_zCModelAni___AllocDelta{ ZENFOR(0x00582BF0, 0x0059D730, 0x0059D180, 0x005A26E0), &zCArraySort_zCModelAni___AllocDelta::operator() };
+void zCArraySort_zCModelAni___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArraySort_zCModelAni___AllocDelta)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

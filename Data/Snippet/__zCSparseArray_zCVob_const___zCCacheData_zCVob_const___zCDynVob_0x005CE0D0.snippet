@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCVob const*, zCCacheData<zCVob const*, zCDynVobLightCacheElement>>::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVob_0x005CE0D0]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCSparseArray<zCVob const*, zCCacheData<zCVob const*, zCDynVobLightCacheElement>>::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A
+struct zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___VectorDeletingDestructor : zCSparseArray<zCVob const*, zCCacheData<zCVob const*, zCDynVobLightCacheElement>> { void* operator()(unsigned int); };
+BindedHook Ivk_zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___VectorDeletingDestructor{ ZENFOR(0x00000000, 0x005CE0D0, 0x00000000, 0x00000000), &zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___VectorDeletingDestructor::operator() };
+void* zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

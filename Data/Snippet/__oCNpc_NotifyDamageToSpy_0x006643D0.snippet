@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::NotifyDamageToSpy(zSTRING&): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_NotifyDamageToSpy_0x006643D0]]></Shortcut>
+			<Description><![CDATA[private: static void __cdecl oCNpc::NotifyDamageToSpy(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCNpc_NotifyDamageToSpy(zSTRING&);
+BindedHook Ivk_oCNpc_NotifyDamageToSpy{ ZENFOR(0x0072F400, 0x0076DD50, 0x0077B160, 0x006643D0), Hook_oCNpc_NotifyDamageToSpy };
+void Hook_oCNpc_NotifyDamageToSpy(zSTRING& a0)
+{
+	Ivk_oCNpc_NotifyDamageToSpy(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::SearchVobListByClass(zCClassDef*, zCArray<zCVob*>&, zCTree<zCVob>*): void]]></Title>
+			<Shortcut><![CDATA[__zCWorld_SearchVobListByClass_0x00624250]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCWorld::SearchVobListByClass(zCClassDef*, zCArray<zCVob*>&, zCTree<zCVob>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_SearchVobListByClass : zCWorld { void operator()(zCClassDef*, zCArray<zCVob*>&, zCTree<zCVob>*); };
+BindedHook Ivk_zCWorld_SearchVobListByClass{ ZENFOR(0x005F5D40, 0x00616D00, 0x0061CAC0, 0x00624250), &zCWorld_SearchVobListByClass::operator() };
+void zCWorld_SearchVobListByClass::operator()(zCClassDef* a0, zCArray<zCVob*>& a1, zCTree<zCVob>* a2)
+{
+	THISCALL(Ivk_zCWorld_SearchVobListByClass)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

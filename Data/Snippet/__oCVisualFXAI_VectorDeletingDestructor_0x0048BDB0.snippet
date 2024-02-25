@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFXAI::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCVisualFXAI_VectorDeletingDestructor_0x0048BDB0]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall oCVisualFXAI::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct oCVisualFXAI_VectorDeletingDestructor : oCVisualFXAI { void* operator()(unsigned int); };
+BindedHook Ivk_oCVisualFXAI_VectorDeletingDestructor{ ZENFOR(0x00484160, 0x00000000, 0x0048A440, 0x0048BDB0), &oCVisualFXAI_VectorDeletingDestructor::operator() };
+void* oCVisualFXAI_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCVisualFXAI_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

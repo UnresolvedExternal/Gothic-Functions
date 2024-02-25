@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::_D3duInitialize(unsigned long, unsigned long, HWND__*, HWND__*, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long): void]]></Title>
+			<Shortcut><![CDATA[__CD3duContext__D3duInitialize_0x007B9E96]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall CD3duContext::_D3duInitialize(unsigned long, unsigned long, HWND__*, HWND__*, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext__D3duInitialize : CD3duContext { void operator()(unsigned long, unsigned long, HWND__*, HWND__*, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long); };
+BindedHook Ivk_CD3duContext__D3duInitialize{ ZENFOR(0x007607A2, 0x007A3B5E, 0x007AD9D0, 0x007B9E96), &CD3duContext__D3duInitialize::operator() };
+void CD3duContext__D3duInitialize::operator()(unsigned long a0, unsigned long a1, HWND__* a2, HWND__* a3, unsigned long a4, unsigned long a5, unsigned long a6, unsigned long a7, unsigned long a8, unsigned long a9, unsigned long a10, unsigned long a11)
+{
+	THISCALL(Ivk_CD3duContext__D3duInitialize)(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

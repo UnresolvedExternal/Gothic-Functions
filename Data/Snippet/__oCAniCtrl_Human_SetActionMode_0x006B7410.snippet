@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::SetActionMode(int): void]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_SetActionMode_0x006B7410]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::SetActionMode(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_SetActionMode : oCAniCtrl_Human { void operator()(int); };
+BindedHook Ivk_oCAniCtrl_Human_SetActionMode{ ZENFOR(0x0062DC70, 0x00653440, 0x0065AA80, 0x006B7410), &oCAniCtrl_Human_SetActionMode::operator() };
+void oCAniCtrl_Human_SetActionMode::operator()(int a0)
+{
+	THISCALL(Ivk_oCAniCtrl_Human_SetActionMode)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

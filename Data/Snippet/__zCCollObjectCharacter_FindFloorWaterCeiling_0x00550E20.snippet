@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::FindFloorWaterCeiling(zVEC3 const&, zCCollObjectCharacter::zTSpatialState&): void]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectCharacter_FindFloorWaterCeiling_0x00550E20]]></Shortcut>
+			<Description><![CDATA[private: void __fastcall zCCollObjectCharacter::FindFloorWaterCeiling(zVEC3 const&, zCCollObjectCharacter::zTSpatialState&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectCharacter_FindFloorWaterCeiling : zCCollObjectCharacter { void __fastcall operator()(zVEC3 const&, zCCollObjectCharacter::zTSpatialState&); };
+BindedHook Ivk_zCCollObjectCharacter_FindFloorWaterCeiling{ ZENFOR(0x0053C930, 0x00553F10, 0x0054BC00, 0x00550E20), &zCCollObjectCharacter_FindFloorWaterCeiling::operator() };
+void __fastcall zCCollObjectCharacter_FindFloorWaterCeiling::operator()(zVEC3 const& a0, zCCollObjectCharacter::zTSpatialState& a1)
+{
+	THISCALL(Ivk_zCCollObjectCharacter_FindFloorWaterCeiling)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

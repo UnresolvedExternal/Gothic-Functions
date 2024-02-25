@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::RenderStaticLODShadow(zTRenderContext&, int, zCProgMeshProto::zTLODRenderArgs*, zCRenderLightContainer*): int]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_RenderStaticLODShadow_0x005CC2F0]]></Shortcut>
+			<Description><![CDATA[private: int __fastcall zCProgMeshProto::RenderStaticLODShadow(zTRenderContext&, int, zCProgMeshProto::zTLODRenderArgs*, zCRenderLightContainer*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_RenderStaticLODShadow : zCProgMeshProto { int __fastcall operator()(zTRenderContext&, int, zCProgMeshProto::zTLODRenderArgs*, zCRenderLightContainer*); };
+BindedHook Ivk_zCProgMeshProto_RenderStaticLODShadow{ ZENFOR(0x005A86F0, 0x005C5210, 0x005C6340, 0x005CC2F0), &zCProgMeshProto_RenderStaticLODShadow::operator() };
+int __fastcall zCProgMeshProto_RenderStaticLODShadow::operator()(zTRenderContext& a0, int a1, zCProgMeshProto::zTLODRenderArgs* a2, zCRenderLightContainer* a3)
+{
+	int result = THISCALL(Ivk_zCProgMeshProto_RenderStaticLODShadow)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

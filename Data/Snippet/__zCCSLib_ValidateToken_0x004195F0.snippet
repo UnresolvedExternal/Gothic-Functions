@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSLib::ValidateToken(zSTRING&): int]]></Title>
+			<Shortcut><![CDATA[__zCCSLib_ValidateToken_0x004195F0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCCSLib::ValidateToken(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSLib_ValidateToken : zCCSLib { int operator()(zSTRING&); };
+BindedHook Ivk_zCCSLib_ValidateToken{ ZENFOR(0x004190A0, 0x0041AFB0, 0x004195F0, 0x004195F0), &zCCSLib_ValidateToken::operator() };
+int zCCSLib_ValidateToken::operator()(zSTRING& a0)
+{
+	int result = THISCALL(Ivk_zCCSLib_ValidateToken)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

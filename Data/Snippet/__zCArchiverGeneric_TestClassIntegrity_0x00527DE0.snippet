@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::TestClassIntegrity(void(__cdecl*)(zCObject*, int, zCClassDef*, int&)): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_TestClassIntegrity_0x00527DE0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCArchiverGeneric::TestClassIntegrity(void(__cdecl*)(zCObject*, int, zCClassDef*, int&))]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCArchiverGeneric_TestClassIntegrity(void(__cdecl*)(zCObject*, int, zCClassDef*, int&));
+BindedHook Ivk_zCArchiverGeneric_TestClassIntegrity{ ZENFOR(0x00517140, 0x0052CB60, 0x00525010, 0x00527DE0), Hook_zCArchiverGeneric_TestClassIntegrity };
+void Hook_zCArchiverGeneric_TestClassIntegrity(void(__cdecl* a0)(zCObject*, int, zCClassDef*, int&))
+{
+	Ivk_zCArchiverGeneric_TestClassIntegrity(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

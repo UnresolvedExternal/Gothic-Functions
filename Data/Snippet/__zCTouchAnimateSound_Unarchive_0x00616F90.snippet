@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchAnimateSound::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCTouchAnimateSound_Unarchive_0x00616F90]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCTouchAnimateSound::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchAnimateSound_Unarchive : zCTouchAnimateSound { void operator()(zCArchiver&); };
+BindedHook Ivk_zCTouchAnimateSound_Unarchive{ ZENFOR(0x005E9EE0, 0x0060A500, 0x0060F8D0, 0x00616F90), &zCTouchAnimateSound_Unarchive::operator() };
+void zCTouchAnimateSound_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCTouchAnimateSound_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

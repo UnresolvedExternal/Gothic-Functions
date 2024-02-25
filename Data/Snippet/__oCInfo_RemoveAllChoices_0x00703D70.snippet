@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInfo::RemoveAllChoices(): void]]></Title>
+			<Shortcut><![CDATA[__oCInfo_RemoveAllChoices_0x00703D70]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCInfo::RemoveAllChoices()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInfo_RemoveAllChoices : oCInfo { void operator()(); };
+BindedHook Ivk_oCInfo_RemoveAllChoices{ ZENFOR(0x00665CC0, 0x00693220, 0x006A62E0, 0x00703D70), &oCInfo_RemoveAllChoices::operator() };
+void oCInfo_RemoveAllChoices::operator()()
+{
+	THISCALL(Ivk_oCInfo_RemoveAllChoices)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

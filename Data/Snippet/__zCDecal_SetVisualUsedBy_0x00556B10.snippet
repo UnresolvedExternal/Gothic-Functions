@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDecal::SetVisualUsedBy(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCDecal_SetVisualUsedBy_0x00556B10]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCDecal::SetVisualUsedBy(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCDecal_SetVisualUsedBy : zCDecal { void operator()(zCVob*); };
+BindedHook Ivk_zCDecal_SetVisualUsedBy{ ZENFOR(0x005423C0, 0x00559D60, 0x005518F0, 0x00556B10), &zCDecal_SetVisualUsedBy::operator() };
+void zCDecal_SetVisualUsedBy::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCDecal_SetVisualUsedBy)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

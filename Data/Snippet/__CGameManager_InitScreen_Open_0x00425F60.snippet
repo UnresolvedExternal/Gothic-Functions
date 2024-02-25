@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::InitScreen_Open(): void]]></Title>
+			<Shortcut><![CDATA[__CGameManager_InitScreen_Open_0x00425F60]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall CGameManager::InitScreen_Open()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_InitScreen_Open : CGameManager { void operator()(); };
+BindedHook Ivk_CGameManager_InitScreen_Open{ ZENFOR(0x00425070, 0x00427BB0, 0x00425C20, 0x00425F60), &CGameManager_InitScreen_Open::operator() };
+void CGameManager_InitScreen_Open::operator()()
+{
+	THISCALL(Ivk_CGameManager_InitScreen_Open)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

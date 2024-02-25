@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[GetWinVersion(): zTWindowsVersionInformation]]></Title>
+			<Shortcut><![CDATA[__GetWinVersion_0x005015F0]]></Shortcut>
+			<Description><![CDATA[zTWindowsVersionInformation __cdecl GetWinVersion()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+zTWindowsVersionInformation Hook_GetWinVersion();
+BindedHook Ivk_GetWinVersion{ ZENFOR(0x00000000, 0x00000000, 0x004FE970, 0x005015F0), Hook_GetWinVersion };
+zTWindowsVersionInformation Hook_GetWinVersion()
+{
+	zTWindowsVersionInformation result = Ivk_GetWinVersion();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

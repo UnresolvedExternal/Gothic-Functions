@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpawnManager::CheckForInvalidDialogCamPos(float, oCNpc*): void]]></Title>
+			<Shortcut><![CDATA[__oCSpawnManager_CheckForInvalidDialogCamPos_0x00778FD0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall oCSpawnManager::CheckForInvalidDialogCamPos(float, oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpawnManager_CheckForInvalidDialogCamPos : oCSpawnManager { void operator()(float, oCNpc*); };
+BindedHook Ivk_oCSpawnManager_CheckForInvalidDialogCamPos{ ZENFOR(0x006D08A0, 0x007073C0, 0x00719710, 0x00778FD0), &oCSpawnManager_CheckForInvalidDialogCamPos::operator() };
+void oCSpawnManager_CheckForInvalidDialogCamPos::operator()(float a0, oCNpc* a1)
+{
+	THISCALL(Ivk_oCSpawnManager_CheckForInvalidDialogCamPos)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

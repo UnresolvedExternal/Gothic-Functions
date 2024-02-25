@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::LibCheckLoaded(int): void]]></Title>
+			<Shortcut><![CDATA[__zCCSManager_LibCheckLoaded_0x0041BD80]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCCSManager::LibCheckLoaded(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_LibCheckLoaded : zCCSManager { void operator()(int); };
+BindedHook Ivk_zCCSManager_LibCheckLoaded{ ZENFOR(0x0041B890, 0x0041D780, 0x0041BB90, 0x0041BD80), &zCCSManager_LibCheckLoaded::operator() };
+void zCCSManager_LibCheckLoaded::operator()(int a0)
+{
+	THISCALL(Ivk_zCCSManager_LibCheckLoaded)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

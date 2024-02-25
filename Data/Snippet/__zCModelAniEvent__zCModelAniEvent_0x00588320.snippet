@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelAniEvent::~zCModelAniEvent()]]></Title>
+			<Shortcut><![CDATA[__zCModelAniEvent__zCModelAniEvent_0x00588320]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCModelAniEvent::~zCModelAniEvent()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelAniEvent_Destructor : zCModelAniEvent { void operator()(); };
+BindedHook Ivk_zCModelAniEvent_Destructor{ ZENFOR(0x0056DB20, 0x00586E50, 0x00582DC0, 0x00588320), &zCModelAniEvent_Destructor::operator() };
+void zCModelAniEvent_Destructor::operator()()
+{
+	THISCALL(Ivk_zCModelAniEvent_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

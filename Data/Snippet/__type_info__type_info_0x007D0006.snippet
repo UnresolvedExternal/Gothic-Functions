@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[type_info::~type_info()]]></Title>
+			<Shortcut><![CDATA[__type_info__type_info_0x007D0006]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall type_info::~type_info()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct type_info_Destructor : type_info { void operator()(); };
+BindedHook Ivk_type_info_Destructor{ ZENFOR(0x0077665C, 0x007BA41C, 0x007C3B46, 0x007D0006), &type_info_Destructor::operator() };
+void type_info_Destructor::operator()()
+{
+	THISCALL(Ivk_type_info_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

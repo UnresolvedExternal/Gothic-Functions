@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVob::GetAIVobMove(): oCAIVobMove*]]></Title>
+			<Shortcut><![CDATA[__oCVob_GetAIVobMove_0x0077D5F0]]></Shortcut>
+			<Description><![CDATA[public: virtual oCAIVobMove* __thiscall oCVob::GetAIVobMove()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVob_GetAIVobMove : oCVob { oCAIVobMove* operator()(); };
+BindedHook Ivk_oCVob_GetAIVobMove{ ZENFOR(0x006D4850, 0x0070BB30, 0x0071DBB0, 0x0077D5F0), &oCVob_GetAIVobMove::operator() };
+oCAIVobMove* oCVob_GetAIVobMove::operator()()
+{
+	oCAIVobMove* result = THISCALL(Ivk_oCVob_GetAIVobMove)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[HandledWinMain(HINSTANCE__*, HINSTANCE__*, char*, int): int]]></Title>
+			<Shortcut><![CDATA[__HandledWinMain_0x00502ED0]]></Shortcut>
+			<Description><![CDATA[int __stdcall HandledWinMain(HINSTANCE__*, HINSTANCE__*, char*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int __stdcall Hook_HandledWinMain(HINSTANCE__*, HINSTANCE__*, char*, int);
+BindedHook Ivk_HandledWinMain{ ZENFOR(0x004F3F60, 0x00506AA0, 0x00500240, 0x00502ED0), Hook_HandledWinMain };
+int __stdcall Hook_HandledWinMain(HINSTANCE__* a0, HINSTANCE__* a1, char* a2, int a3)
+{
+	int result = Ivk_HandledWinMain(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

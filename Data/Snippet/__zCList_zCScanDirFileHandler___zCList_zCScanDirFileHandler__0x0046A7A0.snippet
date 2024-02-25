@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCScanDirFileHandler>::~zCList<zCScanDirFileHandler>()]]></Title>
+			<Shortcut><![CDATA[__zCList_zCScanDirFileHandler___zCList_zCScanDirFileHandler__0x0046A7A0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCList<zCScanDirFileHandler>::~zCList<zCScanDirFileHandler>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCScanDirFileHandler__Destructor : zCList<zCScanDirFileHandler> { void operator()(); };
+BindedHook Ivk_zCList_zCScanDirFileHandler__Destructor{ ZENFOR(0x00465020, 0x0046CD00, 0x00469B70, 0x0046A7A0), &zCList_zCScanDirFileHandler__Destructor::operator() };
+void zCList_zCScanDirFileHandler__Destructor::operator()()
+{
+	THISCALL(Ivk_zCList_zCScanDirFileHandler__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

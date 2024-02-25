@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::DialogSelection(zSTRING const&, zSTRING const&, zCOLOR&, zCOLOR&, float): void]]></Title>
+			<Shortcut><![CDATA[__zCView_DialogSelection_0x007A94D0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCView::DialogSelection(zSTRING const&, zSTRING const&, zCOLOR&, zCOLOR&, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_DialogSelection : zCView { void operator()(zSTRING const&, zSTRING const&, zCOLOR&, zCOLOR&, float); };
+BindedHook Ivk_zCView_DialogSelection{ ZENFOR(0x006FF940, 0x00739F20, 0x007499D0, 0x007A94D0), &zCView_DialogSelection::operator() };
+void zCView_DialogSelection::operator()(zSTRING const& a0, zSTRING const& a1, zCOLOR& a2, zCOLOR& a3, float a4)
+{
+	THISCALL(Ivk_zCView_DialogSelection)(a0, a1, a2, a3, a4);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

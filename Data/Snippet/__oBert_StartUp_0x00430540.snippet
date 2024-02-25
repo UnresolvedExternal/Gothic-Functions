@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oBert_StartUp(): void]]></Title>
+			<Shortcut><![CDATA[__oBert_StartUp_0x00430540]]></Shortcut>
+			<Description><![CDATA[void __cdecl oBert_StartUp()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oBert_StartUp();
+BindedHook Ivk_oBert_StartUp{ ZENFOR(0x0042D9F0, 0x00430F30, 0x00430220, 0x00430540), Hook_oBert_StartUp };
+void Hook_oBert_StartUp()
+{
+	Ivk_oBert_StartUp();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

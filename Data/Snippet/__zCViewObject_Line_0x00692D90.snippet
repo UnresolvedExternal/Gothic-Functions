@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewObject::Line(int, int, int, int, zCOLOR const&): void]]></Title>
+			<Shortcut><![CDATA[__zCViewObject_Line_0x00692D90]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCViewObject::Line(int, int, int, int, zCOLOR const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewObject_Line : zCViewObject { void operator()(int, int, int, int, zCOLOR const&); };
+BindedHook Ivk_zCViewObject_Line{ ZENFOR(0x00756240, 0x007986B0, 0x007A2FE0, 0x00692D90), &zCViewObject_Line::operator() };
+void zCViewObject_Line::operator()(int a0, int a1, int a2, int a3, zCOLOR const& a4)
+{
+	THISCALL(Ivk_zCViewObject_Line)(a0, a1, a2, a3, a4);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

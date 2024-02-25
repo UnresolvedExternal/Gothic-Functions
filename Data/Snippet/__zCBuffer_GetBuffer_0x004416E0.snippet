@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::GetBuffer(): unsigned char* [const]]]></Title>
+			<Shortcut><![CDATA[__zCBuffer_GetBuffer_0x004416E0]]></Shortcut>
+			<Description><![CDATA[public: unsigned char* __thiscall zCBuffer::GetBuffer()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_GetBuffer : zCBuffer { unsigned char* operator()() const; };
+BindedHook Ivk_zCBuffer_GetBuffer{ ZENFOR(0x0043D8E0, 0x00442AF0, 0x004410B0, 0x004416E0), &zCBuffer_GetBuffer::operator() };
+unsigned char* zCBuffer_GetBuffer::operator()() const
+{
+	unsigned char* result = THISCALL(Ivk_zCBuffer_GetBuffer)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

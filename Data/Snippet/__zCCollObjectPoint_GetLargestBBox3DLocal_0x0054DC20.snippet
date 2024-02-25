@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectPoint::GetLargestBBox3DLocal(zTBBox3D&): void]]></Title>
+			<Shortcut><![CDATA[__zCCollObjectPoint_GetLargestBBox3DLocal_0x0054DC20]]></Shortcut>
+			<Description><![CDATA[public: virtual void __fastcall zCCollObjectPoint::GetLargestBBox3DLocal(zTBBox3D&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectPoint_GetLargestBBox3DLocal : zCCollObjectPoint { void __fastcall operator()(zTBBox3D&); };
+BindedHook Ivk_zCCollObjectPoint_GetLargestBBox3DLocal{ ZENFOR(0x00539770, 0x00550A10, 0x00548A00, 0x0054DC20), &zCCollObjectPoint_GetLargestBBox3DLocal::operator() };
+void __fastcall zCCollObjectPoint_GetLargestBBox3DLocal::operator()(zTBBox3D& a0)
+{
+	THISCALL(Ivk_zCCollObjectPoint_GetLargestBBox3DLocal)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

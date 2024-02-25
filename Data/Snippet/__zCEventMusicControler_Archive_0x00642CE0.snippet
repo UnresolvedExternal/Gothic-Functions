@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventMusicControler::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCEventMusicControler_Archive_0x00642CE0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCEventMusicControler::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventMusicControler_Archive : zCEventMusicControler { void operator()(zCArchiver&); };
+BindedHook Ivk_zCEventMusicControler_Archive{ ZENFOR(0x0070D490, 0x007485E0, 0x00757740, 0x00642CE0), &zCEventMusicControler_Archive::operator() };
+void zCEventMusicControler_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCEventMusicControler_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

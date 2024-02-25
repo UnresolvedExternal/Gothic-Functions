@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[netAddrToString(zTNetAddress*, int): char*]]></Title>
+			<Shortcut><![CDATA[__netAddrToString_0x004560A0]]></Shortcut>
+			<Description><![CDATA[char* __cdecl netAddrToString(zTNetAddress*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[char* Hook_netAddrToString(zTNetAddress*, int);
+BindedHook Ivk_netAddrToString{ ZENFOR(0x00451410, 0x00457DE0, 0x00455950, 0x004560A0), Hook_netAddrToString };
+char* Hook_netAddrToString(zTNetAddress* a0, int a1)
+{
+	char* result = Ivk_netAddrToString(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

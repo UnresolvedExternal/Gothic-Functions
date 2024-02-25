@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenu::Activate(): void]]></Title>
+			<Shortcut><![CDATA[__zCMenu_Activate_0x004DBFD0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCMenu::Activate()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenu_Activate : zCMenu { void operator()(); };
+BindedHook Ivk_zCMenu_Activate{ ZENFOR(0x004CF300, 0x004DFB90, 0x004D9930, 0x004DBFD0), &zCMenu_Activate::operator() };
+void zCMenu_Activate::operator()()
+{
+	THISCALL(Ivk_zCMenu_Activate)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitiveUnitSphere::UpdateBBox(): void]]></Title>
+			<Shortcut><![CDATA[__zCConvexPrimitiveUnitSphere_UpdateBBox_0x00555480]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCConvexPrimitiveUnitSphere::UpdateBBox()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConvexPrimitiveUnitSphere_UpdateBBox : zCConvexPrimitiveUnitSphere { void operator()(); };
+BindedHook Ivk_zCConvexPrimitiveUnitSphere_UpdateBBox{ ZENFOR(0x00540D30, 0x00558660, 0x00550260, 0x00555480), &zCConvexPrimitiveUnitSphere_UpdateBBox::operator() };
+void zCConvexPrimitiveUnitSphere_UpdateBBox::operator()()
+{
+	THISCALL(Ivk_zCConvexPrimitiveUnitSphere_UpdateBBox)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

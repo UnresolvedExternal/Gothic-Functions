@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::FileDelete(): bool]]></Title>
+			<Shortcut><![CDATA[__zFILE_FILE_FileDelete_0x004477E0]]></Shortcut>
+			<Description><![CDATA[public: virtual bool __thiscall zFILE_FILE::FileDelete()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_FileDelete : zFILE_FILE { bool operator()(); };
+BindedHook Ivk_zFILE_FILE_FileDelete{ ZENFOR(0x00443880, 0x004493B0, 0x004471B0, 0x004477E0), &zFILE_FILE_FileDelete::operator() };
+bool zFILE_FILE_FileDelete::operator()()
+{
+	bool result = THISCALL(Ivk_zFILE_FILE_FileDelete)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

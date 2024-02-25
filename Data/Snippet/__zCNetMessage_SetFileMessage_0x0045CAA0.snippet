@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetMessage::SetFileMessage(zFILE*, zFILE*): void]]></Title>
+			<Shortcut><![CDATA[__zCNetMessage_SetFileMessage_0x0045CAA0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCNetMessage::SetFileMessage(zFILE*, zFILE*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetMessage_SetFileMessage : zCNetMessage { void operator()(zFILE*, zFILE*); };
+BindedHook Ivk_zCNetMessage_SetFileMessage{ ZENFOR(0x00457A20, 0x0045EA60, 0x0045C350, 0x0045CAA0), &zCNetMessage_SetFileMessage::operator() };
+void zCNetMessage_SetFileMessage::operator()(zFILE* a0, zFILE* a1)
+{
+	THISCALL(Ivk_zCNetMessage_SetFileMessage)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

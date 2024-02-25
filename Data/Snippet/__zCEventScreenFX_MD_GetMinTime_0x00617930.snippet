@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventScreenFX::MD_GetMinTime(): float]]></Title>
+			<Shortcut><![CDATA[__zCEventScreenFX_MD_GetMinTime_0x00617930]]></Shortcut>
+			<Description><![CDATA[public: virtual float __thiscall zCEventScreenFX::MD_GetMinTime()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventScreenFX_MD_GetMinTime : zCEventScreenFX { float operator()(); };
+BindedHook Ivk_zCEventScreenFX_MD_GetMinTime{ ZENFOR(0x005EA880, 0x0060AEB0, 0x00610270, 0x00617930), &zCEventScreenFX_MD_GetMinTime::operator() };
+float zCEventScreenFX_MD_GetMinTime::operator()()
+{
+	float result = THISCALL(Ivk_zCEventScreenFX_MD_GetMinTime)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

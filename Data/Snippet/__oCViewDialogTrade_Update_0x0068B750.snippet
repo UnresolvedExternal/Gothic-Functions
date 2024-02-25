@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogTrade::Update(): void]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogTrade_Update_0x0068B750]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall oCViewDialogTrade::Update()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogTrade_Update : oCViewDialogTrade { void __fastcall operator()(); };
+BindedHook Ivk_oCViewDialogTrade_Update{ ZENFOR(0x00729FD0, 0x00767EB0, 0x00775A20, 0x0068B750), &oCViewDialogTrade_Update::operator() };
+void __fastcall oCViewDialogTrade_Update::operator()()
+{
+	THISCALL(Ivk_oCViewDialogTrade_Update)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

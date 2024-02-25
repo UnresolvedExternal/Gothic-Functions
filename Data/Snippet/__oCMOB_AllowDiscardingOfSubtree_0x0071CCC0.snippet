@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMOB::AllowDiscardingOfSubtree(): int]]></Title>
+			<Shortcut><![CDATA[__oCMOB_AllowDiscardingOfSubtree_0x0071CCC0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCMOB::AllowDiscardingOfSubtree()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMOB_AllowDiscardingOfSubtree : oCMOB { int operator()(); };
+BindedHook Ivk_oCMOB_AllowDiscardingOfSubtree{ ZENFOR(0x0067BB00, 0x006AA2D0, 0x006BEC30, 0x0071CCC0), &oCMOB_AllowDiscardingOfSubtree::operator() };
+int oCMOB_AllowDiscardingOfSubtree::operator()()
+{
+	int result = THISCALL(Ivk_oCMOB_AllowDiscardingOfSubtree)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMOB::IsMoveable(): int]]></Title>
+			<Shortcut><![CDATA[__oCMOB_IsMoveable_0x0071BF20]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCMOB::IsMoveable()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMOB_IsMoveable : oCMOB { int operator()(); };
+BindedHook Ivk_oCMOB_IsMoveable{ ZENFOR(0x0067AD40, 0x006A9460, 0x006BDE90, 0x0071BF20), &oCMOB_IsMoveable::operator() };
+int oCMOB_IsMoveable::operator()()
+{
+	int result = THISCALL(Ivk_oCMOB_IsMoveable)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

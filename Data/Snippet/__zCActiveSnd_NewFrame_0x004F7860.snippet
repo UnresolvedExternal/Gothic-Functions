@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCActiveSnd::NewFrame(): void]]></Title>
+			<Shortcut><![CDATA[__zCActiveSnd_NewFrame_0x004F7860]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCActiveSnd::NewFrame()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCActiveSnd_NewFrame();
+BindedHook Ivk_zCActiveSnd_NewFrame{ ZENFOR(0x004E96C0, 0x004FB9D0, 0x004F4BE0, 0x004F7860), Hook_zCActiveSnd_NewFrame };
+void Hook_zCActiveSnd_NewFrame()
+{
+	Ivk_zCActiveSnd_NewFrame();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::~zCSndFX_MSS()]]></Title>
+			<Shortcut><![CDATA[__zCSndFX_MSS__zCSndFX_MSS_0x004F4DA0]]></Shortcut>
+			<Description><![CDATA[private: virtual __thiscall zCSndFX_MSS::~zCSndFX_MSS()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_Destructor : zCSndFX_MSS { void operator()(); };
+BindedHook Ivk_zCSndFX_MSS_Destructor{ ZENFOR(0x004E6B90, 0x004F8C60, 0x004F2120, 0x004F4DA0), &zCSndFX_MSS_Destructor::operator() };
+void zCSndFX_MSS_Destructor::operator()()
+{
+	THISCALL(Ivk_zCSndFX_MSS_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

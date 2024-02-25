@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTriggerBase::OnTouch(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCTriggerBase_OnTouch_0x0060FBC0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCTriggerBase::OnTouch(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTriggerBase_OnTouch : zCTriggerBase { void operator()(zCVob*); };
+BindedHook Ivk_zCTriggerBase_OnTouch{ ZENFOR(0x005E2D50, 0x00602C60, 0x00608500, 0x0060FBC0), &zCTriggerBase_OnTouch::operator() };
+void zCTriggerBase_OnTouch::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCTriggerBase_OnTouch)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

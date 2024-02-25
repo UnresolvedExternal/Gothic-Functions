@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetAIState(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetAIState_0x0073EFE0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::GetAIState()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetAIState : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_GetAIState{ ZENFOR(0x0069B990, 0x006CD990, 0x006E06F0, 0x0073EFE0), &oCNpc_GetAIState::operator() };
+int oCNpc_GetAIState::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_GetAIState)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

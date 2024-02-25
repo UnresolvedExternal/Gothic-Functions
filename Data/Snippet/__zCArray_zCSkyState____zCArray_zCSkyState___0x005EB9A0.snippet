@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCSkyState*>::~zCArray<zCSkyState*>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCSkyState____zCArray_zCSkyState___0x005EB9A0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCSkyState*>::~zCArray<zCSkyState*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCSkyState___Destructor : zCArray<zCSkyState*> { void operator()(); };
+BindedHook Ivk_zCArray_zCSkyState___Destructor{ ZENFOR(0x005C12D0, 0x005DF1F0, 0x005E4BF0, 0x005EB9A0), &zCArray_zCSkyState___Destructor::operator() };
+void zCArray_zCSkyState___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCSkyState___Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::SetSpeakerType(zCSoundSystem::zTSpeakerType): void]]></Title>
+			<Shortcut><![CDATA[__zCSndSys_MSS_SetSpeakerType_0x004F4B80]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCSndSys_MSS::SetSpeakerType(zCSoundSystem::zTSpeakerType)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_SetSpeakerType : zCSndSys_MSS { void operator()(zCSoundSystem::zTSpeakerType); };
+BindedHook Ivk_zCSndSys_MSS_SetSpeakerType{ ZENFOR(0x004E69B0, 0x004F8A80, 0x004F1F00, 0x004F4B80), &zCSndSys_MSS_SetSpeakerType::operator() };
+void zCSndSys_MSS_SetSpeakerType::operator()(zCSoundSystem::zTSpeakerType a0)
+{
+	THISCALL(Ivk_zCSndSys_MSS_SetSpeakerType)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

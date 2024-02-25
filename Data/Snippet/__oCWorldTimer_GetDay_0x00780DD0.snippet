@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWorldTimer::GetDay(): int]]></Title>
+			<Shortcut><![CDATA[__oCWorldTimer_GetDay_0x00780DD0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCWorldTimer::GetDay()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWorldTimer_GetDay : oCWorldTimer { int operator()(); };
+BindedHook Ivk_oCWorldTimer_GetDay{ ZENFOR(0x006D7B90, 0x0070F720, 0x00721390, 0x00780DD0), &oCWorldTimer_GetDay::operator() };
+int oCWorldTimer_GetDay::operator()()
+{
+	int result = THISCALL(Ivk_oCWorldTimer_GetDay)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

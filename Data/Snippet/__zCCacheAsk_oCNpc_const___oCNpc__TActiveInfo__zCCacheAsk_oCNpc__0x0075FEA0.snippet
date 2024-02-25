@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCacheAsk<oCNpc const*, oCNpc::TActiveInfo>::zCCacheAsk<oCNpc const*, oCNpc::TActiveInfo>(unsigned long, unsigned long)]]></Title>
+			<Shortcut><![CDATA[__zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo__zCCacheAsk_oCNpc__0x0075FEA0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCCacheAsk<oCNpc const*, oCNpc::TActiveInfo>::zCCacheAsk<oCNpc const*, oCNpc::TActiveInfo>(unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo__zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo_ : zCCacheAsk<oCNpc const*, oCNpc::TActiveInfo> { zCCacheAsk<oCNpc const*, oCNpc::TActiveInfo>* operator()(unsigned long, unsigned long); };
+BindedHook Ivk_zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo__zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo_{ ZENFOR(0x006B9250, 0x006EDDA0, 0x00700C10, 0x0075FEA0), &zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo__zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo_::operator() };
+zCCacheAsk<oCNpc const*, oCNpc::TActiveInfo>* zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo__zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo_::operator()(unsigned long a0, unsigned long a1)
+{
+	zCCacheAsk<oCNpc const*, oCNpc::TActiveInfo>* result = THISCALL(Ivk_zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo__zCCacheAsk_oCNpc_const___oCNpc__TActiveInfo_)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

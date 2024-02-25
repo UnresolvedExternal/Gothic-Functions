@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCShowMemCallback::DoWorldPerFrameCallback(zCWorld*, zCCamera*): void]]></Title>
+			<Shortcut><![CDATA[__zCShowMemCallback_DoWorldPerFrameCallback_0x00638150]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCShowMemCallback::DoWorldPerFrameCallback(zCWorld*, zCCamera*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCShowMemCallback_DoWorldPerFrameCallback : zCShowMemCallback { void operator()(zCWorld*, zCCamera*); };
+BindedHook Ivk_zCShowMemCallback_DoWorldPerFrameCallback{ ZENFOR(0x00607F30, 0x0062A2A0, 0x00630980, 0x00638150), &zCShowMemCallback_DoWorldPerFrameCallback::operator() };
+void zCShowMemCallback_DoWorldPerFrameCallback::operator()(zCWorld* a0, zCCamera* a1)
+{
+	THISCALL(Ivk_zCShowMemCallback_DoWorldPerFrameCallback)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

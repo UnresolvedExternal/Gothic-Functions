@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::ProcessRandAnis(): void]]></Title>
+			<Shortcut><![CDATA[__zCMorphMesh_ProcessRandAnis_0x005A72D0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCMorphMesh::ProcessRandAnis()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_ProcessRandAnis : zCMorphMesh { void operator()(); };
+BindedHook Ivk_zCMorphMesh_ProcessRandAnis{ ZENFOR(0x00587960, 0x005A2940, 0x005A1D70, 0x005A72D0), &zCMorphMesh_ProcessRandAnis::operator() };
+void zCMorphMesh_ProcessRandAnis::operator()()
+{
+	THISCALL(Ivk_zCMorphMesh_ProcessRandAnis)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

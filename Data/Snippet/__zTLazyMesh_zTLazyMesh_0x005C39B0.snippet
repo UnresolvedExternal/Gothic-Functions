@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTLazyMesh::zTLazyMesh()]]></Title>
+			<Shortcut><![CDATA[__zTLazyMesh_zTLazyMesh_0x005C39B0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zTLazyMesh::zTLazyMesh()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTLazyMesh_zTLazyMesh : zTLazyMesh { zTLazyMesh* operator()(); };
+BindedHook Ivk_zTLazyMesh_zTLazyMesh{ ZENFOR(0x005A1B00, 0x005BE240, 0x005BDE40, 0x005C39B0), &zTLazyMesh_zTLazyMesh::operator() };
+zTLazyMesh* zTLazyMesh_zTLazyMesh::operator()()
+{
+	zTLazyMesh* result = THISCALL(Ivk_zTLazyMesh_zTLazyMesh)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

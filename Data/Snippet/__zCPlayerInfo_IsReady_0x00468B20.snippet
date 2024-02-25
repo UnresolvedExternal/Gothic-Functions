@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerInfo::IsReady(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCPlayerInfo_IsReady_0x00468B20]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCPlayerInfo::IsReady()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerInfo_IsReady : zCPlayerInfo { int operator()() const; };
+BindedHook Ivk_zCPlayerInfo_IsReady{ ZENFOR(0x00463440, 0x0046AF50, 0x00467EF0, 0x00468B20), &zCPlayerInfo_IsReady::operator() };
+int zCPlayerInfo_IsReady::operator()() const
+{
+	int result = THISCALL(Ivk_zCPlayerInfo_IsReady)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

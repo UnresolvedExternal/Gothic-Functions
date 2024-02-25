@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWay::GetDistancePos(float, zCWaypoint*): zVEC3]]></Title>
+			<Shortcut><![CDATA[__zCWay_GetDistancePos_0x007AEC80]]></Shortcut>
+			<Description><![CDATA[public: zVEC3 __thiscall zCWay::GetDistancePos(float, zCWaypoint*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWay_GetDistancePos : zCWay { zVEC3 operator()(float, zCWaypoint*); };
+BindedHook Ivk_zCWay_GetDistancePos{ ZENFOR(0x00705090, 0x0073F9A0, 0x0074F180, 0x007AEC80), &zCWay_GetDistancePos::operator() };
+zVEC3 zCWay_GetDistancePos::operator()(float a0, zCWaypoint* a1)
+{
+	zVEC3 result = THISCALL(Ivk_zCWay_GetDistancePos)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

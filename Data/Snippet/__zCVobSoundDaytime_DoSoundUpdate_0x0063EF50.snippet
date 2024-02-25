@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobSoundDaytime::DoSoundUpdate(float): void]]></Title>
+			<Shortcut><![CDATA[__zCVobSoundDaytime_DoSoundUpdate_0x0063EF50]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCVobSoundDaytime::DoSoundUpdate(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobSoundDaytime_DoSoundUpdate : zCVobSoundDaytime { void operator()(float); };
+BindedHook Ivk_zCVobSoundDaytime_DoSoundUpdate{ ZENFOR(0x0060E3B0, 0x00630B20, 0x00637760, 0x0063EF50), &zCVobSoundDaytime_DoSoundUpdate::operator() };
+void zCVobSoundDaytime_DoSoundUpdate::operator()(float a0)
+{
+	THISCALL(Ivk_zCVobSoundDaytime_DoSoundUpdate)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

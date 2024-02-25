@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::ExitFightAI(): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_ExitFightAI_0x0067C770]]></Shortcut>
+			<Description><![CDATA[private: static void __cdecl oCNpc::ExitFightAI()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCNpc_ExitFightAI();
+BindedHook Ivk_oCNpc_ExitFightAI{ ZENFOR(0x00748240, 0x007892A0, 0x007932D0, 0x0067C770), Hook_oCNpc_ExitFightAI };
+void Hook_oCNpc_ExitFightAI()
+{
+	Ivk_oCNpc_ExitFightAI();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

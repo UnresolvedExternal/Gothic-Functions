@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewFX::OpenSafe(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewFX_OpenSafe_0x00690C10]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall zCViewFX::OpenSafe()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewFX_OpenSafe : zCViewFX { void __fastcall operator()(); };
+BindedHook Ivk_zCViewFX_OpenSafe{ ZENFOR(0x007540D0, 0x007965A0, 0x007A0E60, 0x00690C10), &zCViewFX_OpenSafe::operator() };
+void __fastcall zCViewFX_OpenSafe::operator()()
+{
+	THISCALL(Ivk_zCViewFX_OpenSafe)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDecal::GetVisualName(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zCDecal_GetVisualName_0x00556B80]]></Shortcut>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zCDecal::GetVisualName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCDecal_GetVisualName : zCDecal { zSTRING operator()(); };
+BindedHook Ivk_zCDecal_GetVisualName{ ZENFOR(0x00542430, 0x00559DC0, 0x00551960, 0x00556B80), &zCDecal_GetVisualName::operator() };
+zSTRING zCDecal_GetVisualName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCDecal_GetVisualName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

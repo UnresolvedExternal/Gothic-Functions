@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCExceptionHandler::AddUnhandledExceptionReleaseCallback(void(__cdecl*)()): void]]></Title>
+			<Shortcut><![CDATA[__zCExceptionHandler_AddUnhandledExceptionReleaseCallback_0x004C8E40]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCExceptionHandler::AddUnhandledExceptionReleaseCallback(void(__cdecl*)())]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCExceptionHandler_AddUnhandledExceptionReleaseCallback(void(__cdecl*)());
+BindedHook Ivk_zCExceptionHandler_AddUnhandledExceptionReleaseCallback{ ZENFOR(0x004BFAE0, 0x004CF280, 0x004C68D0, 0x004C8E40), Hook_zCExceptionHandler_AddUnhandledExceptionReleaseCallback };
+void Hook_zCExceptionHandler_AddUnhandledExceptionReleaseCallback(void(__cdecl* a0)())
+{
+	Ivk_zCExceptionHandler_AddUnhandledExceptionReleaseCallback(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

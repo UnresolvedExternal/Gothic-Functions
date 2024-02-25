@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCActiveSnd::GetNum3DSamplesUsed(): int]]></Title>
+			<Shortcut><![CDATA[__zCActiveSnd_GetNum3DSamplesUsed_0x004F7B40]]></Shortcut>
+			<Description><![CDATA[public: static int __cdecl zCActiveSnd::GetNum3DSamplesUsed()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCActiveSnd_GetNum3DSamplesUsed();
+BindedHook Ivk_zCActiveSnd_GetNum3DSamplesUsed{ ZENFOR(0x004E9940, 0x004FBC60, 0x004F4EC0, 0x004F7B40), Hook_zCActiveSnd_GetNum3DSamplesUsed };
+int Hook_zCActiveSnd_GetNum3DSamplesUsed()
+{
+	int result = Ivk_zCActiveSnd_GetNum3DSamplesUsed();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

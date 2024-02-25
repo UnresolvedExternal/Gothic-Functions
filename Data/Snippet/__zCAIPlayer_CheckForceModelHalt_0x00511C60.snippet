@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::CheckForceModelHalt(zCModelAni*): int]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_CheckForceModelHalt_0x00511C60]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCAIPlayer::CheckForceModelHalt(zCModelAni*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_CheckForceModelHalt : zCAIPlayer { int operator()(zCModelAni*); };
+BindedHook Ivk_zCAIPlayer_CheckForceModelHalt{ ZENFOR(0x00502100, 0x00515B80, 0x0050EE90, 0x00511C60), &zCAIPlayer_CheckForceModelHalt::operator() };
+int zCAIPlayer_CheckForceModelHalt::operator()(zCModelAni* a0)
+{
+	int result = THISCALL(Ivk_zCAIPlayer_CheckForceModelHalt)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

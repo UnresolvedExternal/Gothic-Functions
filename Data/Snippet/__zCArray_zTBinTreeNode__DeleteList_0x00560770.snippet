@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zTBinTreeNode>::DeleteList(): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zTBinTreeNode__DeleteList_0x00560770]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zTBinTreeNode>::DeleteList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zTBinTreeNode__DeleteList : zCArray<zTBinTreeNode> { void operator()(); };
+BindedHook Ivk_zCArray_zTBinTreeNode__DeleteList{ ZENFOR(0x00549A70, 0x00561A70, 0x0055B550, 0x00560770), &zCArray_zTBinTreeNode__DeleteList::operator() };
+void zCArray_zTBinTreeNode__DeleteList::operator()()
+{
+	THISCALL(Ivk_zCArray_zTBinTreeNode__DeleteList)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

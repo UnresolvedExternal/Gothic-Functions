@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialogChoice::SelectNext(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewDialogChoice_SelectNext_0x0068F330]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall zCViewDialogChoice::SelectNext()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialogChoice_SelectNext : zCViewDialogChoice { void __fastcall operator()(); };
+BindedHook Ivk_zCViewDialogChoice_SelectNext{ ZENFOR(0x007591B0, 0x0079B760, 0x007A6090, 0x0068F330), &zCViewDialogChoice_SelectNext::operator() };
+void __fastcall zCViewDialogChoice_SelectNext::operator()()
+{
+	THISCALL(Ivk_zCViewDialogChoice_SelectNext)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::~zCMorphMesh()]]></Title>
+			<Shortcut><![CDATA[__zCMorphMesh__zCMorphMesh_0x005A6030]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall zCMorphMesh::~zCMorphMesh()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_Destructor : zCMorphMesh { void operator()(); };
+BindedHook Ivk_zCMorphMesh_Destructor{ ZENFOR(0x00586680, 0x005A1550, 0x005A0AD0, 0x005A6030), &zCMorphMesh_Destructor::operator() };
+void zCMorphMesh_Destructor::operator()()
+{
+	THISCALL(Ivk_zCMorphMesh_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

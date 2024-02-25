@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ReadMeshAnimation(zCModelNode*, int): void]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_ReadMeshAnimation_0x0058DFE0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::ReadMeshAnimation(zCModelNode*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_ReadMeshAnimation : zCModelPrototype { void operator()(zCModelNode*, int); };
+BindedHook Ivk_zCModelPrototype_ReadMeshAnimation{ ZENFOR(0x00573870, 0x0058D1C0, 0x00588A80, 0x0058DFE0), &zCModelPrototype_ReadMeshAnimation::operator() };
+void zCModelPrototype_ReadMeshAnimation::operator()(zCModelNode* a0, int a1)
+{
+	THISCALL(Ivk_zCModelPrototype_ReadMeshAnimation)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Game_LoadSCPos(): void]]></Title>
+			<Shortcut><![CDATA[__Game_LoadSCPos_0x006CBF10]]></Shortcut>
+			<Description><![CDATA[void __cdecl Game_LoadSCPos()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Game_LoadSCPos();
+BindedHook Ivk_Game_LoadSCPos{ ZENFOR(0x006412D0, 0x00668450, 0x0066F190, 0x006CBF10), Hook_Game_LoadSCPos };
+void Hook_Game_LoadSCPos()
+{
+	Ivk_Game_LoadSCPos();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

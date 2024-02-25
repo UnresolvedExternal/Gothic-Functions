@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::ReadHeader(): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe_ReadHeader_0x0051EB20]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __fastcall zCArchiverBinSafe::ReadHeader()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_ReadHeader : zCArchiverBinSafe { void __fastcall operator()(); };
+BindedHook Ivk_zCArchiverBinSafe_ReadHeader{ ZENFOR(0x0050E7D0, 0x00523810, 0x0051BD50, 0x0051EB20), &zCArchiverBinSafe_ReadHeader::operator() };
+void __fastcall zCArchiverBinSafe_ReadHeader::operator()()
+{
+	THISCALL(Ivk_zCArchiverBinSafe_ReadHeader)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

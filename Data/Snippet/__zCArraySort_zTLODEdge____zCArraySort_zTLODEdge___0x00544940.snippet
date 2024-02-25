@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zTLODEdge*>::~zCArraySort<zTLODEdge*>()]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zTLODEdge____zCArraySort_zTLODEdge___0x00544940]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArraySort<zTLODEdge*>::~zCArraySort<zTLODEdge*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCArraySort_zTLODEdge___Destructor : zCArraySort<zTLODEdge*> { void operator()(); };
+BindedHook Ivk_zCArraySort_zTLODEdge___Destructor{ ZENFOR(0x0052DFE0, 0x00544940, 0x00000000, 0x00000000), &zCArraySort_zTLODEdge___Destructor::operator() };
+void zCArraySort_zTLODEdge___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArraySort_zTLODEdge___Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

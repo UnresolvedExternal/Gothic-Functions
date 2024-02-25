@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::SetVisual(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_SetVisual_0x00602680]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCVob::SetVisual(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_SetVisual : zCVob { void operator()(zSTRING const&); };
+BindedHook Ivk_zCVob_SetVisual{ ZENFOR(0x005D6FA0, 0x005F6570, 0x005FB850, 0x00602680), &zCVob_SetVisual::operator() };
+void zCVob_SetVisual::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCVob_SetVisual)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

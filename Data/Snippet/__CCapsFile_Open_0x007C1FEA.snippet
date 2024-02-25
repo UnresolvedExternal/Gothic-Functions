@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CCapsFile::Open(): long]]></Title>
+			<Shortcut><![CDATA[__CCapsFile_Open_0x007C1FEA]]></Shortcut>
+			<Description><![CDATA[public: long __thiscall CCapsFile::Open()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CCapsFile_Open : CCapsFile { long operator()(); };
+BindedHook Ivk_CCapsFile_Open{ ZENFOR(0x007688F6, 0x007AFFB2, 0x007B5B24, 0x007C1FEA), &CCapsFile_Open::operator() };
+long CCapsFile_Open::operator()()
+{
+	long result = THISCALL(Ivk_CCapsFile_Open)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMission::GetCurrentUser(oCNpc*&, oCNpc*&): void]]></Title>
+			<Shortcut><![CDATA[__oCMission_GetCurrentUser_0x00716800]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCMission::GetCurrentUser(oCNpc*&, oCNpc*&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMission_GetCurrentUser : oCMission { void operator()(oCNpc*&, oCNpc*&); };
+BindedHook Ivk_oCMission_GetCurrentUser{ ZENFOR(0x00675790, 0x006A3830, 0x006B8770, 0x00716800), &oCMission_GetCurrentUser::operator() };
+void oCMission_GetCurrentUser::operator()(oCNpc*& a0, oCNpc*& a1)
+{
+	THISCALL(Ivk_oCMission_GetCurrentUser)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

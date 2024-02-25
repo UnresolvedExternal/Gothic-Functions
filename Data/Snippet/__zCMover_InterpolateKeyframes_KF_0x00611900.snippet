@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMover::InterpolateKeyframes_KF(): void]]></Title>
+			<Shortcut><![CDATA[__zCMover_InterpolateKeyframes_KF_0x00611900]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCMover::InterpolateKeyframes_KF()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMover_InterpolateKeyframes_KF : zCMover { void operator()(); };
+BindedHook Ivk_zCMover_InterpolateKeyframes_KF{ ZENFOR(0x005E4A60, 0x006049D0, 0x0060A240, 0x00611900), &zCMover_InterpolateKeyframes_KF::operator() };
+void zCMover_InterpolateKeyframes_KF::operator()()
+{
+	THISCALL(Ivk_zCMover_InterpolateKeyframes_KF)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

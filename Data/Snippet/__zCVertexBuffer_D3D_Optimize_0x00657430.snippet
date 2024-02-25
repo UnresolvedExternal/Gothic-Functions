@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer_D3D::Optimize(): int]]></Title>
+			<Shortcut><![CDATA[__zCVertexBuffer_D3D_Optimize_0x00657430]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCVertexBuffer_D3D::Optimize()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_D3D_Optimize : zCVertexBuffer_D3D { int operator()(); };
+BindedHook Ivk_zCVertexBuffer_D3D_Optimize{ ZENFOR(0x0071EB40, 0x0075B2E0, 0x0076A900, 0x00657430), &zCVertexBuffer_D3D_Optimize::operator() };
+int zCVertexBuffer_D3D_Optimize::operator()()
+{
+	int result = THISCALL(Ivk_zCVertexBuffer_D3D_Optimize)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

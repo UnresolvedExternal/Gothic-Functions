@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zThreadProc(zCThread*): unsigned long]]></Title>
+			<Shortcut><![CDATA[__zThreadProc_0x005F9150]]></Shortcut>
+			<Description><![CDATA[unsigned long __stdcall zThreadProc(zCThread*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned long __stdcall Hook_zThreadProc(zCThread*);
+BindedHook Ivk_zThreadProc{ ZENFOR(0x005CE000, 0x005ECD20, 0x005F2360, 0x005F9150), Hook_zThreadProc };
+unsigned long __stdcall Hook_zThreadProc(zCThread* a0)
+{
+	unsigned long result = Ivk_zThreadProc(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

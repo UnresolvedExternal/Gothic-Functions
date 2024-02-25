@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[_EnumJoystickObjectsCallback(DIDEVICEOBJECTINSTANCEA const*, void*): int]]></Title>
+			<Shortcut><![CDATA[___EnumJoystickObjectsCallback_0x004D3310]]></Shortcut>
+			<Description><![CDATA[int __stdcall _EnumJoystickObjectsCallback(DIDEVICEOBJECTINSTANCEA const*, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+int __stdcall Hook__EnumJoystickObjectsCallback(DIDEVICEOBJECTINSTANCEA const*, void*);
+BindedHook Ivk__EnumJoystickObjectsCallback{ ZENFOR(0x00000000, 0x00000000, 0x004D0D50, 0x004D3310), Hook__EnumJoystickObjectsCallback };
+int __stdcall Hook__EnumJoystickObjectsCallback(DIDEVICEOBJECTINSTANCEA const* a0, void* a1)
+{
+	int result = Ivk__EnumJoystickObjectsCallback(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_Symbol::Load(zFILE*): void]]></Title>
+			<Shortcut><![CDATA[__zCPar_Symbol_Load_0x007A2D70]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCPar_Symbol::Load(zFILE*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_Symbol_Load : zCPar_Symbol { void operator()(zFILE*); };
+BindedHook Ivk_zCPar_Symbol_Load{ ZENFOR(0x006F9250, 0x007335C0, 0x00743330, 0x007A2D70), &zCPar_Symbol_Load::operator() };
+void zCPar_Symbol_Load::operator()(zFILE* a0)
+{
+	THISCALL(Ivk_zCPar_Symbol_Load)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

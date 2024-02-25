@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::GetIsSelectable(): int]]></Title>
+			<Shortcut><![CDATA[__zCMenuItem_GetIsSelectable_0x004E1D60]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCMenuItem::GetIsSelectable()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItem_GetIsSelectable : zCMenuItem { int operator()(); };
+BindedHook Ivk_zCMenuItem_GetIsSelectable{ ZENFOR(0x004D4DB0, 0x004E5900, 0x004DF3B0, 0x004E1D60), &zCMenuItem_GetIsSelectable::operator() };
+int zCMenuItem_GetIsSelectable::operator()()
+{
+	int result = THISCALL(Ivk_zCMenuItem_GetIsSelectable)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::GetAniTransLerp(zCModelAni*, float, int): zVEC3 [const]]]></Title>
+			<Shortcut><![CDATA[__zCModel_GetAniTransLerp_0x0057AE70]]></Shortcut>
+			<Description><![CDATA[public: zVEC3 __thiscall zCModel::GetAniTransLerp(zCModelAni*, float, int)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_GetAniTransLerp : zCModel { zVEC3 operator()(zCModelAni*, float, int) const; };
+BindedHook Ivk_zCModel_GetAniTransLerp{ ZENFOR(0x005610A0, 0x00579550, 0x00575950, 0x0057AE70), &zCModel_GetAniTransLerp::operator() };
+zVEC3 zCModel_GetAniTransLerp::operator()(zCModelAni* a0, float a1, int a2) const
+{
+	zVEC3 result = THISCALL(Ivk_zCModel_GetAniTransLerp)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

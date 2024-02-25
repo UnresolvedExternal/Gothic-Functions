@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetInterruptPrefix(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetInterruptPrefix_0x00736680]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall oCNpc::GetInterruptPrefix()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetInterruptPrefix : oCNpc { zSTRING operator()(); };
+BindedHook Ivk_oCNpc_GetInterruptPrefix{ ZENFOR(0x006933C0, 0x006C4B10, 0x006D7F20, 0x00736680), &oCNpc_GetInterruptPrefix::operator() };
+zSTRING oCNpc_GetInterruptPrefix::operator()()
+{
+	zSTRING result = THISCALL(Ivk_oCNpc_GetInterruptPrefix)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

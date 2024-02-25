@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCParticleControl::GetPFXVob(): zCVob*]]></Title>
+			<Shortcut><![CDATA[__oCParticleControl_GetPFXVob_0x007702C0]]></Shortcut>
+			<Description><![CDATA[public: zCVob* __thiscall oCParticleControl::GetPFXVob()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCParticleControl_GetPFXVob : oCParticleControl { zCVob* operator()(); };
+BindedHook Ivk_oCParticleControl_GetPFXVob{ ZENFOR(0x006C8BC0, 0x006FEA50, 0x00710D50, 0x007702C0), &oCParticleControl_GetPFXVob::operator() };
+zCVob* oCParticleControl_GetPFXVob::operator()()
+{
+	zCVob* result = THISCALL(Ivk_oCParticleControl_GetPFXVob)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

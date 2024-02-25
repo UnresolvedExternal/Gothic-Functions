@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zTPMWedge>::~zCArray<zTPMWedge>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zTPMWedge___zCArray_zTPMWedge__0x005C5600]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zTPMWedge>::~zCArray<zTPMWedge>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zTPMWedge__Destructor : zCArray<zTPMWedge> { void operator()(); };
+BindedHook Ivk_zCArray_zTPMWedge__Destructor{ ZENFOR(0x005A3690, 0x005BFDC0, 0x005BFA90, 0x005C5600), &zCArray_zTPMWedge__Destructor::operator() };
+void zCArray_zTPMWedge__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zTPMWedge__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

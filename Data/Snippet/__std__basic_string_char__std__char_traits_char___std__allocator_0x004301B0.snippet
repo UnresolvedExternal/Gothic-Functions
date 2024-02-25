@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::basic_string<char, std::char_traits<char>, std::allocator<char>>::append(char const*, unsigned int): std::basic_string<char, std::char_traits<char>, std::allocator<char>>&]]></Title>
+			<Shortcut><![CDATA[__std__basic_string_char__std__char_traits_char___std__allocator_0x004301B0]]></Shortcut>
+			<Description><![CDATA[public: std::basic_string<char, std::char_traits<char>, std::allocator<char>>& __thiscall std::basic_string<char, std::char_traits<char>, std::allocator<char>>::append(char const*, unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__basic_string_char__std__char_traits_char___std__allocator_char___append : std::basic_string<char, std::char_traits<char>, std::allocator<char>> { std::basic_string<char, std::char_traits<char>, std::allocator<char>>& operator()(char const*, unsigned int); };
+BindedHook Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___append{ ZENFOR(0x00433370, 0x00436FE0, 0x0042FE90, 0x004301B0), &std__basic_string_char__std__char_traits_char___std__allocator_char___append::operator() };
+std::basic_string<char, std::char_traits<char>, std::allocator<char>>& std__basic_string_char__std__char_traits_char___std__allocator_char___append::operator()(char const* a0, unsigned int a1)
+{
+	std::basic_string<char, std::char_traits<char>, std::allocator<char>>& result = THISCALL(Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___append)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

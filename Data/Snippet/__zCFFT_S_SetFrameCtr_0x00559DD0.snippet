@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFFT::S_SetFrameCtr(int): void]]></Title>
+			<Shortcut><![CDATA[__zCFFT_S_SetFrameCtr_0x00559DD0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCFFT::S_SetFrameCtr(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+void Hook_zCFFT_S_SetFrameCtr(int);
+BindedHook Ivk_zCFFT_S_SetFrameCtr{ ZENFOR(0x00000000, 0x00000000, 0x00554BB0, 0x00559DD0), Hook_zCFFT_S_SetFrameCtr };
+void Hook_zCFFT_S_SetFrameCtr(int a0)
+{
+	Ivk_zCFFT_S_SetFrameCtr(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

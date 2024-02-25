@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCGameInfo::SetName(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCGameInfo_SetName_0x00423E50]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCGameInfo::SetName(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCGameInfo_SetName : zCGameInfo { void operator()(zSTRING const&); };
+BindedHook Ivk_zCGameInfo_SetName{ ZENFOR(0x00423470, 0x00425BB0, 0x00423B20, 0x00423E50), &zCGameInfo_SetName::operator() };
+void zCGameInfo_SetName::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCGameInfo_SetName)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

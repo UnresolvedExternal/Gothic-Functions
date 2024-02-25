@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenu::ForceSelAction(zTMenuItemSelAction, zSTRING const&, zCMenuItem*): void]]></Title>
+			<Shortcut><![CDATA[__zCMenu_ForceSelAction_0x004DBE20]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCMenu::ForceSelAction(zTMenuItemSelAction, zSTRING const&, zCMenuItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenu_ForceSelAction : zCMenu { void operator()(zTMenuItemSelAction, zSTRING const&, zCMenuItem*); };
+BindedHook Ivk_zCMenu_ForceSelAction{ ZENFOR(0x004CF150, 0x004DF9F0, 0x004D9780, 0x004DBE20), &zCMenu_ForceSelAction::operator() };
+void zCMenu_ForceSelAction::operator()(zTMenuItemSelAction a0, zSTRING const& a1, zCMenuItem* a2)
+{
+	THISCALL(Ivk_zCMenu_ForceSelAction)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

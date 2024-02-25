@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenu_Log::ExecCommand(zSTRING const&): int]]></Title>
+			<Shortcut><![CDATA[__oCMenu_Log_ExecCommand_0x0047C690]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCMenu_Log::ExecCommand(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenu_Log_ExecCommand : oCMenu_Log { int operator()(zSTRING const&); };
+BindedHook Ivk_oCMenu_Log_ExecCommand{ ZENFOR(0x00475520, 0x0047ED70, 0x0047B1C0, 0x0047C690), &oCMenu_Log_ExecCommand::operator() };
+int oCMenu_Log_ExecCommand::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_oCMenu_Log_ExecCommand)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCutscene::GetFirstBlockPosition(): zTCSBlockPosition]]></Title>
+			<Shortcut><![CDATA[__zCCutscene_GetFirstBlockPosition_0x00417C40]]></Shortcut>
+			<Description><![CDATA[public: zTCSBlockPosition __thiscall zCCutscene::GetFirstBlockPosition()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCutscene_GetFirstBlockPosition : zCCutscene { zTCSBlockPosition operator()(); };
+BindedHook Ivk_zCCutscene_GetFirstBlockPosition{ ZENFOR(0x00417580, 0x004193C0, 0x00417C40, 0x00417C40), &zCCutscene_GetFirstBlockPosition::operator() };
+zTCSBlockPosition zCCutscene_GetFirstBlockPosition::operator()()
+{
+	zTCSBlockPosition result = THISCALL(Ivk_zCCutscene_GetFirstBlockPosition)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTriggerWorldStart::~zCTriggerWorldStart()]]></Title>
+			<Shortcut><![CDATA[__zCTriggerWorldStart__zCTriggerWorldStart_0x0061A480]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCTriggerWorldStart::~zCTriggerWorldStart()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTriggerWorldStart_Destructor : zCTriggerWorldStart { void operator()(); };
+BindedHook Ivk_zCTriggerWorldStart_Destructor{ ZENFOR(0x005ED050, 0x0060D710, 0x00612DC0, 0x0061A480), &zCTriggerWorldStart_Destructor::operator() };
+void zCTriggerWorldStart_Destructor::operator()()
+{
+	THISCALL(Ivk_zCTriggerWorldStart_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

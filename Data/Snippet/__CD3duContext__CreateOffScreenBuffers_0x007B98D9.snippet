@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::_CreateOffScreenBuffers(): void]]></Title>
+			<Shortcut><![CDATA[__CD3duContext__CreateOffScreenBuffers_0x007B98D9]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall CD3duContext::_CreateOffScreenBuffers()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext__CreateOffScreenBuffers : CD3duContext { void operator()(); };
+BindedHook Ivk_CD3duContext__CreateOffScreenBuffers{ ZENFOR(0x007601E5, 0x007A50DD, 0x007AD413, 0x007B98D9), &CD3duContext__CreateOffScreenBuffers::operator() };
+void CD3duContext__CreateOffScreenBuffers::operator()()
+{
+	THISCALL(Ivk_CD3duContext__CreateOffScreenBuffers)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

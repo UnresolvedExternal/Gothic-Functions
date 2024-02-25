@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSParticle::zSParticle()]]></Title>
+			<Shortcut><![CDATA[__zSParticle_zSParticle_0x005ACEA0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zSParticle::zSParticle()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSParticle_zSParticle : zSParticle { zSParticle* operator()(); };
+BindedHook Ivk_zSParticle_zSParticle{ ZENFOR(0x0058D100, 0x005A8690, 0x005A7820, 0x005ACEA0), &zSParticle_zSParticle::operator() };
+zSParticle* zSParticle_zSParticle::operator()()
+{
+	zSParticle* result = THISCALL(Ivk_zSParticle_zSParticle)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::operator=(zCBuffer const&): zCBuffer&]]></Title>
+			<Shortcut><![CDATA[__zCBuffer_operator__0x00441B40]]></Shortcut>
+			<Description><![CDATA[public: zCBuffer& __thiscall zCBuffer::operator=(zCBuffer const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_operator_ : zCBuffer { zCBuffer& operator()(zCBuffer const&); };
+BindedHook Ivk_zCBuffer_operator_{ ZENFOR(0x0043DC80, 0x00442EF0, 0x00441510, 0x00441B40), &zCBuffer_operator_::operator() };
+zCBuffer& zCBuffer_operator_::operator()(zCBuffer const& a0)
+{
+	zCBuffer& result = THISCALL(Ivk_zCBuffer_operator_)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

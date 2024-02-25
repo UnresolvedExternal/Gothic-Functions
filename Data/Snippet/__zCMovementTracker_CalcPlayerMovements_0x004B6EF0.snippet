@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::CalcPlayerMovements(): void]]></Title>
+			<Shortcut><![CDATA[__zCMovementTracker_CalcPlayerMovements_0x004B6EF0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCMovementTracker::CalcPlayerMovements()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_CalcPlayerMovements : zCMovementTracker { void operator()(); };
+BindedHook Ivk_zCMovementTracker_CalcPlayerMovements{ ZENFOR(0x004AE660, 0x004BC820, 0x004B49C0, 0x004B6EF0), &zCMovementTracker_CalcPlayerMovements::operator() };
+void zCMovementTracker_CalcPlayerMovements::operator()()
+{
+	THISCALL(Ivk_zCMovementTracker_CalcPlayerMovements)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

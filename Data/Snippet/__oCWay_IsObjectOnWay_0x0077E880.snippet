@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWay::IsObjectOnWay(zCVob const*): int]]></Title>
+			<Shortcut><![CDATA[__oCWay_IsObjectOnWay_0x0077E880]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCWay::IsObjectOnWay(zCVob const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWay_IsObjectOnWay : oCWay { int operator()(zCVob const*); };
+BindedHook Ivk_oCWay_IsObjectOnWay{ ZENFOR(0x006D5950, 0x0070D050, 0x0071EE40, 0x0077E880), &oCWay_IsObjectOnWay::operator() };
+int oCWay_IsObjectOnWay::operator()(zCVob const* a0)
+{
+	int result = THISCALL(Ivk_oCWay_IsObjectOnWay)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

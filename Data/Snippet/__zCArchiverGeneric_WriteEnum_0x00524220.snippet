@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::WriteEnum(char const*, char const*, int): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_WriteEnum_0x00524220]]></Shortcut>
+			<Description><![CDATA[public: virtual void __fastcall zCArchiverGeneric::WriteEnum(char const*, char const*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_WriteEnum : zCArchiverGeneric { void __fastcall operator()(char const*, char const*, int); };
+BindedHook Ivk_zCArchiverGeneric_WriteEnum{ ZENFOR(0x00513790, 0x00528C90, 0x00521450, 0x00524220), &zCArchiverGeneric_WriteEnum::operator() };
+void __fastcall zCArchiverGeneric_WriteEnum::operator()(char const* a0, char const* a1, int a2)
+{
+	THISCALL(Ivk_zCArchiverGeneric_WriteEnum)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

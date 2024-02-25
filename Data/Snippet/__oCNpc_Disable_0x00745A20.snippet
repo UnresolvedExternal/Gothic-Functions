@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::Disable(): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_Disable_0x00745A20]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCNpc::Disable()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_Disable : oCNpc { void operator()(); };
+BindedHook Ivk_oCNpc_Disable{ ZENFOR(0x006A1D20, 0x006D4510, 0x006E6F80, 0x00745A20), &oCNpc_Disable::operator() };
+void oCNpc_Disable::operator()()
+{
+	THISCALL(Ivk_oCNpc_Disable)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

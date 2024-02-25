@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[AssertSpyInfo(ASSERT_FAIL_INFO*, EXCEPTION_INFO*): void]]></Title>
+			<Shortcut><![CDATA[__AssertSpyInfo_0x00508BD0]]></Shortcut>
+			<Description><![CDATA[void __cdecl AssertSpyInfo(ASSERT_FAIL_INFO*, EXCEPTION_INFO*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_AssertSpyInfo(ASSERT_FAIL_INFO*, EXCEPTION_INFO*);
+BindedHook Ivk_AssertSpyInfo{ ZENFOR(0x004FA0A0, 0x0050CC20, 0x00505E90, 0x00508BD0), Hook_AssertSpyInfo };
+void Hook_AssertSpyInfo(ASSERT_FAIL_INFO* a0, EXCEPTION_INFO* a1)
+{
+	Ivk_AssertSpyInfo(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

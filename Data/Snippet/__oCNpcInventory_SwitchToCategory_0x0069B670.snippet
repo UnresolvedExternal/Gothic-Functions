@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcInventory::SwitchToCategory(int): int]]></Title>
+			<Shortcut><![CDATA[__oCNpcInventory_SwitchToCategory_0x0069B670]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpcInventory::SwitchToCategory(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct oCNpcInventory_SwitchToCategory : oCNpcInventory { int operator()(int); };
+BindedHook Ivk_oCNpcInventory_SwitchToCategory{ ZENFOR(0x0066DE60, 0x0069B670, 0x00000000, 0x00000000), &oCNpcInventory_SwitchToCategory::operator() };
+int oCNpcInventory_SwitchToCategory::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCNpcInventory_SwitchToCategory)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

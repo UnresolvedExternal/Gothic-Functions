@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ApplyDamages(unsigned long, int*, int&): void]]></Title>
+			<Shortcut><![CDATA[__ApplyDamages_0x0065E5A0]]></Shortcut>
+			<Description><![CDATA[void __cdecl ApplyDamages(unsigned long, int*, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_ApplyDamages(unsigned long, int*, int&);
+BindedHook Ivk_ApplyDamages{ ZENFOR(0x00752BC0, 0x00795020, 0x0079F630, 0x0065E5A0), Hook_ApplyDamages };
+void Hook_ApplyDamages(unsigned long a0, int* a1, int& a2)
+{
+	Ivk_ApplyDamages(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

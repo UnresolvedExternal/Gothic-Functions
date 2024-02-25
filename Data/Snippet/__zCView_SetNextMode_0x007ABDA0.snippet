@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::SetNextMode(): void]]></Title>
+			<Shortcut><![CDATA[__zCView_SetNextMode_0x007ABDA0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCView::SetNextMode()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCView_SetNextMode();
+BindedHook Ivk_zCView_SetNextMode{ ZENFOR(0x00702170, 0x0073C940, 0x0074C2A0, 0x007ABDA0), Hook_zCView_SetNextMode };
+void Hook_zCView_SetNextMode()
+{
+	Ivk_zCView_SetNextMode();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

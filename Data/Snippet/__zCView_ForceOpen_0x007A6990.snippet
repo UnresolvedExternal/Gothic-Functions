@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::ForceOpen(): void]]></Title>
+			<Shortcut><![CDATA[__zCView_ForceOpen_0x007A6990]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCView::ForceOpen()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_ForceOpen : zCView { void operator()(); };
+BindedHook Ivk_zCView_ForceOpen{ ZENFOR(0x006FCE10, 0x007371D0, 0x00746E90, 0x007A6990), &zCView_ForceOpen::operator() };
+void zCView_ForceOpen::operator()()
+{
+	THISCALL(Ivk_zCView_ForceOpen)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

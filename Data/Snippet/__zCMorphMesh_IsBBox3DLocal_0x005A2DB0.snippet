@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::IsBBox3DLocal(): int]]></Title>
+			<Shortcut><![CDATA[__zCMorphMesh_IsBBox3DLocal_0x005A2DB0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCMorphMesh::IsBBox3DLocal()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_IsBBox3DLocal : zCMorphMesh { int operator()(); };
+BindedHook Ivk_zCMorphMesh_IsBBox3DLocal{ ZENFOR(0x00583300, 0x0059DE50, 0x0059D850, 0x005A2DB0), &zCMorphMesh_IsBBox3DLocal::operator() };
+int zCMorphMesh_IsBBox3DLocal::operator()()
+{
+	int result = THISCALL(Ivk_zCMorphMesh_IsBBox3DLocal)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

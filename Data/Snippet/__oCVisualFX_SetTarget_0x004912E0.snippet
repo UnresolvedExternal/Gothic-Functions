@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::SetTarget(zCVob*, int): void]]></Title>
+			<Shortcut><![CDATA[__oCVisualFX_SetTarget_0x004912E0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCVisualFX::SetTarget(zCVob*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct oCVisualFX_SetTarget : oCVisualFX { void operator()(zCVob*, int); };
+BindedHook Ivk_oCVisualFX_SetTarget{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x004912E0), &oCVisualFX_SetTarget::operator() };
+void oCVisualFX_SetTarget::operator()(zCVob* a0, int a1)
+{
+	THISCALL(Ivk_oCVisualFX_SetTarget)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

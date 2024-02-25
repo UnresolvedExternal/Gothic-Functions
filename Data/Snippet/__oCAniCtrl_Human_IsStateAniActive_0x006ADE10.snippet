@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::IsStateAniActive(int): int]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_IsStateAniActive_0x006ADE10]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCAniCtrl_Human::IsStateAniActive(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_IsStateAniActive : oCAniCtrl_Human { int operator()(int); };
+BindedHook Ivk_oCAniCtrl_Human_IsStateAniActive{ ZENFOR(0x00625510, 0x0064A230, 0x00651590, 0x006ADE10), &oCAniCtrl_Human_IsStateAniActive::operator() };
+int oCAniCtrl_Human_IsStateAniActive::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_IsStateAniActive)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

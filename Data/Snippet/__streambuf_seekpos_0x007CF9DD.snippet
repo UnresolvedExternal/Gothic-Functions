@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[streambuf::seekpos(long, int): long]]></Title>
+			<Shortcut><![CDATA[__streambuf_seekpos_0x007CF9DD]]></Shortcut>
+			<Description><![CDATA[public: virtual long __thiscall streambuf::seekpos(long, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct streambuf_seekpos : streambuf { long operator()(long, int); };
+BindedHook Ivk_streambuf_seekpos{ ZENFOR(0x00776033, 0x007B9DF3, 0x007C351D, 0x007CF9DD), &streambuf_seekpos::operator() };
+long streambuf_seekpos::operator()(long a0, int a1)
+{
+	long result = THISCALL(Ivk_streambuf_seekpos)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

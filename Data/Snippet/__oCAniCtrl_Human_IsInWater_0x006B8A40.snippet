@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::IsInWater(): int]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_IsInWater_0x006B8A40]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCAniCtrl_Human::IsInWater()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_IsInWater : oCAniCtrl_Human { int operator()(); };
+BindedHook Ivk_oCAniCtrl_Human_IsInWater{ ZENFOR(0x0062F240, 0x00654B30, 0x0065C0B0, 0x006B8A40), &oCAniCtrl_Human_IsInWater::operator() };
+int oCAniCtrl_Human_IsInWater::operator()()
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_IsInWater)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

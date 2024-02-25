@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelMeshLib::SaveMDM(zCModelPrototype*): void]]></Title>
+			<Shortcut><![CDATA[__zCModelMeshLib_SaveMDM_0x0059FB30]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModelMeshLib::SaveMDM(zCModelPrototype*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelMeshLib_SaveMDM : zCModelMeshLib { void operator()(zCModelPrototype*); };
+BindedHook Ivk_zCModelMeshLib_SaveMDM{ ZENFOR(0x005800D0, 0x0059AA50, 0x0059A5D0, 0x0059FB30), &zCModelMeshLib_SaveMDM::operator() };
+void zCModelMeshLib_SaveMDM::operator()(zCModelPrototype* a0)
+{
+	THISCALL(Ivk_zCModelMeshLib_SaveMDM)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

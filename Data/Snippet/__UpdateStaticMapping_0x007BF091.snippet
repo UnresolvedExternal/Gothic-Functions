@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[UpdateStaticMapping(tagPALETTEENTRY*): void]]></Title>
+			<Shortcut><![CDATA[__UpdateStaticMapping_0x007BF091]]></Shortcut>
+			<Description><![CDATA[void __cdecl UpdateStaticMapping(tagPALETTEENTRY*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_UpdateStaticMapping(tagPALETTEENTRY*);
+BindedHook Ivk_UpdateStaticMapping{ ZENFOR(0x0076599D, 0x007AD188, 0x007B2BCB, 0x007BF091), Hook_UpdateStaticMapping };
+void Hook_UpdateStaticMapping(tagPALETTEENTRY* a0)
+{
+	Ivk_UpdateStaticMapping(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

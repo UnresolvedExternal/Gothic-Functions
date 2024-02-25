@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::_Construct(std::pair<zSTRING const, zCMapDetailTexture::zTMapDetailTextureEntry>*, std::pair<zSTRING const, zCMapDetailTexture::zTMapDetailTextureEntry>const&): void]]></Title>
+			<Shortcut><![CDATA[__std___Construct_0x005DC180]]></Shortcut>
+			<Description><![CDATA[void __cdecl std::_Construct(std::pair<zSTRING const, zCMapDetailTexture::zTMapDetailTextureEntry>*, std::pair<zSTRING const, zCMapDetailTexture::zTMapDetailTextureEntry>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_std___Construct(std::pair<zSTRING const, zCMapDetailTexture::zTMapDetailTextureEntry>*, std::pair<zSTRING const, zCMapDetailTexture::zTMapDetailTextureEntry>const&);
+BindedHook Ivk_std___Construct{ ZENFOR(0x005B4E70, 0x005D25A0, 0x005D53C0, 0x005DC180), Hook_std___Construct };
+void Hook_std___Construct(std::pair<zSTRING const, zCMapDetailTexture::zTMapDetailTextureEntry>* a0, std::pair<zSTRING const, zCMapDetailTexture::zTMapDetailTextureEntry>const& a1)
+{
+	Ivk_std___Construct(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

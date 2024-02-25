@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLightning::zCBolt::FreeResources(): void]]></Title>
+			<Shortcut><![CDATA[__zCLightning__zCBolt_FreeResources_0x005BF9F0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCLightning::zCBolt::FreeResources()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCLightning__zCBolt_FreeResources : zCLightning::zCBolt { void operator()(); };
+BindedHook Ivk_zCLightning__zCBolt_FreeResources{ ZENFOR(0x0059DB20, 0x005BA120, 0x005B9E80, 0x005BF9F0), &zCLightning__zCBolt_FreeResources::operator() };
+void zCLightning__zCBolt_FreeResources::operator()()
+{
+	THISCALL(Ivk_zCLightning__zCBolt_FreeResources)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

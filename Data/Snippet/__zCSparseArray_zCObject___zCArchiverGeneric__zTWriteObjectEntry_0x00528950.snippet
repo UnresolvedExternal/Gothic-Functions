@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::SizeData(): unsigned long [const]]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry_0x00528950]]></Shortcut>
+			<Description><![CDATA[protected: virtual unsigned long __thiscall zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::SizeData()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__SizeData : zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry> { unsigned long operator()() const; };
+BindedHook Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__SizeData{ ZENFOR(0x00517B40, 0x0052D550, 0x00525B80, 0x00528950), &zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__SizeData::operator() };
+unsigned long zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__SizeData::operator()() const
+{
+	unsigned long result = THISCALL(Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__SizeData)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput_Win32::KeyToggled(int): int]]></Title>
+			<Shortcut><![CDATA[__zCInput_Win32_KeyToggled_0x004D51D0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCInput_Win32::KeyToggled(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_Win32_KeyToggled : zCInput_Win32 { int operator()(int); };
+BindedHook Ivk_zCInput_Win32_KeyToggled{ ZENFOR(0x004C87B0, 0x004D8770, 0x004D2C10, 0x004D51D0), &zCInput_Win32_KeyToggled::operator() };
+int zCInput_Win32_KeyToggled::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCInput_Win32_KeyToggled)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

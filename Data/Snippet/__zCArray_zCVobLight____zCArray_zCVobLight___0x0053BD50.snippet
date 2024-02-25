@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCVobLight*>::~zCArray<zCVobLight*>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCVobLight____zCArray_zCVobLight___0x0053BD50]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCVobLight*>::~zCArray<zCVobLight*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCVobLight___Destructor : zCArray<zCVobLight*> { void operator()(); };
+BindedHook Ivk_zCArray_zCVobLight___Destructor{ ZENFOR(0x005266C0, 0x0053CAB0, 0x00536F50, 0x0053BD50), &zCArray_zCVobLight___Destructor::operator() };
+void zCArray_zCVobLight___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCVobLight___Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

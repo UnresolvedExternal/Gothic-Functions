@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer_D3D::Create(unsigned long, unsigned long, unsigned long): int]]></Title>
+			<Shortcut><![CDATA[__zCVertexBuffer_D3D_Create_0x00656E70]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCVertexBuffer_D3D::Create(unsigned long, unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_D3D_Create : zCVertexBuffer_D3D { int operator()(unsigned long, unsigned long, unsigned long); };
+BindedHook Ivk_zCVertexBuffer_D3D_Create{ ZENFOR(0x0071E590, 0x0075ACC0, 0x0076A340, 0x00656E70), &zCVertexBuffer_D3D_Create::operator() };
+int zCVertexBuffer_D3D_Create::operator()(unsigned long a0, unsigned long a1, unsigned long a2)
+{
+	int result = THISCALL(Ivk_zCVertexBuffer_D3D_Create)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

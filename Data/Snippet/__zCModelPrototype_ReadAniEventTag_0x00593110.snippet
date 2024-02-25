@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ReadAniEventTag(zSTRING&, zCModelAniEvent*): void]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_ReadAniEventTag_0x00593110]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::ReadAniEventTag(zSTRING&, zCModelAniEvent*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCModelPrototype_ReadAniEventTag : zCModelPrototype { void operator()(zSTRING&, zCModelAniEvent*); };
+BindedHook Ivk_zCModelPrototype_ReadAniEventTag{ ZENFOR(0x005790E0, 0x00593110, 0x00000000, 0x00000000), &zCModelPrototype_ReadAniEventTag::operator() };
+void zCModelPrototype_ReadAniEventTag::operator()(zSTRING& a0, zCModelAniEvent* a1)
+{
+	THISCALL(Ivk_zCModelPrototype_ReadAniEventTag)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

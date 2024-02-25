@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemChoice::DrawFront(): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItemChoice_DrawFront_0x004E4C20]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCMenuItemChoice::DrawFront()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemChoice_DrawFront : zCMenuItemChoice { void operator()(); };
+BindedHook Ivk_zCMenuItemChoice_DrawFront{ ZENFOR(0x004D79E0, 0x004E8920, 0x004E2270, 0x004E4C20), &zCMenuItemChoice_DrawFront::operator() };
+void zCMenuItemChoice_DrawFront::operator()()
+{
+	THISCALL(Ivk_zCMenuItemChoice_DrawFront)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

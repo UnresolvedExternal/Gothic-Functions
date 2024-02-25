@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsHostile(oCNpc*): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_IsHostile_0x0072F870]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::IsHostile(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsHostile : oCNpc { int operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_IsHostile{ ZENFOR(0x0068D100, 0x006BD940, 0x006D14A0, 0x0072F870), &oCNpc_IsHostile::operator() };
+int oCNpc_IsHostile::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_IsHostile)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

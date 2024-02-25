@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCParticleControl::EditActivePFX(): void]]></Title>
+			<Shortcut><![CDATA[__oCParticleControl_EditActivePFX_0x00770660]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCParticleControl::EditActivePFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCParticleControl_EditActivePFX : oCParticleControl { void operator()(); };
+BindedHook Ivk_oCParticleControl_EditActivePFX{ ZENFOR(0x006C8F50, 0x006FEE00, 0x007110F0, 0x00770660), &oCParticleControl_EditActivePFX::operator() };
+void oCParticleControl_EditActivePFX::operator()()
+{
+	THISCALL(Ivk_oCParticleControl_EditActivePFX)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTIndexB::~zTIndexB()]]></Title>
+			<Shortcut><![CDATA[__zTIndexB__zTIndexB_0x0065D810]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zTIndexB::~zTIndexB()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTIndexB_Destructor : zTIndexB { void operator()(); };
+BindedHook Ivk_zTIndexB_Destructor{ ZENFOR(0x00759D90, 0x0079C3A0, 0x007A6CA0, 0x0065D810), &zTIndexB_Destructor::operator() };
+void zTIndexB_Destructor::operator()()
+{
+	THISCALL(Ivk_zTIndexB_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListNodeT<CDDrawDeviceNode>::ListNodeT<CDDrawDeviceNode>()]]></Title>
+			<Shortcut><![CDATA[__ListNodeT_CDDrawDeviceNode__ListNodeT_CDDrawDeviceNode__0x007BB342]]></Shortcut>
+			<Description><![CDATA[public: __thiscall ListNodeT<CDDrawDeviceNode>::ListNodeT<CDDrawDeviceNode>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct ListNodeT_CDDrawDeviceNode__ListNodeT_CDDrawDeviceNode_ : ListNodeT<CDDrawDeviceNode> { ListNodeT<CDDrawDeviceNode>* operator()(); };
+BindedHook Ivk_ListNodeT_CDDrawDeviceNode__ListNodeT_CDDrawDeviceNode_{ ZENFOR(0x00761C4E, 0x00000000, 0x007AEE7C, 0x007BB342), &ListNodeT_CDDrawDeviceNode__ListNodeT_CDDrawDeviceNode_::operator() };
+ListNodeT<CDDrawDeviceNode>* ListNodeT_CDDrawDeviceNode__ListNodeT_CDDrawDeviceNode_::operator()()
+{
+	ListNodeT<CDDrawDeviceNode>* result = THISCALL(Ivk_ListNodeT_CDDrawDeviceNode__ListNodeT_CDDrawDeviceNode_)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

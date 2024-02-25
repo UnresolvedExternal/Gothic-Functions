@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oBert_ShutDown(): void]]></Title>
+			<Shortcut><![CDATA[__oBert_ShutDown_0x00432430]]></Shortcut>
+			<Description><![CDATA[void __cdecl oBert_ShutDown()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oBert_ShutDown();
+BindedHook Ivk_oBert_ShutDown{ ZENFOR(0x0042F850, 0x004332A0, 0x00431F50, 0x00432430), Hook_oBert_ShutDown };
+void Hook_oBert_ShutDown()
+{
+	Ivk_oBert_ShutDown();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::PercFilterNpc(oCNpc*): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_PercFilterNpc_0x0075E1D0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::PercFilterNpc(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_PercFilterNpc : oCNpc { int operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_PercFilterNpc{ ZENFOR(0x006B78B0, 0x006EC2E0, 0x006FF250, 0x0075E1D0), &oCNpc_PercFilterNpc::operator() };
+int oCNpc_PercFilterNpc::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_PercFilterNpc)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

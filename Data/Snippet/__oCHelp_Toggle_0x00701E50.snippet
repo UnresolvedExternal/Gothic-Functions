@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCHelp::Toggle(): void]]></Title>
+			<Shortcut><![CDATA[__oCHelp_Toggle_0x00701E50]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCHelp::Toggle()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCHelp_Toggle : oCHelp { void operator()(); };
+BindedHook Ivk_oCHelp_Toggle{ ZENFOR(0x00664160, 0x006910B0, 0x006A43C0, 0x00701E50), &oCHelp_Toggle::operator() };
+void oCHelp_Toggle::operator()()
+{
+	THISCALL(Ivk_oCHelp_Toggle)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

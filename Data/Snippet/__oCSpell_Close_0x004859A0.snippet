@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::Close(): void]]></Title>
+			<Shortcut><![CDATA[__oCSpell_Close_0x004859A0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCSpell::Close()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_Close : oCSpell { void operator()(); };
+BindedHook Ivk_oCSpell_Close{ ZENFOR(0x0047D4F0, 0x00487D30, 0x00484380, 0x004859A0), &oCSpell_Close::operator() };
+void oCSpell_Close::operator()()
+{
+	THISCALL(Ivk_oCSpell_Close)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

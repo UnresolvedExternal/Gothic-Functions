@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogItemContainer::CanHandleLeft(): int]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogItemContainer_CanHandleLeft_0x00689D20]]></Shortcut>
+			<Description><![CDATA[public: int __fastcall oCViewDialogItemContainer::CanHandleLeft()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogItemContainer_CanHandleLeft : oCViewDialogItemContainer { int __fastcall operator()(); };
+BindedHook Ivk_oCViewDialogItemContainer_CanHandleLeft{ ZENFOR(0x00727A90, 0x00765310, 0x00773FD0, 0x00689D20), &oCViewDialogItemContainer_CanHandleLeft::operator() };
+int __fastcall oCViewDialogItemContainer_CanHandleLeft::operator()()
+{
+	int result = THISCALL(Ivk_oCViewDialogItemContainer_CanHandleLeft)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

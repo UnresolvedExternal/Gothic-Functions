@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMoverControler::zCMoverControler()]]></Title>
+			<Shortcut><![CDATA[__zCMoverControler_zCMoverControler_0x00619E70]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCMoverControler::zCMoverControler()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMoverControler_zCMoverControler : zCMoverControler { zCMoverControler* operator()(); };
+BindedHook Ivk_zCMoverControler_zCMoverControler{ ZENFOR(0x005ECA00, 0x0060D0A0, 0x006127B0, 0x00619E70), &zCMoverControler_zCMoverControler::operator() };
+zCMoverControler* zCMoverControler_zCMoverControler::operator()()
+{
+	zCMoverControler* result = THISCALL(Ivk_zCMoverControler_zCMoverControler)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

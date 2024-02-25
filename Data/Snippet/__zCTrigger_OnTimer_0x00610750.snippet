@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTrigger::OnTimer(): void]]></Title>
+			<Shortcut><![CDATA[__zCTrigger_OnTimer_0x00610750]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCTrigger::OnTimer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTrigger_OnTimer : zCTrigger { void operator()(); };
+BindedHook Ivk_zCTrigger_OnTimer{ ZENFOR(0x005E38E0, 0x00603800, 0x00609090, 0x00610750), &zCTrigger_OnTimer::operator() };
+void zCTrigger_OnTimer::operator()()
+{
+	THISCALL(Ivk_zCTrigger_OnTimer)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

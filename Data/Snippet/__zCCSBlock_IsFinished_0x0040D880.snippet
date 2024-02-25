@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlock::IsFinished(zCArray<zCEventManager*>const&): int]]></Title>
+			<Shortcut><![CDATA[__zCCSBlock_IsFinished_0x0040D880]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCCSBlock::IsFinished(zCArray<zCEventManager*>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlock_IsFinished : zCCSBlock { int operator()(zCArray<zCEventManager*>const&); };
+BindedHook Ivk_zCCSBlock_IsFinished{ ZENFOR(0x0040D490, 0x0040E730, 0x0040D880, 0x0040D880), &zCCSBlock_IsFinished::operator() };
+int zCCSBlock_IsFinished::operator()(zCArray<zCEventManager*>const& a0)
+{
+	int result = THISCALL(Ivk_zCCSBlock_IsFinished)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

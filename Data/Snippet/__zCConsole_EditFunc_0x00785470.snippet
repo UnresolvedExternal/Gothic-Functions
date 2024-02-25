@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConsole::EditFunc(zSTRING const&, zSTRING&): int]]></Title>
+			<Shortcut><![CDATA[__zCConsole_EditFunc_0x00785470]]></Shortcut>
+			<Description><![CDATA[private: static int __cdecl zCConsole::EditFunc(zSTRING const&, zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCConsole_EditFunc(zSTRING const&, zSTRING&);
+BindedHook Ivk_zCConsole_EditFunc{ ZENFOR(0x006DC190, 0x00714250, 0x00725A30, 0x00785470), Hook_zCConsole_EditFunc };
+int Hook_zCConsole_EditFunc(zSTRING const& a0, zSTRING& a1)
+{
+	int result = Ivk_zCConsole_EditFunc(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

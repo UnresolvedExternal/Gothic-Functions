@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::DoDropVob(zCVob*): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_DoDropVob_0x00744DD0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCNpc::DoDropVob(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_DoDropVob : oCNpc { int operator()(zCVob*); };
+BindedHook Ivk_oCNpc_DoDropVob{ ZENFOR(0x006A10F0, 0x006D3830, 0x006E6340, 0x00744DD0), &oCNpc_DoDropVob::operator() };
+int oCNpc_DoDropVob::operator()(zCVob* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_DoDropVob)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

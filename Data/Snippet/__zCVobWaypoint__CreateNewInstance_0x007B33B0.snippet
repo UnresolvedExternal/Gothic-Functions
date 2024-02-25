@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobWaypoint::_CreateNewInstance(): zCObject*]]></Title>
+			<Shortcut><![CDATA[__zCVobWaypoint__CreateNewInstance_0x007B33B0]]></Shortcut>
+			<Description><![CDATA[private: static zCObject* __cdecl zCVobWaypoint::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_zCVobWaypoint__CreateNewInstance();
+BindedHook Ivk_zCVobWaypoint__CreateNewInstance{ ZENFOR(0x007096B0, 0x007444D0, 0x007538B0, 0x007B33B0), Hook_zCVobWaypoint__CreateNewInstance };
+zCObject* Hook_zCVobWaypoint__CreateNewInstance()
+{
+	zCObject* result = Ivk_zCVobWaypoint__CreateNewInstance();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

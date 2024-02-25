@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResource::UnlockStateChange(): void]]></Title>
+			<Shortcut><![CDATA[__zCResource_UnlockStateChange_0x005DC8B0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCResource::UnlockStateChange()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResource_UnlockStateChange : zCResource { void operator()(); };
+BindedHook Ivk_zCResource_UnlockStateChange{ ZENFOR(0x005B55A0, 0x005D2CF0, 0x005D5AF0, 0x005DC8B0), &zCResource_UnlockStateChange::operator() };
+void zCResource_UnlockStateChange::operator()()
+{
+	THISCALL(Ivk_zCResource_UnlockStateChange)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

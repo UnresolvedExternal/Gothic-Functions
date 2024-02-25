@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspTree::GetPolyNeighbours(zCPolygon*, zCPolygon**&, int&): void]]></Title>
+			<Shortcut><![CDATA[__zCBspTree_GetPolyNeighbours_0x005421A0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCBspTree::GetPolyNeighbours(zCPolygon*, zCPolygon**&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspTree_GetPolyNeighbours : zCBspTree { void operator()(zCPolygon*, zCPolygon**&, int&); };
+BindedHook Ivk_zCBspTree_GetPolyNeighbours{ ZENFOR(0x0052E790, 0x00545120, 0x0053D090, 0x005421A0), &zCBspTree_GetPolyNeighbours::operator() };
+void zCBspTree_GetPolyNeighbours::operator()(zCPolygon* a0, zCPolygon**& a1, int& a2)
+{
+	THISCALL(Ivk_zCBspTree_GetPolyNeighbours)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

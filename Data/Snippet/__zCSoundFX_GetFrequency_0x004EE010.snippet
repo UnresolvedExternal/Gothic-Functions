@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundFX::GetFrequency(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCSoundFX_GetFrequency_0x004EE010]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCSoundFX::GetFrequency()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundFX_GetFrequency : zCSoundFX { int operator()() const; };
+BindedHook Ivk_zCSoundFX_GetFrequency{ ZENFOR(0x004E0A80, 0x004F2440, 0x004EB390, 0x004EE010), &zCSoundFX_GetFrequency::operator() };
+int zCSoundFX_GetFrequency::operator()() const
+{
+	int result = THISCALL(Ivk_zCSoundFX_GetFrequency)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

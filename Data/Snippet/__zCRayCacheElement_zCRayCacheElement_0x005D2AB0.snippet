@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRayCacheElement::zCRayCacheElement(zCBspLeaf const*, zCRayCacheElement**)]]></Title>
+			<Shortcut><![CDATA[__zCRayCacheElement_zCRayCacheElement_0x005D2AB0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCRayCacheElement::zCRayCacheElement(zCBspLeaf const*, zCRayCacheElement**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRayCacheElement_zCRayCacheElement : zCRayCacheElement { zCRayCacheElement* operator()(zCBspLeaf const*, zCRayCacheElement**); };
+BindedHook Ivk_zCRayCacheElement_zCRayCacheElement{ ZENFOR(0x005AD960, 0x005CA8D0, 0x005CBF00, 0x005D2AB0), &zCRayCacheElement_zCRayCacheElement::operator() };
+zCRayCacheElement* zCRayCacheElement_zCRayCacheElement::operator()(zCBspLeaf const* a0, zCRayCacheElement** a1)
+{
+	zCRayCacheElement* result = THISCALL(Ivk_zCRayCacheElement_zCRayCacheElement)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

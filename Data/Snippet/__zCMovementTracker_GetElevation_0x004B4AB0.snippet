@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::GetElevation(): float]]></Title>
+			<Shortcut><![CDATA[__zCMovementTracker_GetElevation_0x004B4AB0]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall zCMovementTracker::GetElevation()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_GetElevation : zCMovementTracker { float operator()(); };
+BindedHook Ivk_zCMovementTracker_GetElevation{ ZENFOR(0x004AC140, 0x004BA060, 0x004B2580, 0x004B4AB0), &zCMovementTracker_GetElevation::operator() };
+float zCMovementTracker_GetElevation::operator()()
+{
+	float result = THISCALL(Ivk_zCMovementTracker_GetElevation)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

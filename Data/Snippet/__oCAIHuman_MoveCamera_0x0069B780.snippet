@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::MoveCamera(): int]]></Title>
+			<Shortcut><![CDATA[__oCAIHuman_MoveCamera_0x0069B780]]></Shortcut>
+			<Description><![CDATA[protected: int __thiscall oCAIHuman::MoveCamera()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_MoveCamera : oCAIHuman { int operator()(); };
+BindedHook Ivk_oCAIHuman_MoveCamera{ ZENFOR(0x00615500, 0x006383D0, 0x0063EFB0, 0x0069B780), &oCAIHuman_MoveCamera::operator() };
+int oCAIHuman_MoveCamera::operator()()
+{
+	int result = THISCALL(Ivk_oCAIHuman_MoveCamera)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

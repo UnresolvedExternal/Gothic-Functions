@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_StringTable::zCPar_StringTable(int)]]></Title>
+			<Shortcut><![CDATA[__zCPar_StringTable_zCPar_StringTable_0x007A0EB0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCPar_StringTable::zCPar_StringTable(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_StringTable_zCPar_StringTable : zCPar_StringTable { zCPar_StringTable* operator()(int); };
+BindedHook Ivk_zCPar_StringTable_zCPar_StringTable{ ZENFOR(0x006F7520, 0x00731630, 0x00741470, 0x007A0EB0), &zCPar_StringTable_zCPar_StringTable::operator() };
+zCPar_StringTable* zCPar_StringTable_zCPar_StringTable::operator()(int a0)
+{
+	zCPar_StringTable* result = THISCALL(Ivk_zCPar_StringTable_zCPar_StringTable)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

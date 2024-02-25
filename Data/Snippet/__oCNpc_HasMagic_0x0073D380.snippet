@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::HasMagic(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_HasMagic_0x0073D380]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::HasMagic()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_HasMagic : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_HasMagic{ ZENFOR(0x00699FB0, 0x006CBEF0, 0x006DEB60, 0x0073D380), &oCNpc_HasMagic::operator() };
+int oCNpc_HasMagic::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_HasMagic)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

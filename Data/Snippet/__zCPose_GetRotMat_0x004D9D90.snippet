@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPose::GetRotMat(): zMAT4&]]></Title>
+			<Shortcut><![CDATA[__zCPose_GetRotMat_0x004D9D90]]></Shortcut>
+			<Description><![CDATA[public: zMAT4& __thiscall zCPose::GetRotMat()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPose_GetRotMat : zCPose { zMAT4& operator()(); };
+BindedHook Ivk_zCPose_GetRotMat{ ZENFOR(0x004CD1A0, 0x004DD910, 0x004D77D0, 0x004D9D90), &zCPose_GetRotMat::operator() };
+zMAT4& zCPose_GetRotMat::operator()()
+{
+	zMAT4& result = THISCALL(Ivk_zCPose_GetRotMat)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

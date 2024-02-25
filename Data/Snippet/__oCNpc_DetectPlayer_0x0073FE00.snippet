@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::DetectPlayer(): oCNpc*]]></Title>
+			<Shortcut><![CDATA[__oCNpc_DetectPlayer_0x0073FE00]]></Shortcut>
+			<Description><![CDATA[public: oCNpc* __thiscall oCNpc::DetectPlayer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_DetectPlayer : oCNpc { oCNpc* operator()(); };
+BindedHook Ivk_oCNpc_DetectPlayer{ ZENFOR(0x0069C6B0, 0x006CE820, 0x006E1510, 0x0073FE00), &oCNpc_DetectPlayer::operator() };
+oCNpc* oCNpc_DetectPlayer::operator()()
+{
+	oCNpc* result = THISCALL(Ivk_oCNpc_DetectPlayer)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

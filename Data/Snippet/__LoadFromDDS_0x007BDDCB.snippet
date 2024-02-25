@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[LoadFromDDS(char* const, IDirectDraw7*, IDirectDrawSurface7**, _D3DX_SURFACEFORMAT*, tagSIZE*, unsigned long*, unsigned long*): long]]></Title>
+			<Shortcut><![CDATA[__LoadFromDDS_0x007BDDCB]]></Shortcut>
+			<Description><![CDATA[long __cdecl LoadFromDDS(char* const, IDirectDraw7*, IDirectDrawSurface7**, _D3DX_SURFACEFORMAT*, tagSIZE*, unsigned long*, unsigned long*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook_LoadFromDDS(char* const, IDirectDraw7*, IDirectDrawSurface7**, _D3DX_SURFACEFORMAT*, tagSIZE*, unsigned long*, unsigned long*);
+BindedHook Ivk_LoadFromDDS{ ZENFOR(0x007646D7, 0x007AC08D, 0x007B1905, 0x007BDDCB), Hook_LoadFromDDS };
+long Hook_LoadFromDDS(char* const a0, IDirectDraw7* a1, IDirectDrawSurface7** a2, _D3DX_SURFACEFORMAT* a3, tagSIZE* a4, unsigned long* a5, unsigned long* a6)
+{
+	long result = Ivk_LoadFromDDS(a0, a1, a2, a3, a4, a5, a6);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

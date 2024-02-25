@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureExchange::GetRGBAAtPtr(unsigned char*, zTTexPalette*, zTRnd_TextureFormat): zVEC4]]></Title>
+			<Shortcut><![CDATA[__zCTextureExchange_GetRGBAAtPtr_0x005F88A0]]></Shortcut>
+			<Description><![CDATA[private: zVEC4 __thiscall zCTextureExchange::GetRGBAAtPtr(unsigned char*, zTTexPalette*, zTRnd_TextureFormat)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureExchange_GetRGBAAtPtr : zCTextureExchange { zVEC4 operator()(unsigned char*, zTTexPalette*, zTRnd_TextureFormat); };
+BindedHook Ivk_zCTextureExchange_GetRGBAAtPtr{ ZENFOR(0x005CD760, 0x005EC350, 0x005F1AB0, 0x005F88A0), &zCTextureExchange_GetRGBAAtPtr::operator() };
+zVEC4 zCTextureExchange_GetRGBAAtPtr::operator()(unsigned char* a0, zTTexPalette* a1, zTRnd_TextureFormat a2)
+{
+	zVEC4 result = THISCALL(Ivk_zCTextureExchange_GetRGBAAtPtr)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

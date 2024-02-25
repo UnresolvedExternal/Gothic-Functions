@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexConGeneric::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCTexConGeneric_ScalarDeletingDestructor_0x0075F6B0]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCTexConGeneric::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A
+struct zCTexConGeneric_ScalarDeletingDestructor : zCTexConGeneric { void* operator()(unsigned int); };
+BindedHook Ivk_zCTexConGeneric_ScalarDeletingDestructor{ ZENFOR(0x00000000, 0x0075F6B0, 0x00000000, 0x00000000), &zCTexConGeneric_ScalarDeletingDestructor::operator() };
+void* zCTexConGeneric_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCTexConGeneric_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

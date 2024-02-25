@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::IsInState(oCNpc*, int): int]]></Title>
+			<Shortcut><![CDATA[__oCMobInter_IsInState_0x0071FB00]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCMobInter::IsInState(oCNpc*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_IsInState : oCMobInter { int operator()(oCNpc*, int); };
+BindedHook Ivk_oCMobInter_IsInState{ ZENFOR(0x0067E340, 0x006AD2F0, 0x006C1A70, 0x0071FB00), &oCMobInter_IsInState::operator() };
+int oCMobInter_IsInState::operator()(oCNpc* a0, int a1)
+{
+	int result = THISCALL(Ivk_oCMobInter_IsInState)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

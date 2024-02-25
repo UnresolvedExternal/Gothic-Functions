@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetMessage::GetHeaderSize(): unsigned char]]></Title>
+			<Shortcut><![CDATA[__zCNetMessage_GetHeaderSize_0x0045CF80]]></Shortcut>
+			<Description><![CDATA[public: unsigned char __thiscall zCNetMessage::GetHeaderSize()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetMessage_GetHeaderSize : zCNetMessage { unsigned char operator()(); };
+BindedHook Ivk_zCNetMessage_GetHeaderSize{ ZENFOR(0x00457E60, 0x0045EF20, 0x0045C830, 0x0045CF80), &zCNetMessage_GetHeaderSize::operator() };
+unsigned char zCNetMessage_GetHeaderSize::operator()()
+{
+	unsigned char result = THISCALL(Ivk_zCNetMessage_GetHeaderSize)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

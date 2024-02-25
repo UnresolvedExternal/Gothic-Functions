@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::SetVob(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCAICamera_SetVob_0x004A0E60]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCAICamera::SetVob(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAICamera_SetVob : zCAICamera { void operator()(zCVob*); };
+BindedHook Ivk_zCAICamera_SetVob{ ZENFOR(0x00499910, 0x004A6A00, 0x0049E980, 0x004A0E60), &zCAICamera_SetVob::operator() };
+void zCAICamera_SetVob::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCAICamera_SetVob)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

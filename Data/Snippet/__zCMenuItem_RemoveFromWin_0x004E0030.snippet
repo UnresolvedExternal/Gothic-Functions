@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::RemoveFromWin(): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItem_RemoveFromWin_0x004E0030]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCMenuItem::RemoveFromWin()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItem_RemoveFromWin : zCMenuItem { void operator()(); };
+BindedHook Ivk_zCMenuItem_RemoveFromWin{ ZENFOR(0x004D30F0, 0x004E3A10, 0x004DD680, 0x004E0030), &zCMenuItem_RemoveFromWin::operator() };
+void zCMenuItem_RemoveFromWin::operator()()
+{
+	THISCALL(Ivk_zCMenuItem_RemoveFromWin)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

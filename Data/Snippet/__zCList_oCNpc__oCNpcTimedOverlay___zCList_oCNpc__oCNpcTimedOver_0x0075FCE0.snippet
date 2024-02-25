@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<oCNpc::oCNpcTimedOverlay>::~zCList<oCNpc::oCNpcTimedOverlay>()]]></Title>
+			<Shortcut><![CDATA[__zCList_oCNpc__oCNpcTimedOverlay___zCList_oCNpc__oCNpcTimedOver_0x0075FCE0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCList<oCNpc::oCNpcTimedOverlay>::~zCList<oCNpc::oCNpcTimedOverlay>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_oCNpc__oCNpcTimedOverlay__Destructor : zCList<oCNpc::oCNpcTimedOverlay> { void operator()(); };
+BindedHook Ivk_zCList_oCNpc__oCNpcTimedOverlay__Destructor{ ZENFOR(0x006B90E0, 0x006EDC30, 0x00700AB0, 0x0075FCE0), &zCList_oCNpc__oCNpcTimedOverlay__Destructor::operator() };
+void zCList_oCNpc__oCNpcTimedOverlay__Destructor::operator()()
+{
+	THISCALL(Ivk_zCList_oCNpc__oCNpcTimedOverlay__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

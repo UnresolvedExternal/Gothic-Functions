@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcMessage::IsDeleted(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpcMessage_IsDeleted_0x00763190]]></Shortcut>
+			<Description><![CDATA[protected: virtual int __thiscall oCNpcMessage::IsDeleted()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcMessage_IsDeleted : oCNpcMessage { int operator()(); };
+BindedHook Ivk_oCNpcMessage_IsDeleted{ ZENFOR(0x006BBF10, 0x006F1110, 0x00703C50, 0x00763190), &oCNpcMessage_IsDeleted::operator() };
+int oCNpcMessage_IsDeleted::operator()()
+{
+	int result = THISCALL(Ivk_oCNpcMessage_IsDeleted)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

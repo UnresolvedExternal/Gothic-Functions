@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetStatistics::~zCNetStatistics()]]></Title>
+			<Shortcut><![CDATA[__zCNetStatistics__zCNetStatistics_0x00452F80]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCNetStatistics::~zCNetStatistics()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetStatistics_Destructor : zCNetStatistics { void operator()(); };
+BindedHook Ivk_zCNetStatistics_Destructor{ ZENFOR(0x0044E760, 0x00454E90, 0x00452830, 0x00452F80), &zCNetStatistics_Destructor::operator() };
+void zCNetStatistics_Destructor::operator()()
+{
+	THISCALL(Ivk_zCNetStatistics_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

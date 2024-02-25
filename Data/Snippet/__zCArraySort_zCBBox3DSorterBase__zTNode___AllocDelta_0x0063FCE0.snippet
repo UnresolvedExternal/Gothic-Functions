@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCBBox3DSorterBase::zTNode*>::AllocDelta(int): void]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCBBox3DSorterBase__zTNode___AllocDelta_0x0063FCE0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zCBBox3DSorterBase::zTNode*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCBBox3DSorterBase__zTNode___AllocDelta : zCArraySort<zCBBox3DSorterBase::zTNode*> { void operator()(int); };
+BindedHook Ivk_zCArraySort_zCBBox3DSorterBase__zTNode___AllocDelta{ ZENFOR(0x0060F140, 0x006318D0, 0x006384F0, 0x0063FCE0), &zCArraySort_zCBBox3DSorterBase__zTNode___AllocDelta::operator() };
+void zCArraySort_zCBBox3DSorterBase__zTNode___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArraySort_zCBBox3DSorterBase__zTNode___AllocDelta)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::WriteChunkEnd(): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_WriteChunkEnd_0x00524970]]></Shortcut>
+			<Description><![CDATA[public: virtual void __fastcall zCArchiverGeneric::WriteChunkEnd()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_WriteChunkEnd : zCArchiverGeneric { void __fastcall operator()(); };
+BindedHook Ivk_zCArchiverGeneric_WriteChunkEnd{ ZENFOR(0x00513DC0, 0x00529370, 0x00521BA0, 0x00524970), &zCArchiverGeneric_WriteChunkEnd::operator() };
+void __fastcall zCArchiverGeneric_WriteChunkEnd::operator()()
+{
+	THISCALL(Ivk_zCArchiverGeneric_WriteChunkEnd)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

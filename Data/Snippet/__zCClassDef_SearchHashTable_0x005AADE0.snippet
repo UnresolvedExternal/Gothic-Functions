@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCClassDef::SearchHashTable(zSTRING const&): zCObject*]]></Title>
+			<Shortcut><![CDATA[__zCClassDef_SearchHashTable_0x005AADE0]]></Shortcut>
+			<Description><![CDATA[private: zCObject* __thiscall zCClassDef::SearchHashTable(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCClassDef_SearchHashTable : zCClassDef { zCObject* operator()(zSTRING const&); };
+BindedHook Ivk_zCClassDef_SearchHashTable{ ZENFOR(0x0058B2B0, 0x005A67C0, 0x005A5880, 0x005AADE0), &zCClassDef_SearchHashTable::operator() };
+zCObject* zCClassDef_SearchHashTable::operator()(zSTRING const& a0)
+{
+	zCObject* result = THISCALL(Ivk_zCClassDef_SearchHashTable)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

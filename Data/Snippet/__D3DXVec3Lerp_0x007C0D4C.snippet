@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[D3DXVec3Lerp(D3DXVECTOR3*, D3DXVECTOR3 const*, D3DXVECTOR3 const*, float): D3DXVECTOR3*]]></Title>
+			<Shortcut><![CDATA[__D3DXVec3Lerp_0x007C0D4C]]></Shortcut>
+			<Description><![CDATA[D3DXVECTOR3* __cdecl D3DXVec3Lerp(D3DXVECTOR3*, D3DXVECTOR3 const*, D3DXVECTOR3 const*, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[D3DXVECTOR3* Hook_D3DXVec3Lerp(D3DXVECTOR3*, D3DXVECTOR3 const*, D3DXVECTOR3 const*, float);
+BindedHook Ivk_D3DXVec3Lerp{ ZENFOR(0x00767658, 0x007AFCB7, 0x007B4886, 0x007C0D4C), Hook_D3DXVec3Lerp };
+D3DXVECTOR3* Hook_D3DXVec3Lerp(D3DXVECTOR3* a0, D3DXVECTOR3 const* a1, D3DXVECTOR3 const* a2, float a3)
+{
+	D3DXVECTOR3* result = Ivk_D3DXVec3Lerp(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

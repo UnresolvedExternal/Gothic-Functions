@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogInventory::InsertItem(oCItem*): void]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogInventory_InsertItem_0x006891E0]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall oCViewDialogInventory::InsertItem(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogInventory_InsertItem : oCViewDialogInventory { void __fastcall operator()(oCItem*); };
+BindedHook Ivk_oCViewDialogInventory_InsertItem{ ZENFOR(0x00726BE0, 0x00764430, 0x007734C0, 0x006891E0), &oCViewDialogInventory_InsertItem::operator() };
+void __fastcall oCViewDialogInventory_InsertItem::operator()(oCItem* a0)
+{
+	THISCALL(Ivk_oCViewDialogInventory_InsertItem)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

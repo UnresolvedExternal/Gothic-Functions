@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::ByteFreq_Print(): void]]></Title>
+			<Shortcut><![CDATA[__zCBuffer_ByteFreq_Print_0x00441C30]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCBuffer::ByteFreq_Print()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCBuffer_ByteFreq_Print();
+BindedHook Ivk_zCBuffer_ByteFreq_Print{ ZENFOR(0x0043DD80, 0x00442FF0, 0x00441600, 0x00441C30), Hook_zCBuffer_ByteFreq_Print };
+void Hook_zCBuffer_ByteFreq_Print()
+{
+	Ivk_zCBuffer_ByteFreq_Print();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

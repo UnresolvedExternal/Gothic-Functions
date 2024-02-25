@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::OnMessage(zCEventMessage*, zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_OnMessage_0x0074B020]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCNpc::OnMessage(zCEventMessage*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_OnMessage : oCNpc { void operator()(zCEventMessage*, zCVob*); };
+BindedHook Ivk_oCNpc_OnMessage{ ZENFOR(0x006A69E0, 0x006D95F0, 0x006EC360, 0x0074B020), &oCNpc_OnMessage::operator() };
+void oCNpc_OnMessage::operator()(zCEventMessage* a0, zCVob* a1)
+{
+	THISCALL(Ivk_oCNpc_OnMessage)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

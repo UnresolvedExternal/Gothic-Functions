@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::DisableManipulateItems(int): void]]></Title>
+			<Shortcut><![CDATA[__oCItemContainer_DisableManipulateItems_0x007050E0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCItemContainer::DisableManipulateItems(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemContainer_DisableManipulateItems : oCItemContainer { void operator()(int); };
+BindedHook Ivk_oCItemContainer_DisableManipulateItems{ ZENFOR(0x006665B0, 0x00693DA0, 0x006A7650, 0x007050E0), &oCItemContainer_DisableManipulateItems::operator() };
+void oCItemContainer_DisableManipulateItems::operator()(int a0)
+{
+	THISCALL(Ivk_oCItemContainer_DisableManipulateItems)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

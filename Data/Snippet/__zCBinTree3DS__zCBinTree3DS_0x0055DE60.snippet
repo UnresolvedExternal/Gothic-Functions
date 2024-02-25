@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBinTree3DS::~zCBinTree3DS()]]></Title>
+			<Shortcut><![CDATA[__zCBinTree3DS__zCBinTree3DS_0x0055DE60]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCBinTree3DS::~zCBinTree3DS()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBinTree3DS_Destructor : zCBinTree3DS { void operator()(); };
+BindedHook Ivk_zCBinTree3DS_Destructor{ ZENFOR(0x00547030, 0x0055EF30, 0x00558C40, 0x0055DE60), &zCBinTree3DS_Destructor::operator() };
+void zCBinTree3DS_Destructor::operator()()
+{
+	THISCALL(Ivk_zCBinTree3DS_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

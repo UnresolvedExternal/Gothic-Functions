@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundSystem::SetSound3DDefaultRadius(float): void]]></Title>
+			<Shortcut><![CDATA[__zCSoundSystem_SetSound3DDefaultRadius_0x004EB3A0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCSoundSystem::SetSound3DDefaultRadius(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundSystem_SetSound3DDefaultRadius : zCSoundSystem { void operator()(float); };
+BindedHook Ivk_zCSoundSystem_SetSound3DDefaultRadius{ ZENFOR(0x004DDE20, 0x004EF2D0, 0x004E8720, 0x004EB3A0), &zCSoundSystem_SetSound3DDefaultRadius::operator() };
+void zCSoundSystem_SetSound3DDefaultRadius::operator()(float a0)
+{
+	THISCALL(Ivk_zCSoundSystem_SetSound3DDefaultRadius)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

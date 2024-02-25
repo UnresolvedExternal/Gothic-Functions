@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPoolItem::PrintDebugInfo(): void]]></Title>
+			<Shortcut><![CDATA[__zCCSPoolItem_PrintDebugInfo_0x00421860]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSPoolItem::PrintDebugInfo()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPoolItem_PrintDebugInfo : zCCSPoolItem { void operator()(); };
+BindedHook Ivk_zCCSPoolItem_PrintDebugInfo{ ZENFOR(0x00421120, 0x00423530, 0x00421530, 0x00421860), &zCCSPoolItem_PrintDebugInfo::operator() };
+void zCCSPoolItem_PrintDebugInfo::operator()()
+{
+	THISCALL(Ivk_zCCSPoolItem_PrintDebugInfo)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

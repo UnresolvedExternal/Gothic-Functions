@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::HostVobRemovedFromWorld(zCVob*, zCWorld*): void]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_HostVobRemovedFromWorld_0x0050CA60]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCAIPlayer::HostVobRemovedFromWorld(zCVob*, zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_HostVobRemovedFromWorld : zCAIPlayer { void operator()(zCVob*, zCWorld*); };
+BindedHook Ivk_zCAIPlayer_HostVobRemovedFromWorld{ ZENFOR(0x004FD030, 0x00510180, 0x00509CB0, 0x0050CA60), &zCAIPlayer_HostVobRemovedFromWorld::operator() };
+void zCAIPlayer_HostVobRemovedFromWorld::operator()(zCVob* a0, zCWorld* a1)
+{
+	THISCALL(Ivk_zCAIPlayer_HostVobRemovedFromWorld)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

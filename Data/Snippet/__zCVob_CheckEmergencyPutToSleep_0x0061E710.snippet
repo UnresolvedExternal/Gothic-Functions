@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::CheckEmergencyPutToSleep(): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_CheckEmergencyPutToSleep_0x0061E710]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCVob::CheckEmergencyPutToSleep()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_CheckEmergencyPutToSleep : zCVob { void operator()(); };
+BindedHook Ivk_zCVob_CheckEmergencyPutToSleep{ ZENFOR(0x005F1180, 0x00611E70, 0x00616FC0, 0x0061E710), &zCVob_CheckEmergencyPutToSleep::operator() };
+void zCVob_CheckEmergencyPutToSleep::operator()()
+{
+	THISCALL(Ivk_zCVob_CheckEmergencyPutToSleep)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

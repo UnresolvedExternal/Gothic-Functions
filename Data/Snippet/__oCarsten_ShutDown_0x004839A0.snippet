@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCarsten_ShutDown(): void]]></Title>
+			<Shortcut><![CDATA[__oCarsten_ShutDown_0x004839A0]]></Shortcut>
+			<Description><![CDATA[void __cdecl oCarsten_ShutDown()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCarsten_ShutDown();
+BindedHook Ivk_oCarsten_ShutDown{ ZENFOR(0x0047B7A0, 0x00485B80, 0x00482390, 0x004839A0), Hook_oCarsten_ShutDown };
+void Hook_oCarsten_ShutDown()
+{
+	Ivk_oCarsten_ShutDown();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

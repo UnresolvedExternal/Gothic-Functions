@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<int(__cdecl**)(zSEvasionSearchDesc const&)>::~zCArray<int(__cdecl**)(zSEvasionSearchDesc const&)>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_int___cdecl____zSEvasionSearchDesc_const_____zCArray_i_0x004B0BD0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<int(__cdecl**)(zSEvasionSearchDesc const&)>::~zCArray<int(__cdecl**)(zSEvasionSearchDesc const&)>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_int___cdecl____zSEvasionSearchDesc_const____Destructor : zCArray<int(__cdecl**)(zSEvasionSearchDesc const&)> { void operator()(); };
+BindedHook Ivk_zCArray_int___cdecl____zSEvasionSearchDesc_const____Destructor{ ZENFOR(0x004A8920, 0x004B6820, 0x004AE6A0, 0x004B0BD0), &zCArray_int___cdecl____zSEvasionSearchDesc_const____Destructor::operator() };
+void zCArray_int___cdecl____zSEvasionSearchDesc_const____Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_int___cdecl____zSEvasionSearchDesc_const____Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

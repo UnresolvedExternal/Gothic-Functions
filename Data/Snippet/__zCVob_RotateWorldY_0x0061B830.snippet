@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::RotateWorldY(float): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_RotateWorldY_0x0061B830]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCVob::RotateWorldY(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_RotateWorldY : zCVob { void operator()(float); };
+BindedHook Ivk_zCVob_RotateWorldY{ ZENFOR(0x005EE320, 0x0060EB00, 0x00614160, 0x0061B830), &zCVob_RotateWorldY::operator() };
+void zCVob_RotateWorldY::operator()(float a0)
+{
+	THISCALL(Ivk_zCVob_RotateWorldY)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zPATH::~zPATH()]]></Title>
+			<Shortcut><![CDATA[__zPATH__zPATH_0x0048D290]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zPATH::~zPATH()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zPATH_Destructor : zPATH { void operator()(); };
+BindedHook Ivk_zPATH_Destructor{ ZENFOR(0x004855A0, 0x00490750, 0x0048B920, 0x0048D290), &zPATH_Destructor::operator() };
+void zPATH_Destructor::operator()()
+{
+	THISCALL(Ivk_zPATH_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

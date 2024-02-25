@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Alg_ClipAtZ0(zVEC3&, zVEC3&): void]]></Title>
+			<Shortcut><![CDATA[__Alg_ClipAtZ0_0x00518230]]></Shortcut>
+			<Description><![CDATA[void __cdecl Alg_ClipAtZ0(zVEC3&, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Alg_ClipAtZ0(zVEC3&, zVEC3&);
+BindedHook Ivk_Alg_ClipAtZ0{ ZENFOR(0x00508540, 0x0051CF90, 0x00515460, 0x00518230), Hook_Alg_ClipAtZ0 };
+void Hook_Alg_ClipAtZ0(zVEC3& a0, zVEC3& a1)
+{
+	Ivk_Alg_ClipAtZ0(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

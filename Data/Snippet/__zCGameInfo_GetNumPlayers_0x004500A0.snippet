@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCGameInfo::GetNumPlayers(): int]]></Title>
+			<Shortcut><![CDATA[__zCGameInfo_GetNumPlayers_0x004500A0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCGameInfo::GetNumPlayers()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCGameInfo_GetNumPlayers : zCGameInfo { int operator()(); };
+BindedHook Ivk_zCGameInfo_GetNumPlayers{ ZENFOR(0x0044B920, 0x00451EB0, 0x0044F950, 0x004500A0), &zCGameInfo_GetNumPlayers::operator() };
+int zCGameInfo_GetNumPlayers::operator()()
+{
+	int result = THISCALL(Ivk_zCGameInfo_GetNumPlayers)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

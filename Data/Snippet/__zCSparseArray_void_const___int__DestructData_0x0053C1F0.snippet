@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<void const*, int>::DestructData(void*): void [const]]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_void_const___int__DestructData_0x0053C1F0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<void const*, int>::DestructData(void*)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_void_const___int__DestructData : zCSparseArray<void const*, int> { void operator()(void*) const; };
+BindedHook Ivk_zCSparseArray_void_const___int__DestructData{ ZENFOR(0x00526BA0, 0x0053CF90, 0x005373F0, 0x0053C1F0), &zCSparseArray_void_const___int__DestructData::operator() };
+void zCSparseArray_void_const___int__DestructData::operator()(void* a0) const
+{
+	THISCALL(Ivk_zCSparseArray_void_const___int__DestructData)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

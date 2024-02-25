@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::PrintScreen(int, int, zSTRING): void [const]]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_PrintScreen_0x005120A0]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCAIPlayer::PrintScreen(int, int, zSTRING)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_PrintScreen : zCAIPlayer { void operator()(int, int, zSTRING) const; };
+BindedHook Ivk_zCAIPlayer_PrintScreen{ ZENFOR(0x00502540, 0x00515FC0, 0x0050F2D0, 0x005120A0), &zCAIPlayer_PrintScreen::operator() };
+void zCAIPlayer_PrintScreen::operator()(int a0, int a1, zSTRING a2) const
+{
+	THISCALL(Ivk_zCAIPlayer_PrintScreen)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

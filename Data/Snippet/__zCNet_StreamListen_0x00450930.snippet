@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::StreamListen(int(__cdecl*)(void*)): int]]></Title>
+			<Shortcut><![CDATA[__zCNet_StreamListen_0x00450930]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCNet::StreamListen(int(__cdecl*)(void*))]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_StreamListen : zCNet { int operator()(int(__cdecl*)(void*)); };
+BindedHook Ivk_zCNet_StreamListen{ ZENFOR(0x0044C1C0, 0x00452760, 0x004501E0, 0x00450930), &zCNet_StreamListen::operator() };
+int zCNet_StreamListen::operator()(int(__cdecl* a0)(void*))
+{
+	int result = THISCALL(Ivk_zCNet_StreamListen)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

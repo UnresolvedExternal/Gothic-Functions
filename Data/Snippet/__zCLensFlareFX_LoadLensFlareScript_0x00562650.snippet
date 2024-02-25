@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLensFlareFX::LoadLensFlareScript(): void]]></Title>
+			<Shortcut><![CDATA[__zCLensFlareFX_LoadLensFlareScript_0x00562650]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCLensFlareFX::LoadLensFlareScript()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCLensFlareFX_LoadLensFlareScript();
+BindedHook Ivk_zCLensFlareFX_LoadLensFlareScript{ ZENFOR(0x0054B8E0, 0x00563B90, 0x0055D430, 0x00562650), Hook_zCLensFlareFX_LoadLensFlareScript };
+void Hook_zCLensFlareFX_LoadLensFlareScript()
+{
+	Ivk_zCLensFlareFX_LoadLensFlareScript();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

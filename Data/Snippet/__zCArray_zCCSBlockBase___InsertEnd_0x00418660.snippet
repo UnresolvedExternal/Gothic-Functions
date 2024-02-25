@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCCSBlockBase*>::InsertEnd(zCCSBlockBase* const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCCSBlockBase___InsertEnd_0x00418660]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCCSBlockBase*>::InsertEnd(zCCSBlockBase* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCCSBlockBase___InsertEnd : zCArray<zCCSBlockBase*> { void operator()(zCCSBlockBase* const&); };
+BindedHook Ivk_zCArray_zCCSBlockBase___InsertEnd{ ZENFOR(0x00418160, 0x00419FB0, 0x00418660, 0x00418660), &zCArray_zCCSBlockBase___InsertEnd::operator() };
+void zCArray_zCCSBlockBase___InsertEnd::operator()(zCCSBlockBase* const& a0)
+{
+	THISCALL(Ivk_zCArray_zCCSBlockBase___InsertEnd)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

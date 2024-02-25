@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetAnictrl(): oCAniCtrl_Human*]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetAnictrl_0x00734B40]]></Shortcut>
+			<Description><![CDATA[public: oCAniCtrl_Human* __thiscall oCNpc::GetAnictrl()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetAnictrl : oCNpc { oCAniCtrl_Human* operator()(); };
+BindedHook Ivk_oCNpc_GetAnictrl{ ZENFOR(0x00691A00, 0x006C3010, 0x006D6520, 0x00734B40), &oCNpc_GetAnictrl::operator() };
+oCAniCtrl_Human* oCNpc_GetAnictrl::operator()()
+{
+	oCAniCtrl_Human* result = THISCALL(Ivk_oCNpc_GetAnictrl)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

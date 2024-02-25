@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCCSManager::oCCSManager()]]></Title>
+			<Shortcut><![CDATA[__oCCSManager_oCCSManager_0x00401600]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCCSManager::oCCSManager()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCCSManager_oCCSManager : oCCSManager { oCCSManager* operator()(); };
+BindedHook Ivk_oCCSManager_oCCSManager{ ZENFOR(0x00401430, 0x004016F0, 0x00401600, 0x00401600), &oCCSManager_oCCSManager::operator() };
+oCCSManager* oCCSManager_oCCSManager::operator()()
+{
+	oCCSManager* result = THISCALL(Ivk_oCCSManager_oCCSManager)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

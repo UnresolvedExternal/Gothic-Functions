@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchDamage::ProcessToucher(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCTouchDamage_ProcessToucher_0x00615D70]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCTouchDamage::ProcessToucher(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchDamage_ProcessToucher : zCTouchDamage { void operator()(zCVob*); };
+BindedHook Ivk_zCTouchDamage_ProcessToucher{ ZENFOR(0x005E8CC0, 0x006091B0, 0x0060E6B0, 0x00615D70), &zCTouchDamage_ProcessToucher::operator() };
+void zCTouchDamage_ProcessToucher::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCTouchDamage_ProcessToucher)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

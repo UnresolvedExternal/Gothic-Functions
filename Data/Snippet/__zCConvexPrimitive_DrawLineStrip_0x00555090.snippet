@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitive::DrawLineStrip(zVEC3 const&): void]]></Title>
+			<Shortcut><![CDATA[__zCConvexPrimitive_DrawLineStrip_0x00555090]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCConvexPrimitive::DrawLineStrip(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCConvexPrimitive_DrawLineStrip(zVEC3 const&);
+BindedHook Ivk_zCConvexPrimitive_DrawLineStrip{ ZENFOR(0x00540940, 0x00558290, 0x0054FE70, 0x00555090), Hook_zCConvexPrimitive_DrawLineStrip };
+void Hook_zCConvexPrimitive_DrawLineStrip(zVEC3 const& a0)
+{
+	Ivk_zCConvexPrimitive_DrawLineStrip(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

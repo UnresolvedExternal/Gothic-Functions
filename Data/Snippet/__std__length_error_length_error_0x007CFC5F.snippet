@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::length_error::length_error(std::length_error const&)]]></Title>
+			<Shortcut><![CDATA[__std__length_error_length_error_0x007CFC5F]]></Shortcut>
+			<Description><![CDATA[public: __thiscall std::length_error::length_error(std::length_error const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__length_error_length_error : std::length_error { void operator()(std::length_error const&); };
+BindedHook Ivk_std__length_error_length_error{ ZENFOR(0x007762B5, 0x007BA075, 0x007C379F, 0x007CFC5F), &std__length_error_length_error::operator() };
+void std__length_error_length_error::operator()(std::length_error const& a0)
+{
+	THISCALL(Ivk_std__length_error_length_error)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

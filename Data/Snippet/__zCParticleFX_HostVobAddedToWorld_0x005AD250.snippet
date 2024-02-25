@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::HostVobAddedToWorld(zCVob*, zCWorld*): void]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX_HostVobAddedToWorld_0x005AD250]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCParticleFX::HostVobAddedToWorld(zCVob*, zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX_HostVobAddedToWorld : zCParticleFX { void operator()(zCVob*, zCWorld*); };
+BindedHook Ivk_zCParticleFX_HostVobAddedToWorld{ ZENFOR(0x0058D4B0, 0x005A8A50, 0x005A7BD0, 0x005AD250), &zCParticleFX_HostVobAddedToWorld::operator() };
+void zCParticleFX_HostVobAddedToWorld::operator()(zCVob* a0, zCWorld* a1)
+{
+	THISCALL(Ivk_zCParticleFX_HostVobAddedToWorld)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

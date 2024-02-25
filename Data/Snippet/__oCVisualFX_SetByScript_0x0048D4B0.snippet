@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::SetByScript(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__oCVisualFX_SetByScript_0x0048D4B0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCVisualFX::SetByScript(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_SetByScript : oCVisualFX { void operator()(zSTRING const&); };
+BindedHook Ivk_oCVisualFX_SetByScript{ ZENFOR(0x00485790, 0x00490910, 0x0048BB20, 0x0048D4B0), &oCVisualFX_SetByScript::operator() };
+void oCVisualFX_SetByScript::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_oCVisualFX_SetByScript)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::GetMDHFileVersion(): unsigned long]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_GetMDHFileVersion_0x0058A2F0]]></Shortcut>
+			<Description><![CDATA[public: static unsigned long __cdecl zCModelPrototype::GetMDHFileVersion()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned long Hook_zCModelPrototype_GetMDHFileVersion();
+BindedHook Ivk_zCModelPrototype_GetMDHFileVersion{ ZENFOR(0x0056FB80, 0x00588FC0, 0x00584D90, 0x0058A2F0), Hook_zCModelPrototype_GetMDHFileVersion };
+unsigned long Hook_zCModelPrototype_GetMDHFileVersion()
+{
+	unsigned long result = Ivk_zCModelPrototype_GetMDHFileVersion();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

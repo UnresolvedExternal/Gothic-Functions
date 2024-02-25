@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::ToggleFocusVob(int): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_ToggleFocusVob_0x007335B0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::ToggleFocusVob(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_ToggleFocusVob : oCNpc { void operator()(int); };
+BindedHook Ivk_oCNpc_ToggleFocusVob{ ZENFOR(0x00690910, 0x006C1D70, 0x006D4F90, 0x007335B0), &oCNpc_ToggleFocusVob::operator() };
+void oCNpc_ToggleFocusVob::operator()(int a0)
+{
+	THISCALL(Ivk_oCNpc_ToggleFocusVob)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

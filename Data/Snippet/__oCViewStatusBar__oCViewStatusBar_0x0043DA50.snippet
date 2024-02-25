@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewStatusBar::~oCViewStatusBar()]]></Title>
+			<Shortcut><![CDATA[__oCViewStatusBar__oCViewStatusBar_0x0043DA50]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCViewStatusBar::~oCViewStatusBar()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewStatusBar_Destructor : oCViewStatusBar { void operator()(); };
+BindedHook Ivk_oCViewStatusBar_Destructor{ ZENFOR(0x00439FE0, 0x0043EC10, 0x0043D420, 0x0043DA50), &oCViewStatusBar_Destructor::operator() };
+void oCViewStatusBar_Destructor::operator()()
+{
+	THISCALL(Ivk_oCViewStatusBar_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

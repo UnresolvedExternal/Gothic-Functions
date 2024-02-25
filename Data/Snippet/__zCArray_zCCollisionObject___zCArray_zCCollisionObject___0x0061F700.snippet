@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCCollisionObject*>::zCArray<zCCollisionObject*>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCCollisionObject___zCArray_zCCollisionObject___0x0061F700]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCCollisionObject*>::zCArray<zCCollisionObject*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCCollisionObject___zCArray_zCCollisionObject__ : zCArray<zCCollisionObject*> { zCArray<zCCollisionObject*>* operator()(); };
+BindedHook Ivk_zCArray_zCCollisionObject___zCArray_zCCollisionObject__{ ZENFOR(0x005F2150, 0x00612EF0, 0x00617FB0, 0x0061F700), &zCArray_zCCollisionObject___zCArray_zCCollisionObject__::operator() };
+zCArray<zCCollisionObject*>* zCArray_zCCollisionObject___zCArray_zCCollisionObject__::operator()()
+{
+	zCArray<zCCollisionObject*>* result = THISCALL(Ivk_zCArray_zCCollisionObject___zCArray_zCCollisionObject__)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

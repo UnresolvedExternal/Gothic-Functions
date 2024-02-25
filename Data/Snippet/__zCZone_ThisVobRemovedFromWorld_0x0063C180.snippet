@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZone::ThisVobRemovedFromWorld(zCWorld*): void]]></Title>
+			<Shortcut><![CDATA[__zCZone_ThisVobRemovedFromWorld_0x0063C180]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCZone::ThisVobRemovedFromWorld(zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZone_ThisVobRemovedFromWorld : zCZone { void operator()(zCWorld*); };
+BindedHook Ivk_zCZone_ThisVobRemovedFromWorld{ ZENFOR(0x0060BB50, 0x0062E070, 0x006349B0, 0x0063C180), &zCZone_ThisVobRemovedFromWorld::operator() };
+void zCZone_ThisVobRemovedFromWorld::operator()(zCWorld* a0)
+{
+	THISCALL(Ivk_zCZone_ThisVobRemovedFromWorld)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

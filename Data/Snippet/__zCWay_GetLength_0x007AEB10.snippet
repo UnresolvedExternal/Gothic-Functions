@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWay::GetLength(): float]]></Title>
+			<Shortcut><![CDATA[__zCWay_GetLength_0x007AEB10]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall zCWay::GetLength()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWay_GetLength : zCWay { float operator()(); };
+BindedHook Ivk_zCWay_GetLength{ ZENFOR(0x00704F20, 0x0073F830, 0x0074F010, 0x007AEB10), &zCWay_GetLength::operator() };
+float zCWay_GetLength::operator()()
+{
+	float result = THISCALL(Ivk_zCWay_GetLength)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

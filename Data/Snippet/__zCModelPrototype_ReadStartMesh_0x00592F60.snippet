@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ReadStartMesh(): void]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_ReadStartMesh_0x00592F60]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::ReadStartMesh()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCModelPrototype_ReadStartMesh : zCModelPrototype { void operator()(); };
+BindedHook Ivk_zCModelPrototype_ReadStartMesh{ ZENFOR(0x00578F40, 0x00592F60, 0x00000000, 0x00000000), &zCModelPrototype_ReadStartMesh::operator() };
+void zCModelPrototype_ReadStartMesh::operator()()
+{
+	THISCALL(Ivk_zCModelPrototype_ReadStartMesh)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

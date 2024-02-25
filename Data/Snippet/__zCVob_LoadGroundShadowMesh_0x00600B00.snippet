@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::LoadGroundShadowMesh(): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_LoadGroundShadowMesh_0x00600B00]]></Shortcut>
+			<Description><![CDATA[private: static void __cdecl zCVob::LoadGroundShadowMesh()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCVob_LoadGroundShadowMesh();
+BindedHook Ivk_zCVob_LoadGroundShadowMesh{ ZENFOR(0x005D56B0, 0x005F4B30, 0x005F9D00, 0x00600B00), Hook_zCVob_LoadGroundShadowMesh };
+void Hook_zCVob_LoadGroundShadowMesh()
+{
+	Ivk_zCVob_LoadGroundShadowMesh();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

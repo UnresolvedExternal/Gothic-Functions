@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::GetAlphaTestingEnabled(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCMorphMesh_GetAlphaTestingEnabled_0x005A2DE0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCMorphMesh::GetAlphaTestingEnabled()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCMorphMesh_GetAlphaTestingEnabled : zCMorphMesh { int operator()() const; };
+BindedHook Ivk_zCMorphMesh_GetAlphaTestingEnabled{ ZENFOR(0x00000000, 0x00000000, 0x0059D880, 0x005A2DE0), &zCMorphMesh_GetAlphaTestingEnabled::operator() };
+int zCMorphMesh_GetAlphaTestingEnabled::operator()() const
+{
+	int result = THISCALL(Ivk_zCMorphMesh_GetAlphaTestingEnabled)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

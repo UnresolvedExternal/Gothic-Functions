@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRndAlphaSortObject_WorldPoly::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCRndAlphaSortObject_WorldPoly_ScalarDeletingDestructor_0x005D6F30]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCRndAlphaSortObject_WorldPoly::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRndAlphaSortObject_WorldPoly_ScalarDeletingDestructor : zCRndAlphaSortObject_WorldPoly { void* operator()(unsigned int); };
+BindedHook Ivk_zCRndAlphaSortObject_WorldPoly_ScalarDeletingDestructor{ ZENFOR(0x005B11B0, 0x005CE370, 0x005D0370, 0x005D6F30), &zCRndAlphaSortObject_WorldPoly_ScalarDeletingDestructor::operator() };
+void* zCRndAlphaSortObject_WorldPoly_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCRndAlphaSortObject_WorldPoly_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

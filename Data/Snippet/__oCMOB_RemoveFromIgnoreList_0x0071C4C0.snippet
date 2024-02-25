@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMOB::RemoveFromIgnoreList(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__oCMOB_RemoveFromIgnoreList_0x0071C4C0]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall oCMOB::RemoveFromIgnoreList(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMOB_RemoveFromIgnoreList : oCMOB { void operator()(zCVob*); };
+BindedHook Ivk_oCMOB_RemoveFromIgnoreList{ ZENFOR(0x0067B300, 0x006A9A50, 0x006BE430, 0x0071C4C0), &oCMOB_RemoveFromIgnoreList::operator() };
+void oCMOB_RemoveFromIgnoreList::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_oCMOB_RemoveFromIgnoreList)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

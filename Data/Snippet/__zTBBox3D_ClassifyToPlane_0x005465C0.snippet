@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTBBox3D::ClassifyToPlane(zTPlane const&, int): zTPlaneClass [const]]]></Title>
+			<Shortcut><![CDATA[__zTBBox3D_ClassifyToPlane_0x005465C0]]></Shortcut>
+			<Description><![CDATA[public: zTPlaneClass __thiscall zTBBox3D::ClassifyToPlane(zTPlane const&, int)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTBBox3D_ClassifyToPlane : zTBBox3D { zTPlaneClass operator()(zTPlane const&, int) const; };
+BindedHook Ivk_zTBBox3D_ClassifyToPlane{ ZENFOR(0x00532570, 0x00549040, 0x005413A0, 0x005465C0), &zTBBox3D_ClassifyToPlane::operator() };
+zTPlaneClass zTBBox3D_ClassifyToPlane::operator()(zTPlane const& a0, int a1) const
+{
+	zTPlaneClass result = THISCALL(Ivk_zTBBox3D_ClassifyToPlane)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

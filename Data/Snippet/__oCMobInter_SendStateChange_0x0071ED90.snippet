@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::SendStateChange(int, int): void]]></Title>
+			<Shortcut><![CDATA[__oCMobInter_SendStateChange_0x0071ED90]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCMobInter::SendStateChange(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_SendStateChange : oCMobInter { void operator()(int, int); };
+BindedHook Ivk_oCMobInter_SendStateChange{ ZENFOR(0x0067D8C0, 0x006AC5B0, 0x006C0D00, 0x0071ED90), &oCMobInter_SendStateChange::operator() };
+void oCMobInter_SendStateChange::operator()(int a0, int a1)
+{
+	THISCALL(Ivk_oCMobInter_SendStateChange)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

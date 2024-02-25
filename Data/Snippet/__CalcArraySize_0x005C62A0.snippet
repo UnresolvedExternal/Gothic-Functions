@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CalcArraySize(zCArray<zTPlane>): unsigned long]]></Title>
+			<Shortcut><![CDATA[__CalcArraySize_0x005C62A0]]></Shortcut>
+			<Description><![CDATA[unsigned long __cdecl CalcArraySize(zCArray<zTPlane>)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned long Hook_CalcArraySize(zCArray<zTPlane>);
+BindedHook Ivk_CalcArraySize{ ZENFOR(0x005A4480, 0x005C0C00, 0x005C0730, 0x005C62A0), Hook_CalcArraySize };
+unsigned long Hook_CalcArraySize(zCArray<zTPlane> a0)
+{
+	unsigned long result = Ivk_CalcArraySize(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

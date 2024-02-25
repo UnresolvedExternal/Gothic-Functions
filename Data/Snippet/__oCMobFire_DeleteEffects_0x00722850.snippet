@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobFire::DeleteEffects(): void]]></Title>
+			<Shortcut><![CDATA[__oCMobFire_DeleteEffects_0x00722850]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCMobFire::DeleteEffects()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobFire_DeleteEffects : oCMobFire { void operator()(); };
+BindedHook Ivk_oCMobFire_DeleteEffects{ ZENFOR(0x00680E80, 0x006B0180, 0x006C47C0, 0x00722850), &oCMobFire_DeleteEffects::operator() };
+void oCMobFire_DeleteEffects::operator()()
+{
+	THISCALL(Ivk_oCMobFire_DeleteEffects)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

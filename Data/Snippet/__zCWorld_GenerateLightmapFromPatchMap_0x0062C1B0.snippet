@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::GenerateLightmapFromPatchMap(zCPatchMap*): void]]></Title>
+			<Shortcut><![CDATA[__zCWorld_GenerateLightmapFromPatchMap_0x0062C1B0]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCWorld::GenerateLightmapFromPatchMap(zCPatchMap*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_GenerateLightmapFromPatchMap : zCWorld { void operator()(zCPatchMap*); };
+BindedHook Ivk_zCWorld_GenerateLightmapFromPatchMap{ ZENFOR(0x005FD5C0, 0x0061EF80, 0x00624A30, 0x0062C1B0), &zCWorld_GenerateLightmapFromPatchMap::operator() };
+void zCWorld_GenerateLightmapFromPatchMap::operator()(zCPatchMap* a0)
+{
+	THISCALL(Ivk_zCWorld_GenerateLightmapFromPatchMap)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

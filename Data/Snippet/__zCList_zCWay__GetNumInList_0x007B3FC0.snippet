@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCWay>::GetNumInList(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCList_zCWay__GetNumInList_0x007B3FC0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCList<zCWay>::GetNumInList()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCWay__GetNumInList : zCList<zCWay> { int operator()() const; };
+BindedHook Ivk_zCList_zCWay__GetNumInList{ ZENFOR(0x0070A340, 0x007451D0, 0x007544C0, 0x007B3FC0), &zCList_zCWay__GetNumInList::operator() };
+int zCList_zCWay__GetNumInList::operator()() const
+{
+	int result = THISCALL(Ivk_zCList_zCWay__GetNumInList)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

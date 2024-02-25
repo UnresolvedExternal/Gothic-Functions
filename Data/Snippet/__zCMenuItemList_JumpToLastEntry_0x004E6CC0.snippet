@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemList::JumpToLastEntry(): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItemList_JumpToLastEntry_0x004E6CC0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCMenuItemList::JumpToLastEntry()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemList_JumpToLastEntry : zCMenuItemList { void operator()(); };
+BindedHook Ivk_zCMenuItemList_JumpToLastEntry{ ZENFOR(0x004D9AB0, 0x004EAC30, 0x004E4310, 0x004E6CC0), &zCMenuItemList_JumpToLastEntry::operator() };
+void zCMenuItemList_JumpToLastEntry::operator()()
+{
+	THISCALL(Ivk_zCMenuItemList_JumpToLastEntry)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

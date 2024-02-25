@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::CreateVobList(zCArray<zCVob*>&, float): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_CreateVobList_0x0075D730]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::CreateVobList(zCArray<zCVob*>&, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_CreateVobList : oCNpc { void operator()(zCArray<zCVob*>&, float); };
+BindedHook Ivk_oCNpc_CreateVobList{ ZENFOR(0x006B6DF0, 0x006EB750, 0x006FE7B0, 0x0075D730), &oCNpc_CreateVobList::operator() };
+void oCNpc_CreateVobList::operator()(zCArray<zCVob*>& a0, float a1)
+{
+	THISCALL(Ivk_oCNpc_CreateVobList)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

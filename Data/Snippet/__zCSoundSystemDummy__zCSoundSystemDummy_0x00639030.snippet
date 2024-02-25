@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundSystemDummy::~zCSoundSystemDummy()]]></Title>
+			<Shortcut><![CDATA[__zCSoundSystemDummy__zCSoundSystemDummy_0x00639030]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCSoundSystemDummy::~zCSoundSystemDummy()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundSystemDummy_Destructor : zCSoundSystemDummy { void operator()(); };
+BindedHook Ivk_zCSoundSystemDummy_Destructor{ ZENFOR(0x00608920, 0x0062ADA0, 0x00631860, 0x00639030), &zCSoundSystemDummy_Destructor::operator() };
+void zCSoundSystemDummy_Destructor::operator()()
+{
+	THISCALL(Ivk_zCSoundSystemDummy_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

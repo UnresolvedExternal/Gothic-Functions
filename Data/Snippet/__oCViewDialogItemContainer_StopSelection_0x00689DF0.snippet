@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogItemContainer::StopSelection(): void]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogItemContainer_StopSelection_0x00689DF0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __fastcall oCViewDialogItemContainer::StopSelection()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogItemContainer_StopSelection : oCViewDialogItemContainer { void __fastcall operator()(); };
+BindedHook Ivk_oCViewDialogItemContainer_StopSelection{ ZENFOR(0x00727B90, 0x00765410, 0x007740A0, 0x00689DF0), &oCViewDialogItemContainer_StopSelection::operator() };
+void __fastcall oCViewDialogItemContainer_StopSelection::operator()()
+{
+	THISCALL(Ivk_oCViewDialogItemContainer_StopSelection)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

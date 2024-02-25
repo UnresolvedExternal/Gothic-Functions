@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyState::zCSkyState()]]></Title>
+			<Shortcut><![CDATA[__zCSkyState_zCSkyState_0x005E43B0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCSkyState::zCSkyState()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyState_zCSkyState : zCSkyState { zCSkyState* operator()(); };
+BindedHook Ivk_zCSkyState_zCSkyState{ ZENFOR(0x005BB960, 0x005D9500, 0x005DD600, 0x005E43B0), &zCSkyState_zCSkyState::operator() };
+zCSkyState* zCSkyState_zCSkyState::operator()()
+{
+	zCSkyState* result = THISCALL(Ivk_zCSkyState_zCSkyState)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

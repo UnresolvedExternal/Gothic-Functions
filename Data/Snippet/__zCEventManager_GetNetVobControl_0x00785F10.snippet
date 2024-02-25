@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::GetNetVobControl(int): zCNetVobControl*]]></Title>
+			<Shortcut><![CDATA[__zCEventManager_GetNetVobControl_0x00785F10]]></Shortcut>
+			<Description><![CDATA[public: virtual zCNetVobControl* __thiscall zCEventManager::GetNetVobControl(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventManager_GetNetVobControl : zCEventManager { zCNetVobControl* operator()(int); };
+BindedHook Ivk_zCEventManager_GetNetVobControl{ ZENFOR(0x006DCC20, 0x00714DD0, 0x007264D0, 0x00785F10), &zCEventManager_GetNetVobControl::operator() };
+zCNetVobControl* zCEventManager_GetNetVobControl::operator()(int a0)
+{
+	zCNetVobControl* result = THISCALL(Ivk_zCEventManager_GetNetVobControl)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

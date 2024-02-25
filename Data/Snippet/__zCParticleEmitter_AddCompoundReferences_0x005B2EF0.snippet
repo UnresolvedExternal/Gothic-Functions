@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleEmitter::AddCompoundReferences(): void]]></Title>
+			<Shortcut><![CDATA[__zCParticleEmitter_AddCompoundReferences_0x005B2EF0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCParticleEmitter::AddCompoundReferences()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleEmitter_AddCompoundReferences : zCParticleEmitter { void operator()(); };
+BindedHook Ivk_zCParticleEmitter_AddCompoundReferences{ ZENFOR(0x005923C0, 0x005ADDF0, 0x005AD870, 0x005B2EF0), &zCParticleEmitter_AddCompoundReferences::operator() };
+void zCParticleEmitter_AddCompoundReferences::operator()()
+{
+	THISCALL(Ivk_zCParticleEmitter_AddCompoundReferences)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

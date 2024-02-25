@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewProgressBar::ResetRange(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewProgressBar_ResetRange_0x0046F400]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCViewProgressBar::ResetRange()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewProgressBar_ResetRange : zCViewProgressBar { void operator()(); };
+BindedHook Ivk_zCViewProgressBar_ResetRange{ ZENFOR(0x0046A050, 0x004721C0, 0x0046E7D0, 0x0046F400), &zCViewProgressBar_ResetRange::operator() };
+void zCViewProgressBar_ResetRange::operator()()
+{
+	THISCALL(Ivk_zCViewProgressBar_ResetRange)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

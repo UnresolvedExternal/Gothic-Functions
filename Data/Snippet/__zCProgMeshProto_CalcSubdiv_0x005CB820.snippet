@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::CalcSubdiv(int, zCProgMeshProto::zTLODRenderArgs const*): void]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_CalcSubdiv_0x005CB820]]></Shortcut>
+			<Description><![CDATA[private: void __fastcall zCProgMeshProto::CalcSubdiv(int, zCProgMeshProto::zTLODRenderArgs const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_CalcSubdiv : zCProgMeshProto { void __fastcall operator()(int, zCProgMeshProto::zTLODRenderArgs const*); };
+BindedHook Ivk_zCProgMeshProto_CalcSubdiv{ ZENFOR(0x005A7E30, 0x005C4910, 0x005C5870, 0x005CB820), &zCProgMeshProto_CalcSubdiv::operator() };
+void __fastcall zCProgMeshProto_CalcSubdiv::operator()(int a0, zCProgMeshProto::zTLODRenderArgs const* a1)
+{
+	THISCALL(Ivk_zCProgMeshProto_CalcSubdiv)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

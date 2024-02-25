@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera_EventMsg::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCCSCamera_EventMsg__GetClassDef_0x004C3A40]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCCSCamera_EventMsg::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_EventMsg__GetClassDef : zCCSCamera_EventMsg { zCClassDef* operator()() const; };
+BindedHook Ivk_zCCSCamera_EventMsg__GetClassDef{ ZENFOR(0x004BA670, 0x004C99E0, 0x004C14D0, 0x004C3A40), &zCCSCamera_EventMsg__GetClassDef::operator() };
+zCClassDef* zCCSCamera_EventMsg__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCCSCamera_EventMsg__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

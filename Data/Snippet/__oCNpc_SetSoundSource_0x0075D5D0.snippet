@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetSoundSource(int, zCVob*, zVEC3&): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_SetSoundSource_0x0075D5D0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetSoundSource(int, zCVob*, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetSoundSource : oCNpc { void operator()(int, zCVob*, zVEC3&); };
+BindedHook Ivk_oCNpc_SetSoundSource{ ZENFOR(0x006B6C90, 0x006EB5E0, 0x006FE650, 0x0075D5D0), &oCNpc_SetSoundSource::operator() };
+void oCNpc_SetSoundSource::operator()(int a0, zCVob* a1, zVEC3& a2)
+{
+	THISCALL(Ivk_oCNpc_SetSoundSource)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

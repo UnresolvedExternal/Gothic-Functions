@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspLeaf::~zCBspLeaf()]]></Title>
+			<Shortcut><![CDATA[__zCBspLeaf__zCBspLeaf_0x0052DD60]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCBspLeaf::~zCBspLeaf()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspLeaf_Destructor : zCBspLeaf { void operator()(); };
+BindedHook Ivk_zCBspLeaf_Destructor{ ZENFOR(0x0051B490, 0x005310E0, 0x0052AE10, 0x0052DD60), &zCBspLeaf_Destructor::operator() };
+void zCBspLeaf_Destructor::operator()()
+{
+	THISCALL(Ivk_zCBspLeaf_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

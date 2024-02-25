@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCUnderwaterPFX::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCUnderwaterPFX_VectorDeletingDestructor_0x005D9130]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCUnderwaterPFX::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2
+struct zCUnderwaterPFX_VectorDeletingDestructor : zCUnderwaterPFX { void* operator()(unsigned int); };
+BindedHook Ivk_zCUnderwaterPFX_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x005D8490, 0x005D9130, 0x00000000), &zCUnderwaterPFX_VectorDeletingDestructor::operator() };
+void* zCUnderwaterPFX_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCUnderwaterPFX_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

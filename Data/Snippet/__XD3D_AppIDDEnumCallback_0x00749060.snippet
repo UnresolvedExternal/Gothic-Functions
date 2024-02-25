@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[XD3D_AppIDDEnumCallback(_GUID*, char*, char*, void*): int]]></Title>
+			<Shortcut><![CDATA[__XD3D_AppIDDEnumCallback_0x00749060]]></Shortcut>
+			<Description><![CDATA[int __stdcall XD3D_AppIDDEnumCallback(_GUID*, char*, char*, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+int __stdcall Hook_XD3D_AppIDDEnumCallback(_GUID*, char*, char*, void*);
+BindedHook Ivk_XD3D_AppIDDEnumCallback{ ZENFOR(0x0070DE70, 0x00749060, 0x00000000, 0x00000000), Hook_XD3D_AppIDDEnumCallback };
+int __stdcall Hook_XD3D_AppIDDEnumCallback(_GUID* a0, char* a1, char* a2, void* a3)
+{
+	int result = Ivk_XD3D_AppIDDEnumCallback(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

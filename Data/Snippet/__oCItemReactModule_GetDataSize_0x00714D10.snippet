@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemReactModule::GetDataSize(): int]]></Title>
+			<Shortcut><![CDATA[__oCItemReactModule_GetDataSize_0x00714D10]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCItemReactModule::GetDataSize()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemReactModule_GetDataSize : oCItemReactModule { int operator()(); };
+BindedHook Ivk_oCItemReactModule_GetDataSize{ ZENFOR(0x00673CF0, 0x006A1AC0, 0x006B6C80, 0x00714D10), &oCItemReactModule_GetDataSize::operator() };
+int oCItemReactModule_GetDataSize::operator()()
+{
+	int result = THISCALL(Ivk_oCItemReactModule_GetDataSize)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

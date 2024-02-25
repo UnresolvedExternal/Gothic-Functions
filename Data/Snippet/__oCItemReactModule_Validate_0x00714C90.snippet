@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemReactModule::Validate(): void]]></Title>
+			<Shortcut><![CDATA[__oCItemReactModule_Validate_0x00714C90]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCItemReactModule::Validate()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemReactModule_Validate : oCItemReactModule { void operator()(); };
+BindedHook Ivk_oCItemReactModule_Validate{ ZENFOR(0x00673C70, 0x006A1A40, 0x006B6C00, 0x00714C90), &oCItemReactModule_Validate::operator() };
+void oCItemReactModule_Validate::operator()()
+{
+	THISCALL(Ivk_oCItemReactModule_Validate)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

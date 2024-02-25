@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisFX_MultiTarget::InvestNext(): void]]></Title>
+			<Shortcut><![CDATA[__oCVisFX_MultiTarget_InvestNext_0x0049F220]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCVisFX_MultiTarget::InvestNext()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisFX_MultiTarget_InvestNext : oCVisFX_MultiTarget { void operator()(); };
+BindedHook Ivk_oCVisFX_MultiTarget_InvestNext{ ZENFOR(0x00497DF0, 0x004A4E70, 0x0049CEC0, 0x0049F220), &oCVisFX_MultiTarget_InvestNext::operator() };
+void oCVisFX_MultiTarget_InvestNext::operator()()
+{
+	THISCALL(Ivk_oCVisFX_MultiTarget_InvestNext)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

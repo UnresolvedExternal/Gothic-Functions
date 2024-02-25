@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexConGeneric::GetAverageColor(): zCOLOR]]></Title>
+			<Shortcut><![CDATA[__zCTexConGeneric_GetAverageColor_0x0065B6E0]]></Shortcut>
+			<Description><![CDATA[public: zCOLOR __thiscall zCTexConGeneric::GetAverageColor()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTexConGeneric_GetAverageColor : zCTexConGeneric { zCOLOR operator()(); };
+BindedHook Ivk_zCTexConGeneric_GetAverageColor{ ZENFOR(0x00722B10, 0x0075F5D0, 0x0076EBB0, 0x0065B6E0), &zCTexConGeneric_GetAverageColor::operator() };
+zCOLOR zCTexConGeneric_GetAverageColor::operator()()
+{
+	zCOLOR result = THISCALL(Ivk_zCTexConGeneric_GetAverageColor)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

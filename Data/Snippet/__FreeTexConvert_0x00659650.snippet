@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[FreeTexConvert(): void]]></Title>
+			<Shortcut><![CDATA[__FreeTexConvert_0x00659650]]></Shortcut>
+			<Description><![CDATA[void __cdecl FreeTexConvert()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_FreeTexConvert();
+BindedHook Ivk_FreeTexConvert{ ZENFOR(0x00720B30, 0x0075D4C0, 0x0076CB20, 0x00659650), Hook_FreeTexConvert };
+void Hook_FreeTexConvert()
+{
+	Ivk_FreeTexConvert();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

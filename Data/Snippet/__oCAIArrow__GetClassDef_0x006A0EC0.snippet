@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrow::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__oCAIArrow__GetClassDef_0x006A0EC0]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall oCAIArrow::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIArrow__GetClassDef : oCAIArrow { zCClassDef* operator()() const; };
+BindedHook Ivk_oCAIArrow__GetClassDef{ ZENFOR(0x00618FB0, 0x0063C3E0, 0x00644660, 0x006A0EC0), &oCAIArrow__GetClassDef::operator() };
+zCClassDef* oCAIArrow__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_oCAIArrow__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

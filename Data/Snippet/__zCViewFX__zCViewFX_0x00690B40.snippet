@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewFX::~zCViewFX()]]></Title>
+			<Shortcut><![CDATA[__zCViewFX__zCViewFX_0x00690B40]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCViewFX::~zCViewFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewFX_Destructor : zCViewFX { void operator()(); };
+BindedHook Ivk_zCViewFX_Destructor{ ZENFOR(0x00754000, 0x007964C0, 0x007A0D90, 0x00690B40), &zCViewFX_Destructor::operator() };
+void zCViewFX_Destructor::operator()()
+{
+	THISCALL(Ivk_zCViewFX_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

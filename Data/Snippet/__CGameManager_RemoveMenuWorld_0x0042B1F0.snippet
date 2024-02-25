@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::RemoveMenuWorld(): void]]></Title>
+			<Shortcut><![CDATA[__CGameManager_RemoveMenuWorld_0x0042B1F0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall CGameManager::RemoveMenuWorld()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_RemoveMenuWorld : CGameManager { void operator()(); };
+BindedHook Ivk_CGameManager_RemoveMenuWorld{ ZENFOR(0x00429560, 0x0042C130, 0x0042AED0, 0x0042B1F0), &CGameManager_RemoveMenuWorld::operator() };
+void CGameManager_RemoveMenuWorld::operator()()
+{
+	THISCALL(Ivk_CGameManager_RemoveMenuWorld)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

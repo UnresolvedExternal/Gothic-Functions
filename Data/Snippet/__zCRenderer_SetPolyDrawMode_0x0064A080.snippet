@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::SetPolyDrawMode(zTRnd_PolyDrawMode const&): void]]></Title>
+			<Shortcut><![CDATA[__zCRenderer_SetPolyDrawMode_0x0064A080]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRenderer::SetPolyDrawMode(zTRnd_PolyDrawMode const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_SetPolyDrawMode : zCRenderer { void operator()(zTRnd_PolyDrawMode const&); };
+BindedHook Ivk_zCRenderer_SetPolyDrawMode{ ZENFOR(0x00713990, 0x0074F6B0, 0x0075EAE0, 0x0064A080), &zCRenderer_SetPolyDrawMode::operator() };
+void zCRenderer_SetPolyDrawMode::operator()(zTRnd_PolyDrawMode const& a0)
+{
+	THISCALL(Ivk_zCRenderer_SetPolyDrawMode)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

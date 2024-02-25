@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMessageFilter::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCMessageFilter_Archive_0x00618970]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCMessageFilter::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMessageFilter_Archive : zCMessageFilter { void operator()(zCArchiver&); };
+BindedHook Ivk_zCMessageFilter_Archive{ ZENFOR(0x005EB700, 0x0060BD20, 0x006112B0, 0x00618970), &zCMessageFilter_Archive::operator() };
+void zCMessageFilter_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCMessageFilter_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

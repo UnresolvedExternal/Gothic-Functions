@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc_States::CloseCutscenes(): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_States_CloseCutscenes_0x0076D9E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc_States::CloseCutscenes()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_States_CloseCutscenes : oCNpc_States { void operator()(); };
+BindedHook Ivk_oCNpc_States_CloseCutscenes{ ZENFOR(0x006C64A0, 0x006FBE10, 0x0070E480, 0x0076D9E0), &oCNpc_States_CloseCutscenes::operator() };
+void oCNpc_States_CloseCutscenes::operator()()
+{
+	THISCALL(Ivk_oCNpc_States_CloseCutscenes)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

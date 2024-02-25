@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTriggerList::DoTriggering(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCTriggerList_DoTriggering_0x00615190]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCTriggerList::DoTriggering(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTriggerList_DoTriggering : zCTriggerList { void operator()(zCVob*); };
+BindedHook Ivk_zCTriggerList_DoTriggering{ ZENFOR(0x005E8190, 0x00608550, 0x0060DAD0, 0x00615190), &zCTriggerList_DoTriggering::operator() };
+void zCTriggerList_DoTriggering::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCTriggerList_DoTriggering)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

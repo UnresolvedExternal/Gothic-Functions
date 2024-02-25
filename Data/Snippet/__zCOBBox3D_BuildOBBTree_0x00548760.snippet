@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOBBox3D::BuildOBBTree(int, zCPolygon**, int): void]]></Title>
+			<Shortcut><![CDATA[__zCOBBox3D_BuildOBBTree_0x00548760]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCOBBox3D::BuildOBBTree(int, zCPolygon**, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOBBox3D_BuildOBBTree : zCOBBox3D { void operator()(int, zCPolygon**, int); };
+BindedHook Ivk_zCOBBox3D_BuildOBBTree{ ZENFOR(0x00534730, 0x0054B4B0, 0x00543540, 0x00548760), &zCOBBox3D_BuildOBBTree::operator() };
+void zCOBBox3D_BuildOBBTree::operator()(int a0, zCPolygon** a1, int a2)
+{
+	THISCALL(Ivk_zCOBBox3D_BuildOBBTree)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

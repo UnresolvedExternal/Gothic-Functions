@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::Play(float, zMAT4 const*, zMAT4 const*): void]]></Title>
+			<Shortcut><![CDATA[__oCVisualFX_Play_0x0048A050]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCVisualFX::Play(float, zMAT4 const*, zMAT4 const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_Play : oCVisualFX { void operator()(float, zMAT4 const*, zMAT4 const*); };
+BindedHook Ivk_oCVisualFX_Play{ ZENFOR(0x00482620, 0x0048D680, 0x00488890, 0x0048A050), &oCVisualFX_Play::operator() };
+void oCVisualFX_Play::operator()(float a0, zMAT4 const* a1, zMAT4 const* a2)
+{
+	THISCALL(Ivk_oCVisualFX_Play)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

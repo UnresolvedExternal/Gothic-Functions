@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::Turn(zVEC3&): float]]></Title>
+			<Shortcut><![CDATA[__oCNpc_Turn_0x00683000]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall oCNpc::Turn(zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_Turn : oCNpc { float operator()(zVEC3&); };
+BindedHook Ivk_oCNpc_Turn{ ZENFOR(0x0074DA70, 0x0078F700, 0x00799B00, 0x00683000), &oCNpc_Turn::operator() };
+float oCNpc_Turn::operator()(zVEC3& a0)
+{
+	float result = THISCALL(Ivk_oCNpc_Turn)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetInteractMob(oCMobInter*): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_SetInteractMob_0x0074AB00]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetInteractMob(oCMobInter*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetInteractMob : oCNpc { void operator()(oCMobInter*); };
+BindedHook Ivk_oCNpc_SetInteractMob{ ZENFOR(0x006A65C0, 0x006D91A0, 0x006EBE30, 0x0074AB00), &oCNpc_SetInteractMob::operator() };
+void oCNpc_SetInteractMob::operator()(oCMobInter* a0)
+{
+	THISCALL(Ivk_oCNpc_SetInteractMob)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

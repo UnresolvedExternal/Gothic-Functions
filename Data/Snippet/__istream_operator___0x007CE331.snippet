@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[istream::operator>>(char*): istream&]]></Title>
+			<Shortcut><![CDATA[__istream_operator___0x007CE331]]></Shortcut>
+			<Description><![CDATA[public: istream& __thiscall istream::operator>>(char*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct istream_operator__ : istream { istream& operator()(char*); };
+BindedHook Ivk_istream_operator__{ ZENFOR(0x00774987, 0x007B8747, 0x007C1E71, 0x007CE331), &istream_operator__::operator() };
+istream& istream_operator__::operator()(char* a0)
+{
+	istream& result = THISCALL(Ivk_istream_operator__)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

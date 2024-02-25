@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[D3DXAssert(char const*, int, char const*): void]]></Title>
+			<Shortcut><![CDATA[__D3DXAssert_0x007B6E73]]></Shortcut>
+			<Description><![CDATA[void __cdecl D3DXAssert(char const*, int, char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_D3DXAssert(char const*, int, char const*);
+BindedHook Ivk_D3DXAssert{ ZENFOR(0x0075D77F, 0x007A02F3, 0x007AA9AD, 0x007B6E73), Hook_D3DXAssert };
+void Hook_D3DXAssert(char const* a0, int a1, char const* a2)
+{
+	Ivk_D3DXAssert(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

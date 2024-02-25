@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zVEC3::NormalizeSafe(): zVEC3&]]></Title>
+			<Shortcut><![CDATA[__zVEC3_NormalizeSafe_0x00498A20]]></Shortcut>
+			<Description><![CDATA[public: zVEC3& __thiscall zVEC3::NormalizeSafe()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zVEC3_NormalizeSafe : zVEC3 { zVEC3& operator()(); };
+BindedHook Ivk_zVEC3_NormalizeSafe{ ZENFOR(0x004AC6C0, 0x004BA690, 0x00496D70, 0x00498A20), &zVEC3_NormalizeSafe::operator() };
+zVEC3& zVEC3_NormalizeSafe::operator()()
+{
+	zVEC3& result = THISCALL(Ivk_zVEC3_NormalizeSafe)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

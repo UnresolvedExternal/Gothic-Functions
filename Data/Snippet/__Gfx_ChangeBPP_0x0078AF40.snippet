@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Gfx_ChangeBPP(TGfx_Gfx*): void]]></Title>
+			<Shortcut><![CDATA[__Gfx_ChangeBPP_0x0078AF40]]></Shortcut>
+			<Description><![CDATA[void __cdecl Gfx_ChangeBPP(TGfx_Gfx*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Gfx_ChangeBPP(TGfx_Gfx*);
+BindedHook Ivk_Gfx_ChangeBPP{ ZENFOR(0x006E1C10, 0x0071A2D0, 0x0072B500, 0x0078AF40), Hook_Gfx_ChangeBPP };
+void Hook_Gfx_ChangeBPP(TGfx_Gfx* a0)
+{
+	Ivk_Gfx_ChangeBPP(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

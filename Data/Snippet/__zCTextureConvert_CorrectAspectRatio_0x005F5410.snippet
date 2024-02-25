@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureConvert::CorrectAspectRatio(int&, int&): void]]></Title>
+			<Shortcut><![CDATA[__zCTextureConvert_CorrectAspectRatio_0x005F5410]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCTextureConvert::CorrectAspectRatio(int&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCTextureConvert_CorrectAspectRatio(int&, int&);
+BindedHook Ivk_zCTextureConvert_CorrectAspectRatio{ ZENFOR(0x005CA520, 0x005E8F70, 0x005EE660, 0x005F5410), Hook_zCTextureConvert_CorrectAspectRatio };
+void Hook_zCTextureConvert_CorrectAspectRatio(int& a0, int& a1)
+{
+	Ivk_zCTextureConvert_CorrectAspectRatio(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::ReadySpell(int, int): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_ReadySpell_0x006802E0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::ReadySpell(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_ReadySpell : oCNpc { int operator()(int, int); };
+BindedHook Ivk_oCNpc_ReadySpell{ ZENFOR(0x0074AEF0, 0x0078C3E0, 0x00796E00, 0x006802E0), &oCNpc_ReadySpell::operator() };
+int oCNpc_ReadySpell::operator()(int a0, int a1)
+{
+	int result = THISCALL(Ivk_oCNpc_ReadySpell)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::_Stand(): void]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human__Stand_0x006B7490]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::_Stand()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human__Stand : oCAniCtrl_Human { void operator()(); };
+BindedHook Ivk_oCAniCtrl_Human__Stand{ ZENFOR(0x0062DCF0, 0x006534C0, 0x0065AB00, 0x006B7490), &oCAniCtrl_Human__Stand::operator() };
+void oCAniCtrl_Human__Stand::operator()()
+{
+	THISCALL(Ivk_oCAniCtrl_Human__Stand)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

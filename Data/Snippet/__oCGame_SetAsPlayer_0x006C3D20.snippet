@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::SetAsPlayer(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__oCGame_SetAsPlayer_0x006C3D20]]></Shortcut>
+			<Description><![CDATA[private: virtual void __thiscall oCGame::SetAsPlayer(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_SetAsPlayer : oCGame { void operator()(zSTRING const&); };
+BindedHook Ivk_oCGame_SetAsPlayer{ ZENFOR(0x00639840, 0x0065FFF0, 0x006670E0, 0x006C3D20), &oCGame_SetAsPlayer::operator() };
+void oCGame_SetAsPlayer::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_oCGame_SetAsPlayer)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

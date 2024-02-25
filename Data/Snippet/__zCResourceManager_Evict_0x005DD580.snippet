@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResourceManager::Evict(): void]]></Title>
+			<Shortcut><![CDATA[__zCResourceManager_Evict_0x005DD580]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCResourceManager::Evict()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResourceManager_Evict : zCResourceManager { void operator()(); };
+BindedHook Ivk_zCResourceManager_Evict{ ZENFOR(0x005B61E0, 0x005D39C0, 0x005D67C0, 0x005DD580), &zCResourceManager_Evict::operator() };
+void zCResourceManager_Evict::operator()()
+{
+	THISCALL(Ivk_zCResourceManager_Evict)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolyStrip::FreeResources(): void]]></Title>
+			<Shortcut><![CDATA[__zCPolyStrip_FreeResources_0x005BDAE0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCPolyStrip::FreeResources()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolyStrip_FreeResources : zCPolyStrip { void operator()(); };
+BindedHook Ivk_zCPolyStrip_FreeResources{ ZENFOR(0x0059BDE0, 0x005B8200, 0x005B7F70, 0x005BDAE0), &zCPolyStrip_FreeResources::operator() };
+void zCPolyStrip_FreeResources::operator()()
+{
+	THISCALL(Ivk_zCPolyStrip_FreeResources)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenu_Log::~oCMenu_Log()]]></Title>
+			<Shortcut><![CDATA[__oCMenu_Log__oCMenu_Log_0x0047B9A0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCMenu_Log::~oCMenu_Log()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenu_Log_Destructor : oCMenu_Log { void operator()(); };
+BindedHook Ivk_oCMenu_Log_Destructor{ ZENFOR(0x00474830, 0x0047DFB0, 0x0047A4D0, 0x0047B9A0), &oCMenu_Log_Destructor::operator() };
+void oCMenu_Log_Destructor::operator()()
+{
+	THISCALL(Ivk_oCMenu_Log_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::LibValidateOU(zSTRING&): int]]></Title>
+			<Shortcut><![CDATA[__zCCSManager_LibValidateOU_0x0041C3E0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCCSManager::LibValidateOU(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_LibValidateOU : zCCSManager { int operator()(zSTRING&); };
+BindedHook Ivk_zCCSManager_LibValidateOU{ ZENFOR(0x0041BE50, 0x0041DCB0, 0x0041C0B0, 0x0041C3E0), &zCCSManager_LibValidateOU::operator() };
+int zCCSManager_LibValidateOU::operator()(zSTRING& a0)
+{
+	int result = THISCALL(Ivk_zCCSManager_LibValidateOU)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

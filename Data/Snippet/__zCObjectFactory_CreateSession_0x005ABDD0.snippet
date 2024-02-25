@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCObjectFactory::CreateSession(): zCSession*]]></Title>
+			<Shortcut><![CDATA[__zCObjectFactory_CreateSession_0x005ABDD0]]></Shortcut>
+			<Description><![CDATA[public: virtual zCSession* __thiscall zCObjectFactory::CreateSession()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCObjectFactory_CreateSession : zCObjectFactory { zCSession* operator()(); };
+BindedHook Ivk_zCObjectFactory_CreateSession{ ZENFOR(0x0058C130, 0x005A7720, 0x005A6870, 0x005ABDD0), &zCObjectFactory_CreateSession::operator() };
+zCSession* zCObjectFactory_CreateSession::operator()()
+{
+	zCSession* result = THISCALL(Ivk_zCObjectFactory_CreateSession)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::Message(zSTRING&): void]]></Title>
+			<Shortcut><![CDATA[__zCParser_Message_0x0078E5F0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCParser::Message(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_Message : zCParser { void operator()(zSTRING&); };
+BindedHook Ivk_zCParser_Message{ ZENFOR(0x006E5370, 0x0071DDD0, 0x0072EBB0, 0x0078E5F0), &zCParser_Message::operator() };
+void zCParser_Message::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_zCParser_Message)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

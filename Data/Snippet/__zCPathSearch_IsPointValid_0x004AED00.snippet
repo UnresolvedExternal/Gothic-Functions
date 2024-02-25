@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPathSearch::IsPointValid(zVEC3 const&, int, zTPoseFailReason&): int]]></Title>
+			<Shortcut><![CDATA[__zCPathSearch_IsPointValid_0x004AED00]]></Shortcut>
+			<Description><![CDATA[protected: int __thiscall zCPathSearch::IsPointValid(zVEC3 const&, int, zTPoseFailReason&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPathSearch_IsPointValid : zCPathSearch { int operator()(zVEC3 const&, int, zTPoseFailReason&); };
+BindedHook Ivk_zCPathSearch_IsPointValid{ ZENFOR(0x004A7130, 0x004B4D00, 0x004AC7D0, 0x004AED00), &zCPathSearch_IsPointValid::operator() };
+int zCPathSearch_IsPointValid::operator()(zVEC3 const& a0, int a1, zTPoseFailReason& a2)
+{
+	int result = THISCALL(Ivk_zCPathSearch_IsPointValid)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

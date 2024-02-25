@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<oCNpc const*, oCShrinkHelper>::ClearCache(): void]]></Title>
+			<Shortcut><![CDATA[__zCCache_oCNpc_const___oCShrinkHelper__ClearCache_0x007609C0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCache<oCNpc const*, oCShrinkHelper>::ClearCache()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_oCNpc_const___oCShrinkHelper__ClearCache : zCCache<oCNpc const*, oCShrinkHelper> { void operator()(); };
+BindedHook Ivk_zCCache_oCNpc_const___oCShrinkHelper__ClearCache{ ZENFOR(0x006B9D80, 0x006EE950, 0x00701730, 0x007609C0), &zCCache_oCNpc_const___oCShrinkHelper__ClearCache::operator() };
+void zCCache_oCNpc_const___oCShrinkHelper__ClearCache::operator()()
+{
+	THISCALL(Ivk_zCCache_oCNpc_const___oCShrinkHelper__ClearCache)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::SetNewTrafoObjToWorld(zMAT4 const&): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_SetNewTrafoObjToWorld_0x0061B0C0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCVob::SetNewTrafoObjToWorld(zMAT4 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_SetNewTrafoObjToWorld : zCVob { void operator()(zMAT4 const&); };
+BindedHook Ivk_zCVob_SetNewTrafoObjToWorld{ ZENFOR(0x005EDBC0, 0x0060E340, 0x00613A00, 0x0061B0C0), &zCVob_SetNewTrafoObjToWorld::operator() };
+void zCVob_SetNewTrafoObjToWorld::operator()(zMAT4 const& a0)
+{
+	THISCALL(Ivk_zCVob_SetNewTrafoObjToWorld)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

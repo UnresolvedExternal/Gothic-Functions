@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCSoundFX*>::Insert(zCSoundFX* const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCSoundFX___Insert_0x005A1C40]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCSoundFX*>::Insert(zCSoundFX* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCArray_zCSoundFX___Insert : zCArray<zCSoundFX*> { void operator()(zCSoundFX* const&); };
+BindedHook Ivk_zCArray_zCSoundFX___Insert{ ZENFOR(0x00000000, 0x00000000, 0x0059C6E0, 0x005A1C40), &zCArray_zCSoundFX___Insert::operator() };
+void zCArray_zCSoundFX___Insert::operator()(zCSoundFX* const& a0)
+{
+	THISCALL(Ivk_zCArray_zCSoundFX___Insert)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

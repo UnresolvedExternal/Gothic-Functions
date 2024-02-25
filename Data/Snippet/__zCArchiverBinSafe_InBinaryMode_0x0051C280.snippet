@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::InBinaryMode(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe_InBinaryMode_0x0051C280]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCArchiverBinSafe::InBinaryMode()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_InBinaryMode : zCArchiverBinSafe { int operator()() const; };
+BindedHook Ivk_zCArchiverBinSafe_InBinaryMode{ ZENFOR(0x0050C160, 0x00520ED0, 0x005194B0, 0x0051C280), &zCArchiverBinSafe_InBinaryMode::operator() };
+int zCArchiverBinSafe_InBinaryMode::operator()() const
+{
+	int result = THISCALL(Ivk_zCArchiverBinSafe_InBinaryMode)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<oCNpc const*, oCNpc::TActiveInfo>::PurgeCache(): void]]></Title>
+			<Shortcut><![CDATA[__zCCache_oCNpc_const___oCNpc__TActiveInfo__PurgeCache_0x00760330]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCache<oCNpc const*, oCNpc::TActiveInfo>::PurgeCache()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_oCNpc_const___oCNpc__TActiveInfo__PurgeCache : zCCache<oCNpc const*, oCNpc::TActiveInfo> { void operator()(); };
+BindedHook Ivk_zCCache_oCNpc_const___oCNpc__TActiveInfo__PurgeCache{ ZENFOR(0x006B96F0, 0x006EE280, 0x007010A0, 0x00760330), &zCCache_oCNpc_const___oCNpc__TActiveInfo__PurgeCache::operator() };
+void zCCache_oCNpc_const___oCNpc__TActiveInfo__PurgeCache::operator()()
+{
+	THISCALL(Ivk_zCCache_oCNpc_const___oCNpc__TActiveInfo__PurgeCache)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

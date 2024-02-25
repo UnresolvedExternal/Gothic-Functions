@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CSurfaceFormatNode>::LeftBelongsCloserToListHead(CSurfaceFormatNode*, CSurfaceFormatNode*): int]]></Title>
+			<Shortcut><![CDATA[__ListT_CSurfaceFormatNode__LeftBelongsCloserToListHead_0x007B6716]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall ListT<CSurfaceFormatNode>::LeftBelongsCloserToListHead(CSurfaceFormatNode*, CSurfaceFormatNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CSurfaceFormatNode__LeftBelongsCloserToListHead : ListT<CSurfaceFormatNode> { int operator()(CSurfaceFormatNode*, CSurfaceFormatNode*); };
+BindedHook Ivk_ListT_CSurfaceFormatNode__LeftBelongsCloserToListHead{ ZENFOR(0x0075D022, 0x0079FEA6, 0x007AA250, 0x007B6716), &ListT_CSurfaceFormatNode__LeftBelongsCloserToListHead::operator() };
+int ListT_CSurfaceFormatNode__LeftBelongsCloserToListHead::operator()(CSurfaceFormatNode* a0, CSurfaceFormatNode* a1)
+{
+	int result = THISCALL(Ivk_ListT_CSurfaceFormatNode__LeftBelongsCloserToListHead)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

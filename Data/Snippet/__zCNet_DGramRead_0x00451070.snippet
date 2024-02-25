@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::DGramRead(zCNetMessage*&): int]]></Title>
+			<Shortcut><![CDATA[__zCNet_DGramRead_0x00451070]]></Shortcut>
+			<Description><![CDATA[protected: int __thiscall zCNet::DGramRead(zCNetMessage*&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_DGramRead : zCNet { int operator()(zCNetMessage*&); };
+BindedHook Ivk_zCNet_DGramRead{ ZENFOR(0x0044C8D0, 0x00452ED0, 0x00450920, 0x00451070), &zCNet_DGramRead::operator() };
+int zCNet_DGramRead::operator()(zCNetMessage*& a0)
+{
+	int result = THISCALL(Ivk_zCNet_DGramRead)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

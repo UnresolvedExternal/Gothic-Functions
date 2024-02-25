@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNewsMemory::Remove(oCNews*): void]]></Title>
+			<Shortcut><![CDATA[__oCNewsMemory_Remove_0x00729790]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNewsMemory::Remove(oCNews*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNewsMemory_Remove : oCNewsMemory { void operator()(oCNews*); };
+BindedHook Ivk_oCNewsMemory_Remove{ ZENFOR(0x00687680, 0x006B7770, 0x006CB700, 0x00729790), &oCNewsMemory_Remove::operator() };
+void oCNewsMemory_Remove::operator()(oCNews* a0)
+{
+	THISCALL(Ivk_oCNewsMemory_Remove)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

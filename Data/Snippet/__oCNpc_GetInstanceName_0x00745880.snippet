@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetInstanceName(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetInstanceName_0x00745880]]></Shortcut>
+			<Description><![CDATA[public: virtual zSTRING __thiscall oCNpc::GetInstanceName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetInstanceName : oCNpc { zSTRING operator()(); };
+BindedHook Ivk_oCNpc_GetInstanceName{ ZENFOR(0x006A1B80, 0x006D4370, 0x006E6DE0, 0x00745880), &oCNpc_GetInstanceName::operator() };
+zSTRING oCNpc_GetInstanceName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_oCNpc_GetInstanceName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

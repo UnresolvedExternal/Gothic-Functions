@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::RefreshNpc(): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_RefreshNpc_0x00742110]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::RefreshNpc()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_RefreshNpc : oCNpc { void operator()(); };
+BindedHook Ivk_oCNpc_RefreshNpc{ ZENFOR(0x0069E510, 0x006D08B0, 0x006E3700, 0x00742110), &oCNpc_RefreshNpc::operator() };
+void oCNpc_RefreshNpc::operator()()
+{
+	THISCALL(Ivk_oCNpc_RefreshNpc)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

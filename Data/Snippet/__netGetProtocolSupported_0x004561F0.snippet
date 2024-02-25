@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[netGetProtocolSupported(int): int]]></Title>
+			<Shortcut><![CDATA[__netGetProtocolSupported_0x004561F0]]></Shortcut>
+			<Description><![CDATA[int __cdecl netGetProtocolSupported(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_netGetProtocolSupported(int);
+BindedHook Ivk_netGetProtocolSupported{ ZENFOR(0x00451560, 0x00457F40, 0x00455AA0, 0x004561F0), Hook_netGetProtocolSupported };
+int Hook_netGetProtocolSupported(int a0)
+{
+	int result = Ivk_netGetProtocolSupported(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

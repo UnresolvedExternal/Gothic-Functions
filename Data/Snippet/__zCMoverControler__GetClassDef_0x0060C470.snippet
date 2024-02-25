@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMoverControler::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCMoverControler__GetClassDef_0x0060C470]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCMoverControler::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMoverControler__GetClassDef : zCMoverControler { zCClassDef* operator()() const; };
+BindedHook Ivk_zCMoverControler__GetClassDef{ ZENFOR(0x005DF340, 0x005FF100, 0x00604DB0, 0x0060C470), &zCMoverControler__GetClassDef::operator() };
+zCClassDef* zCMoverControler__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCMoverControler__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

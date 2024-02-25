@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSVM::~oCSVM()]]></Title>
+			<Shortcut><![CDATA[__oCSVM__oCSVM_0x0077A270]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCSVM::~oCSVM()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSVM_Destructor : oCSVM { void operator()(); };
+BindedHook Ivk_oCSVM_Destructor{ ZENFOR(0x006D18C0, 0x00708510, 0x0071A830, 0x0077A270), &oCSVM_Destructor::operator() };
+void oCSVM_Destructor::operator()()
+{
+	THISCALL(Ivk_oCSVM_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

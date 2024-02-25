@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::IsJumpStanding(): int]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_IsJumpStanding_0x006AE080]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCAniCtrl_Human::IsJumpStanding()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_IsJumpStanding : oCAniCtrl_Human { int operator()(); };
+BindedHook Ivk_oCAniCtrl_Human_IsJumpStanding{ ZENFOR(0x00625780, 0x0064A4D0, 0x00651800, 0x006AE080), &oCAniCtrl_Human_IsJumpStanding::operator() };
+int oCAniCtrl_Human_IsJumpStanding::operator()()
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_IsJumpStanding)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

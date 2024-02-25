@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[cfgSetBinary(char*, char*, void*, int): void]]></Title>
+			<Shortcut><![CDATA[__cfgSetBinary_0x00505A30]]></Shortcut>
+			<Description><![CDATA[void __cdecl cfgSetBinary(char*, char*, void*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_cfgSetBinary(char*, char*, void*, int);
+BindedHook Ivk_cfgSetBinary{ ZENFOR(0x004F6F30, 0x005099A0, 0x00502D40, 0x00505A30), Hook_cfgSetBinary };
+void Hook_cfgSetBinary(char* a0, char* a1, void* a2, int a3)
+{
+	Ivk_cfgSetBinary(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

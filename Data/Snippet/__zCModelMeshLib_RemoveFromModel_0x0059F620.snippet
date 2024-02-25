@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelMeshLib::RemoveFromModel(zCModel*): void]]></Title>
+			<Shortcut><![CDATA[__zCModelMeshLib_RemoveFromModel_0x0059F620]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModelMeshLib::RemoveFromModel(zCModel*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelMeshLib_RemoveFromModel : zCModelMeshLib { void operator()(zCModel*); };
+BindedHook Ivk_zCModelMeshLib_RemoveFromModel{ ZENFOR(0x0057FB60, 0x0059A500, 0x0059A0C0, 0x0059F620), &zCModelMeshLib_RemoveFromModel::operator() };
+void zCModelMeshLib_RemoveFromModel::operator()(zCModel* a0)
+{
+	THISCALL(Ivk_zCModelMeshLib_RemoveFromModel)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

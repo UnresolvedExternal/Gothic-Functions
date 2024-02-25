@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetStatistics::AddLostRecv(unsigned int): void]]></Title>
+			<Shortcut><![CDATA[__zCNetStatistics_AddLostRecv_0x00452F90]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCNetStatistics::AddLostRecv(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetStatistics_AddLostRecv : zCNetStatistics { void operator()(unsigned int); };
+BindedHook Ivk_zCNetStatistics_AddLostRecv{ ZENFOR(0x0044E770, 0x00454EA0, 0x00452840, 0x00452F90), &zCNetStatistics_AddLostRecv::operator() };
+void zCNetStatistics_AddLostRecv::operator()(unsigned int a0)
+{
+	THISCALL(Ivk_zCNetStatistics_AddLostRecv)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

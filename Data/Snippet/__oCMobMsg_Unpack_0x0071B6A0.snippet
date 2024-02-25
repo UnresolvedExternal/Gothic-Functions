@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobMsg::Unpack(zCBuffer&, zCEventManager*): void]]></Title>
+			<Shortcut><![CDATA[__oCMobMsg_Unpack_0x0071B6A0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall oCMobMsg::Unpack(zCBuffer&, zCEventManager*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobMsg_Unpack : oCMobMsg { void operator()(zCBuffer&, zCEventManager*); };
+BindedHook Ivk_oCMobMsg_Unpack{ ZENFOR(0x0067A4C0, 0x006A8B40, 0x006BD610, 0x0071B6A0), &oCMobMsg_Unpack::operator() };
+void oCMobMsg_Unpack::operator()(zCBuffer& a0, zCEventManager* a1)
+{
+	THISCALL(Ivk_oCMobMsg_Unpack)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

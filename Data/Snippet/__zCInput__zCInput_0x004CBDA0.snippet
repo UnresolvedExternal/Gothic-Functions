@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::~zCInput()]]></Title>
+			<Shortcut><![CDATA[__zCInput__zCInput_0x004CBDA0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCInput::~zCInput()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_Destructor : zCInput { void operator()(); };
+BindedHook Ivk_zCInput_Destructor{ ZENFOR(0x004C2A50, 0x004D2360, 0x004C9830, 0x004CBDA0), &zCInput_Destructor::operator() };
+void zCInput_Destructor::operator()()
+{
+	THISCALL(Ivk_zCInput_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

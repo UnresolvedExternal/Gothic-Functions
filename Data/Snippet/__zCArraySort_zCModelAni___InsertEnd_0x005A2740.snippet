@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCModelAni*>::InsertEnd(zCModelAni* const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCModelAni___InsertEnd_0x005A2740]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zCModelAni*>::InsertEnd(zCModelAni* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCModelAni___InsertEnd : zCArraySort<zCModelAni*> { void operator()(zCModelAni* const&); };
+BindedHook Ivk_zCArraySort_zCModelAni___InsertEnd{ ZENFOR(0x00582C60, 0x0059D7A0, 0x0059D1E0, 0x005A2740), &zCArraySort_zCModelAni___InsertEnd::operator() };
+void zCArraySort_zCModelAni___InsertEnd::operator()(zCModelAni* const& a0)
+{
+	THISCALL(Ivk_zCArraySort_zCModelAni___InsertEnd)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

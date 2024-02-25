@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobBed::~oCMobBed()]]></Title>
+			<Shortcut><![CDATA[__oCMobBed__oCMobBed_0x00723040]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall oCMobBed::~oCMobBed()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobBed_Destructor : oCMobBed { void operator()(); };
+BindedHook Ivk_oCMobBed_Destructor{ ZENFOR(0x00681590, 0x006B09A0, 0x006C4FB0, 0x00723040), &oCMobBed_Destructor::operator() };
+void oCMobBed_Destructor::operator()()
+{
+	THISCALL(Ivk_oCMobBed_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

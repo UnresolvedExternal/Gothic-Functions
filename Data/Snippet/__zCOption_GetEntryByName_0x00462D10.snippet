@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::GetEntryByName(zCOptionSection*, zSTRING const&, int): zCOptionEntry*]]></Title>
+			<Shortcut><![CDATA[__zCOption_GetEntryByName_0x00462D10]]></Shortcut>
+			<Description><![CDATA[public: zCOptionEntry* __thiscall zCOption::GetEntryByName(zCOptionSection*, zSTRING const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_GetEntryByName : zCOption { zCOptionEntry* operator()(zCOptionSection*, zSTRING const&, int); };
+BindedHook Ivk_zCOption_GetEntryByName{ ZENFOR(0x0045D5B0, 0x00464E30, 0x00462500, 0x00462D10), &zCOption_GetEntryByName::operator() };
+zCOptionEntry* zCOption_GetEntryByName::operator()(zCOptionSection* a0, zSTRING const& a1, int a2)
+{
+	zCOptionEntry* result = THISCALL(Ivk_zCOption_GetEntryByName)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

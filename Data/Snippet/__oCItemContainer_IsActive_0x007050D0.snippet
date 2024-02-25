@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::IsActive(): int]]></Title>
+			<Shortcut><![CDATA[__oCItemContainer_IsActive_0x007050D0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCItemContainer::IsActive()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemContainer_IsActive : oCItemContainer { int operator()(); };
+BindedHook Ivk_oCItemContainer_IsActive{ ZENFOR(0x006665A0, 0x00693D90, 0x006A7640, 0x007050D0), &oCItemContainer_IsActive::operator() };
+int oCItemContainer_IsActive::operator()()
+{
+	int result = THISCALL(Ivk_oCItemContainer_IsActive)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

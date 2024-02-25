@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::oSDamageDescriptor::oSDamageDescriptor(oCNpc::oSDamageDescriptor const&)]]></Title>
+			<Shortcut><![CDATA[__oCNpc__oSDamageDescriptor_oSDamageDescriptor_0x00664250]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCNpc::oSDamageDescriptor::oSDamageDescriptor(oCNpc::oSDamageDescriptor const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc__oSDamageDescriptor_oSDamageDescriptor : oCNpc::oSDamageDescriptor { void operator()(oCNpc::oSDamageDescriptor const&); };
+BindedHook Ivk_oCNpc__oSDamageDescriptor_oSDamageDescriptor{ ZENFOR(0x0072F280, 0x0076DBC0, 0x0077AFE0, 0x00664250), &oCNpc__oSDamageDescriptor_oSDamageDescriptor::operator() };
+void oCNpc__oSDamageDescriptor_oSDamageDescriptor::operator()(oCNpc::oSDamageDescriptor const& a0)
+{
+	THISCALL(Ivk_oCNpc__oSDamageDescriptor_oSDamageDescriptor)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCPlayerInfo::SetInstanceByName(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__oCPlayerInfo_SetInstanceByName_0x00436590]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCPlayerInfo::SetInstanceByName(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCPlayerInfo_SetInstanceByName : oCPlayerInfo { void operator()(zSTRING const&); };
+BindedHook Ivk_oCPlayerInfo_SetInstanceByName{ ZENFOR(0x00433730, 0x00437650, 0x00436090, 0x00436590), &oCPlayerInfo_SetInstanceByName::operator() };
+void oCPlayerInfo_SetInstanceByName::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_oCPlayerInfo_SetInstanceByName)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

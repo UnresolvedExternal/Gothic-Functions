@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::RestoreBuffer(void*, unsigned long): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_RestoreBuffer_0x005252D0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __fastcall zCArchiverGeneric::RestoreBuffer(void*, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_RestoreBuffer : zCArchiverGeneric { void __fastcall operator()(void*, unsigned long); };
+BindedHook Ivk_zCArchiverGeneric_RestoreBuffer{ ZENFOR(0x00514720, 0x00529D60, 0x00522500, 0x005252D0), &zCArchiverGeneric_RestoreBuffer::operator() };
+void __fastcall zCArchiverGeneric_RestoreBuffer::operator()(void* a0, unsigned long a1)
+{
+	THISCALL(Ivk_zCArchiverGeneric_RestoreBuffer)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

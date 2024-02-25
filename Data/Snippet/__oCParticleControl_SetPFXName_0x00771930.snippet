@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCParticleControl::SetPFXName(zSTRING&): void]]></Title>
+			<Shortcut><![CDATA[__oCParticleControl_SetPFXName_0x00771930]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCParticleControl::SetPFXName(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCParticleControl_SetPFXName : oCParticleControl { void operator()(zSTRING&); };
+BindedHook Ivk_oCParticleControl_SetPFXName{ ZENFOR(0x006CA140, 0x007000B0, 0x007123A0, 0x00771930), &oCParticleControl_SetPFXName::operator() };
+void oCParticleControl_SetPFXName::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_oCParticleControl_SetPFXName)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

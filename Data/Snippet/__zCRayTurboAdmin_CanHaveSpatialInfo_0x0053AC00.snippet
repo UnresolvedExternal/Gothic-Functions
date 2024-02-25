@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRayTurboAdmin::CanHaveSpatialInfo(zCBspNode const*): int]]></Title>
+			<Shortcut><![CDATA[__zCRayTurboAdmin_CanHaveSpatialInfo_0x0053AC00]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCRayTurboAdmin::CanHaveSpatialInfo(zCBspNode const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCRayTurboAdmin_CanHaveSpatialInfo : zCRayTurboAdmin { int operator()(zCBspNode const*); };
+BindedHook Ivk_zCRayTurboAdmin_CanHaveSpatialInfo{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x0053AC00), &zCRayTurboAdmin_CanHaveSpatialInfo::operator() };
+int zCRayTurboAdmin_CanHaveSpatialInfo::operator()(zCBspNode const* a0)
+{
+	int result = THISCALL(Ivk_zCRayTurboAdmin_CanHaveSpatialInfo)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

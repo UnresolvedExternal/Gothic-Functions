@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zMAT4::Inverse(): zMAT4 [const]]]></Title>
+			<Shortcut><![CDATA[__zMAT4_Inverse_0x00515500]]></Shortcut>
+			<Description><![CDATA[public: zMAT4 __thiscall zMAT4::Inverse()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zMAT4_Inverse : zMAT4 { zMAT4 operator()() const; };
+BindedHook Ivk_zMAT4_Inverse{ ZENFOR(0x005058F0, 0x005197F0, 0x00512730, 0x00515500), &zMAT4_Inverse::operator() };
+zMAT4 zMAT4_Inverse::operator()() const
+{
+	zMAT4 result = THISCALL(Ivk_zMAT4_Inverse)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

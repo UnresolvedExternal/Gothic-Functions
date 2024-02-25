@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::InitBodyStates(): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_InitBodyStates_0x0075E8C0]]></Shortcut>
+			<Description><![CDATA[protected: static void __cdecl oCNpc::InitBodyStates()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCNpc_InitBodyStates();
+BindedHook Ivk_oCNpc_InitBodyStates{ ZENFOR(0x006B7FA0, 0x006ECA50, 0x006FF940, 0x0075E8C0), Hook_oCNpc_InitBodyStates };
+void Hook_oCNpc_InitBodyStates()
+{
+	Ivk_oCNpc_InitBodyStates();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

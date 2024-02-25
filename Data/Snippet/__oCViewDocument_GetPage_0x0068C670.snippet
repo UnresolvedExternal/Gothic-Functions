@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDocument::GetPage(int): oCViewDocument*]]></Title>
+			<Shortcut><![CDATA[__oCViewDocument_GetPage_0x0068C670]]></Shortcut>
+			<Description><![CDATA[protected: oCViewDocument* __fastcall oCViewDocument::GetPage(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDocument_GetPage : oCViewDocument { oCViewDocument* __fastcall operator()(int); };
+BindedHook Ivk_oCViewDocument_GetPage{ ZENFOR(0x007251B0, 0x00762430, 0x00771640, 0x0068C670), &oCViewDocument_GetPage::operator() };
+oCViewDocument* __fastcall oCViewDocument_GetPage::operator()(int a0)
+{
+	oCViewDocument* result = THISCALL(Ivk_oCViewDocument_GetPage)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

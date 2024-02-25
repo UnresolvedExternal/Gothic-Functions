@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventMover::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCEventMover__GetClassDef_0x0060F460]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCEventMover::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventMover__GetClassDef : zCEventMover { zCClassDef* operator()() const; };
+BindedHook Ivk_zCEventMover__GetClassDef{ ZENFOR(0x005E25D0, 0x006024A0, 0x00607DA0, 0x0060F460), &zCEventMover__GetClassDef::operator() };
+zCClassDef* zCEventMover__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCEventMover__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

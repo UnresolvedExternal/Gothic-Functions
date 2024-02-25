@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMoverControler::OnTouch(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCMoverControler_OnTouch_0x0060C4A0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCMoverControler::OnTouch(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMoverControler_OnTouch : zCMoverControler { void operator()(zCVob*); };
+BindedHook Ivk_zCMoverControler_OnTouch{ ZENFOR(0x005DF370, 0x005FF130, 0x00604DE0, 0x0060C4A0), &zCMoverControler_OnTouch::operator() };
+void zCMoverControler_OnTouch::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCMoverControler_OnTouch)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

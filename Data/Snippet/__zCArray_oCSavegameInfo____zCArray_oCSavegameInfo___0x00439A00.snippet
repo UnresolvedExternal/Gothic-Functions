@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<oCSavegameInfo*>::~zCArray<oCSavegameInfo*>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_oCSavegameInfo____zCArray_oCSavegameInfo___0x00439A00]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<oCSavegameInfo*>::~zCArray<oCSavegameInfo*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_oCSavegameInfo___Destructor : zCArray<oCSavegameInfo*> { void operator()(); };
+BindedHook Ivk_zCArray_oCSavegameInfo___Destructor{ ZENFOR(0x00436420, 0x0043A8C0, 0x004393D0, 0x00439A00), &zCArray_oCSavegameInfo___Destructor::operator() };
+void zCArray_oCSavegameInfo___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_oCSavegameInfo___Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

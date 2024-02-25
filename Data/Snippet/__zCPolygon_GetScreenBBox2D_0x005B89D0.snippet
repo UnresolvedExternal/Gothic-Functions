@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::GetScreenBBox2D(zTBBox2D&): void]]></Title>
+			<Shortcut><![CDATA[__zCPolygon_GetScreenBBox2D_0x005B89D0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCPolygon::GetScreenBBox2D(zTBBox2D&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolygon_GetScreenBBox2D : zCPolygon { void operator()(zTBBox2D&); };
+BindedHook Ivk_zCPolygon_GetScreenBBox2D{ ZENFOR(0x00596930, 0x005B28D0, 0x005B2E60, 0x005B89D0), &zCPolygon_GetScreenBBox2D::operator() };
+void zCPolygon_GetScreenBBox2D::operator()(zTBBox2D& a0)
+{
+	THISCALL(Ivk_zCPolygon_GetScreenBBox2D)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCListSort<oCGame::TObjectRoutine>::~zCListSort<oCGame::TObjectRoutine>()]]></Title>
+			<Shortcut><![CDATA[__zCListSort_oCGame__TObjectRoutine___zCListSort_oCGame__TObject_0x006D3E00]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCListSort<oCGame::TObjectRoutine>::~zCListSort<oCGame::TObjectRoutine>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCListSort_oCGame__TObjectRoutine__Destructor : zCListSort<oCGame::TObjectRoutine> { void operator()(); };
+BindedHook Ivk_zCListSort_oCGame__TObjectRoutine__Destructor{ ZENFOR(0x00648EF0, 0x00670C00, 0x00677080, 0x006D3E00), &zCListSort_oCGame__TObjectRoutine__Destructor::operator() };
+void zCListSort_oCGame__TObjectRoutine__Destructor::operator()()
+{
+	THISCALL(Ivk_zCListSort_oCGame__TObjectRoutine__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ccDrawCaption(HWND__*, CUSTOMCAPTION*, int, HRGN__*): void]]></Title>
+			<Shortcut><![CDATA[__ccDrawCaption_0x00500990]]></Shortcut>
+			<Description><![CDATA[void __cdecl ccDrawCaption(HWND__*, CUSTOMCAPTION*, int, HRGN__*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_ccDrawCaption(HWND__*, CUSTOMCAPTION*, int, HRGN__*);
+BindedHook Ivk_ccDrawCaption{ ZENFOR(0x004F2450, 0x00504DB0, 0x004FDD10, 0x00500990), Hook_ccDrawCaption };
+void Hook_ccDrawCaption(HWND__* a0, CUSTOMCAPTION* a1, int a2, HRGN__* a3)
+{
+	Ivk_ccDrawCaption(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

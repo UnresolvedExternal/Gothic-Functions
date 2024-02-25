@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zSTRING>::ShrinkToFit(): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zSTRING__ShrinkToFit_0x0075FA80]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zSTRING>::ShrinkToFit()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zSTRING__ShrinkToFit : zCArray<zSTRING> { void operator()(); };
+BindedHook Ivk_zCArray_zSTRING__ShrinkToFit{ ZENFOR(0x006B8E70, 0x006ED980, 0x00700850, 0x0075FA80), &zCArray_zSTRING__ShrinkToFit::operator() };
+void zCArray_zSTRING__ShrinkToFit::operator()()
+{
+	THISCALL(Ivk_zCArray_zSTRING__ShrinkToFit)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

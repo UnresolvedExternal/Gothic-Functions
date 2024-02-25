@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::UpdateCloseZoom(): void]]></Title>
+			<Shortcut><![CDATA[__zCView_UpdateCloseZoom_0x007A73C0]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall zCView::UpdateCloseZoom()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_UpdateCloseZoom : zCView { void operator()(); };
+BindedHook Ivk_zCView_UpdateCloseZoom{ ZENFOR(0x006FD820, 0x00737C00, 0x007478C0, 0x007A73C0), &zCView_UpdateCloseZoom::operator() };
+void zCView_UpdateCloseZoom::operator()()
+{
+	THISCALL(Ivk_zCView_UpdateCloseZoom)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

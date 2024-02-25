@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetTrueGuild(int): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_SetTrueGuild_0x00730780]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetTrueGuild(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetTrueGuild : oCNpc { void operator()(int); };
+BindedHook Ivk_oCNpc_SetTrueGuild{ ZENFOR(0x0068DFD0, 0x006BE960, 0x006D23B0, 0x00730780), &oCNpc_SetTrueGuild::operator() };
+void oCNpc_SetTrueGuild::operator()(int a0)
+{
+	THISCALL(Ivk_oCNpc_SetTrueGuild)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

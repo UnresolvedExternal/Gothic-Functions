@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFileBIN::zCFileBIN()]]></Title>
+			<Shortcut><![CDATA[__zCFileBIN_zCFileBIN_0x00567F50]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCFileBIN::zCFileBIN()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFileBIN_zCFileBIN : zCFileBIN { zCFileBIN* operator()(); };
+BindedHook Ivk_zCFileBIN_zCFileBIN{ ZENFOR(0x00550AF0, 0x00569180, 0x00562D00, 0x00567F50), &zCFileBIN_zCFileBIN::operator() };
+zCFileBIN* zCFileBIN_zCFileBIN::operator()()
+{
+	zCFileBIN* result = THISCALL(Ivk_zCFileBIN_zCFileBIN)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

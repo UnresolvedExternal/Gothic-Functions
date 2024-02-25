@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgUseItem::~oCMsgUseItem()]]></Title>
+			<Shortcut><![CDATA[__oCMsgUseItem__oCMsgUseItem_0x00767BD0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCMsgUseItem::~oCMsgUseItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgUseItem_Destructor : oCMsgUseItem { void operator()(); };
+BindedHook Ivk_oCMsgUseItem_Destructor{ ZENFOR(0x006C0A30, 0x006F5D80, 0x00708690, 0x00767BD0), &oCMsgUseItem_Destructor::operator() };
+void oCMsgUseItem_Destructor::operator()()
+{
+	THISCALL(Ivk_oCMsgUseItem_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

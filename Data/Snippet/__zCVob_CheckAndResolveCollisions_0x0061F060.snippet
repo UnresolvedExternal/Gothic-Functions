@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::CheckAndResolveCollisions(): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_CheckAndResolveCollisions_0x0061F060]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCVob::CheckAndResolveCollisions()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_CheckAndResolveCollisions : zCVob { void operator()(); };
+BindedHook Ivk_zCVob_CheckAndResolveCollisions{ ZENFOR(0x005F1AE0, 0x00612850, 0x00617910, 0x0061F060), &zCVob_CheckAndResolveCollisions::operator() };
+void zCVob_CheckAndResolveCollisions::operator()()
+{
+	THISCALL(Ivk_zCVob_CheckAndResolveCollisions)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

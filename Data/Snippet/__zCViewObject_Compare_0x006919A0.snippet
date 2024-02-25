@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewObject::Compare(zCViewObject*, zCViewObject*): int]]></Title>
+			<Shortcut><![CDATA[__zCViewObject_Compare_0x006919A0]]></Shortcut>
+			<Description><![CDATA[public: static int __cdecl zCViewObject::Compare(zCViewObject*, zCViewObject*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCViewObject_Compare(zCViewObject*, zCViewObject*);
+BindedHook Ivk_zCViewObject_Compare{ ZENFOR(0x00754E50, 0x007972D0, 0x007A1BF0, 0x006919A0), Hook_zCViewObject_Compare };
+int Hook_zCViewObject_Compare(zCViewObject* a0, zCViewObject* a1)
+{
+	int result = Ivk_zCViewObject_Compare(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

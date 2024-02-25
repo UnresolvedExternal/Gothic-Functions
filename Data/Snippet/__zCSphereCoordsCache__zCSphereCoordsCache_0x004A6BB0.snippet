@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSphereCoordsCache::~zCSphereCoordsCache()]]></Title>
+			<Shortcut><![CDATA[__zCSphereCoordsCache__zCSphereCoordsCache_0x004A6BB0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCSphereCoordsCache::~zCSphereCoordsCache()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSphereCoordsCache_Destructor : zCSphereCoordsCache { void operator()(); };
+BindedHook Ivk_zCSphereCoordsCache_Destructor{ ZENFOR(0x0049F230, 0x004ACAB0, 0x004A4680, 0x004A6BB0), &zCSphereCoordsCache_Destructor::operator() };
+void zCSphereCoordsCache_Destructor::operator()()
+{
+	THISCALL(Ivk_zCSphereCoordsCache_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVisual::zCVisual()]]></Title>
+			<Shortcut><![CDATA[__zCVisual_zCVisual_0x00606660]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCVisual::zCVisual()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVisual_zCVisual : zCVisual { zCVisual* operator()(); };
+BindedHook Ivk_zCVisual_zCVisual{ ZENFOR(0x005D9D70, 0x005F96C0, 0x005FF7D0, 0x00606660), &zCVisual_zCVisual::operator() };
+zCVisual* zCVisual_zCVisual::operator()()
+{
+	zCVisual* result = THISCALL(Ivk_zCVisual_zCVisual)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

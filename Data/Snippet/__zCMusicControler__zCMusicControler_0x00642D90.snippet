@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicControler::~zCMusicControler()]]></Title>
+			<Shortcut><![CDATA[__zCMusicControler__zCMusicControler_0x00642D90]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCMusicControler::~zCMusicControler()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicControler_Destructor : zCMusicControler { void operator()(); };
+BindedHook Ivk_zCMusicControler_Destructor{ ZENFOR(0x0070D540, 0x00748690, 0x007577F0, 0x00642D90), &zCMusicControler_Destructor::operator() };
+void zCMusicControler_Destructor::operator()()
+{
+	THISCALL(Ivk_zCMusicControler_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_Unarchive_0x006B7320]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall oCAniCtrl_Human::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_Unarchive : oCAniCtrl_Human { void operator()(zCArchiver&); };
+BindedHook Ivk_oCAniCtrl_Human_Unarchive{ ZENFOR(0x0062DB80, 0x00653350, 0x0065A990, 0x006B7320), &oCAniCtrl_Human_Unarchive::operator() };
+void oCAniCtrl_Human_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCAniCtrl_Human_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

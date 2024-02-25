@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCVisual*>::DeleteList(): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCVisual___DeleteList_0x006D3DE0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCVisual*>::DeleteList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCVisual___DeleteList : zCArray<zCVisual*> { void operator()(); };
+BindedHook Ivk_zCArray_zCVisual___DeleteList{ ZENFOR(0x00648D50, 0x00670A70, 0x00676F00, 0x006D3DE0), &zCArray_zCVisual___DeleteList::operator() };
+void zCArray_zCVisual___DeleteList::operator()()
+{
+	THISCALL(Ivk_zCArray_zCVisual___DeleteList)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

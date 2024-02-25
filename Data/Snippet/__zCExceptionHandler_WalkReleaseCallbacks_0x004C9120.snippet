@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCExceptionHandler::WalkReleaseCallbacks(): void]]></Title>
+			<Shortcut><![CDATA[__zCExceptionHandler_WalkReleaseCallbacks_0x004C9120]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCExceptionHandler::WalkReleaseCallbacks()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCExceptionHandler_WalkReleaseCallbacks();
+BindedHook Ivk_zCExceptionHandler_WalkReleaseCallbacks{ ZENFOR(0x004BFE00, 0x004CF5C0, 0x004C6BB0, 0x004C9120), Hook_zCExceptionHandler_WalkReleaseCallbacks };
+void Hook_zCExceptionHandler_WalkReleaseCallbacks()
+{
+	Ivk_zCExceptionHandler_WalkReleaseCallbacks();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

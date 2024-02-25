@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenu::SetByScript(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCMenu_SetByScript_0x004DB320]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCMenu::SetByScript(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenu_SetByScript : zCMenu { void operator()(zSTRING const&); };
+BindedHook Ivk_zCMenu_SetByScript{ ZENFOR(0x004CE720, 0x004DEFC0, 0x004D8C80, 0x004DB320), &zCMenu_SetByScript::operator() };
+void zCMenu_SetByScript::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCMenu_SetByScript)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

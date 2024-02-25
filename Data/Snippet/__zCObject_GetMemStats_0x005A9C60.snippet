@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCObject::GetMemStats(int&, int&, zCClassDef*): void]]></Title>
+			<Shortcut><![CDATA[__zCObject_GetMemStats_0x005A9C60]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCObject::GetMemStats(int&, int&, zCClassDef*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCObject_GetMemStats(int&, int&, zCClassDef*);
+BindedHook Ivk_zCObject_GetMemStats{ ZENFOR(0x0058A0F0, 0x005A5480, 0x005A4700, 0x005A9C60), Hook_zCObject_GetMemStats };
+void Hook_zCObject_GetMemStats(int& a0, int& a1, zCClassDef* a2)
+{
+	Ivk_zCObject_GetMemStats(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

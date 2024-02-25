@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewGothicProgressBar::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCViewGothicProgressBar_VectorDeletingDestructor_0x006C25F0]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall oCViewGothicProgressBar::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewGothicProgressBar_VectorDeletingDestructor : oCViewGothicProgressBar { void* operator()(unsigned int); };
+BindedHook Ivk_oCViewGothicProgressBar_VectorDeletingDestructor{ ZENFOR(0x00638420, 0x0065E900, 0x00665AF0, 0x006C25F0), &oCViewGothicProgressBar_VectorDeletingDestructor::operator() };
+void* oCViewGothicProgressBar_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCViewGothicProgressBar_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

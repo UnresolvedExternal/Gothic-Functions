@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCVob::zTModelLimbColl>::Insert(zCVob::zTModelLimbColl*): void]]></Title>
+			<Shortcut><![CDATA[__zCList_zCVob__zTModelLimbColl__Insert_0x00606E90]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCList<zCVob::zTModelLimbColl>::Insert(zCVob::zTModelLimbColl*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCVob__zTModelLimbColl__Insert : zCList<zCVob::zTModelLimbColl> { void operator()(zCVob::zTModelLimbColl*); };
+BindedHook Ivk_zCList_zCVob__zTModelLimbColl__Insert{ ZENFOR(0x005DA590, 0x005F9E80, 0x005FFFE0, 0x00606E90), &zCList_zCVob__zTModelLimbColl__Insert::operator() };
+void zCList_zCVob__zTModelLimbColl__Insert::operator()(zCVob::zTModelLimbColl* a0)
+{
+	THISCALL(Ivk_zCList_zCVob__zTModelLimbColl__Insert)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

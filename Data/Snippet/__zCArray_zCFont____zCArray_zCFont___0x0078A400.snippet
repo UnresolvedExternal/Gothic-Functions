@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCFont*>::~zCArray<zCFont*>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCFont____zCArray_zCFont___0x0078A400]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCFont*>::~zCArray<zCFont*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCFont___Destructor : zCArray<zCFont*> { void operator()(); };
+BindedHook Ivk_zCArray_zCFont___Destructor{ ZENFOR(0x006E10E0, 0x00719740, 0x0072A9C0, 0x0078A400), &zCArray_zCFont___Destructor::operator() };
+void zCArray_zCFont___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCFont___Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

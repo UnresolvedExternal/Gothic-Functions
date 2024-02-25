@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLevelCompo::SetVisual(zCVisual*): void]]></Title>
+			<Shortcut><![CDATA[__zCVobLevelCompo_SetVisual_0x006054E0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCVobLevelCompo::SetVisual(zCVisual*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobLevelCompo_SetVisual : zCVobLevelCompo { void operator()(zCVisual*); };
+BindedHook Ivk_zCVobLevelCompo_SetVisual{ ZENFOR(0x005D8C90, 0x005F84B0, 0x005FE650, 0x006054E0), &zCVobLevelCompo_SetVisual::operator() };
+void zCVobLevelCompo_SetVisual::operator()(zCVisual* a0)
+{
+	THISCALL(Ivk_zCVobLevelCompo_SetVisual)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

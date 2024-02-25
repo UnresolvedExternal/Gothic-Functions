@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerGroup::GetNextPlayer(int&): zCPlayerInfo*]]></Title>
+			<Shortcut><![CDATA[__zCPlayerGroup_GetNextPlayer_0x00466910]]></Shortcut>
+			<Description><![CDATA[public: zCPlayerInfo* __thiscall zCPlayerGroup::GetNextPlayer(int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerGroup_GetNextPlayer : zCPlayerGroup { zCPlayerInfo* operator()(int&); };
+BindedHook Ivk_zCPlayerGroup_GetNextPlayer{ ZENFOR(0x00461300, 0x00468C80, 0x00465CE0, 0x00466910), &zCPlayerGroup_GetNextPlayer::operator() };
+zCPlayerInfo* zCPlayerGroup_GetNextPlayer::operator()(int& a0)
+{
+	zCPlayerInfo* result = THISCALL(Ivk_zCPlayerGroup_GetNextPlayer)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

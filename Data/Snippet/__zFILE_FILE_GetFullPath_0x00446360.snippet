@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::GetFullPath(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zFILE_FILE_GetFullPath_0x00446360]]></Shortcut>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zFILE_FILE::GetFullPath()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_GetFullPath : zFILE_FILE { zSTRING operator()(); };
+BindedHook Ivk_zFILE_FILE_GetFullPath{ ZENFOR(0x00442400, 0x00447CF0, 0x00445D30, 0x00446360), &zFILE_FILE_GetFullPath::operator() };
+zSTRING zFILE_FILE_GetFullPath::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zFILE_FILE_GetFullPath)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

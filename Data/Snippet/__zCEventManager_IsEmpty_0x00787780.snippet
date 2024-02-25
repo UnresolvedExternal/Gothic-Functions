@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::IsEmpty(int): int]]></Title>
+			<Shortcut><![CDATA[__zCEventManager_IsEmpty_0x00787780]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCEventManager::IsEmpty(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventManager_IsEmpty : zCEventManager { int operator()(int); };
+BindedHook Ivk_zCEventManager_IsEmpty{ ZENFOR(0x006DE4F0, 0x00716850, 0x00727D40, 0x00787780), &zCEventManager_IsEmpty::operator() };
+int zCEventManager_IsEmpty::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCEventManager_IsEmpty)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

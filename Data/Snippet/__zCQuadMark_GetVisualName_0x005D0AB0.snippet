@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::GetVisualName(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zCQuadMark_GetVisualName_0x005D0AB0]]></Shortcut>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zCQuadMark::GetVisualName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_GetVisualName : zCQuadMark { zSTRING operator()(); };
+BindedHook Ivk_zCQuadMark_GetVisualName{ ZENFOR(0x005AB980, 0x005C8600, 0x005C9F10, 0x005D0AB0), &zCQuadMark_GetVisualName::operator() };
+zSTRING zCQuadMark_GetVisualName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCQuadMark_GetVisualName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

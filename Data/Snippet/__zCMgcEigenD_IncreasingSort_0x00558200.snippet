@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMgcEigenD::IncreasingSort(int, double*, double**): void]]></Title>
+			<Shortcut><![CDATA[__zCMgcEigenD_IncreasingSort_0x00558200]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCMgcEigenD::IncreasingSort(int, double*, double**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMgcEigenD_IncreasingSort : zCMgcEigenD { void operator()(int, double*, double**); };
+BindedHook Ivk_zCMgcEigenD_IncreasingSort{ ZENFOR(0x00543960, 0x0055B340, 0x00552FE0, 0x00558200), &zCMgcEigenD_IncreasingSort::operator() };
+void zCMgcEigenD_IncreasingSort::operator()(int a0, double* a1, double** a2)
+{
+	THISCALL(Ivk_zCMgcEigenD_IncreasingSort)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

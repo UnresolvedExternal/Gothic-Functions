@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobSoundDaytime::CalcTimeFrac(float, float, float, float&): int]]></Title>
+			<Shortcut><![CDATA[__zCVobSoundDaytime_CalcTimeFrac_0x0063EEC0]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCVobSoundDaytime::CalcTimeFrac(float, float, float, float&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobSoundDaytime_CalcTimeFrac : zCVobSoundDaytime { int operator()(float, float, float, float&); };
+BindedHook Ivk_zCVobSoundDaytime_CalcTimeFrac{ ZENFOR(0x0060E320, 0x00630A90, 0x006376D0, 0x0063EEC0), &zCVobSoundDaytime_CalcTimeFrac::operator() };
+int zCVobSoundDaytime_CalcTimeFrac::operator()(float a0, float a1, float a2, float& a3)
+{
+	int result = THISCALL(Ivk_zCVobSoundDaytime_CalcTimeFrac)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

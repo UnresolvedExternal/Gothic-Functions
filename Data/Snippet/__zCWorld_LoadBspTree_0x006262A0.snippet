@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::LoadBspTree(zFILE&, int): int]]></Title>
+			<Shortcut><![CDATA[__zCWorld_LoadBspTree_0x006262A0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCWorld::LoadBspTree(zFILE&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_LoadBspTree : zCWorld { int operator()(zFILE&, int); };
+BindedHook Ivk_zCWorld_LoadBspTree{ ZENFOR(0x005F7C40, 0x00618E10, 0x0061EB10, 0x006262A0), &zCWorld_LoadBspTree::operator() };
+int zCWorld_LoadBspTree::operator()(zFILE& a0, int a1)
+{
+	int result = THISCALL(Ivk_zCWorld_LoadBspTree)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

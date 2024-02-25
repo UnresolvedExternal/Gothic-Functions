@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::GetActiveSkyControler(): zCSkyControler*]]></Title>
+			<Shortcut><![CDATA[__zCWorld_GetActiveSkyControler_0x006203A0]]></Shortcut>
+			<Description><![CDATA[public: zCSkyControler* __thiscall zCWorld::GetActiveSkyControler()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_GetActiveSkyControler : zCWorld { zCSkyControler* operator()(); };
+BindedHook Ivk_zCWorld_GetActiveSkyControler{ ZENFOR(0x005F2C80, 0x00613A60, 0x00618C50, 0x006203A0), &zCWorld_GetActiveSkyControler::operator() };
+zCSkyControler* zCWorld_GetActiveSkyControler::operator()()
+{
+	zCSkyControler* result = THISCALL(Ivk_zCWorld_GetActiveSkyControler)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

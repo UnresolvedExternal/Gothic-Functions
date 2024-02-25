@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::XD3D_CreateWin(int, int, int): int]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_XD3D_CreateWin_0x00649150]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCRnd_D3D::XD3D_CreateWin(int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_XD3D_CreateWin : zCRnd_D3D { int operator()(int, int, int); };
+BindedHook Ivk_zCRnd_D3D_XD3D_CreateWin{ ZENFOR(0x00712C80, 0x0074E8D0, 0x0075DBB0, 0x00649150), &zCRnd_D3D_XD3D_CreateWin::operator() };
+int zCRnd_D3D_XD3D_CreateWin::operator()(int a0, int a1, int a2)
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_XD3D_CreateWin)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

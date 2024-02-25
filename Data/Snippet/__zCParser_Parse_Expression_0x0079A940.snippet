@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::Parse_Expression(int&, int): zCPar_TreeNode*]]></Title>
+			<Shortcut><![CDATA[__zCParser_Parse_Expression_0x0079A940]]></Shortcut>
+			<Description><![CDATA[private: zCPar_TreeNode* __thiscall zCParser::Parse_Expression(int&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_Parse_Expression : zCParser { zCPar_TreeNode* operator()(int&, int); };
+BindedHook Ivk_zCParser_Parse_Expression{ ZENFOR(0x006F0E80, 0x0072A880, 0x0073AF00, 0x0079A940), &zCParser_Parse_Expression::operator() };
+zCPar_TreeNode* zCParser_Parse_Expression::operator()(int& a0, int a1)
+{
+	zCPar_TreeNode* result = THISCALL(Ivk_zCParser_Parse_Expression)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

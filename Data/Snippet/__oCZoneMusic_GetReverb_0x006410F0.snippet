@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCZoneMusic::GetReverb(): float [const]]]></Title>
+			<Shortcut><![CDATA[__oCZoneMusic_GetReverb_0x006410F0]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall oCZoneMusic::GetReverb()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCZoneMusic_GetReverb : oCZoneMusic { float operator()() const; };
+BindedHook Ivk_oCZoneMusic_GetReverb{ ZENFOR(0x0070B8F0, 0x00746870, 0x00755B50, 0x006410F0), &oCZoneMusic_GetReverb::operator() };
+float oCZoneMusic_GetReverb::operator()() const
+{
+	float result = THISCALL(Ivk_oCZoneMusic_GetReverb)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

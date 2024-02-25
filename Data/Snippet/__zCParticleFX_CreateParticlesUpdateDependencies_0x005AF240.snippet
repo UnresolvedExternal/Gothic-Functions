@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::CreateParticlesUpdateDependencies(): void]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX_CreateParticlesUpdateDependencies_0x005AF240]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCParticleFX::CreateParticlesUpdateDependencies()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX_CreateParticlesUpdateDependencies : zCParticleFX { void operator()(); };
+BindedHook Ivk_zCParticleFX_CreateParticlesUpdateDependencies{ ZENFOR(0x0058F210, 0x005AA930, 0x005A9B60, 0x005AF240), &zCParticleFX_CreateParticlesUpdateDependencies::operator() };
+void zCParticleFX_CreateParticlesUpdateDependencies::operator()()
+{
+	THISCALL(Ivk_zCParticleFX_CreateParticlesUpdateDependencies)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

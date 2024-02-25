@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelTexAniState::DeleteTexList(): void]]></Title>
+			<Shortcut><![CDATA[__zCModelTexAniState_DeleteTexList_0x00576D80]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModelTexAniState::DeleteTexList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelTexAniState_DeleteTexList : zCModelTexAniState { void operator()(); };
+BindedHook Ivk_zCModelTexAniState_DeleteTexList{ ZENFOR(0x0055D5F0, 0x00575990, 0x00571AD0, 0x00576D80), &zCModelTexAniState_DeleteTexList::operator() };
+void zCModelTexAniState_DeleteTexList::operator()()
+{
+	THISCALL(Ivk_zCModelTexAniState_DeleteTexList)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

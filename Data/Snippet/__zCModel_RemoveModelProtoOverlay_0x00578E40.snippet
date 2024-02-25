@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::RemoveModelProtoOverlay(zCModelPrototype*): void]]></Title>
+			<Shortcut><![CDATA[__zCModel_RemoveModelProtoOverlay_0x00578E40]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModel::RemoveModelProtoOverlay(zCModelPrototype*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_RemoveModelProtoOverlay : zCModel { void operator()(zCModelPrototype*); };
+BindedHook Ivk_zCModel_RemoveModelProtoOverlay{ ZENFOR(0x0055F5C0, 0x005779A0, 0x00573B90, 0x00578E40), &zCModel_RemoveModelProtoOverlay::operator() };
+void zCModel_RemoveModelProtoOverlay::operator()(zCModelPrototype* a0)
+{
+	THISCALL(Ivk_zCModel_RemoveModelProtoOverlay)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

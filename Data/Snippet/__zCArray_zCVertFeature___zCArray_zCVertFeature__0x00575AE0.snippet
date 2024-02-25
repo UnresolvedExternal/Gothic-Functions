@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCVertFeature>::~zCArray<zCVertFeature>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCVertFeature___zCArray_zCVertFeature__0x00575AE0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCVertFeature>::~zCArray<zCVertFeature>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCVertFeature__Destructor : zCArray<zCVertFeature> { void operator()(); };
+BindedHook Ivk_zCArray_zCVertFeature__Destructor{ ZENFOR(0x0055C380, 0x00574430, 0x00570830, 0x00575AE0), &zCArray_zCVertFeature__Destructor::operator() };
+void zCArray_zCVertFeature__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCVertFeature__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

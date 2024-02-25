@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zRandom_Gauss::StepForward(long): void]]></Title>
+			<Shortcut><![CDATA[__zRandom_Gauss_StepForward_0x0055AFF0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zRandom_Gauss::StepForward(long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zRandom_Gauss_StepForward : zRandom_Gauss { void operator()(long); };
+BindedHook Ivk_zRandom_Gauss_StepForward{ ZENFOR(0x00000000, 0x00000000, 0x00555DD0, 0x0055AFF0), &zRandom_Gauss_StepForward::operator() };
+void zRandom_Gauss_StepForward::operator()(long a0)
+{
+	THISCALL(Ivk_zRandom_Gauss_StepForward)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

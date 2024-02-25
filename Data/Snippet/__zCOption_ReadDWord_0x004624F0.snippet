@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::ReadDWord(zSTRING const&, char const*, unsigned long): unsigned long]]></Title>
+			<Shortcut><![CDATA[__zCOption_ReadDWord_0x004624F0]]></Shortcut>
+			<Description><![CDATA[public: unsigned long __thiscall zCOption::ReadDWord(zSTRING const&, char const*, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_ReadDWord : zCOption { unsigned long operator()(zSTRING const&, char const*, unsigned long); };
+BindedHook Ivk_zCOption_ReadDWord{ ZENFOR(0x0045CEA0, 0x004646C0, 0x00461CE0, 0x004624F0), &zCOption_ReadDWord::operator() };
+unsigned long zCOption_ReadDWord::operator()(zSTRING const& a0, char const* a1, unsigned long a2)
+{
+	unsigned long result = THISCALL(Ivk_zCOption_ReadDWord)(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

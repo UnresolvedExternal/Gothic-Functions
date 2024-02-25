@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CDDrawDeviceNode::WndProc(HWND__*, unsigned int, unsigned int, long): long]]></Title>
+			<Shortcut><![CDATA[__CDDrawDeviceNode_WndProc_0x007BB197]]></Shortcut>
+			<Description><![CDATA[public: static long __stdcall CDDrawDeviceNode::WndProc(HWND__*, unsigned int, unsigned int, long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long __stdcall Hook_CDDrawDeviceNode_WndProc(HWND__*, unsigned int, unsigned int, long);
+BindedHook Ivk_CDDrawDeviceNode_WndProc{ ZENFOR(0x00761AA3, 0x007A6943, 0x007AECD1, 0x007BB197), Hook_CDDrawDeviceNode_WndProc };
+long __stdcall Hook_CDDrawDeviceNode_WndProc(HWND__* a0, unsigned int a1, unsigned int a2, long a3)
+{
+	long result = Ivk_CDDrawDeviceNode_WndProc(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

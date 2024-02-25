@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenuSavegame::oCMenuSavegame(zSTRING const&, oCMenuSavegame::oTMenuSavegameMode)]]></Title>
+			<Shortcut><![CDATA[__oCMenuSavegame_oCMenuSavegame_0x0042E7F0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCMenuSavegame::oCMenuSavegame(zSTRING const&, oCMenuSavegame::oTMenuSavegameMode)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenuSavegame_oCMenuSavegame : oCMenuSavegame { oCMenuSavegame* operator()(zSTRING const&, oCMenuSavegame::oTMenuSavegameMode); };
+BindedHook Ivk_oCMenuSavegame_oCMenuSavegame{ ZENFOR(0x0042C2D0, 0x0042F3B0, 0x0042E4D0, 0x0042E7F0), &oCMenuSavegame_oCMenuSavegame::operator() };
+oCMenuSavegame* oCMenuSavegame_oCMenuSavegame::operator()(zSTRING const& a0, oCMenuSavegame::oTMenuSavegameMode a1)
+{
+	oCMenuSavegame* result = THISCALL(Ivk_oCMenuSavegame_oCMenuSavegame)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

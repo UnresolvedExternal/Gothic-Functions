@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer::zCVertexBuffer()]]></Title>
+			<Shortcut><![CDATA[__zCVertexBuffer_zCVertexBuffer_0x005FBD40]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCVertexBuffer::zCVertexBuffer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_zCVertexBuffer : zCVertexBuffer { zCVertexBuffer* operator()(); };
+BindedHook Ivk_zCVertexBuffer_zCVertexBuffer{ ZENFOR(0x005D0C40, 0x005EFD90, 0x005F4F50, 0x005FBD40), &zCVertexBuffer_zCVertexBuffer::operator() };
+zCVertexBuffer* zCVertexBuffer_zCVertexBuffer::operator()()
+{
+	zCVertexBuffer* result = THISCALL(Ivk_zCVertexBuffer_zCVertexBuffer)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

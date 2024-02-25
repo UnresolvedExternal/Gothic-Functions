@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CVideoModeList::DoesVideoModeExist(unsigned long, unsigned long, unsigned long, unsigned long): int]]></Title>
+			<Shortcut><![CDATA[__CVideoModeList_DoesVideoModeExist_0x007B7B49]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall CVideoModeList::DoesVideoModeExist(unsigned long, unsigned long, unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CVideoModeList_DoesVideoModeExist : CVideoModeList { int operator()(unsigned long, unsigned long, unsigned long, unsigned long); };
+BindedHook Ivk_CVideoModeList_DoesVideoModeExist{ ZENFOR(0x0075E455, 0x007A1CBB, 0x007AB683, 0x007B7B49), &CVideoModeList_DoesVideoModeExist::operator() };
+int CVideoModeList_DoesVideoModeExist::operator()(unsigned long a0, unsigned long a1, unsigned long a2, unsigned long a3)
+{
+	int result = THISCALL(Ivk_CVideoModeList_DoesVideoModeExist)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

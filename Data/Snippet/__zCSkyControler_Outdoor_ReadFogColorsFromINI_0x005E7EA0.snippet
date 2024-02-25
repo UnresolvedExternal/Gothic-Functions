@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Outdoor::ReadFogColorsFromINI(): void]]></Title>
+			<Shortcut><![CDATA[__zCSkyControler_Outdoor_ReadFogColorsFromINI_0x005E7EA0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCSkyControler_Outdoor::ReadFogColorsFromINI()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Outdoor_ReadFogColorsFromINI : zCSkyControler_Outdoor { void operator()(); };
+BindedHook Ivk_zCSkyControler_Outdoor_ReadFogColorsFromINI{ ZENFOR(0x005BD970, 0x005DB5F0, 0x005E10F0, 0x005E7EA0), &zCSkyControler_Outdoor_ReadFogColorsFromINI::operator() };
+void zCSkyControler_Outdoor_ReadFogColorsFromINI::operator()()
+{
+	THISCALL(Ivk_zCSkyControler_Outdoor_ReadFogColorsFromINI)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<oCMission*>::~zCArraySort<oCMission*>()]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_oCMission____zCArraySort_oCMission___0x00717DB0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArraySort<oCMission*>::~zCArraySort<oCMission*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_oCMission___Destructor : zCArraySort<oCMission*> { void operator()(); };
+BindedHook Ivk_zCArraySort_oCMission___Destructor{ ZENFOR(0x00676DA0, 0x006A4F70, 0x006B9D20, 0x00717DB0), &zCArraySort_oCMission___Destructor::operator() };
+void zCArraySort_oCMission___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArraySort_oCMission___Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventCore::Pack(zCBuffer&, zCEventManager*): void]]></Title>
+			<Shortcut><![CDATA[__zCEventCore_Pack_0x00606120]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCEventCore::Pack(zCBuffer&, zCEventManager*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventCore_Pack : zCEventCore { void operator()(zCBuffer&, zCEventManager*); };
+BindedHook Ivk_zCEventCore_Pack{ ZENFOR(0x005D9830, 0x005F9160, 0x005FF290, 0x00606120), &zCEventCore_Pack::operator() };
+void zCEventCore_Pack::operator()(zCBuffer& a0, zCEventManager* a1)
+{
+	THISCALL(Ivk_zCEventCore_Pack)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

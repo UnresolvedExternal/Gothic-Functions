@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::SetMaterial(zCRenderer::zTMaterial const&): int]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_SetMaterial_0x006503B0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCRnd_D3D::SetMaterial(zCRenderer::zTMaterial const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_SetMaterial : zCRnd_D3D { int operator()(zCRenderer::zTMaterial const&); };
+BindedHook Ivk_zCRnd_D3D_SetMaterial{ ZENFOR(0x00718000, 0x007540F0, 0x00763A60, 0x006503B0), &zCRnd_D3D_SetMaterial::operator() };
+int zCRnd_D3D_SetMaterial::operator()(zCRenderer::zTMaterial const& a0)
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_SetMaterial)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

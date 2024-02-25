@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVisual::AddEndLODVisual(zCVisual*): void]]></Title>
+			<Shortcut><![CDATA[__zCVisual_AddEndLODVisual_0x00606850]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCVisual::AddEndLODVisual(zCVisual*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVisual_AddEndLODVisual : zCVisual { void operator()(zCVisual*); };
+BindedHook Ivk_zCVisual_AddEndLODVisual{ ZENFOR(0x005D9F60, 0x005F98C0, 0x005FF9C0, 0x00606850), &zCVisual_AddEndLODVisual::operator() };
+void zCVisual_AddEndLODVisual::operator()(zCVisual* a0)
+{
+	THISCALL(Ivk_zCVisual_AddEndLODVisual)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

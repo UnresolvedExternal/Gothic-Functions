@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Mid::~zCSkyControler_Mid()]]></Title>
+			<Shortcut><![CDATA[__zCSkyControler_Mid__zCSkyControler_Mid_0x005DFF20]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCSkyControler_Mid::~zCSkyControler_Mid()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Mid_Destructor : zCSkyControler_Mid { void operator()(); };
+BindedHook Ivk_zCSkyControler_Mid_Destructor{ ZENFOR(0x005BA970, 0x005D84D0, 0x005D9170, 0x005DFF20), &zCSkyControler_Mid_Destructor::operator() };
+void zCSkyControler_Mid_Destructor::operator()()
+{
+	THISCALL(Ivk_zCSkyControler_Mid_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

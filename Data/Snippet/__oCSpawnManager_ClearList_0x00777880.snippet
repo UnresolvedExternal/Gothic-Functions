@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpawnManager::ClearList(): void]]></Title>
+			<Shortcut><![CDATA[__oCSpawnManager_ClearList_0x00777880]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCSpawnManager::ClearList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpawnManager_ClearList : oCSpawnManager { void operator()(); };
+BindedHook Ivk_oCSpawnManager_ClearList{ ZENFOR(0x006CF630, 0x00706040, 0x007182F0, 0x00777880), &oCSpawnManager_ClearList::operator() };
+void oCSpawnManager_ClearList::operator()()
+{
+	THISCALL(Ivk_oCSpawnManager_ClearList)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

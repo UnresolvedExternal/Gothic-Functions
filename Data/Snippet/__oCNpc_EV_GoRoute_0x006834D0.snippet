@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EV_GoRoute(oCMsgMovement*): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_EV_GoRoute_0x006834D0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::EV_GoRoute(oCMsgMovement*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_EV_GoRoute : oCNpc { int operator()(oCMsgMovement*); };
+BindedHook Ivk_oCNpc_EV_GoRoute{ ZENFOR(0x0074DF40, 0x0078FC50, 0x00799FD0, 0x006834D0), &oCNpc_EV_GoRoute::operator() };
+int oCNpc_EV_GoRoute::operator()(oCMsgMovement* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_EV_GoRoute)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

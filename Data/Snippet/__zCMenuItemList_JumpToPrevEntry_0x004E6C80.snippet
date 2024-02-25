@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemList::JumpToPrevEntry(): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItemList_JumpToPrevEntry_0x004E6C80]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCMenuItemList::JumpToPrevEntry()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemList_JumpToPrevEntry : zCMenuItemList { void operator()(); };
+BindedHook Ivk_zCMenuItemList_JumpToPrevEntry{ ZENFOR(0x004D9A70, 0x004EABF0, 0x004E42D0, 0x004E6C80), &zCMenuItemList_JumpToPrevEntry::operator() };
+void zCMenuItemList_JumpToPrevEntry::operator()()
+{
+	THISCALL(Ivk_zCMenuItemList_JumpToPrevEntry)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

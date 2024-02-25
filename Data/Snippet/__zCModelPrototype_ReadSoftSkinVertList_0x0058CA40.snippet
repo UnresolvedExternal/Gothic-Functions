@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ReadSoftSkinVertList(): void]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_ReadSoftSkinVertList_0x0058CA40]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::ReadSoftSkinVertList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_ReadSoftSkinVertList : zCModelPrototype { void operator()(); };
+BindedHook Ivk_zCModelPrototype_ReadSoftSkinVertList{ ZENFOR(0x00572310, 0x0058BA90, 0x005874E0, 0x0058CA40), &zCModelPrototype_ReadSoftSkinVertList::operator() };
+void zCModelPrototype_ReadSoftSkinVertList::operator()()
+{
+	THISCALL(Ivk_zCModelPrototype_ReadSoftSkinVertList)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

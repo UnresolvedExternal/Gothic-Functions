@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::LoadWorld(zSTRING const&, zCWorld::zTWorldLoadMode): int]]></Title>
+			<Shortcut><![CDATA[__oCGame_LoadWorld_0x006C4EA0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCGame::LoadWorld(zSTRING const&, zCWorld::zTWorldLoadMode)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_LoadWorld : oCGame { int operator()(zSTRING const&, zCWorld::zTWorldLoadMode); };
+BindedHook Ivk_oCGame_LoadWorld{ ZENFOR(0x0063A9D0, 0x006612B0, 0x00668220, 0x006C4EA0), &oCGame_LoadWorld::operator() };
+int oCGame_LoadWorld::operator()(zSTRING const& a0, zCWorld::zTWorldLoadMode a1)
+{
+	int result = THISCALL(Ivk_oCGame_LoadWorld)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

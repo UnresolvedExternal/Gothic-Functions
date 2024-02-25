@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::PrevWord(): void]]></Title>
+			<Shortcut><![CDATA[__zCParser_PrevWord_0x00798480]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCParser::PrevWord()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_PrevWord : zCParser { void operator()(); };
+BindedHook Ivk_zCParser_PrevWord{ ZENFOR(0x006EE960, 0x00727FE0, 0x00738A40, 0x00798480), &zCParser_PrevWord::operator() };
+void zCParser_PrevWord::operator()()
+{
+	THISCALL(Ivk_zCParser_PrevWord)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

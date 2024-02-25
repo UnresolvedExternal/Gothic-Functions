@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWay::Init(zCWaypoint*, zCWaypoint*): void]]></Title>
+			<Shortcut><![CDATA[__oCWay_Init_0x0077E190]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCWay::Init(zCWaypoint*, zCWaypoint*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWay_Init : oCWay { void operator()(zCWaypoint*, zCWaypoint*); };
+BindedHook Ivk_oCWay_Init{ ZENFOR(0x006D5260, 0x0070C820, 0x0071E750, 0x0077E190), &oCWay_Init::operator() };
+void oCWay_Init::operator()(zCWaypoint* a0, zCWaypoint* a1)
+{
+	THISCALL(Ivk_oCWay_Init)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

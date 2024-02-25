@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobSound::GetDebugDescString(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zCVobSound_GetDebugDescString_0x0063D640]]></Shortcut>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zCVobSound::GetDebugDescString()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobSound_GetDebugDescString : zCVobSound { zSTRING operator()(); };
+BindedHook Ivk_zCVobSound_GetDebugDescString{ ZENFOR(0x0060CBB0, 0x0062F120, 0x00635E60, 0x0063D640), &zCVobSound_GetDebugDescString::operator() };
+zSTRING zCVobSound_GetDebugDescString::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCVobSound_GetDebugDescString)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

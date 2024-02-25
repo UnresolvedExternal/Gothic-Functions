@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[streambuf::sync(): int]]></Title>
+			<Shortcut><![CDATA[__streambuf_sync_0x007CF945]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall streambuf::sync()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct streambuf_sync : streambuf { int operator()(); };
+BindedHook Ivk_streambuf_sync{ ZENFOR(0x00775F9B, 0x007B9D5B, 0x007C3485, 0x007CF945), &streambuf_sync::operator() };
+int streambuf_sync::operator()()
+{
+	int result = THISCALL(Ivk_streambuf_sync)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

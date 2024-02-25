@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIDrop::~oCAIDrop()]]></Title>
+			<Shortcut><![CDATA[__oCAIDrop__oCAIDrop_0x006A2010]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall oCAIDrop::~oCAIDrop()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIDrop_Destructor : oCAIDrop { void operator()(); };
+BindedHook Ivk_oCAIDrop_Destructor{ ZENFOR(0x00619BE0, 0x0063D100, 0x00645790, 0x006A2010), &oCAIDrop_Destructor::operator() };
+void oCAIDrop_Destructor::operator()()
+{
+	THISCALL(Ivk_oCAIDrop_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgWeapon::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__oCMsgWeapon_Unarchive_0x00766980]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall oCMsgWeapon::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgWeapon_Unarchive : oCMsgWeapon { void operator()(zCArchiver&); };
+BindedHook Ivk_oCMsgWeapon_Unarchive{ ZENFOR(0x006BF7E0, 0x006F4B10, 0x00707440, 0x00766980), &oCMsgWeapon_Unarchive::operator() };
+void oCMsgWeapon_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCMsgWeapon_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

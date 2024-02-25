@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[_DestructExceptionObject(EHExceptionRecord*, unsigned char): void]]></Title>
+			<Shortcut><![CDATA[___DestructExceptionObject_0x007D6151]]></Shortcut>
+			<Description><![CDATA[void __cdecl _DestructExceptionObject(EHExceptionRecord*, unsigned char)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook__DestructExceptionObject(EHExceptionRecord*, unsigned char);
+BindedHook Ivk__DestructExceptionObject{ ZENFOR(0x0077C871, 0x007C0631, 0x007C9C91, 0x007D6151), Hook__DestructExceptionObject };
+void Hook__DestructExceptionObject(EHExceptionRecord* a0, unsigned char a1)
+{
+	Ivk__DestructExceptionObject(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

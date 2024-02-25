@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::logic_error::~logic_error()]]></Title>
+			<Shortcut><![CDATA[__std__logic_error__logic_error_0x007CFB33]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall std::logic_error::~logic_error()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__logic_error_Destructor : std::logic_error { void operator()(); };
+BindedHook Ivk_std__logic_error_Destructor{ ZENFOR(0x00776189, 0x007B9F49, 0x007C3673, 0x007CFB33), &std__logic_error_Destructor::operator() };
+void std__logic_error_Destructor::operator()()
+{
+	THISCALL(Ivk_std__logic_error_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

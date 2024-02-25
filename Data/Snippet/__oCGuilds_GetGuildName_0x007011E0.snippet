@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGuilds::GetGuildName(int): zSTRING]]></Title>
+			<Shortcut><![CDATA[__oCGuilds_GetGuildName_0x007011E0]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall oCGuilds::GetGuildName(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGuilds_GetGuildName : oCGuilds { zSTRING operator()(int); };
+BindedHook Ivk_oCGuilds_GetGuildName{ ZENFOR(0x00663580, 0x00690140, 0x006A3750, 0x007011E0), &oCGuilds_GetGuildName::operator() };
+zSTRING oCGuilds_GetGuildName::operator()(int a0)
+{
+	zSTRING result = THISCALL(Ivk_oCGuilds_GetGuildName)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

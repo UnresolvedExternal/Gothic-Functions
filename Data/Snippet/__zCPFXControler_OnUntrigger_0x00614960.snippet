@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPFXControler::OnUntrigger(zCVob*, zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCPFXControler_OnUntrigger_0x00614960]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCPFXControler::OnUntrigger(zCVob*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPFXControler_OnUntrigger : zCPFXControler { void operator()(zCVob*, zCVob*); };
+BindedHook Ivk_zCPFXControler_OnUntrigger{ ZENFOR(0x005E7960, 0x00607CF0, 0x0060D2A0, 0x00614960), &zCPFXControler_OnUntrigger::operator() };
+void zCPFXControler_OnUntrigger::operator()(zCVob* a0, zCVob* a1)
+{
+	THISCALL(Ivk_zCPFXControler_OnUntrigger)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

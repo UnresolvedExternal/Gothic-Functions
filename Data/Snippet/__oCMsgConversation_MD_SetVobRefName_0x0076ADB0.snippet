@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgConversation::MD_SetVobRefName(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__oCMsgConversation_MD_SetVobRefName_0x0076ADB0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMsgConversation::MD_SetVobRefName(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgConversation_MD_SetVobRefName : oCMsgConversation { void operator()(zSTRING const&); };
+BindedHook Ivk_oCMsgConversation_MD_SetVobRefName{ ZENFOR(0x006C3BD0, 0x006F9040, 0x0070B870, 0x0076ADB0), &oCMsgConversation_MD_SetVobRefName::operator() };
+void oCMsgConversation_MD_SetVobRefName::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_oCMsgConversation_MD_SetVobRefName)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

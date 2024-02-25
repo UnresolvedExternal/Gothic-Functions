@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAskBox::~oCAskBox()]]></Title>
+			<Shortcut><![CDATA[__oCAskBox__oCAskBox_0x006BBDF0]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCAskBox::~oCAskBox()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAskBox_Destructor : oCAskBox { void operator()(); };
+BindedHook Ivk_oCAskBox_Destructor{ ZENFOR(0x00632450, 0x00658220, 0x0065F460, 0x006BBDF0), &oCAskBox_Destructor::operator() };
+void oCAskBox_Destructor::operator()()
+{
+	THISCALL(Ivk_oCAskBox_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

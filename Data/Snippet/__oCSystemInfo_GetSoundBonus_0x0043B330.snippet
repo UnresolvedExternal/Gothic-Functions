@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSystemInfo::GetSoundBonus(): float]]></Title>
+			<Shortcut><![CDATA[__oCSystemInfo_GetSoundBonus_0x0043B330]]></Shortcut>
+			<Description><![CDATA[protected: float __thiscall oCSystemInfo::GetSoundBonus()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSystemInfo_GetSoundBonus : oCSystemInfo { float operator()(); };
+BindedHook Ivk_oCSystemInfo_GetSoundBonus{ ZENFOR(0x00437A30, 0x0043C0D0, 0x0043AD00, 0x0043B330), &oCSystemInfo_GetSoundBonus::operator() };
+float oCSystemInfo_GetSoundBonus::operator()()
+{
+	float result = THISCALL(Ivk_oCSystemInfo_GetSoundBonus)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInformationManager::OnTradeEnd(): void]]></Title>
+			<Shortcut><![CDATA[__oCInformationManager_OnTradeEnd_0x00662F60]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall oCInformationManager::OnTradeEnd()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInformationManager_OnTradeEnd : oCInformationManager { void __fastcall operator()(); };
+BindedHook Ivk_oCInformationManager_OnTradeEnd{ ZENFOR(0x0072E200, 0x0076C840, 0x00779D40, 0x00662F60), &oCInformationManager_OnTradeEnd::operator() };
+void __fastcall oCInformationManager_OnTradeEnd::operator()()
+{
+	THISCALL(Ivk_oCInformationManager_OnTradeEnd)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

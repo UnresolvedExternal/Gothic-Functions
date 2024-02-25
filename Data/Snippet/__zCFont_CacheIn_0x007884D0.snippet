@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFont::CacheIn(): int]]></Title>
+			<Shortcut><![CDATA[__zCFont_CacheIn_0x007884D0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCFont::CacheIn()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFont_CacheIn : zCFont { int operator()(); };
+BindedHook Ivk_zCFont_CacheIn{ ZENFOR(0x006DF240, 0x007176C0, 0x00728A90, 0x007884D0), &zCFont_CacheIn::operator() };
+int zCFont_CacheIn::operator()()
+{
+	int result = THISCALL(Ivk_zCFont_CacheIn)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::CombineLightmaps(): void]]></Title>
+			<Shortcut><![CDATA[__zCMesh_CombineLightmaps_0x00573A90]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCMesh::CombineLightmaps()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_CombineLightmaps : zCMesh { void operator()(); };
+BindedHook Ivk_zCMesh_CombineLightmaps{ ZENFOR(0x0055A810, 0x00572A10, 0x0056E7E0, 0x00573A90), &zCMesh_CombineLightmaps::operator() };
+void zCMesh_CombineLightmaps::operator()()
+{
+	THISCALL(Ivk_zCMesh_CombineLightmaps)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

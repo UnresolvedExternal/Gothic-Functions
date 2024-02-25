@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRayCache::LastTraceRayEffort(): float]]></Title>
+			<Shortcut><![CDATA[__zCRayCache_LastTraceRayEffort_0x005D2C80]]></Shortcut>
+			<Description><![CDATA[public: static float __cdecl zCRayCache::LastTraceRayEffort()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[float Hook_zCRayCache_LastTraceRayEffort();
+BindedHook Ivk_zCRayCache_LastTraceRayEffort{ ZENFOR(0x005ADB50, 0x005CAAC0, 0x005CC0D0, 0x005D2C80), Hook_zCRayCache_LastTraceRayEffort };
+float Hook_zCRayCache_LastTraceRayEffort()
+{
+	float result = Ivk_zCRayCache_LastTraceRayEffort();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

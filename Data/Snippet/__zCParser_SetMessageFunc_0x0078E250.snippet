@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::SetMessageFunc(void(__cdecl*)(zSTRING)): void]]></Title>
+			<Shortcut><![CDATA[__zCParser_SetMessageFunc_0x0078E250]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCParser::SetMessageFunc(void(__cdecl*)(zSTRING))]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_SetMessageFunc : zCParser { void operator()(void(__cdecl*)(zSTRING)); };
+BindedHook Ivk_zCParser_SetMessageFunc{ ZENFOR(0x006E5020, 0x0071DA00, 0x0072E810, 0x0078E250), &zCParser_SetMessageFunc::operator() };
+void zCParser_SetMessageFunc::operator()(void(__cdecl* a0)(zSTRING))
+{
+	THISCALL(Ivk_zCParser_SetMessageFunc)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

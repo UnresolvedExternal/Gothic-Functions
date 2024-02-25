@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCTransfer>::InsertEnd(zCTransfer const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCTransfer__InsertEnd_0x006301C0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCTransfer>::InsertEnd(zCTransfer const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCTransfer__InsertEnd : zCArray<zCTransfer> { void operator()(zCTransfer const&); };
+BindedHook Ivk_zCArray_zCTransfer__InsertEnd{ ZENFOR(0x00600F90, 0x00622CB0, 0x00628A40, 0x006301C0), &zCArray_zCTransfer__InsertEnd::operator() };
+void zCArray_zCTransfer__InsertEnd::operator()(zCTransfer const& a0)
+{
+	THISCALL(Ivk_zCArray_zCTransfer__InsertEnd)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

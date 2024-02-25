@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCScanDir::RegisterFileHandler(zCScanDirFileHandler*, zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCScanDir_RegisterFileHandler_0x004696B0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCScanDir::RegisterFileHandler(zCScanDirFileHandler*, zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCScanDir_RegisterFileHandler : zCScanDir { void operator()(zCScanDirFileHandler*, zSTRING const&); };
+BindedHook Ivk_zCScanDir_RegisterFileHandler{ ZENFOR(0x00463FF0, 0x0046BB90, 0x00468A80, 0x004696B0), &zCScanDir_RegisterFileHandler::operator() };
+void zCScanDir_RegisterFileHandler::operator()(zCScanDirFileHandler* a0, zSTRING const& a1)
+{
+	THISCALL(Ivk_zCScanDir_RegisterFileHandler)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

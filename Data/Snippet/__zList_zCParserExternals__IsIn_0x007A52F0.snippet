@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zList<zCParserExternals>::IsIn(zCParserExternals*): int]]></Title>
+			<Shortcut><![CDATA[__zList_zCParserExternals__IsIn_0x007A52F0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zList<zCParserExternals>::IsIn(zCParserExternals*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zList_zCParserExternals__IsIn : zList<zCParserExternals> { int operator()(zCParserExternals*); };
+BindedHook Ivk_zList_zCParserExternals__IsIn{ ZENFOR(0x006FB700, 0x00735B50, 0x007457F0, 0x007A52F0), &zList_zCParserExternals__IsIn::operator() };
+int zList_zCParserExternals__IsIn::operator()(zCParserExternals* a0)
+{
+	int result = THISCALL(Ivk_zList_zCParserExternals__IsIn)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

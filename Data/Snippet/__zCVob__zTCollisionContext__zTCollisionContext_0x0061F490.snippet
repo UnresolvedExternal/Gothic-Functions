@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::zTCollisionContext::~zTCollisionContext()]]></Title>
+			<Shortcut><![CDATA[__zCVob__zTCollisionContext__zTCollisionContext_0x0061F490]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCVob::zTCollisionContext::~zTCollisionContext()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob__zTCollisionContext_Destructor : zCVob::zTCollisionContext { void operator()(); };
+BindedHook Ivk_zCVob__zTCollisionContext_Destructor{ ZENFOR(0x005F1EE0, 0x00612C80, 0x00617D40, 0x0061F490), &zCVob__zTCollisionContext_Destructor::operator() };
+void zCVob__zTCollisionContext_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVob__zTCollisionContext_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

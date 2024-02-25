@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIDrop::CanThisCollideWith(zCVob*): int]]></Title>
+			<Shortcut><![CDATA[__oCAIDrop_CanThisCollideWith_0x006A1FA0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCAIDrop::CanThisCollideWith(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIDrop_CanThisCollideWith : oCAIDrop { int operator()(zCVob*); };
+BindedHook Ivk_oCAIDrop_CanThisCollideWith{ ZENFOR(0x00619B70, 0x0063D090, 0x00645720, 0x006A1FA0), &oCAIDrop_CanThisCollideWith::operator() };
+int oCAIDrop_CanThisCollideWith::operator()(zCVob* a0)
+{
+	int result = THISCALL(Ivk_oCAIDrop_CanThisCollideWith)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Edit_Changed(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__Edit_Changed_0x006CC040]]></Shortcut>
+			<Description><![CDATA[void __cdecl Edit_Changed(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Edit_Changed(zSTRING const&);
+BindedHook Ivk_Edit_Changed{ ZENFOR(0x006413C0, 0x00668560, 0x0066F2C0, 0x006CC040), Hook_Edit_Changed };
+void Hook_Edit_Changed(zSTRING const& a0)
+{
+	Ivk_Edit_Changed(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

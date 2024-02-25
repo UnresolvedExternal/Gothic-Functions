@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Update_ChoiceBox(): int]]></Title>
+			<Shortcut><![CDATA[__Update_ChoiceBox_0x0042DB70]]></Shortcut>
+			<Description><![CDATA[int __cdecl Update_ChoiceBox()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_Update_ChoiceBox();
+BindedHook Ivk_Update_ChoiceBox{ ZENFOR(0x0042B780, 0x0042E730, 0x0042D850, 0x0042DB70), Hook_Update_ChoiceBox };
+int Hook_Update_ChoiceBox()
+{
+	int result = Ivk_Update_ChoiceBox();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

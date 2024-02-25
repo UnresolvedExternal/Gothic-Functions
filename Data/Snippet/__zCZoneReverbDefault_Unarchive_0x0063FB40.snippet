@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneReverbDefault::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCZoneReverbDefault_Unarchive_0x0063FB40]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCZoneReverbDefault::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZoneReverbDefault_Unarchive : zCZoneReverbDefault { void operator()(zCArchiver&); };
+BindedHook Ivk_zCZoneReverbDefault_Unarchive{ ZENFOR(0x0060EFA0, 0x00631740, 0x00638350, 0x0063FB40), &zCZoneReverbDefault_Unarchive::operator() };
+void zCZoneReverbDefault_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCZoneReverbDefault_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<oCRtnManager::TRtn_WayBox>::~zCList<oCRtnManager::TRtn_WayBox>()]]></Title>
+			<Shortcut><![CDATA[__zCList_oCRtnManager__TRtn_WayBox___zCList_oCRtnManager__TRtn_W_0x00777330]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCList<oCRtnManager::TRtn_WayBox>::~zCList<oCRtnManager::TRtn_WayBox>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_oCRtnManager__TRtn_WayBox__Destructor : zCList<oCRtnManager::TRtn_WayBox> { void operator()(); };
+BindedHook Ivk_zCList_oCRtnManager__TRtn_WayBox__Destructor{ ZENFOR(0x006CF300, 0x00705A70, 0x00717DA0, 0x00777330), &zCList_oCRtnManager__TRtn_WayBox__Destructor::operator() };
+void zCList_oCRtnManager__TRtn_WayBox__Destructor::operator()()
+{
+	THISCALL(Ivk_zCList_oCRtnManager__TRtn_WayBox__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

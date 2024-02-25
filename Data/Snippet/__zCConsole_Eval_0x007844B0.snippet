@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConsole::Eval(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCConsole_Eval_0x007844B0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCConsole::Eval(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConsole_Eval : zCConsole { void operator()(zSTRING const&); };
+BindedHook Ivk_zCConsole_Eval{ ZENFOR(0x006DB220, 0x007131B0, 0x00724A70, 0x007844B0), &zCConsole_Eval::operator() };
+void zCConsole_Eval::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCConsole_Eval)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

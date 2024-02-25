@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::LoadResourceData(): int]]></Title>
+			<Shortcut><![CDATA[__zCSndFX_MSS_LoadResourceData_0x004F59C0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCSndFX_MSS::LoadResourceData()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_LoadResourceData : zCSndFX_MSS { int operator()(); };
+BindedHook Ivk_zCSndFX_MSS_LoadResourceData{ ZENFOR(0x004E7720, 0x004F98C0, 0x004F2D40, 0x004F59C0), &zCSndFX_MSS_LoadResourceData::operator() };
+int zCSndFX_MSS_LoadResourceData::operator()()
+{
+	int result = THISCALL(Ivk_zCSndFX_MSS_LoadResourceData)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

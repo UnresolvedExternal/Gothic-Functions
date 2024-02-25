@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::GetUsedSoundMem(): int]]></Title>
+			<Shortcut><![CDATA[__zCSndSys_MSS_GetUsedSoundMem_0x004F4280]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCSndSys_MSS::GetUsedSoundMem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_GetUsedSoundMem : zCSndSys_MSS { int operator()(); };
+BindedHook Ivk_zCSndSys_MSS_GetUsedSoundMem{ ZENFOR(0x004E6140, 0x004F8230, 0x004F1600, 0x004F4280), &zCSndSys_MSS_GetUsedSoundMem::operator() };
+int zCSndSys_MSS_GetUsedSoundMem::operator()()
+{
+	int result = THISCALL(Ivk_zCSndSys_MSS_GetUsedSoundMem)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

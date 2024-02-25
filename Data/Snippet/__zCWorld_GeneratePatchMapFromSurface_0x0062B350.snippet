@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::GeneratePatchMapFromSurface(zCArray<zCPolygon*>&): zCPatchMap*]]></Title>
+			<Shortcut><![CDATA[__zCWorld_GeneratePatchMapFromSurface_0x0062B350]]></Shortcut>
+			<Description><![CDATA[protected: zCPatchMap* __thiscall zCWorld::GeneratePatchMapFromSurface(zCArray<zCPolygon*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_GeneratePatchMapFromSurface : zCWorld { zCPatchMap* operator()(zCArray<zCPolygon*>&); };
+BindedHook Ivk_zCWorld_GeneratePatchMapFromSurface{ ZENFOR(0x005FC710, 0x0061DFA0, 0x00623BD0, 0x0062B350), &zCWorld_GeneratePatchMapFromSurface::operator() };
+zCPatchMap* zCWorld_GeneratePatchMapFromSurface::operator()(zCArray<zCPolygon*>& a0)
+{
+	zCPatchMap* result = THISCALL(Ivk_zCWorld_GeneratePatchMapFromSurface)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

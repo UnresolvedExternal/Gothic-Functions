@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWorldTimer::AddTime(int&, int&, int, int): void]]></Title>
+			<Shortcut><![CDATA[__oCWorldTimer_AddTime_0x00781390]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl oCWorldTimer::AddTime(int&, int&, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCWorldTimer_AddTime(int&, int&, int, int);
+BindedHook Ivk_oCWorldTimer_AddTime{ ZENFOR(0x006D80E0, 0x0070FCA0, 0x00721950, 0x00781390), Hook_oCWorldTimer_AddTime };
+void Hook_oCWorldTimer_AddTime(int& a0, int& a1, int a2, int a3)
+{
+	Ivk_oCWorldTimer_AddTime(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

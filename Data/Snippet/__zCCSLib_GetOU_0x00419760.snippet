@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSLib::GetOU(int): zCCSBlock*]]></Title>
+			<Shortcut><![CDATA[__zCCSLib_GetOU_0x00419760]]></Shortcut>
+			<Description><![CDATA[public: zCCSBlock* __thiscall zCCSLib::GetOU(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSLib_GetOU : zCCSLib { zCCSBlock* operator()(int); };
+BindedHook Ivk_zCCSLib_GetOU{ ZENFOR(0x00419220, 0x0041B140, 0x00419760, 0x00419760), &zCCSLib_GetOU::operator() };
+zCCSBlock* zCCSLib_GetOU::operator()(int a0)
+{
+	zCCSBlock* result = THISCALL(Ivk_zCCSLib_GetOU)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

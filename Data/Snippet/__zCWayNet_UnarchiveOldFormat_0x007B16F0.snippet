@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::UnarchiveOldFormat(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCWayNet_UnarchiveOldFormat_0x007B16F0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCWayNet::UnarchiveOldFormat(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_UnarchiveOldFormat : zCWayNet { void operator()(zCArchiver&); };
+BindedHook Ivk_zCWayNet_UnarchiveOldFormat{ ZENFOR(0x00707A30, 0x00742600, 0x00751BF0, 0x007B16F0), &zCWayNet_UnarchiveOldFormat::operator() };
+void zCWayNet_UnarchiveOldFormat::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCWayNet_UnarchiveOldFormat)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

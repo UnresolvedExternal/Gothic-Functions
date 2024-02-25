@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialogChoice::StopSelection(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewDialogChoice_StopSelection_0x0068EFB0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __fastcall zCViewDialogChoice::StopSelection()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialogChoice_StopSelection : zCViewDialogChoice { void __fastcall operator()(); };
+BindedHook Ivk_zCViewDialogChoice_StopSelection{ ZENFOR(0x00758E40, 0x0079B400, 0x007A5D10, 0x0068EFB0), &zCViewDialogChoice_StopSelection::operator() };
+void __fastcall zCViewDialogChoice_StopSelection::operator()()
+{
+	THISCALL(Ivk_zCViewDialogChoice_StopSelection)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

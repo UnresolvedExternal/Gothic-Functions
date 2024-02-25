@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspTree::GetBspSectorByName(zSTRING const&): zCBspSector* [const]]]></Title>
+			<Shortcut><![CDATA[__zCBspTree_GetBspSectorByName_0x00537960]]></Shortcut>
+			<Description><![CDATA[public: zCBspSector* __thiscall zCBspTree::GetBspSectorByName(zSTRING const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspTree_GetBspSectorByName : zCBspTree { zCBspSector* operator()(zSTRING const&) const; };
+BindedHook Ivk_zCBspTree_GetBspSectorByName{ ZENFOR(0x00523DF0, 0x0053A100, 0x00534600, 0x00537960), &zCBspTree_GetBspSectorByName::operator() };
+zCBspSector* zCBspTree_GetBspSectorByName::operator()(zSTRING const& a0) const
+{
+	zCBspSector* result = THISCALL(Ivk_zCBspTree_GetBspSectorByName)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

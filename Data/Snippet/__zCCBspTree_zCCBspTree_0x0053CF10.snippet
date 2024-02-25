@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspTree::zCCBspTree()]]></Title>
+			<Shortcut><![CDATA[__zCCBspTree_zCCBspTree_0x0053CF10]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCCBspTree::zCCBspTree()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspTree_zCCBspTree : zCCBspTree { zCCBspTree* operator()(); };
+BindedHook Ivk_zCCBspTree_zCCBspTree{ ZENFOR(0x00527410, 0x0053D820, 0x00537DE0, 0x0053CF10), &zCCBspTree_zCCBspTree::operator() };
+zCCBspTree* zCCBspTree_zCCBspTree::operator()()
+{
+	zCCBspTree* result = THISCALL(Ivk_zCCBspTree_zCCBspTree)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

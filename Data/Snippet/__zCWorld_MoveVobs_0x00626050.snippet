@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::MoveVobs(): void]]></Title>
+			<Shortcut><![CDATA[__zCWorld_MoveVobs_0x00626050]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCWorld::MoveVobs()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_MoveVobs : zCWorld { void operator()(); };
+BindedHook Ivk_zCWorld_MoveVobs{ ZENFOR(0x005F79F0, 0x00618BA0, 0x0061E8C0, 0x00626050), &zCWorld_MoveVobs::operator() };
+void zCWorld_MoveVobs::operator()()
+{
+	THISCALL(Ivk_zCWorld_MoveVobs)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

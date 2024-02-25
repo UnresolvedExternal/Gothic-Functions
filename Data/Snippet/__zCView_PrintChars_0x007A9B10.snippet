@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::PrintChars(int, int, zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCView_PrintChars_0x007A9B10]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCView::PrintChars(int, int, zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_PrintChars : zCView { void operator()(int, int, zSTRING const&); };
+BindedHook Ivk_zCView_PrintChars{ ZENFOR(0x006FFF80, 0x0073A580, 0x0074A010, 0x007A9B10), &zCView_PrintChars::operator() };
+void zCView_PrintChars::operator()(int a0, int a1, zSTRING const& a2)
+{
+	THISCALL(Ivk_zCView_PrintChars)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

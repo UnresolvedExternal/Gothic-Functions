@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zInitOptions(): void]]></Title>
+			<Shortcut><![CDATA[__zInitOptions_0x004701F0]]></Shortcut>
+			<Description><![CDATA[void __cdecl zInitOptions()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zInitOptions();
+BindedHook Ivk_zInitOptions{ ZENFOR(0x0046ADC0, 0x00473010, 0x0046F5C0, 0x004701F0), Hook_zInitOptions };
+void Hook_zInitOptions()
+{
+	Ivk_zInitOptions();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

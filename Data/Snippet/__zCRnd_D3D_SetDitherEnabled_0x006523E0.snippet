@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::SetDitherEnabled(int): void]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_SetDitherEnabled_0x006523E0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::SetDitherEnabled(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_SetDitherEnabled : zCRnd_D3D { void operator()(int); };
+BindedHook Ivk_zCRnd_D3D_SetDitherEnabled{ ZENFOR(0x00719DB0, 0x00755F90, 0x00765A80, 0x006523E0), &zCRnd_D3D_SetDitherEnabled::operator() };
+void zCRnd_D3D_SetDitherEnabled::operator()(int a0)
+{
+	THISCALL(Ivk_zCRnd_D3D_SetDitherEnabled)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

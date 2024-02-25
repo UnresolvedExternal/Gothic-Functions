@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDocument::AlignPageToParent(): void]]></Title>
+			<Shortcut><![CDATA[__oCViewDocument_AlignPageToParent_0x0068CDA0]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall oCViewDocument::AlignPageToParent()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDocument_AlignPageToParent : oCViewDocument { void __fastcall operator()(); };
+BindedHook Ivk_oCViewDocument_AlignPageToParent{ ZENFOR(0x007259A0, 0x00762C30, 0x00771D70, 0x0068CDA0), &oCViewDocument_AlignPageToParent::operator() };
+void __fastcall oCViewDocument_AlignPageToParent::operator()()
+{
+	THISCALL(Ivk_oCViewDocument_AlignPageToParent)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

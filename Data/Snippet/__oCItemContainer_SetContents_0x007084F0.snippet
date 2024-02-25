@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::SetContents(zCListSort<oCItem>*): void]]></Title>
+			<Shortcut><![CDATA[__oCItemContainer_SetContents_0x007084F0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCItemContainer::SetContents(zCListSort<oCItem>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemContainer_SetContents : oCItemContainer { void operator()(zCListSort<oCItem>*); };
+BindedHook Ivk_oCItemContainer_SetContents{ ZENFOR(0x00667E60, 0x006959C0, 0x006AAA00, 0x007084F0), &oCItemContainer_SetContents::operator() };
+void oCItemContainer_SetContents::operator()(zCListSort<oCItem>* a0)
+{
+	THISCALL(Ivk_oCItemContainer_SetContents)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

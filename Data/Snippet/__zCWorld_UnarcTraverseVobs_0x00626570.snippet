@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::UnarcTraverseVobs(zCArchiver&, zCTree<zCVob>*): void]]></Title>
+			<Shortcut><![CDATA[__zCWorld_UnarcTraverseVobs_0x00626570]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall zCWorld::UnarcTraverseVobs(zCArchiver&, zCTree<zCVob>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_UnarcTraverseVobs : zCWorld { void __fastcall operator()(zCArchiver&, zCTree<zCVob>*); };
+BindedHook Ivk_zCWorld_UnarcTraverseVobs{ ZENFOR(0x005F7F40, 0x00619390, 0x0061EDE0, 0x00626570), &zCWorld_UnarcTraverseVobs::operator() };
+void __fastcall zCWorld_UnarcTraverseVobs::operator()(zCArchiver& a0, zCTree<zCVob>* a1)
+{
+	THISCALL(Ivk_zCWorld_UnarcTraverseVobs)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

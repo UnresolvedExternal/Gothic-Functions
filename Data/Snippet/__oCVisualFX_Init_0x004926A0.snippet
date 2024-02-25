@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::Init(zCArray<zCVob*>const&): void]]></Title>
+			<Shortcut><![CDATA[__oCVisualFX_Init_0x004926A0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCVisualFX::Init(zCArray<zCVob*>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_Init : oCVisualFX { void operator()(zCArray<zCVob*>const&); };
+BindedHook Ivk_oCVisualFX_Init{ ZENFOR(0x0048A640, 0x00495DA0, 0x00490C90, 0x004926A0), &oCVisualFX_Init::operator() };
+void oCVisualFX_Init::operator()(zCArray<zCVob*>const& a0)
+{
+	THISCALL(Ivk_oCVisualFX_Init)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CDDrawDeviceNode>::CleanupList(): void]]></Title>
+			<Shortcut><![CDATA[__ListT_CDDrawDeviceNode__CleanupList_0x007B677E]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall ListT<CDDrawDeviceNode>::CleanupList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CDDrawDeviceNode__CleanupList : ListT<CDDrawDeviceNode> { void operator()(); };
+BindedHook Ivk_ListT_CDDrawDeviceNode__CleanupList{ ZENFOR(0x0075D08A, 0x007A006D, 0x007AA2B8, 0x007B677E), &ListT_CDDrawDeviceNode__CleanupList::operator() };
+void ListT_CDDrawDeviceNode__CleanupList::operator()()
+{
+	THISCALL(Ivk_ListT_CDDrawDeviceNode__CleanupList)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

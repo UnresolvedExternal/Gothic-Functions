@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::GetFileExtension(int): zSTRING const*]]></Title>
+			<Shortcut><![CDATA[__zCModel_GetFileExtension_0x00578740]]></Shortcut>
+			<Description><![CDATA[protected: virtual zSTRING const* __thiscall zCModel::GetFileExtension(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_GetFileExtension : zCModel { zSTRING const* operator()(int); };
+BindedHook Ivk_zCModel_GetFileExtension{ ZENFOR(0x0055EEF0, 0x00577280, 0x00573490, 0x00578740), &zCModel_GetFileExtension::operator() };
+zSTRING const* zCModel_GetFileExtension::operator()(int a0)
+{
+	zSTRING const* result = THISCALL(Ivk_zCModel_GetFileExtension)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCZone*>::zCArraySort<zCZone*>()]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCZone___zCArraySort_zCZone___0x00628840]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArraySort<zCZone*>::zCArraySort<zCZone*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCZone___zCArraySort_zCZone__ : zCArraySort<zCZone*> { zCArraySort<zCZone*>* operator()(); };
+BindedHook Ivk_zCArraySort_zCZone___zCArraySort_zCZone__{ ZENFOR(0x005FA050, 0x0061B5B0, 0x006210C0, 0x00628840), &zCArraySort_zCZone___zCArraySort_zCZone__::operator() };
+zCArraySort<zCZone*>* zCArraySort_zCZone___zCArraySort_zCZone__::operator()()
+{
+	zCArraySort<zCZone*>* result = THISCALL(Ivk_zCArraySort_zCZone___zCArraySort_zCZone__)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

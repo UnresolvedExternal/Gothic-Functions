@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBinTree3DS::GetLeafIndex(zVEC3 const&): int]]></Title>
+			<Shortcut><![CDATA[__zCBinTree3DS_GetLeafIndex_0x0055E640]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCBinTree3DS::GetLeafIndex(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBinTree3DS_GetLeafIndex : zCBinTree3DS { int operator()(zVEC3 const&); };
+BindedHook Ivk_zCBinTree3DS_GetLeafIndex{ ZENFOR(0x005478F0, 0x0055F830, 0x00559420, 0x0055E640), &zCBinTree3DS_GetLeafIndex::operator() };
+int zCBinTree3DS_GetLeafIndex::operator()(zVEC3 const& a0)
+{
+	int result = THISCALL(Ivk_zCBinTree3DS_GetLeafIndex)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

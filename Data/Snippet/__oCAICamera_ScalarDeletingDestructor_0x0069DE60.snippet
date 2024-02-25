@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAICamera::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCAICamera_ScalarDeletingDestructor_0x0069DE60]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall oCAICamera::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCAICamera_ScalarDeletingDestructor : oCAICamera { void* operator()(unsigned int); };
+BindedHook Ivk_oCAICamera_ScalarDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x00641690, 0x0069DE60), &oCAICamera_ScalarDeletingDestructor::operator() };
+void* oCAICamera_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCAICamera_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

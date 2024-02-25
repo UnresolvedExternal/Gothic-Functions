@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelNodeInst::GetNodeAniListIndex(zCModelAniActive const*): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCModelNodeInst_GetNodeAniListIndex_0x0057F8B0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCModelNodeInst::GetNodeAniListIndex(zCModelAniActive const*)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelNodeInst_GetNodeAniListIndex : zCModelNodeInst { int operator()(zCModelAniActive const*) const; };
+BindedHook Ivk_zCModelNodeInst_GetNodeAniListIndex{ ZENFOR(0x00565830, 0x0057E1B0, 0x0057A390, 0x0057F8B0), &zCModelNodeInst_GetNodeAniListIndex::operator() };
+int zCModelNodeInst_GetNodeAniListIndex::operator()(zCModelAniActive const* a0) const
+{
+	int result = THISCALL(Ivk_zCModelNodeInst_GetNodeAniListIndex)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::zCSubMesh::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto__zCSubMesh_VectorDeletingDestructor_0x005C3BF0]]></Shortcut>
+			<Description><![CDATA[public: void* __thiscall zCProgMeshProto::zCSubMesh::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto__zCSubMesh_VectorDeletingDestructor : zCProgMeshProto::zCSubMesh { void* operator()(unsigned int); };
+BindedHook Ivk_zCProgMeshProto__zCSubMesh_VectorDeletingDestructor{ ZENFOR(0x005A1D40, 0x005BE480, 0x005BE080, 0x005C3BF0), &zCProgMeshProto__zCSubMesh_VectorDeletingDestructor::operator() };
+void* zCProgMeshProto__zCSubMesh_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCProgMeshProto__zCSubMesh_VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

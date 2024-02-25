@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe__GetClassDef_0x0051C040]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCArchiverBinSafe::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe__GetClassDef : zCArchiverBinSafe { zCClassDef* operator()() const; };
+BindedHook Ivk_zCArchiverBinSafe__GetClassDef{ ZENFOR(0x0050BF20, 0x00520C80, 0x00519270, 0x0051C040), &zCArchiverBinSafe__GetClassDef::operator() };
+zCClassDef* zCArchiverBinSafe__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCArchiverBinSafe__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

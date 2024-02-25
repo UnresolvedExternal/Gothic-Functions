@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::CalcForceModelHalt(): void]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_CalcForceModelHalt_0x0050E390]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCAIPlayer::CalcForceModelHalt()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_CalcForceModelHalt : zCAIPlayer { void operator()(); };
+BindedHook Ivk_zCAIPlayer_CalcForceModelHalt{ ZENFOR(0x004FE820, 0x00511C70, 0x0050B5E0, 0x0050E390), &zCAIPlayer_CalcForceModelHalt::operator() };
+void zCAIPlayer_CalcForceModelHalt::operator()()
+{
+	THISCALL(Ivk_zCAIPlayer_CalcForceModelHalt)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

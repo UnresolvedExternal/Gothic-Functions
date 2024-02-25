@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContextList::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__CD3duContextList_ScalarDeletingDestructor_0x007B6C4F]]></Shortcut>
+			<Description><![CDATA[public: void* __thiscall CD3duContextList::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct CD3duContextList_ScalarDeletingDestructor : CD3duContextList { void* operator()(unsigned int); };
+BindedHook Ivk_CD3duContextList_ScalarDeletingDestructor{ ZENFOR(0x0075D55B, 0x00000000, 0x007AA789, 0x007B6C4F), &CD3duContextList_ScalarDeletingDestructor::operator() };
+void* CD3duContextList_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_CD3duContextList_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

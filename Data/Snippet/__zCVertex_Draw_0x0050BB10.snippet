@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertex::Draw(zCOLOR const&, int): void]]></Title>
+			<Shortcut><![CDATA[__zCVertex_Draw_0x0050BB10]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCVertex::Draw(zCOLOR const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertex_Draw : zCVertex { void operator()(zCOLOR const&, int); };
+BindedHook Ivk_zCVertex_Draw{ ZENFOR(0x004FC0D0, 0x0050F170, 0x00508D60, 0x0050BB10), &zCVertex_Draw::operator() };
+void zCVertex_Draw::operator()(zCOLOR const& a0, int a1)
+{
+	THISCALL(Ivk_zCVertex_Draw)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

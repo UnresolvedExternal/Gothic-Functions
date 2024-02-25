@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::InitializeControlValues(): void]]></Title>
+			<Shortcut><![CDATA[__zCInput_InitializeControlValues_0x004CC640]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCInput::InitializeControlValues()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_InitializeControlValues : zCInput { void operator()(); };
+BindedHook Ivk_zCInput_InitializeControlValues{ ZENFOR(0x004C32E0, 0x004D2C90, 0x004CA0D0, 0x004CC640), &zCInput_InitializeControlValues::operator() };
+void zCInput_InitializeControlValues::operator()()
+{
+	THISCALL(Ivk_zCInput_InitializeControlValues)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

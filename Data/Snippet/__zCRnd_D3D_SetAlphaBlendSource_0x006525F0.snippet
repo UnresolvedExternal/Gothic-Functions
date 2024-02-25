@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::SetAlphaBlendSource(zTRnd_AlphaBlendSource const&): void]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_SetAlphaBlendSource_0x006525F0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::SetAlphaBlendSource(zTRnd_AlphaBlendSource const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_SetAlphaBlendSource : zCRnd_D3D { void operator()(zTRnd_AlphaBlendSource const&); };
+BindedHook Ivk_zCRnd_D3D_SetAlphaBlendSource{ ZENFOR(0x00719F20, 0x00756110, 0x00765C90, 0x006525F0), &zCRnd_D3D_SetAlphaBlendSource::operator() };
+void zCRnd_D3D_SetAlphaBlendSource::operator()(zTRnd_AlphaBlendSource const& a0)
+{
+	THISCALL(Ivk_zCRnd_D3D_SetAlphaBlendSource)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

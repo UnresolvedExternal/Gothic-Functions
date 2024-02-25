@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput_Win32::GetMouseIdle(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCInput_Win32_GetMouseIdle_0x004D4CA0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCInput_Win32::GetMouseIdle()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCInput_Win32_GetMouseIdle : zCInput_Win32 { int operator()() const; };
+BindedHook Ivk_zCInput_Win32_GetMouseIdle{ ZENFOR(0x00000000, 0x00000000, 0x004D26E0, 0x004D4CA0), &zCInput_Win32_GetMouseIdle::operator() };
+int zCInput_Win32_GetMouseIdle::operator()() const
+{
+	int result = THISCALL(Ivk_zCInput_Win32_GetMouseIdle)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

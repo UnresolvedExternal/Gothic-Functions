@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCPolygon*>::zCArray<zCPolygon*>()]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCPolygon___zCArray_zCPolygon___0x0053BA80]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zCPolygon*>::zCArray<zCPolygon*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCPolygon___zCArray_zCPolygon__ : zCArray<zCPolygon*> { zCArray<zCPolygon*>* operator()(); };
+BindedHook Ivk_zCArray_zCPolygon___zCArray_zCPolygon__{ ZENFOR(0x00526690, 0x0053CA40, 0x00536E10, 0x0053BA80), &zCArray_zCPolygon___zCArray_zCPolygon__::operator() };
+zCArray<zCPolygon*>* zCArray_zCPolygon___zCArray_zCPolygon__::operator()()
+{
+	zCArray<zCPolygon*>* result = THISCALL(Ivk_zCArray_zCPolygon___zCArray_zCPolygon__)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

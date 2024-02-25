@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::RemoveWorldDependencies(int): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_RemoveWorldDependencies_0x00601DA0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCVob::RemoveWorldDependencies(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_RemoveWorldDependencies : zCVob { void operator()(int); };
+BindedHook Ivk_zCVob_RemoveWorldDependencies{ ZENFOR(0x005D6790, 0x005F5CD0, 0x005FAF70, 0x00601DA0), &zCVob_RemoveWorldDependencies::operator() };
+void zCVob_RemoveWorldDependencies::operator()(int a0)
+{
+	THISCALL(Ivk_zCVob_RemoveWorldDependencies)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::Setflags(int): void]]></Title>
+			<Shortcut><![CDATA[__zCView_Setflags_0x007A60A0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCView::Setflags(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_Setflags : zCView { void operator()(int); };
+BindedHook Ivk_zCView_Setflags{ ZENFOR(0x006FC5B0, 0x00736950, 0x007465A0, 0x007A60A0), &zCView_Setflags::operator() };
+void zCView_Setflags::operator()(int a0)
+{
+	THISCALL(Ivk_zCView_Setflags)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

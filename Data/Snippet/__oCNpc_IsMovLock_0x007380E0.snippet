@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsMovLock(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_IsMovLock_0x007380E0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::IsMovLock()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsMovLock : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_IsMovLock{ ZENFOR(0x00694C80, 0x006C65A0, 0x006D99A0, 0x007380E0), &oCNpc_IsMovLock::operator() };
+int oCNpc_IsMovLock::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_IsMovLock)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

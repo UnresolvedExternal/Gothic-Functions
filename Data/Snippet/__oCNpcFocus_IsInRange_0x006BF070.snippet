@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcFocus::IsInRange(int, float): int]]></Title>
+			<Shortcut><![CDATA[__oCNpcFocus_IsInRange_0x006BF070]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpcFocus::IsInRange(int, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcFocus_IsInRange : oCNpcFocus { int operator()(int, float); };
+BindedHook Ivk_oCNpcFocus_IsInRange{ ZENFOR(0x00635270, 0x0065B410, 0x006626E0, 0x006BF070), &oCNpcFocus_IsInRange::operator() };
+int oCNpcFocus_IsInRange::operator()(int a0, float a1)
+{
+	int result = THISCALL(Ivk_oCNpcFocus_IsInRange)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ConvertVec3(zVEC3&): void]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_ConvertVec3_0x0058B2E0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::ConvertVec3(zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_ConvertVec3 : zCModelPrototype { void operator()(zVEC3&); };
+BindedHook Ivk_zCModelPrototype_ConvertVec3{ ZENFOR(0x00570BA0, 0x0058A0F0, 0x00585D80, 0x0058B2E0), &zCModelPrototype_ConvertVec3::operator() };
+void zCModelPrototype_ConvertVec3::operator()(zVEC3& a0)
+{
+	THISCALL(Ivk_zCModelPrototype_ConvertVec3)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

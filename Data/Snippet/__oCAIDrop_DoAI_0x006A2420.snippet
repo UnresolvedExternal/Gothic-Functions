@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIDrop::DoAI(zCVob*, int&): void]]></Title>
+			<Shortcut><![CDATA[__oCAIDrop_DoAI_0x006A2420]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCAIDrop::DoAI(zCVob*, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIDrop_DoAI : oCAIDrop { void operator()(zCVob*, int&); };
+BindedHook Ivk_oCAIDrop_DoAI{ ZENFOR(0x00619FD0, 0x0063D560, 0x00645BA0, 0x006A2420), &oCAIDrop_DoAI::operator() };
+void oCAIDrop_DoAI::operator()(zCVob* a0, int& a1)
+{
+	THISCALL(Ivk_oCAIDrop_DoAI)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

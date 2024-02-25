@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCTexture*>::AllocDelta(int): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCTexture___AllocDelta_0x005845F0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCTexture*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCTexture___AllocDelta : zCArray<zCTexture*> { void operator()(int); };
+BindedHook Ivk_zCArray_zCTexture___AllocDelta{ ZENFOR(0x00569D10, 0x00582BC0, 0x0057F090, 0x005845F0), &zCArray_zCTexture___AllocDelta::operator() };
+void zCArray_zCTexture___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zCTexture___AllocDelta)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

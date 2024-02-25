@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Outdoor::GetFarZScalability(): float [const]]]></Title>
+			<Shortcut><![CDATA[__zCSkyControler_Outdoor_GetFarZScalability_0x005E9EC0]]></Shortcut>
+			<Description><![CDATA[public: virtual float __thiscall zCSkyControler_Outdoor::GetFarZScalability()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Outdoor_GetFarZScalability : zCSkyControler_Outdoor { float operator()() const; };
+BindedHook Ivk_zCSkyControler_Outdoor_GetFarZScalability{ ZENFOR(0x005C05B0, 0x005DE440, 0x005E3110, 0x005E9EC0), &zCSkyControler_Outdoor_GetFarZScalability::operator() };
+float zCSkyControler_Outdoor_GetFarZScalability::operator()() const
+{
+	float result = THISCALL(Ivk_zCSkyControler_Outdoor_GetFarZScalability)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

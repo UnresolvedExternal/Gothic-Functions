@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialogChoice::RemoveChoice(int): void]]></Title>
+			<Shortcut><![CDATA[__zCViewDialogChoice_RemoveChoice_0x0068F9B0]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall zCViewDialogChoice::RemoveChoice(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialogChoice_RemoveChoice : zCViewDialogChoice { void __fastcall operator()(int); };
+BindedHook Ivk_zCViewDialogChoice_RemoveChoice{ ZENFOR(0x00759800, 0x0079BDB0, 0x007A6710, 0x0068F9B0), &zCViewDialogChoice_RemoveChoice::operator() };
+void __fastcall zCViewDialogChoice_RemoveChoice::operator()(int a0)
+{
+	THISCALL(Ivk_zCViewDialogChoice_RemoveChoice)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

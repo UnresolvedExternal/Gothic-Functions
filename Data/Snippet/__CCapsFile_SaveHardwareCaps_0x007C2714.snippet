@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CCapsFile::SaveHardwareCaps(CDDrawDeviceNode*, CVideoModeNode*): long]]></Title>
+			<Shortcut><![CDATA[__CCapsFile_SaveHardwareCaps_0x007C2714]]></Shortcut>
+			<Description><![CDATA[public: long __thiscall CCapsFile::SaveHardwareCaps(CDDrawDeviceNode*, CVideoModeNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CCapsFile_SaveHardwareCaps : CCapsFile { long operator()(CDDrawDeviceNode*, CVideoModeNode*); };
+BindedHook Ivk_CCapsFile_SaveHardwareCaps{ ZENFOR(0x00769020, 0x007B0687, 0x007B624E, 0x007C2714), &CCapsFile_SaveHardwareCaps::operator() };
+long CCapsFile_SaveHardwareCaps::operator()(CDDrawDeviceNode* a0, CVideoModeNode* a1)
+{
+	long result = THISCALL(Ivk_CCapsFile_SaveHardwareCaps)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

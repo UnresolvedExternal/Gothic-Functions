@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspLeaf::PolyPlueckerAddRef(): void]]></Title>
+			<Shortcut><![CDATA[__zCBspLeaf_PolyPlueckerAddRef_0x0052DFB0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCBspLeaf::PolyPlueckerAddRef()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspLeaf_PolyPlueckerAddRef : zCBspLeaf { void operator()(); };
+BindedHook Ivk_zCBspLeaf_PolyPlueckerAddRef{ ZENFOR(0x0051B6E0, 0x00531340, 0x0052B060, 0x0052DFB0), &zCBspLeaf_PolyPlueckerAddRef::operator() };
+void zCBspLeaf_PolyPlueckerAddRef::operator()()
+{
+	THISCALL(Ivk_zCBspLeaf_PolyPlueckerAddRef)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

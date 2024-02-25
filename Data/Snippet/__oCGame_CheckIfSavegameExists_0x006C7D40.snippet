@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::CheckIfSavegameExists(zSTRING const&): int]]></Title>
+			<Shortcut><![CDATA[__oCGame_CheckIfSavegameExists_0x006C7D40]]></Shortcut>
+			<Description><![CDATA[private: virtual int __thiscall oCGame::CheckIfSavegameExists(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_CheckIfSavegameExists : oCGame { int operator()(zSTRING const&); };
+BindedHook Ivk_oCGame_CheckIfSavegameExists{ ZENFOR(0x0063D6D0, 0x00664350, 0x0066AFD0, 0x006C7D40), &oCGame_CheckIfSavegameExists::operator() };
+int oCGame_CheckIfSavegameExists::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_oCGame_CheckIfSavegameExists)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

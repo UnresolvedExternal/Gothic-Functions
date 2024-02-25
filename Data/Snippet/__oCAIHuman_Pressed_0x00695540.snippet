@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::Pressed(int): int]]></Title>
+			<Shortcut><![CDATA[__oCAIHuman_Pressed_0x00695540]]></Shortcut>
+			<Description><![CDATA[protected: int __thiscall oCAIHuman::Pressed(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_Pressed : oCAIHuman { int operator()(int); };
+BindedHook Ivk_oCAIHuman_Pressed{ ZENFOR(0x0060F920, 0x006323C0, 0x00638E70, 0x00695540), &oCAIHuman_Pressed::operator() };
+int oCAIHuman_Pressed::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCAIHuman_Pressed)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

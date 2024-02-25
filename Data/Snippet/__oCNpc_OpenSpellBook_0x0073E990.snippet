@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::OpenSpellBook(int): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_OpenSpellBook_0x0073E990]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc::OpenSpellBook(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_OpenSpellBook : oCNpc { void operator()(int); };
+BindedHook Ivk_oCNpc_OpenSpellBook{ ZENFOR(0x0069B350, 0x006CD330, 0x006E00A0, 0x0073E990), &oCNpc_OpenSpellBook::operator() };
+void oCNpc_OpenSpellBook::operator()(int a0)
+{
+	THISCALL(Ivk_oCNpc_OpenSpellBook)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

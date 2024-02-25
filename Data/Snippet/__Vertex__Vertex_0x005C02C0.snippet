@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Vertex::~Vertex()]]></Title>
+			<Shortcut><![CDATA[__Vertex__Vertex_0x005C02C0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall Vertex::~Vertex()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct Vertex_Destructor : Vertex { void operator()(); };
+BindedHook Ivk_Vertex_Destructor{ ZENFOR(0x0059E420, 0x005BAA10, 0x005BA750, 0x005C02C0), &Vertex_Destructor::operator() };
+void Vertex_Destructor::operator()()
+{
+	THISCALL(Ivk_Vertex_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

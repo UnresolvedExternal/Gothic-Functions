@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ASSERTDlgProc(HWND__*, unsigned int, unsigned int, long): int]]></Title>
+			<Shortcut><![CDATA[__ASSERTDlgProc_0x00507670]]></Shortcut>
+			<Description><![CDATA[int __stdcall ASSERTDlgProc(HWND__*, unsigned int, unsigned int, long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int __stdcall Hook_ASSERTDlgProc(HWND__*, unsigned int, unsigned int, long);
+BindedHook Ivk_ASSERTDlgProc{ ZENFOR(0x004F8B90, 0x0050B620, 0x00504960, 0x00507670), Hook_ASSERTDlgProc };
+int __stdcall Hook_ASSERTDlgProc(HWND__* a0, unsigned int a1, unsigned int a2, long a3)
+{
+	int result = Ivk_ASSERTDlgProc(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

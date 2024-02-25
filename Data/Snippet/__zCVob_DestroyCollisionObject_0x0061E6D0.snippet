@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::DestroyCollisionObject(int): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_DestroyCollisionObject_0x0061E6D0]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall zCVob::DestroyCollisionObject(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_DestroyCollisionObject : zCVob { void __fastcall operator()(int); };
+BindedHook Ivk_zCVob_DestroyCollisionObject{ ZENFOR(0x005F1140, 0x00611E30, 0x00616F80, 0x0061E6D0), &zCVob_DestroyCollisionObject::operator() };
+void __fastcall zCVob_DestroyCollisionObject::operator()(int a0)
+{
+	THISCALL(Ivk_zCVob_DestroyCollisionObject)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::SetNoReadSearchCycles(int): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverGeneric_SetNoReadSearchCycles_0x00522160]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCArchiverGeneric::SetNoReadSearchCycles(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_SetNoReadSearchCycles : zCArchiverGeneric { void operator()(int); };
+BindedHook Ivk_zCArchiverGeneric_SetNoReadSearchCycles{ ZENFOR(0x00511DE0, 0x00527120, 0x0051F390, 0x00522160), &zCArchiverGeneric_SetNoReadSearchCycles::operator() };
+void zCArchiverGeneric_SetNoReadSearchCycles::operator()(int a0)
+{
+	THISCALL(Ivk_zCArchiverGeneric_SetNoReadSearchCycles)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

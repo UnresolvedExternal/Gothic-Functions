@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::PC_DirectActions(): int]]></Title>
+			<Shortcut><![CDATA[__oCAIHuman_PC_DirectActions_0x006360C0]]></Shortcut>
+			<Description><![CDATA[protected: int __thiscall oCAIHuman::PC_DirectActions()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A
+struct oCAIHuman_PC_DirectActions : oCAIHuman { int operator()(); };
+BindedHook Ivk_oCAIHuman_PC_DirectActions{ ZENFOR(0x00000000, 0x006360C0, 0x00000000, 0x00000000), &oCAIHuman_PC_DirectActions::operator() };
+int oCAIHuman_PC_DirectActions::operator()()
+{
+	int result = THISCALL(Ivk_oCAIHuman_PC_DirectActions)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

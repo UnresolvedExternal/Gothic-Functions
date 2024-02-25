@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCVob::zTModelLimbColl>::DeleteListDatas(): void]]></Title>
+			<Shortcut><![CDATA[__zCList_zCVob__zTModelLimbColl__DeleteListDatas_0x006B8E10]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCList<zCVob::zTModelLimbColl>::DeleteListDatas()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCVob__zTModelLimbColl__DeleteListDatas : zCList<zCVob::zTModelLimbColl> { void operator()(); };
+BindedHook Ivk_zCList_zCVob__zTModelLimbColl__DeleteListDatas{ ZENFOR(0x0062F630, 0x00654F20, 0x0065C480, 0x006B8E10), &zCList_zCVob__zTModelLimbColl__DeleteListDatas::operator() };
+void zCList_zCVob__zTModelLimbColl__DeleteListDatas::operator()()
+{
+	THISCALL(Ivk_zCList_zCVob__zTModelLimbColl__DeleteListDatas)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

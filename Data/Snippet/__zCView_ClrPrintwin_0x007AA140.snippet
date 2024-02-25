@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::ClrPrintwin(): void]]></Title>
+			<Shortcut><![CDATA[__zCView_ClrPrintwin_0x007AA140]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCView::ClrPrintwin()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_ClrPrintwin : zCView { void operator()(); };
+BindedHook Ivk_zCView_ClrPrintwin{ ZENFOR(0x00700570, 0x0073ABB0, 0x0074A640, 0x007AA140), &zCView_ClrPrintwin::operator() };
+void zCView_ClrPrintwin::operator()()
+{
+	THISCALL(Ivk_zCView_ClrPrintwin)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

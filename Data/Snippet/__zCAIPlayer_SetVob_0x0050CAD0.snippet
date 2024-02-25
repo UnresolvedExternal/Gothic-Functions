@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::SetVob(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_SetVob_0x0050CAD0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCAIPlayer::SetVob(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_SetVob : zCAIPlayer { void operator()(zCVob*); };
+BindedHook Ivk_zCAIPlayer_SetVob{ ZENFOR(0x004FD0A0, 0x005101F0, 0x00509D20, 0x0050CAD0), &zCAIPlayer_SetVob::operator() };
+void zCAIPlayer_SetVob::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCAIPlayer_SetVob)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

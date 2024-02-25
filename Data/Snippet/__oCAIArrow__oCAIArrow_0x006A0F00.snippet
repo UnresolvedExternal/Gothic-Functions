@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrow::~oCAIArrow()]]></Title>
+			<Shortcut><![CDATA[__oCAIArrow__oCAIArrow_0x006A0F00]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall oCAIArrow::~oCAIArrow()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIArrow_Destructor : oCAIArrow { void operator()(); };
+BindedHook Ivk_oCAIArrow_Destructor{ ZENFOR(0x00618FF0, 0x0063C420, 0x006446A0, 0x006A0F00), &oCAIArrow_Destructor::operator() };
+void oCAIArrow_Destructor::operator()()
+{
+	THISCALL(Ivk_oCAIArrow_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

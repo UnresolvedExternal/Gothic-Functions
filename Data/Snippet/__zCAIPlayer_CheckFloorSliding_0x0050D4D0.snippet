@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::CheckFloorSliding(): int]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_CheckFloorSliding_0x0050D4D0]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCAIPlayer::CheckFloorSliding()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_CheckFloorSliding : zCAIPlayer { int operator()(); };
+BindedHook Ivk_zCAIPlayer_CheckFloorSliding{ ZENFOR(0x004FDA70, 0x00510D90, 0x0050A720, 0x0050D4D0), &zCAIPlayer_CheckFloorSliding::operator() };
+int zCAIPlayer_CheckFloorSliding::operator()()
+{
+	int result = THISCALL(Ivk_zCAIPlayer_CheckFloorSliding)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

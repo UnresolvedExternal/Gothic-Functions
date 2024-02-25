@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCSoundManager::zCMediumType>::~zCArraySort<zCSoundManager::zCMediumType>()]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCSoundManager__zCMediumType___zCArraySort_zCSound_0x00639200]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArraySort<zCSoundManager::zCMediumType>::~zCArraySort<zCSoundManager::zCMediumType>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCSoundManager__zCMediumType__Destructor : zCArraySort<zCSoundManager::zCMediumType> { void operator()(); };
+BindedHook Ivk_zCArraySort_zCSoundManager__zCMediumType__Destructor{ ZENFOR(0x00608AE0, 0x0062AF60, 0x00631A30, 0x00639200), &zCArraySort_zCSoundManager__zCMediumType__Destructor::operator() };
+void zCArraySort_zCSoundManager__zCMediumType__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArraySort_zCSoundManager__zCMediumType__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

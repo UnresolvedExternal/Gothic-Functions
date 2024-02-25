@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::DoAniEvents(zCModelAniActive*): void]]></Title>
+			<Shortcut><![CDATA[__zCModel_DoAniEvents_0x0057B890]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModel::DoAniEvents(zCModelAniActive*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_DoAniEvents : zCModel { void operator()(zCModelAniActive*); };
+BindedHook Ivk_zCModel_DoAniEvents{ ZENFOR(0x00561AF0, 0x0057A1F0, 0x00576370, 0x0057B890), &zCModel_DoAniEvents::operator() };
+void zCModel_DoAniEvents::operator()(zCModelAniActive* a0)
+{
+	THISCALL(Ivk_zCModel_DoAniEvents)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

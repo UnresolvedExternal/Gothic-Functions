@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::SetViewport(int, int, int, int): int]]></Title>
+			<Shortcut><![CDATA[__zCRenderer_SetViewport_0x0064A330]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCRenderer::SetViewport(int, int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_SetViewport : zCRenderer { int operator()(int, int, int, int); };
+BindedHook Ivk_zCRenderer_SetViewport{ ZENFOR(0x00713B90, 0x0074F8B0, 0x0075ED90, 0x0064A330), &zCRenderer_SetViewport::operator() };
+int zCRenderer_SetViewport::operator()(int a0, int a1, int a2, int a3)
+{
+	int result = THISCALL(Ivk_zCRenderer_SetViewport)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[D3DXQUATERNION::operator/=(float): D3DXQUATERNION&]]></Title>
+			<Shortcut><![CDATA[__D3DXQUATERNION_operator___0x007C0434]]></Shortcut>
+			<Description><![CDATA[public: D3DXQUATERNION& __thiscall D3DXQUATERNION::operator/=(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct D3DXQUATERNION_operator__ : D3DXQUATERNION { D3DXQUATERNION& operator()(float); };
+BindedHook Ivk_D3DXQUATERNION_operator__{ ZENFOR(0x00766D40, 0x007AF808, 0x007B3F6E, 0x007C0434), &D3DXQUATERNION_operator__::operator() };
+D3DXQUATERNION& D3DXQUATERNION_operator__::operator()(float a0)
+{
+	D3DXQUATERNION& result = THISCALL(Ivk_D3DXQUATERNION_operator__)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

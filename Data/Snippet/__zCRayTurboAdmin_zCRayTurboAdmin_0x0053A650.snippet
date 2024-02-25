@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRayTurboAdmin::zCRayTurboAdmin()]]></Title>
+			<Shortcut><![CDATA[__zCRayTurboAdmin_zCRayTurboAdmin_0x0053A650]]></Shortcut>
+			<Description><![CDATA[protected: __thiscall zCRayTurboAdmin::zCRayTurboAdmin()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCRayTurboAdmin_zCRayTurboAdmin : zCRayTurboAdmin { zCRayTurboAdmin* operator()(); };
+BindedHook Ivk_zCRayTurboAdmin_zCRayTurboAdmin{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x0053A650), &zCRayTurboAdmin_zCRayTurboAdmin::operator() };
+zCRayTurboAdmin* zCRayTurboAdmin_zCRayTurboAdmin::operator()()
+{
+	zCRayTurboAdmin* result = THISCALL(Ivk_zCRayTurboAdmin_zCRayTurboAdmin)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventMessage::AnalyzeMessageID(unsigned long, unsigned short&, unsigned short&): void]]></Title>
+			<Shortcut><![CDATA[__zCEventMessage_AnalyzeMessageID_0x006056F0]]></Shortcut>
+			<Description><![CDATA[private: static void __cdecl zCEventMessage::AnalyzeMessageID(unsigned long, unsigned short&, unsigned short&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCEventMessage_AnalyzeMessageID(unsigned long, unsigned short&, unsigned short&);
+BindedHook Ivk_zCEventMessage_AnalyzeMessageID{ ZENFOR(0x005D8EA0, 0x005F86C0, 0x005FE860, 0x006056F0), Hook_zCEventMessage_AnalyzeMessageID };
+void Hook_zCEventMessage_AnalyzeMessageID(unsigned long a0, unsigned short& a1, unsigned short& a2)
+{
+	Ivk_zCEventMessage_AnalyzeMessageID(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer::GetIndexListPtr(): unsigned short*]]></Title>
+			<Shortcut><![CDATA[__zCVertexBuffer_GetIndexListPtr_0x005FBF40]]></Shortcut>
+			<Description><![CDATA[public: virtual unsigned short* __thiscall zCVertexBuffer::GetIndexListPtr()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_GetIndexListPtr : zCVertexBuffer { unsigned short* operator()(); };
+BindedHook Ivk_zCVertexBuffer_GetIndexListPtr{ ZENFOR(0x005D0E40, 0x005EFFA0, 0x005F5150, 0x005FBF40), &zCVertexBuffer_GetIndexListPtr::operator() };
+unsigned short* zCVertexBuffer_GetIndexListPtr::operator()()
+{
+	unsigned short* result = THISCALL(Ivk_zCVertexBuffer_GetIndexListPtr)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

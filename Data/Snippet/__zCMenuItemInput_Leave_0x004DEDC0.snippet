@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemInput::Leave(): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItemInput_Leave_0x004DEDC0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCMenuItemInput::Leave()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemInput_Leave : zCMenuItemInput { void operator()(); };
+BindedHook Ivk_zCMenuItemInput_Leave{ ZENFOR(0x004D1F30, 0x004E2790, 0x004DC410, 0x004DEDC0), &zCMenuItemInput_Leave::operator() };
+void zCMenuItemInput_Leave::operator()()
+{
+	THISCALL(Ivk_zCMenuItemInput_Leave)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDecal::CreateDecalMeshes(): void]]></Title>
+			<Shortcut><![CDATA[__zCDecal_CreateDecalMeshes_0x00556730]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCDecal::CreateDecalMeshes()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCDecal_CreateDecalMeshes();
+BindedHook Ivk_zCDecal_CreateDecalMeshes{ ZENFOR(0x00542000, 0x00559980, 0x00551510, 0x00556730), Hook_zCDecal_CreateDecalMeshes };
+void Hook_zCDecal_CreateDecalMeshes()
+{
+	Ivk_zCDecal_CreateDecalMeshes();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

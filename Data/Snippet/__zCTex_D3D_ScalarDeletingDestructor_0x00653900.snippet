@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTex_D3D::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCTex_D3D_ScalarDeletingDestructor_0x00653900]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCTex_D3D::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2A
+struct zCTex_D3D_ScalarDeletingDestructor : zCTex_D3D { void* operator()(unsigned int); };
+BindedHook Ivk_zCTex_D3D_ScalarDeletingDestructor{ ZENFOR(0x0071B1B0, 0x00000000, 0x00000000, 0x00653900), &zCTex_D3D_ScalarDeletingDestructor::operator() };
+void* zCTex_D3D_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCTex_D3D_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

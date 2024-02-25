@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTradeManager::~oCTradeManager()]]></Title>
+			<Shortcut><![CDATA[__oCTradeManager__oCTradeManager_0x00714A30]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCTradeManager::~oCTradeManager()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTradeManager_Destructor : oCTradeManager { void operator()(); };
+BindedHook Ivk_oCTradeManager_Destructor{ ZENFOR(0x00673A10, 0x006A17C0, 0x006B69A0, 0x00714A30), &oCTradeManager_Destructor::operator() };
+void oCTradeManager_Destructor::operator()()
+{
+	THISCALL(Ivk_oCTradeManager_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

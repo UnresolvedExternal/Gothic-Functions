@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Hash(void const*, unsigned long, unsigned long&, unsigned long&, unsigned long): void]]></Title>
+			<Shortcut><![CDATA[__Hash_0x005F0180]]></Shortcut>
+			<Description><![CDATA[void __cdecl Hash(void const*, unsigned long, unsigned long&, unsigned long&, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Hash(void const*, unsigned long, unsigned long&, unsigned long&, unsigned long);
+BindedHook Ivk_Hash{ ZENFOR(0x005C56F0, 0x005E3AB0, 0x005E93D0, 0x005F0180), Hook_Hash };
+void Hook_Hash(void const* a0, unsigned long a1, unsigned long& a2, unsigned long& a3, unsigned long a4)
+{
+	Ivk_Hash(a0, a1, a2, a3, a4);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

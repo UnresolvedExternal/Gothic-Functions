@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSys_DirectMusic::Stop(): void]]></Title>
+			<Shortcut><![CDATA[__zCMusicSys_DirectMusic_Stop_0x004E9F20]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCMusicSys_DirectMusic::Stop()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSys_DirectMusic_Stop : zCMusicSys_DirectMusic { void operator()(); };
+BindedHook Ivk_zCMusicSys_DirectMusic_Stop{ ZENFOR(0x004DCBF0, 0x004EE0F0, 0x004E7410, 0x004E9F20), &zCMusicSys_DirectMusic_Stop::operator() };
+void zCMusicSys_DirectMusic_Stop::operator()()
+{
+	THISCALL(Ivk_zCMusicSys_DirectMusic_Stop)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

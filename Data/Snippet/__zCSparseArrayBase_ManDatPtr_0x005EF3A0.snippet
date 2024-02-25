@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArrayBase::ManDatPtr(unsigned long): zCSparseArrayManDat* [const]]]></Title>
+			<Shortcut><![CDATA[__zCSparseArrayBase_ManDatPtr_0x005EF3A0]]></Shortcut>
+			<Description><![CDATA[protected: virtual zCSparseArrayManDat* __thiscall zCSparseArrayBase::ManDatPtr(unsigned long)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArrayBase_ManDatPtr : zCSparseArrayBase { zCSparseArrayManDat* operator()(unsigned long) const; };
+BindedHook Ivk_zCSparseArrayBase_ManDatPtr{ ZENFOR(0x005C49C0, 0x005E2D20, 0x005E85F0, 0x005EF3A0), &zCSparseArrayBase_ManDatPtr::operator() };
+zCSparseArrayManDat* zCSparseArrayBase_ManDatPtr::operator()(unsigned long a0) const
+{
+	zCSparseArrayManDat* result = THISCALL(Ivk_zCSparseArrayBase_ManDatPtr)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

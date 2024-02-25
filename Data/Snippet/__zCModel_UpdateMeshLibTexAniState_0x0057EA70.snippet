@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::UpdateMeshLibTexAniState(): void]]></Title>
+			<Shortcut><![CDATA[__zCModel_UpdateMeshLibTexAniState_0x0057EA70]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModel::UpdateMeshLibTexAniState()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_UpdateMeshLibTexAniState : zCModel { void operator()(); };
+BindedHook Ivk_zCModel_UpdateMeshLibTexAniState{ ZENFOR(0x005649F0, 0x0057D350, 0x00579550, 0x0057EA70), &zCModel_UpdateMeshLibTexAniState::operator() };
+void zCModel_UpdateMeshLibTexAniState::operator()()
+{
+	THISCALL(Ivk_zCModel_UpdateMeshLibTexAniState)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

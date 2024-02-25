@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMaterial::IsPortalMaterial(): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCMaterial_IsPortalMaterial_0x005648D0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCMaterial::IsPortalMaterial()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMaterial_IsPortalMaterial : zCMaterial { int operator()() const; };
+BindedHook Ivk_zCMaterial_IsPortalMaterial{ ZENFOR(0x0054D9B0, 0x00565DE0, 0x0055F6B0, 0x005648D0), &zCMaterial_IsPortalMaterial::operator() };
+int zCMaterial_IsPortalMaterial::operator()() const
+{
+	int result = THISCALL(Ivk_zCMaterial_IsPortalMaterial)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

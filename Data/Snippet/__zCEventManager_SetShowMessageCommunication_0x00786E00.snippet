@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::SetShowMessageCommunication(int): void]]></Title>
+			<Shortcut><![CDATA[__zCEventManager_SetShowMessageCommunication_0x00786E00]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCEventManager::SetShowMessageCommunication(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCEventManager_SetShowMessageCommunication(int);
+BindedHook Ivk_zCEventManager_SetShowMessageCommunication{ ZENFOR(0x006DDB10, 0x00715DE0, 0x007273C0, 0x00786E00), Hook_zCEventManager_SetShowMessageCommunication };
+void Hook_zCEventManager_SetShowMessageCommunication(int a0)
+{
+	Ivk_zCEventManager_SetShowMessageCommunication(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

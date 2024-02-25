@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::LoadParserFile(zSTRING const&): int]]></Title>
+			<Shortcut><![CDATA[__oCGame_LoadParserFile_0x006C4BE0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCGame::LoadParserFile(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_LoadParserFile : oCGame { int operator()(zSTRING const&); };
+BindedHook Ivk_oCGame_LoadParserFile{ ZENFOR(0x0063A710, 0x00660FA0, 0x00667F60, 0x006C4BE0), &oCGame_LoadParserFile::operator() };
+int oCGame_LoadParserFile::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_oCGame_LoadParserFile)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::Hash(void const*, unsigned long&, unsigned long&): void [const]]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry_0x005289F0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::Hash(void const*, unsigned long&, unsigned long&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Hash : zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry> { void operator()(void const*, unsigned long&, unsigned long&) const; };
+BindedHook Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Hash{ ZENFOR(0x00517BE0, 0x0052D5F0, 0x00525C20, 0x005289F0), &zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Hash::operator() };
+void zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Hash::operator()(void const* a0, unsigned long& a1, unsigned long& a2) const
+{
+	THISCALL(Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__Hash)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

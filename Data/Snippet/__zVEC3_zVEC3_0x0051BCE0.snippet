@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zVEC3::zVEC3(zVEC4 const&, int)]]></Title>
+			<Shortcut><![CDATA[__zVEC3_zVEC3_0x0051BCE0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zVEC3::zVEC3(zVEC4 const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A
+struct zVEC3_zVEC3 : zVEC3 { zVEC3* operator()(zVEC4 const&, int); };
+BindedHook Ivk_zVEC3_zVEC3{ ZENFOR(0x00000000, 0x0051BCE0, 0x00000000, 0x00000000), &zVEC3_zVEC3::operator() };
+zVEC3* zVEC3_zVEC3::operator()(zVEC4 const& a0, int a1)
+{
+	zVEC3* result = THISCALL(Ivk_zVEC3_zVEC3)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

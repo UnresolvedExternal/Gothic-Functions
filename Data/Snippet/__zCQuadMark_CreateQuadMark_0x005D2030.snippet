@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::CreateQuadMark(zCPolygon*, zVEC3 const&, zVEC2 const&, zCQuadMark::zTEffectParams*): void]]></Title>
+			<Shortcut><![CDATA[__zCQuadMark_CreateQuadMark_0x005D2030]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCQuadMark::CreateQuadMark(zCPolygon*, zVEC3 const&, zVEC2 const&, zCQuadMark::zTEffectParams*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_CreateQuadMark : zCQuadMark { void operator()(zCPolygon*, zVEC3 const&, zVEC2 const&, zCQuadMark::zTEffectParams*); };
+BindedHook Ivk_zCQuadMark_CreateQuadMark{ ZENFOR(0x005ACF20, 0x005C9DB0, 0x005CB490, 0x005D2030), &zCQuadMark_CreateQuadMark::operator() };
+void zCQuadMark_CreateQuadMark::operator()(zCPolygon* a0, zVEC3 const& a1, zVEC2 const& a2, zCQuadMark::zTEffectParams* a3)
+{
+	THISCALL(Ivk_zCQuadMark_CreateQuadMark)(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

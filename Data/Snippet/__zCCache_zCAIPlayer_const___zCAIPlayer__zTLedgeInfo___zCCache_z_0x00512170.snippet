@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>::~zCCache<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>()]]></Title>
+			<Shortcut><![CDATA[__zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___zCCache_z_0x00512170]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCCache<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>::~zCCache<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__Destructor : zCCache<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo> { void operator()(); };
+BindedHook Ivk_zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__Destructor{ ZENFOR(0x00502610, 0x005160C0, 0x0050F3A0, 0x00512170), &zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__Destructor::operator() };
+void zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__Destructor::operator()()
+{
+	THISCALL(Ivk_zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

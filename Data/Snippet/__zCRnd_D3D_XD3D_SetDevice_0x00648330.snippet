@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::XD3D_SetDevice(int, int, int, int, zTRnd_ScreenMode): int]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_XD3D_SetDevice_0x00648330]]></Shortcut>
+			<Description><![CDATA[private: int __thiscall zCRnd_D3D::XD3D_SetDevice(int, int, int, int, zTRnd_ScreenMode)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_XD3D_SetDevice : zCRnd_D3D { int operator()(int, int, int, int, zTRnd_ScreenMode); };
+BindedHook Ivk_zCRnd_D3D_XD3D_SetDevice{ ZENFOR(0x00711F00, 0x0074DA60, 0x0075CD90, 0x00648330), &zCRnd_D3D_XD3D_SetDevice::operator() };
+int zCRnd_D3D_XD3D_SetDevice::operator()(int a0, int a1, int a2, int a3, zTRnd_ScreenMode a4)
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_XD3D_SetDevice)(a0, a1, a2, a3, a4);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

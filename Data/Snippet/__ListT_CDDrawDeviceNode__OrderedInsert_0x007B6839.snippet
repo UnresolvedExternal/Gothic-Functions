@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CDDrawDeviceNode>::OrderedInsert(CDDrawDeviceNode*): void]]></Title>
+			<Shortcut><![CDATA[__ListT_CDDrawDeviceNode__OrderedInsert_0x007B6839]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall ListT<CDDrawDeviceNode>::OrderedInsert(CDDrawDeviceNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CDDrawDeviceNode__OrderedInsert : ListT<CDDrawDeviceNode> { void operator()(CDDrawDeviceNode*); };
+BindedHook Ivk_ListT_CDDrawDeviceNode__OrderedInsert{ ZENFOR(0x0075D145, 0x007A00DF, 0x007AA373, 0x007B6839), &ListT_CDDrawDeviceNode__OrderedInsert::operator() };
+void ListT_CDDrawDeviceNode__OrderedInsert::operator()(CDDrawDeviceNode* a0)
+{
+	THISCALL(Ivk_ListT_CDDrawDeviceNode__OrderedInsert)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

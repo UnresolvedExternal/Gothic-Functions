@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CRefreshRateNode>::OrderedInsert(CRefreshRateNode*): void]]></Title>
+			<Shortcut><![CDATA[__ListT_CRefreshRateNode__OrderedInsert_0x007B7C69]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall ListT<CRefreshRateNode>::OrderedInsert(CRefreshRateNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CRefreshRateNode__OrderedInsert : ListT<CRefreshRateNode> { void operator()(CRefreshRateNode*); };
+BindedHook Ivk_ListT_CRefreshRateNode__OrderedInsert{ ZENFOR(0x0075E575, 0x007A1E88, 0x007AB7A3, 0x007B7C69), &ListT_CRefreshRateNode__OrderedInsert::operator() };
+void ListT_CRefreshRateNode__OrderedInsert::operator()(CRefreshRateNode* a0)
+{
+	THISCALL(Ivk_ListT_CRefreshRateNode__OrderedInsert)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

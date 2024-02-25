@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCombine::zCCombine()]]></Title>
+			<Shortcut><![CDATA[__zCCombine_zCCombine_0x00574D10]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCCombine::zCCombine()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCombine_zCCombine : zCCombine { zCCombine* operator()(); };
+BindedHook Ivk_zCCombine_zCCombine{ ZENFOR(0x0055B920, 0x00573A60, 0x0056FA60, 0x00574D10), &zCCombine_zCCombine::operator() };
+zCCombine* zCCombine_zCCombine::operator()()
+{
+	zCCombine* result = THISCALL(Ivk_zCCombine_zCCombine)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::GetVobPresetName(): zSTRING const& [const]]]></Title>
+			<Shortcut><![CDATA[__zCVob_GetVobPresetName_0x005FE950]]></Shortcut>
+			<Description><![CDATA[public: zSTRING const& __thiscall zCVob::GetVobPresetName()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_GetVobPresetName : zCVob { zSTRING const& operator()() const; };
+BindedHook Ivk_zCVob_GetVobPresetName{ ZENFOR(0x005D3790, 0x005F2970, 0x005F7B60, 0x005FE950), &zCVob_GetVobPresetName::operator() };
+zSTRING const& zCVob_GetVobPresetName::operator()() const
+{
+	zSTRING const& result = THISCALL(Ivk_zCVob_GetVobPresetName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

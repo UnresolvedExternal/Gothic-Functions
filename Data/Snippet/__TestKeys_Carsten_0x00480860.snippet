@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[TestKeys_Carsten(int): void]]></Title>
+			<Shortcut><![CDATA[__TestKeys_Carsten_0x00480860]]></Shortcut>
+			<Description><![CDATA[void __cdecl TestKeys_Carsten(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_TestKeys_Carsten(int);
+BindedHook Ivk_TestKeys_Carsten{ ZENFOR(0x00479180, 0x00483150, 0x0047F380, 0x00480860), Hook_TestKeys_Carsten };
+void Hook_TestKeys_Carsten(int a0)
+{
+	Ivk_TestKeys_Carsten(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

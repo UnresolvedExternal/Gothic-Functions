@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::TraceRayNearestHitCache(zVEC3 const&, zVEC3 const&, zCVob*, int, zCRayCache*): int]]></Title>
+			<Shortcut><![CDATA[__zCWorld_TraceRayNearestHitCache_0x00622550]]></Shortcut>
+			<Description><![CDATA[public: int __fastcall zCWorld::TraceRayNearestHitCache(zVEC3 const&, zVEC3 const&, zCVob*, int, zCRayCache*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_TraceRayNearestHitCache : zCWorld { int __fastcall operator()(zVEC3 const&, zVEC3 const&, zCVob*, int, zCRayCache*); };
+BindedHook Ivk_zCWorld_TraceRayNearestHitCache{ ZENFOR(0x005F4AD0, 0x00615A10, 0x0061ADC0, 0x00622550), &zCWorld_TraceRayNearestHitCache::operator() };
+int __fastcall zCWorld_TraceRayNearestHitCache::operator()(zVEC3 const& a0, zVEC3 const& a1, zCVob* a2, int a3, zCRayCache* a4)
+{
+	int result = THISCALL(Ivk_zCWorld_TraceRayNearestHitCache)(a0, a1, a2, a3, a4);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

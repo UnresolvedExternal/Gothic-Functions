@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCScanDirFileHandler::ClearMessages(): void]]></Title>
+			<Shortcut><![CDATA[__zCScanDirFileHandler_ClearMessages_0x00469460]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCScanDirFileHandler::ClearMessages()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCScanDirFileHandler_ClearMessages : zCScanDirFileHandler { void operator()(); };
+BindedHook Ivk_zCScanDirFileHandler_ClearMessages{ ZENFOR(0x00463DA0, 0x0046B940, 0x00468830, 0x00469460), &zCScanDirFileHandler_ClearMessages::operator() };
+void zCScanDirFileHandler_ClearMessages::operator()()
+{
+	THISCALL(Ivk_zCScanDirFileHandler_ClearMessages)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

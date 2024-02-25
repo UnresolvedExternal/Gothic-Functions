@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelNodeInst::SetNodeVisualS(zCVisual*, int): void]]></Title>
+			<Shortcut><![CDATA[__zCModelNodeInst_SetNodeVisualS_0x00577BF0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModelNodeInst::SetNodeVisualS(zCVisual*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelNodeInst_SetNodeVisualS : zCModelNodeInst { void operator()(zCVisual*, int); };
+BindedHook Ivk_zCModelNodeInst_SetNodeVisualS{ ZENFOR(0x0055E420, 0x005767B0, 0x00572940, 0x00577BF0), &zCModelNodeInst_SetNodeVisualS::operator() };
+void zCModelNodeInst_SetNodeVisualS::operator()(zCVisual* a0, int a1)
+{
+	THISCALL(Ivk_zCModelNodeInst_SetNodeVisualS)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::zCNet(unsigned short)]]></Title>
+			<Shortcut><![CDATA[__zCNet_zCNet_0x00450580]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCNet::zCNet(unsigned short)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_zCNet : zCNet { zCNet* operator()(unsigned short); };
+BindedHook Ivk_zCNet_zCNet{ ZENFOR(0x0044BE10, 0x00452380, 0x0044FE30, 0x00450580), &zCNet_zCNet::operator() };
+zCNet* zCNet_zCNet::operator()(unsigned short a0)
+{
+	zCNet* result = THISCALL(Ivk_zCNet_zCNet)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

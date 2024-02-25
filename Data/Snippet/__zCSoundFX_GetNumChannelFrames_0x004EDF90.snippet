@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundFX::GetNumChannelFrames(int): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCSoundFX_GetNumChannelFrames_0x004EDF90]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCSoundFX::GetNumChannelFrames(int)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundFX_GetNumChannelFrames : zCSoundFX { int operator()(int) const; };
+BindedHook Ivk_zCSoundFX_GetNumChannelFrames{ ZENFOR(0x004E0A00, 0x004F23C0, 0x004EB310, 0x004EDF90), &zCSoundFX_GetNumChannelFrames::operator() };
+int zCSoundFX_GetNumChannelFrames::operator()(int a0) const
+{
+	int result = THISCALL(Ivk_zCSoundFX_GetNumChannelFrames)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

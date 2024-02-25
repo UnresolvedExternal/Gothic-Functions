@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCClassDef::EndStartup(): void]]></Title>
+			<Shortcut><![CDATA[__zCClassDef_EndStartup_0x005AA7A0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCClassDef::EndStartup()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCClassDef_EndStartup();
+BindedHook Ivk_zCClassDef_EndStartup{ ZENFOR(0x0058AC30, 0x005A60E0, 0x005A5240, 0x005AA7A0), Hook_zCClassDef_EndStartup };
+void Hook_zCClassDef_EndStartup()
+{
+	Ivk_zCClassDef_EndStartup();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

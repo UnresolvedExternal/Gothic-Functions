@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::DoFrameActivity(): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_DoFrameActivity_0x00602C60]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCVob::DoFrameActivity()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_DoFrameActivity : zCVob { void operator()(); };
+BindedHook Ivk_zCVob_DoFrameActivity{ ZENFOR(0x005D75A0, 0x005F6BE0, 0x005FBE30, 0x00602C60), &zCVob_DoFrameActivity::operator() };
+void zCVob_DoFrameActivity::operator()()
+{
+	THISCALL(Ivk_zCVob_DoFrameActivity)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

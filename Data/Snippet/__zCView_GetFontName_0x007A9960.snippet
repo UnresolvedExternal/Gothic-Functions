@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::GetFontName(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zCView_GetFontName_0x007A9960]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall zCView::GetFontName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_GetFontName : zCView { zSTRING operator()(); };
+BindedHook Ivk_zCView_GetFontName{ ZENFOR(0x006FFDD0, 0x0073A3D0, 0x00749E60, 0x007A9960), &zCView_GetFontName::operator() };
+zSTRING zCView_GetFontName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCView_GetFontName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCVob const*, zCCacheData<zCVob const*, zCDynVobLightCacheElement>>::DestructData(void*): void [const]]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVob_0x005D67E0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<zCVob const*, zCCacheData<zCVob const*, zCDynVobLightCacheElement>>::DestructData(void*)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___DestructData : zCSparseArray<zCVob const*, zCCacheData<zCVob const*, zCDynVobLightCacheElement>> { void operator()(void*) const; };
+BindedHook Ivk_zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___DestructData{ ZENFOR(0x005B0EF0, 0x005CE0A0, 0x005CFC20, 0x005D67E0), &zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___DestructData::operator() };
+void zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___DestructData::operator()(void* a0) const
+{
+	THISCALL(Ivk_zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___DestructData)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

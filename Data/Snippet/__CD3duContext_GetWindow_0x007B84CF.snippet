@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::GetWindow(): HWND__*]]></Title>
+			<Shortcut><![CDATA[__CD3duContext_GetWindow_0x007B84CF]]></Shortcut>
+			<Description><![CDATA[public: virtual HWND__* __stdcall CD3duContext::GetWindow()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext_GetWindow : CD3duContext { HWND__* __stdcall operator()(); };
+BindedHook Ivk_CD3duContext_GetWindow{ ZENFOR(0x0075EDDB, 0x007A30EE, 0x007AC009, 0x007B84CF), &CD3duContext_GetWindow::operator() };
+HWND__* __stdcall CD3duContext_GetWindow::operator()()
+{
+	HWND__* result = THISCALL(Ivk_CD3duContext_GetWindow)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

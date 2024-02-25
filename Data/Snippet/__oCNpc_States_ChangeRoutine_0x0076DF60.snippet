@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc_States::ChangeRoutine(int): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_States_ChangeRoutine_0x0076DF60]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCNpc_States::ChangeRoutine(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_States_ChangeRoutine : oCNpc_States { void operator()(int); };
+BindedHook Ivk_oCNpc_States_ChangeRoutine{ ZENFOR(0x006C69F0, 0x006FC3D0, 0x0070EA00, 0x0076DF60), &oCNpc_States_ChangeRoutine::operator() };
+void oCNpc_States_ChangeRoutine::operator()(int a0)
+{
+	THISCALL(Ivk_oCNpc_States_ChangeRoutine)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCListSort<zCViewObject>::InsertSort(zCViewObject*): void]]></Title>
+			<Shortcut><![CDATA[__zCListSort_zCViewObject__InsertSort_0x00692EB0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCListSort<zCViewObject>::InsertSort(zCViewObject*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCListSort_zCViewObject__InsertSort : zCListSort<zCViewObject> { void operator()(zCViewObject*); };
+BindedHook Ivk_zCListSort_zCViewObject__InsertSort{ ZENFOR(0x00756360, 0x007987D0, 0x007A3100, 0x00692EB0), &zCListSort_zCViewObject__InsertSort::operator() };
+void zCListSort_zCViewObject__InsertSort::operator()(zCViewObject* a0)
+{
+	THISCALL(Ivk_zCListSort_zCViewObject__InsertSort)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

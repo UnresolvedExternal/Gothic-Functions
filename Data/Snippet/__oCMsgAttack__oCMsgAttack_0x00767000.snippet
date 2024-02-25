@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgAttack::~oCMsgAttack()]]></Title>
+			<Shortcut><![CDATA[__oCMsgAttack__oCMsgAttack_0x00767000]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCMsgAttack::~oCMsgAttack()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgAttack_Destructor : oCMsgAttack { void operator()(); };
+BindedHook Ivk_oCMsgAttack_Destructor{ ZENFOR(0x006BFE60, 0x006F5160, 0x00707AC0, 0x00767000), &oCMsgAttack_Destructor::operator() };
+void oCMsgAttack_Destructor::operator()()
+{
+	THISCALL(Ivk_oCMsgAttack_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCutsceneContext::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCCSCutsceneContext_Archive_0x00405E20]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCCSCutsceneContext::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCutsceneContext_Archive : zCCSCutsceneContext { void operator()(zCArchiver&); };
+BindedHook Ivk_zCCSCutsceneContext_Archive{ ZENFOR(0x00405BB0, 0x004066D0, 0x00405E20, 0x00405E20), &zCCSCutsceneContext_Archive::operator() };
+void zCCSCutsceneContext_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCCSCutsceneContext_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

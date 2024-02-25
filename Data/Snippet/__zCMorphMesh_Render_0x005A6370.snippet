@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::Render(zTRenderContext&): int]]></Title>
+			<Shortcut><![CDATA[__zCMorphMesh_Render_0x005A6370]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCMorphMesh::Render(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_Render : zCMorphMesh { int operator()(zTRenderContext&); };
+BindedHook Ivk_zCMorphMesh_Render{ ZENFOR(0x005869D0, 0x005A18D0, 0x005A0E10, 0x005A6370), &zCMorphMesh_Render::operator() };
+int zCMorphMesh_Render::operator()(zTRenderContext& a0)
+{
+	int result = THISCALL(Ivk_zCMorphMesh_Render)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

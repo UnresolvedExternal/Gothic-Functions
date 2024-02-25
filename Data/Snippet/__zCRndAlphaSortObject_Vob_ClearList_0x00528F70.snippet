@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRndAlphaSortObject_Vob::ClearList(): void]]></Title>
+			<Shortcut><![CDATA[__zCRndAlphaSortObject_Vob_ClearList_0x00528F70]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCRndAlphaSortObject_Vob::ClearList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCRndAlphaSortObject_Vob_ClearList();
+BindedHook Ivk_zCRndAlphaSortObject_Vob_ClearList{ ZENFOR(0x00518030, 0x0052DA50, 0x00526180, 0x00528F70), Hook_zCRndAlphaSortObject_Vob_ClearList };
+void Hook_zCRndAlphaSortObject_Vob_ClearList()
+{
+	Ivk_zCRndAlphaSortObject_Vob_ClearList();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

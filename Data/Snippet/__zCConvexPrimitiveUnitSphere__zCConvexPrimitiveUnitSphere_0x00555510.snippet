@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitiveUnitSphere::~zCConvexPrimitiveUnitSphere()]]></Title>
+			<Shortcut><![CDATA[__zCConvexPrimitiveUnitSphere__zCConvexPrimitiveUnitSphere_0x00555510]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall zCConvexPrimitiveUnitSphere::~zCConvexPrimitiveUnitSphere()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConvexPrimitiveUnitSphere_Destructor : zCConvexPrimitiveUnitSphere { void operator()(); };
+BindedHook Ivk_zCConvexPrimitiveUnitSphere_Destructor{ ZENFOR(0x00540DC0, 0x005586F0, 0x005502F0, 0x00555510), &zCConvexPrimitiveUnitSphere_Destructor::operator() };
+void zCConvexPrimitiveUnitSphere_Destructor::operator()()
+{
+	THISCALL(Ivk_zCConvexPrimitiveUnitSphere_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcMessage::GetIgnoreCutsceneMode(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpcMessage_GetIgnoreCutsceneMode_0x00763160]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCNpcMessage::GetIgnoreCutsceneMode()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCNpcMessage_GetIgnoreCutsceneMode : oCNpcMessage { int operator()(); };
+BindedHook Ivk_oCNpcMessage_GetIgnoreCutsceneMode{ ZENFOR(0x00000000, 0x00000000, 0x00703C20, 0x00763160), &oCNpcMessage_GetIgnoreCutsceneMode::operator() };
+int oCNpcMessage_GetIgnoreCutsceneMode::operator()()
+{
+	int result = THISCALL(Ivk_oCNpcMessage_GetIgnoreCutsceneMode)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

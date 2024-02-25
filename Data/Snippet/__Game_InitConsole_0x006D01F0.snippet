@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Game_InitConsole(): void]]></Title>
+			<Shortcut><![CDATA[__Game_InitConsole_0x006D01F0]]></Shortcut>
+			<Description><![CDATA[void __cdecl Game_InitConsole()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Game_InitConsole();
+BindedHook Ivk_Game_InitConsole{ ZENFOR(0x00645280, 0x0066CBA0, 0x00673470, 0x006D01F0), Hook_Game_InitConsole };
+void Hook_Game_InitConsole()
+{
+	Ivk_Game_InitConsole();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

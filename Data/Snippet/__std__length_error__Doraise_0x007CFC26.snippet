@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::length_error::_Doraise(): void [const]]]></Title>
+			<Shortcut><![CDATA[__std__length_error__Doraise_0x007CFC26]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall std::length_error::_Doraise()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__length_error__Doraise : std::length_error { void operator()() const; };
+BindedHook Ivk_std__length_error__Doraise{ ZENFOR(0x0077627C, 0x007BA03C, 0x007C3766, 0x007CFC26), &std__length_error__Doraise::operator() };
+void std__length_error__Doraise::operator()() const
+{
+	THISCALL(Ivk_std__length_error__Doraise)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

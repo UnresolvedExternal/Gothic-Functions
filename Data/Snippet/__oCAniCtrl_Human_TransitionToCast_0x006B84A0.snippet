@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::TransitionToCast(): int]]></Title>
+			<Shortcut><![CDATA[__oCAniCtrl_Human_TransitionToCast_0x006B84A0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCAniCtrl_Human::TransitionToCast()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_TransitionToCast : oCAniCtrl_Human { int operator()(); };
+BindedHook Ivk_oCAniCtrl_Human_TransitionToCast{ ZENFOR(0x0062ECA0, 0x00654520, 0x0065BB10, 0x006B84A0), &oCAniCtrl_Human_TransitionToCast::operator() };
+int oCAniCtrl_Human_TransitionToCast::operator()()
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_TransitionToCast)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

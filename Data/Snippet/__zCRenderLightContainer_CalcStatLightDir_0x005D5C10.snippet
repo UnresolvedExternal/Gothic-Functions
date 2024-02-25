@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderLightContainer::CalcStatLightDir(zTRenderContext const&): zVEC3]]></Title>
+			<Shortcut><![CDATA[__zCRenderLightContainer_CalcStatLightDir_0x005D5C10]]></Shortcut>
+			<Description><![CDATA[private: zVEC3 __thiscall zCRenderLightContainer::CalcStatLightDir(zTRenderContext const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderLightContainer_CalcStatLightDir : zCRenderLightContainer { zVEC3 operator()(zTRenderContext const&); };
+BindedHook Ivk_zCRenderLightContainer_CalcStatLightDir{ ZENFOR(0x005B02B0, 0x005CD3C0, 0x005CF050, 0x005D5C10), &zCRenderLightContainer_CalcStatLightDir::operator() };
+zVEC3 zCRenderLightContainer_CalcStatLightDir::operator()(zTRenderContext const& a0)
+{
+	zVEC3 result = THISCALL(Ivk_zCRenderLightContainer_CalcStatLightDir)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

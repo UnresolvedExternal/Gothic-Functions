@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::Render(zTRenderContext&): int]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX_Render_0x005B0310]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCParticleFX::Render(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX_Render : zCParticleFX { int operator()(zTRenderContext&); };
+BindedHook Ivk_zCParticleFX_Render{ ZENFOR(0x0058FCB0, 0x005AB4E0, 0x005AADB0, 0x005B0310), &zCParticleFX_Render::operator() };
+int zCParticleFX_Render::operator()(zTRenderContext& a0)
+{
+	int result = THISCALL(Ivk_zCParticleFX_Render)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

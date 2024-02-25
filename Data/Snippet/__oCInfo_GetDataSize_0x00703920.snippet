@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInfo::GetDataSize(): int]]></Title>
+			<Shortcut><![CDATA[__oCInfo_GetDataSize_0x00703920]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCInfo::GetDataSize()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInfo_GetDataSize : oCInfo { int operator()(); };
+BindedHook Ivk_oCInfo_GetDataSize{ ZENFOR(0x00665850, 0x00692D70, 0x006A5E90, 0x00703920), &oCInfo_GetDataSize::operator() };
+int oCInfo_GetDataSize::operator()()
+{
+	int result = THISCALL(Ivk_oCInfo_GetDataSize)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

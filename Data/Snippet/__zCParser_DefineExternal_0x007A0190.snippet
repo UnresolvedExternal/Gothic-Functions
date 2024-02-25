@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::DefineExternal(zSTRING const&, int(__cdecl*)(), int, int, ...): void]]></Title>
+			<Shortcut><![CDATA[__zCParser_DefineExternal_0x007A0190]]></Shortcut>
+			<Description><![CDATA[public: void __cdecl zCParser::DefineExternal(zSTRING const&, int(__cdecl*)(), int, int, ...)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_DefineExternal : zCParser { void __cdecl operator()(zSTRING const&, int(__cdecl*)(), int, int, ...); };
+BindedHook Ivk_zCParser_DefineExternal{ ZENFOR(0x006F6840, 0x00730820, 0x00740750, 0x007A0190), &zCParser_DefineExternal::operator() };
+void __cdecl zCParser_DefineExternal::operator()(zSTRING const& a0, int(__cdecl* a1)(), int a2, int a3, ... a4)
+{
+	THISCALL(Ivk_zCParser_DefineExternal)(a0, a1, a2, a3, a4);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

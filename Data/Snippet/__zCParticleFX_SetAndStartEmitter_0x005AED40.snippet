@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::SetAndStartEmitter(zSTRING const&, int): int]]></Title>
+			<Shortcut><![CDATA[__zCParticleFX_SetAndStartEmitter_0x005AED40]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCParticleFX::SetAndStartEmitter(zSTRING const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX_SetAndStartEmitter : zCParticleFX { int operator()(zSTRING const&, int); };
+BindedHook Ivk_zCParticleFX_SetAndStartEmitter{ ZENFOR(0x0058ED00, 0x005AA400, 0x005A9660, 0x005AED40), &zCParticleFX_SetAndStartEmitter::operator() };
+int zCParticleFX_SetAndStartEmitter::operator()(zSTRING const& a0, int a1)
+{
+	int result = THISCALL(Ivk_zCParticleFX_SetAndStartEmitter)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

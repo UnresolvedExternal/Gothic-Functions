@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::OnUntouch(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCEventManager_OnUntouch_0x00787920]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCEventManager::OnUntouch(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventManager_OnUntouch : zCEventManager { void operator()(zCVob*); };
+BindedHook Ivk_zCEventManager_OnUntouch{ ZENFOR(0x006DE690, 0x00716A00, 0x00727EE0, 0x00787920), &zCEventManager_OnUntouch::operator() };
+void zCEventManager_OnUntouch::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCEventManager_OnUntouch)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

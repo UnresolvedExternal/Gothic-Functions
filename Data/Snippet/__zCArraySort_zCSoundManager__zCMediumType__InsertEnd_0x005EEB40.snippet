@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCSoundManager::zCMediumType>::InsertEnd(zCSoundManager::zCMediumType const&): void]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCSoundManager__zCMediumType__InsertEnd_0x005EEB40]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zCSoundManager::zCMediumType>::InsertEnd(zCSoundManager::zCMediumType const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCSoundManager__zCMediumType__InsertEnd : zCArraySort<zCSoundManager::zCMediumType> { void operator()(zCSoundManager::zCMediumType const&); };
+BindedHook Ivk_zCArraySort_zCSoundManager__zCMediumType__InsertEnd{ ZENFOR(0x005C4140, 0x005E24A0, 0x005E7D90, 0x005EEB40), &zCArraySort_zCSoundManager__zCMediumType__InsertEnd::operator() };
+void zCArraySort_zCSoundManager__zCMediumType__InsertEnd::operator()(zCSoundManager::zCMediumType const& a0)
+{
+	THISCALL(Ivk_zCArraySort_zCSoundManager__zCMediumType__InsertEnd)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

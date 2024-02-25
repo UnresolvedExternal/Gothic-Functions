@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::CreateQuadMesh(int): zCMesh*]]></Title>
+			<Shortcut><![CDATA[__zCMesh_CreateQuadMesh_0x0056C180]]></Shortcut>
+			<Description><![CDATA[public: static zCMesh* __cdecl zCMesh::CreateQuadMesh(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCMesh* Hook_zCMesh_CreateQuadMesh(int);
+BindedHook Ivk_zCMesh_CreateQuadMesh{ ZENFOR(0x005540D0, 0x0056C7A0, 0x00566F30, 0x0056C180), Hook_zCMesh_CreateQuadMesh };
+zCMesh* Hook_zCMesh_CreateQuadMesh(int a0)
+{
+	zCMesh* result = Ivk_zCMesh_CreateQuadMesh(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[InCacheBlock(long, long, PIXELCACHE_BLOCK*): int]]></Title>
+			<Shortcut><![CDATA[__InCacheBlock_0x007C3ED3]]></Shortcut>
+			<Description><![CDATA[int __cdecl InCacheBlock(long, long, PIXELCACHE_BLOCK*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_InCacheBlock(long, long, PIXELCACHE_BLOCK*);
+BindedHook Ivk_InCacheBlock{ ZENFOR(0x0076A7DF, 0x007AAE34, 0x007B7A0D, 0x007C3ED3), Hook_InCacheBlock };
+int Hook_InCacheBlock(long a0, long a1, PIXELCACHE_BLOCK* a2)
+{
+	int result = Ivk_InCacheBlock(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

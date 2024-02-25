@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetInstanceByID(int): zSTRING]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetInstanceByID_0x00745940]]></Shortcut>
+			<Description><![CDATA[public: static zSTRING __cdecl oCNpc::GetInstanceByID(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zSTRING Hook_oCNpc_GetInstanceByID(int);
+BindedHook Ivk_oCNpc_GetInstanceByID{ ZENFOR(0x006A1C40, 0x006D4430, 0x006E6EA0, 0x00745940), Hook_oCNpc_GetInstanceByID };
+zSTRING Hook_oCNpc_GetInstanceByID(int a0)
+{
+	zSTRING result = Ivk_oCNpc_GetInstanceByID(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSTRING::UpperFirstLowerRest(): zSTRING&]]></Title>
+			<Shortcut><![CDATA[__zSTRING_UpperFirstLowerRest_0x0046AC10]]></Shortcut>
+			<Description><![CDATA[public: zSTRING& __thiscall zSTRING::UpperFirstLowerRest()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSTRING_UpperFirstLowerRest : zSTRING { zSTRING& operator()(); };
+BindedHook Ivk_zSTRING_UpperFirstLowerRest{ ZENFOR(0x004654A0, 0x0046D1B0, 0x00469FE0, 0x0046AC10), &zSTRING_UpperFirstLowerRest::operator() };
+zSTRING& zSTRING_UpperFirstLowerRest::operator()()
+{
+	zSTRING& result = THISCALL(Ivk_zSTRING_UpperFirstLowerRest)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

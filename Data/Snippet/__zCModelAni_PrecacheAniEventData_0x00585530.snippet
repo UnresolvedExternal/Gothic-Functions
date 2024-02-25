@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelAni::PrecacheAniEventData(): void]]></Title>
+			<Shortcut><![CDATA[__zCModelAni_PrecacheAniEventData_0x00585530]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModelAni::PrecacheAniEventData()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelAni_PrecacheAniEventData : zCModelAni { void operator()(); };
+BindedHook Ivk_zCModelAni_PrecacheAniEventData{ ZENFOR(0x0056AC80, 0x00583B90, 0x0057FFD0, 0x00585530), &zCModelAni_PrecacheAniEventData::operator() };
+void zCModelAni_PrecacheAniEventData::operator()()
+{
+	THISCALL(Ivk_zCModelAni_PrecacheAniEventData)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

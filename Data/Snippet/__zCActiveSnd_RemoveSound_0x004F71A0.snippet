@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCActiveSnd::RemoveSound(zCActiveSnd*): void]]></Title>
+			<Shortcut><![CDATA[__zCActiveSnd_RemoveSound_0x004F71A0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCActiveSnd::RemoveSound(zCActiveSnd*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCActiveSnd_RemoveSound(zCActiveSnd*);
+BindedHook Ivk_zCActiveSnd_RemoveSound{ ZENFOR(0x004E9010, 0x004FB290, 0x004F4520, 0x004F71A0), Hook_zCActiveSnd_RemoveSound };
+void Hook_zCActiveSnd_RemoveSound(zCActiveSnd* a0)
+{
+	Ivk_zCActiveSnd_RemoveSound(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

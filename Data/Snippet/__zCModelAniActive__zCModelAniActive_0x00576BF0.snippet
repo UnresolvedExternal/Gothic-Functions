@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelAniActive::~zCModelAniActive()]]></Title>
+			<Shortcut><![CDATA[__zCModelAniActive__zCModelAniActive_0x00576BF0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCModelAniActive::~zCModelAniActive()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelAniActive_Destructor : zCModelAniActive { void operator()(); };
+BindedHook Ivk_zCModelAniActive_Destructor{ ZENFOR(0x0055D460, 0x00575800, 0x00571940, 0x00576BF0), &zCModelAniActive_Destructor::operator() };
+void zCModelAniActive_Destructor::operator()()
+{
+	THISCALL(Ivk_zCModelAniActive_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

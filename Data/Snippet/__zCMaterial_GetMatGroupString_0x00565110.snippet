@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMaterial::GetMatGroupString(zTMat_Group): zSTRING const&]]></Title>
+			<Shortcut><![CDATA[__zCMaterial_GetMatGroupString_0x00565110]]></Shortcut>
+			<Description><![CDATA[public: static zSTRING const& __cdecl zCMaterial::GetMatGroupString(zTMat_Group)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zSTRING const& Hook_zCMaterial_GetMatGroupString(zTMat_Group);
+BindedHook Ivk_zCMaterial_GetMatGroupString{ ZENFOR(0x0054E100, 0x00566570, 0x0055FEF0, 0x00565110), Hook_zCMaterial_GetMatGroupString };
+zSTRING const& Hook_zCMaterial_GetMatGroupString(zTMat_Group a0)
+{
+	zSTRING const& result = Ivk_zCMaterial_GetMatGroupString(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

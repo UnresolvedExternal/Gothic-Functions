@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewBase::nax(int): int]]></Title>
+			<Shortcut><![CDATA[__zCViewBase_nax_0x0068DF10]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCViewBase::nax(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewBase_nax : zCViewBase { int operator()(int); };
+BindedHook Ivk_zCViewBase_nax{ ZENFOR(0x00752EA0, 0x00795320, 0x0079F920, 0x0068DF10), &zCViewBase_nax::operator() };
+int zCViewBase_nax::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCViewBase_nax)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

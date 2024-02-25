@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewObject::ConvertToVirtualLocal(zCPosition&): zCPosition]]></Title>
+			<Shortcut><![CDATA[__zCViewObject_ConvertToVirtualLocal_0x00692B10]]></Shortcut>
+			<Description><![CDATA[protected: zCPosition __fastcall zCViewObject::ConvertToVirtualLocal(zCPosition&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewObject_ConvertToVirtualLocal : zCViewObject { zCPosition __fastcall operator()(zCPosition&); };
+BindedHook Ivk_zCViewObject_ConvertToVirtualLocal{ ZENFOR(0x00755FC0, 0x00798430, 0x007A2D60, 0x00692B10), &zCViewObject_ConvertToVirtualLocal::operator() };
+zCPosition __fastcall zCViewObject_ConvertToVirtualLocal::operator()(zCPosition& a0)
+{
+	zCPosition result = THISCALL(Ivk_zCViewObject_ConvertToVirtualLocal)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

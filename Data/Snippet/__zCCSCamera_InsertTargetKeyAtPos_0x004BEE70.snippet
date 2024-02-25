@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::InsertTargetKeyAtPos(zCCamTrj_KeyFrame*, int): void]]></Title>
+			<Shortcut><![CDATA[__zCCSCamera_InsertTargetKeyAtPos_0x004BEE70]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCCSCamera::InsertTargetKeyAtPos(zCCamTrj_KeyFrame*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_InsertTargetKeyAtPos : zCCSCamera { void operator()(zCCamTrj_KeyFrame*, int); };
+BindedHook Ivk_zCCSCamera_InsertTargetKeyAtPos{ ZENFOR(0x004B5B50, 0x004C4D40, 0x004BC900, 0x004BEE70), &zCCSCamera_InsertTargetKeyAtPos::operator() };
+void zCCSCamera_InsertTargetKeyAtPos::operator()(zCCamTrj_KeyFrame* a0, int a1)
+{
+	THISCALL(Ivk_zCCSCamera_InsertTargetKeyAtPos)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

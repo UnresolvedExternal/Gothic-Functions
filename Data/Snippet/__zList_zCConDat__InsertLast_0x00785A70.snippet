@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zList<zCConDat>::InsertLast(zCConDat*): void]]></Title>
+			<Shortcut><![CDATA[__zList_zCConDat__InsertLast_0x00785A70]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zList<zCConDat>::InsertLast(zCConDat*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zList_zCConDat__InsertLast : zList<zCConDat> { void operator()(zCConDat*); };
+BindedHook Ivk_zList_zCConDat__InsertLast{ ZENFOR(0x006DC7A0, 0x00714910, 0x00726030, 0x00785A70), &zList_zCConDat__InsertLast::operator() };
+void zList_zCConDat__InsertLast::operator()(zCConDat* a0)
+{
+	THISCALL(Ivk_zList_zCConDat__InsertLast)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

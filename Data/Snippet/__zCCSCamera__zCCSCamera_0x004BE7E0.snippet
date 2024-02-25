@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::~zCCSCamera()]]></Title>
+			<Shortcut><![CDATA[__zCCSCamera__zCCSCamera_0x004BE7E0]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall zCCSCamera::~zCCSCamera()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_Destructor : zCCSCamera { void operator()(); };
+BindedHook Ivk_zCCSCamera_Destructor{ ZENFOR(0x004B54A0, 0x004C4690, 0x004BC270, 0x004BE7E0), &zCCSCamera_Destructor::operator() };
+void zCCSCamera_Destructor::operator()()
+{
+	THISCALL(Ivk_zCCSCamera_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

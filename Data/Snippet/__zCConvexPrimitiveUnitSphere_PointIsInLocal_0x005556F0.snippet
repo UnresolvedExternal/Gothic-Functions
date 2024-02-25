@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitiveUnitSphere::PointIsInLocal(zVEC3 const&): int [const]]]></Title>
+			<Shortcut><![CDATA[__zCConvexPrimitiveUnitSphere_PointIsInLocal_0x005556F0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCConvexPrimitiveUnitSphere::PointIsInLocal(zVEC3 const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConvexPrimitiveUnitSphere_PointIsInLocal : zCConvexPrimitiveUnitSphere { int operator()(zVEC3 const&) const; };
+BindedHook Ivk_zCConvexPrimitiveUnitSphere_PointIsInLocal{ ZENFOR(0x00540FA0, 0x005588E0, 0x005504D0, 0x005556F0), &zCConvexPrimitiveUnitSphere_PointIsInLocal::operator() };
+int zCConvexPrimitiveUnitSphere_PointIsInLocal::operator()(zVEC3 const& a0) const
+{
+	int result = THISCALL(Ivk_zCConvexPrimitiveUnitSphere_PointIsInLocal)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

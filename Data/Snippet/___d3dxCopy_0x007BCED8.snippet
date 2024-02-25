@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[_d3dxCopy(IDirectDrawSurface7*, IDirectDrawSurface7*, tagRECT*, tagRECT*, _D3DX_FILTERTYPE): long]]></Title>
+			<Shortcut><![CDATA[___d3dxCopy_0x007BCED8]]></Shortcut>
+			<Description><![CDATA[long __cdecl _d3dxCopy(IDirectDrawSurface7*, IDirectDrawSurface7*, tagRECT*, tagRECT*, _D3DX_FILTERTYPE)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook__d3dxCopy(IDirectDrawSurface7*, IDirectDrawSurface7*, tagRECT*, tagRECT*, _D3DX_FILTERTYPE);
+BindedHook Ivk__d3dxCopy{ ZENFOR(0x007637E4, 0x007A06C8, 0x007B0A12, 0x007BCED8), Hook__d3dxCopy };
+long Hook__d3dxCopy(IDirectDrawSurface7* a0, IDirectDrawSurface7* a1, tagRECT* a2, tagRECT* a3, _D3DX_FILTERTYPE a4)
+{
+	long result = Ivk__d3dxCopy(a0, a1, a2, a3, a4);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPortal::zCPortal(zTPlane const&, zCMesh*)]]></Title>
+			<Shortcut><![CDATA[__zCPortal_zCPortal_0x005293B0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCPortal::zCPortal(zTPlane const&, zCMesh*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPortal_zCPortal : zCPortal { zCPortal* operator()(zTPlane const&, zCMesh*); };
+BindedHook Ivk_zCPortal_zCPortal{ ZENFOR(0x005185B0, 0x0052DFE0, 0x005265C0, 0x005293B0), &zCPortal_zCPortal::operator() };
+zCPortal* zCPortal_zCPortal::operator()(zTPlane const& a0, zCMesh* a1)
+{
+	zCPortal* result = THISCALL(Ivk_zCPortal_zCPortal)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

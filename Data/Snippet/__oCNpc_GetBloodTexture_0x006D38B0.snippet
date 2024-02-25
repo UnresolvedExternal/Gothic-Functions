@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetBloodTexture(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetBloodTexture_0x006D38B0]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall oCNpc::GetBloodTexture()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetBloodTexture : oCNpc { zSTRING operator()(); };
+BindedHook Ivk_oCNpc_GetBloodTexture{ ZENFOR(0x00648970, 0x00670650, 0x00676B30, 0x006D38B0), &oCNpc_GetBloodTexture::operator() };
+zSTRING oCNpc_GetBloodTexture::operator()()
+{
+	zSTRING result = THISCALL(Ivk_oCNpc_GetBloodTexture)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

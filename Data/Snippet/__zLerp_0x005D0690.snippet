@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zLerp(float, zVEC3 const&, zVEC3 const&): zVEC3]]></Title>
+			<Shortcut><![CDATA[__zLerp_0x005D0690]]></Shortcut>
+			<Description><![CDATA[zVEC3 __cdecl zLerp(float, zVEC3 const&, zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+zVEC3 Hook_zLerp(float, zVEC3 const&, zVEC3 const&);
+BindedHook Ivk_zLerp{ ZENFOR(0x00000000, 0x00000000, 0x005C9AF0, 0x005D0690), Hook_zLerp };
+zVEC3 Hook_zLerp(float a0, zVEC3 const& a1, zVEC3 const& a2)
+{
+	zVEC3 result = Ivk_zLerp(a0, a1, a2);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

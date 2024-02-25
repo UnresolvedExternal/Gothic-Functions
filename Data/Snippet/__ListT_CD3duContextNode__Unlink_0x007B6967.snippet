@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CD3duContextNode>::Unlink(CD3duContextNode*): void]]></Title>
+			<Shortcut><![CDATA[__ListT_CD3duContextNode__Unlink_0x007B6967]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall ListT<CD3duContextNode>::Unlink(CD3duContextNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CD3duContextNode__Unlink : ListT<CD3duContextNode> { void operator()(CD3duContextNode*); };
+BindedHook Ivk_ListT_CD3duContextNode__Unlink{ ZENFOR(0x0075D273, 0x0079FFD2, 0x007AA4A1, 0x007B6967), &ListT_CD3duContextNode__Unlink::operator() };
+void ListT_CD3duContextNode__Unlink::operator()(CD3duContextNode* a0)
+{
+	THISCALL(Ivk_ListT_CD3duContextNode__Unlink)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

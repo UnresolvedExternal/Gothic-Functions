@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[GetDiffTime(zSTRING&): void]]></Title>
+			<Shortcut><![CDATA[__GetDiffTime_0x0044BAE0]]></Shortcut>
+			<Description><![CDATA[void __cdecl GetDiffTime(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_GetDiffTime(zSTRING&);
+BindedHook Ivk_GetDiffTime{ ZENFOR(0x004474C0, 0x0044D4A0, 0x0044B390, 0x0044BAE0), Hook_GetDiffTime };
+void Hook_GetDiffTime(zSTRING& a0)
+{
+	Ivk_GetDiffTime(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

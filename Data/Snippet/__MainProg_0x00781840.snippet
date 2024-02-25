@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[MainProg(): int]]></Title>
+			<Shortcut><![CDATA[__MainProg_0x00781840]]></Shortcut>
+			<Description><![CDATA[int __cdecl MainProg()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_MainProg();
+BindedHook Ivk_MainProg{ ZENFOR(0x006D8630, 0x00710200, 0x00721E00, 0x00781840), Hook_MainProg };
+int Hook_MainProg()
+{
+	int result = Ivk_MainProg();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

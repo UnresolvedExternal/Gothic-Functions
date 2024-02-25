@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCDocumentManager::oCDocumentManager(oCDocumentManager const&)]]></Title>
+			<Shortcut><![CDATA[__oCDocumentManager_oCDocumentManager_0x0065EAA0]]></Shortcut>
+			<Description><![CDATA[protected: __thiscall oCDocumentManager::oCDocumentManager(oCDocumentManager const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCDocumentManager_oCDocumentManager : oCDocumentManager { oCDocumentManager* operator()(oCDocumentManager const&); };
+BindedHook Ivk_oCDocumentManager_oCDocumentManager{ ZENFOR(0x00724230, 0x00761170, 0x00770550, 0x0065EAA0), &oCDocumentManager_oCDocumentManager::operator() };
+oCDocumentManager* oCDocumentManager_oCDocumentManager::operator()(oCDocumentManager const& a0)
+{
+	oCDocumentManager* result = THISCALL(Ivk_oCDocumentManager_oCDocumentManager)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

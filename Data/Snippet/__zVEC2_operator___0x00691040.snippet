@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zVEC2::operator*=(float): zVEC2&]]></Title>
+			<Shortcut><![CDATA[__zVEC2_operator___0x00691040]]></Shortcut>
+			<Description><![CDATA[public: zVEC2& __thiscall zVEC2::operator*=(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zVEC2_operator__ : zVEC2 { zVEC2& operator()(float); };
+BindedHook Ivk_zVEC2_operator__{ ZENFOR(0x007544F0, 0x00796970, 0x007A1290, 0x00691040), &zVEC2_operator__::operator() };
+zVEC2& zVEC2_operator__::operator()(float a0)
+{
+	zVEC2& result = THISCALL(Ivk_zVEC2_operator__)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

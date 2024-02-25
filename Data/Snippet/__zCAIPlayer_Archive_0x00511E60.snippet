@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::Archive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_Archive_0x00511E60]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCAIPlayer::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_Archive : zCAIPlayer { void operator()(zCArchiver&); };
+BindedHook Ivk_zCAIPlayer_Archive{ ZENFOR(0x00502300, 0x00515D80, 0x0050F090, 0x00511E60), &zCAIPlayer_Archive::operator() };
+void zCAIPlayer_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCAIPlayer_Archive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

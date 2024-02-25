@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSession::RenderBlit(): void]]></Title>
+			<Shortcut><![CDATA[__zCSession_RenderBlit_0x005DEA60]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCSession::RenderBlit()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSession_RenderBlit : zCSession { void operator()(); };
+BindedHook Ivk_zCSession_RenderBlit{ ZENFOR(0x005B7540, 0x005D4EC0, 0x005D7CA0, 0x005DEA60), &zCSession_RenderBlit::operator() };
+void zCSession_RenderBlit::operator()()
+{
+	THISCALL(Ivk_zCSession_RenderBlit)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

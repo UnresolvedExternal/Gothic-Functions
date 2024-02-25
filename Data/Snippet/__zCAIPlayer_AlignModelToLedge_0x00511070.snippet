@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::AlignModelToLedge(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_AlignModelToLedge_0x00511070]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCAIPlayer::AlignModelToLedge(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_AlignModelToLedge : zCAIPlayer { void operator()(zSTRING const&); };
+BindedHook Ivk_zCAIPlayer_AlignModelToLedge{ ZENFOR(0x00501510, 0x00514CD0, 0x0050E2A0, 0x00511070), &zCAIPlayer_AlignModelToLedge::operator() };
+void zCAIPlayer_AlignModelToLedge::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCAIPlayer_AlignModelToLedge)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

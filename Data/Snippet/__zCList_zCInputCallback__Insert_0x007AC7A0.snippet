@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCInputCallback>::Insert(zCInputCallback*): void]]></Title>
+			<Shortcut><![CDATA[__zCList_zCInputCallback__Insert_0x007AC7A0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCList<zCInputCallback>::Insert(zCInputCallback*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCInputCallback__Insert : zCList<zCInputCallback> { void operator()(zCInputCallback*); };
+BindedHook Ivk_zCList_zCInputCallback__Insert{ ZENFOR(0x00702B80, 0x0073D340, 0x0074CCA0, 0x007AC7A0), &zCList_zCInputCallback__Insert::operator() };
+void zCList_zCInputCallback__Insert::operator()(zCInputCallback* a0)
+{
+	THISCALL(Ivk_zCList_zCInputCallback__Insert)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

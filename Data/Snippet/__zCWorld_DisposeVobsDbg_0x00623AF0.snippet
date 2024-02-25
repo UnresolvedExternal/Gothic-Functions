@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::DisposeVobsDbg(zCTree<zCVob>*): int]]></Title>
+			<Shortcut><![CDATA[__zCWorld_DisposeVobsDbg_0x00623AF0]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCWorld::DisposeVobsDbg(zCTree<zCVob>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCWorld_DisposeVobsDbg : zCWorld { int operator()(zCTree<zCVob>*); };
+BindedHook Ivk_zCWorld_DisposeVobsDbg{ ZENFOR(0x00000000, 0x00000000, 0x0061C360, 0x00623AF0), &zCWorld_DisposeVobsDbg::operator() };
+int zCWorld_DisposeVobsDbg::operator()(zCTree<zCVob>* a0)
+{
+	int result = THISCALL(Ivk_zCWorld_DisposeVobsDbg)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

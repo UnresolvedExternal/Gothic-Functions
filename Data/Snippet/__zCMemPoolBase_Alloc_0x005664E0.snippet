@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPoolBase::Alloc(): void*]]></Title>
+			<Shortcut><![CDATA[__zCMemPoolBase_Alloc_0x005664E0]]></Shortcut>
+			<Description><![CDATA[public: void* __thiscall zCMemPoolBase::Alloc()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPoolBase_Alloc : zCMemPoolBase { void* operator()(); };
+BindedHook Ivk_zCMemPoolBase_Alloc{ ZENFOR(0x0054F170, 0x00567690, 0x005612C0, 0x005664E0), &zCMemPoolBase_Alloc::operator() };
+void* zCMemPoolBase_Alloc::operator()()
+{
+	void* result = THISCALL(Ivk_zCMemPoolBase_Alloc)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

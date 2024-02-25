@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPool<zSTRING>::~zCMemPool<zSTRING>()]]></Title>
+			<Shortcut><![CDATA[__zCMemPool_zSTRING___zCMemPool_zSTRING__0x0046CCD0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCMemPool<zSTRING>::~zCMemPool<zSTRING>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPool_zSTRING__Destructor : zCMemPool<zSTRING> { void operator()(); };
+BindedHook Ivk_zCMemPool_zSTRING__Destructor{ ZENFOR(0x00467B00, 0x0046FA60, 0x0046C0A0, 0x0046CCD0), &zCMemPool_zSTRING__Destructor::operator() };
+void zCMemPool_zSTRING__Destructor::operator()()
+{
+	THISCALL(Ivk_zCMemPool_zSTRING__Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

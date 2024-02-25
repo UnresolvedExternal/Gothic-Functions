@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTBSphere3D::IsIntersecting(zVEC3 const&, zVEC3 const&): int [const]]]></Title>
+			<Shortcut><![CDATA[__zTBSphere3D_IsIntersecting_0x00543FD0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zTBSphere3D::IsIntersecting(zVEC3 const&, zVEC3 const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTBSphere3D_IsIntersecting : zTBSphere3D { int operator()(zVEC3 const&, zVEC3 const&) const; };
+BindedHook Ivk_zTBSphere3D_IsIntersecting{ ZENFOR(0x005303E0, 0x00546C10, 0x0053EF20, 0x00543FD0), &zTBSphere3D_IsIntersecting::operator() };
+int zTBSphere3D_IsIntersecting::operator()(zVEC3 const& a0, zVEC3 const& a1) const
+{
+	int result = THISCALL(Ivk_zTBSphere3D_IsIntersecting)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

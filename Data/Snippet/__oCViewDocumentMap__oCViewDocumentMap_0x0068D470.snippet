@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDocumentMap::~oCViewDocumentMap()]]></Title>
+			<Shortcut><![CDATA[__oCViewDocumentMap__oCViewDocumentMap_0x0068D470]]></Shortcut>
+			<Description><![CDATA[public: virtual __thiscall oCViewDocumentMap::~oCViewDocumentMap()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDocumentMap_Destructor : oCViewDocumentMap { void operator()(); };
+BindedHook Ivk_oCViewDocumentMap_Destructor{ ZENFOR(0x00725E90, 0x007633E0, 0x00772440, 0x0068D470), &oCViewDocumentMap_Destructor::operator() };
+void oCViewDocumentMap_Destructor::operator()()
+{
+	THISCALL(Ivk_oCViewDocumentMap_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

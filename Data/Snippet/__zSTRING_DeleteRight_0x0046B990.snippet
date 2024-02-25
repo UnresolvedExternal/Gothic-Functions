@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSTRING::DeleteRight(unsigned int): int]]></Title>
+			<Shortcut><![CDATA[__zSTRING_DeleteRight_0x0046B990]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zSTRING::DeleteRight(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSTRING_DeleteRight : zSTRING { int operator()(unsigned int); };
+BindedHook Ivk_zSTRING_DeleteRight{ ZENFOR(0x004667C0, 0x0046E600, 0x0046AD60, 0x0046B990), &zSTRING_DeleteRight::operator() };
+int zSTRING_DeleteRight::operator()(unsigned int a0)
+{
+	int result = THISCALL(Ivk_zSTRING_DeleteRight)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

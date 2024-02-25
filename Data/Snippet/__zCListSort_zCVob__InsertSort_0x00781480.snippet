@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCListSort<zCVob>::InsertSort(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCListSort_zCVob__InsertSort_0x00781480]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCListSort<zCVob>::InsertSort(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCListSort_zCVob__InsertSort : zCListSort<zCVob> { void operator()(zCVob*); };
+BindedHook Ivk_zCListSort_zCVob__InsertSort{ ZENFOR(0x006D8260, 0x0070FE00, 0x00721A40, 0x00781480), &zCListSort_zCVob__InsertSort::operator() };
+void zCListSort_zCVob__InsertSort::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCListSort_zCVob__InsertSort)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

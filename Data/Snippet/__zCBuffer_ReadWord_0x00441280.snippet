@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::ReadWord(int): unsigned short]]></Title>
+			<Shortcut><![CDATA[__zCBuffer_ReadWord_0x00441280]]></Shortcut>
+			<Description><![CDATA[public: unsigned short __thiscall zCBuffer::ReadWord(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_ReadWord : zCBuffer { unsigned short operator()(int); };
+BindedHook Ivk_zCBuffer_ReadWord{ ZENFOR(0x0043D480, 0x00442660, 0x00440C50, 0x00441280), &zCBuffer_ReadWord::operator() };
+unsigned short zCBuffer_ReadWord::operator()(int a0)
+{
+	unsigned short result = THISCALL(Ivk_zCBuffer_ReadWord)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

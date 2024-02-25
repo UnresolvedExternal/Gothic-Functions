@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zTOverlayIndex, zCModelPrototype*>::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_zTOverlayIndex__zCModelPrototype___VectorDeletin_0x00761530]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall zCSparseArray<zTOverlayIndex, zCModelPrototype*>::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2A
+struct zCSparseArray_zTOverlayIndex__zCModelPrototype___VectorDeletingDestructor : zCSparseArray<zTOverlayIndex, zCModelPrototype*> { void* operator()(unsigned int); };
+BindedHook Ivk_zCSparseArray_zTOverlayIndex__zCModelPrototype___VectorDeletingDestructor{ ZENFOR(0x00000000, 0x006EF3D0, 0x00000000, 0x00761530), &zCSparseArray_zTOverlayIndex__zCModelPrototype___VectorDeletingDestructor::operator() };
+void* zCSparseArray_zTOverlayIndex__zCModelPrototype___VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCSparseArray_zTOverlayIndex__zCModelPrototype___VectorDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

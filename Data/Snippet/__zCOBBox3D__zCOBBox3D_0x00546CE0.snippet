@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOBBox3D::~zCOBBox3D()]]></Title>
+			<Shortcut><![CDATA[__zCOBBox3D__zCOBBox3D_0x00546CE0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCOBBox3D::~zCOBBox3D()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOBBox3D_Destructor : zCOBBox3D { void operator()(); };
+BindedHook Ivk_zCOBBox3D_Destructor{ ZENFOR(0x00532C90, 0x005497E0, 0x00541AC0, 0x00546CE0), &zCOBBox3D_Destructor::operator() };
+void zCOBBox3D_Destructor::operator()()
+{
+	THISCALL(Ivk_zCOBBox3D_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

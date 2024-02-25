@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::Init(): void]]></Title>
+			<Shortcut><![CDATA[__zCView_Init_0x007A5990]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCView::Init()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_Init : zCView { void operator()(); };
+BindedHook Ivk_zCView_Init{ ZENFOR(0x006FBEB0, 0x00736230, 0x00745E90, 0x007A5990), &zCView_Init::operator() };
+void zCView_Init::operator()()
+{
+	THISCALL(Ivk_zCView_Init)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

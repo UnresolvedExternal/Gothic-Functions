@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCAIPlayer const*, zCCacheData<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>>::SizeData(): unsigned long [const]]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const__0x00512820]]></Shortcut>
+			<Description><![CDATA[protected: virtual unsigned long __thiscall zCSparseArray<zCAIPlayer const*, zCCacheData<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>>::SizeData()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___SizeData : zCSparseArray<zCAIPlayer const*, zCCacheData<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>> { unsigned long operator()() const; };
+BindedHook Ivk_zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___SizeData{ ZENFOR(0x00502CD0, 0x005167C0, 0x0050FA50, 0x00512820), &zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___SizeData::operator() };
+unsigned long zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___SizeData::operator()() const
+{
+	unsigned long result = THISCALL(Ivk_zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___SizeData)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

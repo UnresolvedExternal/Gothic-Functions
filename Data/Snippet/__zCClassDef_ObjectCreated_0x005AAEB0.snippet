@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCClassDef::ObjectCreated(zCObject*, zCClassDef*): void]]></Title>
+			<Shortcut><![CDATA[__zCClassDef_ObjectCreated_0x005AAEB0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCClassDef::ObjectCreated(zCObject*, zCClassDef*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCClassDef_ObjectCreated(zCObject*, zCClassDef*);
+BindedHook Ivk_zCClassDef_ObjectCreated{ ZENFOR(0x0058B380, 0x005A68A0, 0x005A5950, 0x005AAEB0), Hook_zCClassDef_ObjectCreated };
+void Hook_zCClassDef_ObjectCreated(zCObject* a0, zCClassDef* a1)
+{
+	Ivk_zCClassDef_ObjectCreated(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

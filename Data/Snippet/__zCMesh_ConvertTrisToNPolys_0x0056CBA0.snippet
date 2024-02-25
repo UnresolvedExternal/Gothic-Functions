@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::ConvertTrisToNPolys(zCPolygon**, int, zCMesh*, int): void]]></Title>
+			<Shortcut><![CDATA[__zCMesh_ConvertTrisToNPolys_0x0056CBA0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCMesh::ConvertTrisToNPolys(zCPolygon**, int, zCMesh*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCMesh_ConvertTrisToNPolys(zCPolygon**, int, zCMesh*, int);
+BindedHook Ivk_zCMesh_ConvertTrisToNPolys{ ZENFOR(0x00554B60, 0x0056D2D0, 0x00567950, 0x0056CBA0), Hook_zCMesh_ConvertTrisToNPolys };
+void Hook_zCMesh_ConvertTrisToNPolys(zCPolygon** a0, int a1, zCMesh* a2, int a3)
+{
+	Ivk_zCMesh_ConvertTrisToNPolys(a0, a1, a2, a3);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

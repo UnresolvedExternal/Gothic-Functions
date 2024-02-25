@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyState::PresetNight1(): void]]></Title>
+			<Shortcut><![CDATA[__zCSkyState_PresetNight1_0x005E3E30]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCSkyState::PresetNight1()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyState_PresetNight1 : zCSkyState { void operator()(); };
+BindedHook Ivk_zCSkyState_PresetNight1{ ZENFOR(0x005BC070, 0x005D9C10, 0x005DD080, 0x005E3E30), &zCSkyState_PresetNight1::operator() };
+void zCSkyState_PresetNight1::operator()()
+{
+	THISCALL(Ivk_zCSkyState_PresetNight1)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

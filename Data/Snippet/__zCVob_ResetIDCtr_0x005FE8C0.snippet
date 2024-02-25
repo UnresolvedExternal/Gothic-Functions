@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::ResetIDCtr(): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_ResetIDCtr_0x005FE8C0]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCVob::ResetIDCtr()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCVob_ResetIDCtr();
+BindedHook Ivk_zCVob_ResetIDCtr{ ZENFOR(0x005D3700, 0x005F28E0, 0x005F7AD0, 0x005FE8C0), Hook_zCVob_ResetIDCtr };
+void Hook_zCVob_ResetIDCtr()
+{
+	Ivk_zCVob_ResetIDCtr();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPFXControler::PostLoad(): void]]></Title>
+			<Shortcut><![CDATA[__zCPFXControler_PostLoad_0x006148B0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCPFXControler::PostLoad()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPFXControler_PostLoad : zCPFXControler { void operator()(); };
+BindedHook Ivk_zCPFXControler_PostLoad{ ZENFOR(0x005E78C0, 0x00607C50, 0x0060D1F0, 0x006148B0), &zCPFXControler_PostLoad::operator() };
+void zCPFXControler_PostLoad::operator()()
+{
+	THISCALL(Ivk_zCPFXControler_PostLoad)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

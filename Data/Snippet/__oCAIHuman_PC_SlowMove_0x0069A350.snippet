@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::PC_SlowMove(int): int]]></Title>
+			<Shortcut><![CDATA[__oCAIHuman_PC_SlowMove_0x0069A350]]></Shortcut>
+			<Description><![CDATA[protected: int __thiscall oCAIHuman::PC_SlowMove(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_PC_SlowMove : oCAIHuman { int operator()(int); };
+BindedHook Ivk_oCAIHuman_PC_SlowMove{ ZENFOR(0x00614240, 0x00637090, 0x0063DB00, 0x0069A350), &oCAIHuman_PC_SlowMove::operator() };
+int oCAIHuman_PC_SlowMove::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCAIHuman_PC_SlowMove)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

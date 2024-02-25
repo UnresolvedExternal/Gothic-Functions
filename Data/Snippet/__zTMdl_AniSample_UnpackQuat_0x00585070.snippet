@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTMdl_AniSample::UnpackQuat(zCQuat&): void [const]]]></Title>
+			<Shortcut><![CDATA[__zTMdl_AniSample_UnpackQuat_0x00585070]]></Shortcut>
+			<Description><![CDATA[public: void __fastcall zTMdl_AniSample::UnpackQuat(zCQuat&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTMdl_AniSample_UnpackQuat : zTMdl_AniSample { void __fastcall operator()(zCQuat&) const; };
+BindedHook Ivk_zTMdl_AniSample_UnpackQuat{ ZENFOR(0x0056A7C0, 0x00583690, 0x0057FB10, 0x00585070), &zTMdl_AniSample_UnpackQuat::operator() };
+void __fastcall zTMdl_AniSample_UnpackQuat::operator()(zCQuat& a0) const
+{
+	THISCALL(Ivk_zTMdl_AniSample_UnpackQuat)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::GetZBufferCompare(): zTRnd_ZBufferCmp]]></Title>
+			<Shortcut><![CDATA[__zCRenderer_GetZBufferCompare_0x0064A170]]></Shortcut>
+			<Description><![CDATA[public: virtual zTRnd_ZBufferCmp __thiscall zCRenderer::GetZBufferCompare()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_GetZBufferCompare : zCRenderer { zTRnd_ZBufferCmp operator()(); };
+BindedHook Ivk_zCRenderer_GetZBufferCompare{ ZENFOR(0x00713A20, 0x0074F740, 0x0075EBD0, 0x0064A170), &zCRenderer_GetZBufferCompare::operator() };
+zTRnd_ZBufferCmp zCRenderer_GetZBufferCompare::operator()()
+{
+	zTRnd_ZBufferCmp result = THISCALL(Ivk_zCRenderer_GetZBufferCompare)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

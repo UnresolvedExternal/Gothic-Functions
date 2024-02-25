@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::ClearGameState(): void]]></Title>
+			<Shortcut><![CDATA[__oCGame_ClearGameState_0x006C5ED0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall oCGame::ClearGameState()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_ClearGameState : oCGame { void operator()(); };
+BindedHook Ivk_oCGame_ClearGameState{ ZENFOR(0x0063B9E0, 0x00662460, 0x006692A0, 0x006C5ED0), &oCGame_ClearGameState::operator() };
+void oCGame_ClearGameState::operator()()
+{
+	THISCALL(Ivk_oCGame_ClearGameState)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

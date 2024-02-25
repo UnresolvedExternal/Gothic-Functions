@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::RemoveFromSlot(TNpcSlot*, int): oCVob*]]></Title>
+			<Shortcut><![CDATA[__oCNpc_RemoveFromSlot_0x006EB7C0]]></Shortcut>
+			<Description><![CDATA[public: oCVob* __thiscall oCNpc::RemoveFromSlot(TNpcSlot*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A, G2
+struct oCNpc_RemoveFromSlot : oCNpc { oCVob* operator()(TNpcSlot*, int); };
+BindedHook Ivk_oCNpc_RemoveFromSlot{ ZENFOR(0x006A5F50, 0x006D8AA0, 0x006EB7C0, 0x00000000), &oCNpc_RemoveFromSlot::operator() };
+oCVob* oCNpc_RemoveFromSlot::operator()(TNpcSlot* a0, int a1)
+{
+	oCVob* result = THISCALL(Ivk_oCNpc_RemoveFromSlot)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

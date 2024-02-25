@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCZoneMusic::IsDayEntranceDone(): int [const]]]></Title>
+			<Shortcut><![CDATA[__oCZoneMusic_IsDayEntranceDone_0x00641150]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCZoneMusic::IsDayEntranceDone()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCZoneMusic_IsDayEntranceDone : oCZoneMusic { int operator()() const; };
+BindedHook Ivk_oCZoneMusic_IsDayEntranceDone{ ZENFOR(0x0070B950, 0x007468D0, 0x00755BB0, 0x00641150), &oCZoneMusic_IsDayEntranceDone::operator() };
+int oCZoneMusic_IsDayEntranceDone::operator()() const
+{
+	int result = THISCALL(Ivk_oCZoneMusic_IsDayEntranceDone)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

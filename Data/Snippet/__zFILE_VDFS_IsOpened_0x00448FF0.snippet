@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_VDFS::IsOpened(): bool]]></Title>
+			<Shortcut><![CDATA[__zFILE_VDFS_IsOpened_0x00448FF0]]></Shortcut>
+			<Description><![CDATA[public: virtual bool __thiscall zFILE_VDFS::IsOpened()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_VDFS_IsOpened : zFILE_VDFS { bool operator()(); };
+BindedHook Ivk_zFILE_VDFS_IsOpened{ ZENFOR(0x00444F60, 0x0044ABA0, 0x00448990, 0x00448FF0), &zFILE_VDFS_IsOpened::operator() };
+bool zFILE_VDFS_IsOpened::operator()()
+{
+	bool result = THISCALL(Ivk_zFILE_VDFS_IsOpened)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

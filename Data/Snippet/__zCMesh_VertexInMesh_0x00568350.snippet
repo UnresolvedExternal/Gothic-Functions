@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::VertexInMesh(zVEC3 const&): zCVertex*]]></Title>
+			<Shortcut><![CDATA[__zCMesh_VertexInMesh_0x00568350]]></Shortcut>
+			<Description><![CDATA[private: zCVertex* __thiscall zCMesh::VertexInMesh(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_VertexInMesh : zCMesh { zCVertex* operator()(zVEC3 const&); };
+BindedHook Ivk_zCMesh_VertexInMesh{ ZENFOR(0x00550C40, 0x005692D0, 0x00563100, 0x00568350), &zCMesh_VertexInMesh::operator() };
+zCVertex* zCMesh_VertexInMesh::operator()(zVEC3 const& a0)
+{
+	zCVertex* result = THISCALL(Ivk_zCMesh_VertexInMesh)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

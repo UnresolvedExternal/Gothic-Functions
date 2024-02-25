@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::S_AllocPointers(int): void*]]></Title>
+			<Shortcut><![CDATA[__zCPolygon_S_AllocPointers_0x005B6EC0]]></Shortcut>
+			<Description><![CDATA[public: static void* __cdecl zCPolygon::S_AllocPointers(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void* Hook_zCPolygon_S_AllocPointers(int);
+BindedHook Ivk_zCPolygon_S_AllocPointers{ ZENFOR(0x00595A00, 0x005B18F0, 0x005B1350, 0x005B6EC0), Hook_zCPolygon_S_AllocPointers };
+void* Hook_zCPolygon_S_AllocPointers(int a0)
+{
+	void* result = Ivk_zCPolygon_S_AllocPointers(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundManager::zCTableEntry::zCTableEntry()]]></Title>
+			<Shortcut><![CDATA[__zCSoundManager__zCTableEntry_zCTableEntry_0x005EC500]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCSoundManager::zCTableEntry::zCTableEntry()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundManager__zCTableEntry_zCTableEntry : zCSoundManager::zCTableEntry { void operator()(); };
+BindedHook Ivk_zCSoundManager__zCTableEntry_zCTableEntry{ ZENFOR(0x005C1C10, 0x005DFBA0, 0x005E5750, 0x005EC500), &zCSoundManager__zCTableEntry_zCTableEntry::operator() };
+void zCSoundManager__zCTableEntry_zCTableEntry::operator()()
+{
+	THISCALL(Ivk_zCSoundManager__zCTableEntry_zCTableEntry)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

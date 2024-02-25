@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSCtrlValue::operator=(zSCtrlValue const&): zSCtrlValue&]]></Title>
+			<Shortcut><![CDATA[__zSCtrlValue_operator__0x004D6C70]]></Shortcut>
+			<Description><![CDATA[public: zSCtrlValue& __thiscall zSCtrlValue::operator=(zSCtrlValue const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zSCtrlValue_operator_ : zSCtrlValue { zSCtrlValue& operator()(zSCtrlValue const&); };
+BindedHook Ivk_zSCtrlValue_operator_{ ZENFOR(0x004C71A0, 0x004D6C70, 0x00000000, 0x00000000), &zSCtrlValue_operator_::operator() };
+zSCtrlValue& zSCtrlValue_operator_::operator()(zSCtrlValue const& a0)
+{
+	zSCtrlValue& result = THISCALL(Ivk_zSCtrlValue_operator_)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

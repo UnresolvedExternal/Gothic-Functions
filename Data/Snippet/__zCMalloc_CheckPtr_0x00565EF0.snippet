@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMalloc::CheckPtr(void*): zTMallocCheckPtrError]]></Title>
+			<Shortcut><![CDATA[__zCMalloc_CheckPtr_0x00565EF0]]></Shortcut>
+			<Description><![CDATA[public: virtual zTMallocCheckPtrError __thiscall zCMalloc::CheckPtr(void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMalloc_CheckPtr : zCMalloc { zTMallocCheckPtrError operator()(void*); };
+BindedHook Ivk_zCMalloc_CheckPtr{ ZENFOR(0x0054EB40, 0x00567040, 0x00560CD0, 0x00565EF0), &zCMalloc_CheckPtr::operator() };
+zTMallocCheckPtrError zCMalloc_CheckPtr::operator()(void* a0)
+{
+	zTMallocCheckPtrError result = THISCALL(Ivk_zCMalloc_CheckPtr)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

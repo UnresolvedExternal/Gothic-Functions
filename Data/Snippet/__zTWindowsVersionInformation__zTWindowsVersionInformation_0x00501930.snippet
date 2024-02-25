@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTWindowsVersionInformation::~zTWindowsVersionInformation()]]></Title>
+			<Shortcut><![CDATA[__zTWindowsVersionInformation__zTWindowsVersionInformation_0x00501930]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zTWindowsVersionInformation::~zTWindowsVersionInformation()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zTWindowsVersionInformation_Destructor : zTWindowsVersionInformation { void operator()(); };
+BindedHook Ivk_zTWindowsVersionInformation_Destructor{ ZENFOR(0x00000000, 0x00000000, 0x004FECB0, 0x00501930), &zTWindowsVersionInformation_Destructor::operator() };
+void zTWindowsVersionInformation_Destructor::operator()()
+{
+	THISCALL(Ivk_zTWindowsVersionInformation_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

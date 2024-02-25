@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitive::Draw(zMAT4 const&, zCOLOR, zCCamera const*): void [const]]]></Title>
+			<Shortcut><![CDATA[__zCConvexPrimitive_Draw_0x00554E70]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCConvexPrimitive::Draw(zMAT4 const&, zCOLOR, zCCamera const*)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConvexPrimitive_Draw : zCConvexPrimitive { void operator()(zMAT4 const&, zCOLOR, zCCamera const*) const; };
+BindedHook Ivk_zCConvexPrimitive_Draw{ ZENFOR(0x00540720, 0x005580A0, 0x0054FC50, 0x00554E70), &zCConvexPrimitive_Draw::operator() };
+void zCConvexPrimitive_Draw::operator()(zMAT4 const& a0, zCOLOR a1, zCCamera const* a2) const
+{
+	THISCALL(Ivk_zCConvexPrimitive_Draw)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

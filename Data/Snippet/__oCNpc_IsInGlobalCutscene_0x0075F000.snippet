@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsInGlobalCutscene(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_IsInGlobalCutscene_0x0075F000]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::IsInGlobalCutscene()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsInGlobalCutscene : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_IsInGlobalCutscene{ ZENFOR(0x006B8660, 0x006ED140, 0x00700080, 0x0075F000), &oCNpc_IsInGlobalCutscene::operator() };
+int oCNpc_IsInGlobalCutscene::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_IsInGlobalCutscene)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

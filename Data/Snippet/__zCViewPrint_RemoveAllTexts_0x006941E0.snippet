@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewPrint::RemoveAllTexts(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewPrint_RemoveAllTexts_0x006941E0]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall zCViewPrint::RemoveAllTexts()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewPrint_RemoveAllTexts : zCViewPrint { void __fastcall operator()(); };
+BindedHook Ivk_zCViewPrint_RemoveAllTexts{ ZENFOR(0x007575F0, 0x00799AE0, 0x007A4430, 0x006941E0), &zCViewPrint_RemoveAllTexts::operator() };
+void __fastcall zCViewPrint_RemoveAllTexts::operator()()
+{
+	THISCALL(Ivk_zCViewPrint_RemoveAllTexts)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

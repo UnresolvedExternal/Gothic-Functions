@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlockPosition::zCCSBlockPosition(float, zCCSBlockBase*)]]></Title>
+			<Shortcut><![CDATA[__zCCSBlockPosition_zCCSBlockPosition_0x00416BB0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCCSBlockPosition::zCCSBlockPosition(float, zCCSBlockBase*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlockPosition_zCCSBlockPosition : zCCSBlockPosition { zCCSBlockPosition* operator()(float, zCCSBlockBase*); };
+BindedHook Ivk_zCCSBlockPosition_zCCSBlockPosition{ ZENFOR(0x00416630, 0x004183C0, 0x00416BB0, 0x00416BB0), &zCCSBlockPosition_zCCSBlockPosition::operator() };
+zCCSBlockPosition* zCCSBlockPosition_zCCSBlockPosition::operator()(float a0, zCCSBlockBase* a1)
+{
+	zCCSBlockPosition* result = THISCALL(Ivk_zCCSBlockPosition_zCCSBlockPosition)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

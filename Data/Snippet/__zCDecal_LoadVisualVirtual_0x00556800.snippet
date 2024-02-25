@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDecal::LoadVisualVirtual(zSTRING const&): zCVisual* [const]]]></Title>
+			<Shortcut><![CDATA[__zCDecal_LoadVisualVirtual_0x00556800]]></Shortcut>
+			<Description><![CDATA[protected: virtual zCVisual* __thiscall zCDecal::LoadVisualVirtual(zSTRING const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCDecal_LoadVisualVirtual : zCDecal { zCVisual* operator()(zSTRING const&) const; };
+BindedHook Ivk_zCDecal_LoadVisualVirtual{ ZENFOR(0x005420D0, 0x00559A50, 0x005515E0, 0x00556800), &zCDecal_LoadVisualVirtual::operator() };
+zCVisual* zCDecal_LoadVisualVirtual::operator()(zSTRING const& a0) const
+{
+	zCVisual* result = THISCALL(Ivk_zCDecal_LoadVisualVirtual)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CDDrawDeviceNode::GetCurrentVideoMode(_D3DX_VIDMODEDESC*): void]]></Title>
+			<Shortcut><![CDATA[__CDDrawDeviceNode_GetCurrentVideoMode_0x007BB11F]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall CDDrawDeviceNode::GetCurrentVideoMode(_D3DX_VIDMODEDESC*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CDDrawDeviceNode_GetCurrentVideoMode : CDDrawDeviceNode { void operator()(_D3DX_VIDMODEDESC*); };
+BindedHook Ivk_CDDrawDeviceNode_GetCurrentVideoMode{ ZENFOR(0x00761A2B, 0x007A68A9, 0x007AEC59, 0x007BB11F), &CDDrawDeviceNode_GetCurrentVideoMode::operator() };
+void CDDrawDeviceNode_GetCurrentVideoMode::operator()(_D3DX_VIDMODEDESC* a0)
+{
+	THISCALL(Ivk_CDDrawDeviceNode_GetCurrentVideoMode)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

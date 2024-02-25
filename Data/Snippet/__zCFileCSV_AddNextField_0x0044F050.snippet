@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFileCSV::AddNextField(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCFileCSV_AddNextField_0x0044F050]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCFileCSV::AddNextField(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFileCSV_AddNextField : zCFileCSV { void operator()(zSTRING const&); };
+BindedHook Ivk_zCFileCSV_AddNextField{ ZENFOR(0x0044A8D0, 0x00450CD0, 0x0044E900, 0x0044F050), &zCFileCSV_AddNextField::operator() };
+void zCFileCSV_AddNextField::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCFileCSV_AddNextField)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

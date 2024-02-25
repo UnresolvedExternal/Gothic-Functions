@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspSector::ActivateSectorRec(zTBBox2D const&, zCBspSector*, int): void]]></Title>
+			<Shortcut><![CDATA[__zCBspSector_ActivateSectorRec_0x005345E0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCBspSector::ActivateSectorRec(zTBBox2D const&, zCBspSector*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspSector_ActivateSectorRec : zCBspSector { void operator()(zTBBox2D const&, zCBspSector*, int); };
+BindedHook Ivk_zCBspSector_ActivateSectorRec{ ZENFOR(0x00520D90, 0x00536CB0, 0x00531280, 0x005345E0), &zCBspSector_ActivateSectorRec::operator() };
+void zCBspSector_ActivateSectorRec::operator()(zTBBox2D const& a0, zCBspSector* a1, int a2)
+{
+	THISCALL(Ivk_zCBspSector_ActivateSectorRec)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

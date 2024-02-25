@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::DoMovements(): void]]></Title>
+			<Shortcut><![CDATA[__oCVisualFX_DoMovements_0x00497550]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall oCVisualFX::DoMovements()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_DoMovements : oCVisualFX { void operator()(); };
+BindedHook Ivk_oCVisualFX_DoMovements{ ZENFOR(0x0048E780, 0x0049A390, 0x00495980, 0x00497550), &oCVisualFX_DoMovements::operator() };
+void oCVisualFX_DoMovements::operator()()
+{
+	THISCALL(Ivk_oCVisualFX_DoMovements)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

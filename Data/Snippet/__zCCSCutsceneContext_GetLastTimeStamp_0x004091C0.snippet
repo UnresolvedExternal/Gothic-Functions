@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCutsceneContext::GetLastTimeStamp(): float]]></Title>
+			<Shortcut><![CDATA[__zCCSCutsceneContext_GetLastTimeStamp_0x004091C0]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall zCCSCutsceneContext::GetLastTimeStamp()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCutsceneContext_GetLastTimeStamp : zCCSCutsceneContext { float operator()(); };
+BindedHook Ivk_zCCSCutsceneContext_GetLastTimeStamp{ ZENFOR(0x00408F20, 0x00409EC0, 0x004091C0, 0x004091C0), &zCCSCutsceneContext_GetLastTimeStamp::operator() };
+float zCCSCutsceneContext_GetLastTimeStamp::operator()()
+{
+	float result = THISCALL(Ivk_zCCSCutsceneContext_GetLastTimeStamp)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMapScreen::oCMapScreen()]]></Title>
+			<Shortcut><![CDATA[__oCMapScreen_oCMapScreen_0x0047F600]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCMapScreen::oCMapScreen()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMapScreen_oCMapScreen : oCMapScreen { oCMapScreen* operator()(); };
+BindedHook Ivk_oCMapScreen_oCMapScreen{ ZENFOR(0x004780D0, 0x00481D00, 0x0047E130, 0x0047F600), &oCMapScreen_oCMapScreen::operator() };
+oCMapScreen* oCMapScreen_oCMapScreen::operator()()
+{
+	oCMapScreen* result = THISCALL(Ivk_oCMapScreen_oCMapScreen)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gothic-Functions", "Gothic-Functions.csproj", "{659DF585-BCAD-4218-9718-F443AB6479F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gothic-Functions-Test", "..\Gothic-Functions-Test\Gothic-Functions-Test.csproj", "{F392845C-F487-4D90-84DE-136BA4A9E0CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{659DF585-BCAD-4218-9718-F443AB6479F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{659DF585-BCAD-4218-9718-F443AB6479F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{659DF585-BCAD-4218-9718-F443AB6479F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F392845C-F487-4D90-84DE-136BA4A9E0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F392845C-F487-4D90-84DE-136BA4A9E0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F392845C-F487-4D90-84DE-136BA4A9E0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F392845C-F487-4D90-84DE-136BA4A9E0CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

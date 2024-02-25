@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::MuteSFX(): void]]></Title>
+			<Shortcut><![CDATA[__zCSndSys_MSS_MuteSFX_0x004ED930]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCSndSys_MSS::MuteSFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_MuteSFX : zCSndSys_MSS { void operator()(); };
+BindedHook Ivk_zCSndSys_MSS_MuteSFX{ ZENFOR(0x004E0340, 0x004F1C20, 0x004EACB0, 0x004ED930), &zCSndSys_MSS_MuteSFX::operator() };
+void zCSndSys_MSS_MuteSFX::operator()()
+{
+	THISCALL(Ivk_zCSndSys_MSS_MuteSFX)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::SetMaterial(zCMaterial*): void]]></Title>
+			<Shortcut><![CDATA[__zCMesh_SetMaterial_0x0056AEC0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCMesh::SetMaterial(zCMaterial*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_SetMaterial : zCMesh { void operator()(zCMaterial*); };
+BindedHook Ivk_zCMesh_SetMaterial{ ZENFOR(0x00553510, 0x0056BBB0, 0x00565C70, 0x0056AEC0), &zCMesh_SetMaterial::operator() };
+void zCMesh_SetMaterial::operator()(zCMaterial* a0)
+{
+	THISCALL(Ivk_zCMesh_SetMaterial)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

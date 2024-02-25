@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTBCylinder3D::Draw(zCOLOR const&): void [const]]]></Title>
+			<Shortcut><![CDATA[__zTBCylinder3D_Draw_0x00543E80]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zTBCylinder3D::Draw(zCOLOR const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTBCylinder3D_Draw : zTBCylinder3D { void operator()(zCOLOR const&) const; };
+BindedHook Ivk_zTBCylinder3D_Draw{ ZENFOR(0x00530290, 0x00546AB0, 0x0053EDD0, 0x00543E80), &zTBCylinder3D_Draw::operator() };
+void zTBCylinder3D_Draw::operator()(zCOLOR const& a0) const
+{
+	THISCALL(Ivk_zTBCylinder3D_Draw)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::Vid_SetLfbAlphaFunc(zTRnd_AlphaBlendFunc const&): void]]></Title>
+			<Shortcut><![CDATA[__zCRnd_D3D_Vid_SetLfbAlphaFunc_0x0064A4E0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::Vid_SetLfbAlphaFunc(zTRnd_AlphaBlendFunc const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_Vid_SetLfbAlphaFunc : zCRnd_D3D { void operator()(zTRnd_AlphaBlendFunc const&); };
+BindedHook Ivk_zCRnd_D3D_Vid_SetLfbAlphaFunc{ ZENFOR(0x00713CA0, 0x0074F9C0, 0x0075EF40, 0x0064A4E0), &zCRnd_D3D_Vid_SetLfbAlphaFunc::operator() };
+void zCRnd_D3D_Vid_SetLfbAlphaFunc::operator()(zTRnd_AlphaBlendFunc const& a0)
+{
+	THISCALL(Ivk_zCRnd_D3D_Vid_SetLfbAlphaFunc)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

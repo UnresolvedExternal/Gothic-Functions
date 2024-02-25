@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetInteractItemMaxState(zSTRING const&): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetInteractItemMaxState_0x00755150]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::GetInteractItemMaxState(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetInteractItemMaxState : oCNpc { int operator()(zSTRING const&); };
+BindedHook Ivk_oCNpc_GetInteractItemMaxState{ ZENFOR(0x006AF4E0, 0x006E32B0, 0x006F6320, 0x00755150), &oCNpc_GetInteractItemMaxState::operator() };
+int oCNpc_GetInteractItemMaxState::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_oCNpc_GetInteractItemMaxState)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

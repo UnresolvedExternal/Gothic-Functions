@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCRtnManager::CreateActiveList(oCNpc*, zTBBox3D&): void]]></Title>
+			<Shortcut><![CDATA[__oCRtnManager_CreateActiveList_0x00776D60]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall oCRtnManager::CreateActiveList(oCNpc*, zTBBox3D&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCRtnManager_CreateActiveList : oCRtnManager { void operator()(oCNpc*, zTBBox3D&); };
+BindedHook Ivk_oCRtnManager_CreateActiveList{ ZENFOR(0x006CED00, 0x007054A0, 0x007177D0, 0x00776D60), &oCRtnManager_CreateActiveList::operator() };
+void oCRtnManager_CreateActiveList::operator()(oCNpc* a0, zTBBox3D& a1)
+{
+	THISCALL(Ivk_oCRtnManager_CreateActiveList)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

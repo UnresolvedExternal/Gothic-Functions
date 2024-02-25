@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCAIPlayer const*, zCCacheData<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>>::Hash(void const*, unsigned long&, unsigned long&): void [const]]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const__0x005128C0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<zCAIPlayer const*, zCCacheData<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>>::Hash(void const*, unsigned long&, unsigned long&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___Hash : zCSparseArray<zCAIPlayer const*, zCCacheData<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>> { void operator()(void const*, unsigned long&, unsigned long&) const; };
+BindedHook Ivk_zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___Hash{ ZENFOR(0x00502D70, 0x00516860, 0x0050FAF0, 0x005128C0), &zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___Hash::operator() };
+void zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___Hash::operator()(void const* a0, unsigned long& a1, unsigned long& a2) const
+{
+	THISCALL(Ivk_zCSparseArray_zCAIPlayer_const___zCCacheData_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo___Hash)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

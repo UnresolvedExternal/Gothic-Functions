@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCClassDef*>::GetSafe(int): zCClassDef*& [const]]]></Title>
+			<Shortcut><![CDATA[__zCArraySort_zCClassDef___GetSafe_0x0045BE20]]></Shortcut>
+			<Description><![CDATA[public: zCClassDef*& __thiscall zCArraySort<zCClassDef*>::GetSafe(int)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCClassDef___GetSafe : zCArraySort<zCClassDef*> { zCClassDef*& operator()(int) const; };
+BindedHook Ivk_zCArraySort_zCClassDef___GetSafe{ ZENFOR(0x00456D80, 0x0045DD40, 0x0045B6D0, 0x0045BE20), &zCArraySort_zCClassDef___GetSafe::operator() };
+zCClassDef*& zCArraySort_zCClassDef___GetSafe::operator()(int a0) const
+{
+	zCClassDef*& result = THISCALL(Ivk_zCArraySort_zCClassDef___GetSafe)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

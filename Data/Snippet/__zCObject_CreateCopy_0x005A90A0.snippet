@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCObject::CreateCopy(): zCObject*]]></Title>
+			<Shortcut><![CDATA[__zCObject_CreateCopy_0x005A90A0]]></Shortcut>
+			<Description><![CDATA[public: zCObject* __thiscall zCObject::CreateCopy()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCObject_CreateCopy : zCObject { zCObject* operator()(); };
+BindedHook Ivk_zCObject_CreateCopy{ ZENFOR(0x00589630, 0x005A4830, 0x005A3B40, 0x005A90A0), &zCObject_CreateCopy::operator() };
+zCObject* zCObject_CreateCopy::operator()()
+{
+	zCObject* result = THISCALL(Ivk_zCObject_CreateCopy)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

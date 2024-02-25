@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRoute::SetStart(zCWaypoint*): void]]></Title>
+			<Shortcut><![CDATA[__zCRoute_SetStart_0x007B28E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCRoute::SetStart(zCWaypoint*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRoute_SetStart : zCRoute { void operator()(zCWaypoint*); };
+BindedHook Ivk_zCRoute_SetStart{ ZENFOR(0x00708BE0, 0x00743900, 0x00752DE0, 0x007B28E0), &zCRoute_SetStart::operator() };
+void zCRoute_SetStart::operator()(zCWaypoint* a0)
+{
+	THISCALL(Ivk_zCRoute_SetStart)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

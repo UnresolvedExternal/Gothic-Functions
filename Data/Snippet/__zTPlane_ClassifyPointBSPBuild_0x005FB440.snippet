@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTPlane::ClassifyPointBSPBuild(zVEC3 const&): int [const]]]></Title>
+			<Shortcut><![CDATA[__zTPlane_ClassifyPointBSPBuild_0x005FB440]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zTPlane::ClassifyPointBSPBuild(zVEC3 const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTPlane_ClassifyPointBSPBuild : zTPlane { int operator()(zVEC3 const&) const; };
+BindedHook Ivk_zTPlane_ClassifyPointBSPBuild{ ZENFOR(0x005D0230, 0x005EF230, 0x005F4650, 0x005FB440), &zTPlane_ClassifyPointBSPBuild::operator() };
+int zTPlane_ClassifyPointBSPBuild::operator()(zVEC3 const& a0) const
+{
+	int result = THISCALL(Ivk_zTPlane_ClassifyPointBSPBuild)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

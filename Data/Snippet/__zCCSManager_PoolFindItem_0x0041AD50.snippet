@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::PoolFindItem(zSTRING&): zCCSPoolItem*]]></Title>
+			<Shortcut><![CDATA[__zCCSManager_PoolFindItem_0x0041AD50]]></Shortcut>
+			<Description><![CDATA[protected: virtual zCCSPoolItem* __thiscall zCCSManager::PoolFindItem(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_PoolFindItem : zCCSManager { zCCSPoolItem* operator()(zSTRING&); };
+BindedHook Ivk_zCCSManager_PoolFindItem{ ZENFOR(0x0041A920, 0x0041C920, 0x0041AD50, 0x0041AD50), &zCCSManager_PoolFindItem::operator() };
+zCCSPoolItem* zCCSManager_PoolFindItem::operator()(zSTRING& a0)
+{
+	zCCSPoolItem* result = THISCALL(Ivk_zCCSManager_PoolFindItem)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

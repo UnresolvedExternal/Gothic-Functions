@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMeshSoftSkin::zTWeightEntry::zTWeightEntry()]]></Title>
+			<Shortcut><![CDATA[__zCMeshSoftSkin__zTWeightEntry_zTWeightEntry_0x0058DBF0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCMeshSoftSkin::zTWeightEntry::zTWeightEntry()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMeshSoftSkin__zTWeightEntry_zTWeightEntry : zCMeshSoftSkin::zTWeightEntry { void operator()(); };
+BindedHook Ivk_zCMeshSoftSkin__zTWeightEntry_zTWeightEntry{ ZENFOR(0x00573470, 0x0058CD90, 0x00588690, 0x0058DBF0), &zCMeshSoftSkin__zTWeightEntry_zTWeightEntry::operator() };
+void zCMeshSoftSkin__zTWeightEntry_zTWeightEntry::operator()()
+{
+	THISCALL(Ivk_zCMeshSoftSkin__zTWeightEntry_zTWeightEntry)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

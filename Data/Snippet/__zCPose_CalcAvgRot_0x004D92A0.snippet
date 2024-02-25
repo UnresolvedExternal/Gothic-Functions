@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPose::CalcAvgRot(): void]]></Title>
+			<Shortcut><![CDATA[__zCPose_CalcAvgRot_0x004D92A0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCPose::CalcAvgRot()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPose_CalcAvgRot : zCPose { void operator()(); };
+BindedHook Ivk_zCPose_CalcAvgRot{ ZENFOR(0x004CC6B0, 0x004DCDD0, 0x004D6CE0, 0x004D92A0), &zCPose_CalcAvgRot::operator() };
+void zCPose_CalcAvgRot::operator()()
+{
+	THISCALL(Ivk_zCPose_CalcAvgRot)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

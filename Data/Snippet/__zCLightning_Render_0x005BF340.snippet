@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLightning::Render(zTRenderContext&): int]]></Title>
+			<Shortcut><![CDATA[__zCLightning_Render_0x005BF340]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCLightning::Render(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCLightning_Render : zCLightning { int operator()(zTRenderContext&); };
+BindedHook Ivk_zCLightning_Render{ ZENFOR(0x0059D470, 0x005B9A30, 0x005B97D0, 0x005BF340), &zCLightning_Render::operator() };
+int zCLightning_Render::operator()(zTRenderContext& a0)
+{
+	int result = THISCALL(Ivk_zCLightning_Render)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

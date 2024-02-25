@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBBox3DSorterBase::Remove(void*): void]]></Title>
+			<Shortcut><![CDATA[__zCBBox3DSorterBase_Remove_0x0063B510]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCBBox3DSorterBase::Remove(void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBBox3DSorterBase_Remove : zCBBox3DSorterBase { void operator()(void*); };
+BindedHook Ivk_zCBBox3DSorterBase_Remove{ ZENFOR(0x0060AEC0, 0x0062D3D0, 0x00633D40, 0x0063B510), &zCBBox3DSorterBase_Remove::operator() };
+void zCBBox3DSorterBase_Remove::operator()(void* a0)
+{
+	THISCALL(Ivk_zCBBox3DSorterBase_Remove)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

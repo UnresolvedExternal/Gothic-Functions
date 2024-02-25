@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[NotifyInfoToSpy(zSTRING&): void]]></Title>
+			<Shortcut><![CDATA[__NotifyInfoToSpy_0x006D4260]]></Shortcut>
+			<Description><![CDATA[void __cdecl NotifyInfoToSpy(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_NotifyInfoToSpy(zSTRING&);
+BindedHook Ivk_NotifyInfoToSpy{ ZENFOR(0x006491A0, 0x00671150, 0x006774E0, 0x006D4260), Hook_NotifyInfoToSpy };
+void Hook_NotifyInfoToSpy(zSTRING& a0)
+{
+	Ivk_NotifyInfoToSpy(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

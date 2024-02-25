@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMapDetailTexture::S_GetDetailTextureInfo(zSTRING const&): zCMapDetailTexture::zTMapDetailTextureEntry const*]]></Title>
+			<Shortcut><![CDATA[__zCMapDetailTexture_S_GetDetailTextureInfo_0x005DB2F0]]></Shortcut>
+			<Description><![CDATA[public: static zCMapDetailTexture::zTMapDetailTextureEntry const* __cdecl zCMapDetailTexture::S_GetDetailTextureInfo(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCMapDetailTexture::zTMapDetailTextureEntry const* Hook_zCMapDetailTexture_S_GetDetailTextureInfo(zSTRING const&);
+BindedHook Ivk_zCMapDetailTexture_S_GetDetailTextureInfo{ ZENFOR(0x005B3FE0, 0x005D1420, 0x005D4530, 0x005DB2F0), Hook_zCMapDetailTexture_S_GetDetailTextureInfo };
+zCMapDetailTexture::zTMapDetailTextureEntry const* Hook_zCMapDetailTexture_S_GetDetailTextureInfo(zSTRING const& a0)
+{
+	zCMapDetailTexture::zTMapDetailTextureEntry const* result = Ivk_zCMapDetailTexture_S_GetDetailTextureInfo(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

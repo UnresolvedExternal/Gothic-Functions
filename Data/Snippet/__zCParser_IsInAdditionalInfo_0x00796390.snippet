@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::IsInAdditionalInfo(zSTRING const&): int]]></Title>
+			<Shortcut><![CDATA[__zCParser_IsInAdditionalInfo_0x00796390]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall zCParser::IsInAdditionalInfo(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_IsInAdditionalInfo : zCParser { int operator()(zSTRING const&); };
+BindedHook Ivk_zCParser_IsInAdditionalInfo{ ZENFOR(0x006ECD80, 0x00726270, 0x00736950, 0x00796390), &zCParser_IsInAdditionalInfo::operator() };
+int zCParser_IsInAdditionalInfo::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_zCParser_IsInAdditionalInfo)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCActiveSnd::GetVolume(): float]]></Title>
+			<Shortcut><![CDATA[__zCActiveSnd_GetVolume_0x004F81D0]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall zCActiveSnd::GetVolume()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCActiveSnd_GetVolume : zCActiveSnd { float operator()(); };
+BindedHook Ivk_zCActiveSnd_GetVolume{ ZENFOR(0x004E9F70, 0x004FC2C0, 0x004F5550, 0x004F81D0), &zCActiveSnd_GetVolume::operator() };
+float zCActiveSnd_GetVolume::operator()()
+{
+	float result = THISCALL(Ivk_zCActiveSnd_GetVolume)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

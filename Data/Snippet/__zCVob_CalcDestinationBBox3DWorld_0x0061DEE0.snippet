@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::CalcDestinationBBox3DWorld(zTBBox3D&): void]]></Title>
+			<Shortcut><![CDATA[__zCVob_CalcDestinationBBox3DWorld_0x0061DEE0]]></Shortcut>
+			<Description><![CDATA[private: void __fastcall zCVob::CalcDestinationBBox3DWorld(zTBBox3D&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_CalcDestinationBBox3DWorld : zCVob { void __fastcall operator()(zTBBox3D&); };
+BindedHook Ivk_zCVob_CalcDestinationBBox3DWorld{ ZENFOR(0x005F0970, 0x006115A0, 0x006167A0, 0x0061DEE0), &zCVob_CalcDestinationBBox3DWorld::operator() };
+void __fastcall zCVob_CalcDestinationBBox3DWorld::operator()(zTBBox3D& a0)
+{
+	THISCALL(Ivk_zCVob_CalcDestinationBBox3DWorld)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

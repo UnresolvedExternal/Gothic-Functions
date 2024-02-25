@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::MoveMob_S(oCMOB*): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_MoveMob_S_0x0075D250]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::MoveMob_S(oCMOB*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_MoveMob_S : oCNpc { int operator()(oCMOB*); };
+BindedHook Ivk_oCNpc_MoveMob_S{ ZENFOR(0x006B6910, 0x006EB240, 0x006FE2D0, 0x0075D250), &oCNpc_MoveMob_S::operator() };
+int oCNpc_MoveMob_S::operator()(oCMOB* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_MoveMob_S)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

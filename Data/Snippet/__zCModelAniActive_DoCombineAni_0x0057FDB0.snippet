@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelAniActive::DoCombineAni(zCModel*, int, int): void]]></Title>
+			<Shortcut><![CDATA[__zCModelAniActive_DoCombineAni_0x0057FDB0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCModelAniActive::DoCombineAni(zCModel*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelAniActive_DoCombineAni : zCModelAniActive { void operator()(zCModel*, int, int); };
+BindedHook Ivk_zCModelAniActive_DoCombineAni{ ZENFOR(0x00565D30, 0x0057E780, 0x0057A890, 0x0057FDB0), &zCModelAniActive_DoCombineAni::operator() };
+void zCModelAniActive_DoCombineAni::operator()(zCModel* a0, int a1, int a2)
+{
+	THISCALL(Ivk_zCModelAniActive_DoCombineAni)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

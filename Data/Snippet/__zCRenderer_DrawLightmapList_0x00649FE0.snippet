@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::DrawLightmapList(zCPolygon**, int): void]]></Title>
+			<Shortcut><![CDATA[__zCRenderer_DrawLightmapList_0x00649FE0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCRenderer::DrawLightmapList(zCPolygon**, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_DrawLightmapList : zCRenderer { void operator()(zCPolygon**, int); };
+BindedHook Ivk_zCRenderer_DrawLightmapList{ ZENFOR(0x00713900, 0x0074F620, 0x0075EA40, 0x00649FE0), &zCRenderer_DrawLightmapList::operator() };
+void zCRenderer_DrawLightmapList::operator()(zCPolygon** a0, int a1)
+{
+	THISCALL(Ivk_zCRenderer_DrawLightmapList)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

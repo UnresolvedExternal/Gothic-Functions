@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::SetIdealPosition(oCNpc*): void]]></Title>
+			<Shortcut><![CDATA[__oCMobInter_SetIdealPosition_0x0071E240]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCMobInter::SetIdealPosition(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_SetIdealPosition : oCMobInter { void operator()(oCNpc*); };
+BindedHook Ivk_oCMobInter_SetIdealPosition{ ZENFOR(0x0067CEF0, 0x006AB9E0, 0x006C01B0, 0x0071E240), &oCMobInter_SetIdealPosition::operator() };
+void oCMobInter_SetIdealPosition::operator()(oCNpc* a0)
+{
+	THISCALL(Ivk_oCMobInter_SetIdealPosition)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

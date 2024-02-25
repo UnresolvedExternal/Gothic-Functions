@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobBed::GetScemeName(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__oCMobBed_GetScemeName_0x007232A0]]></Shortcut>
+			<Description><![CDATA[public: virtual zSTRING __thiscall oCMobBed::GetScemeName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2, G2A
+struct oCMobBed_GetScemeName : oCMobBed { zSTRING operator()(); };
+BindedHook Ivk_oCMobBed_GetScemeName{ ZENFOR(0x00000000, 0x006B0C40, 0x006C5210, 0x007232A0), &oCMobBed_GetScemeName::operator() };
+zSTRING oCMobBed_GetScemeName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_oCMobBed_GetScemeName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

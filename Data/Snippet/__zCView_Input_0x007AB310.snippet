@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::Input(int, int, int, zSTRING&): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zCView_Input_0x007AB310]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall zCView::Input(int, int, int, zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_Input : zCView { zSTRING operator()(int, int, int, zSTRING&); };
+BindedHook Ivk_zCView_Input{ ZENFOR(0x00701750, 0x0073BE90, 0x0074B810, 0x007AB310), &zCView_Input::operator() };
+zSTRING zCView_Input::operator()(int a0, int a1, int a2, zSTRING& a3)
+{
+	zSTRING result = THISCALL(Ivk_zCView_Input)(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

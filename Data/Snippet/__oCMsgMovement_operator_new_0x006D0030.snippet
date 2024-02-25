@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgMovement::operator new(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCMsgMovement_operator_new_0x006D0030]]></Shortcut>
+			<Description><![CDATA[public: static void* __cdecl oCMsgMovement::operator new(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+void* Hook_oCMsgMovement_operator_new(unsigned int);
+BindedHook Ivk_oCMsgMovement_operator_new{ ZENFOR(0x00000000, 0x00000000, 0x006732B0, 0x006D0030), Hook_oCMsgMovement_operator_new };
+void* Hook_oCMsgMovement_operator_new(unsigned int a0)
+{
+	void* result = Ivk_oCMsgMovement_operator_new(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

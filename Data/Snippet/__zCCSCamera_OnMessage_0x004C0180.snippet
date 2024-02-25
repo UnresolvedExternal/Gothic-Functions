@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::OnMessage(zCEventMessage*, zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCCSCamera_OnMessage_0x004C0180]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSCamera::OnMessage(zCEventMessage*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_OnMessage : zCCSCamera { void operator()(zCEventMessage*, zCVob*); };
+BindedHook Ivk_zCCSCamera_OnMessage{ ZENFOR(0x004B6F20, 0x004C6120, 0x004BDC10, 0x004C0180), &zCCSCamera_OnMessage::operator() };
+void zCCSCamera_OnMessage::operator()(zCEventMessage* a0, zCVob* a1)
+{
+	THISCALL(Ivk_zCCSCamera_OnMessage)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAskBox::Init(oCNpc*, oCNpc*): void]]></Title>
+			<Shortcut><![CDATA[__oCAskBox_Init_0x006BBE70]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCAskBox::Init(oCNpc*, oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAskBox_Init : oCAskBox { void operator()(oCNpc*, oCNpc*); };
+BindedHook Ivk_oCAskBox_Init{ ZENFOR(0x006324D0, 0x006582B0, 0x0065F4E0, 0x006BBE70), &oCAskBox_Init::operator() };
+void oCAskBox_Init::operator()(oCNpc* a0, oCNpc* a1)
+{
+	THISCALL(Ivk_oCAskBox_Init)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

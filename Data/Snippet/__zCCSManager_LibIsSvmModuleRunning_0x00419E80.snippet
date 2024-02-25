@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::LibIsSvmModuleRunning(int): int]]></Title>
+			<Shortcut><![CDATA[__zCCSManager_LibIsSvmModuleRunning_0x00419E80]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCCSManager::LibIsSvmModuleRunning(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_LibIsSvmModuleRunning : zCCSManager { int operator()(int); };
+BindedHook Ivk_zCCSManager_LibIsSvmModuleRunning{ ZENFOR(0x00419980, 0x0041B900, 0x00419E80, 0x00419E80), &zCCSManager_LibIsSvmModuleRunning::operator() };
+int zCCSManager_LibIsSvmModuleRunning::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCCSManager_LibIsSvmModuleRunning)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

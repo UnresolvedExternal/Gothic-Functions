@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspBase::CollectVobsInBBox3D_I(zCArray<zCVob*>&, zTBBox3D const&): void [const]]]></Title>
+			<Shortcut><![CDATA[__zCBspBase_CollectVobsInBBox3D_I_0x005314F0]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall zCBspBase::CollectVobsInBBox3D_I(zCArray<zCVob*>&, zTBBox3D const&)const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspBase_CollectVobsInBBox3D_I : zCBspBase { void __fastcall operator()(zCArray<zCVob*>&, zTBBox3D const&) const; };
+BindedHook Ivk_zCBspBase_CollectVobsInBBox3D_I{ ZENFOR(0x0051EBE0, 0x005349B0, 0x0052E580, 0x005314F0), &zCBspBase_CollectVobsInBBox3D_I::operator() };
+void __fastcall zCBspBase_CollectVobsInBBox3D_I::operator()(zCArray<zCVob*>& a0, zTBBox3D const& a1) const
+{
+	THISCALL(Ivk_zCBspBase_CollectVobsInBBox3D_I)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFFT::zCFFT()]]></Title>
+			<Shortcut><![CDATA[__zCFFT_zCFFT_0x00559E40]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCFFT::zCFFT()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCFFT_zCFFT : zCFFT { zCFFT* operator()(); };
+BindedHook Ivk_zCFFT_zCFFT{ ZENFOR(0x00000000, 0x00000000, 0x00554C20, 0x00559E40), &zCFFT_zCFFT::operator() };
+zCFFT* zCFFT_zCFFT::operator()()
+{
+	zCFFT* result = THISCALL(Ivk_zCFFT_zCFFT)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

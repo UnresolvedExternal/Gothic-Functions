@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetCutsceneDistance(): int]]></Title>
+			<Shortcut><![CDATA[__oCNpc_GetCutsceneDistance_0x007329A0]]></Shortcut>
+			<Description><![CDATA[public: int __thiscall oCNpc::GetCutsceneDistance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetCutsceneDistance : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_GetCutsceneDistance{ ZENFOR(0x0068FE30, 0x006C11A0, 0x006D4400, 0x007329A0), &oCNpc_GetCutsceneDistance::operator() };
+int oCNpc_GetCutsceneDistance::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_GetCutsceneDistance)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

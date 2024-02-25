@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobLockable::SetPickLockStr(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__oCMobLockable_SetPickLockStr_0x00719780]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMobLockable::SetPickLockStr(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobLockable_SetPickLockStr : oCMobLockable { void operator()(zSTRING const&); };
+BindedHook Ivk_oCMobLockable_SetPickLockStr{ ZENFOR(0x00678570, 0x006A6B70, 0x006BB6F0, 0x00719780), &oCMobLockable_SetPickLockStr::operator() };
+void oCMobLockable_SetPickLockStr::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_oCMobLockable_SetPickLockStr)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

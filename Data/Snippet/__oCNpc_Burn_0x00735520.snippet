@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::Burn(int, float): void]]></Title>
+			<Shortcut><![CDATA[__oCNpc_Burn_0x00735520]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall oCNpc::Burn(int, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_Burn : oCNpc { void operator()(int, float); };
+BindedHook Ivk_oCNpc_Burn{ ZENFOR(0x00692250, 0x006C3880, 0x006D6DC0, 0x00735520), &oCNpc_Burn::operator() };
+void oCNpc_Burn::operator()(int a0, float a1)
+{
+	THISCALL(Ivk_oCNpc_Burn)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

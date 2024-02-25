@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCutsceneContext::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCCSCutsceneContext__GetClassDef_0x00404FA0]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCCSCutsceneContext::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCutsceneContext__GetClassDef : zCCSCutsceneContext { zCClassDef* operator()() const; };
+BindedHook Ivk_zCCSCutsceneContext__GetClassDef{ ZENFOR(0x00404E70, 0x004056C0, 0x00404FA0, 0x00404FA0), &zCCSCutsceneContext__GetClassDef::operator() };
+zCClassDef* zCCSCutsceneContext__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCCSCutsceneContext__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

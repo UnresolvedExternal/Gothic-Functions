@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[streambuf::setb(char*, char*, int): void]]></Title>
+			<Shortcut><![CDATA[__streambuf_setb_0x007CF9A7]]></Shortcut>
+			<Description><![CDATA[protected: void __thiscall streambuf::setb(char*, char*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct streambuf_setb : streambuf { void operator()(char*, char*, int); };
+BindedHook Ivk_streambuf_setb{ ZENFOR(0x00775FFD, 0x007B9DBD, 0x007C34E7, 0x007CF9A7), &streambuf_setb::operator() };
+void streambuf_setb::operator()(char* a0, char* a1, int a2)
+{
+	THISCALL(Ivk_streambuf_setb)(a0, a1, a2);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

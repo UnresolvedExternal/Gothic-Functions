@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCPortalRoomManager::CleanUp(): void]]></Title>
+			<Shortcut><![CDATA[__oCPortalRoomManager_CleanUp_0x007726C0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall oCPortalRoomManager::CleanUp()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCPortalRoomManager_CleanUp : oCPortalRoomManager { void operator()(); };
+BindedHook Ivk_oCPortalRoomManager_CleanUp{ ZENFOR(0x006CAC80, 0x00700EE0, 0x00713130, 0x007726C0), &oCPortalRoomManager_CleanUp::operator() };
+void oCPortalRoomManager_CleanUp::operator()()
+{
+	THISCALL(Ivk_oCPortalRoomManager_CleanUp)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

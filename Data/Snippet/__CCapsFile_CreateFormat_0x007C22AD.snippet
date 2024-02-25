@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CCapsFile::CreateFormat(CSurfaceFormatNode*): unsigned long]]></Title>
+			<Shortcut><![CDATA[__CCapsFile_CreateFormat_0x007C22AD]]></Shortcut>
+			<Description><![CDATA[protected: unsigned long __thiscall CCapsFile::CreateFormat(CSurfaceFormatNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CCapsFile_CreateFormat : CCapsFile { unsigned long operator()(CSurfaceFormatNode*); };
+BindedHook Ivk_CCapsFile_CreateFormat{ ZENFOR(0x00768BB9, 0x007B0E5C, 0x007B5DE7, 0x007C22AD), &CCapsFile_CreateFormat::operator() };
+unsigned long CCapsFile_CreateFormat::operator()(CSurfaceFormatNode* a0)
+{
+	unsigned long result = THISCALL(Ivk_CCapsFile_CreateFormat)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

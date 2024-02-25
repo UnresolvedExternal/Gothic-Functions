@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConDat::~zCConDat()]]></Title>
+			<Shortcut><![CDATA[__zCConDat__zCConDat_0x00785B20]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCConDat::~zCConDat()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConDat_Destructor : zCConDat { void operator()(); };
+BindedHook Ivk_zCConDat_Destructor{ ZENFOR(0x006DC850, 0x007149C0, 0x007260E0, 0x00785B20), &zCConDat_Destructor::operator() };
+void zCConDat_Destructor::operator()()
+{
+	THISCALL(Ivk_zCConDat_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

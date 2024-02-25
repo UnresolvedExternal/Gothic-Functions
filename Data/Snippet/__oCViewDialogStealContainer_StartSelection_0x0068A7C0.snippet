@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogStealContainer::StartSelection(): void]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogStealContainer_StartSelection_0x0068A7C0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __fastcall oCViewDialogStealContainer::StartSelection()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogStealContainer_StartSelection : oCViewDialogStealContainer { void __fastcall operator()(); };
+BindedHook Ivk_oCViewDialogStealContainer_StartSelection{ ZENFOR(0x00728630, 0x00766140, 0x00774A70, 0x0068A7C0), &oCViewDialogStealContainer_StartSelection::operator() };
+void __fastcall oCViewDialogStealContainer_StartSelection::operator()()
+{
+	THISCALL(Ivk_oCViewDialogStealContainer_StartSelection)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

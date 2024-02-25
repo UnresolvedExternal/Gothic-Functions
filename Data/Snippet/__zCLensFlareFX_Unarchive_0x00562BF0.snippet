@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLensFlareFX::Unarchive(zCArchiver&): void]]></Title>
+			<Shortcut><![CDATA[__zCLensFlareFX_Unarchive_0x00562BF0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void __thiscall zCLensFlareFX::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCLensFlareFX_Unarchive : zCLensFlareFX { void operator()(zCArchiver&); };
+BindedHook Ivk_zCLensFlareFX_Unarchive{ ZENFOR(0x0054BE30, 0x00564120, 0x0055D9D0, 0x00562BF0), &zCLensFlareFX_Unarchive::operator() };
+void zCLensFlareFX_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCLensFlareFX_Unarchive)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

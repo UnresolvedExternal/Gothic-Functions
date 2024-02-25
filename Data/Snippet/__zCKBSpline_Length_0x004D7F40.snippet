@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCKBSpline::Length(float): float]]></Title>
+			<Shortcut><![CDATA[__zCKBSpline_Length_0x004D7F40]]></Shortcut>
+			<Description><![CDATA[public: float __thiscall zCKBSpline::Length(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCKBSpline_Length : zCKBSpline { float operator()(float); };
+BindedHook Ivk_zCKBSpline_Length{ ZENFOR(0x004CB320, 0x004DB9B0, 0x004D5980, 0x004D7F40), &zCKBSpline_Length::operator() };
+float zCKBSpline_Length::operator()(float a0)
+{
+	float result = THISCALL(Ivk_zCKBSpline_Length)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

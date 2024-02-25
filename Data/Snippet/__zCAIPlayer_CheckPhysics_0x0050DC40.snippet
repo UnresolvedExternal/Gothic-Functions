@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::CheckPhysics(): void]]></Title>
+			<Shortcut><![CDATA[__zCAIPlayer_CheckPhysics_0x0050DC40]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCAIPlayer::CheckPhysics()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_CheckPhysics : zCAIPlayer { void operator()(); };
+BindedHook Ivk_zCAIPlayer_CheckPhysics{ ZENFOR(0x004FE140, 0x00511520, 0x0050AE90, 0x0050DC40), &zCAIPlayer_CheckPhysics::operator() };
+void zCAIPlayer_CheckPhysics::operator()()
+{
+	THISCALL(Ivk_zCAIPlayer_CheckPhysics)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

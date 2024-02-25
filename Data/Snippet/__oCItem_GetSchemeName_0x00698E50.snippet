@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::GetSchemeName(): zSTRING]]></Title>
+			<Shortcut><![CDATA[__oCItem_GetSchemeName_0x00698E50]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall oCItem::GetSchemeName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_GetSchemeName : oCItem { zSTRING operator()(); };
+BindedHook Ivk_oCItem_GetSchemeName{ ZENFOR(0x006127F0, 0x00635950, 0x0063C5E0, 0x00698E50), &oCItem_GetSchemeName::operator() };
+zSTRING oCItem_GetSchemeName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_oCItem_GetSchemeName)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

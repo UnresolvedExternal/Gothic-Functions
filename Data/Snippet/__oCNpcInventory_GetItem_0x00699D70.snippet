@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcInventory::GetItem(int, int): oCItem*]]></Title>
+			<Shortcut><![CDATA[__oCNpcInventory_GetItem_0x00699D70]]></Shortcut>
+			<Description><![CDATA[public: oCItem* __thiscall oCNpcInventory::GetItem(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct oCNpcInventory_GetItem : oCNpcInventory { oCItem* operator()(int, int); };
+BindedHook Ivk_oCNpcInventory_GetItem{ ZENFOR(0x0066C610, 0x00699D70, 0x00000000, 0x00000000), &oCNpcInventory_GetItem::operator() };
+oCItem* oCNpcInventory_GetItem::operator()(int a0, int a1)
+{
+	oCItem* result = THISCALL(Ivk_oCNpcInventory_GetItem)(a0, a1);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

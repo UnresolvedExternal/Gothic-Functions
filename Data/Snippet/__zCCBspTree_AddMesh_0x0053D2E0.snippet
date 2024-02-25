@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspTree::AddMesh(zCMesh*): void]]></Title>
+			<Shortcut><![CDATA[__zCCBspTree_AddMesh_0x0053D2E0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCCBspTree::AddMesh(zCMesh*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspTree_AddMesh : zCCBspTree { void operator()(zCMesh*); };
+BindedHook Ivk_zCCBspTree_AddMesh{ ZENFOR(0x005277F0, 0x0053DC00, 0x005381B0, 0x0053D2E0), &zCCBspTree_AddMesh::operator() };
+void zCCBspTree_AddMesh::operator()(zCMesh* a0)
+{
+	THISCALL(Ivk_zCCBspTree_AddMesh)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

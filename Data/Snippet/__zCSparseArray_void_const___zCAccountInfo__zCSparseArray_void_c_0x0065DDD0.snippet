@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<void const*, zCAccountInfo>::zCSparseArray<void const*, zCAccountInfo>(unsigned long)]]></Title>
+			<Shortcut><![CDATA[__zCSparseArray_void_const___zCAccountInfo__zCSparseArray_void_c_0x0065DDD0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCSparseArray<void const*, zCAccountInfo>::zCSparseArray<void const*, zCAccountInfo>(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_void_const___zCAccountInfo__zCSparseArray_void_const___zCAccountInfo_ : zCSparseArray<void const*, zCAccountInfo> { zCSparseArray<void const*, zCAccountInfo>* operator()(unsigned long); };
+BindedHook Ivk_zCSparseArray_void_const___zCAccountInfo__zCSparseArray_void_const___zCAccountInfo_{ ZENFOR(0x0075A310, 0x0079C950, 0x007A7260, 0x0065DDD0), &zCSparseArray_void_const___zCAccountInfo__zCSparseArray_void_const___zCAccountInfo_::operator() };
+zCSparseArray<void const*, zCAccountInfo>* zCSparseArray_void_const___zCAccountInfo__zCSparseArray_void_const___zCAccountInfo_::operator()(unsigned long a0)
+{
+	zCSparseArray<void const*, zCAccountInfo>* result = THISCALL(Ivk_zCSparseArray_void_const___zCAccountInfo__zCSparseArray_void_const___zCAccountInfo_)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

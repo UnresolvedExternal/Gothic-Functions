@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ReadGeomobject(zMAT4*&, zCTree<zCModelNode>*&): void]]></Title>
+			<Shortcut><![CDATA[__zCModelPrototype_ReadGeomobject_0x00590040]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::ReadGeomobject(zMAT4*&, zCTree<zCModelNode>*&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_ReadGeomobject : zCModelPrototype { void operator()(zMAT4*&, zCTree<zCModelNode>*&); };
+BindedHook Ivk_zCModelPrototype_ReadGeomobject{ ZENFOR(0x005758A0, 0x0058F470, 0x0058AAE0, 0x00590040), &zCModelPrototype_ReadGeomobject::operator() };
+void zCModelPrototype_ReadGeomobject::operator()(zMAT4*& a0, zCTree<zCModelNode>*& a1)
+{
+	THISCALL(Ivk_zCModelPrototype_ReadGeomobject)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

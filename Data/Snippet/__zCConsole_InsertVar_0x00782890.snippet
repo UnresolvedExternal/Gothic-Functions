@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConsole::InsertVar(zSTRING const&, zSTRING const&, int, void*, int): void]]></Title>
+			<Shortcut><![CDATA[__zCConsole_InsertVar_0x00782890]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCConsole::InsertVar(zSTRING const&, zSTRING const&, int, void*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConsole_InsertVar : zCConsole { void operator()(zSTRING const&, zSTRING const&, int, void*, int); };
+BindedHook Ivk_zCConsole_InsertVar{ ZENFOR(0x006D96C0, 0x00711310, 0x00722E50, 0x00782890), &zCConsole_InsertVar::operator() };
+void zCConsole_InsertVar::operator()(zSTRING const& a0, zSTRING const& a1, int a2, void* a3, int a4)
+{
+	THISCALL(Ivk_zCConsole_InsertVar)(a0, a1, a2, a3, a4);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

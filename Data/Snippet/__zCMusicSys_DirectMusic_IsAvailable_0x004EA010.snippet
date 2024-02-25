@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSys_DirectMusic::IsAvailable(zSTRING const&): int]]></Title>
+			<Shortcut><![CDATA[__zCMusicSys_DirectMusic_IsAvailable_0x004EA010]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall zCMusicSys_DirectMusic::IsAvailable(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSys_DirectMusic_IsAvailable : zCMusicSys_DirectMusic { int operator()(zSTRING const&); };
+BindedHook Ivk_zCMusicSys_DirectMusic_IsAvailable{ ZENFOR(0x004DCCC0, 0x004EE1C0, 0x004E7500, 0x004EA010), &zCMusicSys_DirectMusic_IsAvailable::operator() };
+int zCMusicSys_DirectMusic_IsAvailable::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_zCMusicSys_DirectMusic_IsAvailable)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::SetVisualUsedBy(zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCQuadMark_SetVisualUsedBy_0x005D0CB0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCQuadMark::SetVisualUsedBy(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_SetVisualUsedBy : zCQuadMark { void operator()(zCVob*); };
+BindedHook Ivk_zCQuadMark_SetVisualUsedBy{ ZENFOR(0x005ABB80, 0x005C8810, 0x005CA110, 0x005D0CB0), &zCQuadMark_SetVisualUsedBy::operator() };
+void zCQuadMark_SetVisualUsedBy::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCQuadMark_SetVisualUsedBy)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

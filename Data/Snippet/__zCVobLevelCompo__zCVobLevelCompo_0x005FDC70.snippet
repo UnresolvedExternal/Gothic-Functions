@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLevelCompo::~zCVobLevelCompo()]]></Title>
+			<Shortcut><![CDATA[__zCVobLevelCompo__zCVobLevelCompo_0x005FDC70]]></Shortcut>
+			<Description><![CDATA[protected: virtual __thiscall zCVobLevelCompo::~zCVobLevelCompo()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobLevelCompo_Destructor : zCVobLevelCompo { void operator()(); };
+BindedHook Ivk_zCVobLevelCompo_Destructor{ ZENFOR(0x005D2AC0, 0x005F1CF0, 0x005F6E80, 0x005FDC70), &zCVobLevelCompo_Destructor::operator() };
+void zCVobLevelCompo_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVobLevelCompo_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

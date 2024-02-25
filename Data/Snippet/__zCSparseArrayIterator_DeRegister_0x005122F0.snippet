@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArrayIterator::DeRegister(): void]]></Title>
+			<Shortcut><![CDATA[__zCSparseArrayIterator_DeRegister_0x005122F0]]></Shortcut>
+			<Description><![CDATA[private: void __thiscall zCSparseArrayIterator::DeRegister()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArrayIterator_DeRegister : zCSparseArrayIterator { void operator()(); };
+BindedHook Ivk_zCSparseArrayIterator_DeRegister{ ZENFOR(0x00502790, 0x00516260, 0x0050F520, 0x005122F0), &zCSparseArrayIterator_DeRegister::operator() };
+void zCSparseArrayIterator_DeRegister::operator()()
+{
+	THISCALL(Ivk_zCSparseArrayIterator_DeRegister)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

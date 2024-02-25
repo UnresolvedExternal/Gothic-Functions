@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelAni::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Shortcut><![CDATA[__zCModelAni__GetClassDef_0x005852C0]]></Shortcut>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCModelAni::_GetClassDef()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelAni__GetClassDef : zCModelAni { zCClassDef* operator()() const; };
+BindedHook Ivk_zCModelAni__GetClassDef{ ZENFOR(0x0056AA10, 0x005838F0, 0x0057FD60, 0x005852C0), &zCModelAni__GetClassDef::operator() };
+zCClassDef* zCModelAni__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCModelAni__GetClassDef)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

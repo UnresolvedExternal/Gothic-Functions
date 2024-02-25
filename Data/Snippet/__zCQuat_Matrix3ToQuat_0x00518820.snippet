@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuat::Matrix3ToQuat(zMAT3 const&): void]]></Title>
+			<Shortcut><![CDATA[__zCQuat_Matrix3ToQuat_0x00518820]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCQuat::Matrix3ToQuat(zMAT3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuat_Matrix3ToQuat : zCQuat { void operator()(zMAT3 const&); };
+BindedHook Ivk_zCQuat_Matrix3ToQuat{ ZENFOR(0x00508B30, 0x0051D5A0, 0x00515A50, 0x00518820), &zCQuat_Matrix3ToQuat::operator() };
+void zCQuat_Matrix3ToQuat::operator()(zMAT3 const& a0)
+{
+	THISCALL(Ivk_zCQuat_Matrix3ToQuat)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

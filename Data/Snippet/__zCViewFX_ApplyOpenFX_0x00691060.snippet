@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewFX::ApplyOpenFX(): void]]></Title>
+			<Shortcut><![CDATA[__zCViewFX_ApplyOpenFX_0x00691060]]></Shortcut>
+			<Description><![CDATA[protected: void __fastcall zCViewFX::ApplyOpenFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewFX_ApplyOpenFX : zCViewFX { void __fastcall operator()(); };
+BindedHook Ivk_zCViewFX_ApplyOpenFX{ ZENFOR(0x00754510, 0x00796990, 0x007A12B0, 0x00691060), &zCViewFX_ApplyOpenFX::operator() };
+void __fastcall zCViewFX_ApplyOpenFX::operator()()
+{
+	THISCALL(Ivk_zCViewFX_ApplyOpenFX)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

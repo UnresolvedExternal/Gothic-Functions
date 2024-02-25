@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::GetFileVersion(): unsigned short]]></Title>
+			<Shortcut><![CDATA[__zCProgMeshProto_GetFileVersion_0x005CCE00]]></Shortcut>
+			<Description><![CDATA[public: static unsigned short __cdecl zCProgMeshProto::GetFileVersion()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned short Hook_zCProgMeshProto_GetFileVersion();
+BindedHook Ivk_zCProgMeshProto_GetFileVersion{ ZENFOR(0x005A8AA0, 0x005C55D0, 0x005C6E50, 0x005CCE00), Hook_zCProgMeshProto_GetFileVersion };
+unsigned short Hook_zCProgMeshProto_GetFileVersion()
+{
+	unsigned short result = Ivk_zCProgMeshProto_GetFileVersion();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

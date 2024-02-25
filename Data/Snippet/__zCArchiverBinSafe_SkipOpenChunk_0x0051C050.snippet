@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::SkipOpenChunk(): void]]></Title>
+			<Shortcut><![CDATA[__zCArchiverBinSafe_SkipOpenChunk_0x0051C050]]></Shortcut>
+			<Description><![CDATA[public: virtual void __fastcall zCArchiverBinSafe::SkipOpenChunk()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_SkipOpenChunk : zCArchiverBinSafe { void __fastcall operator()(); };
+BindedHook Ivk_zCArchiverBinSafe_SkipOpenChunk{ ZENFOR(0x0050BF30, 0x00520C90, 0x00519280, 0x0051C050), &zCArchiverBinSafe_SkipOpenChunk::operator() };
+void __fastcall zCArchiverBinSafe_SkipOpenChunk::operator()()
+{
+	THISCALL(Ivk_zCArchiverBinSafe_SkipOpenChunk)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

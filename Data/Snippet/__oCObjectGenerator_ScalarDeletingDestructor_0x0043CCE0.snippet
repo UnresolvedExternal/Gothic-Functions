@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCObjectGenerator::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCObjectGenerator_ScalarDeletingDestructor_0x0043CCE0]]></Shortcut>
+			<Description><![CDATA[protected: virtual void* __thiscall oCObjectGenerator::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCObjectGenerator_ScalarDeletingDestructor : oCObjectGenerator { void* operator()(unsigned int); };
+BindedHook Ivk_oCObjectGenerator_ScalarDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x0043C6B0, 0x0043CCE0), &oCObjectGenerator_ScalarDeletingDestructor::operator() };
+void* oCObjectGenerator_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCObjectGenerator_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

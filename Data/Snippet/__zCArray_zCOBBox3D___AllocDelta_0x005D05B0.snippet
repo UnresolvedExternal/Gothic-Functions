@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCOBBox3D*>::AllocDelta(int): void]]></Title>
+			<Shortcut><![CDATA[__zCArray_zCOBBox3D___AllocDelta_0x005D05B0]]></Shortcut>
+			<Description><![CDATA[public: void __thiscall zCArray<zCOBBox3D*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCOBBox3D___AllocDelta : zCArray<zCOBBox3D*> { void operator()(int); };
+BindedHook Ivk_zCArray_zCOBBox3D___AllocDelta{ ZENFOR(0x005AB480, 0x005C80E0, 0x005C9A10, 0x005D05B0), &zCArray_zCOBBox3D___AllocDelta::operator() };
+void zCArray_zCOBBox3D___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zCOBBox3D___AllocDelta)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

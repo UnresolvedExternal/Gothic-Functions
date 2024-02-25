@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRoute::zCRoute()]]></Title>
+			<Shortcut><![CDATA[__zCRoute_zCRoute_0x007B2860]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCRoute::zCRoute()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRoute_zCRoute : zCRoute { zCRoute* operator()(); };
+BindedHook Ivk_zCRoute_zCRoute{ ZENFOR(0x00708B60, 0x00743880, 0x00752D60, 0x007B2860), &zCRoute_zCRoute::operator() };
+zCRoute* zCRoute_zCRoute::operator()()
+{
+	zCRoute* result = THISCALL(Ivk_zCRoute_zCRoute)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

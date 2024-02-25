@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zDATE::operator=(long): zDATE&]]></Title>
+			<Shortcut><![CDATA[__zDATE_operator__0x00442860]]></Shortcut>
+			<Description><![CDATA[public: zDATE& __thiscall zDATE::operator=(long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zDATE_operator_ : zDATE { zDATE& operator()(long); };
+BindedHook Ivk_zDATE_operator_{ ZENFOR(0x0043E950, 0x00443CB0, 0x00442230, 0x00442860), &zDATE_operator_::operator() };
+zDATE& zDATE_operator_::operator()(long a0)
+{
+	zDATE& result = THISCALL(Ivk_zDATE_operator_)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[TestFont(): void]]></Title>
+			<Shortcut><![CDATA[__TestFont_0x007815B0]]></Shortcut>
+			<Description><![CDATA[void __cdecl TestFont()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_TestFont();
+BindedHook Ivk_TestFont{ ZENFOR(0x006D83B0, 0x0070FF50, 0x00721B70, 0x007815B0), Hook_TestFont };
+void Hook_TestFont()
+{
+	Ivk_TestFont();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

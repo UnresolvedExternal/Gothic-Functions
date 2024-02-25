@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogTrade::OnKeyEnter(): int]]></Title>
+			<Shortcut><![CDATA[__oCViewDialogTrade_OnKeyEnter_0x0068B770]]></Shortcut>
+			<Description><![CDATA[protected: int __fastcall oCViewDialogTrade::OnKeyEnter()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogTrade_OnKeyEnter : oCViewDialogTrade { int __fastcall operator()(); };
+BindedHook Ivk_oCViewDialogTrade_OnKeyEnter{ ZENFOR(0x00729FF0, 0x00767ED0, 0x00775A40, 0x0068B770), &oCViewDialogTrade_OnKeyEnter::operator() };
+int __fastcall oCViewDialogTrade_OnKeyEnter::operator()()
+{
+	int result = THISCALL(Ivk_oCViewDialogTrade_OnKeyEnter)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

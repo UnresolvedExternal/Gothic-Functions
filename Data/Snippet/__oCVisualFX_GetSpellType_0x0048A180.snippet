@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::GetSpellType(): int [const]]]></Title>
+			<Shortcut><![CDATA[__oCVisualFX_GetSpellType_0x0048A180]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCVisualFX::GetSpellType()const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_GetSpellType : oCVisualFX { int operator()() const; };
+BindedHook Ivk_oCVisualFX_GetSpellType{ ZENFOR(0x00482760, 0x0048D7C0, 0x004889C0, 0x0048A180), &oCVisualFX_GetSpellType::operator() };
+int oCVisualFX_GetSpellType::operator()() const
+{
+	int result = THISCALL(Ivk_oCVisualFX_GetSpellType)();
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

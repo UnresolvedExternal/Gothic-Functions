@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::SetMinValue(float): void]]></Title>
+			<Shortcut><![CDATA[__zCMenuItem_SetMinValue_0x004DED80]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCMenuItem::SetMinValue(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItem_SetMinValue : zCMenuItem { void operator()(float); };
+BindedHook Ivk_zCMenuItem_SetMinValue{ ZENFOR(0x004D1EF0, 0x004E2750, 0x004DC3D0, 0x004DED80), &zCMenuItem_SetMinValue::operator() };
+void zCMenuItem_SetMinValue::operator()(float a0)
+{
+	THISCALL(Ivk_zCMenuItem_SetMinValue)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

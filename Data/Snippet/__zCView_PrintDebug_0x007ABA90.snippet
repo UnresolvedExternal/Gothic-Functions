@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::PrintDebug(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__zCView_PrintDebug_0x007ABA90]]></Shortcut>
+			<Description><![CDATA[public: static void __cdecl zCView::PrintDebug(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCView_PrintDebug(zSTRING const&);
+BindedHook Ivk_zCView_PrintDebug{ ZENFOR(0x00701E60, 0x0073C620, 0x0074BF90, 0x007ABA90), Hook_zCView_PrintDebug };
+void Hook_zCView_PrintDebug(zSTRING const& a0)
+{
+	Ivk_zCView_PrintDebug(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

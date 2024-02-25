@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::ParmValue(zSTRING const&): zSTRING]]></Title>
+			<Shortcut><![CDATA[__zCOption_ParmValue_0x00465380]]></Shortcut>
+			<Description><![CDATA[public: zSTRING __thiscall zCOption::ParmValue(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_ParmValue : zCOption { zSTRING operator()(zSTRING const&); };
+BindedHook Ivk_zCOption_ParmValue{ ZENFOR(0x0045FD20, 0x00467540, 0x00464750, 0x00465380), &zCOption_ParmValue::operator() };
+zSTRING zCOption_ParmValue::operator()(zSTRING const& a0)
+{
+	zSTRING result = THISCALL(Ivk_zCOption_ParmValue)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgState::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Shortcut><![CDATA[__oCMsgState_ScalarDeletingDestructor_0x006F6070]]></Shortcut>
+			<Description><![CDATA[public: virtual void* __thiscall oCMsgState::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct oCMsgState_ScalarDeletingDestructor : oCMsgState { void* operator()(unsigned int); };
+BindedHook Ivk_oCMsgState_ScalarDeletingDestructor{ ZENFOR(0x006C0D30, 0x006F6070, 0x00000000, 0x00000000), &oCMsgState_ScalarDeletingDestructor::operator() };
+void* oCMsgState_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCMsgState_ScalarDeletingDestructor)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

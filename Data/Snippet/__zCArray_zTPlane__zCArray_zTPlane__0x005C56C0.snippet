@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zTPlane>::zCArray<zTPlane>(zCArray<zTPlane>const&)]]></Title>
+			<Shortcut><![CDATA[__zCArray_zTPlane__zCArray_zTPlane__0x005C56C0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall zCArray<zTPlane>::zCArray<zTPlane>(zCArray<zTPlane>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zTPlane__zCArray_zTPlane_ : zCArray<zTPlane> { zCArray<zTPlane>* operator()(zCArray<zTPlane>const&); };
+BindedHook Ivk_zCArray_zTPlane__zCArray_zTPlane_{ ZENFOR(0x005A3760, 0x005BFE90, 0x005BFB50, 0x005C56C0), &zCArray_zTPlane__zCArray_zTPlane_::operator() };
+zCArray<zTPlane>* zCArray_zTPlane__zCArray_zTPlane_::operator()(zCArray<zTPlane>const& a0)
+{
+	zCArray<zTPlane>* result = THISCALL(Ivk_zCArray_zTPlane__zCArray_zTPlane_)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

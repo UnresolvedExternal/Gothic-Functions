@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[DeviceWindowProc(HWND__*, unsigned int, unsigned int, long): long]]></Title>
+			<Shortcut><![CDATA[__DeviceWindowProc_0x007B8938]]></Shortcut>
+			<Description><![CDATA[long __stdcall DeviceWindowProc(HWND__*, unsigned int, unsigned int, long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long __stdcall Hook_DeviceWindowProc(HWND__*, unsigned int, unsigned int, long);
+BindedHook Ivk_DeviceWindowProc{ ZENFOR(0x0075F244, 0x007A3B1F, 0x007AC472, 0x007B8938), Hook_DeviceWindowProc };
+long __stdcall Hook_DeviceWindowProc(HWND__* a0, unsigned int a1, unsigned int a2, long a3)
+{
+	long result = Ivk_DeviceWindowProc(a0, a1, a2, a3);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

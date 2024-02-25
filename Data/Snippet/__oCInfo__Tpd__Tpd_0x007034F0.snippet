@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInfo::Tpd::~Tpd()]]></Title>
+			<Shortcut><![CDATA[__oCInfo__Tpd__Tpd_0x007034F0]]></Shortcut>
+			<Description><![CDATA[public: __thiscall oCInfo::Tpd::~Tpd()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInfo__Tpd_Destructor : oCInfo::Tpd { void operator()(); };
+BindedHook Ivk_oCInfo__Tpd_Destructor{ ZENFOR(0x00665600, 0x00692900, 0x006A5A60, 0x007034F0), &oCInfo__Tpd_Destructor::operator() };
+void oCInfo__Tpd_Destructor::operator()()
+{
+	THISCALL(Ivk_oCInfo__Tpd_Destructor)();
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

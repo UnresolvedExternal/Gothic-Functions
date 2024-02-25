@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::CanInteractWith(oCNpc*): int]]></Title>
+			<Shortcut><![CDATA[__oCMobInter_CanInteractWith_0x00720F40]]></Shortcut>
+			<Description><![CDATA[public: virtual int __thiscall oCMobInter::CanInteractWith(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_CanInteractWith : oCMobInter { int operator()(oCNpc*); };
+BindedHook Ivk_oCMobInter_CanInteractWith{ ZENFOR(0x0067F5F0, 0x006AE730, 0x006C2EB0, 0x00720F40), &oCMobInter_CanInteractWith::operator() };
+int oCMobInter_CanInteractWith::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCMobInter_CanInteractWith)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

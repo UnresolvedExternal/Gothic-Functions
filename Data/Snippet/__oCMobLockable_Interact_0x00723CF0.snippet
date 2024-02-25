@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobLockable::Interact(oCNpc*, int, int, int, int, int): void]]></Title>
+			<Shortcut><![CDATA[__oCMobLockable_Interact_0x00723CF0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMobLockable::Interact(oCNpc*, int, int, int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobLockable_Interact : oCMobLockable { void operator()(oCNpc*, int, int, int, int, int); };
+BindedHook Ivk_oCMobLockable_Interact{ ZENFOR(0x00681FF0, 0x006B16F0, 0x006C5C60, 0x00723CF0), &oCMobLockable_Interact::operator() };
+void oCMobLockable_Interact::operator()(oCNpc* a0, int a1, int a2, int a3, int a4, int a5)
+{
+	THISCALL(Ivk_oCMobLockable_Interact)(a0, a1, a2, a3, a4, a5);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

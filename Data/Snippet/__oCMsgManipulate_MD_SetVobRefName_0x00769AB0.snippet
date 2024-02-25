@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgManipulate::MD_SetVobRefName(zSTRING const&): void]]></Title>
+			<Shortcut><![CDATA[__oCMsgManipulate_MD_SetVobRefName_0x00769AB0]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall oCMsgManipulate::MD_SetVobRefName(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgManipulate_MD_SetVobRefName : oCMsgManipulate { void operator()(zSTRING const&); };
+BindedHook Ivk_oCMsgManipulate_MD_SetVobRefName{ ZENFOR(0x006C2910, 0x006F7D00, 0x0070A570, 0x00769AB0), &oCMsgManipulate_MD_SetVobRefName::operator() };
+void oCMsgManipulate_MD_SetVobRefName::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_oCMsgManipulate_MD_SetVobRefName)(a0);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

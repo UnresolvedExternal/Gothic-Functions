@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::OnTrigger(zCVob*, zCVob*): void]]></Title>
+			<Shortcut><![CDATA[__zCCSCamera_OnTrigger_0x004C3270]]></Shortcut>
+			<Description><![CDATA[public: virtual void __thiscall zCCSCamera::OnTrigger(zCVob*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_OnTrigger : zCCSCamera { void operator()(zCVob*, zCVob*); };
+BindedHook Ivk_zCCSCamera_OnTrigger{ ZENFOR(0x004B9E20, 0x004C9170, 0x004C0D00, 0x004C3270), &zCCSCamera_OnTrigger::operator() };
+void zCCSCamera_OnTrigger::operator()(zCVob* a0, zCVob* a1)
+{
+	THISCALL(Ivk_zCCSCamera_OnTrigger)(a0, a1);
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
