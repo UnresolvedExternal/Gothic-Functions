@@ -14,7 +14,7 @@ var functions = Enumerable.Repeat(0, 4).Select(_ => new List<FunctionInfo>()).To
 for (int engine = 1; engine <= 4; engine++)
 {
 	var inputPath = Path.Combine(dataPath, "Input", engine + ".txt");
-	var jsonPath = Path.Combine(dataPath, "Json", engine + ".txt");
+	var jsonPath = Path.Combine(dataPath, "Json", engine + ".json");
 	var errorPath = Path.Combine(dataPath, "Error", engine + ".txt");
 	var builder = new FunctionBuilder(engine);
 
@@ -84,7 +84,7 @@ Func<FunctionInfo?, FunctionInfo?, string, FunctionInfo> projection = (outer, in
 
 var aggregated = functions.Aggregate((outer, inner) => outer.FullOuterJoin(inner, keySelector, keySelector, projection).ToList());
 
-using (var jsonWriter = File.Create(Path.Combine(dataPath, "Json", "all.txt")))
+using (var jsonWriter = File.Create(Path.Combine(dataPath, "Json", "all.json")))
 {
 	var options = new JsonSerializerOptions { WriteIndented = true };
 	JsonSerializer.Serialize(jsonWriter, aggregated, options);
