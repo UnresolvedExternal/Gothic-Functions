@@ -2,44 +2,53 @@
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Nodes;
-using System.Text.Json.Serialization.Metadata;
 
-Assembly entryAssembly = Assembly.GetEntryAssembly() ?? throw new ApplicationException("Entry assembly missed");
-string dataPath = new FileInfo(entryAssembly.Location)?.Directory?.Parent?.Parent?.Parent?.Parent?.ToString() ?? "";
-dataPath = dataPath.Length > 0 ? Path.Combine(dataPath, @"Data") : throw new ApplicationException("Data path not found");
-
-var functions = Enumerable.Repeat(0, 4).Select(_ => new List<FunctionInfo>()).ToArray();
-
-for (int engine = 1; engine <= 4; engine++)
+static string GetDataPath()
 {
-	var inputPath = Path.Combine(dataPath, "Input", engine + ".txt");
-	var jsonPath = Path.Combine(dataPath, "Json", engine + ".json");
-	var errorPath = Path.Combine(dataPath, "Error", engine + ".txt");
-	var builder = new FunctionBuilder(engine);
+	Assembly entryAssembly = Assembly.GetEntryAssembly() ?? throw new ApplicationException("Entry assembly not found");
+	string dataPath = new FileInfo(entryAssembly.Location)?.Directory?.Parent?.Parent?.Parent?.Parent?.ToString() ?? "";
+	dataPath = dataPath.Length > 0 ? Path.Combine(dataPath, "Data") : throw new ApplicationException("Data path not found");
+	return dataPath;
+}
 
-	using (var errorWriter = File.CreateText(errorPath))
+static List<FunctionInfo>[] ParseFunctions(string dataPath)
+{
+	var functions = Enumerable.Repeat(0, 4).Select(_ => new List<FunctionInfo>()).ToArray();
+
+	for (int engine = 1; engine <= 4; engine++)
 	{
-		foreach (var line in File.ReadLines(inputPath))
-			try
-			{
-				var info = builder.Build(line);
-				functions[engine - 1].Add(info);
-			}
-			catch (ParserException e)
-			{
-				errorWriter.WriteLine($"{line} [[{e.Message}]]");
-			}
+		var inputPath = Path.Combine(dataPath, "Input", engine + ".txt");
+		var errorPath = Path.Combine(dataPath, "Error", engine + ".txt");
+		var builder = new FunctionBuilder(engine);
+
+		using (var errorWriter = File.CreateText(errorPath))
+			foreach (var line in File.ReadLines(inputPath))
+				try
+				{
+					var info = builder.Build(line);
+					functions[engine - 1].Add(info);
+				}
+				catch (ParserException e)
+				{
+					errorWriter.WriteLine($"{line} [[{e.Message}]]");
+				}
 	}
 
-	using (var splittedJsonWriter = File.Create(jsonPath))
+	return functions;
+}
+
+static void SerializeFunctions(List<FunctionInfo>[] functions, string dataPath, JsonSerializerOptions jsonOptions)
+{
+	for (int engine = 1; engine <= 4; engine++)
 	{
-		var options = new JsonSerializerOptions { WriteIndented = true };
-		JsonSerializer.Serialize(splittedJsonWriter, functions[engine - 1], options);
+		var jsonPath = Path.Combine(dataPath, "Json", engine + ".json");
+
+		using (var stream = File.Create(jsonPath))
+			JsonSerializer.Serialize(stream, functions[engine - 1], jsonOptions);
 	}
 }
 
-Func<FunctionInfo, string> keySelector = info =>
+static string GetSignatureKey(FunctionInfo info)
 {
 	var sb = new StringBuilder();
 	sb.AppendLine(info.Class);
@@ -52,26 +61,26 @@ Func<FunctionInfo, string> keySelector = info =>
 		sb.AppendLine(parameter);
 
 	return sb.ToString();
-};
+}
 
-Func<FunctionInfo?, FunctionInfo?, string, FunctionInfo> projection = (outer, inner, key) =>
+static FunctionInfo CombineFunctions(FunctionInfo? outer, FunctionInfo? inner, string signatureKey)
 {
-	FunctionInfo any = inner ?? outer ?? throw new ApplicationException();
+	FunctionInfo mostImportantInfo = inner ?? outer ?? throw new ApplicationException();
 
 	var info = new FunctionInfo
 	{
-		OriginalString = any.OriginalString,
-		ShortString = any.ShortString,
-		Visibility = any.Visibility,
-		CallingConvention = any.CallingConvention,
-		ReturnType = any.ReturnType,
-		Class = any.Class,
-		Name = any.Name,
-		Parameters = [.. any.Parameters],
-		IsStatic = any.IsStatic,
-		IsVirtual = any.IsVirtual,
-		IsConst = any.IsConst,
-		Address = [.. any.Address]
+		OriginalString = mostImportantInfo.OriginalString,
+		ShortString = mostImportantInfo.ShortString,
+		Visibility = mostImportantInfo.Visibility,
+		CallingConvention = mostImportantInfo.CallingConvention,
+		ReturnType = mostImportantInfo.ReturnType,
+		Class = mostImportantInfo.Class,
+		Name = mostImportantInfo.Name,
+		Parameters = [.. mostImportantInfo.Parameters],
+		IsStatic = mostImportantInfo.IsStatic,
+		IsVirtual = mostImportantInfo.IsVirtual,
+		IsConst = mostImportantInfo.IsConst,
+		Address = [.. mostImportantInfo.Address]
 	};
 
 	if (outer != null)
@@ -80,24 +89,42 @@ Func<FunctionInfo?, FunctionInfo?, string, FunctionInfo> projection = (outer, in
 				info.Address[i] = outer.Address[i];
 
 	return info;
-};
-
-var aggregated = functions.Aggregate((outer, inner) => outer.FullOuterJoin(inner, keySelector, keySelector, projection).ToList());
-
-using (var jsonWriter = File.Create(Path.Combine(dataPath, "Json", "all.json")))
-{
-	var options = new JsonSerializerOptions { WriteIndented = true };
-	JsonSerializer.Serialize(jsonWriter, aggregated, options);
 }
 
-var snippetTemplate = File.ReadAllText(Path.Combine(dataPath, "template.snippet"));
-
-foreach (var info in aggregated)
+static void AssertNoConstFuncAmbiguity(List<FunctionInfo>[] functions)
 {
-	var snippetGenerator = new SnippetGenerator(info);
-	var snippet = snippetTemplate.Replace("{Title}", snippetGenerator.GetTitle());
-	snippet = snippet.Replace("{Shortcut}", snippetGenerator.GetShortcut());
-	snippet = snippet.Replace("{Description}", snippetGenerator.GetDescription());
-	snippet = snippet.Replace("{Code}", snippetGenerator.GetCode());
-	File.WriteAllText(Path.Combine(dataPath, "Snippet", snippetGenerator.GetShortcut() + ".snippet"), snippet);
+	foreach (var list in functions)
+		foreach (var group in list.ToLookup(GetSignatureKey))
+			if (group.Count() != 1)
+				throw new ApplicationException($"Const func ambiguity [[{group.First().OriginalString}]]");
 }
+
+static void SerializeUnitedFunctions(List<FunctionInfo> unitedFunctions, string dataPath, JsonSerializerOptions jsonOptions)
+{
+	using (var stream = File.Create(Path.Combine(dataPath, "Json", "all.json")))
+		JsonSerializer.Serialize(stream, unitedFunctions, jsonOptions);
+}
+
+static void GenerateSnippetFiles(List<FunctionInfo> unitedFunctions, string dataPath)
+{
+	var snippetTemplate = File.ReadAllText(Path.Combine(dataPath, "template.snippet"));
+
+	foreach (var info in unitedFunctions)
+	{
+		var snippetGenerator = new SnippetGenerator(info);
+		var snippet = snippetTemplate.Replace("{Title}", snippetGenerator.GetTitle());
+		snippet = snippet.Replace("{Shortcut}", snippetGenerator.GetShortcut());
+		snippet = snippet.Replace("{Description}", snippetGenerator.GetDescription());
+		snippet = snippet.Replace("{Code}", snippetGenerator.GetCode());
+		File.WriteAllText(Path.Combine(dataPath, "Snippet", snippetGenerator.GetShortcut() + ".snippet"), snippet);
+	}
+}
+
+var dataPath = GetDataPath();
+var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+var functions = ParseFunctions(dataPath);
+AssertNoConstFuncAmbiguity(functions);
+SerializeFunctions(functions, dataPath, jsonOptions);
+var unitedFunctions = functions.Aggregate((outer, inner) => outer.FullOuterJoin(inner, GetSignatureKey, GetSignatureKey, CombineFunctions).ToList());
+SerializeUnitedFunctions(unitedFunctions, dataPath, jsonOptions);
+GenerateSnippetFiles(unitedFunctions, dataPath);
