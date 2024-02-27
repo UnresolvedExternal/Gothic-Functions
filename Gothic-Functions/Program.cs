@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 static string GetDataPath()
 {
@@ -19,9 +20,11 @@ static List<FunctionInfo>[] ParseFunctions(string dataPath)
 	{
 		var inputPath = Path.Combine(dataPath, "Input", engine + ".txt");
 		var errorPath = Path.Combine(dataPath, "Error", engine + ".txt");
+		var refinedErrorPath = Path.Combine(dataPath, "Error", engine + "_refined.txt");
 		var builder = new FunctionBuilder(engine);
 
 		using (var errorWriter = File.CreateText(errorPath))
+		using (var refinedErrorWriter = File.CreateText(refinedErrorPath))
 			foreach (var line in File.ReadLines(inputPath))
 				try
 				{
@@ -30,7 +33,11 @@ static List<FunctionInfo>[] ParseFunctions(string dataPath)
 				}
 				catch (ParserException e)
 				{
-					errorWriter.WriteLine($"{line} [[{e.Message}]]");
+					string logMessage = $"{line} [[{e.Message}]]";
+					errorWriter.WriteLine(logMessage);
+
+					if (e.Message != "Calling convention missed")
+						refinedErrorWriter.WriteLine(logMessage);
 				}
 	}
 
@@ -105,19 +112,39 @@ static void SerializeUnitedFunctions(List<FunctionInfo> unitedFunctions, string 
 		JsonSerializer.Serialize(stream, unitedFunctions, jsonOptions);
 }
 
+static bool IsFuncLocalStructureUsed(FunctionInfo info)
+{
+	return Regex.IsMatch(info.OriginalString, @"`[^']*'.+`[^'*]'");
+}
+
 static void GenerateSnippetFiles(List<FunctionInfo> unitedFunctions, string dataPath)
 {
 	var snippetTemplate = File.ReadAllText(Path.Combine(dataPath, "template.snippet"));
+	var snippetFolder = Path.Combine(dataPath, "Snippet");
+	var folder = new DirectoryInfo(snippetFolder);
+	
+	if (folder.Exists)
+	{
+		folder.Delete(true);
+		folder.Create();
+	}
 
 	foreach (var info in unitedFunctions)
-	{
-		var snippetGenerator = new SnippetGenerator(info);
-		var snippet = snippetTemplate.Replace("{Title}", snippetGenerator.GetTitle());
-		snippet = snippet.Replace("{Shortcut}", snippetGenerator.GetShortcut());
-		snippet = snippet.Replace("{Description}", snippetGenerator.GetDescription());
-		snippet = snippet.Replace("{Code}", snippetGenerator.GetCode());
-		File.WriteAllText(Path.Combine(dataPath, "Snippet", snippetGenerator.GetShortcut() + ".snippet"), snippet);
-	}
+		if (IsFuncLocalStructureUsed(info))
+		{
+			Console.WriteLine("Snippet ignored for:");
+			Console.WriteLine(info.OriginalString);
+		}
+		else
+		{
+			var snippetGenerator = new SnippetGenerator(info);
+			var snippetPath = Path.Combine(snippetFolder, snippetGenerator.GetShortcut() + ".snippet");
+			var snippet = snippetTemplate.Replace("{Title}", snippetGenerator.GetTitle());
+			snippet = snippet.Replace("{Shortcut}", snippetGenerator.GetShortcut());
+			snippet = snippet.Replace("{Description}", snippetGenerator.GetDescription());
+			snippet = snippet.Replace("{Code}", snippetGenerator.GetCode());
+			File.WriteAllText(snippetPath, snippet);
+		}
 }
 
 var dataPath = GetDataPath();
