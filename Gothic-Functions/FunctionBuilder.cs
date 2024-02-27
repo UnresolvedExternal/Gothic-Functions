@@ -31,13 +31,11 @@ namespace Gothic_Functions
 
 		private static string PreprocessText(string text)
 		{
-			ParserException.Assert(!text.Contains('{') && !text.Contains('}'), "Curly brackets are not allowed");
-
-			text = Regex.Replace(text, "`.*'", match =>
+			text = Regex.Replace(text, @"(`[^']*')+", match =>
 			{
-				var text = match.Value.Substring(1, match.Value.Length - 2);
+				var text = Regex.Replace(match.Value, @"[`']", "");
 				var tokens = text.Split(' ', StringSplitOptions.RemoveEmptyEntries)
-					.Select(t => char.ToUpper(t[0]) + t.Substring(1));
+					.Select(t => char.ToUpper(t[0]) + t[1..]);
 
 				return string.Join("", tokens);
 			});
@@ -96,20 +94,6 @@ namespace Gothic_Functions
 			return false;
 		}
 
-		private static bool IsFunctionPointer(IEnumerable<string> type)
-		{
-			var counter = new BracketCounter();
-
-			foreach (var token in type)
-			{
-				counter.Append(token);
-
-				if (counter.IsInGlobalParenthesisBlock && CallingConventionRegex().IsMatch(token))
-					return true;
-			}
-
-			return false;
-		}
 		private List<string> ExtractSimpleProperties(IEnumerable<string> tokens)
 		{
 			var result = tokens.ToList();
