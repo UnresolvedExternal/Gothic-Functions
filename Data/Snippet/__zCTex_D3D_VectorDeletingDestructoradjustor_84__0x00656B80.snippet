@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTex_D3D::VectorDeletingDestructoradjustor{84}(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCTex_D3D::VectorDeletingDestructoradjustor{84}(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTex_D3D_VectorDeletingDestructoradjustor_84_ : zCTex_D3D { void* operator()(unsigned int); };
+BindedHook Ivk_zCTex_D3D_VectorDeletingDestructoradjustor_84_{ ZENFOR(0x0071E270, 0x0075A9A0, 0x0076A050, 0x00656B80), &zCTex_D3D_VectorDeletingDestructoradjustor_84_::operator() };
+void* zCTex_D3D_VectorDeletingDestructoradjustor_84_::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCTex_D3D_VectorDeletingDestructoradjustor_84_)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

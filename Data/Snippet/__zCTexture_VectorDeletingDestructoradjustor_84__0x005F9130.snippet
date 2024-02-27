@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexture::VectorDeletingDestructoradjustor{84}(unsigned int): void*]]></Title>
+			<Description><![CDATA[protected: virtual void* __thiscall zCTexture::VectorDeletingDestructoradjustor{84}(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTexture_VectorDeletingDestructoradjustor_84_ : zCTexture { void* operator()(unsigned int); };
+BindedHook Ivk_zCTexture_VectorDeletingDestructoradjustor_84_{ ZENFOR(0x005CDFE0, 0x005ECD00, 0x005F2340, 0x005F9130), &zCTexture_VectorDeletingDestructoradjustor_84_::operator() };
+void* zCTexture_VectorDeletingDestructoradjustor_84_::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCTexture_VectorDeletingDestructoradjustor_84_)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

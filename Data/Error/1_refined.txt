@@ -1,0 +1,1 @@
+0x005B4100 public: struct ?? :: ?? ::zC>::zTMapDetailTextureEntry & __thiscall std::map<class zSTRING,struct zCMapDetailTexture::zTMapDetailTextureEntry,struct std::less<class zSTRING>,class std::allocator<struct zCMapDetailTexture::zTMapDetailTextureEntry> >::operator[]( ?? ) throw( ?? ) [[Triangle bracket mistmatch]]

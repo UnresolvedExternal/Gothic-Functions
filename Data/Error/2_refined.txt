@@ -1,0 +1,3 @@
+0x005FA790 protected: void __thiscall std::_Tree<class zCClassDef *,struct std::pair<class zCClassDef * const,class zCVisual *>,struct std::map<class zCClassDef *,class zCVisual *,struct std::less<class zCClassDef *>,class std::allocator<class zCVisual *> >::_Kfn,struct std::less<class zCClassDef *>,class std::allocator<class zCVisual *> >::_Erase(struct std::_Tree<class zCClassDef *,struct std::pair<class zCClassDef * const,class zCVisual *>,struct std::map<class zCClassDef *,class zCVisual *,struct std::less<class [[Parameter list must be between parenthesis]]
+0x00813310 SHW32.notImplemented_0000010B_shi_deletePtr> [[Triangle bracket mistmatch]]
+0x00813324 SHW32.notImplemented_000000FD_shi_MemFreeDe> [[Triangle bracket mistmatch]]

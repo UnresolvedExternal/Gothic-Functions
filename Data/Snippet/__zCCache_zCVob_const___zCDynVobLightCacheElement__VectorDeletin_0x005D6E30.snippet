@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<zCVob const*, zCDynVobLightCacheElement>::VectorDeletingDestructoradjustor{16}(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCCache<zCVob const*, zCDynVobLightCacheElement>::VectorDeletingDestructoradjustor{16}(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_zCVob_const___zCDynVobLightCacheElement__VectorDeletingDestructoradjustor_16_ : zCCache<zCVob const*, zCDynVobLightCacheElement> { void* operator()(unsigned int); };
+BindedHook Ivk_zCCache_zCVob_const___zCDynVobLightCacheElement__VectorDeletingDestructoradjustor_16_{ ZENFOR(0x005B10B0, 0x005CE270, 0x005D0270, 0x005D6E30), &zCCache_zCVob_const___zCDynVobLightCacheElement__VectorDeletingDestructoradjustor_16_::operator() };
+void* zCCache_zCVob_const___zCDynVobLightCacheElement__VectorDeletingDestructoradjustor_16_::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCCache_zCVob_const___zCDynVobLightCacheElement__VectorDeletingDestructoradjustor_16_)(a0);
+	return result;
+}
+$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
