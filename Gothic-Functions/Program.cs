@@ -114,7 +114,7 @@ static void SerializeUnitedFunctions(List<FunctionInfo> unitedFunctions, string 
 
 static bool IsFuncLocalStructureUsed(FunctionInfo info)
 {
-	return Regex.IsMatch(info.OriginalString, @"`[^']*'.+`[^'*]'");
+	return Regex.IsMatch(info.OriginalString, @"`[^']*'.+`[^']*'");
 }
 
 static void GenerateSnippetFiles(List<FunctionInfo> unitedFunctions, string dataPath)
