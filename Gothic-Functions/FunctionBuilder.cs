@@ -41,6 +41,7 @@ namespace Gothic_Functions
 			});
 
 			text = Regex.Replace(text, @"\bclass |\bstruct |\benum ", "");
+			text = Regex.Replace(text, @"\bconst\b", " const");
 			text = text.Replace(" *", "*").Replace(" &", "&");
 			text = text.Replace("(void)", "() ");
 			text = text.Replace(",", ", ");
@@ -260,19 +261,17 @@ namespace Gothic_Functions
 			}
 		}
 
-		private static void UniteTokens(StringBuilder current, string next)
+		private static void UniteTokens(StringBuilder current, string token)
 		{
 			if (current.Length == 0)
 			{
-				current.Append(next);
+				current.Append(token);
 				return;
 			}
 
-			var token = next.ToString();
-
 			if (token == ",")
 			{
-				current.Append(token);
+				current.Append((string)token);
 				current.Append(' ');
 				return;
 			}
@@ -280,7 +279,9 @@ namespace Gothic_Functions
 			char lastChar = current[^1];
 			char newChar = token[0];
 
-			if (char.IsLetter(newChar) || newChar == '_')
+			if (token == "const" && lastChar == ')')
+				current.Append(' ');
+			else if (char.IsLetter(newChar) || newChar == '_')
 				if (char.IsLetter(lastChar) || char.IsDigit(lastChar) || lastChar == '*' || lastChar == '&' || lastChar == ':' && !current.ToString().EndsWith("::"))
 					current.Append(' ');
 
