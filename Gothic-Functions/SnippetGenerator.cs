@@ -84,7 +84,7 @@ namespace Gothic_Functions
 					sb.AppendLine("\treturn result;");
 				}
 
-				sb.AppendLine("}");
+				sb.Append("}");
 			}
 			else
 			{
@@ -104,7 +104,7 @@ namespace Gothic_Functions
 					sb.AppendLine("\treturn result;");
 				}
 
-				sb.AppendLine("}");
+				sb.Append("}");
 			}
 
 			return sb.ToString();
