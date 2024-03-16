@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetNextEnemy(): oCNpc*]]></Title>
+			<Description><![CDATA[public: oCNpc* __thiscall oCNpc::GetNextEnemy()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetNextEnemy : oCNpc { oCNpc* operator()(); };
+BindedHook Ivk_oCNpc_GetNextEnemy{ ZENFOR(0x00691CC0, 0x006C32F0, 0x006D67E0, 0x00734E30), &oCNpc_GetNextEnemy::operator() };
+oCNpc* oCNpc_GetNextEnemy::operator()()
+{
+	oCNpc* result = THISCALL(Ivk_oCNpc_GetNextEnemy)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

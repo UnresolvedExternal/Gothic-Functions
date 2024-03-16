@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[type_info::type_info(type_info const&)]]></Title>
+			<Description><![CDATA[private: __thiscall type_info::type_info(type_info const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct type_info_type_info : type_info { type_info* operator()(type_info const&); };
+BindedHook Ivk_type_info_type_info{ ZENFOR(0x007766FB, 0x007BA4BB, 0x007C3BE5, 0x007D00A5), &type_info_type_info::operator() };
+type_info* type_info_type_info::operator()(type_info const& a0)
+{
+	type_info* result = THISCALL(Ivk_type_info_type_info)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

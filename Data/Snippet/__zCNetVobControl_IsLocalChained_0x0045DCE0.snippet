@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetVobControl::IsLocalChained(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCNetVobControl::IsLocalChained()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetVobControl_IsLocalChained : zCNetVobControl { int operator()(); };
+BindedHook Ivk_zCNetVobControl_IsLocalChained{ ZENFOR(0x00458A10, 0x0045FB90, 0x0045D590, 0x0045DCE0), &zCNetVobControl_IsLocalChained::operator() };
+int zCNetVobControl_IsLocalChained::operator()()
+{
+	int result = THISCALL(Ivk_zCNetVobControl_IsLocalChained)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

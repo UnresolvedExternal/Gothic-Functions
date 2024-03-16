@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshBuilder::CreateLazySubMesh(int, zTLazyMesh&, zTLazyMesh&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCProgMeshBuilder::CreateLazySubMesh(int, zTLazyMesh&, zTLazyMesh&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshBuilder_CreateLazySubMesh : zCProgMeshBuilder { void operator()(int, zTLazyMesh&, zTLazyMesh&); };
+BindedHook Ivk_zCProgMeshBuilder_CreateLazySubMesh{ ZENFOR(0x005A0550, 0x005BCC50, 0x005BC8E0, 0x005C2450), &zCProgMeshBuilder_CreateLazySubMesh::operator() };
+void zCProgMeshBuilder_CreateLazySubMesh::operator()(int a0, zTLazyMesh& a1, zTLazyMesh& a2)
+{
+	THISCALL(Ivk_zCProgMeshBuilder_CreateLazySubMesh)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

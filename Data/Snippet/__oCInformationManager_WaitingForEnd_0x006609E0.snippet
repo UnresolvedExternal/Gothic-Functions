@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInformationManager::WaitingForEnd(): int]]></Title>
+			<Description><![CDATA[public: int __fastcall oCInformationManager::WaitingForEnd()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInformationManager_WaitingForEnd : oCInformationManager { int __fastcall operator()(); };
+BindedHook Ivk_oCInformationManager_WaitingForEnd{ ZENFOR(0x0072BCD0, 0x0076A220, 0x007777C0, 0x006609E0), &oCInformationManager_WaitingForEnd::operator() };
+int __fastcall oCInformationManager_WaitingForEnd::operator()()
+{
+	int result = THISCALL(Ivk_oCInformationManager_WaitingForEnd)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

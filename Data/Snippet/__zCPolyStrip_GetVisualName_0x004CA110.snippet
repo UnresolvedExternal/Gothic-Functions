@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolyStrip::GetVisualName(): zSTRING]]></Title>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zCPolyStrip::GetVisualName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolyStrip_GetVisualName : zCPolyStrip { zSTRING operator()(); };
+BindedHook Ivk_zCPolyStrip_GetVisualName{ ZENFOR(0x004C0DD0, 0x004D0700, 0x004C7BA0, 0x004CA110), &zCPolyStrip_GetVisualName::operator() };
+zSTRING zCPolyStrip_GetVisualName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCPolyStrip_GetVisualName)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

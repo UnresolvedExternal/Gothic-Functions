@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCObjectFactory::CreatePlayerInfo(): zCPlayerInfo*]]></Title>
+			<Description><![CDATA[public: virtual zCPlayerInfo* __thiscall zCObjectFactory::CreatePlayerInfo()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCObjectFactory_CreatePlayerInfo : zCObjectFactory { zCPlayerInfo* operator()(); };
+BindedHook Ivk_zCObjectFactory_CreatePlayerInfo{ ZENFOR(0x00425DC0, 0x00428780, 0x00426960, 0x00426CA0), &zCObjectFactory_CreatePlayerInfo::operator() };
+zCPlayerInfo* zCObjectFactory_CreatePlayerInfo::operator()()
+{
+	zCPlayerInfo* result = THISCALL(Ivk_zCObjectFactory_CreatePlayerInfo)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

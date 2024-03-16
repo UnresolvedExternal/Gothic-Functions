@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::Vid_Blit(int, tagRECT*, tagRECT*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::Vid_Blit(int, tagRECT*, tagRECT*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_Vid_Blit : zCRnd_D3D { void operator()(int, tagRECT*, tagRECT*); };
+BindedHook Ivk_zCRnd_D3D_Vid_Blit{ ZENFOR(0x0071EDA0, 0x0075B540, 0x0076AB40, 0x00657670), &zCRnd_D3D_Vid_Blit::operator() };
+void zCRnd_D3D_Vid_Blit::operator()(int a0, tagRECT* a1, tagRECT* a2)
+{
+	THISCALL(Ivk_zCRnd_D3D_Vid_Blit)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zSTRING>::GetSafe(int): zSTRING& [const]]]></Title>
+			<Description><![CDATA[public: zSTRING& __thiscall zCArray<zSTRING>::GetSafe(int) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zSTRING__GetSafe : zCArray<zSTRING> { zSTRING& operator()(int) const; };
+BindedHook Ivk_zCArray_zSTRING__GetSafe{ ZENFOR(0x00464E30, 0x0046CAF0, 0x00469980, 0x0046A5B0), &zCArray_zSTRING__GetSafe::operator() };
+zSTRING& zCArray_zSTRING__GetSafe::operator()(int a0) const
+{
+	zSTRING& result = THISCALL(Ivk_zCArray_zSTRING__GetSafe)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

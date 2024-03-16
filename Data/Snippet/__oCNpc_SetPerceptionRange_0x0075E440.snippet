@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetPerceptionRange(int, float): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCNpc::SetPerceptionRange(int, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCNpc_SetPerceptionRange(int, float);
+BindedHook Ivk_oCNpc_SetPerceptionRange{ ZENFOR(0x006B7B20, 0x006EC580, 0x006FF4C0, 0x0075E440), Hook_oCNpc_SetPerceptionRange };
+void Hook_oCNpc_SetPerceptionRange(int a0, float a1)
+{
+	Ivk_oCNpc_SetPerceptionRange(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

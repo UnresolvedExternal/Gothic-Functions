@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::GetCount(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCItem::GetCount(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_GetCount : oCItem { int operator()(int); };
+BindedHook Ivk_oCItem_GetCount{ ZENFOR(0x00671AF0, 0x0069F450, 0x006B4430, 0x00712160), &oCItem_GetCount::operator() };
+int oCItem_GetCount::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCItem_GetCount)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

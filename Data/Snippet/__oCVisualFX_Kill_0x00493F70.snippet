@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::Kill(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCVisualFX::Kill()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_Kill : oCVisualFX { void operator()(); };
+BindedHook Ivk_oCVisualFX_Kill{ ZENFOR(0x0048BEE0, 0x004977A0, 0x00492540, 0x00493F70), &oCVisualFX_Kill::operator() };
+void oCVisualFX_Kill::operator()()
+{
+	THISCALL(Ivk_oCVisualFX_Kill)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

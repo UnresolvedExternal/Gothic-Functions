@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWorld::AddVobAsChild(zCVob*, zCTree<zCVob>*): zCTree<zCVob>*]]></Title>
+			<Description><![CDATA[public: virtual zCTree<zCVob>* __thiscall oCWorld::AddVobAsChild(zCVob*, zCTree<zCVob>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWorld_AddVobAsChild : oCWorld { zCTree<zCVob>* operator()(zCVob*, zCTree<zCVob>*); };
+BindedHook Ivk_oCWorld_AddVobAsChild{ ZENFOR(0x006D6CA0, 0x0070E740, 0x007203F0, 0x0077FE30), &oCWorld_AddVobAsChild::operator() };
+zCTree<zCVob>* oCWorld_AddVobAsChild::operator()(zCVob* a0, zCTree<zCVob>* a1)
+{
+	zCTree<zCVob>* result = THISCALL(Ivk_oCWorld_AddVobAsChild)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

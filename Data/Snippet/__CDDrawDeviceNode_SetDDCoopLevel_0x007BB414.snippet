@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CDDrawDeviceNode::SetDDCoopLevel(HWND__*, unsigned long, HWND__*, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall CDDrawDeviceNode::SetDDCoopLevel(HWND__*, unsigned long, HWND__*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CDDrawDeviceNode_SetDDCoopLevel : CDDrawDeviceNode { void operator()(HWND__*, unsigned long, HWND__*, int); };
+BindedHook Ivk_CDDrawDeviceNode_SetDDCoopLevel{ ZENFOR(0x00761D20, 0x007A6483, 0x007AEF4E, 0x007BB414), &CDDrawDeviceNode_SetDDCoopLevel::operator() };
+void CDDrawDeviceNode_SetDDCoopLevel::operator()(HWND__* a0, unsigned long a1, HWND__* a2, int a3)
+{
+	THISCALL(Ivk_CDDrawDeviceNode_SetDDCoopLevel)(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

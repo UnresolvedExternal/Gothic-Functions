@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::DeleteNpcs(oCNpc*, oCNpc*, float): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCGame::DeleteNpcs(oCNpc*, oCNpc*, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_DeleteNpcs : oCGame { void operator()(oCNpc*, oCNpc*, float); };
+BindedHook Ivk_oCGame_DeleteNpcs{ ZENFOR(0x0063E300, 0x006650C0, 0x0066C100, 0x006C8E80), &oCGame_DeleteNpcs::operator() };
+void oCGame_DeleteNpcs::operator()(oCNpc* a0, oCNpc* a1, float a2)
+{
+	THISCALL(Ivk_oCGame_DeleteNpcs)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

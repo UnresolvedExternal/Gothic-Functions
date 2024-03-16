@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspTree::BuildTree(float): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCCBspTree::BuildTree(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspTree_BuildTree : zCCBspTree { void operator()(float); };
+BindedHook Ivk_zCCBspTree_BuildTree{ ZENFOR(0x00527B00, 0x0053DF60, 0x005384E0, 0x0053D610), &zCCBspTree_BuildTree::operator() };
+void zCCBspTree_BuildTree::operator()(float a0)
+{
+	THISCALL(Ivk_zCCBspTree_BuildTree)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

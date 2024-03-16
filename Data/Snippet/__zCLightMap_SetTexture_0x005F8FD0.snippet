@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLightMap::SetTexture(zCTexture*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCLightMap::SetTexture(zCTexture*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCLightMap_SetTexture : zCLightMap { void operator()(zCTexture*); };
+BindedHook Ivk_zCLightMap_SetTexture{ ZENFOR(0x005CDEA0, 0x005ECB90, 0x005F21E0, 0x005F8FD0), &zCLightMap_SetTexture::operator() };
+void zCLightMap_SetTexture::operator()(zCTexture* a0)
+{
+	THISCALL(Ivk_zCLightMap_SetTexture)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

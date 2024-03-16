@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::SaveInstance(zSTRING&, void*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCParser::SaveInstance(zSTRING&, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_SaveInstance : zCParser { int operator()(zSTRING&, void*); };
+BindedHook Ivk_zCParser_SaveInstance{ ZENFOR(0x006EB830, 0x00724B10, 0x00735300, 0x00794D40), &zCParser_SaveInstance::operator() };
+int zCParser_SaveInstance::operator()(zSTRING& a0, void* a1)
+{
+	int result = THISCALL(Ivk_zCParser_SaveInstance)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::oCNpcTimedOverlay::Process(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::oCNpcTimedOverlay::Process()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc__oCNpcTimedOverlay_Process : oCNpc::oCNpcTimedOverlay { int operator()(); };
+BindedHook Ivk_oCNpc__oCNpcTimedOverlay_Process{ ZENFOR(0x006B8B10, 0x006ED610, 0x00700520, 0x0075F4A0), &oCNpc__oCNpcTimedOverlay_Process::operator() };
+int oCNpc__oCNpcTimedOverlay_Process::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc__oCNpcTimedOverlay_Process)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

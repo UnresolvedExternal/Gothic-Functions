@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCClassDef::~zCClassDef()]]></Title>
+			<Description><![CDATA[public: __thiscall zCClassDef::~zCClassDef()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCClassDef_Destructor : zCClassDef { void operator()(); };
+BindedHook Ivk_zCClassDef_Destructor{ ZENFOR(0x0058AAB0, 0x005A5F30, 0x005A50C0, 0x005AA620), &zCClassDef_Destructor::operator() };
+void zCClassDef_Destructor::operator()()
+{
+	THISCALL(Ivk_zCClassDef_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

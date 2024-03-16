@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::GetMDSFileVersion(): unsigned long]]></Title>
+			<Description><![CDATA[public: static unsigned long __cdecl zCModelPrototype::GetMDSFileVersion()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+unsigned long Hook_zCModelPrototype_GetMDSFileVersion();
+BindedHook Ivk_zCModelPrototype_GetMDSFileVersion{ ZENFOR(0x00000000, 0x00000000, 0x0058DB90, 0x005930F0), Hook_zCModelPrototype_GetMDSFileVersion };
+unsigned long Hook_zCModelPrototype_GetMDSFileVersion()
+{
+	unsigned long result = Ivk_zCModelPrototype_GetMDSFileVersion();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

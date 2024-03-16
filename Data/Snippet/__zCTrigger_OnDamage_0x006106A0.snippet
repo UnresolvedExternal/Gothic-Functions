@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTrigger::OnDamage(zCVob*, zCVob*, float, int, zVEC3 const&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCTrigger::OnDamage(zCVob*, zCVob*, float, int, zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTrigger_OnDamage : zCTrigger { void operator()(zCVob*, zCVob*, float, int, zVEC3 const&); };
+BindedHook Ivk_zCTrigger_OnDamage{ ZENFOR(0x005E3830, 0x00603750, 0x00608FE0, 0x006106A0), &zCTrigger_OnDamage::operator() };
+void zCTrigger_OnDamage::operator()(zCVob* a0, zCVob* a1, float a2, int a3, zVEC3 const& a4)
+{
+	THISCALL(Ivk_zCTrigger_OnDamage)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

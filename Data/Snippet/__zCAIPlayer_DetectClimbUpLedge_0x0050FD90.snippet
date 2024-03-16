@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::DetectClimbUpLedge(zVEC3&, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCAIPlayer::DetectClimbUpLedge(zVEC3&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_DetectClimbUpLedge : zCAIPlayer { int operator()(zVEC3&, int); };
+BindedHook Ivk_zCAIPlayer_DetectClimbUpLedge{ ZENFOR(0x00500230, 0x00513800, 0x0050CFC0, 0x0050FD90), &zCAIPlayer_DetectClimbUpLedge::operator() };
+int zCAIPlayer_DetectClimbUpLedge::operator()(zVEC3& a0, int a1)
+{
+	int result = THISCALL(Ivk_zCAIPlayer_DetectClimbUpLedge)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

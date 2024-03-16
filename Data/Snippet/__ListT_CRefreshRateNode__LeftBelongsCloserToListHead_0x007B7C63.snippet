@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CRefreshRateNode>::LeftBelongsCloserToListHead(CRefreshRateNode*, CRefreshRateNode*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall ListT<CRefreshRateNode>::LeftBelongsCloserToListHead(CRefreshRateNode*, CRefreshRateNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CRefreshRateNode__LeftBelongsCloserToListHead : ListT<CRefreshRateNode> { int operator()(CRefreshRateNode*, CRefreshRateNode*); };
+BindedHook Ivk_ListT_CRefreshRateNode__LeftBelongsCloserToListHead{ ZENFOR(0x0075E56F, 0x007A7557, 0x007AB79D, 0x007B7C63), &ListT_CRefreshRateNode__LeftBelongsCloserToListHead::operator() };
+int ListT_CRefreshRateNode__LeftBelongsCloserToListHead::operator()(CRefreshRateNode* a0, CRefreshRateNode* a1)
+{
+	int result = THISCALL(Ivk_ListT_CRefreshRateNode__LeftBelongsCloserToListHead)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMgcEigenD::Matrix(double**): zCMgcEigenD&]]></Title>
+			<Description><![CDATA[public: zCMgcEigenD& __thiscall zCMgcEigenD::Matrix(double**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMgcEigenD_Matrix : zCMgcEigenD { zCMgcEigenD& operator()(double**); };
+BindedHook Ivk_zCMgcEigenD_Matrix{ ZENFOR(0x00543A10, 0x0055B3E0, 0x00553090, 0x005582B0), &zCMgcEigenD_Matrix::operator() };
+zCMgcEigenD& zCMgcEigenD_Matrix::operator()(double** a0)
+{
+	zCMgcEigenD& result = THISCALL(Ivk_zCMgcEigenD_Matrix)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

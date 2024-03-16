@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::CheckLimbHit(zSTRING const&, zCList<zCModelNodeInst>&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCAniCtrl_Human::CheckLimbHit(zSTRING const&, zCList<zCModelNodeInst>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_CheckLimbHit : oCAniCtrl_Human { int operator()(zSTRING const&, zCList<zCModelNodeInst>&); };
+BindedHook Ivk_oCAniCtrl_Human_CheckLimbHit{ ZENFOR(0x006272B0, 0x0064C2E0, 0x00653570, 0x006AFDF0), &oCAniCtrl_Human_CheckLimbHit::operator() };
+int oCAniCtrl_Human_CheckLimbHit::operator()(zSTRING const& a0, zCList<zCModelNodeInst>& a1)
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_CheckLimbHit)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::GetParentObject(): zCObject*]]></Title>
+			<Description><![CDATA[public: virtual zCObject* __fastcall zCArchiverBinSafe::GetParentObject()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_GetParentObject : zCArchiverBinSafe { zCObject* __fastcall operator()(); };
+BindedHook Ivk_zCArchiverBinSafe_GetParentObject{ ZENFOR(0x005109A0, 0x00525C00, 0x0051E010, 0x00520DE0), &zCArchiverBinSafe_GetParentObject::operator() };
+zCObject* __fastcall zCArchiverBinSafe_GetParentObject::operator()()
+{
+	zCObject* result = THISCALL(Ivk_zCArchiverBinSafe_GetParentObject)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

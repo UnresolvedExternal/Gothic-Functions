@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::RestoreEmitterOutput(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCParticleFX::RestoreEmitterOutput()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX_RestoreEmitterOutput : zCParticleFX { void operator()(); };
+BindedHook Ivk_zCParticleFX_RestoreEmitterOutput{ ZENFOR(0x0058ED70, 0x005AA470, 0x005A96D0, 0x005AEDB0), &zCParticleFX_RestoreEmitterOutput::operator() };
+void zCParticleFX_RestoreEmitterOutput::operator()()
+{
+	THISCALL(Ivk_zCParticleFX_RestoreEmitterOutput)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

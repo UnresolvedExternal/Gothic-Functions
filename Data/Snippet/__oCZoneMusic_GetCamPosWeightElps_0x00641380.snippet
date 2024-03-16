@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCZoneMusic::GetCamPosWeightElps(): float]]></Title>
+			<Description><![CDATA[protected: float __thiscall oCZoneMusic::GetCamPosWeightElps()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCZoneMusic_GetCamPosWeightElps : oCZoneMusic { float operator()(); };
+BindedHook Ivk_oCZoneMusic_GetCamPosWeightElps{ ZENFOR(0x0070BB80, 0x00746B00, 0x00755DE0, 0x00641380), &oCZoneMusic_GetCamPosWeightElps::operator() };
+float oCZoneMusic_GetCamPosWeightElps::operator()()
+{
+	float result = THISCALL(Ivk_oCZoneMusic_GetCamPosWeightElps)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

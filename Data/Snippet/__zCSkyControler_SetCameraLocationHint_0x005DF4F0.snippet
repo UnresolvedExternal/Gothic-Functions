@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler::SetCameraLocationHint(zCSkyControler::zTCamLocationHint): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCSkyControler::SetCameraLocationHint(zCSkyControler::zTCamLocationHint)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_SetCameraLocationHint : zCSkyControler { void operator()(zCSkyControler::zTCamLocationHint); };
+BindedHook Ivk_zCSkyControler_SetCameraLocationHint{ ZENFOR(0x005B7F30, 0x005D5920, 0x005D8730, 0x005DF4F0), &zCSkyControler_SetCameraLocationHint::operator() };
+void zCSkyControler_SetCameraLocationHint::operator()(zCSkyControler::zTCamLocationHint a0)
+{
+	THISCALL(Ivk_zCSkyControler_SetCameraLocationHint)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

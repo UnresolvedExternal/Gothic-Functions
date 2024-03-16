@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAskBox::DoAI(zCVob*, int&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCAskBox::DoAI(zCVob*, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAskBox_DoAI : oCAskBox { void operator()(zCVob*, int&); };
+BindedHook Ivk_oCAskBox_DoAI{ ZENFOR(0x006327C0, 0x00658530, 0x0065F7C0, 0x006BC150), &oCAskBox_DoAI::operator() };
+void oCAskBox_DoAI::operator()(zCVob* a0, int& a1)
+{
+	THISCALL(Ivk_oCAskBox_DoAI)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

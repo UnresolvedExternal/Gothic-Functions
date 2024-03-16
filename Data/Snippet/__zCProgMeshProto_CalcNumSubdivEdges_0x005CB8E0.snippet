@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::CalcNumSubdivEdges(zCProgMeshProto::zCSubMesh*, zCProgMeshProto::zTLODRenderArgs const*, zCProgMeshProto::zTLODRenderArgsSubMesh&): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCProgMeshProto::CalcNumSubdivEdges(zCProgMeshProto::zCSubMesh*, zCProgMeshProto::zTLODRenderArgs const*, zCProgMeshProto::zTLODRenderArgsSubMesh&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_CalcNumSubdivEdges : zCProgMeshProto { void __fastcall operator()(zCProgMeshProto::zCSubMesh*, zCProgMeshProto::zTLODRenderArgs const*, zCProgMeshProto::zTLODRenderArgsSubMesh&); };
+BindedHook Ivk_zCProgMeshProto_CalcNumSubdivEdges{ ZENFOR(0x005A7EF0, 0x005C49E0, 0x005C5930, 0x005CB8E0), &zCProgMeshProto_CalcNumSubdivEdges::operator() };
+void __fastcall zCProgMeshProto_CalcNumSubdivEdges::operator()(zCProgMeshProto::zCSubMesh* a0, zCProgMeshProto::zTLODRenderArgs const* a1, zCProgMeshProto::zTLODRenderArgsSubMesh& a2)
+{
+	THISCALL(Ivk_zCProgMeshProto_CalcNumSubdivEdges)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

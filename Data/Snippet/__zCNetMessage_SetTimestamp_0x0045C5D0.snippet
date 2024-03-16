@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetMessage::SetTimestamp(unsigned char): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCNetMessage::SetTimestamp(unsigned char)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetMessage_SetTimestamp : zCNetMessage { void operator()(unsigned char); };
+BindedHook Ivk_zCNetMessage_SetTimestamp{ ZENFOR(0x00457550, 0x0045E560, 0x0045BE80, 0x0045C5D0), &zCNetMessage_SetTimestamp::operator() };
+void zCNetMessage_SetTimestamp::operator()(unsigned char a0)
+{
+	THISCALL(Ivk_zCNetMessage_SetTimestamp)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

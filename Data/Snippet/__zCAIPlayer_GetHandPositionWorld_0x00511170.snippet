@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::GetHandPositionWorld(): zVEC3 [const]]]></Title>
+			<Description><![CDATA[public: zVEC3 __thiscall zCAIPlayer::GetHandPositionWorld() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_GetHandPositionWorld : zCAIPlayer { zVEC3 operator()() const; };
+BindedHook Ivk_zCAIPlayer_GetHandPositionWorld{ ZENFOR(0x00501610, 0x00514DE0, 0x0050E3A0, 0x00511170), &zCAIPlayer_GetHandPositionWorld::operator() };
+zVEC3 zCAIPlayer_GetHandPositionWorld::operator()() const
+{
+	zVEC3 result = THISCALL(Ivk_zCAIPlayer_GetHandPositionWorld)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

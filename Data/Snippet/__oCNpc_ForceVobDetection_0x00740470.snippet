@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::ForceVobDetection(zCVob*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::ForceVobDetection(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_ForceVobDetection : oCNpc { void operator()(zCVob*); };
+BindedHook Ivk_oCNpc_ForceVobDetection{ ZENFOR(0x0069CD30, 0x006CEEF0, 0x006E1B80, 0x00740470), &oCNpc_ForceVobDetection::operator() };
+void oCNpc_ForceVobDetection::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_oCNpc_ForceVobDetection)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

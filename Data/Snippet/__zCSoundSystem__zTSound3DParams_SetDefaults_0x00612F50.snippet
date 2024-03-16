@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundSystem::zTSound3DParams::SetDefaults(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCSoundSystem::zTSound3DParams::SetDefaults()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundSystem__zTSound3DParams_SetDefaults : zCSoundSystem::zTSound3DParams { void operator()(); };
+BindedHook Ivk_zCSoundSystem__zTSound3DParams_SetDefaults{ ZENFOR(0x005E6020, 0x00606310, 0x0060B890, 0x00612F50), &zCSoundSystem__zTSound3DParams_SetDefaults::operator() };
+void zCSoundSystem__zTSound3DParams_SetDefaults::operator()()
+{
+	THISCALL(Ivk_zCSoundSystem__zTSound3DParams_SetDefaults)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

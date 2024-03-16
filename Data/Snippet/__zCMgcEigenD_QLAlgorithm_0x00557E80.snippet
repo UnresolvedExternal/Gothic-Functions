@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMgcEigenD::QLAlgorithm(int, double*, double*, double**): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCMgcEigenD::QLAlgorithm(int, double*, double*, double**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMgcEigenD_QLAlgorithm : zCMgcEigenD { void operator()(int, double*, double*, double**); };
+BindedHook Ivk_zCMgcEigenD_QLAlgorithm{ ZENFOR(0x005435E0, 0x0055AFB0, 0x00552C60, 0x00557E80), &zCMgcEigenD_QLAlgorithm::operator() };
+void zCMgcEigenD_QLAlgorithm::operator()(int a0, double* a1, double* a2, double** a3)
+{
+	THISCALL(Ivk_zCMgcEigenD_QLAlgorithm)(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[streambuf::sputbackc(char): int]]></Title>
+			<Description><![CDATA[public: int __thiscall streambuf::sputbackc(char)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct streambuf_sputbackc : streambuf { int operator()(char); };
+BindedHook Ivk_streambuf_sputbackc{ ZENFOR(0x00774B15, 0x007B88D5, 0x007C1FFF, 0x007CE4BF), &streambuf_sputbackc::operator() };
+int streambuf_sputbackc::operator()(char a0)
+{
+	int result = THISCALL(Ivk_streambuf_sputbackc)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

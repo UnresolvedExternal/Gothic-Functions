@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::SetVisual(zCVisual*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCItem::SetVisual(zCVisual*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_SetVisual : oCItem { void operator()(zCVisual*); };
+BindedHook Ivk_oCItem_SetVisual{ ZENFOR(0x006713D0, 0x0069ECD0, 0x006B3BE0, 0x00711910), &oCItem_SetVisual::operator() };
+void oCItem_SetVisual::operator()(zCVisual* a0)
+{
+	THISCALL(Ivk_oCItem_SetVisual)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

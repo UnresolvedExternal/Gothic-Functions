@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::DoAniWithOffset(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::DoAniWithOffset()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_DoAniWithOffset : oCAniCtrl_Human { void operator()(); };
+BindedHook Ivk_oCAniCtrl_Human_DoAniWithOffset{ ZENFOR(0x00622530, 0x00646C30, 0x0064E2F0, 0x006AAB70), &oCAniCtrl_Human_DoAniWithOffset::operator() };
+void oCAniCtrl_Human_DoAniWithOffset::operator()()
+{
+	THISCALL(Ivk_oCAniCtrl_Human_DoAniWithOffset)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::DGramWriteToGroup(zCNetMessage*, zCPlayerGroup*): unsigned long]]></Title>
+			<Description><![CDATA[protected: unsigned long __thiscall zCNet::DGramWriteToGroup(zCNetMessage*, zCPlayerGroup*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_DGramWriteToGroup : zCNet { unsigned long operator()(zCNetMessage*, zCPlayerGroup*); };
+BindedHook Ivk_zCNet_DGramWriteToGroup{ ZENFOR(0x0044C860, 0x00452E60, 0x004508B0, 0x00451000), &zCNet_DGramWriteToGroup::operator() };
+unsigned long zCNet_DGramWriteToGroup::operator()(zCNetMessage* a0, zCPlayerGroup* a1)
+{
+	unsigned long result = THISCALL(Ivk_zCNet_DGramWriteToGroup)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

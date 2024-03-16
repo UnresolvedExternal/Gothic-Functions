@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<oCLogTopic>::~zCList<oCLogTopic>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCList<oCLogTopic>::~zCList<oCLogTopic>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_oCLogTopic__Destructor : zCList<oCLogTopic> { void operator()(); };
+BindedHook Ivk_zCList_oCLogTopic__Destructor{ ZENFOR(0x0072F050, 0x0076D6D0, 0x0077ABD0, 0x00663E40), &zCList_oCLogTopic__Destructor::operator() };
+void zCList_oCLogTopic__Destructor::operator()()
+{
+	THISCALL(Ivk_zCList_oCLogTopic__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

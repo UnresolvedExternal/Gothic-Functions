@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zVEC3::Apply(float(__cdecl*)(float)): zVEC3&]]></Title>
+			<Description><![CDATA[public: zVEC3& __thiscall zVEC3::Apply(float(__cdecl*)(float))]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zVEC3_Apply : zVEC3 { zVEC3& operator()(float(__cdecl*)(float)); };
+BindedHook Ivk_zVEC3_Apply{ ZENFOR(0x00503470, 0x00516FC0, 0x005102B0, 0x00513080), &zVEC3_Apply::operator() };
+zVEC3& zVEC3_Apply::operator()(float(__cdecl* a0)(float))
+{
+	zVEC3& result = THISCALL(Ivk_zVEC3_Apply)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

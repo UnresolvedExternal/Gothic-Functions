@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiver::ReadObjectAccount(char const*, int, char const*, zCObject*): zCObject*]]></Title>
+			<Description><![CDATA[public: virtual zCObject* __fastcall zCArchiver::ReadObjectAccount(char const*, int, char const*, zCObject*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiver_ReadObjectAccount : zCArchiver { zCObject* __fastcall operator()(char const*, int, char const*, zCObject*); };
+BindedHook Ivk_zCArchiver_ReadObjectAccount{ ZENFOR(0x0050B080, 0x0051FE30, 0x00518250, 0x0051B020), &zCArchiver_ReadObjectAccount::operator() };
+zCObject* __fastcall zCArchiver_ReadObjectAccount::operator()(char const* a0, int a1, char const* a2, zCObject* a3)
+{
+	zCObject* result = THISCALL(Ivk_zCArchiver_ReadObjectAccount)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

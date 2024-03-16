@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureConvert::LoadFromFileFormat(zFILE&, zCTextureFileFormat*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCTextureConvert::LoadFromFileFormat(zFILE&, zCTextureFileFormat*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureConvert_LoadFromFileFormat : zCTextureConvert { int operator()(zFILE&, zCTextureFileFormat*); };
+BindedHook Ivk_zCTextureConvert_LoadFromFileFormat{ ZENFOR(0x005CA1C0, 0x005E8BF0, 0x005EE340, 0x005F50F0), &zCTextureConvert_LoadFromFileFormat::operator() };
+int zCTextureConvert_LoadFromFileFormat::operator()(zFILE& a0, zCTextureFileFormat* a1)
+{
+	int result = THISCALL(Ivk_zCTextureConvert_LoadFromFileFormat)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

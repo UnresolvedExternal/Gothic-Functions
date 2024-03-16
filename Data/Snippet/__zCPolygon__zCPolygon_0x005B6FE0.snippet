@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::~zCPolygon()]]></Title>
+			<Description><![CDATA[public: __thiscall zCPolygon::~zCPolygon()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolygon_Destructor : zCPolygon { void operator()(); };
+BindedHook Ivk_zCPolygon_Destructor{ ZENFOR(0x00595B30, 0x005B1A20, 0x005B1470, 0x005B6FE0), &zCPolygon_Destructor::operator() };
+void zCPolygon_Destructor::operator()()
+{
+	THISCALL(Ivk_zCPolygon_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSTRING::zSTRING(long)]]></Title>
+			<Description><![CDATA[public: __thiscall zSTRING::zSTRING(long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSTRING_zSTRING : zSTRING { zSTRING* operator()(long); };
+BindedHook Ivk_zSTRING_zSTRING{ ZENFOR(0x00465910, 0x0046D620, 0x00673000, 0x006CFE50), &zSTRING_zSTRING::operator() };
+zSTRING* zSTRING_zSTRING::operator()(long a0)
+{
+	zSTRING* result = THISCALL(Ivk_zSTRING_zSTRING)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

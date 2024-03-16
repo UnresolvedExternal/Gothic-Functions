@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ChooseTextureFormat(IDirect3DDevice7*, _D3DX_SURFACEFORMAT, _D3DX_SURFACEFORMAT*): long]]></Title>
+			<Description><![CDATA[long __cdecl ChooseTextureFormat(IDirect3DDevice7*, _D3DX_SURFACEFORMAT, _D3DX_SURFACEFORMAT*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook_ChooseTextureFormat(IDirect3DDevice7*, _D3DX_SURFACEFORMAT, _D3DX_SURFACEFORMAT*);
+BindedHook Ivk_ChooseTextureFormat{ ZENFOR(0x0076D274, 0x007B0FEB, 0x007BA4A2, 0x007C6968), Hook_ChooseTextureFormat };
+long Hook_ChooseTextureFormat(IDirect3DDevice7* a0, _D3DX_SURFACEFORMAT a1, _D3DX_SURFACEFORMAT* a2)
+{
+	long result = Ivk_ChooseTextureFormat(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

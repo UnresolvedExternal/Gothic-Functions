@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::TriggerAllMobsToTmpState(zCWorld*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCMobInter::TriggerAllMobsToTmpState(zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCMobInter_TriggerAllMobsToTmpState(zCWorld*);
+BindedHook Ivk_oCMobInter_TriggerAllMobsToTmpState{ ZENFOR(0x0067BC90, 0x006AA490, 0x006BEE00, 0x0071CE90), Hook_oCMobInter_TriggerAllMobsToTmpState };
+void Hook_oCMobInter_TriggerAllMobsToTmpState(zCWorld* a0)
+{
+	Ivk_oCMobInter_TriggerAllMobsToTmpState(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

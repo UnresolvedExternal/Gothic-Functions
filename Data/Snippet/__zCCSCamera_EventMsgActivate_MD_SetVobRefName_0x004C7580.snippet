@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera_EventMsgActivate::MD_SetVobRefName(zSTRING const&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSCamera_EventMsgActivate::MD_SetVobRefName(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_EventMsgActivate_MD_SetVobRefName : zCCSCamera_EventMsgActivate { void operator()(zSTRING const&); };
+BindedHook Ivk_zCCSCamera_EventMsgActivate_MD_SetVobRefName{ ZENFOR(0x004BE120, 0x004CD800, 0x004C5010, 0x004C7580), &zCCSCamera_EventMsgActivate_MD_SetVobRefName::operator() };
+void zCCSCamera_EventMsgActivate_MD_SetVobRefName::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCCSCamera_EventMsgActivate_MD_SetVobRefName)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Outdoor::GetGlobalSkyScaleChanged(): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCSkyControler_Outdoor::GetGlobalSkyScaleChanged() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCSkyControler_Outdoor_GetGlobalSkyScaleChanged : zCSkyControler_Outdoor { int operator()() const; };
+BindedHook Ivk_zCSkyControler_Outdoor_GetGlobalSkyScaleChanged{ ZENFOR(0x00000000, 0x00000000, 0x005DFA00, 0x005E67B0), &zCSkyControler_Outdoor_GetGlobalSkyScaleChanged::operator() };
+int zCSkyControler_Outdoor_GetGlobalSkyScaleChanged::operator()() const
+{
+	int result = THISCALL(Ivk_zCSkyControler_Outdoor_GetGlobalSkyScaleChanged)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

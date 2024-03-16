@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCChecksum16::EndChecksum(): unsigned short]]></Title>
+			<Description><![CDATA[public: unsigned short __thiscall zCChecksum16::EndChecksum()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCChecksum16_EndChecksum : zCChecksum16 { unsigned short operator()(); };
+BindedHook Ivk_zCChecksum16_EndChecksum{ ZENFOR(0x005CEB00, 0x005ED8C0, 0x005F2FF0, 0x005F9DE0), &zCChecksum16_EndChecksum::operator() };
+unsigned short zCChecksum16_EndChecksum::operator()()
+{
+	unsigned short result = THISCALL(Ivk_zCChecksum16_EndChecksum)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

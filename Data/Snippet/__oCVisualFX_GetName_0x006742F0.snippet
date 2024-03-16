@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::GetName(): zSTRING const& [const]]]></Title>
+			<Description><![CDATA[public: zSTRING const& __thiscall oCVisualFX::GetName() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_GetName : oCVisualFX { zSTRING const& operator()() const; };
+BindedHook Ivk_oCVisualFX_GetName{ ZENFOR(0x0073F560, 0x0077F620, 0x0078B010, 0x006742F0), &oCVisualFX_GetName::operator() };
+zSTRING const& oCVisualFX_GetName::operator()() const
+{
+	zSTRING const& result = THISCALL(Ivk_oCVisualFX_GetName)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

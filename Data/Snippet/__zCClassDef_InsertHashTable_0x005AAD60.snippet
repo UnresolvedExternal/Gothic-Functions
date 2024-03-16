@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCClassDef::InsertHashTable(zCObject*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCClassDef::InsertHashTable(zCObject*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCClassDef_InsertHashTable : zCClassDef { void operator()(zCObject*); };
+BindedHook Ivk_zCClassDef_InsertHashTable{ ZENFOR(0x0058B230, 0x005A6740, 0x005A5800, 0x005AAD60), &zCClassDef_InsertHashTable::operator() };
+void zCClassDef_InsertHashTable::operator()(zCObject* a0)
+{
+	THISCALL(Ivk_zCClassDef_InsertHashTable)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

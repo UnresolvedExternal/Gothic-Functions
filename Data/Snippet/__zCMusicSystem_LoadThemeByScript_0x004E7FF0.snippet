@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSystem::LoadThemeByScript(zSTRING const&): zCMusicTheme*]]></Title>
+			<Description><![CDATA[public: virtual zCMusicTheme* __thiscall zCMusicSystem::LoadThemeByScript(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSystem_LoadThemeByScript : zCMusicSystem { zCMusicTheme* operator()(zSTRING const&); };
+BindedHook Ivk_zCMusicSystem_LoadThemeByScript{ ZENFOR(0x004DAD90, 0x004EBF20, 0x004E54E0, 0x004E7FF0), &zCMusicSystem_LoadThemeByScript::operator() };
+zCMusicTheme* zCMusicSystem_LoadThemeByScript::operator()(zSTRING const& a0)
+{
+	zCMusicTheme* result = THISCALL(Ivk_zCMusicSystem_LoadThemeByScript)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

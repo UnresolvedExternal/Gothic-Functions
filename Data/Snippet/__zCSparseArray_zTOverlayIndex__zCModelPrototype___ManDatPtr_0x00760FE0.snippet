@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zTOverlayIndex, zCModelPrototype*>::ManDatPtr(unsigned long): zCSparseArrayManDat* [const]]]></Title>
+			<Description><![CDATA[protected: virtual zCSparseArrayManDat* __thiscall zCSparseArray<zTOverlayIndex, zCModelPrototype*>::ManDatPtr(unsigned long) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zTOverlayIndex__zCModelPrototype___ManDatPtr : zCSparseArray<zTOverlayIndex, zCModelPrototype*> { zCSparseArrayManDat* operator()(unsigned long) const; };
+BindedHook Ivk_zCSparseArray_zTOverlayIndex__zCModelPrototype___ManDatPtr{ ZENFOR(0x006BA280, 0x006EEE80, 0x00701CC0, 0x00760FE0), &zCSparseArray_zTOverlayIndex__zCModelPrototype___ManDatPtr::operator() };
+zCSparseArrayManDat* zCSparseArray_zTOverlayIndex__zCModelPrototype___ManDatPtr::operator()(unsigned long a0) const
+{
+	zCSparseArrayManDat* result = THISCALL(Ivk_zCSparseArray_zTOverlayIndex__zCModelPrototype___ManDatPtr)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

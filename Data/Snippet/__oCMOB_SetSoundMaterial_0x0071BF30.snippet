@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMOB::SetSoundMaterial(oTSndMaterial): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMOB::SetSoundMaterial(oTSndMaterial)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMOB_SetSoundMaterial : oCMOB { void operator()(oTSndMaterial); };
+BindedHook Ivk_oCMOB_SetSoundMaterial{ ZENFOR(0x0067AD50, 0x006A9470, 0x006BDEA0, 0x0071BF30), &oCMOB_SetSoundMaterial::operator() };
+void oCMOB_SetSoundMaterial::operator()(oTSndMaterial a0)
+{
+	THISCALL(Ivk_oCMOB_SetSoundMaterial)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

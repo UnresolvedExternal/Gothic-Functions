@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::Render(zTRenderContext&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCModel::Render(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_Render : zCModel { int operator()(zTRenderContext&); };
+BindedHook Ivk_zCModel_Render{ ZENFOR(0x00560770, 0x00578BD0, 0x00574FC0, 0x0057A4E0), &zCModel_Render::operator() };
+int zCModel_Render::operator()(zTRenderContext& a0)
+{
+	int result = THISCALL(Ivk_zCModel_Render)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

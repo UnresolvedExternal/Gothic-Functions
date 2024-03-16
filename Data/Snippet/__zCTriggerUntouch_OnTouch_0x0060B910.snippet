@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTriggerUntouch::OnTouch(zCVob*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCTriggerUntouch::OnTouch(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTriggerUntouch_OnTouch : zCTriggerUntouch { void operator()(zCVob*); };
+BindedHook Ivk_zCTriggerUntouch_OnTouch{ ZENFOR(0x005DE7A0, 0x005FE510, 0x00604250, 0x0060B910), &zCTriggerUntouch_OnTouch::operator() };
+void zCTriggerUntouch_OnTouch::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCTriggerUntouch_OnTouch)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

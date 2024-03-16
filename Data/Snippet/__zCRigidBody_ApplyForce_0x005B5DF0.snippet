@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRigidBody::ApplyForce(zVEC3 const&, zVEC3 const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCRigidBody::ApplyForce(zVEC3 const&, zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRigidBody_ApplyForce : zCRigidBody { void operator()(zVEC3 const&, zVEC3 const&); };
+BindedHook Ivk_zCRigidBody_ApplyForce{ ZENFOR(0x00594AA0, 0x005B0840, 0x005B0280, 0x005B5DF0), &zCRigidBody_ApplyForce::operator() };
+void zCRigidBody_ApplyForce::operator()(zVEC3 const& a0, zVEC3 const& a1)
+{
+	THISCALL(Ivk_zCRigidBody_ApplyForce)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

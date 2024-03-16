@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCCollObjectCharacter::oCCollObjectCharacter()]]></Title>
+			<Description><![CDATA[public: __thiscall oCCollObjectCharacter::oCCollObjectCharacter()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCCollObjectCharacter_oCCollObjectCharacter : oCCollObjectCharacter { oCCollObjectCharacter* operator()(); };
+BindedHook Ivk_oCCollObjectCharacter_oCCollObjectCharacter{ ZENFOR(0x0075AB30, 0x0079D430, 0x007A7CE0, 0x0065D0F0), &oCCollObjectCharacter_oCCollObjectCharacter::operator() };
+oCCollObjectCharacter* oCCollObjectCharacter_oCCollObjectCharacter::operator()()
+{
+	oCCollObjectCharacter* result = THISCALL(Ivk_oCCollObjectCharacter_oCCollObjectCharacter)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

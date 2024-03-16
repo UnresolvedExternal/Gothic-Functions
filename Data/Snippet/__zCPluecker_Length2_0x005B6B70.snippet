@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPluecker::Length2(): float [const]]]></Title>
+			<Description><![CDATA[public: float __thiscall zCPluecker::Length2() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPluecker_Length2 : zCPluecker { float operator()() const; };
+BindedHook Ivk_zCPluecker_Length2{ ZENFOR(0x00595820, 0x005B1710, 0x005B1000, 0x005B6B70), &zCPluecker_Length2::operator() };
+float zCPluecker_Length2::operator()() const
+{
+	float result = THISCALL(Ivk_zCPluecker_Length2)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

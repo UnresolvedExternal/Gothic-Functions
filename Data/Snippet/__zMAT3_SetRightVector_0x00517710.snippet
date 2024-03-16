@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zMAT3::SetRightVector(zVEC3 const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zMAT3::SetRightVector(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zMAT3_SetRightVector : zMAT3 { void operator()(zVEC3 const&); };
+BindedHook Ivk_zMAT3_SetRightVector{ ZENFOR(0x00507A20, 0x0051C200, 0x00514940, 0x00517710), &zMAT3_SetRightVector::operator() };
+void zMAT3_SetRightVector::operator()(zVEC3 const& a0)
+{
+	THISCALL(Ivk_zMAT3_SetRightVector)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

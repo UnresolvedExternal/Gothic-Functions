@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<zCCacheIndex, zCConvexCollisionCache>::~zCCache<zCCacheIndex, zCConvexCollisionCache>()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCCache<zCCacheIndex, zCConvexCollisionCache>::~zCCache<zCCacheIndex, zCConvexCollisionCache>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_zCCacheIndex__zCConvexCollisionCache__Destructor : zCCache<zCCacheIndex, zCConvexCollisionCache> { void operator()(); };
+BindedHook Ivk_zCCache_zCCacheIndex__zCConvexCollisionCache__Destructor{ ZENFOR(0x005415A0, 0x00558EE0, 0x00550AD0, 0x00555CF0), &zCCache_zCCacheIndex__zCConvexCollisionCache__Destructor::operator() };
+void zCCache_zCCacheIndex__zCConvexCollisionCache__Destructor::operator()()
+{
+	THISCALL(Ivk_zCCache_zCCacheIndex__zCConvexCollisionCache__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

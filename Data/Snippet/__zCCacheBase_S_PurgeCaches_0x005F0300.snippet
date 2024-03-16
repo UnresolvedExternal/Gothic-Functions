@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCacheBase::S_PurgeCaches(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCCacheBase::S_PurgeCaches()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCCacheBase_S_PurgeCaches();
+BindedHook Ivk_zCCacheBase_S_PurgeCaches{ ZENFOR(0x005C5870, 0x005E3C40, 0x005E9550, 0x005F0300), Hook_zCCacheBase_S_PurgeCaches };
+void Hook_zCCacheBase_S_PurgeCaches()
+{
+	Ivk_zCCacheBase_S_PurgeCaches();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

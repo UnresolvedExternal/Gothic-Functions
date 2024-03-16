@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::CacheOutActChannel(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCSndFX_MSS::CacheOutActChannel()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_CacheOutActChannel : zCSndFX_MSS { void operator()(); };
+BindedHook Ivk_zCSndFX_MSS_CacheOutActChannel{ ZENFOR(0x004E8580, 0x004FA760, 0x004F3B90, 0x004F6810), &zCSndFX_MSS_CacheOutActChannel::operator() };
+void zCSndFX_MSS_CacheOutActChannel::operator()()
+{
+	THISCALL(Ivk_zCSndFX_MSS_CacheOutActChannel)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

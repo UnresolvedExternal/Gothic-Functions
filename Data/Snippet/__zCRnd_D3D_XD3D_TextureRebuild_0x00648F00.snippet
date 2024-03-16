@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::XD3D_TextureRebuild(): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCRnd_D3D::XD3D_TextureRebuild()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_XD3D_TextureRebuild : zCRnd_D3D { int operator()(); };
+BindedHook Ivk_zCRnd_D3D_XD3D_TextureRebuild{ ZENFOR(0x00712A60, 0x0074E680, 0x0075D960, 0x00648F00), &zCRnd_D3D_XD3D_TextureRebuild::operator() };
+int zCRnd_D3D_XD3D_TextureRebuild::operator()()
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_XD3D_TextureRebuild)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

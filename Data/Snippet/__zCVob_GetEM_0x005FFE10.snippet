@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::GetEM(int): zCEventManager*]]></Title>
+			<Description><![CDATA[public: zCEventManager* __fastcall zCVob::GetEM(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_GetEM : zCVob { zCEventManager* __fastcall operator()(int); };
+BindedHook Ivk_zCVob_GetEM{ ZENFOR(0x005D49B0, 0x005F3D80, 0x005F9010, 0x005FFE10), &zCVob_GetEM::operator() };
+zCEventManager* __fastcall zCVob_GetEM::operator()(int a0)
+{
+	zCEventManager* result = THISCALL(Ivk_zCVob_GetEM)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

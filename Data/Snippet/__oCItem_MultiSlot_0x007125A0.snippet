@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::MultiSlot(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCItem::MultiSlot()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_MultiSlot : oCItem { int operator()(); };
+BindedHook Ivk_oCItem_MultiSlot{ ZENFOR(0x00671F30, 0x0069F890, 0x006B4870, 0x007125A0), &oCItem_MultiSlot::operator() };
+int oCItem_MultiSlot::operator()()
+{
+	int result = THISCALL(Ivk_oCItem_MultiSlot)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

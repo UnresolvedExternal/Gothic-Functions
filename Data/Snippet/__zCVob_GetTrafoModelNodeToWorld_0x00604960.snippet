@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::GetTrafoModelNodeToWorld(zSTRING const&): zMAT4]]></Title>
+			<Description><![CDATA[public: zMAT4 __thiscall zCVob::GetTrafoModelNodeToWorld(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_GetTrafoModelNodeToWorld : zCVob { zMAT4 operator()(zSTRING const&); };
+BindedHook Ivk_zCVob_GetTrafoModelNodeToWorld{ ZENFOR(0x005D83E0, 0x005F7AD0, 0x005FDAE0, 0x00604960), &zCVob_GetTrafoModelNodeToWorld::operator() };
+zMAT4 zCVob_GetTrafoModelNodeToWorld::operator()(zSTRING const& a0)
+{
+	zMAT4 result = THISCALL(Ivk_zCVob_GetTrafoModelNodeToWorld)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

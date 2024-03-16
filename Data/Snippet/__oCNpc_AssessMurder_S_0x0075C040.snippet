@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::AssessMurder_S(oCNpc*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::AssessMurder_S(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_AssessMurder_S : oCNpc { int operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_AssessMurder_S{ ZENFOR(0x006B5780, 0x006E9FD0, 0x006FD0C0, 0x0075C040), &oCNpc_AssessMurder_S::operator() };
+int oCNpc_AssessMurder_S::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_AssessMurder_S)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

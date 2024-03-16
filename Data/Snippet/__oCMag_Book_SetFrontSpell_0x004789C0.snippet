@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::SetFrontSpell(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCMag_Book::SetFrontSpell(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_SetFrontSpell : oCMag_Book { void operator()(int); };
+BindedHook Ivk_oCMag_Book_SetFrontSpell{ ZENFOR(0x00471D00, 0x0047AE00, 0x00477620, 0x004789C0), &oCMag_Book_SetFrontSpell::operator() };
+void oCMag_Book_SetFrontSpell::operator()(int a0)
+{
+	THISCALL(Ivk_oCMag_Book_SetFrontSpell)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

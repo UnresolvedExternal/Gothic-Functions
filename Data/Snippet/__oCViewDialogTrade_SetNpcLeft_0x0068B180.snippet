@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogTrade::SetNpcLeft(oCNpc*): void]]></Title>
+			<Description><![CDATA[public: void __fastcall oCViewDialogTrade::SetNpcLeft(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogTrade_SetNpcLeft : oCViewDialogTrade { void __fastcall operator()(oCNpc*); };
+BindedHook Ivk_oCViewDialogTrade_SetNpcLeft{ ZENFOR(0x00729440, 0x007672E0, 0x00775450, 0x0068B180), &oCViewDialogTrade_SetNpcLeft::operator() };
+void __fastcall oCViewDialogTrade_SetNpcLeft::operator()(oCNpc* a0)
+{
+	THISCALL(Ivk_oCViewDialogTrade_SetNpcLeft)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

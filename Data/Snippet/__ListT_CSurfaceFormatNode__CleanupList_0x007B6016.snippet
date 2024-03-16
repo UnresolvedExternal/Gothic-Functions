@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CSurfaceFormatNode>::CleanupList(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall ListT<CSurfaceFormatNode>::CleanupList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CSurfaceFormatNode__CleanupList : ListT<CSurfaceFormatNode> { void operator()(); };
+BindedHook Ivk_ListT_CSurfaceFormatNode__CleanupList{ ZENFOR(0x0075C922, 0x0079FE45, 0x007A9B50, 0x007B6016), &ListT_CSurfaceFormatNode__CleanupList::operator() };
+void ListT_CSurfaceFormatNode__CleanupList::operator()()
+{
+	THISCALL(Ivk_ListT_CSurfaceFormatNode__CleanupList)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

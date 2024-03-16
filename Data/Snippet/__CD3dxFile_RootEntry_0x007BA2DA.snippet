@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3dxFile::RootEntry(): unsigned long]]></Title>
+			<Description><![CDATA[public: unsigned long __thiscall CD3dxFile::RootEntry()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3dxFile_RootEntry : CD3dxFile { unsigned long operator()(); };
+BindedHook Ivk_CD3dxFile_RootEntry{ ZENFOR(0x00760BE6, 0x007A5EE9, 0x007ADE14, 0x007BA2DA), &CD3dxFile_RootEntry::operator() };
+unsigned long CD3dxFile_RootEntry::operator()()
+{
+	unsigned long result = THISCALL(Ivk_CD3dxFile_RootEntry)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

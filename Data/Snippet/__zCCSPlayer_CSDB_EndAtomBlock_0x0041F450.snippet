@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPlayer::CSDB_EndAtomBlock(zCCSBlockBase*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSPlayer::CSDB_EndAtomBlock(zCCSBlockBase*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPlayer_CSDB_EndAtomBlock : zCCSPlayer { void operator()(zCCSBlockBase*); };
+BindedHook Ivk_zCCSPlayer_CSDB_EndAtomBlock{ ZENFOR(0x0041ED30, 0x00420F10, 0x0041F120, 0x0041F450), &zCCSPlayer_CSDB_EndAtomBlock::operator() };
+void zCCSPlayer_CSDB_EndAtomBlock::operator()(zCCSBlockBase* a0)
+{
+	THISCALL(Ivk_zCCSPlayer_CSDB_EndAtomBlock)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

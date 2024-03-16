@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::AStar(zCWaypoint*, zCWaypoint*, zCVob const*): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCWayNet::AStar(zCWaypoint*, zCWaypoint*, zCVob const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_AStar : zCWayNet { int operator()(zCWaypoint*, zCWaypoint*, zCVob const*); };
+BindedHook Ivk_zCWayNet_AStar{ ZENFOR(0x00706CF0, 0x007417F0, 0x00750DD0, 0x007B08D0), &zCWayNet_AStar::operator() };
+int zCWayNet_AStar::operator()(zCWaypoint* a0, zCWaypoint* a1, zCVob const* a2)
+{
+	int result = THISCALL(Ivk_zCWayNet_AStar)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

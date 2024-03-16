@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::StopInvestFX(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall oCVisualFX::StopInvestFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_StopInvestFX : oCVisualFX { void operator()(); };
+BindedHook Ivk_oCVisualFX_StopInvestFX{ ZENFOR(0x00489840, 0x00494F10, 0x0048FE60, 0x00491830), &oCVisualFX_StopInvestFX::operator() };
+void oCVisualFX_StopInvestFX::operator()()
+{
+	THISCALL(Ivk_oCVisualFX_StopInvestFX)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCVertFeature>::AllocDelta(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zCVertFeature>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCVertFeature__AllocDelta : zCArray<zCVertFeature> { void operator()(int); };
+BindedHook Ivk_zCArray_zCVertFeature__AllocDelta{ ZENFOR(0x0055C9A0, 0x00574A80, 0x00570E90, 0x00576140), &zCArray_zCVertFeature__AllocDelta::operator() };
+void zCArray_zCVertFeature__AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zCVertFeature__AllocDelta)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

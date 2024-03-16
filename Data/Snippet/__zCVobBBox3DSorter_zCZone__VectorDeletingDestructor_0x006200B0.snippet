@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobBBox3DSorter<zCZone>::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCVobBBox3DSorter<zCZone>::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCVobBBox3DSorter_zCZone__VectorDeletingDestructor : zCVobBBox3DSorter<zCZone> { void* operator()(unsigned int); };
+BindedHook Ivk_zCVobBBox3DSorter_zCZone__VectorDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x006200B0), &zCVobBBox3DSorter_zCZone__VectorDeletingDestructor::operator() };
+void* zCVobBBox3DSorter_zCZone__VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCVobBBox3DSorter_zCZone__VectorDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

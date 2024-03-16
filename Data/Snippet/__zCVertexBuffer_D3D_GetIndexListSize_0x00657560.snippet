@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer_D3D::GetIndexListSize(): unsigned long]]></Title>
+			<Description><![CDATA[public: virtual unsigned long __thiscall zCVertexBuffer_D3D::GetIndexListSize()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_D3D_GetIndexListSize : zCVertexBuffer_D3D { unsigned long operator()(); };
+BindedHook Ivk_zCVertexBuffer_D3D_GetIndexListSize{ ZENFOR(0x0071EC80, 0x0075B420, 0x0076AA30, 0x00657560), &zCVertexBuffer_D3D_GetIndexListSize::operator() };
+unsigned long zCVertexBuffer_D3D_GetIndexListSize::operator()()
+{
+	unsigned long result = THISCALL(Ivk_zCVertexBuffer_D3D_GetIndexListSize)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

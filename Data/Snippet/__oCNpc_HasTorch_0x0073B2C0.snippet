@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::HasTorch(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::HasTorch()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_HasTorch : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_HasTorch{ ZENFOR(0x00697EC0, 0x006C9B50, 0x006DCB00, 0x0073B2C0), &oCNpc_HasTorch::operator() };
+int oCNpc_HasTorch::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_HasTorch)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

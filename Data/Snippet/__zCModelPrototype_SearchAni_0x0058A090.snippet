@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::SearchAni(zSTRING const&): zCModelAni* [const]]]></Title>
+			<Description><![CDATA[public: zCModelAni* __thiscall zCModelPrototype::SearchAni(zSTRING const&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_SearchAni : zCModelPrototype { zCModelAni* operator()(zSTRING const&) const; };
+BindedHook Ivk_zCModelPrototype_SearchAni{ ZENFOR(0x0056F920, 0x00588D30, 0x00584B30, 0x0058A090), &zCModelPrototype_SearchAni::operator() };
+zCModelAni* zCModelPrototype_SearchAni::operator()(zSTRING const& a0) const
+{
+	zCModelAni* result = THISCALL(Ivk_zCModelPrototype_SearchAni)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::GetProtectionByMode(unsigned long): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCItem::GetProtectionByMode(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_GetProtectionByMode : oCItem { int operator()(unsigned long); };
+BindedHook Ivk_oCItem_GetProtectionByMode{ ZENFOR(0x00671C40, 0x0069F5A0, 0x006B4580, 0x007122B0), &oCItem_GetProtectionByMode::operator() };
+int oCItem_GetProtectionByMode::operator()(unsigned long a0)
+{
+	int result = THISCALL(Ivk_oCItem_GetProtectionByMode)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

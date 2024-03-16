@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__VectorDeletingDestructor : zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry> { void* operator()(unsigned int); };
+BindedHook Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__VectorDeletingDestructor{ ZENFOR(0x00517C20, 0x0052D630, 0x00525C60, 0x00528A30), &zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__VectorDeletingDestructor::operator() };
+void* zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__VectorDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Freeze(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Freeze()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__basic_string_char__std__char_traits_char___std__allocator_char____Freeze : std::basic_string<char, std::char_traits<char>, std::allocator<char>> { void operator()(); };
+BindedHook Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char____Freeze{ ZENFOR(0x00444A70, 0x0044A6C0, 0x004484D0, 0x00448B00), &std__basic_string_char__std__char_traits_char___std__allocator_char____Freeze::operator() };
+void std__basic_string_char__std__char_traits_char___std__allocator_char____Freeze::operator()()
+{
+	THISCALL(Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char____Freeze)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

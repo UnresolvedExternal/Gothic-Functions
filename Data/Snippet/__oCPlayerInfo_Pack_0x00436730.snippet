@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCPlayerInfo::Pack(zCBuffer&): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall oCPlayerInfo::Pack(zCBuffer&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCPlayerInfo_Pack : oCPlayerInfo { void operator()(zCBuffer&); };
+BindedHook Ivk_oCPlayerInfo_Pack{ ZENFOR(0x004338D0, 0x00437800, 0x00436230, 0x00436730), &oCPlayerInfo_Pack::operator() };
+void oCPlayerInfo_Pack::operator()(zCBuffer& a0)
+{
+	THISCALL(Ivk_oCPlayerInfo_Pack)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

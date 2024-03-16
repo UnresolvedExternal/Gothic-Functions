@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::SetGlobalOcclusion(float): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCSndSys_MSS::SetGlobalOcclusion(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_SetGlobalOcclusion : zCSndSys_MSS { void operator()(float); };
+BindedHook Ivk_zCSndSys_MSS_SetGlobalOcclusion{ ZENFOR(0x004E6980, 0x004F8A50, 0x004F1ED0, 0x004F4B50), &zCSndSys_MSS_SetGlobalOcclusion::operator() };
+void zCSndSys_MSS_SetGlobalOcclusion::operator()(float a0)
+{
+	THISCALL(Ivk_zCSndSys_MSS_SetGlobalOcclusion)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

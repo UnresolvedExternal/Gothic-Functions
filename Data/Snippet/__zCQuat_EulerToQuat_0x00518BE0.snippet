@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuat::EulerToQuat(zVEC3 const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCQuat::EulerToQuat(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuat_EulerToQuat : zCQuat { void operator()(zVEC3 const&); };
+BindedHook Ivk_zCQuat_EulerToQuat{ ZENFOR(0x00508EF0, 0x0051D960, 0x00515E10, 0x00518BE0), &zCQuat_EulerToQuat::operator() };
+void zCQuat_EulerToQuat::operator()(zVEC3 const& a0)
+{
+	THISCALL(Ivk_zCQuat_EulerToQuat)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

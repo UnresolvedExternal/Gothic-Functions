@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelTexAniState::zCModelTexAniState()]]></Title>
+			<Description><![CDATA[public: __thiscall zCModelTexAniState::zCModelTexAniState()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelTexAniState_zCModelTexAniState : zCModelTexAniState { zCModelTexAniState* operator()(); };
+BindedHook Ivk_zCModelTexAniState_zCModelTexAniState{ ZENFOR(0x0055D5B0, 0x00575950, 0x00571A90, 0x00576D40), &zCModelTexAniState_zCModelTexAniState::operator() };
+zCModelTexAniState* zCModelTexAniState_zCModelTexAniState::operator()()
+{
+	zCModelTexAniState* result = THISCALL(Ivk_zCModelTexAniState_zCModelTexAniState)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

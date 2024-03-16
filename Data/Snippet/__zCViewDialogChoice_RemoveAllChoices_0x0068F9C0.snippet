@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialogChoice::RemoveAllChoices(): void]]></Title>
+			<Description><![CDATA[public: void __fastcall zCViewDialogChoice::RemoveAllChoices()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialogChoice_RemoveAllChoices : zCViewDialogChoice { void __fastcall operator()(); };
+BindedHook Ivk_zCViewDialogChoice_RemoveAllChoices{ ZENFOR(0x00759810, 0x0079BDC0, 0x007A6720, 0x0068F9C0), &zCViewDialogChoice_RemoveAllChoices::operator() };
+void __fastcall zCViewDialogChoice_RemoveAllChoices::operator()()
+{
+	THISCALL(Ivk_zCViewDialogChoice_RemoveAllChoices)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

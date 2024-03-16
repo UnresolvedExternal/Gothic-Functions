@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::GetBinding(unsigned short, zCArray<unsigned short>&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCInput::GetBinding(unsigned short, zCArray<unsigned short>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_GetBinding : zCInput { int operator()(unsigned short, zCArray<unsigned short>&); };
+BindedHook Ivk_zCInput_GetBinding{ ZENFOR(0x004C3150, 0x004D2AF0, 0x004C9F40, 0x004CC4B0), &zCInput_GetBinding::operator() };
+int zCInput_GetBinding::operator()(unsigned short a0, zCArray<unsigned short>& a1)
+{
+	int result = THISCALL(Ivk_zCInput_GetBinding)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolyStrip::AddSegment(zVEC3 const&, zVEC3 const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPolyStrip::AddSegment(zVEC3 const&, zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolyStrip_AddSegment : zCPolyStrip { void operator()(zVEC3 const&, zVEC3 const&); };
+BindedHook Ivk_zCPolyStrip_AddSegment{ ZENFOR(0x0059C460, 0x005B8930, 0x005B8740, 0x005BE2B0), &zCPolyStrip_AddSegment::operator() };
+void zCPolyStrip_AddSegment::operator()(zVEC3 const& a0, zVEC3 const& a1)
+{
+	THISCALL(Ivk_zCPolyStrip_AddSegment)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

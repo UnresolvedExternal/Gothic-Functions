@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::UnSmoothMesh(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMesh::UnSmoothMesh()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_UnSmoothMesh : zCMesh { void operator()(); };
+BindedHook Ivk_zCMesh_UnSmoothMesh{ ZENFOR(0x00552C70, 0x0056B2A0, 0x00565290, 0x0056A4E0), &zCMesh_UnSmoothMesh::operator() };
+void zCMesh_UnSmoothMesh::operator()()
+{
+	THISCALL(Ivk_zCMesh_UnSmoothMesh)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

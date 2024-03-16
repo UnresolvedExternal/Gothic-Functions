@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput_Win32::SetState(unsigned short, int): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCInput_Win32::SetState(unsigned short, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_Win32_SetState : zCInput_Win32 { int operator()(unsigned short, int); };
+BindedHook Ivk_zCInput_Win32_SetState{ ZENFOR(0x004C83E0, 0x004D8390, 0x004D2840, 0x004D4E00), &zCInput_Win32_SetState::operator() };
+int zCInput_Win32_SetState::operator()(unsigned short a0, int a1)
+{
+	int result = THISCALL(Ivk_zCInput_Win32_SetState)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

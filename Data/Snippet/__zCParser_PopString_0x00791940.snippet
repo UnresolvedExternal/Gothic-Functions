@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::PopString(): zSTRING*]]></Title>
+			<Description><![CDATA[private: zSTRING* __thiscall zCParser::PopString()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_PopString : zCParser { zSTRING* operator()(); };
+BindedHook Ivk_zCParser_PopString{ ZENFOR(0x006E85E0, 0x00721590, 0x00731F00, 0x00791940), &zCParser_PopString::operator() };
+zSTRING* zCParser_PopString::operator()()
+{
+	zSTRING* result = THISCALL(Ivk_zCParser_PopString)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

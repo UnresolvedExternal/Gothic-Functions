@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSTRING::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zSTRING::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSTRING_ScalarDeletingDestructor : zSTRING { void* operator()(unsigned int); };
+BindedHook Ivk_zSTRING_ScalarDeletingDestructor{ ZENFOR(0x004012B0, 0x00401140, 0x00401140, 0x00401140), &zSTRING_ScalarDeletingDestructor::operator() };
+void* zSTRING_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zSTRING_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

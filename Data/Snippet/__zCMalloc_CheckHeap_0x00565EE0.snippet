@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMalloc::CheckHeap(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCMalloc::CheckHeap()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMalloc_CheckHeap : zCMalloc { int operator()(); };
+BindedHook Ivk_zCMalloc_CheckHeap{ ZENFOR(0x0054EB30, 0x00567030, 0x00560CC0, 0x00565EE0), &zCMalloc_CheckHeap::operator() };
+int zCMalloc_CheckHeap::operator()()
+{
+	int result = THISCALL(Ivk_zCMalloc_CheckHeap)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

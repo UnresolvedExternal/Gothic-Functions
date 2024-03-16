@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCListSort<oCItem>::Remove(oCItem*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCListSort<oCItem>::Remove(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCListSort_oCItem__Remove : zCListSort<oCItem> { void operator()(oCItem*); };
+BindedHook Ivk_zCListSort_oCItem__Remove{ ZENFOR(0x006D81D0, 0x0070FD90, 0x007219B0, 0x007813F0), &zCListSort_oCItem__Remove::operator() };
+void zCListSort_oCItem__Remove::operator()(oCItem* a0)
+{
+	THISCALL(Ivk_zCListSort_oCItem__Remove)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSVM::GetOU(zSTRING const&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCSVM::GetOU(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSVM_GetOU : oCSVM { int operator()(zSTRING const&); };
+BindedHook Ivk_oCSVM_GetOU{ ZENFOR(0x006D1B70, 0x00708800, 0x0071AB00, 0x0077A540), &oCSVM_GetOU::operator() };
+int oCSVM_GetOU::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_oCSVM_GetOU)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

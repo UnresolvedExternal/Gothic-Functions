@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspBase::SaveBINRec(zCFileBIN&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCBspBase::SaveBINRec(zCFileBIN&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspBase_SaveBINRec : zCBspBase { void operator()(zCFileBIN&); };
+BindedHook Ivk_zCBspBase_SaveBINRec{ ZENFOR(0x00524230, 0x0053A550, 0x00534A40, 0x00537DA0), &zCBspBase_SaveBINRec::operator() };
+void zCBspBase_SaveBINRec::operator()(zCFileBIN& a0)
+{
+	THISCALL(Ivk_zCBspBase_SaveBINRec)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

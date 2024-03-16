@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCObjectFactory::CreateGameInfo(): zCGameInfo*]]></Title>
+			<Description><![CDATA[public: virtual zCGameInfo* __thiscall oCObjectFactory::CreateGameInfo()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCObjectFactory_CreateGameInfo : oCObjectFactory { zCGameInfo* operator()(); };
+BindedHook Ivk_oCObjectFactory_CreateGameInfo{ ZENFOR(0x006C83F0, 0x006FE250, 0x00710670, 0x0076FBE0), &oCObjectFactory_CreateGameInfo::operator() };
+zCGameInfo* oCObjectFactory_CreateGameInfo::operator()()
+{
+	zCGameInfo* result = THISCALL(Ivk_oCObjectFactory_CreateGameInfo)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

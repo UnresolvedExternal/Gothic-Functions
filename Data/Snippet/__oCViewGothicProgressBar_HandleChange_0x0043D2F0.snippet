@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewGothicProgressBar::HandleChange(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCViewGothicProgressBar::HandleChange()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewGothicProgressBar_HandleChange : oCViewGothicProgressBar { void operator()(); };
+BindedHook Ivk_oCViewGothicProgressBar_HandleChange{ ZENFOR(0x00439870, 0x0043E340, 0x0043CCC0, 0x0043D2F0), &oCViewGothicProgressBar_HandleChange::operator() };
+void oCViewGothicProgressBar_HandleChange::operator()()
+{
+	THISCALL(Ivk_oCViewGothicProgressBar_HandleChange)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

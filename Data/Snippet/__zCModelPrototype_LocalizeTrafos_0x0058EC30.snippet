@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::LocalizeTrafos(zCTree<zCModelNode>*, zCTree<zCModelNode>*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::LocalizeTrafos(zCTree<zCModelNode>*, zCTree<zCModelNode>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_LocalizeTrafos : zCModelPrototype { void operator()(zCTree<zCModelNode>*, zCTree<zCModelNode>*); };
+BindedHook Ivk_zCModelPrototype_LocalizeTrafos{ ZENFOR(0x005744C0, 0x0058DF50, 0x005896D0, 0x0058EC30), &zCModelPrototype_LocalizeTrafos::operator() };
+void zCModelPrototype_LocalizeTrafos::operator()(zCTree<zCModelNode>* a0, zCTree<zCModelNode>* a1)
+{
+	THISCALL(Ivk_zCModelPrototype_LocalizeTrafos)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

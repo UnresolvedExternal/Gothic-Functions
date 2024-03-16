@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRoute::GetRemainingDesc(): zSTRING]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zCRoute::GetRemainingDesc()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRoute_GetRemainingDesc : zCRoute { zSTRING operator()(); };
+BindedHook Ivk_zCRoute_GetRemainingDesc{ ZENFOR(0x00708E60, 0x00743BE0, 0x00753060, 0x007B2B60), &zCRoute_GetRemainingDesc::operator() };
+zSTRING zCRoute_GetRemainingDesc::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCRoute_GetRemainingDesc)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

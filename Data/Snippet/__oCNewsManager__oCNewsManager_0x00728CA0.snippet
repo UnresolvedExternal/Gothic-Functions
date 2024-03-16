@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNewsManager::~oCNewsManager()]]></Title>
+			<Description><![CDATA[public: __thiscall oCNewsManager::~oCNewsManager()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNewsManager_Destructor : oCNewsManager { void operator()(); };
+BindedHook Ivk_oCNewsManager_Destructor{ ZENFOR(0x00686B90, 0x006B6BE0, 0x006CAC10, 0x00728CA0), &oCNewsManager_Destructor::operator() };
+void oCNewsManager_Destructor::operator()()
+{
+	THISCALL(Ivk_oCNewsManager_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

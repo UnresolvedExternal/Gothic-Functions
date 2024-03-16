@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::IsOwnedByGuild(int): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCItem::IsOwnedByGuild(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_IsOwnedByGuild : oCItem { int operator()(int); };
+BindedHook Ivk_oCItem_IsOwnedByGuild{ ZENFOR(0x006720B0, 0x0069FA10, 0x006B4A10, 0x007127C0), &oCItem_IsOwnedByGuild::operator() };
+int oCItem_IsOwnedByGuild::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCItem_IsOwnedByGuild)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

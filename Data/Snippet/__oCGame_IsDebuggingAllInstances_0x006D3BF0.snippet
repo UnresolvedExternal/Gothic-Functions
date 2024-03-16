@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::IsDebuggingAllInstances(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCGame::IsDebuggingAllInstances()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_IsDebuggingAllInstances : oCGame { int operator()(); };
+BindedHook Ivk_oCGame_IsDebuggingAllInstances{ ZENFOR(0x00648CC0, 0x006709E0, 0x00676E70, 0x006D3BF0), &oCGame_IsDebuggingAllInstances::operator() };
+int oCGame_IsDebuggingAllInstances::operator()()
+{
+	int result = THISCALL(Ivk_oCGame_IsDebuggingAllInstances)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

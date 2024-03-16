@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMessageFilter::~zCMessageFilter()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCMessageFilter::~zCMessageFilter()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMessageFilter_Destructor : zCMessageFilter { void operator()(); };
+BindedHook Ivk_zCMessageFilter_Destructor{ ZENFOR(0x005EB2C0, 0x0060B8F0, 0x00610F00, 0x006185C0), &zCMessageFilter_Destructor::operator() };
+void zCMessageFilter_Destructor::operator()()
+{
+	THISCALL(Ivk_zCMessageFilter_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

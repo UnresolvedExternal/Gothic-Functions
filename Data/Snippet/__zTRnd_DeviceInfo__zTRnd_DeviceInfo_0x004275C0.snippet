@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTRnd_DeviceInfo::~zTRnd_DeviceInfo()]]></Title>
+			<Description><![CDATA[public: __thiscall zTRnd_DeviceInfo::~zTRnd_DeviceInfo()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTRnd_DeviceInfo_Destructor : zTRnd_DeviceInfo { void operator()(); };
+BindedHook Ivk_zTRnd_DeviceInfo_Destructor{ ZENFOR(0x004266D0, 0x004290E0, 0x00427280, 0x004275C0), &zTRnd_DeviceInfo_Destructor::operator() };
+void zTRnd_DeviceInfo_Destructor::operator()()
+{
+	THISCALL(Ivk_zTRnd_DeviceInfo_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

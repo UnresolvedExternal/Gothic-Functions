@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::GenerateLightmapsRadiosity(zTBBox3D*): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCWorld::GenerateLightmapsRadiosity(zTBBox3D*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_GenerateLightmapsRadiosity : zCWorld { void operator()(zTBBox3D*); };
+BindedHook Ivk_zCWorld_GenerateLightmapsRadiosity{ ZENFOR(0x00600220, 0x00621E80, 0x006279D0, 0x0062F150), &zCWorld_GenerateLightmapsRadiosity::operator() };
+void zCWorld_GenerateLightmapsRadiosity::operator()(zTBBox3D* a0)
+{
+	THISCALL(Ivk_zCWorld_GenerateLightmapsRadiosity)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::GetRestSize(): unsigned long [const]]]></Title>
+			<Description><![CDATA[public: unsigned long __thiscall zCBuffer::GetRestSize() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_GetRestSize : zCBuffer { unsigned long operator()() const; };
+BindedHook Ivk_zCBuffer_GetRestSize{ ZENFOR(0x0043D8C0, 0x00442AD0, 0x00441090, 0x004416C0), &zCBuffer_GetRestSize::operator() };
+unsigned long zCBuffer_GetRestSize::operator()() const
+{
+	unsigned long result = THISCALL(Ivk_zCBuffer_GetRestSize)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

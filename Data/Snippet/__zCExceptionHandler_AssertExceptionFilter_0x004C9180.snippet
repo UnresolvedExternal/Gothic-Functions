@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCExceptionHandler::AssertExceptionFilter(_EXCEPTION_POINTERS*, ASSERT_FAIL_INFO*, EXCEPTION_INFO*): long]]></Title>
+			<Description><![CDATA[public: static long __stdcall zCExceptionHandler::AssertExceptionFilter(_EXCEPTION_POINTERS*, ASSERT_FAIL_INFO*, EXCEPTION_INFO*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long __stdcall Hook_zCExceptionHandler_AssertExceptionFilter(_EXCEPTION_POINTERS*, ASSERT_FAIL_INFO*, EXCEPTION_INFO*);
+BindedHook Ivk_zCExceptionHandler_AssertExceptionFilter{ ZENFOR(0x004BFE50, 0x004CF610, 0x004C6C10, 0x004C9180), Hook_zCExceptionHandler_AssertExceptionFilter };
+long __stdcall Hook_zCExceptionHandler_AssertExceptionFilter(_EXCEPTION_POINTERS* a0, ASSERT_FAIL_INFO* a1, EXCEPTION_INFO* a2)
+{
+	long result = Ivk_zCExceptionHandler_AssertExceptionFilter(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

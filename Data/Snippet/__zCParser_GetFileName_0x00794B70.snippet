@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::GetFileName(int): zSTRING]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zCParser::GetFileName(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_GetFileName : zCParser { zSTRING operator()(int); };
+BindedHook Ivk_zCParser_GetFileName{ ZENFOR(0x006EB660, 0x00724920, 0x00735130, 0x00794B70), &zCParser_GetFileName::operator() };
+zSTRING zCParser_GetFileName::operator()(int a0)
+{
+	zSTRING result = THISCALL(Ivk_zCParser_GetFileName)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

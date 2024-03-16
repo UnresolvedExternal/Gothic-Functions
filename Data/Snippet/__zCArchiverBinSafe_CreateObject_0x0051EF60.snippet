@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::CreateObject(zSTRING const&): zCObject*]]></Title>
+			<Description><![CDATA[protected: virtual zCObject* __fastcall zCArchiverBinSafe::CreateObject(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_CreateObject : zCArchiverBinSafe { zCObject* __fastcall operator()(zSTRING const&); };
+BindedHook Ivk_zCArchiverBinSafe_CreateObject{ ZENFOR(0x0050EB90, 0x00523BE0, 0x0051C190, 0x0051EF60), &zCArchiverBinSafe_CreateObject::operator() };
+zCObject* __fastcall zCArchiverBinSafe_CreateObject::operator()(zSTRING const& a0)
+{
+	zCObject* result = THISCALL(Ivk_zCArchiverBinSafe_CreateObject)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

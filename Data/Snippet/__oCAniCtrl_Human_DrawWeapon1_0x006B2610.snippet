@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::DrawWeapon1(int, int, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCAniCtrl_Human::DrawWeapon1(int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_DrawWeapon1 : oCAniCtrl_Human { int operator()(int, int, int); };
+BindedHook Ivk_oCAniCtrl_Human_DrawWeapon1{ ZENFOR(0x006294A0, 0x0064E710, 0x00655C80, 0x006B2610), &oCAniCtrl_Human_DrawWeapon1::operator() };
+int oCAniCtrl_Human_DrawWeapon1::operator()(int a0, int a1, int a2)
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_DrawWeapon1)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

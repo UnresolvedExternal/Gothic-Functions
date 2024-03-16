@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverFactory::EndOfArchive(zCBuffer*, zFILE*): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCArchiverFactory::EndOfArchive(zCBuffer*, zFILE*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverFactory_EndOfArchive : zCArchiverFactory { int operator()(zCBuffer*, zFILE*); };
+BindedHook Ivk_zCArchiverFactory_EndOfArchive{ ZENFOR(0x005097C0, 0x0051E2F0, 0x00516880, 0x00519650), &zCArchiverFactory_EndOfArchive::operator() };
+int zCArchiverFactory_EndOfArchive::operator()(zCBuffer* a0, zFILE* a1)
+{
+	int result = THISCALL(Ivk_zCArchiverFactory_EndOfArchive)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

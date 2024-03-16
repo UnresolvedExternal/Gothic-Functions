@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTBBox3D::SetByDescription(zSTRING&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zTBBox3D::SetByDescription(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTBBox3D_SetByDescription : zTBBox3D { void operator()(zSTRING&); };
+BindedHook Ivk_zTBBox3D_SetByDescription{ ZENFOR(0x00530D60, 0x005476A0, 0x0053FB90, 0x00544C40), &zTBBox3D_SetByDescription::operator() };
+void zTBBox3D_SetByDescription::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_zTBBox3D_SetByDescription)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

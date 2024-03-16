@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArrayAdapt<zTPMEdge>::~zCArrayAdapt<zTPMEdge>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArrayAdapt<zTPMEdge>::~zCArrayAdapt<zTPMEdge>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArrayAdapt_zTPMEdge__Destructor : zCArrayAdapt<zTPMEdge> { void operator()(); };
+BindedHook Ivk_zCArrayAdapt_zTPMEdge__Destructor{ ZENFOR(0x005AB3F0, 0x005C8050, 0x005C98F0, 0x005D0490), &zCArrayAdapt_zTPMEdge__Destructor::operator() };
+void zCArrayAdapt_zTPMEdge__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArrayAdapt_zTPMEdge__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

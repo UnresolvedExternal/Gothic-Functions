@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::SetMode(zTBufferMode): zTBufferMode]]></Title>
+			<Description><![CDATA[public: zTBufferMode __thiscall zCBuffer::SetMode(zTBufferMode)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_SetMode : zCBuffer { zTBufferMode operator()(zTBufferMode); };
+BindedHook Ivk_zCBuffer_SetMode{ ZENFOR(0x0043CF00, 0x004420D0, 0x00440670, 0x00440CA0), &zCBuffer_SetMode::operator() };
+zTBufferMode zCBuffer_SetMode::operator()(zTBufferMode a0)
+{
+	zTBufferMode result = THISCALL(Ivk_zCBuffer_SetMode)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

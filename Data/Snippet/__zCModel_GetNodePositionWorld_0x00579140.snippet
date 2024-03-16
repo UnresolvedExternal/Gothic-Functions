@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::GetNodePositionWorld(zCModelNodeInst*): zVEC3]]></Title>
+			<Description><![CDATA[public: zVEC3 __thiscall zCModel::GetNodePositionWorld(zCModelNodeInst*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_GetNodePositionWorld : zCModel { zVEC3 operator()(zCModelNodeInst*); };
+BindedHook Ivk_zCModel_GetNodePositionWorld{ ZENFOR(0x0055F8C0, 0x00577CD0, 0x00573E90, 0x00579140), &zCModel_GetNodePositionWorld::operator() };
+zVEC3 zCModel_GetNodePositionWorld::operator()(zCModelNodeInst* a0)
+{
+	zVEC3 result = THISCALL(Ivk_zCModel_GetNodePositionWorld)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

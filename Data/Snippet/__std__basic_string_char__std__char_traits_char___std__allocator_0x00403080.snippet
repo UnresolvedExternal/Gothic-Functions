@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Grow(unsigned int, bool): bool]]></Title>
+			<Description><![CDATA[private: bool __thiscall std::basic_string<char, std::char_traits<char>, std::allocator<char>>::_Grow(unsigned int, bool)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__basic_string_char__std__char_traits_char___std__allocator_char____Grow : std::basic_string<char, std::char_traits<char>, std::allocator<char>> { bool operator()(unsigned int, bool); };
+BindedHook Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char____Grow{ ZENFOR(0x004030D0, 0x00403540, 0x00403080, 0x00403080), &std__basic_string_char__std__char_traits_char___std__allocator_char____Grow::operator() };
+bool std__basic_string_char__std__char_traits_char___std__allocator_char____Grow::operator()(unsigned int a0, bool a1)
+{
+	bool result = THISCALL(Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char____Grow)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

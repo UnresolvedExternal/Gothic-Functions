@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSavegameManager::CopyToCurrent(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCSavegameManager::CopyToCurrent(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSavegameManager_CopyToCurrent : oCSavegameManager { void operator()(int); };
+BindedHook Ivk_oCSavegameManager_CopyToCurrent{ ZENFOR(0x00435DC0, 0x0043A160, 0x00438CE0, 0x00439310), &oCSavegameManager_CopyToCurrent::operator() };
+void oCSavegameManager_CopyToCurrent::operator()(int a0)
+{
+	THISCALL(Ivk_oCSavegameManager_CopyToCurrent)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

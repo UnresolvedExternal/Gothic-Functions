@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCScanDir::ScanX(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCScanDir::ScanX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCScanDir_ScanX : zCScanDir { void operator()(); };
+BindedHook Ivk_zCScanDir_ScanX{ ZENFOR(0x00464140, 0x0046BCD0, 0x00468BD0, 0x00469800), &zCScanDir_ScanX::operator() };
+void zCScanDir_ScanX::operator()()
+{
+	THISCALL(Ivk_zCScanDir_ScanX)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

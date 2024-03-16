@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::EndMovement(int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCVob::EndMovement(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCVob_EndMovement : zCVob { void operator()(int); };
+BindedHook Ivk_zCVob_EndMovement{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x0061E0D0), &zCVob_EndMovement::operator() };
+void zCVob_EndMovement::operator()(int a0)
+{
+	THISCALL(Ivk_zCVob_EndMovement)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

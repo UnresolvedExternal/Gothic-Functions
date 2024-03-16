@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgMagic::oCMsgMagic(oCMsgMagic::TConversationSubType)]]></Title>
+			<Description><![CDATA[public: __thiscall oCMsgMagic::oCMsgMagic(oCMsgMagic::TConversationSubType)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgMagic_oCMsgMagic : oCMsgMagic { oCMsgMagic* operator()(oCMsgMagic::TConversationSubType); };
+BindedHook Ivk_oCMsgMagic_oCMsgMagic{ ZENFOR(0x006C3F20, 0x006F93A0, 0x0070BBC0, 0x0076B100), &oCMsgMagic_oCMsgMagic::operator() };
+oCMsgMagic* oCMsgMagic_oCMsgMagic::operator()(oCMsgMagic::TConversationSubType a0)
+{
+	oCMsgMagic* result = THISCALL(Ivk_oCMsgMagic_oCMsgMagic)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

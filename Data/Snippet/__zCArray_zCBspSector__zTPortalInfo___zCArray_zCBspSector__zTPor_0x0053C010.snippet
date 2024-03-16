@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCBspSector::zTPortalInfo>::~zCArray<zCBspSector::zTPortalInfo>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zCBspSector::zTPortalInfo>::~zCArray<zCBspSector::zTPortalInfo>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCBspSector__zTPortalInfo__Destructor : zCArray<zCBspSector::zTPortalInfo> { void operator()(); };
+BindedHook Ivk_zCArray_zCBspSector__zTPortalInfo__Destructor{ ZENFOR(0x005269E0, 0x0053CDD0, 0x00537210, 0x0053C010), &zCArray_zCBspSector__zTPortalInfo__Destructor::operator() };
+void zCArray_zCBspSector__zTPortalInfo__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCBspSector__zTPortalInfo__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

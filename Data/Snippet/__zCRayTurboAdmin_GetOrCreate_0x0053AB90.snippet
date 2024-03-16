@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRayTurboAdmin::GetOrCreate(zCBspNode const*): zCRayTurbo*]]></Title>
+			<Description><![CDATA[public: zCRayTurbo* __thiscall zCRayTurboAdmin::GetOrCreate(zCBspNode const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCRayTurboAdmin_GetOrCreate : zCRayTurboAdmin { zCRayTurbo* operator()(zCBspNode const*); };
+BindedHook Ivk_zCRayTurboAdmin_GetOrCreate{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x0053AB90), &zCRayTurboAdmin_GetOrCreate::operator() };
+zCRayTurbo* zCRayTurboAdmin_GetOrCreate::operator()(zCBspNode const* a0)
+{
+	zCRayTurbo* result = THISCALL(Ivk_zCRayTurboAdmin_GetOrCreate)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

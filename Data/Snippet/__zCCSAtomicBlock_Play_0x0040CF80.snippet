@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSAtomicBlock::Play(zCArray<zCEventManager*>const&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSAtomicBlock::Play(zCArray<zCEventManager*>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSAtomicBlock_Play : zCCSAtomicBlock { void operator()(zCArray<zCEventManager*>const&); };
+BindedHook Ivk_zCCSAtomicBlock_Play{ ZENFOR(0x0040CB90, 0x0040DE10, 0x0040CF80, 0x0040CF80), &zCCSAtomicBlock_Play::operator() };
+void zCCSAtomicBlock_Play::operator()(zCArray<zCEventManager*>const& a0)
+{
+	THISCALL(Ivk_zCCSAtomicBlock_Play)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

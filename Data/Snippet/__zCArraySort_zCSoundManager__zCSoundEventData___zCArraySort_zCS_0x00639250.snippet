@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCSoundManager::zCSoundEventData>::~zCArraySort<zCSoundManager::zCSoundEventData>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArraySort<zCSoundManager::zCSoundEventData>::~zCArraySort<zCSoundManager::zCSoundEventData>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCSoundManager__zCSoundEventData__Destructor : zCArraySort<zCSoundManager::zCSoundEventData> { void operator()(); };
+BindedHook Ivk_zCArraySort_zCSoundManager__zCSoundEventData__Destructor{ ZENFOR(0x00608B30, 0x0062AFC0, 0x00631A80, 0x00639250), &zCArraySort_zCSoundManager__zCSoundEventData__Destructor::operator() };
+void zCArraySort_zCSoundManager__zCSoundEventData__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArraySort_zCSoundManager__zCSoundEventData__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

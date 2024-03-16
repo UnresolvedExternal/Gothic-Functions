@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCActiveSnd::RemoveSoundsByFrame(zCSndFrame*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCActiveSnd::RemoveSoundsByFrame(zCSndFrame*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCActiveSnd_RemoveSoundsByFrame(zCSndFrame*);
+BindedHook Ivk_zCActiveSnd_RemoveSoundsByFrame{ ZENFOR(0x004E9280, 0x004FB540, 0x004F4780, 0x004F7400), Hook_zCActiveSnd_RemoveSoundsByFrame };
+void Hook_zCActiveSnd_RemoveSoundsByFrame(zCSndFrame* a0)
+{
+	Ivk_zCActiveSnd_RemoveSoundsByFrame(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

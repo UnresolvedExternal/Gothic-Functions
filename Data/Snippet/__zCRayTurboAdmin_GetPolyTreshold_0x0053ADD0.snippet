@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRayTurboAdmin::GetPolyTreshold(): int]]></Title>
+			<Description><![CDATA[public: static int __cdecl zCRayTurboAdmin::GetPolyTreshold()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+int Hook_zCRayTurboAdmin_GetPolyTreshold();
+BindedHook Ivk_zCRayTurboAdmin_GetPolyTreshold{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x0053ADD0), Hook_zCRayTurboAdmin_GetPolyTreshold };
+int Hook_zCRayTurboAdmin_GetPolyTreshold()
+{
+	int result = Ivk_zCRayTurboAdmin_GetPolyTreshold();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

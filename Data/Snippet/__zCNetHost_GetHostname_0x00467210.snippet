@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetHost::GetHostname(): zSTRING [const]]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zCNetHost::GetHostname() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetHost_GetHostname : zCNetHost { zSTRING operator()() const; };
+BindedHook Ivk_zCNetHost_GetHostname{ ZENFOR(0x00461BA0, 0x004695C0, 0x004665E0, 0x00467210), &zCNetHost_GetHostname::operator() };
+zSTRING zCNetHost_GetHostname::operator()() const
+{
+	zSTRING result = THISCALL(Ivk_zCNetHost_GetHostname)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

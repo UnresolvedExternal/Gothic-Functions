@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::RenderDynamicLOD(zTRenderContext&, int, zCProgMeshProto::zTLODRenderArgs*, zCRenderLightContainer*, float, float): int]]></Title>
+			<Description><![CDATA[private: int __fastcall zCProgMeshProto::RenderDynamicLOD(zTRenderContext&, int, zCProgMeshProto::zTLODRenderArgs*, zCRenderLightContainer*, float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_RenderDynamicLOD : zCProgMeshProto { int __fastcall operator()(zTRenderContext&, int, zCProgMeshProto::zTLODRenderArgs*, zCRenderLightContainer*, float, float); };
+BindedHook Ivk_zCProgMeshProto_RenderDynamicLOD{ ZENFOR(0x005A7780, 0x005C4180, 0x005C4FA0, 0x005CAF50), &zCProgMeshProto_RenderDynamicLOD::operator() };
+int __fastcall zCProgMeshProto_RenderDynamicLOD::operator()(zTRenderContext& a0, int a1, zCProgMeshProto::zTLODRenderArgs* a2, zCRenderLightContainer* a3, float a4, float a5)
+{
+	int result = THISCALL(Ivk_zCProgMeshProto_RenderDynamicLOD)(a0, a1, a2, a3, a4, a5);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

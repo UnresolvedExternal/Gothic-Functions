@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::CollectCollisionContext_Vobs(zTBBox3D const&, zCVob::zTCollisionContext&): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCVob::CollectCollisionContext_Vobs(zTBBox3D const&, zCVob::zTCollisionContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_CollectCollisionContext_Vobs : zCVob { void __fastcall operator()(zTBBox3D const&, zCVob::zTCollisionContext&); };
+BindedHook Ivk_zCVob_CollectCollisionContext_Vobs{ ZENFOR(0x005F12D0, 0x00612030, 0x00617120, 0x0061E870), &zCVob_CollectCollisionContext_Vobs::operator() };
+void __fastcall zCVob_CollectCollisionContext_Vobs::operator()(zTBBox3D const& a0, zCVob::zTCollisionContext& a1)
+{
+	THISCALL(Ivk_zCVob_CollectCollisionContext_Vobs)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCObjectGenerator::~oCObjectGenerator()]]></Title>
+			<Description><![CDATA[protected: virtual __thiscall oCObjectGenerator::~oCObjectGenerator()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCObjectGenerator_Destructor : oCObjectGenerator { void operator()(); };
+BindedHook Ivk_oCObjectGenerator_Destructor{ ZENFOR(0x00439280, 0x0043DD00, 0x0043C6E0, 0x0043CD10), &oCObjectGenerator_Destructor::operator() };
+void oCObjectGenerator_Destructor::operator()()
+{
+	THISCALL(Ivk_oCObjectGenerator_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

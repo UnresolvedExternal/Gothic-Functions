@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CD3duContextNode>::CleanupList(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall ListT<CD3duContextNode>::CleanupList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CD3duContextNode__CleanupList : ListT<CD3duContextNode> { void operator()(); };
+BindedHook Ivk_ListT_CD3duContextNode__CleanupList{ ZENFOR(0x0075D0CC, 0x0079FF8E, 0x007AA2FA, 0x007B67C0), &ListT_CD3duContextNode__CleanupList::operator() };
+void ListT_CD3duContextNode__CleanupList::operator()()
+{
+	THISCALL(Ivk_ListT_CD3duContextNode__CleanupList)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

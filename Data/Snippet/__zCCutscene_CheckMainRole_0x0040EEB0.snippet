@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCutscene::CheckMainRole(zCVob*): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall zCCutscene::CheckMainRole(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCutscene_CheckMainRole : zCCutscene { int operator()(zCVob*); };
+BindedHook Ivk_zCCutscene_CheckMainRole{ ZENFOR(0x0040EA20, 0x0040FD10, 0x0040EEB0, 0x0040EEB0), &zCCutscene_CheckMainRole::operator() };
+int zCCutscene_CheckMainRole::operator()(zCVob* a0)
+{
+	int result = THISCALL(Ivk_zCCutscene_CheckMainRole)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

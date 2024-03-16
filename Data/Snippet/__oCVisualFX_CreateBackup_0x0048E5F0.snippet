@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::CreateBackup(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall oCVisualFX::CreateBackup()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_CreateBackup : oCVisualFX { void operator()(); };
+BindedHook Ivk_oCVisualFX_CreateBackup{ ZENFOR(0x00486900, 0x00491BD0, 0x0048CC30, 0x0048E5F0), &oCVisualFX_CreateBackup::operator() };
+void oCVisualFX_CreateBackup::operator()()
+{
+	THISCALL(Ivk_oCVisualFX_CreateBackup)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

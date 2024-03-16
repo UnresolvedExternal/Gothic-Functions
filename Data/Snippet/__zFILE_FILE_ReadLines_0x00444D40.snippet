@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::ReadLines(zSTRING&, long): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zFILE_FILE::ReadLines(zSTRING&, long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_ReadLines : zFILE_FILE { int operator()(zSTRING&, long); };
+BindedHook Ivk_zFILE_FILE_ReadLines{ ZENFOR(0x00440E20, 0x004464E0, 0x00444710, 0x00444D40), &zFILE_FILE_ReadLines::operator() };
+int zFILE_FILE_ReadLines::operator()(zSTRING& a0, long a1)
+{
+	int result = THISCALL(Ivk_zFILE_FILE_ReadLines)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

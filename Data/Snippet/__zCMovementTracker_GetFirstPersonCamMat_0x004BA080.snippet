@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::GetFirstPersonCamMat(): zMAT4&]]></Title>
+			<Description><![CDATA[public: zMAT4& __thiscall zCMovementTracker::GetFirstPersonCamMat()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_GetFirstPersonCamMat : zCMovementTracker { zMAT4& operator()(); };
+BindedHook Ivk_zCMovementTracker_GetFirstPersonCamMat{ ZENFOR(0x004B13A0, 0x004BFBC0, 0x004B7B10, 0x004BA080), &zCMovementTracker_GetFirstPersonCamMat::operator() };
+zMAT4& zCMovementTracker_GetFirstPersonCamMat::operator()()
+{
+	zMAT4& result = THISCALL(Ivk_zCMovementTracker_GetFirstPersonCamMat)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

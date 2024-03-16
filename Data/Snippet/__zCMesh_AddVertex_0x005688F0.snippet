@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::AddVertex(zVEC3&): zCVertex*]]></Title>
+			<Description><![CDATA[public: zCVertex* __thiscall zCMesh::AddVertex(zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_AddVertex : zCMesh { zCVertex* operator()(zVEC3&); };
+BindedHook Ivk_zCMesh_AddVertex{ ZENFOR(0x00551060, 0x005696F0, 0x005636A0, 0x005688F0), &zCMesh_AddVertex::operator() };
+zCVertex* zCMesh_AddVertex::operator()(zVEC3& a0)
+{
+	zCVertex* result = THISCALL(Ivk_zCMesh_AddVertex)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

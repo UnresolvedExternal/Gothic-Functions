@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[LogStatistics(oCNpc*): bool]]></Title>
+			<Description><![CDATA[bool __cdecl LogStatistics(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[bool Hook_LogStatistics(oCNpc*);
+BindedHook Ivk_LogStatistics{ ZENFOR(0x00432320, 0x00435DC0, 0x00434580, 0x00434A80), Hook_LogStatistics };
+bool Hook_LogStatistics(oCNpc* a0)
+{
+	bool result = Ivk_LogStatistics(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

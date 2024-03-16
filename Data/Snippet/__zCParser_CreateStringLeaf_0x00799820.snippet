@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::CreateStringLeaf(): zCPar_TreeNode*]]></Title>
+			<Description><![CDATA[private: zCPar_TreeNode* __thiscall zCParser::CreateStringLeaf()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_CreateStringLeaf : zCParser { zCPar_TreeNode* operator()(); };
+BindedHook Ivk_zCParser_CreateStringLeaf{ ZENFOR(0x006EFCD0, 0x007294E0, 0x00739DE0, 0x00799820), &zCParser_CreateStringLeaf::operator() };
+zCPar_TreeNode* zCParser_CreateStringLeaf::operator()()
+{
+	zCPar_TreeNode* result = THISCALL(Ivk_zCParser_CreateStringLeaf)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

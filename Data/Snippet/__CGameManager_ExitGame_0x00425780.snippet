@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::ExitGame(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall CGameManager::ExitGame()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_ExitGame : CGameManager { int operator()(); };
+BindedHook Ivk_CGameManager_ExitGame{ ZENFOR(0x00424A80, 0x00427560, 0x00425440, 0x00425780), &CGameManager_ExitGame::operator() };
+int CGameManager_ExitGame::operator()()
+{
+	int result = THISCALL(Ivk_CGameManager_ExitGame)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

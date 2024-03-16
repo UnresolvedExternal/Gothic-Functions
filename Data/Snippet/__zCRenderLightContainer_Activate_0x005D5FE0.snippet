@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderLightContainer::Activate(zMAT4 const&): void]]></Title>
+			<Description><![CDATA[public: void __fastcall zCRenderLightContainer::Activate(zMAT4 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderLightContainer_Activate : zCRenderLightContainer { void __fastcall operator()(zMAT4 const&); };
+BindedHook Ivk_zCRenderLightContainer_Activate{ ZENFOR(0x005B0680, 0x005CD7F0, 0x005CF420, 0x005D5FE0), &zCRenderLightContainer_Activate::operator() };
+void __fastcall zCRenderLightContainer_Activate::operator()(zMAT4 const& a0)
+{
+	THISCALL(Ivk_zCRenderLightContainer_Activate)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

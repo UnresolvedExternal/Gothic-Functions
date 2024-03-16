@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCStealContainer::SetOwner(oCNpc*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCStealContainer::SetOwner(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCStealContainer_SetOwner : oCStealContainer { void operator()(oCNpc*); };
+BindedHook Ivk_oCStealContainer_SetOwner{ ZENFOR(0x0066A590, 0x00697F70, 0x006AD2C0, 0x0070ADB0), &oCStealContainer_SetOwner::operator() };
+void oCStealContainer_SetOwner::operator()(oCNpc* a0)
+{
+	THISCALL(Ivk_oCStealContainer_SetOwner)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

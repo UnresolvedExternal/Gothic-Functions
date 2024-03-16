@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTree<zCVob>::CountNodes(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCTree<zCVob>::CountNodes()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTree_zCVob__CountNodes : zCTree<zCVob> { int operator()(); };
+BindedHook Ivk_zCTree_zCVob__CountNodes{ ZENFOR(0x005F9EA0, 0x0061B400, 0x00620F30, 0x006286B0), &zCTree_zCVob__CountNodes::operator() };
+int zCTree_zCVob__CountNodes::operator()()
+{
+	int result = THISCALL(Ivk_zCTree_zCVob__CountNodes)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

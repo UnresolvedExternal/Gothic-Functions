@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertFeature::zCVertFeature()]]></Title>
+			<Description><![CDATA[public: __thiscall zCVertFeature::zCVertFeature()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertFeature_zCVertFeature : zCVertFeature { zCVertFeature* operator()(); };
+BindedHook Ivk_zCVertFeature_zCVertFeature{ ZENFOR(0x00555640, 0x0056DDC0, 0x00568510, 0x0056D760), &zCVertFeature_zCVertFeature::operator() };
+zCVertFeature* zCVertFeature_zCVertFeature::operator()()
+{
+	zCVertFeature* result = THISCALL(Ivk_zCVertFeature_zCVertFeature)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

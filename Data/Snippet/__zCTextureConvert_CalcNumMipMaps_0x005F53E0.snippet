@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureConvert::CalcNumMipMaps(unsigned long, unsigned long): int]]></Title>
+			<Description><![CDATA[public: static int __cdecl zCTextureConvert::CalcNumMipMaps(unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCTextureConvert_CalcNumMipMaps(unsigned long, unsigned long);
+BindedHook Ivk_zCTextureConvert_CalcNumMipMaps{ ZENFOR(0x005CA4F0, 0x005E8F40, 0x005EE630, 0x005F53E0), Hook_zCTextureConvert_CalcNumMipMaps };
+int Hook_zCTextureConvert_CalcNumMipMaps(unsigned long a0, unsigned long a1)
+{
+	int result = Ivk_zCTextureConvert_CalcNumMipMaps(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPluecker::zCPluecker(zVEC3 const&, zVEC3 const&)]]></Title>
+			<Description><![CDATA[public: __thiscall zCPluecker::zCPluecker(zVEC3 const&, zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPluecker_zCPluecker : zCPluecker { zCPluecker* operator()(zVEC3 const&, zVEC3 const&); };
+BindedHook Ivk_zCPluecker_zCPluecker{ ZENFOR(0x005957B0, 0x005B16A0, 0x005B0F90, 0x005B6B00), &zCPluecker_zCPluecker::operator() };
+zCPluecker* zCPluecker_zCPluecker::operator()(zVEC3 const& a0, zVEC3 const& a1)
+{
+	zCPluecker* result = THISCALL(Ivk_zCPluecker_zCPluecker)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

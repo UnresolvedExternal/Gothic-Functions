@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::GetCacheAlphaPolys(): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCRenderer::GetCacheAlphaPolys() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_GetCacheAlphaPolys : zCRenderer { int operator()() const; };
+BindedHook Ivk_zCRenderer_GetCacheAlphaPolys{ ZENFOR(0x00713AC0, 0x0074F7E0, 0x0075EC90, 0x0064A230), &zCRenderer_GetCacheAlphaPolys::operator() };
+int zCRenderer_GetCacheAlphaPolys::operator()() const
+{
+	int result = THISCALL(Ivk_zCRenderer_GetCacheAlphaPolys)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

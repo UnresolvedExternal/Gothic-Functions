@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::CalcVertexNormals(zCMesh::zTCalcVertNormalMode, zCBspTree*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMesh::CalcVertexNormals(zCMesh::zTCalcVertNormalMode, zCBspTree*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_CalcVertexNormals : zCMesh { void operator()(zCMesh::zTCalcVertNormalMode, zCBspTree*); };
+BindedHook Ivk_zCMesh_CalcVertexNormals{ ZENFOR(0x00552590, 0x0056ABE0, 0x00564B90, 0x00569DE0), &zCMesh_CalcVertexNormals::operator() };
+void zCMesh_CalcVertexNormals::operator()(zCMesh::zTCalcVertNormalMode a0, zCBspTree* a1)
+{
+	THISCALL(Ivk_zCMesh_CalcVertexNormals)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

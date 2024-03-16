@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::TObjectRoutine::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: void* __thiscall oCGame::TObjectRoutine::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame__TObjectRoutine_ScalarDeletingDestructor : oCGame::TObjectRoutine { void* operator()(unsigned int); };
+BindedHook Ivk_oCGame__TObjectRoutine_ScalarDeletingDestructor{ ZENFOR(0x00636F30, 0x0065D460, 0x006646B0, 0x006C1040), &oCGame__TObjectRoutine_ScalarDeletingDestructor::operator() };
+void* oCGame__TObjectRoutine_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCGame__TObjectRoutine_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::RenderWaynet(zCCamera*): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCWorld::RenderWaynet(zCCamera*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_RenderWaynet : zCWorld { void operator()(zCCamera*); };
+BindedHook Ivk_zCWorld_RenderWaynet{ ZENFOR(0x005F2D30, 0x00613B10, 0x00618D00, 0x00620450), &zCWorld_RenderWaynet::operator() };
+void zCWorld_RenderWaynet::operator()(zCCamera* a0)
+{
+	THISCALL(Ivk_zCWorld_RenderWaynet)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

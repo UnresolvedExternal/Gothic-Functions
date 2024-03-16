@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[operator delete(void*, void*): void]]></Title>
+			<Description><![CDATA[void __cdecl operator delete(void*, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_operator_delete(void*, void*);
+BindedHook Ivk_operator_delete{ ZENFOR(0x005B4F20, 0x005D2660, 0x005D5470, 0x005DC230), Hook_operator_delete };
+void Hook_operator_delete(void* a0, void* a1)
+{
+	Ivk_operator_delete(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::LibStore(int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSManager::LibStore(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_LibStore : zCCSManager { void operator()(int); };
+BindedHook Ivk_zCCSManager_LibStore{ ZENFOR(0x0041BAC0, 0x0041D990, 0x0041BDC0, 0x0041BFB0), &zCCSManager_LibStore::operator() };
+void zCCSManager_LibStore::operator()(int a0)
+{
+	THISCALL(Ivk_zCCSManager_LibStore)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

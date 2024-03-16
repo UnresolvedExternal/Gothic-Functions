@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ReadWireframeColor(): zCMaterial*]]></Title>
+			<Description><![CDATA[private: zCMaterial* __thiscall zCModelPrototype::ReadWireframeColor()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_ReadWireframeColor : zCModelPrototype { zCMaterial* operator()(); };
+BindedHook Ivk_zCModelPrototype_ReadWireframeColor{ ZENFOR(0x00575070, 0x0058EC00, 0x0058A2E0, 0x0058F840), &zCModelPrototype_ReadWireframeColor::operator() };
+zCMaterial* zCModelPrototype_ReadWireframeColor::operator()()
+{
+	zCMaterial* result = THISCALL(Ivk_zCModelPrototype_ReadWireframeColor)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

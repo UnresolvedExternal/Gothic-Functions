@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobItemSlot::GetUseWithItem(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCMobItemSlot::GetUseWithItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobItemSlot_GetUseWithItem : oCMobItemSlot { int operator()(); };
+BindedHook Ivk_oCMobItemSlot_GetUseWithItem{ ZENFOR(0x00686030, 0x006B5D60, 0x006CA020, 0x007280B0), &oCMobItemSlot_GetUseWithItem::operator() };
+int oCMobItemSlot_GetUseWithItem::operator()()
+{
+	int result = THISCALL(Ivk_oCMobItemSlot_GetUseWithItem)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

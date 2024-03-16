@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCubicPolynomial::Interpolate1(float, zVEC3&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCCubicPolynomial::Interpolate1(float, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct zCCubicPolynomial_Interpolate1 : zCCubicPolynomial { void operator()(float, zVEC3&); };
+BindedHook Ivk_zCCubicPolynomial_Interpolate1{ ZENFOR(0x004C96E0, 0x00000000, 0x004D3D50, 0x004D6310), &zCCubicPolynomial_Interpolate1::operator() };
+void zCCubicPolynomial_Interpolate1::operator()(float a0, zVEC3& a1)
+{
+	THISCALL(Ivk_zCCubicPolynomial_Interpolate1)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

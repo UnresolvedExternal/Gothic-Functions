@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVisualAnimate::~zCVisualAnimate()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCVisualAnimate::~zCVisualAnimate()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVisualAnimate_Destructor : zCVisualAnimate { void operator()(); };
+BindedHook Ivk_zCVisualAnimate_Destructor{ ZENFOR(0x0055CFB0, 0x00575340, 0x005714A0, 0x00576750), &zCVisualAnimate_Destructor::operator() };
+void zCVisualAnimate_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVisualAnimate_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

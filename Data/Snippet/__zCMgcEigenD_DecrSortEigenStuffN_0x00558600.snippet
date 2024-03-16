@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMgcEigenD::DecrSortEigenStuffN(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMgcEigenD::DecrSortEigenStuffN()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMgcEigenD_DecrSortEigenStuffN : zCMgcEigenD { void operator()(); };
+BindedHook Ivk_zCMgcEigenD_DecrSortEigenStuffN{ ZENFOR(0x00543D60, 0x0055B730, 0x005533E0, 0x00558600), &zCMgcEigenD_DecrSortEigenStuffN::operator() };
+void zCMgcEigenD_DecrSortEigenStuffN::operator()()
+{
+	THISCALL(Ivk_zCMgcEigenD_DecrSortEigenStuffN)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

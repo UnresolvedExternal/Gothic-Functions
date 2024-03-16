@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSRole::zCCSRole()]]></Title>
+			<Description><![CDATA[public: __thiscall zCCSRole::zCCSRole()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSRole_zCCSRole : zCCSRole { zCCSRole* operator()(); };
+BindedHook Ivk_zCCSRole_zCCSRole{ ZENFOR(0x0040B620, 0x0040C750, 0x0040B940, 0x0040B940), &zCCSRole_zCCSRole::operator() };
+zCCSRole* zCCSRole_zCCSRole::operator()()
+{
+	zCCSRole* result = THISCALL(Ivk_zCCSRole_zCCSRole)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

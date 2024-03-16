@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFlash::GetVisualName(): zSTRING]]></Title>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zCFlash::GetVisualName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFlash_GetVisualName : zCFlash { zSTRING operator()(); };
+BindedHook Ivk_zCFlash_GetVisualName{ ZENFOR(0x004C0EA0, 0x004D07D0, 0x004C7C70, 0x004CA1E0), &zCFlash_GetVisualName::operator() };
+zSTRING zCFlash_GetVisualName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCFlash_GetVisualName)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

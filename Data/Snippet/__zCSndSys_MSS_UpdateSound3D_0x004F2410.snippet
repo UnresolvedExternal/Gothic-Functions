@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::UpdateSound3D(int const&, zCSoundSystem::zTSound3DParams*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCSndSys_MSS::UpdateSound3D(int const&, zCSoundSystem::zTSound3DParams*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_UpdateSound3D : zCSndSys_MSS { int operator()(int const&, zCSoundSystem::zTSound3DParams*); };
+BindedHook Ivk_zCSndSys_MSS_UpdateSound3D{ ZENFOR(0x004E4700, 0x004F6620, 0x004EF790, 0x004F2410), &zCSndSys_MSS_UpdateSound3D::operator() };
+int zCSndSys_MSS_UpdateSound3D::operator()(int const& a0, zCSoundSystem::zTSound3DParams* a1)
+{
+	int result = THISCALL(Ivk_zCSndSys_MSS_UpdateSound3D)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

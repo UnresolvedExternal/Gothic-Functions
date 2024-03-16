@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicTheme::~zCMusicTheme()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCMusicTheme::~zCMusicTheme()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicTheme_Destructor : zCMusicTheme { void operator()(); };
+BindedHook Ivk_zCMusicTheme_Destructor{ ZENFOR(0x004DA190, 0x004EB390, 0x004E49F0, 0x004E7370), &zCMusicTheme_Destructor::operator() };
+void zCMusicTheme_Destructor::operator()()
+{
+	THISCALL(Ivk_zCMusicTheme_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

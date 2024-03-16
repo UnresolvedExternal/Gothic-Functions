@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitive::GetCenterLocal(zVEC3&): void [const]]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCConvexPrimitive::GetCenterLocal(zVEC3&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConvexPrimitive_GetCenterLocal : zCConvexPrimitive { void operator()(zVEC3&) const; };
+BindedHook Ivk_zCConvexPrimitive_GetCenterLocal{ ZENFOR(0x00540C80, 0x005585B0, 0x005501B0, 0x005553D0), &zCConvexPrimitive_GetCenterLocal::operator() };
+void zCConvexPrimitive_GetCenterLocal::operator()(zVEC3& a0) const
+{
+	THISCALL(Ivk_zCConvexPrimitive_GetCenterLocal)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventMessage::MD_GetVobRefName(): zSTRING]]></Title>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zCEventMessage::MD_GetVobRefName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventMessage_MD_GetVobRefName : zCEventMessage { zSTRING operator()(); };
+BindedHook Ivk_zCEventMessage_MD_GetVobRefName{ ZENFOR(0x00401EE0, 0x00402300, 0x00402030, 0x00402030), &zCEventMessage_MD_GetVobRefName::operator() };
+zSTRING zCEventMessage_MD_GetVobRefName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCEventMessage_MD_GetVobRefName)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

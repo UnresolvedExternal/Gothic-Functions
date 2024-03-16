@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemReactModule::GetNpcInstance(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCItemReactModule::GetNpcInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemReactModule_GetNpcInstance : oCItemReactModule { int operator()(); };
+BindedHook Ivk_oCItemReactModule_GetNpcInstance{ ZENFOR(0x00673D00, 0x006A1AD0, 0x006B6C90, 0x00714D20), &oCItemReactModule_GetNpcInstance::operator() };
+int oCItemReactModule_GetNpcInstance::operator()()
+{
+	int result = THISCALL(Ivk_oCItemReactModule_GetNpcInstance)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

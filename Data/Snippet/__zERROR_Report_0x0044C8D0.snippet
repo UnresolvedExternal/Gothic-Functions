@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zERROR::Report(zERROR_TYPE, int, zSTRING const&, signed char, unsigned int, int, char*, char*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zERROR::Report(zERROR_TYPE, int, zSTRING const&, signed char, unsigned int, int, char*, char*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zERROR_Report : zERROR { int operator()(zERROR_TYPE, int, zSTRING const&, signed char, unsigned int, int, char*, char*); };
+BindedHook Ivk_zERROR_Report{ ZENFOR(0x00448250, 0x0044E2B0, 0x0044C180, 0x0044C8D0), &zERROR_Report::operator() };
+int zERROR_Report::operator()(zERROR_TYPE a0, int a1, zSTRING const& a2, signed char a3, unsigned int a4, int a5, char* a6, char* a7)
+{
+	int result = THISCALL(Ivk_zERROR_Report)(a0, a1, a2, a3, a4, a5, a6, a7);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

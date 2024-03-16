@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIDrop::SetStartPosition(zVEC3&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCAIDrop::SetStartPosition(zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIDrop_SetStartPosition : oCAIDrop { void operator()(zVEC3&); };
+BindedHook Ivk_oCAIDrop_SetStartPosition{ ZENFOR(0x0061A130, 0x0063D710, 0x00645D10, 0x006A2590), &oCAIDrop_SetStartPosition::operator() };
+void oCAIDrop_SetStartPosition::operator()(zVEC3& a0)
+{
+	THISCALL(Ivk_oCAIDrop_SetStartPosition)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

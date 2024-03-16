@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::LoadVisualVirtual(zSTRING const&): zCVisual* [const]]]></Title>
+			<Description><![CDATA[protected: virtual zCVisual* __thiscall zCParticleFX::LoadVisualVirtual(zSTRING const&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX_LoadVisualVirtual : zCParticleFX { zCVisual* operator()(zSTRING const&) const; };
+BindedHook Ivk_zCParticleFX_LoadVisualVirtual{ ZENFOR(0x0058DCE0, 0x005A9310, 0x005A8540, 0x005ADC00), &zCParticleFX_LoadVisualVirtual::operator() };
+zCVisual* zCParticleFX_LoadVisualVirtual::operator()(zSTRING const& a0) const
+{
+	zCVisual* result = THISCALL(Ivk_zCParticleFX_LoadVisualVirtual)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

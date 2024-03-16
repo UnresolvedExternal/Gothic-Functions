@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman_Stand::~oCAIHuman_Stand()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall oCAIHuman_Stand::~oCAIHuman_Stand()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_Stand_Destructor : oCAIHuman_Stand { void operator()(); };
+BindedHook Ivk_oCAIHuman_Stand_Destructor{ ZENFOR(0x00616A30, 0x00639990, 0x00641A70, 0x0069E240), &oCAIHuman_Stand_Destructor::operator() };
+void oCAIHuman_Stand_Destructor::operator()()
+{
+	THISCALL(Ivk_oCAIHuman_Stand_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

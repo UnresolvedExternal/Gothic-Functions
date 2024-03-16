@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::ActivateDialogCam(float): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::ActivateDialogCam(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_ActivateDialogCam : oCNpc { int operator()(float); };
+BindedHook Ivk_oCNpc_ActivateDialogCam{ ZENFOR(0x006B2430, 0x006E67C0, 0x006F9300, 0x00758130), &oCNpc_ActivateDialogCam::operator() };
+int oCNpc_ActivateDialogCam::operator()(float a0)
+{
+	int result = THISCALL(Ivk_oCNpc_ActivateDialogCam)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_StringTable::Save(zSTRING&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPar_StringTable::Save(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_StringTable_Save : zCPar_StringTable { void operator()(zSTRING&); };
+BindedHook Ivk_zCPar_StringTable_Save{ ZENFOR(0x006F7830, 0x00731960, 0x00741740, 0x007A1180), &zCPar_StringTable_Save::operator() };
+void zCPar_StringTable_Save::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_zCPar_StringTable_Save)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

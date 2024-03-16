@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInfo::DoCheck(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCInfo::DoCheck()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInfo_DoCheck : oCInfo { int operator()(); };
+BindedHook Ivk_oCInfo_DoCheck{ ZENFOR(0x00665800, 0x00692B00, 0x006A5C60, 0x007036F0), &oCInfo_DoCheck::operator() };
+int oCInfo_DoCheck::operator()()
+{
+	int result = THISCALL(Ivk_oCInfo_DoCheck)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

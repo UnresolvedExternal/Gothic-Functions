@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::GetNumChannelFrames(int): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCSndFX_MSS::GetNumChannelFrames(int) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_GetNumChannelFrames : zCSndFX_MSS { int operator()(int) const; };
+BindedHook Ivk_zCSndFX_MSS_GetNumChannelFrames{ ZENFOR(0x004E0B00, 0x004F24C0, 0x004EB430, 0x004EE0B0), &zCSndFX_MSS_GetNumChannelFrames::operator() };
+int zCSndFX_MSS_GetNumChannelFrames::operator()(int a0) const
+{
+	int result = THISCALL(Ivk_zCSndFX_MSS_GetNumChannelFrames)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

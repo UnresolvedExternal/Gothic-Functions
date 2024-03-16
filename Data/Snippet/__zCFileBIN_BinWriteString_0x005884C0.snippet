@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFileBIN::BinWriteString(zSTRING const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCFileBIN::BinWriteString(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFileBIN_BinWriteString : zCFileBIN { void operator()(zSTRING const&); };
+BindedHook Ivk_zCFileBIN_BinWriteString{ ZENFOR(0x0056DCC0, 0x00587000, 0x00582F60, 0x005884C0), &zCFileBIN_BinWriteString::operator() };
+void zCFileBIN_BinWriteString::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCFileBIN_BinWriteString)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

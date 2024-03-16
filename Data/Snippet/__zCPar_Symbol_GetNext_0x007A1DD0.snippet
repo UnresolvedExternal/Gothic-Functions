@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_Symbol::GetNext(): zCPar_Symbol*]]></Title>
+			<Description><![CDATA[public: zCPar_Symbol* __thiscall zCPar_Symbol::GetNext()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_Symbol_GetNext : zCPar_Symbol { zCPar_Symbol* operator()(); };
+BindedHook Ivk_zCPar_Symbol_GetNext{ ZENFOR(0x006F84D0, 0x00732740, 0x00742390, 0x007A1DD0), &zCPar_Symbol_GetNext::operator() };
+zCPar_Symbol* zCPar_Symbol_GetNext::operator()()
+{
+	zCPar_Symbol* result = THISCALL(Ivk_zCPar_Symbol_GetNext)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

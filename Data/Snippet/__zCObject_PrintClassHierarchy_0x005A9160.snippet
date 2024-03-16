@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCObject::PrintClassHierarchy(int, zCClassDef*, int, int): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCObject::PrintClassHierarchy(int, zCClassDef*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCObject_PrintClassHierarchy(int, zCClassDef*, int, int);
+BindedHook Ivk_zCObject_PrintClassHierarchy{ ZENFOR(0x005896F0, 0x005A48F0, 0x005A3C00, 0x005A9160), Hook_zCObject_PrintClassHierarchy };
+void Hook_zCObject_PrintClassHierarchy(int a0, zCClassDef* a1, int a2, int a3)
+{
+	Ivk_zCObject_PrintClassHierarchy(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

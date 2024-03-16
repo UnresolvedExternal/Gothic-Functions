@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialogChoice::HighlightSelected(): void]]></Title>
+			<Description><![CDATA[protected: void __fastcall zCViewDialogChoice::HighlightSelected()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialogChoice_HighlightSelected : zCViewDialogChoice { void __fastcall operator()(); };
+BindedHook Ivk_zCViewDialogChoice_HighlightSelected{ ZENFOR(0x007594A0, 0x0079BA50, 0x007A6380, 0x0068F620), &zCViewDialogChoice_HighlightSelected::operator() };
+void __fastcall zCViewDialogChoice_HighlightSelected::operator()()
+{
+	THISCALL(Ivk_zCViewDialogChoice_HighlightSelected)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobLadder::Interact(oCNpc*, int, int, int, int, int): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall oCMobLadder::Interact(oCNpc*, int, int, int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobLadder_Interact : oCMobLadder { void operator()(oCNpc*, int, int, int, int, int); };
+BindedHook Ivk_oCMobLadder_Interact{ ZENFOR(0x00685B20, 0x006B5690, 0x006C99D0, 0x00727A60), &oCMobLadder_Interact::operator() };
+void oCMobLadder_Interact::operator()(oCNpc* a0, int a1, int a2, int a3, int a4, int a5)
+{
+	THISCALL(Ivk_oCMobLadder_Interact)(a0, a1, a2, a3, a4, a5);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

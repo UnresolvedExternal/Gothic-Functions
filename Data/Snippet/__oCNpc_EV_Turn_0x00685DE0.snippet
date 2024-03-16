@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EV_Turn(oCMsgMovement*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::EV_Turn(oCMsgMovement*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_EV_Turn : oCNpc { int operator()(oCMsgMovement*); };
+BindedHook Ivk_oCNpc_EV_Turn{ ZENFOR(0x0074FE90, 0x00791E40, 0x0079C8E0, 0x00685DE0), &oCNpc_EV_Turn::operator() };
+int oCNpc_EV_Turn::operator()(oCMsgMovement* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_EV_Turn)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

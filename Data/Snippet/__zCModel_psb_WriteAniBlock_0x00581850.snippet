@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::psb_WriteAniBlock(zCBuffer&, int, int): void [const]]]></Title>
+			<Description><![CDATA[private: void __thiscall zCModel::psb_WriteAniBlock(zCBuffer&, int, int) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_psb_WriteAniBlock : zCModel { void operator()(zCBuffer&, int, int) const; };
+BindedHook Ivk_zCModel_psb_WriteAniBlock{ ZENFOR(0x00567360, 0x00580010, 0x0057C2F0, 0x00581850), &zCModel_psb_WriteAniBlock::operator() };
+void zCModel_psb_WriteAniBlock::operator()(zCBuffer& a0, int a1, int a2) const
+{
+	THISCALL(Ivk_zCModel_psb_WriteAniBlock)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

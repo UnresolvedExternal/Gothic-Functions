@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgUseItem::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall oCMsgUseItem::_GetClassDef() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgUseItem__GetClassDef : oCMsgUseItem { zCClassDef* operator()() const; };
+BindedHook Ivk_oCMsgUseItem__GetClassDef{ ZENFOR(0x006BCF70, 0x006F2240, 0x00704C30, 0x00764170), &oCMsgUseItem__GetClassDef::operator() };
+zCClassDef* oCMsgUseItem__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_oCMsgUseItem__GetClassDef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcMessage::IsJob(): int]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall oCNpcMessage::IsJob()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcMessage_IsJob : oCNpcMessage { int operator()(); };
+BindedHook Ivk_oCNpcMessage_IsJob{ ZENFOR(0x006BBF00, 0x006F1100, 0x00703C40, 0x00763180), &oCNpcMessage_IsJob::operator() };
+int oCNpcMessage_IsJob::operator()()
+{
+	int result = THISCALL(Ivk_oCNpcMessage_IsJob)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

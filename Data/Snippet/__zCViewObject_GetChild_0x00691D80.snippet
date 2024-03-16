@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewObject::GetChild(unsigned long): zCViewObject const*]]></Title>
+			<Description><![CDATA[public: zCViewObject const* __fastcall zCViewObject::GetChild(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewObject_GetChild : zCViewObject { zCViewObject const* __fastcall operator()(unsigned long); };
+BindedHook Ivk_zCViewObject_GetChild{ ZENFOR(0x00755230, 0x00797670, 0x007A1FD0, 0x00691D80), &zCViewObject_GetChild::operator() };
+zCViewObject const* __fastcall zCViewObject_GetChild::operator()(unsigned long a0)
+{
+	zCViewObject const* result = THISCALL(Ivk_zCViewObject_GetChild)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

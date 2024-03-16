@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCBarrier::AddThunder(int, int, float, zTThunderSector): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall oCBarrier::AddThunder(int, int, float, zTThunderSector)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCBarrier_AddThunder : oCBarrier { int operator()(int, int, float, zTThunderSector); };
+BindedHook Ivk_oCBarrier_AddThunder{ ZENFOR(0x00631620, 0x00656FE0, 0x0065E450, 0x006BADE0), &oCBarrier_AddThunder::operator() };
+int oCBarrier_AddThunder::operator()(int a0, int a1, float a2, zTThunderSector a3)
+{
+	int result = THISCALL(Ivk_oCBarrier_AddThunder)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zERROR::zERROR()]]></Title>
+			<Description><![CDATA[public: __thiscall zERROR::zERROR()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zERROR_zERROR : zERROR { zERROR* operator()(); };
+BindedHook Ivk_zERROR_zERROR{ ZENFOR(0x004476B0, 0x0044D6D0, 0x0044B5F0, 0x0044BD40), &zERROR_zERROR::operator() };
+zERROR* zERROR_zERROR::operator()()
+{
+	zERROR* result = THISCALL(Ivk_zERROR_zERROR)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

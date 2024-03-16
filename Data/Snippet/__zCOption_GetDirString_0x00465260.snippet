@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::GetDirString(zTOptionPaths): zSTRING&]]></Title>
+			<Description><![CDATA[public: zSTRING& __thiscall zCOption::GetDirString(zTOptionPaths)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_GetDirString : zCOption { zSTRING& operator()(zTOptionPaths); };
+BindedHook Ivk_zCOption_GetDirString{ ZENFOR(0x0045FC00, 0x00467400, 0x00464630, 0x00465260), &zCOption_GetDirString::operator() };
+zSTRING& zCOption_GetDirString::operator()(zTOptionPaths a0)
+{
+	zSTRING& result = THISCALL(Ivk_zCOption_GetDirString)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

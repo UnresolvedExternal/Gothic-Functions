@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPFXControler::GetPFX(): zCParticleFX*]]></Title>
+			<Description><![CDATA[protected: zCParticleFX* __thiscall zCPFXControler::GetPFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPFXControler_GetPFX : zCPFXControler { zCParticleFX* operator()(); };
+BindedHook Ivk_zCPFXControler_GetPFX{ ZENFOR(0x005E7860, 0x00607BF0, 0x0060D180, 0x00614840), &zCPFXControler_GetPFX::operator() };
+zCParticleFX* zCPFXControler_GetPFX::operator()()
+{
+	zCParticleFX* result = THISCALL(Ivk_zCPFXControler_GetPFX)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

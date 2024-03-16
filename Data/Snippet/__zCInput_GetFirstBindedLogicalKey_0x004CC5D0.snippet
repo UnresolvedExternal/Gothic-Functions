@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::GetFirstBindedLogicalKey(unsigned short): unsigned short]]></Title>
+			<Description><![CDATA[public: unsigned short __thiscall zCInput::GetFirstBindedLogicalKey(unsigned short)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_GetFirstBindedLogicalKey : zCInput { unsigned short operator()(unsigned short); };
+BindedHook Ivk_zCInput_GetFirstBindedLogicalKey{ ZENFOR(0x004C3270, 0x004D2C30, 0x004CA060, 0x004CC5D0), &zCInput_GetFirstBindedLogicalKey::operator() };
+unsigned short zCInput_GetFirstBindedLogicalKey::operator()(unsigned short a0)
+{
+	unsigned short result = THISCALL(Ivk_zCInput_GetFirstBindedLogicalKey)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

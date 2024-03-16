@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::SetDefaultPlanarMapping(float, float): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMesh::SetDefaultPlanarMapping(float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_SetDefaultPlanarMapping : zCMesh { void operator()(float, float); };
+BindedHook Ivk_zCMesh_SetDefaultPlanarMapping{ ZENFOR(0x00552D10, 0x0056B340, 0x00565330, 0x0056A580), &zCMesh_SetDefaultPlanarMapping::operator() };
+void zCMesh_SetDefaultPlanarMapping::operator()(float a0, float a1)
+{
+	THISCALL(Ivk_zCMesh_SetDefaultPlanarMapping)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

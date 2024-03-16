@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAccount::Sum(void const*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCAccount::Sum(void const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCAccount_Sum(void const*);
+BindedHook Ivk_zCAccount_Sum{ ZENFOR(0x00759DE0, 0x0079C3F0, 0x007A6CF0, 0x0065D860), Hook_zCAccount_Sum };
+void Hook_zCAccount_Sum(void const* a0)
+{
+	Ivk_zCAccount_Sum(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

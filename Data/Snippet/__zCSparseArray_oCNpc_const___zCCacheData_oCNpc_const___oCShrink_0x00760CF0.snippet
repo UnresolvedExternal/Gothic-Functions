@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCShrinkHelper>>::CopyIndex(void*, void const*): void [const]]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCShrinkHelper>>::CopyIndex(void*, void const*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___CopyIndex : zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCShrinkHelper>> { void operator()(void*, void const*) const; };
+BindedHook Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___CopyIndex{ ZENFOR(0x006BA100, 0x006EECF0, 0x00701AB0, 0x00760CF0), &zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___CopyIndex::operator() };
+void zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___CopyIndex::operator()(void* a0, void const* a1) const
+{
+	THISCALL(Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___CopyIndex)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

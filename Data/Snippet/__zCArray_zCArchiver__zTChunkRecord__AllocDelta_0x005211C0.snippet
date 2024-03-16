@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCArchiver::zTChunkRecord>::AllocDelta(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zCArchiver::zTChunkRecord>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCArchiver__zTChunkRecord__AllocDelta : zCArray<zCArchiver::zTChunkRecord> { void operator()(int); };
+BindedHook Ivk_zCArray_zCArchiver__zTChunkRecord__AllocDelta{ ZENFOR(0x00510D90, 0x00526010, 0x0051E3F0, 0x005211C0), &zCArray_zCArchiver__zTChunkRecord__AllocDelta::operator() };
+void zCArray_zCArchiver__zTChunkRecord__AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zCArchiver__zTChunkRecord__AllocDelta)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

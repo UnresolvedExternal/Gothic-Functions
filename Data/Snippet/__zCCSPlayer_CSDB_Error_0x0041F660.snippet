@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPlayer::CSDB_Error(zCCSBlockBase*, zSTRING&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSPlayer::CSDB_Error(zCCSBlockBase*, zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPlayer_CSDB_Error : zCCSPlayer { void operator()(zCCSBlockBase*, zSTRING&); };
+BindedHook Ivk_zCCSPlayer_CSDB_Error{ ZENFOR(0x0041EF30, 0x00421110, 0x0041F330, 0x0041F660), &zCCSPlayer_CSDB_Error::operator() };
+void zCCSPlayer_CSDB_Error::operator()(zCCSBlockBase* a0, zSTRING& a1)
+{
+	THISCALL(Ivk_zCCSPlayer_CSDB_Error)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

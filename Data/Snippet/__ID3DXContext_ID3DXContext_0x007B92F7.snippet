@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ID3DXContext::ID3DXContext()]]></Title>
+			<Description><![CDATA[public: __thiscall ID3DXContext::ID3DXContext()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct ID3DXContext_ID3DXContext : ID3DXContext { ID3DXContext* operator()(); };
+BindedHook Ivk_ID3DXContext_ID3DXContext{ ZENFOR(0x0075FC03, 0x00000000, 0x007ACE31, 0x007B92F7), &ID3DXContext_ID3DXContext::operator() };
+ID3DXContext* ID3DXContext_ID3DXContext::operator()()
+{
+	ID3DXContext* result = THISCALL(Ivk_ID3DXContext_ID3DXContext)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

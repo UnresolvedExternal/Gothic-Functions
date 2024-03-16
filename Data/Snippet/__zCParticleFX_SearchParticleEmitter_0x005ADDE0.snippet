@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::SearchParticleEmitter(zSTRING const&): zCParticleEmitter*]]></Title>
+			<Description><![CDATA[public: static zCParticleEmitter* __cdecl zCParticleFX::SearchParticleEmitter(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCParticleEmitter* Hook_zCParticleFX_SearchParticleEmitter(zSTRING const&);
+BindedHook Ivk_zCParticleFX_SearchParticleEmitter{ ZENFOR(0x0058DEC0, 0x005A9520, 0x005A8720, 0x005ADDE0), Hook_zCParticleFX_SearchParticleEmitter };
+zCParticleEmitter* Hook_zCParticleFX_SearchParticleEmitter(zSTRING const& a0)
+{
+	zCParticleEmitter* result = Ivk_zCParticleFX_SearchParticleEmitter(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

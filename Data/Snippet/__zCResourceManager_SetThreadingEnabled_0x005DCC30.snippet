@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResourceManager::SetThreadingEnabled(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCResourceManager::SetThreadingEnabled(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResourceManager_SetThreadingEnabled : zCResourceManager { void operator()(int); };
+BindedHook Ivk_zCResourceManager_SetThreadingEnabled{ ZENFOR(0x005B58A0, 0x005D3000, 0x005D5E70, 0x005DCC30), &zCResourceManager_SetThreadingEnabled::operator() };
+void zCResourceManager_SetThreadingEnabled::operator()(int a0)
+{
+	THISCALL(Ivk_zCResourceManager_SetThreadingEnabled)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

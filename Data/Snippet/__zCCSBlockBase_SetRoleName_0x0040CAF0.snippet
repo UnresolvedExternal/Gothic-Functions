@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlockBase::SetRoleName(zSTRING&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSBlockBase::SetRoleName(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlockBase_SetRoleName : zCCSBlockBase { void operator()(zSTRING&); };
+BindedHook Ivk_zCCSBlockBase_SetRoleName{ ZENFOR(0x0040C700, 0x0040D950, 0x0040CAF0, 0x0040CAF0), &zCCSBlockBase_SetRoleName::operator() };
+void zCCSBlockBase_SetRoleName::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_zCCSBlockBase_SetRoleName)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

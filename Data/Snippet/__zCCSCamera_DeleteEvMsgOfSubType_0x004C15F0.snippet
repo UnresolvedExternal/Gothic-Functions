@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::DeleteEvMsgOfSubType(int): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCCSCamera::DeleteEvMsgOfSubType(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_DeleteEvMsgOfSubType : zCCSCamera { void operator()(int); };
+BindedHook Ivk_zCCSCamera_DeleteEvMsgOfSubType{ ZENFOR(0x004B82F0, 0x004C7600, 0x004BF080, 0x004C15F0), &zCCSCamera_DeleteEvMsgOfSubType::operator() };
+void zCCSCamera_DeleteEvMsgOfSubType::operator()(int a0)
+{
+	THISCALL(Ivk_zCCSCamera_DeleteEvMsgOfSubType)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::IsBBox3DLocal(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCQuadMark::IsBBox3DLocal()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_IsBBox3DLocal : zCQuadMark { int operator()(); };
+BindedHook Ivk_zCQuadMark_IsBBox3DLocal{ ZENFOR(0x005AB970, 0x005C85F0, 0x005C9F00, 0x005D0AA0), &zCQuadMark_IsBBox3DLocal::operator() };
+int zCQuadMark_IsBBox3DLocal::operator()()
+{
+	int result = THISCALL(Ivk_zCQuadMark_IsBBox3DLocal)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

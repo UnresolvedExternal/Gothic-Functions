@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[vidSetPalette(unsigned char*, int): void]]></Title>
+			<Description><![CDATA[void __cdecl vidSetPalette(unsigned char*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_vidSetPalette(unsigned char*, int);
+BindedHook Ivk_vidSetPalette{ ZENFOR(0x004EF2C0, 0x00501B40, 0x004FAB80, 0x004FD800), Hook_vidSetPalette };
+void Hook_vidSetPalette(unsigned char* a0, int a1)
+{
+	Ivk_vidSetPalette(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

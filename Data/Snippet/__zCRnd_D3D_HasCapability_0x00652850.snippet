@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::HasCapability(zTRnd_Capability): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCRnd_D3D::HasCapability(zTRnd_Capability) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_HasCapability : zCRnd_D3D { int operator()(zTRnd_Capability) const; };
+BindedHook Ivk_zCRnd_D3D_HasCapability{ ZENFOR(0x0071A100, 0x007562F0, 0x00765EF0, 0x00652850), &zCRnd_D3D_HasCapability::operator() };
+int zCRnd_D3D_HasCapability::operator()(zTRnd_Capability a0) const
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_HasCapability)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

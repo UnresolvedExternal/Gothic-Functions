@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::GetTransitionNames(int, int, zSTRING&, zSTRING&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMobInter::GetTransitionNames(int, int, zSTRING&, zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_GetTransitionNames : oCMobInter { void operator()(int, int, zSTRING&, zSTRING&); };
+BindedHook Ivk_oCMobInter_GetTransitionNames{ ZENFOR(0x0067DED0, 0x006ACDE0, 0x006C1550, 0x0071F5E0), &oCMobInter_GetTransitionNames::operator() };
+void oCMobInter_GetTransitionNames::operator()(int a0, int a1, zSTRING& a2, zSTRING& a3)
+{
+	THISCALL(Ivk_oCMobInter_GetTransitionNames)(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

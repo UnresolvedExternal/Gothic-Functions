@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBinTree3DS::BuildMesh3DS(int, int, zCMesh3DS*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCBinTree3DS::BuildMesh3DS(int, int, zCMesh3DS*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBinTree3DS_BuildMesh3DS : zCBinTree3DS { void operator()(int, int, zCMesh3DS*); };
+BindedHook Ivk_zCBinTree3DS_BuildMesh3DS{ ZENFOR(0x00547580, 0x0055F4B0, 0x005590D0, 0x0055E2F0), &zCBinTree3DS_BuildMesh3DS::operator() };
+void zCBinTree3DS_BuildMesh3DS::operator()(int a0, int a1, zCMesh3DS* a2)
+{
+	THISCALL(Ivk_zCBinTree3DS_BuildMesh3DS)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

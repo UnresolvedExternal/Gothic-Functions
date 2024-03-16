@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer_D3D::~zCVertexBuffer_D3D()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCVertexBuffer_D3D::~zCVertexBuffer_D3D()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_D3D_Destructor : zCVertexBuffer_D3D { void operator()(); };
+BindedHook Ivk_zCVertexBuffer_D3D_Destructor{ ZENFOR(0x0071E4E0, 0x0075AC10, 0x0076A290, 0x00656DC0), &zCVertexBuffer_D3D_Destructor::operator() };
+void zCVertexBuffer_D3D_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVertexBuffer_D3D_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

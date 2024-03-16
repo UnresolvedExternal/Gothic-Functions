@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWay::GetDoor(): oCMobDoor*]]></Title>
+			<Description><![CDATA[public: oCMobDoor* __thiscall oCWay::GetDoor()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWay_GetDoor : oCWay { oCMobDoor* operator()(); };
+BindedHook Ivk_oCWay_GetDoor{ ZENFOR(0x006D5980, 0x0070D080, 0x0071EE70, 0x0077E8B0), &oCWay_GetDoor::operator() };
+oCMobDoor* oCWay_GetDoor::operator()()
+{
+	oCMobDoor* result = THISCALL(Ivk_oCWay_GetDoor)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

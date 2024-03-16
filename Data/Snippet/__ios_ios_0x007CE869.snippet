@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ios::ios(streambuf*)]]></Title>
+			<Description><![CDATA[public: __thiscall ios::ios(streambuf*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ios_ios : ios { ios* operator()(streambuf*); };
+BindedHook Ivk_ios_ios{ ZENFOR(0x00774EBF, 0x007B8C7F, 0x007C23A9, 0x007CE869), &ios_ios::operator() };
+ios* ios_ios::operator()(streambuf* a0)
+{
+	ios* result = THISCALL(Ivk_ios_ios)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

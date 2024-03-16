@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMission::Offer(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCMission::Offer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMission_Offer : oCMission { void operator()(); };
+BindedHook Ivk_oCMission_Offer{ ZENFOR(0x00675B60, 0x006A3C20, 0x006B8B10, 0x00716BA0), &oCMission_Offer::operator() };
+void oCMission_Offer::operator()()
+{
+	THISCALL(Ivk_oCMission_Offer)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

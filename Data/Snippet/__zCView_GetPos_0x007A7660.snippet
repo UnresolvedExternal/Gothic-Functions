@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::GetPos(int&, int&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCView::GetPos(int&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_GetPos : zCView { void operator()(int&, int&); };
+BindedHook Ivk_zCView_GetPos{ ZENFOR(0x006FDAC0, 0x00737EB0, 0x00747B60, 0x007A7660), &zCView_GetPos::operator() };
+void zCView_GetPos::operator()(int& a0, int& a1)
+{
+	THISCALL(Ivk_zCView_GetPos)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

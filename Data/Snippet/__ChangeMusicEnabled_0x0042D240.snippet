@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ChangeMusicEnabled(zCOptionEntry&): int]]></Title>
+			<Description><![CDATA[int __cdecl ChangeMusicEnabled(zCOptionEntry&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_ChangeMusicEnabled(zCOptionEntry&);
+BindedHook Ivk_ChangeMusicEnabled{ ZENFOR(0x0042AE50, 0x0042DD60, 0x0042CF20, 0x0042D240), Hook_ChangeMusicEnabled };
+int Hook_ChangeMusicEnabled(zCOptionEntry& a0)
+{
+	int result = Ivk_ChangeMusicEnabled(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

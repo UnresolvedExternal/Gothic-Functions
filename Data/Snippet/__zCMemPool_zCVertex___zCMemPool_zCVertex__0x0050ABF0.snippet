@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPool<zCVertex>::~zCMemPool<zCVertex>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCMemPool<zCVertex>::~zCMemPool<zCVertex>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPool_zCVertex__Destructor : zCMemPool<zCVertex> { void operator()(); };
+BindedHook Ivk_zCMemPool_zCVertex__Destructor{ ZENFOR(0x004FB370, 0x0050E410, 0x00507E40, 0x0050ABF0), &zCMemPool_zCVertex__Destructor::operator() };
+void zCMemPool_zCVertex__Destructor::operator()()
+{
+	THISCALL(Ivk_zCMemPool_zCVertex__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

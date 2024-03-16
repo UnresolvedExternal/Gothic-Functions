@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCPortalRoom::IsPortalMyRoom(oCNpc*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCPortalRoom::IsPortalMyRoom(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCPortalRoom_IsPortalMyRoom : oCPortalRoom { int operator()(oCNpc*); };
+BindedHook Ivk_oCPortalRoom_IsPortalMyRoom{ ZENFOR(0x006CA9C0, 0x00700BF0, 0x00712DB0, 0x00772340), &oCPortalRoom_IsPortalMyRoom::operator() };
+int oCPortalRoom_IsPortalMyRoom::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCPortalRoom_IsPortalMyRoom)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

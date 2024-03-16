@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zTPMTriangleEdges>::zCArray<zTPMTriangleEdges>(zCArray<zTPMTriangleEdges>const&)]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zTPMTriangleEdges>::zCArray<zTPMTriangleEdges>(zCArray<zTPMTriangleEdges>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zTPMTriangleEdges__zCArray_zTPMTriangleEdges_ : zCArray<zTPMTriangleEdges> { zCArray<zTPMTriangleEdges>* operator()(zCArray<zTPMTriangleEdges>const&); };
+BindedHook Ivk_zCArray_zTPMTriangleEdges__zCArray_zTPMTriangleEdges_{ ZENFOR(0x005A3800, 0x005BFF30, 0x005BFBF0, 0x005C5760), &zCArray_zTPMTriangleEdges__zCArray_zTPMTriangleEdges_::operator() };
+zCArray<zTPMTriangleEdges>* zCArray_zTPMTriangleEdges__zCArray_zTPMTriangleEdges_::operator()(zCArray<zTPMTriangleEdges>const& a0)
+{
+	zCArray<zTPMTriangleEdges>* result = THISCALL(Ivk_zCArray_zTPMTriangleEdges__zCArray_zTPMTriangleEdges_)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

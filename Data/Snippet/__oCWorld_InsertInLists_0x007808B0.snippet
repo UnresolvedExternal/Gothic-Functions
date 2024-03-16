@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWorld::InsertInLists(zCVob*): void]]></Title>
+			<Description><![CDATA[protected: void __fastcall oCWorld::InsertInLists(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWorld_InsertInLists : oCWorld { void __fastcall operator()(zCVob*); };
+BindedHook Ivk_oCWorld_InsertInLists{ ZENFOR(0x006D7670, 0x0070F1C0, 0x00720E70, 0x007808B0), &oCWorld_InsertInLists::operator() };
+void __fastcall oCWorld_InsertInLists::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_oCWorld_InsertInLists)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

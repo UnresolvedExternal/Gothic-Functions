@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCModelAni*>::GetNumInList(): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zCArraySort<zCModelAni*>::GetNumInList() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCModelAni___GetNumInList : zCArraySort<zCModelAni*> { int operator()() const; };
+BindedHook Ivk_zCArraySort_zCModelAni___GetNumInList{ ZENFOR(0x00582670, 0x0059D180, 0x0059CB90, 0x005A20F0), &zCArraySort_zCModelAni___GetNumInList::operator() };
+int zCArraySort_zCModelAni___GetNumInList::operator()() const
+{
+	int result = THISCALL(Ivk_zCArraySort_zCModelAni___GetNumInList)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

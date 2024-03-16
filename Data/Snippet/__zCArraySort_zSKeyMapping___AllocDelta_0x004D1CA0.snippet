@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zSKeyMapping*>::AllocDelta(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zSKeyMapping*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zSKeyMapping___AllocDelta : zCArraySort<zSKeyMapping*> { void operator()(int); };
+BindedHook Ivk_zCArraySort_zSKeyMapping___AllocDelta{ ZENFOR(0x004C6F90, 0x004D6A60, 0x004CF6E0, 0x004D1CA0), &zCArraySort_zSKeyMapping___AllocDelta::operator() };
+void zCArraySort_zSKeyMapping___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArraySort_zSKeyMapping___AllocDelta)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

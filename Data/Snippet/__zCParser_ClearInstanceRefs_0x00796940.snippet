@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::ClearInstanceRefs(void*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCParser::ClearInstanceRefs(void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_ClearInstanceRefs : zCParser { int operator()(void*); };
+BindedHook Ivk_zCParser_ClearInstanceRefs{ ZENFOR(0x006ED2C0, 0x00726840, 0x00736F00, 0x00796940), &zCParser_ClearInstanceRefs::operator() };
+int zCParser_ClearInstanceRefs::operator()(void* a0)
+{
+	int result = THISCALL(Ivk_zCParser_ClearInstanceRefs)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

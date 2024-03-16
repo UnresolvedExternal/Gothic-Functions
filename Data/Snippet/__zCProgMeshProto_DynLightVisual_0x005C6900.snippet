@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::DynLightVisual(zCArray<zCVobLight*>const&, zMAT4*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCProgMeshProto::DynLightVisual(zCArray<zCVobLight*>const&, zMAT4*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_DynLightVisual : zCProgMeshProto { void operator()(zCArray<zCVobLight*>const&, zMAT4*); };
+BindedHook Ivk_zCProgMeshProto_DynLightVisual{ ZENFOR(0x005A4B00, 0x005C12A0, 0x005C0D90, 0x005C6900), &zCProgMeshProto_DynLightVisual::operator() };
+void zCProgMeshProto_DynLightVisual::operator()(zCArray<zCVobLight*>const& a0, zMAT4* a1)
+{
+	THISCALL(Ivk_zCProgMeshProto_DynLightVisual)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

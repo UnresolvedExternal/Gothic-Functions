@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::GetFogColor(): zCOLOR [const]]]></Title>
+			<Description><![CDATA[public: virtual zCOLOR __thiscall zCRnd_D3D::GetFogColor() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_GetFogColor : zCRnd_D3D { zCOLOR operator()() const; };
+BindedHook Ivk_zCRnd_D3D_GetFogColor{ ZENFOR(0x00719C50, 0x00755E30, 0x00765870, 0x006521D0), &zCRnd_D3D_GetFogColor::operator() };
+zCOLOR zCRnd_D3D_GetFogColor::operator()() const
+{
+	zCOLOR result = THISCALL(Ivk_zCRnd_D3D_GetFogColor)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMessageFilter::OnTouch(zCVob*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCMessageFilter::OnTouch(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMessageFilter_OnTouch : zCMessageFilter { void operator()(zCVob*); };
+BindedHook Ivk_zCMessageFilter_OnTouch{ ZENFOR(0x005DEB80, 0x005FE900, 0x00604610, 0x0060BCD0), &zCMessageFilter_OnTouch::operator() };
+void zCMessageFilter_OnTouch::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCMessageFilter_OnTouch)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

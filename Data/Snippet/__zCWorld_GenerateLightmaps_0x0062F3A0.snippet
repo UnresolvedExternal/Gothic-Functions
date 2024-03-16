@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::GenerateLightmaps(zCWorld::zTStaticWorldLightMode const&, zTBBox3D*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCWorld::GenerateLightmaps(zCWorld::zTStaticWorldLightMode const&, zTBBox3D*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_GenerateLightmaps : zCWorld { void operator()(zCWorld::zTStaticWorldLightMode const&, zTBBox3D*); };
+BindedHook Ivk_zCWorld_GenerateLightmaps{ ZENFOR(0x00600470, 0x006220E0, 0x00627C20, 0x0062F3A0), &zCWorld_GenerateLightmaps::operator() };
+void zCWorld_GenerateLightmaps::operator()(zCWorld::zTStaticWorldLightMode const& a0, zTBBox3D* a1)
+{
+	THISCALL(Ivk_zCWorld_GenerateLightmaps)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

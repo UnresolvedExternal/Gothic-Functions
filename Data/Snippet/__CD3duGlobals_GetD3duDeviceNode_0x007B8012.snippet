@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duGlobals::GetD3duDeviceNode(unsigned long): CD3duDeviceNode*]]></Title>
+			<Description><![CDATA[public: CD3duDeviceNode* __thiscall CD3duGlobals::GetD3duDeviceNode(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duGlobals_GetD3duDeviceNode : CD3duGlobals { CD3duDeviceNode* operator()(unsigned long); };
+BindedHook Ivk_CD3duGlobals_GetD3duDeviceNode{ ZENFOR(0x0075E91E, 0x007A16AA, 0x007ABB4C, 0x007B8012), &CD3duGlobals_GetD3duDeviceNode::operator() };
+CD3duDeviceNode* CD3duGlobals_GetD3duDeviceNode::operator()(unsigned long a0)
+{
+	CD3duDeviceNode* result = THISCALL(Ivk_CD3duGlobals_GetD3duDeviceNode)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

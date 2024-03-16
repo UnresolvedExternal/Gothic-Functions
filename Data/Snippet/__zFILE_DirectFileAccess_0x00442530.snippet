@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE::DirectFileAccess(bool): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zFILE::DirectFileAccess(bool)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zFILE_DirectFileAccess(bool);
+BindedHook Ivk_zFILE_DirectFileAccess{ ZENFOR(0x0043E620, 0x00443920, 0x00441F00, 0x00442530), Hook_zFILE_DirectFileAccess };
+void Hook_zFILE_DirectFileAccess(bool a0)
+{
+	Ivk_zFILE_DirectFileAccess(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

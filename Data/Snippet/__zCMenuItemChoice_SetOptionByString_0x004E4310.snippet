@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemChoice::SetOptionByString(zSTRING): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall zCMenuItemChoice::SetOptionByString(zSTRING)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemChoice_SetOptionByString : zCMenuItemChoice { int operator()(zSTRING); };
+BindedHook Ivk_zCMenuItemChoice_SetOptionByString{ ZENFOR(0x004D7140, 0x004E7FA0, 0x004E1960, 0x004E4310), &zCMenuItemChoice_SetOptionByString::operator() };
+int zCMenuItemChoice_SetOptionByString::operator()(zSTRING a0)
+{
+	int result = THISCALL(Ivk_zCMenuItemChoice_SetOptionByString)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

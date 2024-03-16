@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderManager::SortMaterialPolys(zCMaterial*): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCRenderManager::SortMaterialPolys(zCMaterial*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderManager_SortMaterialPolys : zCRenderManager { void __fastcall operator()(zCMaterial*); };
+BindedHook Ivk_zCRenderManager_SortMaterialPolys{ ZENFOR(0x005B1E70, 0x005CF090, 0x005D10F0, 0x005D7DF0), &zCRenderManager_SortMaterialPolys::operator() };
+void __fastcall zCRenderManager_SortMaterialPolys::operator()(zCMaterial* a0)
+{
+	THISCALL(Ivk_zCRenderManager_SortMaterialPolys)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

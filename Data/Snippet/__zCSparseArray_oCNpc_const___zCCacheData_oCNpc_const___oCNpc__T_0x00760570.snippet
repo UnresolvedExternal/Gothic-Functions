@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCNpc::TActiveInfo>>::ConstructData(void*): void [const]]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCNpc::TActiveInfo>>::ConstructData(void*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___ConstructData : zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCNpc::TActiveInfo>> { void operator()(void*) const; };
+BindedHook Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___ConstructData{ ZENFOR(0x006B9930, 0x006EE4D0, 0x007012E0, 0x00760570), &zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___ConstructData::operator() };
+void zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___ConstructData::operator()(void* a0) const
+{
+	THISCALL(Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___ConstructData)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

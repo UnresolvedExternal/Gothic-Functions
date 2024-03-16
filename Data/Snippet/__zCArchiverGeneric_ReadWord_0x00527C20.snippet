@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::ReadWord(char const*, unsigned short&): void]]></Title>
+			<Description><![CDATA[public: virtual void __fastcall zCArchiverGeneric::ReadWord(char const*, unsigned short&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_ReadWord : zCArchiverGeneric { void __fastcall operator()(char const*, unsigned short&); };
+BindedHook Ivk_zCArchiverGeneric_ReadWord{ ZENFOR(0x00516F80, 0x0052C990, 0x00524E50, 0x00527C20), &zCArchiverGeneric_ReadWord::operator() };
+void __fastcall zCArchiverGeneric_ReadWord::operator()(char const* a0, unsigned short& a1)
+{
+	THISCALL(Ivk_zCArchiverGeneric_ReadWord)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

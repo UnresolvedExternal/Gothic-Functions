@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobSpot::IsAvailable(zCVob*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCVobSpot::IsAvailable(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobSpot_IsAvailable : zCVobSpot { int operator()(zCVob*); };
+BindedHook Ivk_zCVobSpot_IsAvailable{ ZENFOR(0x00709320, 0x00744120, 0x00753520, 0x007B3020), &zCVobSpot_IsAvailable::operator() };
+int zCVobSpot_IsAvailable::operator()(zCVob* a0)
+{
+	int result = THISCALL(Ivk_zCVobSpot_IsAvailable)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

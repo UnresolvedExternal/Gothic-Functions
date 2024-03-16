@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobBed::SearchFreePosition(oCNpc*, float): TMobOptPos*]]></Title>
+			<Description><![CDATA[protected: virtual TMobOptPos* __thiscall oCMobBed::SearchFreePosition(oCNpc*, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2, G2A
+struct oCMobBed_SearchFreePosition : oCMobBed { TMobOptPos* operator()(oCNpc*, float); };
+BindedHook Ivk_oCMobBed_SearchFreePosition{ ZENFOR(0x00000000, 0x006B0CF0, 0x006C52C0, 0x00723350), &oCMobBed_SearchFreePosition::operator() };
+TMobOptPos* oCMobBed_SearchFreePosition::operator()(oCNpc* a0, float a1)
+{
+	TMobOptPos* result = THISCALL(Ivk_oCMobBed_SearchFreePosition)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

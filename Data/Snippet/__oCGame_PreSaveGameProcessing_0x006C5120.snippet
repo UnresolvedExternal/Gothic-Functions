@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::PreSaveGameProcessing(int): void]]></Title>
+			<Description><![CDATA[private: void __thiscall oCGame::PreSaveGameProcessing(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_PreSaveGameProcessing : oCGame { void operator()(int); };
+BindedHook Ivk_oCGame_PreSaveGameProcessing{ ZENFOR(0x0063AC50, 0x00661550, 0x006684A0, 0x006C5120), &oCGame_PreSaveGameProcessing::operator() };
+void oCGame_PreSaveGameProcessing::operator()(int a0)
+{
+	THISCALL(Ivk_oCGame_PreSaveGameProcessing)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

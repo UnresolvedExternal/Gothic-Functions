@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchAnimate::StopAni(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCTouchAnimate::StopAni()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchAnimate_StopAni : zCTouchAnimate { void operator()(); };
+BindedHook Ivk_zCTouchAnimate_StopAni{ ZENFOR(0x005E9A80, 0x0060A0B0, 0x0060F470, 0x00616B30), &zCTouchAnimate_StopAni::operator() };
+void zCTouchAnimate_StopAni::operator()()
+{
+	THISCALL(Ivk_zCTouchAnimate_StopAni)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

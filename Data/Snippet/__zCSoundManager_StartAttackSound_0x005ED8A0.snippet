@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundManager::StartAttackSound(zCVob*, zCSoundManager::zTSndManMedium, zCSoundManager::zTSndManMedium, int, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCSoundManager::StartAttackSound(zCVob*, zCSoundManager::zTSndManMedium, zCSoundManager::zTSndManMedium, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundManager_StartAttackSound : zCSoundManager { void operator()(zCVob*, zCSoundManager::zTSndManMedium, zCSoundManager::zTSndManMedium, int, int); };
+BindedHook Ivk_zCSoundManager_StartAttackSound{ ZENFOR(0x005C2F40, 0x005E1080, 0x005E6AF0, 0x005ED8A0), &zCSoundManager_StartAttackSound::operator() };
+void zCSoundManager_StartAttackSound::operator()(zCVob* a0, zCSoundManager::zTSndManMedium a1, zCSoundManager::zTSndManMedium a2, int a3, int a4)
+{
+	THISCALL(Ivk_zCSoundManager_StartAttackSound)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

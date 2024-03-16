@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::RenderGroundShadow(zTRenderContext&): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCVob::RenderGroundShadow(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_RenderGroundShadow : zCVob { void __fastcall operator()(zTRenderContext&); };
+BindedHook Ivk_zCVob_RenderGroundShadow{ ZENFOR(0x005D5880, 0x005F4D10, 0x005F9ED0, 0x00600CD0), &zCVob_RenderGroundShadow::operator() };
+void __fastcall zCVob_RenderGroundShadow::operator()(zTRenderContext& a0)
+{
+	THISCALL(Ivk_zCVob_RenderGroundShadow)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

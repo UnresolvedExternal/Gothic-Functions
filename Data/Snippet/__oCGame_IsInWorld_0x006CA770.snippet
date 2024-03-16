@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::IsInWorld(zSTRING const&): int]]></Title>
+			<Description><![CDATA[private: int __thiscall oCGame::IsInWorld(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_IsInWorld : oCGame { int operator()(zSTRING const&); };
+BindedHook Ivk_oCGame_IsInWorld{ ZENFOR(0x0063FCF0, 0x00666D00, 0x0066D9F0, 0x006CA770), &oCGame_IsInWorld::operator() };
+int oCGame_IsInWorld::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_oCGame_IsInWorld)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

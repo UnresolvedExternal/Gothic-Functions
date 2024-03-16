@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlock::BlockAsFocus(int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSBlock::BlockAsFocus(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlock_BlockAsFocus : zCCSBlock { void operator()(int); };
+BindedHook Ivk_zCCSBlock_BlockAsFocus{ ZENFOR(0x0040D870, 0x0040EB20, 0x0040DC60, 0x0040DC60), &zCCSBlock_BlockAsFocus::operator() };
+void zCCSBlock_BlockAsFocus::operator()(int a0)
+{
+	THISCALL(Ivk_zCCSBlock_BlockAsFocus)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

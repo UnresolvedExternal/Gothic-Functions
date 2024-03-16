@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::ConstructData(void*): void [const]]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry>::ConstructData(void*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__ConstructData : zCSparseArray<zCObject*, zCArchiverGeneric::zTWriteObjectEntry> { void operator()(void*) const; };
+BindedHook Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__ConstructData{ ZENFOR(0x00517C00, 0x0052D610, 0x00525C40, 0x00528A10), &zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__ConstructData::operator() };
+void zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__ConstructData::operator()(void* a0) const
+{
+	THISCALL(Ivk_zCSparseArray_zCObject___zCArchiverGeneric__zTWriteObjectEntry__ConstructData)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

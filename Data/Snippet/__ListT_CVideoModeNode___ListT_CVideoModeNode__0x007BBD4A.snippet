@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CVideoModeNode>::~ListT<CVideoModeNode>()]]></Title>
+			<Description><![CDATA[public: __thiscall ListT<CVideoModeNode>::~ListT<CVideoModeNode>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct ListT_CVideoModeNode__Destructor : ListT<CVideoModeNode> { void operator()(); };
+BindedHook Ivk_ListT_CVideoModeNode__Destructor{ ZENFOR(0x00762656, 0x00000000, 0x007AF884, 0x007BBD4A), &ListT_CVideoModeNode__Destructor::operator() };
+void ListT_CVideoModeNode__Destructor::operator()()
+{
+	THISCALL(Ivk_ListT_CVideoModeNode__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

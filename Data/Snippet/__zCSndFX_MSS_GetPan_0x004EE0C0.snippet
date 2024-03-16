@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::GetPan(): float [const]]]></Title>
+			<Description><![CDATA[public: virtual float __thiscall zCSndFX_MSS::GetPan() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_GetPan : zCSndFX_MSS { float operator()() const; };
+BindedHook Ivk_zCSndFX_MSS_GetPan{ ZENFOR(0x004E0B10, 0x004F24D0, 0x004EB440, 0x004EE0C0), &zCSndFX_MSS_GetPan::operator() };
+float zCSndFX_MSS_GetPan::operator()() const
+{
+	float result = THISCALL(Ivk_zCSndFX_MSS_GetPan)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

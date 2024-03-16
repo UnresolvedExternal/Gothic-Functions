@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshBuilder::CalcPrelight(zTLazyMesh&, zTLazyMesh&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCProgMeshBuilder::CalcPrelight(zTLazyMesh&, zTLazyMesh&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshBuilder_CalcPrelight : zCProgMeshBuilder { void operator()(zTLazyMesh&, zTLazyMesh&); };
+BindedHook Ivk_zCProgMeshBuilder_CalcPrelight{ ZENFOR(0x0059F820, 0x005BBEA0, 0x005BBB40, 0x005C16B0), &zCProgMeshBuilder_CalcPrelight::operator() };
+void zCProgMeshBuilder_CalcPrelight::operator()(zTLazyMesh& a0, zTLazyMesh& a1)
+{
+	THISCALL(Ivk_zCProgMeshBuilder_CalcPrelight)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

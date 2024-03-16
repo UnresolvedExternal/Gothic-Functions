@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSProps::PrintDebugInfo(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSProps::PrintDebugInfo()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSProps_PrintDebugInfo : zCCSProps { void operator()(); };
+BindedHook Ivk_zCCSProps_PrintDebugInfo{ ZENFOR(0x00421C30, 0x004240D0, 0x00422080, 0x004223B0), &zCCSProps_PrintDebugInfo::operator() };
+void zCCSProps_PrintDebugInfo::operator()()
+{
+	THISCALL(Ivk_zCCSProps_PrintDebugInfo)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

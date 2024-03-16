@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::GetClassVarInfo(int, int, int&, int&): zSTRING]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zCParser::GetClassVarInfo(int, int, int&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_GetClassVarInfo : zCParser { zSTRING operator()(int, int, int&, int&); };
+BindedHook Ivk_zCParser_GetClassVarInfo{ ZENFOR(0x006EA5E0, 0x00723650, 0x00733F50, 0x00793990), &zCParser_GetClassVarInfo::operator() };
+zSTRING zCParser_GetClassVarInfo::operator()(int a0, int a1, int& a2, int& a3)
+{
+	zSTRING result = THISCALL(Ivk_zCParser_GetClassVarInfo)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

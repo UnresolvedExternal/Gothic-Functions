@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspNode::ClassifyPolyToNode2(zCPolygon*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCCBspNode::ClassifyPolyToNode2(zCPolygon*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspNode_ClassifyPolyToNode2 : zCCBspNode { int operator()(zCPolygon*); };
+BindedHook Ivk_zCCBspNode_ClassifyPolyToNode2{ ZENFOR(0x0052C1A0, 0x005428A0, 0x0053ABE0, 0x0053FD10), &zCCBspNode_ClassifyPolyToNode2::operator() };
+int zCCBspNode_ClassifyPolyToNode2::operator()(zCPolygon* a0)
+{
+	int result = THISCALL(Ivk_zCCBspNode_ClassifyPolyToNode2)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

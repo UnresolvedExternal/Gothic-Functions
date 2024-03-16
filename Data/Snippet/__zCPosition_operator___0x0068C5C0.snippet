@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPosition::operator-=(zCPosition&): zCPosition&]]></Title>
+			<Description><![CDATA[public: zCPosition& __thiscall zCPosition::operator-=(zCPosition&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPosition_operator__ : zCPosition { zCPosition& operator()(zCPosition&); };
+BindedHook Ivk_zCPosition_operator__{ ZENFOR(0x00725B30, 0x00762DC0, 0x00771540, 0x0068C5C0), &zCPosition_operator__::operator() };
+zCPosition& zCPosition_operator__::operator()(zCPosition& a0)
+{
+	zCPosition& result = THISCALL(Ivk_zCPosition_operator__)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialogChoice::ScrollDown(): void]]></Title>
+			<Description><![CDATA[protected: void __fastcall zCViewDialogChoice::ScrollDown()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialogChoice_ScrollDown : zCViewDialogChoice { void __fastcall operator()(); };
+BindedHook Ivk_zCViewDialogChoice_ScrollDown{ ZENFOR(0x00758F10, 0x0079B4D0, 0x007A5DF0, 0x0068F090), &zCViewDialogChoice_ScrollDown::operator() };
+void __fastcall zCViewDialogChoice_ScrollDown::operator()()
+{
+	THISCALL(Ivk_zCViewDialogChoice_ScrollDown)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCRtnManager::RemoveEntry(oCRtnEntry*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCRtnManager::RemoveEntry(oCRtnEntry*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCRtnManager_RemoveEntry : oCRtnManager { void operator()(oCRtnEntry*); };
+BindedHook Ivk_oCRtnManager_RemoveEntry{ ZENFOR(0x006CE040, 0x00704800, 0x007168E0, 0x00775E70), &oCRtnManager_RemoveEntry::operator() };
+void oCRtnManager_RemoveEntry::operator()(oCRtnEntry* a0)
+{
+	THISCALL(Ivk_oCRtnManager_RemoveEntry)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

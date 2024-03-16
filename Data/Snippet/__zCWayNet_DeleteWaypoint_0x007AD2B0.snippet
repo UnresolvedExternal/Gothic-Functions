@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::DeleteWaypoint(zCWaypoint*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCWayNet::DeleteWaypoint(zCWaypoint*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_DeleteWaypoint : zCWayNet { void operator()(zCWaypoint*); };
+BindedHook Ivk_zCWayNet_DeleteWaypoint{ ZENFOR(0x007036A0, 0x0073DE90, 0x0074D7B0, 0x007AD2B0), &zCWayNet_DeleteWaypoint::operator() };
+void zCWayNet_DeleteWaypoint::operator()(zCWaypoint* a0)
+{
+	THISCALL(Ivk_zCWayNet_DeleteWaypoint)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCExceptionHandler::UnhandledExceptionFilter(_EXCEPTION_POINTERS*): long]]></Title>
+			<Description><![CDATA[private: static long __stdcall zCExceptionHandler::UnhandledExceptionFilter(_EXCEPTION_POINTERS*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long __stdcall Hook_zCExceptionHandler_UnhandledExceptionFilter(_EXCEPTION_POINTERS*);
+BindedHook Ivk_zCExceptionHandler_UnhandledExceptionFilter{ ZENFOR(0x004BF560, 0x004CEC70, 0x004C6350, 0x004C88C0), Hook_zCExceptionHandler_UnhandledExceptionFilter };
+long __stdcall Hook_zCExceptionHandler_UnhandledExceptionFilter(_EXCEPTION_POINTERS* a0)
+{
+	long result = Ivk_zCExceptionHandler_UnhandledExceptionFilter(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

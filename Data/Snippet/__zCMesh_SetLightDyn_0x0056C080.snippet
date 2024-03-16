@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::SetLightDyn(zCOLOR): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMesh::SetLightDyn(zCOLOR)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_SetLightDyn : zCMesh { void operator()(zCOLOR); };
+BindedHook Ivk_zCMesh_SetLightDyn{ ZENFOR(0x00553FD0, 0x0056C6A0, 0x00566E30, 0x0056C080), &zCMesh_SetLightDyn::operator() };
+void zCMesh_SetLightDyn::operator()(zCOLOR a0)
+{
+	THISCALL(Ivk_zCMesh_SetLightDyn)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::GetPixelSize(int&, int&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCView::GetPixelSize(int&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_GetPixelSize : zCView { void operator()(int&, int&); };
+BindedHook Ivk_zCView_GetPixelSize{ ZENFOR(0x006FDC90, 0x00738080, 0x00747D30, 0x007A7830), &zCView_GetPixelSize::operator() };
+void zCView_GetPixelSize::operator()(int& a0, int& a1)
+{
+	THISCALL(Ivk_zCView_GetPixelSize)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

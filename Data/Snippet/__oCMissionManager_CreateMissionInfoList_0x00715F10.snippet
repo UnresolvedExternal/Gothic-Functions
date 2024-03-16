@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMissionManager::CreateMissionInfoList(oCNpc*, zCArray<oCMission*>&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCMissionManager::CreateMissionInfoList(oCNpc*, zCArray<oCMission*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMissionManager_CreateMissionInfoList : oCMissionManager { void operator()(oCNpc*, zCArray<oCMission*>&); };
+BindedHook Ivk_oCMissionManager_CreateMissionInfoList{ ZENFOR(0x00674E30, 0x006A2ED0, 0x006B7E80, 0x00715F10), &oCMissionManager_CreateMissionInfoList::operator() };
+void oCMissionManager_CreateMissionInfoList::operator()(oCNpc* a0, zCArray<oCMission*>& a1)
+{
+	THISCALL(Ivk_oCMissionManager_CreateMissionInfoList)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::XD3D_SetTexture(unsigned long, IDirectDrawSurface7*): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCRnd_D3D::XD3D_SetTexture(unsigned long, IDirectDrawSurface7*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_XD3D_SetTexture : zCRnd_D3D { int operator()(unsigned long, IDirectDrawSurface7*); };
+BindedHook Ivk_zCRnd_D3D_XD3D_SetTexture{ ZENFOR(0x00718150, 0x00754240, 0x00763BB0, 0x00650500), &zCRnd_D3D_XD3D_SetTexture::operator() };
+int zCRnd_D3D_XD3D_SetTexture::operator()(unsigned long a0, IDirectDrawSurface7* a1)
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_XD3D_SetTexture)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

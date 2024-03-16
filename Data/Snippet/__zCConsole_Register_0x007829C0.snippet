@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConsole::Register(zSTRING const&, zSTRING const&, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCConsole::Register(zSTRING const&, zSTRING const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConsole_Register : zCConsole { void operator()(zSTRING const&, zSTRING const&, int); };
+BindedHook Ivk_zCConsole_Register{ ZENFOR(0x006D9810, 0x00711480, 0x00722F80, 0x007829C0), &zCConsole_Register::operator() };
+void zCConsole_Register::operator()(zSTRING const& a0, zSTRING const& a1, int a2)
+{
+	THISCALL(Ivk_zCConsole_Register)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

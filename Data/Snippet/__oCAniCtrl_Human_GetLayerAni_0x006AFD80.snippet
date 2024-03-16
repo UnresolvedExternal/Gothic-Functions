@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::GetLayerAni(int): zCModelAniActive*]]></Title>
+			<Description><![CDATA[public: zCModelAniActive* __thiscall oCAniCtrl_Human::GetLayerAni(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_GetLayerAni : oCAniCtrl_Human { zCModelAniActive* operator()(int); };
+BindedHook Ivk_oCAniCtrl_Human_GetLayerAni{ ZENFOR(0x00627240, 0x0064C270, 0x00653500, 0x006AFD80), &oCAniCtrl_Human_GetLayerAni::operator() };
+zCModelAniActive* oCAniCtrl_Human_GetLayerAni::operator()(int a0)
+{
+	zCModelAniActive* result = THISCALL(Ivk_oCAniCtrl_Human_GetLayerAni)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

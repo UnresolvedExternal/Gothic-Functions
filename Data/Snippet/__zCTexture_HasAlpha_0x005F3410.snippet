@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexture::HasAlpha(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCTexture::HasAlpha()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTexture_HasAlpha : zCTexture { int operator()(); };
+BindedHook Ivk_zCTexture_HasAlpha{ ZENFOR(0x005C8860, 0x005E7130, 0x005EC660, 0x005F3410), &zCTexture_HasAlpha::operator() };
+int zCTexture_HasAlpha::operator()()
+{
+	int result = THISCALL(Ivk_zCTexture_HasAlpha)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

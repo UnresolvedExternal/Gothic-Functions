@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::PrintSelection(zSTRING const&, zSTRING const&, zCOLOR&, zCOLOR&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCView::PrintSelection(zSTRING const&, zSTRING const&, zCOLOR&, zCOLOR&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_PrintSelection : zCView { void operator()(zSTRING const&, zSTRING const&, zCOLOR&, zCOLOR&); };
+BindedHook Ivk_zCView_PrintSelection{ ZENFOR(0x006FF030, 0x007395D0, 0x007490B0, 0x007A8BB0), &zCView_PrintSelection::operator() };
+void zCView_PrintSelection::operator()(zSTRING const& a0, zSTRING const& a1, zCOLOR& a2, zCOLOR& a3)
+{
+	THISCALL(Ivk_zCView_PrintSelection)(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

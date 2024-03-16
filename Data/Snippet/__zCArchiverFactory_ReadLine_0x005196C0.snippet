@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverFactory::ReadLine(zSTRING&, zCBuffer*, zFILE*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCArchiverFactory::ReadLine(zSTRING&, zCBuffer*, zFILE*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverFactory_ReadLine : zCArchiverFactory { void operator()(zSTRING&, zCBuffer*, zFILE*); };
+BindedHook Ivk_zCArchiverFactory_ReadLine{ ZENFOR(0x00509830, 0x0051E360, 0x005168F0, 0x005196C0), &zCArchiverFactory_ReadLine::operator() };
+void zCArchiverFactory_ReadLine::operator()(zSTRING& a0, zCBuffer* a1, zFILE* a2)
+{
+	THISCALL(Ivk_zCArchiverFactory_ReadLine)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

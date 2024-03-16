@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgAttack::Unpack(zCBuffer&, zCEventManager*): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall oCMsgAttack::Unpack(zCBuffer&, zCEventManager*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgAttack_Unpack : oCMsgAttack { void operator()(zCBuffer&, zCEventManager*); };
+BindedHook Ivk_oCMsgAttack_Unpack{ ZENFOR(0x006C0390, 0x006F5680, 0x00707FF0, 0x00767530), &oCMsgAttack_Unpack::operator() };
+void oCMsgAttack_Unpack::operator()(zCBuffer& a0, zCEventManager* a1)
+{
+	THISCALL(Ivk_oCMsgAttack_Unpack)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

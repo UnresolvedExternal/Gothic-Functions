@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::CanCarry(oCItem*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::CanCarry(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_CanCarry : oCNpc { int operator()(oCItem*); };
+BindedHook Ivk_oCNpc_CanCarry{ ZENFOR(0x006A4EC0, 0x006D7970, 0x006EA740, 0x00749220), &oCNpc_CanCarry::operator() };
+int oCNpc_CanCarry::operator()(oCItem* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_CanCarry)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

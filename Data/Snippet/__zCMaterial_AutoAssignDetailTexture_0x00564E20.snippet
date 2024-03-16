@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMaterial::AutoAssignDetailTexture(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCMaterial::AutoAssignDetailTexture()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMaterial_AutoAssignDetailTexture : zCMaterial { void operator()(); };
+BindedHook Ivk_zCMaterial_AutoAssignDetailTexture{ ZENFOR(0x0054DE80, 0x005662E0, 0x0055FC00, 0x00564E20), &zCMaterial_AutoAssignDetailTexture::operator() };
+void zCMaterial_AutoAssignDetailTexture::operator()()
+{
+	THISCALL(Ivk_zCMaterial_AutoAssignDetailTexture)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CDDrawDeviceList::_DDEnumCBListDDrawDevices(_GUID*, char*, char*, void*, HMONITOR__*): int]]></Title>
+			<Description><![CDATA[public: static int __stdcall CDDrawDeviceList::_DDEnumCBListDDrawDevices(_GUID*, char*, char*, void*, HMONITOR__*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int __stdcall Hook_CDDrawDeviceList__DDEnumCBListDDrawDevices(_GUID*, char*, char*, void*, HMONITOR__*);
+BindedHook Ivk_CDDrawDeviceList__DDEnumCBListDDrawDevices{ ZENFOR(0x0076274F, 0x007A706C, 0x007AF97D, 0x007BBE43), Hook_CDDrawDeviceList__DDEnumCBListDDrawDevices };
+int __stdcall Hook_CDDrawDeviceList__DDEnumCBListDDrawDevices(_GUID* a0, char* a1, char* a2, void* a3, HMONITOR__* a4)
+{
+	int result = Ivk_CDDrawDeviceList__DDEnumCBListDDrawDevices(a0, a1, a2, a3, a4);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

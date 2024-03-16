@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<zCVob const*, zCDynVobLightCacheElement>::ClearCache(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCache<zCVob const*, zCDynVobLightCacheElement>::ClearCache()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_zCVob_const___zCDynVobLightCacheElement__ClearCache : zCCache<zCVob const*, zCDynVobLightCacheElement> { void operator()(); };
+BindedHook Ivk_zCCache_zCVob_const___zCDynVobLightCacheElement__ClearCache{ ZENFOR(0x005B0B00, 0x005CDCB0, 0x005CF870, 0x005D6430), &zCCache_zCVob_const___zCDynVobLightCacheElement__ClearCache::operator() };
+void zCCache_zCVob_const___zCDynVobLightCacheElement__ClearCache::operator()()
+{
+	THISCALL(Ivk_zCCache_zCVob_const___zCDynVobLightCacheElement__ClearCache)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

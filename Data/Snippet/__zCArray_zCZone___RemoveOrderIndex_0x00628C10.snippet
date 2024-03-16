@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCZone*>::RemoveOrderIndex(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zCZone*>::RemoveOrderIndex(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCZone___RemoveOrderIndex : zCArray<zCZone*> { void operator()(int); };
+BindedHook Ivk_zCArray_zCZone___RemoveOrderIndex{ ZENFOR(0x005FA460, 0x0061BA40, 0x00621490, 0x00628C10), &zCArray_zCZone___RemoveOrderIndex::operator() };
+void zCArray_zCZone___RemoveOrderIndex::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zCZone___RemoveOrderIndex)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

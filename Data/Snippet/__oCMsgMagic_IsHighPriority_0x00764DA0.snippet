@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgMagic::IsHighPriority(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCMsgMagic::IsHighPriority()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgMagic_IsHighPriority : oCMsgMagic { int operator()(); };
+BindedHook Ivk_oCMsgMagic_IsHighPriority{ ZENFOR(0x006BDC00, 0x006F2F40, 0x00705860, 0x00764DA0), &oCMsgMagic_IsHighPriority::operator() };
+int oCMsgMagic_IsHighPriority::operator()()
+{
+	int result = THISCALL(Ivk_oCMsgMagic_IsHighPriority)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

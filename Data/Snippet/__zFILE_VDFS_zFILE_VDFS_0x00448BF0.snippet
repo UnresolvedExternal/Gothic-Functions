@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_VDFS::zFILE_VDFS()]]></Title>
+			<Description><![CDATA[public: __thiscall zFILE_VDFS::zFILE_VDFS()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_VDFS_zFILE_VDFS : zFILE_VDFS { zFILE_VDFS* operator()(); };
+BindedHook Ivk_zFILE_VDFS_zFILE_VDFS{ ZENFOR(0x00444B60, 0x0044A7A0, 0x004485B0, 0x00448BF0), &zFILE_VDFS_zFILE_VDFS::operator() };
+zFILE_VDFS* zFILE_VDFS_zFILE_VDFS::operator()()
+{
+	zFILE_VDFS* result = THISCALL(Ivk_zFILE_VDFS_zFILE_VDFS)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

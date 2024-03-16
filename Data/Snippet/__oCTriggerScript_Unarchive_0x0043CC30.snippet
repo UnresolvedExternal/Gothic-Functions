@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTriggerScript::Unarchive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCTriggerScript::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTriggerScript_Unarchive : oCTriggerScript { void operator()(zCArchiver&); };
+BindedHook Ivk_oCTriggerScript_Unarchive{ ZENFOR(0x004391A0, 0x0043DC20, 0x0043C600, 0x0043CC30), &oCTriggerScript_Unarchive::operator() };
+void oCTriggerScript_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCTriggerScript_Unarchive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

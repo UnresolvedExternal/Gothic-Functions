@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::CalcWaterVob(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCVob::CalcWaterVob()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCVob_CalcWaterVob : zCVob { void operator()(); };
+BindedHook Ivk_zCVob_CalcWaterVob{ ZENFOR(0x00000000, 0x00000000, 0x00613760, 0x0061AE20), &zCVob_CalcWaterVob::operator() };
+void zCVob_CalcWaterVob::operator()()
+{
+	THISCALL(Ivk_zCVob_CalcWaterVob)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

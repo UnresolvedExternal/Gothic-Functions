@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobFire::OnDamage(zCVob*, zCVob*, float, int, zVEC3 const&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMobFire::OnDamage(zCVob*, zCVob*, float, int, zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobFire_OnDamage : oCMobFire { void operator()(zCVob*, zCVob*, float, int, zVEC3 const&); };
+BindedHook Ivk_oCMobFire_OnDamage{ ZENFOR(0x00680ED0, 0x006B01D0, 0x006C4810, 0x007228A0), &oCMobFire_OnDamage::operator() };
+void oCMobFire_OnDamage::operator()(zCVob* a0, zCVob* a1, float a2, int a3, zVEC3 const& a4)
+{
+	THISCALL(Ivk_oCMobFire_OnDamage)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

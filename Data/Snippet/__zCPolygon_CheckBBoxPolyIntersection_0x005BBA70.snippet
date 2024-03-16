@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::CheckBBoxPolyIntersection(zTBBox3D const&): int [const]]]></Title>
+			<Description><![CDATA[public: int __fastcall zCPolygon::CheckBBoxPolyIntersection(zTBBox3D const&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolygon_CheckBBoxPolyIntersection : zCPolygon { int __fastcall operator()(zTBBox3D const&) const; };
+BindedHook Ivk_zCPolygon_CheckBBoxPolyIntersection{ ZENFOR(0x00599FC0, 0x005B6150, 0x005B5F00, 0x005BBA70), &zCPolygon_CheckBBoxPolyIntersection::operator() };
+int __fastcall zCPolygon_CheckBBoxPolyIntersection::operator()(zTBBox3D const& a0) const
+{
+	int result = THISCALL(Ivk_zCPolygon_CheckBBoxPolyIntersection)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

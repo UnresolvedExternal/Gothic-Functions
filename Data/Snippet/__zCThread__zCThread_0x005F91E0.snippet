@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCThread::~zCThread()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCThread::~zCThread()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCThread_Destructor : zCThread { void operator()(); };
+BindedHook Ivk_zCThread_Destructor{ ZENFOR(0x005CE090, 0x005ECDB0, 0x005F23F0, 0x005F91E0), &zCThread_Destructor::operator() };
+void zCThread_Destructor::operator()()
+{
+	THISCALL(Ivk_zCThread_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

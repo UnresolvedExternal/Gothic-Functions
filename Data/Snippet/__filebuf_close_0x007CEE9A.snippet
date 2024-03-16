@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[filebuf::close(): filebuf*]]></Title>
+			<Description><![CDATA[public: filebuf* __thiscall filebuf::close()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct filebuf_close : filebuf { filebuf* operator()(); };
+BindedHook Ivk_filebuf_close{ ZENFOR(0x007754F0, 0x007B92B0, 0x007C29DA, 0x007CEE9A), &filebuf_close::operator() };
+filebuf* filebuf_close::operator()()
+{
+	filebuf* result = THISCALL(Ivk_filebuf_close)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundManager::GetCollSndTableIndex(zSTRING const&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCSoundManager::GetCollSndTableIndex(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundManager_GetCollSndTableIndex : zCSoundManager { int operator()(zSTRING const&); };
+BindedHook Ivk_zCSoundManager_GetCollSndTableIndex{ ZENFOR(0x005C20B0, 0x005E00B0, 0x005E5BF0, 0x005EC9A0), &zCSoundManager_GetCollSndTableIndex::operator() };
+int zCSoundManager_GetCollSndTableIndex::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_zCSoundManager_GetCollSndTableIndex)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

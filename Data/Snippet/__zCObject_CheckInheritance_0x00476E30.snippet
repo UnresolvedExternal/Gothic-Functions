@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCObject::CheckInheritance(zCClassDef const*, zCClassDef const*): int]]></Title>
+			<Description><![CDATA[public: static int __cdecl zCObject::CheckInheritance(zCClassDef const*, zCClassDef const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCObject_CheckInheritance(zCClassDef const*, zCClassDef const*);
+BindedHook Ivk_zCObject_CheckInheritance{ ZENFOR(0x00470130, 0x00478FF0, 0x00475A90, 0x00476E30), Hook_zCObject_CheckInheritance };
+int Hook_zCObject_CheckInheritance(zCClassDef const* a0, zCClassDef const* a1)
+{
+	int result = Ivk_zCObject_CheckInheritance(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

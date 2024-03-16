@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc_States::GetAIStatePosition(): zVEC3 const&]]></Title>
+			<Description><![CDATA[public: zVEC3 const& __thiscall oCNpc_States::GetAIStatePosition()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_States_GetAIStatePosition : oCNpc_States { zVEC3 const& operator()(); };
+BindedHook Ivk_oCNpc_States_GetAIStatePosition{ ZENFOR(0x006C7500, 0x006FCF90, 0x0070F530, 0x0076EA90), &oCNpc_States_GetAIStatePosition::operator() };
+zVEC3 const& oCNpc_States_GetAIStatePosition::operator()()
+{
+	zVEC3 const& result = THISCALL(Ivk_oCNpc_States_GetAIStatePosition)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

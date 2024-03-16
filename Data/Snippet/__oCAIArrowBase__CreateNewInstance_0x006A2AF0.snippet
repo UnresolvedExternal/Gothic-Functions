@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrowBase::_CreateNewInstance(): zCObject*]]></Title>
+			<Description><![CDATA[private: static zCObject* __cdecl oCAIArrowBase::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_oCAIArrowBase__CreateNewInstance();
+BindedHook Ivk_oCAIArrowBase__CreateNewInstance{ ZENFOR(0x0061A680, 0x0063DCB0, 0x00646270, 0x006A2AF0), Hook_oCAIArrowBase__CreateNewInstance };
+zCObject* Hook_oCAIArrowBase__CreateNewInstance()
+{
+	zCObject* result = Ivk_oCAIArrowBase__CreateNewInstance();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

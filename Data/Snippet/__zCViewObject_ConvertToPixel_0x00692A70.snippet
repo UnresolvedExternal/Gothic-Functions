@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewObject::ConvertToPixel(zCPosition&): zCPosition]]></Title>
+			<Description><![CDATA[protected: zCPosition __fastcall zCViewObject::ConvertToPixel(zCPosition&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewObject_ConvertToPixel : zCViewObject { zCPosition __fastcall operator()(zCPosition&); };
+BindedHook Ivk_zCViewObject_ConvertToPixel{ ZENFOR(0x00755F20, 0x00798380, 0x007A2CC0, 0x00692A70), &zCViewObject_ConvertToPixel::operator() };
+zCPosition __fastcall zCViewObject_ConvertToPixel::operator()(zCPosition& a0)
+{
+	zCPosition result = THISCALL(Ivk_zCViewObject_ConvertToPixel)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

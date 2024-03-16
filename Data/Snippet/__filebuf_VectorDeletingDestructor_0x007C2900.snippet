@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[filebuf::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall filebuf::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2
+struct filebuf_VectorDeletingDestructor : filebuf { void* operator()(unsigned int); };
+BindedHook Ivk_filebuf_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x007B91D6, 0x007C2900, 0x00000000), &filebuf_VectorDeletingDestructor::operator() };
+void* filebuf_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_filebuf_VectorDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

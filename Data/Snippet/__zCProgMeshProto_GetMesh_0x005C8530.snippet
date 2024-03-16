@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::GetMesh(int): zCMesh*]]></Title>
+			<Description><![CDATA[public: zCMesh* __thiscall zCProgMeshProto::GetMesh(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCProgMeshProto_GetMesh : zCProgMeshProto { zCMesh* operator()(int); };
+BindedHook Ivk_zCProgMeshProto_GetMesh{ ZENFOR(0x00000000, 0x00000000, 0x005C2970, 0x005C8530), &zCProgMeshProto_GetMesh::operator() };
+zCMesh* zCProgMeshProto_GetMesh::operator()(int a0)
+{
+	zCMesh* result = THISCALL(Ivk_zCProgMeshProto_GetMesh)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

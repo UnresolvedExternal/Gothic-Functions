@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCCSProps::AcceptRole(zCCSRole*, zCVob*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCCSProps::AcceptRole(zCCSRole*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCCSProps_AcceptRole : oCCSProps { int operator()(zCCSRole*, zCVob*); };
+BindedHook Ivk_oCCSProps_AcceptRole{ ZENFOR(0x00403E20, 0x00404590, 0x00403F80, 0x00403F80), &oCCSProps_AcceptRole::operator() };
+int oCCSProps_AcceptRole::operator()(zCCSRole* a0, zCVob* a1)
+{
+	int result = THISCALL(Ivk_oCCSProps_AcceptRole)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

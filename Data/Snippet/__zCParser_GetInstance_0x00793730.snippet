@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::GetInstance(int, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCParser::GetInstance(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_GetInstance : zCParser { int operator()(int, int); };
+BindedHook Ivk_zCParser_GetInstance{ ZENFOR(0x006EA380, 0x007233F0, 0x00733CF0, 0x00793730), &zCParser_GetInstance::operator() };
+int zCParser_GetInstance::operator()(int a0, int a1)
+{
+	int result = THISCALL(Ivk_zCParser_GetInstance)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zERROR::GetFilterFlagDescription(): zSTRING]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zERROR::GetFilterFlagDescription()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zERROR_GetFilterFlagDescription : zERROR { zSTRING operator()(); };
+BindedHook Ivk_zERROR_GetFilterFlagDescription{ ZENFOR(0x00449C60, 0x0044FF30, 0x0044DCA0, 0x0044E3F0), &zERROR_GetFilterFlagDescription::operator() };
+zSTRING zERROR_GetFilterFlagDescription::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zERROR_GetFilterFlagDescription)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

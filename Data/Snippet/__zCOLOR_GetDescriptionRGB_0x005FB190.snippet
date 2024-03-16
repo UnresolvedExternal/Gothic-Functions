@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOLOR::GetDescriptionRGB(): zSTRING [const]]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zCOLOR::GetDescriptionRGB() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOLOR_GetDescriptionRGB : zCOLOR { zSTRING operator()() const; };
+BindedHook Ivk_zCOLOR_GetDescriptionRGB{ ZENFOR(0x005CFEE0, 0x005EEE90, 0x005F43A0, 0x005FB190), &zCOLOR_GetDescriptionRGB::operator() };
+zSTRING zCOLOR_GetDescriptionRGB::operator()() const
+{
+	zSTRING result = THISCALL(Ivk_zCOLOR_GetDescriptionRGB)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

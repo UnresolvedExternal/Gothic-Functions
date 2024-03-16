@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ProcessMeshNode(zCModelNode*, zCTree<zCModelNode>*, int, int, int&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::ProcessMeshNode(zCModelNode*, zCTree<zCModelNode>*, int, int, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_ProcessMeshNode : zCModelPrototype { void operator()(zCModelNode*, zCTree<zCModelNode>*, int, int, int&); };
+BindedHook Ivk_zCModelPrototype_ProcessMeshNode{ ZENFOR(0x00575480, 0x0058F040, 0x0058A6D0, 0x0058FC30), &zCModelPrototype_ProcessMeshNode::operator() };
+void zCModelPrototype_ProcessMeshNode::operator()(zCModelNode* a0, zCTree<zCModelNode>* a1, int a2, int a3, int& a4)
+{
+	THISCALL(Ivk_zCModelPrototype_ProcessMeshNode)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

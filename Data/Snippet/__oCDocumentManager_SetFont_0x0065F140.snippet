@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCDocumentManager::SetFont(int, int, zSTRING&): void]]></Title>
+			<Description><![CDATA[public: void __fastcall oCDocumentManager::SetFont(int, int, zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCDocumentManager_SetFont : oCDocumentManager { void __fastcall operator()(int, int, zSTRING&); };
+BindedHook Ivk_oCDocumentManager_SetFont{ ZENFOR(0x00724950, 0x007618B0, 0x00770BF0, 0x0065F140), &oCDocumentManager_SetFont::operator() };
+void __fastcall oCDocumentManager_SetFont::operator()(int a0, int a1, zSTRING& a2)
+{
+	THISCALL(Ivk_oCDocumentManager_SetFont)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

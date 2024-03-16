@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundFX::SetVolume(float): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCSoundFX::SetVolume(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundFX_SetVolume : zCSoundFX { void operator()(float); };
+BindedHook Ivk_zCSoundFX_SetVolume{ ZENFOR(0x004E0A70, 0x004F2430, 0x004EB380, 0x004EE000), &zCSoundFX_SetVolume::operator() };
+void zCSoundFX_SetVolume::operator()(float a0)
+{
+	THISCALL(Ivk_zCSoundFX_SetVolume)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

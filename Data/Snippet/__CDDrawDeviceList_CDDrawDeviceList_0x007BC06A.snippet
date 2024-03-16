@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CDDrawDeviceList::CDDrawDeviceList()]]></Title>
+			<Description><![CDATA[public: __thiscall CDDrawDeviceList::CDDrawDeviceList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CDDrawDeviceList_CDDrawDeviceList : CDDrawDeviceList { CDDrawDeviceList* operator()(); };
+BindedHook Ivk_CDDrawDeviceList_CDDrawDeviceList{ ZENFOR(0x00762976, 0x007A6FBA, 0x007AFBA4, 0x007BC06A), &CDDrawDeviceList_CDDrawDeviceList::operator() };
+CDDrawDeviceList* CDDrawDeviceList_CDDrawDeviceList::operator()()
+{
+	CDDrawDeviceList* result = THISCALL(Ivk_CDDrawDeviceList_CDDrawDeviceList)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

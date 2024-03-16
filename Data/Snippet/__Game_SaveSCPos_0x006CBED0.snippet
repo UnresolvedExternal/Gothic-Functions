@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Game_SaveSCPos(): void]]></Title>
+			<Description><![CDATA[void __cdecl Game_SaveSCPos()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Game_SaveSCPos();
+BindedHook Ivk_Game_SaveSCPos{ ZENFOR(0x00641290, 0x00668400, 0x0066F150, 0x006CBED0), Hook_Game_SaveSCPos };
+void Hook_Game_SaveSCPos()
+{
+	Ivk_Game_SaveSCPos();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

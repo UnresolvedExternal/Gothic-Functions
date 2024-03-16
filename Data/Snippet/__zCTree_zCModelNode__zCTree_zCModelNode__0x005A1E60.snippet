@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTree<zCModelNode>::zCTree<zCModelNode>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCTree<zCModelNode>::zCTree<zCModelNode>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTree_zCModelNode__zCTree_zCModelNode_ : zCTree<zCModelNode> { zCTree<zCModelNode>* operator()(); };
+BindedHook Ivk_zCTree_zCModelNode__zCTree_zCModelNode_{ ZENFOR(0x005823B0, 0x0059CEC0, 0x0059C900, 0x005A1E60), &zCTree_zCModelNode__zCTree_zCModelNode_::operator() };
+zCTree<zCModelNode>* zCTree_zCModelNode__zCTree_zCModelNode_::operator()()
+{
+	zCTree<zCModelNode>* result = THISCALL(Ivk_zCTree_zCModelNode__zCTree_zCModelNode_)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

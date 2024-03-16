@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleFX::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCParticleFX::_GetClassDef() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleFX__GetClassDef : zCParticleFX { zCClassDef* operator()() const; };
+BindedHook Ivk_zCParticleFX__GetClassDef{ ZENFOR(0x0058D2D0, 0x005A8860, 0x005A79F0, 0x005AD070), &zCParticleFX__GetClassDef::operator() };
+zCClassDef* zCParticleFX__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCParticleFX__GetClassDef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

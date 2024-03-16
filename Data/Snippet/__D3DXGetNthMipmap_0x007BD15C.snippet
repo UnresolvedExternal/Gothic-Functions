@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[D3DXGetNthMipmap(unsigned long, IDirectDrawSurface7*, IDirectDrawSurface7**): long]]></Title>
+			<Description><![CDATA[long __cdecl D3DXGetNthMipmap(unsigned long, IDirectDrawSurface7*, IDirectDrawSurface7**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook_D3DXGetNthMipmap(unsigned long, IDirectDrawSurface7*, IDirectDrawSurface7**);
+BindedHook Ivk_D3DXGetNthMipmap{ ZENFOR(0x00763A68, 0x007AB08C, 0x007B0C96, 0x007BD15C), Hook_D3DXGetNthMipmap };
+long Hook_D3DXGetNthMipmap(unsigned long a0, IDirectDrawSurface7* a1, IDirectDrawSurface7** a2)
+{
+	long result = Ivk_D3DXGetNthMipmap(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<unsigned short>::AllocAbs(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<unsigned short>::AllocAbs(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCArray_unsigned_short__AllocAbs : zCArray<unsigned short> { void operator()(int); };
+BindedHook Ivk_zCArray_unsigned_short__AllocAbs{ ZENFOR(0x00000000, 0x00000000, 0x005C9960, 0x005D0500), &zCArray_unsigned_short__AllocAbs::operator() };
+void zCArray_unsigned_short__AllocAbs::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_unsigned_short__AllocAbs)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

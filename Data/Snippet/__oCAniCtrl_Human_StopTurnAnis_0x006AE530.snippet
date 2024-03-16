@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::StopTurnAnis(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::StopTurnAnis()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_StopTurnAnis : oCAniCtrl_Human { void operator()(); };
+BindedHook Ivk_oCAniCtrl_Human_StopTurnAnis{ ZENFOR(0x00625A20, 0x0064A7C0, 0x00651CB0, 0x006AE530), &oCAniCtrl_Human_StopTurnAnis::operator() };
+void oCAniCtrl_Human_StopTurnAnis::operator()()
+{
+	THISCALL(Ivk_oCAniCtrl_Human_StopTurnAnis)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

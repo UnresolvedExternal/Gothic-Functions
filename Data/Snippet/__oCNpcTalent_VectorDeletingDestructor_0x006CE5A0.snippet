@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcTalent::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall oCNpcTalent::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2
+struct oCNpcTalent_VectorDeletingDestructor : oCNpcTalent { void* operator()(unsigned int); };
+BindedHook Ivk_oCNpcTalent_VectorDeletingDestructor{ ZENFOR(0x0068A230, 0x00000000, 0x006CE5A0, 0x00000000), &oCNpcTalent_VectorDeletingDestructor::operator() };
+void* oCNpcTalent_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCNpcTalent_VectorDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

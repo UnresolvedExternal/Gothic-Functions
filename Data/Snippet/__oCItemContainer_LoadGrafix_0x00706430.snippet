@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::LoadGrafix(): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall oCItemContainer::LoadGrafix()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemContainer_LoadGrafix : oCItemContainer { void operator()(); };
+BindedHook Ivk_oCItemContainer_LoadGrafix{ ZENFOR(0x00666770, 0x00693FA0, 0x006A8940, 0x00706430), &oCItemContainer_LoadGrafix::operator() };
+void oCItemContainer_LoadGrafix::operator()()
+{
+	THISCALL(Ivk_oCItemContainer_LoadGrafix)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

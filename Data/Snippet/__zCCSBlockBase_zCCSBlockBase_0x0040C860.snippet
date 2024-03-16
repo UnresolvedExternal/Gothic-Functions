@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlockBase::zCCSBlockBase()]]></Title>
+			<Description><![CDATA[public: __thiscall zCCSBlockBase::zCCSBlockBase()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlockBase_zCCSBlockBase : zCCSBlockBase { zCCSBlockBase* operator()(); };
+BindedHook Ivk_zCCSBlockBase_zCCSBlockBase{ ZENFOR(0x0040C470, 0x0040D6C0, 0x0040C860, 0x0040C860), &zCCSBlockBase_zCCSBlockBase::operator() };
+zCCSBlockBase* zCCSBlockBase_zCCSBlockBase::operator()()
+{
+	zCCSBlockBase* result = THISCALL(Ivk_zCCSBlockBase_zCCSBlockBase)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

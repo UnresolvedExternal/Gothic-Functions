@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::ClearKeyBuffer(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCInput::ClearKeyBuffer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_ClearKeyBuffer : zCInput { void operator()(); };
+BindedHook Ivk_zCInput_ClearKeyBuffer{ ZENFOR(0x004C2950, 0x004D2260, 0x004C9720, 0x004CBC90), &zCInput_ClearKeyBuffer::operator() };
+void zCInput_ClearKeyBuffer::operator()()
+{
+	THISCALL(Ivk_zCInput_ClearKeyBuffer)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

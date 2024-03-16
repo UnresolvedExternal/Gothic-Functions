@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zRandom_Gauss::RandomUniform(): float]]></Title>
+			<Description><![CDATA[protected: float __thiscall zRandom_Gauss::RandomUniform()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zRandom_Gauss_RandomUniform : zRandom_Gauss { float operator()(); };
+BindedHook Ivk_zRandom_Gauss_RandomUniform{ ZENFOR(0x00000000, 0x00000000, 0x00555C10, 0x0055AE30), &zRandom_Gauss_RandomUniform::operator() };
+float zRandom_Gauss_RandomUniform::operator()()
+{
+	float result = THISCALL(Ivk_zRandom_Gauss_RandomUniform)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

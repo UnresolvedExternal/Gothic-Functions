@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFileBIN::BinClose(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCFileBIN::BinClose()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFileBIN_BinClose : zCFileBIN { void operator()(); };
+BindedHook Ivk_zCFileBIN_BinClose{ ZENFOR(0x00550BC0, 0x00569250, 0x00562DD0, 0x00568020), &zCFileBIN_BinClose::operator() };
+void zCFileBIN_BinClose::operator()()
+{
+	THISCALL(Ivk_zCFileBIN_BinClose)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

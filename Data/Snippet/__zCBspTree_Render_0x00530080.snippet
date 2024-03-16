@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspTree::Render(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCBspTree::Render()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspTree_Render : zCBspTree { void operator()(); };
+BindedHook Ivk_zCBspTree_Render{ ZENFOR(0x0051D840, 0x005335A0, 0x0052D130, 0x00530080), &zCBspTree_Render::operator() };
+void zCBspTree_Render::operator()()
+{
+	THISCALL(Ivk_zCBspTree_Render)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewStatusBar::SetMaxRange(float, float): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCViewStatusBar::SetMaxRange(float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewStatusBar_SetMaxRange : oCViewStatusBar { void operator()(float, float); };
+BindedHook Ivk_oCViewStatusBar_SetMaxRange{ ZENFOR(0x0043A130, 0x0043EDC0, 0x0043D570, 0x0043DBA0), &oCViewStatusBar_SetMaxRange::operator() };
+void oCViewStatusBar_SetMaxRange::operator()(float a0, float a1)
+{
+	THISCALL(Ivk_oCViewStatusBar_SetMaxRange)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

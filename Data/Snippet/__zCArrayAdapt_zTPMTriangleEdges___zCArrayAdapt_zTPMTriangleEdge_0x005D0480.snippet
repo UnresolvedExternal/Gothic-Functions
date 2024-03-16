@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArrayAdapt<zTPMTriangleEdges>::~zCArrayAdapt<zTPMTriangleEdges>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArrayAdapt<zTPMTriangleEdges>::~zCArrayAdapt<zTPMTriangleEdges>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArrayAdapt_zTPMTriangleEdges__Destructor : zCArrayAdapt<zTPMTriangleEdges> { void operator()(); };
+BindedHook Ivk_zCArrayAdapt_zTPMTriangleEdges__Destructor{ ZENFOR(0x005AB3E0, 0x005C8040, 0x005C98E0, 0x005D0480), &zCArrayAdapt_zTPMTriangleEdges__Destructor::operator() };
+void zCArrayAdapt_zTPMTriangleEdges__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArrayAdapt_zTPMTriangleEdges__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

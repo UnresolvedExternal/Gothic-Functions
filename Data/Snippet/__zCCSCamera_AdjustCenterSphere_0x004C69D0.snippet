@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::AdjustCenterSphere(zVEC3&, zVEC3 const&, float): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCCSCamera::AdjustCenterSphere(zVEC3&, zVEC3 const&, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_AdjustCenterSphere : zCCSCamera { int operator()(zVEC3&, zVEC3 const&, float); };
+BindedHook Ivk_zCCSCamera_AdjustCenterSphere{ ZENFOR(0x004BD570, 0x004CCBB0, 0x004C4460, 0x004C69D0), &zCCSCamera_AdjustCenterSphere::operator() };
+int zCCSCamera_AdjustCenterSphere::operator()(zVEC3& a0, zVEC3 const& a1, float a2)
+{
+	int result = THISCALL(Ivk_zCCSCamera_AdjustCenterSphere)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

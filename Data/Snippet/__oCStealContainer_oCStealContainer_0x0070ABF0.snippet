@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCStealContainer::oCStealContainer()]]></Title>
+			<Description><![CDATA[public: __thiscall oCStealContainer::oCStealContainer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCStealContainer_oCStealContainer : oCStealContainer { oCStealContainer* operator()(); };
+BindedHook Ivk_oCStealContainer_oCStealContainer{ ZENFOR(0x0066A3D0, 0x00697DA0, 0x006AD100, 0x0070ABF0), &oCStealContainer_oCStealContainer::operator() };
+oCStealContainer* oCStealContainer_oCStealContainer::operator()()
+{
+	oCStealContainer* result = THISCALL(Ivk_oCStealContainer_oCStealContainer)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

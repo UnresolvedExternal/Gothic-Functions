@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::TexShearU(float): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPolygon::TexShearU(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolygon_TexShearU : zCPolygon { void operator()(float); };
+BindedHook Ivk_zCPolygon_TexShearU{ ZENFOR(0x00598DD0, 0x005B4E70, 0x005B4D30, 0x005BA8A0), &zCPolygon_TexShearU::operator() };
+void zCPolygon_TexShearU::operator()(float a0)
+{
+	THISCALL(Ivk_zCPolygon_TexShearU)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

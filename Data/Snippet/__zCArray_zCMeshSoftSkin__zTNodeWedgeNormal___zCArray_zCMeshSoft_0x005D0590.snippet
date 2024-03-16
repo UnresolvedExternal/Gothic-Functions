@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCMeshSoftSkin::zTNodeWedgeNormal>::~zCArray<zCMeshSoftSkin::zTNodeWedgeNormal>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zCMeshSoftSkin::zTNodeWedgeNormal>::~zCArray<zCMeshSoftSkin::zTNodeWedgeNormal>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCMeshSoftSkin__zTNodeWedgeNormal__Destructor : zCArray<zCMeshSoftSkin::zTNodeWedgeNormal> { void operator()(); };
+BindedHook Ivk_zCArray_zCMeshSoftSkin__zTNodeWedgeNormal__Destructor{ ZENFOR(0x005AB460, 0x005C80C0, 0x005C99F0, 0x005D0590), &zCArray_zCMeshSoftSkin__zTNodeWedgeNormal__Destructor::operator() };
+void zCArray_zCMeshSoftSkin__zTNodeWedgeNormal__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCMeshSoftSkin__zTNodeWedgeNormal__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

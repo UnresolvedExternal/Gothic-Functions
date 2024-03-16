@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCActiveSnd::ResumeSoundsByFrame(zCSndFrame*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCActiveSnd::ResumeSoundsByFrame(zCSndFrame*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCActiveSnd_ResumeSoundsByFrame(zCSndFrame*);
+BindedHook Ivk_zCActiveSnd_ResumeSoundsByFrame{ ZENFOR(0x004E9370, 0x004FB640, 0x004F4870, 0x004F74F0), Hook_zCActiveSnd_ResumeSoundsByFrame };
+void Hook_zCActiveSnd_ResumeSoundsByFrame(zCSndFrame* a0)
+{
+	Ivk_zCActiveSnd_ResumeSoundsByFrame(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

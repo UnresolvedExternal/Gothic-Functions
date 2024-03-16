@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::SetAlphaTestingEnabled(int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCProgMeshProto::SetAlphaTestingEnabled(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCProgMeshProto_SetAlphaTestingEnabled : zCProgMeshProto { void operator()(int); };
+BindedHook Ivk_zCProgMeshProto_SetAlphaTestingEnabled{ ZENFOR(0x00000000, 0x00000000, 0x005C0DD0, 0x005C6940), &zCProgMeshProto_SetAlphaTestingEnabled::operator() };
+void zCProgMeshProto_SetAlphaTestingEnabled::operator()(int a0)
+{
+	THISCALL(Ivk_zCProgMeshProto_SetAlphaTestingEnabled)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

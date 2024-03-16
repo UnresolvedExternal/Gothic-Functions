@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWorldTimer::GetFullTime(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall oCWorldTimer::GetFullTime()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWorldTimer_GetFullTime : oCWorldTimer { float operator()(); };
+BindedHook Ivk_oCWorldTimer_GetFullTime{ ZENFOR(0x006D7C40, 0x0070F7D0, 0x00721440, 0x00780E80), &oCWorldTimer_GetFullTime::operator() };
+float oCWorldTimer_GetFullTime::operator()()
+{
+	float result = THISCALL(Ivk_oCWorldTimer_GetFullTime)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

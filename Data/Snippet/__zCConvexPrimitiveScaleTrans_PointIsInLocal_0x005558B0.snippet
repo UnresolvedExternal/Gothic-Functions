@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitiveScaleTrans::PointIsInLocal(zVEC3 const&): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCConvexPrimitiveScaleTrans::PointIsInLocal(zVEC3 const&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConvexPrimitiveScaleTrans_PointIsInLocal : zCConvexPrimitiveScaleTrans { int operator()(zVEC3 const&) const; };
+BindedHook Ivk_zCConvexPrimitiveScaleTrans_PointIsInLocal{ ZENFOR(0x00541160, 0x00558A90, 0x00550690, 0x005558B0), &zCConvexPrimitiveScaleTrans_PointIsInLocal::operator() };
+int zCConvexPrimitiveScaleTrans_PointIsInLocal::operator()(zVEC3 const& a0) const
+{
+	int result = THISCALL(Ivk_zCConvexPrimitiveScaleTrans_PointIsInLocal)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

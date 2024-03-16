@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTrajectory::Draw(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCTrajectory::Draw()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTrajectory_Draw : oCTrajectory { void operator()(); };
+BindedHook Ivk_oCTrajectory_Draw{ ZENFOR(0x00480850, 0x0048B710, 0x00486BE0, 0x00488240), &oCTrajectory_Draw::operator() };
+void oCTrajectory_Draw::operator()()
+{
+	THISCALL(Ivk_oCTrajectory_Draw)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

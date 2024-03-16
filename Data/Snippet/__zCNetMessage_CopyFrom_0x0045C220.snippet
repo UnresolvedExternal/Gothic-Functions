@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetMessage::CopyFrom(zCNetMessage*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCNetMessage::CopyFrom(zCNetMessage*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetMessage_CopyFrom : zCNetMessage { void operator()(zCNetMessage*); };
+BindedHook Ivk_zCNetMessage_CopyFrom{ ZENFOR(0x00457190, 0x0045E170, 0x0045BAD0, 0x0045C220), &zCNetMessage_CopyFrom::operator() };
+void zCNetMessage_CopyFrom::operator()(zCNetMessage* a0)
+{
+	THISCALL(Ivk_zCNetMessage_CopyFrom)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyState::PresetDay0(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCSkyState::PresetDay0()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyState_PresetDay0 : zCSkyState { void operator()(); };
+BindedHook Ivk_zCSkyState_PresetDay0{ ZENFOR(0x005BB9B0, 0x005D9550, 0x005DC9E0, 0x005E3790), &zCSkyState_PresetDay0::operator() };
+void zCSkyState_PresetDay0::operator()()
+{
+	THISCALL(Ivk_zCSkyState_PresetDay0)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

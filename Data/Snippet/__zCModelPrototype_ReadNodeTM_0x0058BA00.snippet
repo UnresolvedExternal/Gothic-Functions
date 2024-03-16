@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ReadNodeTM(zCModelNode*): zMAT4]]></Title>
+			<Description><![CDATA[private: zMAT4 __thiscall zCModelPrototype::ReadNodeTM(zCModelNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_ReadNodeTM : zCModelPrototype { zMAT4 operator()(zCModelNode*); };
+BindedHook Ivk_zCModelPrototype_ReadNodeTM{ ZENFOR(0x005712C0, 0x0058A8B0, 0x005864A0, 0x0058BA00), &zCModelPrototype_ReadNodeTM::operator() };
+zMAT4 zCModelPrototype_ReadNodeTM::operator()(zCModelNode* a0)
+{
+	zMAT4 result = THISCALL(Ivk_zCModelPrototype_ReadNodeTM)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

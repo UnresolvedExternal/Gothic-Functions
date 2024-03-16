@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh3DS::~zCMesh3DS()]]></Title>
+			<Description><![CDATA[public: __thiscall zCMesh3DS::~zCMesh3DS()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh3DS_Destructor : zCMesh3DS { void operator()(); };
+BindedHook Ivk_zCMesh3DS_Destructor{ ZENFOR(0x005498D0, 0x005618C0, 0x0055B370, 0x00560590), &zCMesh3DS_Destructor::operator() };
+void zCMesh3DS_Destructor::operator()()
+{
+	THISCALL(Ivk_zCMesh3DS_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

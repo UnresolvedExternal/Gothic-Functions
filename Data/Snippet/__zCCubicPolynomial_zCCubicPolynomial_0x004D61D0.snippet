@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCubicPolynomial::zCCubicPolynomial()]]></Title>
+			<Description><![CDATA[public: __thiscall zCCubicPolynomial::zCCubicPolynomial()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCubicPolynomial_zCCubicPolynomial : zCCubicPolynomial { zCCubicPolynomial* operator()(); };
+BindedHook Ivk_zCCubicPolynomial_zCCubicPolynomial{ ZENFOR(0x004C95A0, 0x004D9940, 0x004D3C10, 0x004D61D0), &zCCubicPolynomial_zCCubicPolynomial::operator() };
+zCCubicPolynomial* zCCubicPolynomial_zCCubicPolynomial::operator()()
+{
+	zCCubicPolynomial* result = THISCALL(Ivk_zCCubicPolynomial_zCCubicPolynomial)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

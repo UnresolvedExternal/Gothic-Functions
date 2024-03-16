@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<oCInfoChoice>::~zCList<oCInfoChoice>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCList<oCInfoChoice>::~zCList<oCInfoChoice>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_oCInfoChoice__Destructor : zCList<oCInfoChoice> { void operator()(); };
+BindedHook Ivk_zCList_oCInfoChoice__Destructor{ ZENFOR(0x00665DA0, 0x006932F0, 0x006A63C0, 0x00703E50), &zCList_oCInfoChoice__Destructor::operator() };
+void zCList_oCInfoChoice__Destructor::operator()()
+{
+	THISCALL(Ivk_zCList_oCInfoChoice__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

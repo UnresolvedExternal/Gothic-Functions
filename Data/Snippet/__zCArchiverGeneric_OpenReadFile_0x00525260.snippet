@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::OpenReadFile(zFILE*, zTArchiveMode, int, int, int): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCArchiverGeneric::OpenReadFile(zFILE*, zTArchiveMode, int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_OpenReadFile : zCArchiverGeneric { void operator()(zFILE*, zTArchiveMode, int, int, int); };
+BindedHook Ivk_zCArchiverGeneric_OpenReadFile{ ZENFOR(0x005146B0, 0x00529CF0, 0x00522490, 0x00525260), &zCArchiverGeneric_OpenReadFile::operator() };
+void zCArchiverGeneric_OpenReadFile::operator()(zFILE* a0, zTArchiveMode a1, int a2, int a3, int a4)
+{
+	THISCALL(Ivk_zCArchiverGeneric_OpenReadFile)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

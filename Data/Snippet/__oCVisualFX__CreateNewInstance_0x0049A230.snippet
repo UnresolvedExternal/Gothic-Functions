@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::_CreateNewInstance(): zCObject*]]></Title>
+			<Description><![CDATA[private: static zCObject* __cdecl oCVisualFX::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_oCVisualFX__CreateNewInstance();
+BindedHook Ivk_oCVisualFX__CreateNewInstance{ ZENFOR(0x0048FE60, 0x0049BCE0, 0x004980C0, 0x0049A230), Hook_oCVisualFX__CreateNewInstance };
+zCObject* Hook_oCVisualFX__CreateNewInstance()
+{
+	zCObject* result = Ivk_oCVisualFX__CreateNewInstance();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

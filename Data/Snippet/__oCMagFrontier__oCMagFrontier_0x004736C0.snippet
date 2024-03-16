@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMagFrontier::~oCMagFrontier()]]></Title>
+			<Description><![CDATA[public: __thiscall oCMagFrontier::~oCMagFrontier()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMagFrontier_Destructor : oCMagFrontier { void operator()(); };
+BindedHook Ivk_oCMagFrontier_Destructor{ ZENFOR(0x0046D5B0, 0x00475CF0, 0x004725A0, 0x004736C0), &oCMagFrontier_Destructor::operator() };
+void oCMagFrontier_Destructor::operator()()
+{
+	THISCALL(Ivk_oCMagFrontier_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

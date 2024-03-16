@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspBase::RenderIndoor(int): void]]></Title>
+			<Description><![CDATA[protected: void __fastcall zCBspBase::RenderIndoor(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspBase_RenderIndoor : zCBspBase { void __fastcall operator()(int); };
+BindedHook Ivk_zCBspBase_RenderIndoor{ ZENFOR(0x0051C7C0, 0x005324C0, 0x0052C190, 0x0052F0E0), &zCBspBase_RenderIndoor::operator() };
+void __fastcall zCBspBase_RenderIndoor::operator()(int a0)
+{
+	THISCALL(Ivk_zCBspBase_RenderIndoor)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

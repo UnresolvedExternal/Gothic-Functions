@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::TraceRay(zVEC3 const&, zVEC3 const&, int, zTTraceRayReport&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCModel::TraceRay(zVEC3 const&, zVEC3 const&, int, zTTraceRayReport&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_TraceRay : zCModel { int operator()(zVEC3 const&, zVEC3 const&, int, zTTraceRayReport&); };
+BindedHook Ivk_zCModel_TraceRay{ ZENFOR(0x00568350, 0x00581060, 0x0057D2A0, 0x00582800), &zCModel_TraceRay::operator() };
+int zCModel_TraceRay::operator()(zVEC3 const& a0, zVEC3 const& a1, int a2, zTTraceRayReport& a3)
+{
+	int result = THISCALL(Ivk_zCModel_TraceRay)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

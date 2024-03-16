@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenu::DefineExternal(zSTRING&, int(__cdecl*)(), int, int, ...): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCMenu::DefineExternal(zSTRING&, int(__cdecl*)(), int, int, ...)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCMenu_DefineExternal(zSTRING&, int(__cdecl*)(), int, int, ...);
+BindedHook Ivk_zCMenu_DefineExternal{ ZENFOR(0x004CDF90, 0x004DE730, 0x004D8510, 0x004DABB0), Hook_zCMenu_DefineExternal };
+void Hook_zCMenu_DefineExternal(zSTRING& a0, int(__cdecl* a1)(), int a2, int a3, ...)
+{
+	Ivk_zCMenu_DefineExternal(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

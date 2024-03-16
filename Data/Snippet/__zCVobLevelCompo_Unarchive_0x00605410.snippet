@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLevelCompo::Unarchive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCVobLevelCompo::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobLevelCompo_Unarchive : zCVobLevelCompo { void operator()(zCArchiver&); };
+BindedHook Ivk_zCVobLevelCompo_Unarchive{ ZENFOR(0x005D8BC0, 0x005F83E0, 0x005FE580, 0x00605410), &zCVobLevelCompo_Unarchive::operator() };
+void zCVobLevelCompo_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCVobLevelCompo_Unarchive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

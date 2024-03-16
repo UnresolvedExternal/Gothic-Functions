@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobWheel::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[protected: virtual void* __thiscall oCMobWheel::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobWheel_ScalarDeletingDestructor : oCMobWheel { void* operator()(unsigned int); };
+BindedHook Ivk_oCMobWheel_ScalarDeletingDestructor{ ZENFOR(0x00684FD0, 0x006B4BF0, 0x006C9010, 0x007270A0), &oCMobWheel_ScalarDeletingDestructor::operator() };
+void* oCMobWheel_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_oCMobWheel_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

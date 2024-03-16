@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::PrevItemLine(): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall oCItemContainer::PrevItemLine()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCItemContainer_PrevItemLine : oCItemContainer { void operator()(); };
+BindedHook Ivk_oCItemContainer_PrevItemLine{ ZENFOR(0x00000000, 0x00000000, 0x006AC240, 0x00709D30), &oCItemContainer_PrevItemLine::operator() };
+void oCItemContainer_PrevItemLine::operator()()
+{
+	THISCALL(Ivk_oCItemContainer_PrevItemLine)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

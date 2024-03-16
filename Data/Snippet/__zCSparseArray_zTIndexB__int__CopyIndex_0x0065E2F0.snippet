@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zTIndexB, int>::CopyIndex(void*, void const*): void [const]]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<zTIndexB, int>::CopyIndex(void*, void const*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zTIndexB__int__CopyIndex : zCSparseArray<zTIndexB, int> { void operator()(void*, void const*) const; };
+BindedHook Ivk_zCSparseArray_zTIndexB__int__CopyIndex{ ZENFOR(0x0075A830, 0x0079CE90, 0x007A7780, 0x0065E2F0), &zCSparseArray_zTIndexB__int__CopyIndex::operator() };
+void zCSparseArray_zTIndexB__int__CopyIndex::operator()(void* a0, void const* a1) const
+{
+	THISCALL(Ivk_zCSparseArray_zTIndexB__int__CopyIndex)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

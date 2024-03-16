@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneZFog::GetSkyFadeWeight(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall zCZoneZFog::GetSkyFadeWeight()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCZoneZFog_GetSkyFadeWeight : zCZoneZFog { float operator()(); };
+BindedHook Ivk_zCZoneZFog_GetSkyFadeWeight{ ZENFOR(0x00000000, 0x00000000, 0x00634F70, 0x0063C750), &zCZoneZFog_GetSkyFadeWeight::operator() };
+float zCZoneZFog_GetSkyFadeWeight::operator()()
+{
+	float result = THISCALL(Ivk_zCZoneZFog_GetSkyFadeWeight)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

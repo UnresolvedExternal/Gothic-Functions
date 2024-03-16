@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[GETStringMap<unsigned long>::SetAtForce(char const*, unsigned long*, unsigned long, unsigned long): unsigned long]]></Title>
+			<Description><![CDATA[public: unsigned long __thiscall GETStringMap<unsigned long>::SetAtForce(char const*, unsigned long*, unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct GETStringMap_unsigned_long__SetAtForce : GETStringMap<unsigned long> { unsigned long operator()(char const*, unsigned long*, unsigned long, unsigned long); };
+BindedHook Ivk_GETStringMap_unsigned_long__SetAtForce{ ZENFOR(0x005111D0, 0x00526490, 0x0051E7E0, 0x005215B0), &GETStringMap_unsigned_long__SetAtForce::operator() };
+unsigned long GETStringMap_unsigned_long__SetAtForce::operator()(char const* a0, unsigned long* a1, unsigned long a2, unsigned long a3)
+{
+	unsigned long result = THISCALL(Ivk_GETStringMap_unsigned_long__SetAtForce)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMeshSoftSkin::Save(zCFileBIN&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCMeshSoftSkin::Save(zCFileBIN&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMeshSoftSkin_Save : zCMeshSoftSkin { int operator()(zCFileBIN&); };
+BindedHook Ivk_zCMeshSoftSkin_Save{ ZENFOR(0x005AA500, 0x005C7060, 0x005C8980, 0x005CE930), &zCMeshSoftSkin_Save::operator() };
+int zCMeshSoftSkin_Save::operator()(zCFileBIN& a0)
+{
+	int result = THISCALL(Ivk_zCMeshSoftSkin_Save)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

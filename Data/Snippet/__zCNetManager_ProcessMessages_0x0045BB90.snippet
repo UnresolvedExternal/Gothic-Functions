@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetManager::ProcessMessages(): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCNetManager::ProcessMessages()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetManager_ProcessMessages : zCNetManager { void operator()(); };
+BindedHook Ivk_zCNetManager_ProcessMessages{ ZENFOR(0x00456AE0, 0x0045DA90, 0x0045B440, 0x0045BB90), &zCNetManager_ProcessMessages::operator() };
+void zCNetManager_ProcessMessages::operator()()
+{
+	THISCALL(Ivk_zCNetManager_ProcessMessages)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

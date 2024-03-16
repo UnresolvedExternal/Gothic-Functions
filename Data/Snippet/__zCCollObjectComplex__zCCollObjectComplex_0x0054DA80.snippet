@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectComplex::~zCCollObjectComplex()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCCollObjectComplex::~zCCollObjectComplex()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectComplex_Destructor : zCCollObjectComplex { void operator()(); };
+BindedHook Ivk_zCCollObjectComplex_Destructor{ ZENFOR(0x005395D0, 0x00550870, 0x00548860, 0x0054DA80), &zCCollObjectComplex_Destructor::operator() };
+void zCCollObjectComplex_Destructor::operator()()
+{
+	THISCALL(Ivk_zCCollObjectComplex_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

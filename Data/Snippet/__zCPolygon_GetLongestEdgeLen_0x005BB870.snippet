@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::GetLongestEdgeLen(): float [const]]]></Title>
+			<Description><![CDATA[public: float __thiscall zCPolygon::GetLongestEdgeLen() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolygon_GetLongestEdgeLen : zCPolygon { float operator()() const; };
+BindedHook Ivk_zCPolygon_GetLongestEdgeLen{ ZENFOR(0x00599DC0, 0x005B5F30, 0x005B5D00, 0x005BB870), &zCPolygon_GetLongestEdgeLen::operator() };
+float zCPolygon_GetLongestEdgeLen::operator()() const
+{
+	float result = THISCALL(Ivk_zCPolygon_GetLongestEdgeLen)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

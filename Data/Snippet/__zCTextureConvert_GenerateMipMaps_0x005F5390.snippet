@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureConvert::GenerateMipMaps(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCTextureConvert::GenerateMipMaps()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureConvert_GenerateMipMaps : zCTextureConvert { void operator()(); };
+BindedHook Ivk_zCTextureConvert_GenerateMipMaps{ ZENFOR(0x005CA4A0, 0x005E8EE0, 0x005EE5E0, 0x005F5390), &zCTextureConvert_GenerateMipMaps::operator() };
+void zCTextureConvert_GenerateMipMaps::operator()()
+{
+	THISCALL(Ivk_zCTextureConvert_GenerateMipMaps)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

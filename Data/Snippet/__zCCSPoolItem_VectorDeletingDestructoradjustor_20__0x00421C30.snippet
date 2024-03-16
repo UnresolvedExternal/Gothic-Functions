@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPoolItem::VectorDeletingDestructoradjustor{20}(unsigned int): void*]]></Title>
+			<Description><![CDATA[protected: virtual void* __thiscall zCCSPoolItem::VectorDeletingDestructoradjustor{20}(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPoolItem_VectorDeletingDestructoradjustor_20_ : zCCSPoolItem { void* operator()(unsigned int); };
+BindedHook Ivk_zCCSPoolItem_VectorDeletingDestructoradjustor_20_{ ZENFOR(0x004214A0, 0x004238F0, 0x00421900, 0x00421C30), &zCCSPoolItem_VectorDeletingDestructoradjustor_20_::operator() };
+void* zCCSPoolItem_VectorDeletingDestructoradjustor_20_::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCCSPoolItem_VectorDeletingDestructoradjustor_20_)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexture::CacheInNamed(zSTRING const*): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCTexture::CacheInNamed(zSTRING const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTexture_CacheInNamed : zCTexture { int operator()(zSTRING const*); };
+BindedHook Ivk_zCTexture_CacheInNamed{ ZENFOR(0x005CBA70, 0x005EA4D0, 0x005EFC30, 0x005F69E0), &zCTexture_CacheInNamed::operator() };
+int zCTexture_CacheInNamed::operator()(zSTRING const* a0)
+{
+	int result = THISCALL(Ivk_zCTexture_CacheInNamed)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

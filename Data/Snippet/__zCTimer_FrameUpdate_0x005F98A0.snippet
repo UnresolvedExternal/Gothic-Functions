@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTimer::FrameUpdate(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCTimer::FrameUpdate()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCTimer_FrameUpdate();
+BindedHook Ivk_zCTimer_FrameUpdate{ ZENFOR(0x005CE670, 0x005ED410, 0x005F2AB0, 0x005F98A0), Hook_zCTimer_FrameUpdate };
+void Hook_zCTimer_FrameUpdate()
+{
+	Ivk_zCTimer_FrameUpdate();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

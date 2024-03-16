@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::GetScreenBBox2D(): zTBBox2D]]></Title>
+			<Description><![CDATA[public: zTBBox2D __thiscall zCVob::GetScreenBBox2D()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_GetScreenBBox2D : zCVob { zTBBox2D operator()(); };
+BindedHook Ivk_zCVob_GetScreenBBox2D{ ZENFOR(0x005D8560, 0x005F7CF0, 0x005FDC60, 0x00604AE0), &zCVob_GetScreenBBox2D::operator() };
+zTBBox2D zCVob_GetScreenBBox2D::operator()()
+{
+	zTBBox2D result = THISCALL(Ivk_zCVob_GetScreenBBox2D)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

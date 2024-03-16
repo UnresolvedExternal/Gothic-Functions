@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCZoneMusic::GetMusicZoneByName(oCZoneMusic*, zSTRING): oCZoneMusic*]]></Title>
+			<Description><![CDATA[protected: static oCZoneMusic* __cdecl oCZoneMusic::GetMusicZoneByName(oCZoneMusic*, zSTRING)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[oCZoneMusic* Hook_oCZoneMusic_GetMusicZoneByName(oCZoneMusic*, zSTRING);
+BindedHook Ivk_oCZoneMusic_GetMusicZoneByName{ ZENFOR(0x0070C350, 0x00747380, 0x00756570, 0x00641B10), Hook_oCZoneMusic_GetMusicZoneByName };
+oCZoneMusic* Hook_oCZoneMusic_GetMusicZoneByName(oCZoneMusic* a0, zSTRING a1)
+{
+	oCZoneMusic* result = Ivk_oCZoneMusic_GetMusicZoneByName(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

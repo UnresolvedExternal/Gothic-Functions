@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOBBox3D::SaveBIN(zCFileBIN&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCOBBox3D::SaveBIN(zCFileBIN&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOBBox3D_SaveBIN : zCOBBox3D { void operator()(zCFileBIN&); };
+BindedHook Ivk_zCOBBox3D_SaveBIN{ ZENFOR(0x00535B80, 0x0054CB50, 0x00544920, 0x00549B40), &zCOBBox3D_SaveBIN::operator() };
+void zCOBBox3D_SaveBIN::operator()(zCFileBIN& a0)
+{
+	THISCALL(Ivk_zCOBBox3D_SaveBIN)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

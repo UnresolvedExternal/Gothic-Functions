@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::FindNext(): bool]]></Title>
+			<Description><![CDATA[public: virtual bool __thiscall zFILE_FILE::FindNext()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_FindNext : zFILE_FILE { bool operator()(); };
+BindedHook Ivk_zFILE_FILE_FindNext{ ZENFOR(0x00443C20, 0x004497B0, 0x004475E0, 0x00447C10), &zFILE_FILE_FindNext::operator() };
+bool zFILE_FILE_FindNext::operator()()
+{
+	bool result = THISCALL(Ivk_zFILE_FILE_FindNext)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

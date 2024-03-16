@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMaterial::SetTexScale(zVEC2): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMaterial::SetTexScale(zVEC2)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMaterial_SetTexScale : zCMaterial { void operator()(zVEC2); };
+BindedHook Ivk_zCMaterial_SetTexScale{ ZENFOR(0x0054DFE0, 0x00566450, 0x0055FE00, 0x00565020), &zCMaterial_SetTexScale::operator() };
+void zCMaterial_SetTexScale::operator()(zVEC2 a0)
+{
+	THISCALL(Ivk_zCMaterial_SetTexScale)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

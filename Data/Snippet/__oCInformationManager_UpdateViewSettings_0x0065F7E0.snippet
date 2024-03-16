@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInformationManager::UpdateViewSettings(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCInformationManager::UpdateViewSettings()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInformationManager_UpdateViewSettings : oCInformationManager { void operator()(); };
+BindedHook Ivk_oCInformationManager_UpdateViewSettings{ ZENFOR(0x0072AC20, 0x00768FC0, 0x007765E0, 0x0065F7E0), &oCInformationManager_UpdateViewSettings::operator() };
+void oCInformationManager_UpdateViewSettings::operator()()
+{
+	THISCALL(Ivk_oCInformationManager_UpdateViewSettings)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

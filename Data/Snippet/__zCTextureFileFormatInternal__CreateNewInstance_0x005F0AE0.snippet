@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureFileFormatInternal::_CreateNewInstance(): zCObject*]]></Title>
+			<Description><![CDATA[private: static zCObject* __cdecl zCTextureFileFormatInternal::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_zCTextureFileFormatInternal__CreateNewInstance();
+BindedHook Ivk_zCTextureFileFormatInternal__CreateNewInstance{ ZENFOR(0x005C6050, 0x005E4470, 0x005E9D30, 0x005F0AE0), Hook_zCTextureFileFormatInternal__CreateNewInstance };
+zCObject* Hook_zCTextureFileFormatInternal__CreateNewInstance()
+{
+	zCObject* result = Ivk_zCTextureFileFormatInternal__CreateNewInstance();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

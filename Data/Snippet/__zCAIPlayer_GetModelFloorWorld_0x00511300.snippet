@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::GetModelFloorWorld(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall zCAIPlayer::GetModelFloorWorld()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_GetModelFloorWorld : zCAIPlayer { float operator()(); };
+BindedHook Ivk_zCAIPlayer_GetModelFloorWorld{ ZENFOR(0x005017A0, 0x00514FB0, 0x0050E530, 0x00511300), &zCAIPlayer_GetModelFloorWorld::operator() };
+float zCAIPlayer_GetModelFloorWorld::operator()()
+{
+	float result = THISCALL(Ivk_zCAIPlayer_GetModelFloorWorld)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

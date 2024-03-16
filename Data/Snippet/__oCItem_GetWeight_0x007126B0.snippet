@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::GetWeight(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCItem::GetWeight()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_GetWeight : oCItem { int operator()(); };
+BindedHook Ivk_oCItem_GetWeight{ ZENFOR(0x00671FA0, 0x0069F900, 0x006B4900, 0x007126B0), &oCItem_GetWeight::operator() };
+int oCItem_GetWeight::operator()()
+{
+	int result = THISCALL(Ivk_oCItem_GetWeight)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

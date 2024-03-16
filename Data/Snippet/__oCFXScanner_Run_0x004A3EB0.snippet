@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCFXScanner::Run(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCFXScanner::Run()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct oCFXScanner_Run : oCFXScanner { void operator()(); };
+BindedHook Ivk_oCFXScanner_Run{ ZENFOR(0x00496FE0, 0x004A3EB0, 0x00000000, 0x00000000), &oCFXScanner_Run::operator() };
+void oCFXScanner_Run::operator()()
+{
+	THISCALL(Ivk_oCFXScanner_Run)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

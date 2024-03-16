@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::CreateTrafoLocal(): void [const]]]></Title>
+			<Description><![CDATA[public: void __thiscall zCVob::CreateTrafoLocal() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_CreateTrafoLocal : zCVob { void operator()() const; };
+BindedHook Ivk_zCVob_CreateTrafoLocal{ ZENFOR(0x005EFB80, 0x006106B0, 0x006159C0, 0x0061D100), &zCVob_CreateTrafoLocal::operator() };
+void zCVob_CreateTrafoLocal::operator()() const
+{
+	THISCALL(Ivk_zCVob_CreateTrafoLocal)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

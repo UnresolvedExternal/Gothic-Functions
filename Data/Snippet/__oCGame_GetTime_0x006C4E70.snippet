@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::GetTime(int&, int&, int&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCGame::GetTime(int&, int&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_GetTime : oCGame { void operator()(int&, int&, int&); };
+BindedHook Ivk_oCGame_GetTime{ ZENFOR(0x0063A9A0, 0x00661280, 0x006681F0, 0x006C4E70), &oCGame_GetTime::operator() };
+void oCGame_GetTime::operator()(int& a0, int& a1, int& a2)
+{
+	THISCALL(Ivk_oCGame_GetTime)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

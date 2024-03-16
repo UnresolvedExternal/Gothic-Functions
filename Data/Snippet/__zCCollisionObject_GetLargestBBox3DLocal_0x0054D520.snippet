@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollisionObject::GetLargestBBox3DLocal(zTBBox3D&): void]]></Title>
+			<Description><![CDATA[public: virtual void __fastcall zCCollisionObject::GetLargestBBox3DLocal(zTBBox3D&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollisionObject_GetLargestBBox3DLocal : zCCollisionObject { void __fastcall operator()(zTBBox3D&); };
+BindedHook Ivk_zCCollisionObject_GetLargestBBox3DLocal{ ZENFOR(0x00539060, 0x00550300, 0x00548300, 0x0054D520), &zCCollisionObject_GetLargestBBox3DLocal::operator() };
+void __fastcall zCCollisionObject_GetLargestBBox3DLocal::operator()(zTBBox3D& a0)
+{
+	THISCALL(Ivk_zCCollisionObject_GetLargestBBox3DLocal)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

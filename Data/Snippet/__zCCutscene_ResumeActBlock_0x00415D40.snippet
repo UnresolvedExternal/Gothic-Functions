@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCutscene::ResumeActBlock(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCCutscene::ResumeActBlock()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCutscene_ResumeActBlock : zCCutscene { int operator()(); };
+BindedHook Ivk_zCCutscene_ResumeActBlock{ ZENFOR(0x00415780, 0x004174B0, 0x00415D40, 0x00415D40), &zCCutscene_ResumeActBlock::operator() };
+int zCCutscene_ResumeActBlock::operator()()
+{
+	int result = THISCALL(Ivk_zCCutscene_ResumeActBlock)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

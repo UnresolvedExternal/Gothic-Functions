@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetSwimDiveTime(float, float): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetSwimDiveTime(float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetSwimDiveTime : oCNpc { void operator()(float, float); };
+BindedHook Ivk_oCNpc_SetSwimDiveTime{ ZENFOR(0x0069E370, 0x006D0710, 0x006E3560, 0x00741F70), &oCNpc_SetSwimDiveTime::operator() };
+void oCNpc_SetSwimDiveTime::operator()(float a0, float a1)
+{
+	THISCALL(Ivk_oCNpc_SetSwimDiveTime)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

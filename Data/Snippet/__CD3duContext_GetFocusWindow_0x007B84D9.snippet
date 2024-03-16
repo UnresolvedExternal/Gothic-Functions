@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::GetFocusWindow(): HWND__*]]></Title>
+			<Description><![CDATA[public: virtual HWND__* __stdcall CD3duContext::GetFocusWindow()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext_GetFocusWindow : CD3duContext { HWND__* __stdcall operator()(); };
+BindedHook Ivk_CD3duContext_GetFocusWindow{ ZENFOR(0x0075EDE5, 0x007A30F8, 0x007AC013, 0x007B84D9), &CD3duContext_GetFocusWindow::operator() };
+HWND__* __stdcall CD3duContext_GetFocusWindow::operator()()
+{
+	HWND__* result = THISCALL(Ivk_CD3duContext_GetFocusWindow)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

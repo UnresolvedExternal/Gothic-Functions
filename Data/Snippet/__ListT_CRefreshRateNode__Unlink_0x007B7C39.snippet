@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CRefreshRateNode>::Unlink(CRefreshRateNode*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall ListT<CRefreshRateNode>::Unlink(CRefreshRateNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CRefreshRateNode__Unlink : ListT<CRefreshRateNode> { void operator()(CRefreshRateNode*); };
+BindedHook Ivk_ListT_CRefreshRateNode__Unlink{ ZENFOR(0x0075E545, 0x007A1E60, 0x007AB773, 0x007B7C39), &ListT_CRefreshRateNode__Unlink::operator() };
+void ListT_CRefreshRateNode__Unlink::operator()(CRefreshRateNode* a0)
+{
+	THISCALL(Ivk_ListT_CRefreshRateNode__Unlink)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

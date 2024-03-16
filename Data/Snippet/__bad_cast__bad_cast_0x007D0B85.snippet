@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[bad_cast::~bad_cast()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall bad_cast::~bad_cast()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct bad_cast_Destructor : bad_cast { void operator()(); };
+BindedHook Ivk_bad_cast_Destructor{ ZENFOR(0x007771E5, 0x007BAFA5, 0x007C46C5, 0x007D0B85), &bad_cast_Destructor::operator() };
+void bad_cast_Destructor::operator()()
+{
+	THISCALL(Ivk_bad_cast_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

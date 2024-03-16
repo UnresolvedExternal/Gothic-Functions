@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCRtnCutscene::ResetPlayState(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCRtnCutscene::ResetPlayState()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCRtnCutscene_ResetPlayState : oCRtnCutscene { void operator()(); };
+BindedHook Ivk_oCRtnCutscene_ResetPlayState{ ZENFOR(0x006CC400, 0x00702A80, 0x00714BD0, 0x00774160), &oCRtnCutscene_ResetPlayState::operator() };
+void oCRtnCutscene_ResetPlayState::operator()()
+{
+	THISCALL(Ivk_oCRtnCutscene_ResetPlayState)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

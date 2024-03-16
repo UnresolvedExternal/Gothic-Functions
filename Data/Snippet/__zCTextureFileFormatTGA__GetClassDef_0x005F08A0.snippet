@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureFileFormatTGA::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCTextureFileFormatTGA::_GetClassDef() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureFileFormatTGA__GetClassDef : zCTextureFileFormatTGA { zCClassDef* operator()() const; };
+BindedHook Ivk_zCTextureFileFormatTGA__GetClassDef{ ZENFOR(0x005C5E20, 0x005E4220, 0x005E9AF0, 0x005F08A0), &zCTextureFileFormatTGA__GetClassDef::operator() };
+zCClassDef* zCTextureFileFormatTGA__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCTextureFileFormatTGA__GetClassDef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

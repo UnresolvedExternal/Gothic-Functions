@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVisual::GetRenderSortKey(): unsigned long [const]]]></Title>
+			<Description><![CDATA[public: virtual unsigned long __thiscall zCVisual::GetRenderSortKey() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVisual_GetRenderSortKey : zCVisual { unsigned long operator()() const; };
+BindedHook Ivk_zCVisual_GetRenderSortKey{ ZENFOR(0x004C0D60, 0x004D0690, 0x004C7B10, 0x004CA080), &zCVisual_GetRenderSortKey::operator() };
+unsigned long zCVisual_GetRenderSortKey::operator()() const
+{
+	unsigned long result = THISCALL(Ivk_zCVisual_GetRenderSortKey)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

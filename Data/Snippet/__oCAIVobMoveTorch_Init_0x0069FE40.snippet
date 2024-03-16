@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIVobMoveTorch::Init(zCVob*, zCVob*, zVEC3&, float, float, zMAT4*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCAIVobMoveTorch::Init(zCVob*, zCVob*, zVEC3&, float, float, zMAT4*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIVobMoveTorch_Init : oCAIVobMoveTorch { void operator()(zCVob*, zCVob*, zVEC3&, float, float, zMAT4*); };
+BindedHook Ivk_oCAIVobMoveTorch_Init{ ZENFOR(0x00618280, 0x0063B5A0, 0x00643670, 0x0069FE40), &oCAIVobMoveTorch_Init::operator() };
+void oCAIVobMoveTorch_Init::operator()(zCVob* a0, zCVob* a1, zVEC3& a2, float a3, float a4, zMAT4* a5)
+{
+	THISCALL(Ivk_oCAIVobMoveTorch_Init)(a0, a1, a2, a3, a4, a5);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

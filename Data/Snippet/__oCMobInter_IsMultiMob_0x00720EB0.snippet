@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::IsMultiMob(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCMobInter::IsMultiMob()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_IsMultiMob : oCMobInter { int operator()(); };
+BindedHook Ivk_oCMobInter_IsMultiMob{ ZENFOR(0x0067F560, 0x006AE690, 0x006C2E20, 0x00720EB0), &oCMobInter_IsMultiMob::operator() };
+int oCMobInter_IsMultiMob::operator()()
+{
+	int result = THISCALL(Ivk_oCMobInter_IsMultiMob)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

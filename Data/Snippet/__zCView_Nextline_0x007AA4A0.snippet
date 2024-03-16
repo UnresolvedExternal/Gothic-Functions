@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::Nextline(zSTRING const&, float, zCOLOR*, int*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCView::Nextline(zSTRING const&, float, zCOLOR*, int*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_Nextline : zCView { void operator()(zSTRING const&, float, zCOLOR*, int*); };
+BindedHook Ivk_zCView_Nextline{ ZENFOR(0x00700900, 0x0073AF40, 0x0074A9A0, 0x007AA4A0), &zCView_Nextline::operator() };
+void zCView_Nextline::operator()(zSTRING const& a0, float a1, zCOLOR* a2, int* a3)
+{
+	THISCALL(Ivk_zCView_Nextline)(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

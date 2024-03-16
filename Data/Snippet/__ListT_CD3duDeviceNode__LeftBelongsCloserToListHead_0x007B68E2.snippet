@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CD3duDeviceNode>::LeftBelongsCloserToListHead(CD3duDeviceNode*, CD3duDeviceNode*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall ListT<CD3duDeviceNode>::LeftBelongsCloserToListHead(CD3duDeviceNode*, CD3duDeviceNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CD3duDeviceNode__LeftBelongsCloserToListHead : ListT<CD3duDeviceNode> { int operator()(CD3duDeviceNode*, CD3duDeviceNode*); };
+BindedHook Ivk_ListT_CD3duDeviceNode__LeftBelongsCloserToListHead{ ZENFOR(0x0075D1EE, 0x007A01B8, 0x007AA41C, 0x007B68E2), &ListT_CD3duDeviceNode__LeftBelongsCloserToListHead::operator() };
+int ListT_CD3duDeviceNode__LeftBelongsCloserToListHead::operator()(CD3duDeviceNode* a0, CD3duDeviceNode* a1)
+{
+	int result = THISCALL(Ivk_ListT_CD3duDeviceNode__LeftBelongsCloserToListHead)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::ByteFreq_Reset(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCBuffer::ByteFreq_Reset()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCBuffer_ByteFreq_Reset();
+BindedHook Ivk_zCBuffer_ByteFreq_Reset{ ZENFOR(0x0043DD30, 0x00442FA0, 0x004415B0, 0x00441BE0), Hook_zCBuffer_ByteFreq_Reset };
+void Hook_zCBuffer_ByteFreq_Reset()
+{
+	Ivk_zCBuffer_ByteFreq_Reset();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

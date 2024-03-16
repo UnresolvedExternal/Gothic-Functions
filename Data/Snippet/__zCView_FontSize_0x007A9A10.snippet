@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::FontSize(zSTRING&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCView::FontSize(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_FontSize : zCView { int operator()(zSTRING&); };
+BindedHook Ivk_zCView_FontSize{ ZENFOR(0x006FFE80, 0x0073A480, 0x00749F10, 0x007A9A10), &zCView_FontSize::operator() };
+int zCView_FontSize::operator()(zSTRING& a0)
+{
+	int result = THISCALL(Ivk_zCView_FontSize)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

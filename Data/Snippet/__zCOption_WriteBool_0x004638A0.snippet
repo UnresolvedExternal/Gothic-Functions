@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::WriteBool(zSTRING const&, zSTRING const&, int, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCOption::WriteBool(zSTRING const&, zSTRING const&, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_WriteBool : zCOption { int operator()(zSTRING const&, zSTRING const&, int, int); };
+BindedHook Ivk_zCOption_WriteBool{ ZENFOR(0x0045E1B0, 0x00465A90, 0x00463090, 0x004638A0), &zCOption_WriteBool::operator() };
+int zCOption_WriteBool::operator()(zSTRING const& a0, zSTRING const& a1, int a2, int a3)
+{
+	int result = THISCALL(Ivk_zCOption_WriteBool)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

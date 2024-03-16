@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOutdoorRainFX::zCOutdoorRainFX()]]></Title>
+			<Description><![CDATA[public: __thiscall zCOutdoorRainFX::zCOutdoorRainFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOutdoorRainFX_zCOutdoorRainFX : zCOutdoorRainFX { zCOutdoorRainFX* operator()(); };
+BindedHook Ivk_zCOutdoorRainFX_zCOutdoorRainFX{ ZENFOR(0x005B8330, 0x005D5D30, 0x005DA2F0, 0x005E10A0), &zCOutdoorRainFX_zCOutdoorRainFX::operator() };
+zCOutdoorRainFX* zCOutdoorRainFX_zCOutdoorRainFX::operator()()
+{
+	zCOutdoorRainFX* result = THISCALL(Ivk_zCOutdoorRainFX_zCOutdoorRainFX)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::Turn(float, int): float]]></Title>
+			<Description><![CDATA[public: float __thiscall oCAniCtrl_Human::Turn(float, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_Turn : oCAniCtrl_Human { float operator()(float, int); };
+BindedHook Ivk_oCAniCtrl_Human_Turn{ ZENFOR(0x00625A30, 0x0064A7D0, 0x00651CC0, 0x006AE540), &oCAniCtrl_Human_Turn::operator() };
+float oCAniCtrl_Human_Turn::operator()(float a0, int a1)
+{
+	float result = THISCALL(Ivk_oCAniCtrl_Human_Turn)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

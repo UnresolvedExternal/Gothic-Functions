@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::GetGuilds(): oCGuilds*]]></Title>
+			<Description><![CDATA[public: oCGuilds* __thiscall oCGame::GetGuilds()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_GetGuilds : oCGame { oCGuilds* operator()(); };
+BindedHook Ivk_oCGame_GetGuilds{ ZENFOR(0x00638B20, 0x0065F070, 0x006661D0, 0x006C2CD0), &oCGame_GetGuilds::operator() };
+oCGuilds* oCGame_GetGuilds::operator()()
+{
+	oCGuilds* result = THISCALL(Ivk_oCGame_GetGuilds)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

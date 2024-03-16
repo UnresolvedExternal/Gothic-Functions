@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::RemoveVerticesAndFeatures(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPolygon::RemoveVerticesAndFeatures()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolygon_RemoveVerticesAndFeatures : zCPolygon { void operator()(); };
+BindedHook Ivk_zCPolygon_RemoveVerticesAndFeatures{ ZENFOR(0x00599C90, 0x005B5E00, 0x005B5BD0, 0x005BB740), &zCPolygon_RemoveVerticesAndFeatures::operator() };
+void zCPolygon_RemoveVerticesAndFeatures::operator()()
+{
+	THISCALL(Ivk_zCPolygon_RemoveVerticesAndFeatures)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCGameInfo::Init(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCGameInfo::Init()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCGameInfo_Init : zCGameInfo { void operator()(); };
+BindedHook Ivk_zCGameInfo_Init{ ZENFOR(0x0044B860, 0x00451DB0, 0x0044F890, 0x0044FFE0), &zCGameInfo_Init::operator() };
+void zCGameInfo_Init::operator()()
+{
+	THISCALL(Ivk_zCGameInfo_Init)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

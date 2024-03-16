@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::SubTarget(zCVob*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCAICamera::SubTarget(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAICamera_SubTarget : zCAICamera { void operator()(zCVob*); };
+BindedHook Ivk_zCAICamera_SubTarget{ ZENFOR(0x0049A470, 0x004A75F0, 0x0049F560, 0x004A1A40), &zCAICamera_SubTarget::operator() };
+void zCAICamera_SubTarget::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCAICamera_SubTarget)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

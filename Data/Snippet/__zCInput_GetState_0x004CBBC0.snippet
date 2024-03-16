@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::GetState(unsigned short): float]]></Title>
+			<Description><![CDATA[public: virtual float __thiscall zCInput::GetState(unsigned short)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_GetState : zCInput { float operator()(unsigned short); };
+BindedHook Ivk_zCInput_GetState{ ZENFOR(0x004C2880, 0x004D2190, 0x004C9650, 0x004CBBC0), &zCInput_GetState::operator() };
+float zCInput_GetState::operator()(unsigned short a0)
+{
+	float result = THISCALL(Ivk_zCInput_GetState)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

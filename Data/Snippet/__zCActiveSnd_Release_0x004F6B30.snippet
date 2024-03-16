@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCActiveSnd::Release(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCActiveSnd::Release()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCActiveSnd_Release : zCActiveSnd { void operator()(); };
+BindedHook Ivk_zCActiveSnd_Release{ ZENFOR(0x004E8990, 0x004FABA0, 0x004F3EB0, 0x004F6B30), &zCActiveSnd_Release::operator() };
+void zCActiveSnd_Release::operator()()
+{
+	THISCALL(Ivk_zCActiveSnd_Release)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

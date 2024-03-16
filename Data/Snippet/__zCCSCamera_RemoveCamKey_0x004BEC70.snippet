@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::RemoveCamKey(zCCamTrj_KeyFrame*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCCSCamera::RemoveCamKey(zCCamTrj_KeyFrame*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_RemoveCamKey : zCCSCamera { void operator()(zCCamTrj_KeyFrame*); };
+BindedHook Ivk_zCCSCamera_RemoveCamKey{ ZENFOR(0x004B5950, 0x004C4B40, 0x004BC700, 0x004BEC70), &zCCSCamera_RemoveCamKey::operator() };
+void zCCSCamera_RemoveCamKey::operator()(zCCamTrj_KeyFrame* a0)
+{
+	THISCALL(Ivk_zCCSCamera_RemoveCamKey)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

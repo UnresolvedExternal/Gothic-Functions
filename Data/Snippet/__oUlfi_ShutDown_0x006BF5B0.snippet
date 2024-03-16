@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oUlfi_ShutDown(): void]]></Title>
+			<Description><![CDATA[void __cdecl oUlfi_ShutDown()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oUlfi_ShutDown();
+BindedHook Ivk_oUlfi_ShutDown{ ZENFOR(0x00635630, 0x0065B7D0, 0x00662C20, 0x006BF5B0), Hook_oUlfi_ShutDown };
+void Hook_oUlfi_ShutDown()
+{
+	Ivk_oUlfi_ShutDown();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

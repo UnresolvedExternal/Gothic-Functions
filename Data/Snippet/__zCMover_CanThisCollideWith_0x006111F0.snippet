@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMover::CanThisCollideWith(zCVob*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCMover::CanThisCollideWith(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMover_CanThisCollideWith : zCMover { int operator()(zCVob*); };
+BindedHook Ivk_zCMover_CanThisCollideWith{ ZENFOR(0x005E4360, 0x006042F0, 0x00609B30, 0x006111F0), &zCMover_CanThisCollideWith::operator() };
+int zCMover_CanThisCollideWith::operator()(zCVob* a0)
+{
+	int result = THISCALL(Ivk_zCMover_CanThisCollideWith)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

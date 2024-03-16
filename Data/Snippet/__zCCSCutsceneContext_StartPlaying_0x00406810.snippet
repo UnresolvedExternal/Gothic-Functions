@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCutsceneContext::StartPlaying(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCCSCutsceneContext::StartPlaying()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCutsceneContext_StartPlaying : zCCSCutsceneContext { int operator()(); };
+BindedHook Ivk_zCCSCutsceneContext_StartPlaying{ ZENFOR(0x004065A0, 0x004071A0, 0x00406810, 0x00406810), &zCCSCutsceneContext_StartPlaying::operator() };
+int zCCSCutsceneContext_StartPlaying::operator()()
+{
+	int result = THISCALL(Ivk_zCCSCutsceneContext_StartPlaying)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

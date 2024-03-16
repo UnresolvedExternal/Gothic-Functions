@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::~oCMag_Book()]]></Title>
+			<Description><![CDATA[public: __thiscall oCMag_Book::~oCMag_Book()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_Destructor : oCMag_Book { void operator()(); };
+BindedHook Ivk_oCMag_Book_Destructor{ ZENFOR(0x0046EAE0, 0x00477930, 0x00474220, 0x004755C0), &oCMag_Book_Destructor::operator() };
+void oCMag_Book_Destructor::operator()()
+{
+	THISCALL(Ivk_oCMag_Book_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

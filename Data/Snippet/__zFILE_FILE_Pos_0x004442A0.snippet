@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::Pos(): long]]></Title>
+			<Description><![CDATA[public: virtual long __thiscall zFILE_FILE::Pos()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_Pos : zFILE_FILE { long operator()(); };
+BindedHook Ivk_zFILE_FILE_Pos{ ZENFOR(0x00440380, 0x00445950, 0x00443C70, 0x004442A0), &zFILE_FILE_Pos::operator() };
+long zFILE_FILE_Pos::operator()()
+{
+	long result = THISCALL(Ivk_zFILE_FILE_Pos)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

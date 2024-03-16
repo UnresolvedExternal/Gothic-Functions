@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::SearchVobListHashTable(zSTRING const&, zCArray<zCVob*>&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCWorld::SearchVobListHashTable(zSTRING const&, zCArray<zCVob*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_SearchVobListHashTable : zCWorld { void operator()(zSTRING const&, zCArray<zCVob*>&); };
+BindedHook Ivk_zCWorld_SearchVobListHashTable{ ZENFOR(0x005F9A10, 0x0061AF60, 0x00620AF0, 0x00628270), &zCWorld_SearchVobListHashTable::operator() };
+void zCWorld_SearchVobListHashTable::operator()(zSTRING const& a0, zCArray<zCVob*>& a1)
+{
+	THISCALL(Ivk_zCWorld_SearchVobListHashTable)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

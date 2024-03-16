@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::SetSleepingMode(zTVobSleepingMode): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCVob::SetSleepingMode(zTVobSleepingMode)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_SetSleepingMode : zCVob { void operator()(zTVobSleepingMode); };
+BindedHook Ivk_zCVob_SetSleepingMode{ ZENFOR(0x005D7280, 0x005F68C0, 0x005FBB30, 0x00602960), &zCVob_SetSleepingMode::operator() };
+void zCVob_SetSleepingMode::operator()(zTVobSleepingMode a0)
+{
+	THISCALL(Ivk_zCVob_SetSleepingMode)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

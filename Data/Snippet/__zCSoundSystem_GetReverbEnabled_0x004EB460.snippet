@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundSystem::GetReverbEnabled(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCSoundSystem::GetReverbEnabled()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundSystem_GetReverbEnabled : zCSoundSystem { int operator()(); };
+BindedHook Ivk_zCSoundSystem_GetReverbEnabled{ ZENFOR(0x004DDEE0, 0x004EF390, 0x004E87E0, 0x004EB460), &zCSoundSystem_GetReverbEnabled::operator() };
+int zCSoundSystem_GetReverbEnabled::operator()()
+{
+	int result = THISCALL(Ivk_zCSoundSystem_GetReverbEnabled)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

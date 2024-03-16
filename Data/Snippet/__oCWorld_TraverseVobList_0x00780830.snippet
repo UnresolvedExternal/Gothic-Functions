@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWorld::TraverseVobList(zCVobCallback&, void*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCWorld::TraverseVobList(zCVobCallback&, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWorld_TraverseVobList : oCWorld { void operator()(zCVobCallback&, void*); };
+BindedHook Ivk_oCWorld_TraverseVobList{ ZENFOR(0x006D75F0, 0x0070F140, 0x00720DF0, 0x00780830), &oCWorld_TraverseVobList::operator() };
+void oCWorld_TraverseVobList::operator()(zCVobCallback& a0, void* a1)
+{
+	THISCALL(Ivk_oCWorld_TraverseVobList)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

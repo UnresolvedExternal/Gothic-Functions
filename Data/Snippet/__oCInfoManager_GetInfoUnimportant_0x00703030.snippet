@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInfoManager::GetInfoUnimportant(oCNpc*, oCNpc*, int): oCInfo*]]></Title>
+			<Description><![CDATA[public: oCInfo* __thiscall oCInfoManager::GetInfoUnimportant(oCNpc*, oCNpc*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInfoManager_GetInfoUnimportant : oCInfoManager { oCInfo* operator()(oCNpc*, oCNpc*, int); };
+BindedHook Ivk_oCInfoManager_GetInfoUnimportant{ ZENFOR(0x00665120, 0x006923F0, 0x006A55A0, 0x00703030), &oCInfoManager_GetInfoUnimportant::operator() };
+oCInfo* oCInfoManager_GetInfoUnimportant::operator()(oCNpc* a0, oCNpc* a1, int a2)
+{
+	oCInfo* result = THISCALL(Ivk_oCInfoManager_GetInfoUnimportant)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

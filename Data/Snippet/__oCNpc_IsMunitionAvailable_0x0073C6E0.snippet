@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsMunitionAvailable(oCItem*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::IsMunitionAvailable(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsMunitionAvailable : oCNpc { int operator()(oCItem*); };
+BindedHook Ivk_oCNpc_IsMunitionAvailable{ ZENFOR(0x00699290, 0x006CB0C0, 0x006DDF10, 0x0073C6E0), &oCNpc_IsMunitionAvailable::operator() };
+int oCNpc_IsMunitionAvailable::operator()(oCItem* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_IsMunitionAvailable)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

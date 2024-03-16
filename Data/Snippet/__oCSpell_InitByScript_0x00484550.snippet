@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::InitByScript(zSTRING const&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall oCSpell::InitByScript(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_InitByScript : oCSpell { void operator()(zSTRING const&); };
+BindedHook Ivk_oCSpell_InitByScript{ ZENFOR(0x0047C1D0, 0x00486900, 0x00482EF0, 0x00484550), &oCSpell_InitByScript::operator() };
+void oCSpell_InitByScript::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_oCSpell_InitByScript)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

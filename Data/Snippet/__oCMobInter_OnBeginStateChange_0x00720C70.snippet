@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::OnBeginStateChange(oCNpc*, int, int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMobInter::OnBeginStateChange(oCNpc*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_OnBeginStateChange : oCMobInter { void operator()(oCNpc*, int, int); };
+BindedHook Ivk_oCMobInter_OnBeginStateChange{ ZENFOR(0x0067F2F0, 0x006AE400, 0x006C2BE0, 0x00720C70), &oCMobInter_OnBeginStateChange::operator() };
+void oCMobInter_OnBeginStateChange::operator()(oCNpc* a0, int a1, int a2)
+{
+	THISCALL(Ivk_oCMobInter_OnBeginStateChange)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

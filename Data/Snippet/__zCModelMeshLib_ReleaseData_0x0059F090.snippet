@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelMeshLib::ReleaseData(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCModelMeshLib::ReleaseData()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelMeshLib_ReleaseData : zCModelMeshLib { void operator()(); };
+BindedHook Ivk_zCModelMeshLib_ReleaseData{ ZENFOR(0x0057F570, 0x00599F10, 0x00599B30, 0x0059F090), &zCModelMeshLib_ReleaseData::operator() };
+void zCModelMeshLib_ReleaseData::operator()()
+{
+	THISCALL(Ivk_zCModelMeshLib_ReleaseData)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

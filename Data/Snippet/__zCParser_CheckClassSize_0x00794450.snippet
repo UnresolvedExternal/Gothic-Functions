@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::CheckClassSize(zSTRING&, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCParser::CheckClassSize(zSTRING&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_CheckClassSize : zCParser { int operator()(zSTRING&, int); };
+BindedHook Ivk_zCParser_CheckClassSize{ ZENFOR(0x006EAFF0, 0x007241F0, 0x00734A10, 0x00794450), &zCParser_CheckClassSize::operator() };
+int zCParser_CheckClassSize::operator()(zSTRING& a0, int a1)
+{
+	int result = THISCALL(Ivk_zCParser_CheckClassSize)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

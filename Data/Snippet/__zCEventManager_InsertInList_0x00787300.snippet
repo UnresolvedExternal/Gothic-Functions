@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::InsertInList(zCEventMessage*): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCEventManager::InsertInList(zCEventMessage*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventManager_InsertInList : zCEventManager { void operator()(zCEventMessage*); };
+BindedHook Ivk_zCEventManager_InsertInList{ ZENFOR(0x006DE030, 0x00716380, 0x007278C0, 0x00787300), &zCEventManager_InsertInList::operator() };
+void zCEventManager_InsertInList::operator()(zCEventMessage* a0)
+{
+	THISCALL(Ivk_zCEventManager_InsertInList)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCRenderLightContainer::zTLightScore>::~zCArraySort<zCRenderLightContainer::zTLightScore>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArraySort<zCRenderLightContainer::zTLightScore>::~zCArraySort<zCRenderLightContainer::zTLightScore>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCRenderLightContainer__zTLightScore__Destructor : zCArraySort<zCRenderLightContainer::zTLightScore> { void operator()(); };
+BindedHook Ivk_zCArraySort_zCRenderLightContainer__zTLightScore__Destructor{ ZENFOR(0x005B0830, 0x005CD9B0, 0x005CF680, 0x005D6240), &zCArraySort_zCRenderLightContainer__zTLightScore__Destructor::operator() };
+void zCArraySort_zCRenderLightContainer__zTLightScore__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArraySort_zCRenderLightContainer__zTLightScore__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

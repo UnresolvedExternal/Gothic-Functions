@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndChannel::zCSndChannel()]]></Title>
+			<Description><![CDATA[public: __thiscall zCSndChannel::zCSndChannel()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndChannel_zCSndChannel : zCSndChannel { zCSndChannel* operator()(); };
+BindedHook Ivk_zCSndChannel_zCSndChannel{ ZENFOR(0x004EB2F0, 0x004FD830, 0x004F6A30, 0x004F96B0), &zCSndChannel_zCSndChannel::operator() };
+zCSndChannel* zCSndChannel_zCSndChannel::operator()()
+{
+	zCSndChannel* result = THISCALL(Ivk_zCSndChannel_zCSndChannel)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

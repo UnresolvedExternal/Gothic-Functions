@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitiveScaleTrans::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCConvexPrimitiveScaleTrans::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCConvexPrimitiveScaleTrans_VectorDeletingDestructor : zCConvexPrimitiveScaleTrans { void* operator()(unsigned int); };
+BindedHook Ivk_zCConvexPrimitiveScaleTrans_VectorDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x005505A0, 0x005557C0), &zCConvexPrimitiveScaleTrans_VectorDeletingDestructor::operator() };
+void* zCConvexPrimitiveScaleTrans_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCConvexPrimitiveScaleTrans_VectorDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

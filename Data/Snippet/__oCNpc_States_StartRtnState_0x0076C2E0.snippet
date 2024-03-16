@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc_States::StartRtnState(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc_States::StartRtnState(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_States_StartRtnState : oCNpc_States { int operator()(int); };
+BindedHook Ivk_oCNpc_States_StartRtnState{ ZENFOR(0x006C4F30, 0x006FA690, 0x0070CD80, 0x0076C2E0), &oCNpc_States_StartRtnState::operator() };
+int oCNpc_States_StartRtnState::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCNpc_States_StartRtnState)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

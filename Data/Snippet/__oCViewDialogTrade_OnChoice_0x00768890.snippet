@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogTrade::OnChoice(oCViewDialogTrade::zETradeDialogChoice): void]]></Title>
+			<Description><![CDATA[protected: void __fastcall oCViewDialogTrade::OnChoice(oCViewDialogTrade::zETradeDialogChoice)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct oCViewDialogTrade_OnChoice : oCViewDialogTrade { void __fastcall operator()(oCViewDialogTrade::zETradeDialogChoice); };
+BindedHook Ivk_oCViewDialogTrade_OnChoice{ ZENFOR(0x0072A7A0, 0x00768890, 0x00000000, 0x00000000), &oCViewDialogTrade_OnChoice::operator() };
+void __fastcall oCViewDialogTrade_OnChoice::operator()(oCViewDialogTrade::zETradeDialogChoice a0)
+{
+	THISCALL(Ivk_oCViewDialogTrade_OnChoice)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

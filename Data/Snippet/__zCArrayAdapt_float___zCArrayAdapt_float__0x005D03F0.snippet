@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArrayAdapt<float>::~zCArrayAdapt<float>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArrayAdapt<float>::~zCArrayAdapt<float>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArrayAdapt_float__Destructor : zCArrayAdapt<float> { void operator()(); };
+BindedHook Ivk_zCArrayAdapt_float__Destructor{ ZENFOR(0x005AB350, 0x005C7FB0, 0x005C9850, 0x005D03F0), &zCArrayAdapt_float__Destructor::operator() };
+void zCArrayAdapt_float__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArrayAdapt_float__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

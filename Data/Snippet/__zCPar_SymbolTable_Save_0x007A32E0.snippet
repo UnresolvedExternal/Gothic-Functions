@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_SymbolTable::Save(zFILE*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPar_SymbolTable::Save(zFILE*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_SymbolTable_Save : zCPar_SymbolTable { void operator()(zFILE*); };
+BindedHook Ivk_zCPar_SymbolTable_Save{ ZENFOR(0x006F97F0, 0x00733B70, 0x007438A0, 0x007A32E0), &zCPar_SymbolTable_Save::operator() };
+void zCPar_SymbolTable_Save::operator()(zFILE* a0)
+{
+	THISCALL(Ivk_zCPar_SymbolTable_Save)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::CloseViews(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCParser::CloseViews()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_CloseViews : zCParser { void operator()(); };
+BindedHook Ivk_zCParser_CloseViews{ ZENFOR(0x006EC420, 0x007258D0, 0x00735FF0, 0x00795A30), &zCParser_CloseViews::operator() };
+void zCParser_CloseViews::operator()()
+{
+	THISCALL(Ivk_zCParser_CloseViews)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

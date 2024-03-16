@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::ResetObjectRoutineList(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCGame::ResetObjectRoutineList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_ResetObjectRoutineList : oCGame { void operator()(); };
+BindedHook Ivk_oCGame_ResetObjectRoutineList{ ZENFOR(0x006400D0, 0x006670F0, 0x0066DDA0, 0x006CAB20), &oCGame_ResetObjectRoutineList::operator() };
+void oCGame_ResetObjectRoutineList::operator()()
+{
+	THISCALL(Ivk_oCGame_ResetObjectRoutineList)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

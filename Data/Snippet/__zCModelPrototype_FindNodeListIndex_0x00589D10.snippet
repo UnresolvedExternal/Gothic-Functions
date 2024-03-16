@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::FindNodeListIndex(zSTRING const&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCModelPrototype::FindNodeListIndex(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_FindNodeListIndex : zCModelPrototype { int operator()(zSTRING const&); };
+BindedHook Ivk_zCModelPrototype_FindNodeListIndex{ ZENFOR(0x0056F580, 0x00588980, 0x005847B0, 0x00589D10), &zCModelPrototype_FindNodeListIndex::operator() };
+int zCModelPrototype_FindNodeListIndex::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_zCModelPrototype_FindNodeListIndex)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

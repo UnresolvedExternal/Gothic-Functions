@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::SetRenderCinemaScope(zCOLOR): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCCamera::SetRenderCinemaScope(zCOLOR)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamera_SetRenderCinemaScope : zCCamera { void operator()(zCOLOR); };
+BindedHook Ivk_zCCamera_SetRenderCinemaScope{ ZENFOR(0x005376D0, 0x0054E7F0, 0x00546A00, 0x0054BC20), &zCCamera_SetRenderCinemaScope::operator() };
+void zCCamera_SetRenderCinemaScope::operator()(zCOLOR a0)
+{
+	THISCALL(Ivk_zCCamera_SetRenderCinemaScope)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

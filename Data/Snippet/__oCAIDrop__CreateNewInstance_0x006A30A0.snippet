@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIDrop::_CreateNewInstance(): zCObject*]]></Title>
+			<Description><![CDATA[private: static zCObject* __cdecl oCAIDrop::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_oCAIDrop__CreateNewInstance();
+BindedHook Ivk_oCAIDrop__CreateNewInstance{ ZENFOR(0x0061AC70, 0x0063E2E0, 0x00646820, 0x006A30A0), Hook_oCAIDrop__CreateNewInstance };
+zCObject* Hook_oCAIDrop__CreateNewInstance()
+{
+	zCObject* result = Ivk_oCAIDrop__CreateNewInstance();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

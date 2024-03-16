@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCutsceneContext::GetStage(): zCVob*]]></Title>
+			<Description><![CDATA[protected: virtual zCVob* __thiscall zCCSCutsceneContext::GetStage()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCutsceneContext_GetStage : zCCSCutsceneContext { zCVob* operator()(); };
+BindedHook Ivk_zCCSCutsceneContext_GetStage{ ZENFOR(0x00409600, 0x0040A5D0, 0x004098A0, 0x004098A0), &zCCSCutsceneContext_GetStage::operator() };
+zCVob* zCCSCutsceneContext_GetStage::operator()()
+{
+	zCVob* result = THISCALL(Ivk_zCCSCutsceneContext_GetStage)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

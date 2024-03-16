@@ -185,12 +185,18 @@ namespace Gothic_Functions
 
 		private string GetParameterNameList()
 		{
-			IEnumerable<string> parameters = Info.Parameters.Select((p, i) => $"a{i}");
+			IEnumerable<string> parameters = Info.Parameters
+				.Where(p => p != "...")
+				.Select((p, i) => $"a{i}");
+
 			return $"({string.Join(", ", parameters)})";
 		}
 
 		private static string GetDeclaration(string type, string name)
 		{
+			if (type == "...")
+				return type;
+
 			bool inParenthesis = false;
 			int asteriskIndex = -1;
 			var counter = new BracketCounter();

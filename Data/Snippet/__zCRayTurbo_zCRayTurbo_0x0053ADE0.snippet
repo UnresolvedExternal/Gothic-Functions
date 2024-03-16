@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRayTurbo::zCRayTurbo(zCBspNode const&)]]></Title>
+			<Description><![CDATA[public: __thiscall zCRayTurbo::zCRayTurbo(zCBspNode const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCRayTurbo_zCRayTurbo : zCRayTurbo { zCRayTurbo* operator()(zCBspNode const&); };
+BindedHook Ivk_zCRayTurbo_zCRayTurbo{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x0053ADE0), &zCRayTurbo_zCRayTurbo::operator() };
+zCRayTurbo* zCRayTurbo_zCRayTurbo::operator()(zCBspNode const& a0)
+{
+	zCRayTurbo* result = THISCALL(Ivk_zCRayTurbo_zCRayTurbo)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

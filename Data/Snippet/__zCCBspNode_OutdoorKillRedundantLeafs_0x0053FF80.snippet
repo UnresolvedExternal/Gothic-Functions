@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspNode::OutdoorKillRedundantLeafs(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCCBspNode::OutdoorKillRedundantLeafs()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspNode_OutdoorKillRedundantLeafs : zCCBspNode { int operator()(); };
+BindedHook Ivk_zCCBspNode_OutdoorKillRedundantLeafs{ ZENFOR(0x0052C410, 0x00542BF0, 0x0053AE50, 0x0053FF80), &zCCBspNode_OutdoorKillRedundantLeafs::operator() };
+int zCCBspNode_OutdoorKillRedundantLeafs::operator()()
+{
+	int result = THISCALL(Ivk_zCCBspNode_OutdoorKillRedundantLeafs)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

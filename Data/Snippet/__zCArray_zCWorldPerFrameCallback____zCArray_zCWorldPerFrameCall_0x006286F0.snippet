@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCWorldPerFrameCallback*>::~zCArray<zCWorldPerFrameCallback*>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zCWorldPerFrameCallback*>::~zCArray<zCWorldPerFrameCallback*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCWorldPerFrameCallback___Destructor : zCArray<zCWorldPerFrameCallback*> { void operator()(); };
+BindedHook Ivk_zCArray_zCWorldPerFrameCallback___Destructor{ ZENFOR(0x005F9EE0, 0x0061B440, 0x00620F70, 0x006286F0), &zCArray_zCWorldPerFrameCallback___Destructor::operator() };
+void zCArray_zCWorldPerFrameCallback___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCWorldPerFrameCallback___Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

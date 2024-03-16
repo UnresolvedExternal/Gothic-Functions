@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::SearchVobByID(unsigned long, zCTree<zCVob>*): zCVob*]]></Title>
+			<Description><![CDATA[public: virtual zCVob* __thiscall zCWorld::SearchVobByID(unsigned long, zCTree<zCVob>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_SearchVobByID : zCWorld { zCVob* operator()(unsigned long, zCTree<zCVob>*); };
+BindedHook Ivk_zCWorld_SearchVobByID{ ZENFOR(0x005F5A30, 0x006169D0, 0x0061C7D0, 0x00623F60), &zCWorld_SearchVobByID::operator() };
+zCVob* zCWorld_SearchVobByID::operator()(unsigned long a0, zCTree<zCVob>* a1)
+{
+	zCVob* result = THISCALL(Ivk_zCWorld_SearchVobByID)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

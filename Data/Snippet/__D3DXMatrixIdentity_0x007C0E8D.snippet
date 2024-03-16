@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[D3DXMatrixIdentity(D3DXMATRIX*): D3DXMATRIX*]]></Title>
+			<Description><![CDATA[D3DXMATRIX* __cdecl D3DXMatrixIdentity(D3DXMATRIX*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[D3DXMATRIX* Hook_D3DXMatrixIdentity(D3DXMATRIX*);
+BindedHook Ivk_D3DXMatrixIdentity{ ZENFOR(0x00767799, 0x007AFE21, 0x007B49C7, 0x007C0E8D), Hook_D3DXMatrixIdentity };
+D3DXMATRIX* Hook_D3DXMatrixIdentity(D3DXMATRIX* a0)
+{
+	D3DXMATRIX* result = Ivk_D3DXMatrixIdentity(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

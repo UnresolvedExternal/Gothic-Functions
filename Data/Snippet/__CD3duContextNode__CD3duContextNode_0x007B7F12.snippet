@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContextNode::~CD3duContextNode()]]></Title>
+			<Description><![CDATA[public: __thiscall CD3duContextNode::~CD3duContextNode()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContextNode_Destructor : CD3duContextNode { void operator()(); };
+BindedHook Ivk_CD3duContextNode_Destructor{ ZENFOR(0x0075E81E, 0x007A19ED, 0x007ABA4C, 0x007B7F12), &CD3duContextNode_Destructor::operator() };
+void CD3duContextNode_Destructor::operator()()
+{
+	THISCALL(Ivk_CD3duContextNode_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

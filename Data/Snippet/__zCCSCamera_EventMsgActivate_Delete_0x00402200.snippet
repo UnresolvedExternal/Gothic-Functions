@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera_EventMsgActivate::Delete(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSCamera_EventMsgActivate::Delete()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_EventMsgActivate_Delete : zCCSCamera_EventMsgActivate { void operator()(); };
+BindedHook Ivk_zCCSCamera_EventMsgActivate_Delete{ ZENFOR(0x004020B0, 0x004024E0, 0x00402200, 0x00402200), &zCCSCamera_EventMsgActivate_Delete::operator() };
+void zCCSCamera_EventMsgActivate_Delete::operator()()
+{
+	THISCALL(Ivk_zCCSCamera_EventMsgActivate_Delete)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneReverb::GetActiveWeight(): float]]></Title>
+			<Description><![CDATA[private: float __thiscall zCZoneReverb::GetActiveWeight()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZoneReverb_GetActiveWeight : zCZoneReverb { float operator()(); };
+BindedHook Ivk_zCZoneReverb_GetActiveWeight{ ZENFOR(0x0060EAD0, 0x00631260, 0x00637E80, 0x0063F670), &zCZoneReverb_GetActiveWeight::operator() };
+float zCZoneReverb_GetActiveWeight::operator()()
+{
+	float result = THISCALL(Ivk_zCZoneReverb_GetActiveWeight)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

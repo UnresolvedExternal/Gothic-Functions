@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oSMenuInfoTalent::oSMenuInfoTalent()]]></Title>
+			<Description><![CDATA[public: __thiscall oSMenuInfoTalent::oSMenuInfoTalent()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oSMenuInfoTalent_oSMenuInfoTalent : oSMenuInfoTalent { oSMenuInfoTalent* operator()(); };
+BindedHook Ivk_oSMenuInfoTalent_oSMenuInfoTalent{ ZENFOR(0x00478EF0, 0x00482C20, 0x0047EF10, 0x004803F0), &oSMenuInfoTalent_oSMenuInfoTalent::operator() };
+oSMenuInfoTalent* oSMenuInfoTalent_oSMenuInfoTalent::operator()()
+{
+	oSMenuInfoTalent* result = THISCALL(Ivk_oSMenuInfoTalent_oSMenuInfoTalent)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

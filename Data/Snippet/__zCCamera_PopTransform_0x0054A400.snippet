@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::PopTransform(zTCamTrafoType): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCCamera::PopTransform(zTCamTrafoType)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamera_PopTransform : zCCamera { void operator()(zTCamTrafoType); };
+BindedHook Ivk_zCCamera_PopTransform{ ZENFOR(0x005361C0, 0x0054D1A0, 0x005451E0, 0x0054A400), &zCCamera_PopTransform::operator() };
+void zCCamera_PopTransform::operator()(zTCamTrafoType a0)
+{
+	THISCALL(Ivk_zCCamera_PopTransform)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

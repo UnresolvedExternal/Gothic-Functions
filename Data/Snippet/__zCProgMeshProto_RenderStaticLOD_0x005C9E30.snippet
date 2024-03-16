@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::RenderStaticLOD(zTRenderContext&, int, zCProgMeshProto::zTLODRenderArgs*, zCRenderLightContainer*): int]]></Title>
+			<Description><![CDATA[private: int __fastcall zCProgMeshProto::RenderStaticLOD(zTRenderContext&, int, zCProgMeshProto::zTLODRenderArgs*, zCRenderLightContainer*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_RenderStaticLOD : zCProgMeshProto { int __fastcall operator()(zTRenderContext&, int, zCProgMeshProto::zTLODRenderArgs*, zCRenderLightContainer*); };
+BindedHook Ivk_zCProgMeshProto_RenderStaticLOD{ ZENFOR(0x005A7200, 0x005C3B80, 0x005C3E80, 0x005C9E30), &zCProgMeshProto_RenderStaticLOD::operator() };
+int __fastcall zCProgMeshProto_RenderStaticLOD::operator()(zTRenderContext& a0, int a1, zCProgMeshProto::zTLODRenderArgs* a2, zCRenderLightContainer* a3)
+{
+	int result = THISCALL(Ivk_zCProgMeshProto_RenderStaticLOD)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[sysGetTime(): unsigned long]]></Title>
+			<Description><![CDATA[unsigned long __cdecl sysGetTime()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned long Hook_sysGetTime();
+BindedHook Ivk_sysGetTime{ ZENFOR(0x004F6960, 0x005093D0, 0x00502590, 0x00505280), Hook_sysGetTime };
+unsigned long Hook_sysGetTime()
+{
+	unsigned long result = Ivk_sysGetTime();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

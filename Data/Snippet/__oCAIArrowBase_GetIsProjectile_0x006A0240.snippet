@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrowBase::GetIsProjectile(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCAIArrowBase::GetIsProjectile()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct oCAIArrowBase_GetIsProjectile : oCAIArrowBase { int operator()(); };
+BindedHook Ivk_oCAIArrowBase_GetIsProjectile{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x006A0240), &oCAIArrowBase_GetIsProjectile::operator() };
+int oCAIArrowBase_GetIsProjectile::operator()()
+{
+	int result = THISCALL(Ivk_oCAIArrowBase_GetIsProjectile)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

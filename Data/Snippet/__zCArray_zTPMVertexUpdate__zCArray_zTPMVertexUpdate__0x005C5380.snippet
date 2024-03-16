@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zTPMVertexUpdate>::zCArray<zTPMVertexUpdate>(zCArray<zTPMVertexUpdate>const&)]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zTPMVertexUpdate>::zCArray<zTPMVertexUpdate>(zCArray<zTPMVertexUpdate>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zTPMVertexUpdate__zCArray_zTPMVertexUpdate_ : zCArray<zTPMVertexUpdate> { zCArray<zTPMVertexUpdate>* operator()(zCArray<zTPMVertexUpdate>const&); };
+BindedHook Ivk_zCArray_zTPMVertexUpdate__zCArray_zTPMVertexUpdate_{ ZENFOR(0x005A33C0, 0x005BFBB0, 0x005BF810, 0x005C5380), &zCArray_zTPMVertexUpdate__zCArray_zTPMVertexUpdate_::operator() };
+zCArray<zTPMVertexUpdate>* zCArray_zTPMVertexUpdate__zCArray_zTPMVertexUpdate_::operator()(zCArray<zTPMVertexUpdate>const& a0)
+{
+	zCArray<zTPMVertexUpdate>* result = THISCALL(Ivk_zCArray_zTPMVertexUpdate__zCArray_zTPMVertexUpdate_)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

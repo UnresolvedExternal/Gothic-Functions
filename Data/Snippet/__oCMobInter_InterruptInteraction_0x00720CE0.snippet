@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::InterruptInteraction(oCNpc*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMobInter::InterruptInteraction(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_InterruptInteraction : oCMobInter { void operator()(oCNpc*); };
+BindedHook Ivk_oCMobInter_InterruptInteraction{ ZENFOR(0x0067F360, 0x006AE470, 0x006C2C50, 0x00720CE0), &oCMobInter_InterruptInteraction::operator() };
+void oCMobInter_InterruptInteraction::operator()(oCNpc* a0)
+{
+	THISCALL(Ivk_oCMobInter_InterruptInteraction)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

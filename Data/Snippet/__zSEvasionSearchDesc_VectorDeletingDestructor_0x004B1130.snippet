@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSEvasionSearchDesc::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: void* __thiscall zSEvasionSearchDesc::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSEvasionSearchDesc_VectorDeletingDestructor : zSEvasionSearchDesc { void* operator()(unsigned int); };
+BindedHook Ivk_zSEvasionSearchDesc_VectorDeletingDestructor{ ZENFOR(0x004A8E80, 0x004B6DA0, 0x004AEC00, 0x004B1130), &zSEvasionSearchDesc_VectorDeletingDestructor::operator() };
+void* zSEvasionSearchDesc_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zSEvasionSearchDesc_VectorDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

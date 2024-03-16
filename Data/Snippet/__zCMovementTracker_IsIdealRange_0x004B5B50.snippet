@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::IsIdealRange(): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCMovementTracker::IsIdealRange()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_IsIdealRange : zCMovementTracker { int operator()(); };
+BindedHook Ivk_zCMovementTracker_IsIdealRange{ ZENFOR(0x004AD200, 0x004BB330, 0x004B3620, 0x004B5B50), &zCMovementTracker_IsIdealRange::operator() };
+int zCMovementTracker_IsIdealRange::operator()()
+{
+	int result = THISCALL(Ivk_zCMovementTracker_IsIdealRange)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

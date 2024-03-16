@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPathSearch::GetSearch(): zCPathSearch*]]></Title>
+			<Description><![CDATA[public: static zCPathSearch* __cdecl zCPathSearch::GetSearch()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCPathSearch* Hook_zCPathSearch_GetSearch();
+BindedHook Ivk_zCPathSearch_GetSearch{ ZENFOR(0x0049F400, 0x004ACCA0, 0x004A4850, 0x004A6D80), Hook_zCPathSearch_GetSearch };
+zCPathSearch* Hook_zCPathSearch_GetSearch()
+{
+	zCPathSearch* result = Ivk_zCPathSearch_GetSearch();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

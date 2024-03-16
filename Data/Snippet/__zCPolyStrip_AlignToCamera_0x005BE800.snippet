@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolyStrip::AlignToCamera(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCPolyStrip::AlignToCamera()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolyStrip_AlignToCamera : zCPolyStrip { void operator()(); };
+BindedHook Ivk_zCPolyStrip_AlignToCamera{ ZENFOR(0x0059C980, 0x005B8EC0, 0x005B8C90, 0x005BE800), &zCPolyStrip_AlignToCamera::operator() };
+void zCPolyStrip_AlignToCamera::operator()()
+{
+	THISCALL(Ivk_zCPolyStrip_AlignToCamera)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

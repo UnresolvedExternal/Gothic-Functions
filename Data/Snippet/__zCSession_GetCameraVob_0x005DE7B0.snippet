@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSession::GetCameraVob(): zCVob* [const]]]></Title>
+			<Description><![CDATA[public: virtual zCVob* __thiscall zCSession::GetCameraVob() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSession_GetCameraVob : zCSession { zCVob* operator()() const; };
+BindedHook Ivk_zCSession_GetCameraVob{ ZENFOR(0x005B7290, 0x005D4C00, 0x005D79F0, 0x005DE7B0), &zCSession_GetCameraVob::operator() };
+zCVob* zCSession_GetCameraVob::operator()() const
+{
+	zCVob* result = THISCALL(Ivk_zCSession_GetCameraVob)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

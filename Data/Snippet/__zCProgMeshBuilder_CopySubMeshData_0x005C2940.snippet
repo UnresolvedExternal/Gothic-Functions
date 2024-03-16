@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshBuilder::CopySubMeshData(unsigned char*&, zTLazyMesh const&, zCProgMeshProto::zCSubMesh*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCProgMeshBuilder::CopySubMeshData(unsigned char*&, zTLazyMesh const&, zCProgMeshProto::zCSubMesh*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshBuilder_CopySubMeshData : zCProgMeshBuilder { void operator()(unsigned char*&, zTLazyMesh const&, zCProgMeshProto::zCSubMesh*); };
+BindedHook Ivk_zCProgMeshBuilder_CopySubMeshData{ ZENFOR(0x005A0A60, 0x005BD1B0, 0x005BCDD0, 0x005C2940), &zCProgMeshBuilder_CopySubMeshData::operator() };
+void zCProgMeshBuilder_CopySubMeshData::operator()(unsigned char*& a0, zTLazyMesh const& a1, zCProgMeshProto::zCSubMesh* a2)
+{
+	THISCALL(Ivk_zCProgMeshBuilder_CopySubMeshData)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

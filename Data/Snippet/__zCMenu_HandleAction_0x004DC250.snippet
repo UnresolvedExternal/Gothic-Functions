@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenu::HandleAction(): int]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall zCMenu::HandleAction()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenu_HandleAction : zCMenu { int operator()(); };
+BindedHook Ivk_zCMenu_HandleAction{ ZENFOR(0x004CF500, 0x004DFD90, 0x004D9BB0, 0x004DC250), &zCMenu_HandleAction::operator() };
+int zCMenu_HandleAction::operator()()
+{
+	int result = THISCALL(Ivk_zCMenu_HandleAction)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIVobMove::operator delete(void*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCAIVobMove::operator delete(void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+void Hook_oCAIVobMove_operator_delete(void*);
+BindedHook Ivk_oCAIVobMove_operator_delete{ ZENFOR(0x00000000, 0x00000000, 0x00646BA0, 0x006A3420), Hook_oCAIVobMove_operator_delete };
+void Hook_oCAIVobMove_operator_delete(void* a0)
+{
+	Ivk_oCAIVobMove_operator_delete(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

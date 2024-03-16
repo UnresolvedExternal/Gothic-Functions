@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::PC_Strafe(int): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall oCAIHuman::PC_Strafe(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_PC_Strafe : oCAIHuman { int operator()(int); };
+BindedHook Ivk_oCAIHuman_PC_Strafe{ ZENFOR(0x00614A40, 0x00637850, 0x0063E430, 0x0069AC80), &oCAIHuman_PC_Strafe::operator() };
+int oCAIHuman_PC_Strafe::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCAIHuman_PC_Strafe)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

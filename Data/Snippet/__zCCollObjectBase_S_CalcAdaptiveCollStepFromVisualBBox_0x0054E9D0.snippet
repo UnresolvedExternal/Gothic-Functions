@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectBase::S_CalcAdaptiveCollStepFromVisualBBox(zCVisual*): float]]></Title>
+			<Description><![CDATA[public: static float __fastcall zCCollObjectBase::S_CalcAdaptiveCollStepFromVisualBBox(zCVisual*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[float __fastcall Hook_zCCollObjectBase_S_CalcAdaptiveCollStepFromVisualBBox(zCVisual*);
+BindedHook Ivk_zCCollObjectBase_S_CalcAdaptiveCollStepFromVisualBBox{ ZENFOR(0x0053A4D0, 0x00551730, 0x005497B0, 0x0054E9D0), Hook_zCCollObjectBase_S_CalcAdaptiveCollStepFromVisualBBox };
+float __fastcall Hook_zCCollObjectBase_S_CalcAdaptiveCollStepFromVisualBBox(zCVisual* a0)
+{
+	float result = Ivk_zCCollObjectBase_S_CalcAdaptiveCollStepFromVisualBBox(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

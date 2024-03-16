@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAskBox::SetNeutral(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCAskBox::SetNeutral()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAskBox_SetNeutral : oCAskBox { void operator()(); };
+BindedHook Ivk_oCAskBox_SetNeutral{ ZENFOR(0x00632960, 0x006586F0, 0x0065F960, 0x006BC2F0), &oCAskBox_SetNeutral::operator() };
+void oCAskBox_SetNeutral::operator()()
+{
+	THISCALL(Ivk_oCAskBox_SetNeutral)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

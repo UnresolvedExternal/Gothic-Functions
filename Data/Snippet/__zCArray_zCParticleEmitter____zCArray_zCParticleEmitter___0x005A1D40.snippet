@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCParticleEmitter*>::~zCArray<zCParticleEmitter*>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zCParticleEmitter*>::~zCArray<zCParticleEmitter*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCParticleEmitter___Destructor : zCArray<zCParticleEmitter*> { void operator()(); };
+BindedHook Ivk_zCArray_zCParticleEmitter___Destructor{ ZENFOR(0x00582270, 0x0059CD80, 0x0059C7E0, 0x005A1D40), &zCArray_zCParticleEmitter___Destructor::operator() };
+void zCArray_zCParticleEmitter___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCParticleEmitter___Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

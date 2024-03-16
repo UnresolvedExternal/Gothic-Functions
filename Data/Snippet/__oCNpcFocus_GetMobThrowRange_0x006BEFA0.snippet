@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcFocus::GetMobThrowRange(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall oCNpcFocus::GetMobThrowRange()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcFocus_GetMobThrowRange : oCNpcFocus { float operator()(); };
+BindedHook Ivk_oCNpcFocus_GetMobThrowRange{ ZENFOR(0x006351A0, 0x0065B340, 0x00662610, 0x006BEFA0), &oCNpcFocus_GetMobThrowRange::operator() };
+float oCNpcFocus_GetMobThrowRange::operator()()
+{
+	float result = THISCALL(Ivk_oCNpcFocus_GetMobThrowRange)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Alg_Translation2D(zVEC2&): zMAT3]]></Title>
+			<Description><![CDATA[zMAT3 __cdecl Alg_Translation2D(zVEC2&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zMAT3 Hook_Alg_Translation2D(zVEC2&);
+BindedHook Ivk_Alg_Translation2D{ ZENFOR(0x00507C50, 0x0051C430, 0x00514B70, 0x00517940), Hook_Alg_Translation2D };
+zMAT3 Hook_Alg_Translation2D(zVEC2& a0)
+{
+	zMAT3 result = Ivk_Alg_Translation2D(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

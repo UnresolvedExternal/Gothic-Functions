@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::SaveMSH(zCFileBIN&, zCPolygon**, int, zCMesh*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCMesh::SaveMSH(zCFileBIN&, zCPolygon**, int, zCMesh*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCMesh_SaveMSH(zCFileBIN&, zCPolygon**, int, zCMesh*);
+BindedHook Ivk_zCMesh_SaveMSH{ ZENFOR(0x005557E0, 0x0056DF70, 0x005686B0, 0x0056D940), Hook_zCMesh_SaveMSH };
+void Hook_zCMesh_SaveMSH(zCFileBIN& a0, zCPolygon** a1, int a2, zCMesh* a3)
+{
+	Ivk_zCMesh_SaveMSH(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

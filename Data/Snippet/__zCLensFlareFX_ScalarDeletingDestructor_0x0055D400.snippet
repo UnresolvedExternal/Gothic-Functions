@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLensFlareFX::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[protected: virtual void* __thiscall zCLensFlareFX::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2
+struct zCLensFlareFX_ScalarDeletingDestructor : zCLensFlareFX { void* operator()(unsigned int); };
+BindedHook Ivk_zCLensFlareFX_ScalarDeletingDestructor{ ZENFOR(0x00000000, 0x00563B60, 0x0055D400, 0x00000000), &zCLensFlareFX_ScalarDeletingDestructor::operator() };
+void* zCLensFlareFX_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCLensFlareFX_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

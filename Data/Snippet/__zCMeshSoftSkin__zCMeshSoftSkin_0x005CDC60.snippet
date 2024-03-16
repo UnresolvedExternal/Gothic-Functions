@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMeshSoftSkin::~zCMeshSoftSkin()]]></Title>
+			<Description><![CDATA[protected: virtual __thiscall zCMeshSoftSkin::~zCMeshSoftSkin()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMeshSoftSkin_Destructor : zCMeshSoftSkin { void operator()(); };
+BindedHook Ivk_zCMeshSoftSkin_Destructor{ ZENFOR(0x005A97E0, 0x005C6300, 0x005C7CB0, 0x005CDC60), &zCMeshSoftSkin_Destructor::operator() };
+void zCMeshSoftSkin_Destructor::operator()()
+{
+	THISCALL(Ivk_zCMeshSoftSkin_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

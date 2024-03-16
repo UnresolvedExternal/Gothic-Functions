@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVisual::GetLODVisualAndAlpha(float, zCVisual*&, float&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCVisual::GetLODVisualAndAlpha(float, zCVisual*&, float&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVisual_GetLODVisualAndAlpha : zCVisual { void operator()(float, zCVisual*&, float&); };
+BindedHook Ivk_zCVisual_GetLODVisualAndAlpha{ ZENFOR(0x005D9F90, 0x005F98F0, 0x005FF9F0, 0x00606880), &zCVisual_GetLODVisualAndAlpha::operator() };
+void zCVisual_GetLODVisualAndAlpha::operator()(float a0, zCVisual*& a1, float& a2)
+{
+	THISCALL(Ivk_zCVisual_GetLODVisualAndAlpha)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

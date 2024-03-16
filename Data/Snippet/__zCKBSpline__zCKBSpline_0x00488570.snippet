@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCKBSpline::~zCKBSpline()]]></Title>
+			<Description><![CDATA[public: __thiscall zCKBSpline::~zCKBSpline()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCKBSpline_Destructor : zCKBSpline { void operator()(); };
+BindedHook Ivk_zCKBSpline_Destructor{ ZENFOR(0x00480B80, 0x0048B9F0, 0x00486F10, 0x00488570), &zCKBSpline_Destructor::operator() };
+void zCKBSpline_Destructor::operator()()
+{
+	THISCALL(Ivk_zCKBSpline_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

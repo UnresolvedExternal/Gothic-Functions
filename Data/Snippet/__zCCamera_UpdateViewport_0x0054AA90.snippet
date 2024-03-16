@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::UpdateViewport(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCCamera::UpdateViewport()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamera_UpdateViewport : zCCamera { void operator()(); };
+BindedHook Ivk_zCCamera_UpdateViewport{ ZENFOR(0x00536850, 0x0054D830, 0x00545870, 0x0054AA90), &zCCamera_UpdateViewport::operator() };
+void zCCamera_UpdateViewport::operator()()
+{
+	THISCALL(Ivk_zCCamera_UpdateViewport)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

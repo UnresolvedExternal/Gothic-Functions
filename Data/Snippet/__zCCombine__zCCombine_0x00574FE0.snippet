@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCombine::~zCCombine()]]></Title>
+			<Description><![CDATA[public: __thiscall zCCombine::~zCCombine()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCombine_Destructor : zCCombine { void operator()(); };
+BindedHook Ivk_zCCombine_Destructor{ ZENFOR(0x0055BC10, 0x00573D50, 0x0056FD30, 0x00574FE0), &zCCombine_Destructor::operator() };
+void zCCombine_Destructor::operator()()
+{
+	THISCALL(Ivk_zCCombine_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

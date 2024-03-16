@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobMsg::IsNetRelevant(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCMobMsg::IsNetRelevant()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobMsg_IsNetRelevant : oCMobMsg { int operator()(); };
+BindedHook Ivk_oCMobMsg_IsNetRelevant{ ZENFOR(0x0067A030, 0x006A86A0, 0x006BD180, 0x0071B210), &oCMobMsg_IsNetRelevant::operator() };
+int oCMobMsg_IsNetRelevant::operator()()
+{
+	int result = THISCALL(Ivk_oCMobMsg_IsNetRelevant)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

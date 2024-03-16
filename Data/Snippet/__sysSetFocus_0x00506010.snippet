@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[sysSetFocus(): void]]></Title>
+			<Description><![CDATA[void __cdecl sysSetFocus()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_sysSetFocus();
+BindedHook Ivk_sysSetFocus{ ZENFOR(0x004F7560, 0x00509E90, 0x00503310, 0x00506010), Hook_sysSetFocus };
+void Hook_sysSetFocus()
+{
+	Ivk_sysSetFocus();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

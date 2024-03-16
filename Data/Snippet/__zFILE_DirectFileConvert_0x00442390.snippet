@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE::DirectFileConvert(zSTRING&): void]]></Title>
+			<Description><![CDATA[protected: static void __cdecl zFILE::DirectFileConvert(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zFILE_DirectFileConvert(zSTRING&);
+BindedHook Ivk_zFILE_DirectFileConvert{ ZENFOR(0x0043E480, 0x00443780, 0x00441D60, 0x00442390), Hook_zFILE_DirectFileConvert };
+void Hook_zFILE_DirectFileConvert(zSTRING& a0)
+{
+	Ivk_zFILE_DirectFileConvert(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

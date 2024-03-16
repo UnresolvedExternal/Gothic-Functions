@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVob::GetSoundMaterial_AM(zCSoundManager::zTSndManMedium&, oTSndMaterial&, int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCVob::GetSoundMaterial_AM(zCSoundManager::zTSndManMedium&, oTSndMaterial&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVob_GetSoundMaterial_AM : oCVob { void operator()(zCSoundManager::zTSndManMedium&, oTSndMaterial&, int); };
+BindedHook Ivk_oCVob_GetSoundMaterial_AM{ ZENFOR(0x006D2B20, 0x00709BE0, 0x0071BC90, 0x0077B6D0), &oCVob_GetSoundMaterial_AM::operator() };
+void oCVob_GetSoundMaterial_AM::operator()(zCSoundManager::zTSndManMedium& a0, oTSndMaterial& a1, int a2)
+{
+	THISCALL(Ivk_oCVob_GetSoundMaterial_AM)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

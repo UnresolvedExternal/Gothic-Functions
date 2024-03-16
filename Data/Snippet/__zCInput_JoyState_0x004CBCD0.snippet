@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::JoyState(int): float]]></Title>
+			<Description><![CDATA[public: virtual float __thiscall zCInput::JoyState(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_JoyState : zCInput { float operator()(int); };
+BindedHook Ivk_zCInput_JoyState{ ZENFOR(0x004C2990, 0x004D22A0, 0x004C9760, 0x004CBCD0), &zCInput_JoyState::operator() };
+float zCInput_JoyState::operator()(int a0)
+{
+	float result = THISCALL(Ivk_zCInput_JoyState)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

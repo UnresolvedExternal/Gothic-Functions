@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWaypoint::~oCWaypoint()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall oCWaypoint::~oCWaypoint()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWaypoint_Destructor : oCWaypoint { void operator()(); };
+BindedHook Ivk_oCWaypoint_Destructor{ ZENFOR(0x006D5020, 0x0070C5D0, 0x0071E510, 0x0077DF50), &oCWaypoint_Destructor::operator() };
+void oCWaypoint_Destructor::operator()()
+{
+	THISCALL(Ivk_oCWaypoint_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

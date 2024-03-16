@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[filebuf::seekoff(long, ios::seek_dir, int): long]]></Title>
+			<Description><![CDATA[public: virtual long __thiscall filebuf::seekoff(long, ios::seek_dir, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct filebuf_seekoff : filebuf { long operator()(long, ios::seek_dir, int); };
+BindedHook Ivk_filebuf_seekoff{ ZENFOR(0x00775654, 0x007B9414, 0x007C2B3E, 0x007CEFFE), &filebuf_seekoff::operator() };
+long filebuf_seekoff::operator()(long a0, ios::seek_dir a1, int a2)
+{
+	long result = THISCALL(Ivk_filebuf_seekoff)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

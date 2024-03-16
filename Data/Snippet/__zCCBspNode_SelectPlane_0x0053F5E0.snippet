@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspNode::SelectPlane(zTPlane&, zTPolyNode*&, int&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCCBspNode::SelectPlane(zTPlane&, zTPolyNode*&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspNode_SelectPlane : zCCBspNode { void operator()(zTPlane&, zTPolyNode*&, int&); };
+BindedHook Ivk_zCCBspNode_SelectPlane{ ZENFOR(0x0052BAE0, 0x005421C0, 0x0053A4B0, 0x0053F5E0), &zCCBspNode_SelectPlane::operator() };
+void zCCBspNode_SelectPlane::operator()(zTPlane& a0, zTPolyNode*& a1, int& a2)
+{
+	THISCALL(Ivk_zCCBspNode_SelectPlane)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCarsten_PerFrame(): void]]></Title>
+			<Description><![CDATA[void __cdecl oCarsten_PerFrame()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCarsten_PerFrame();
+BindedHook Ivk_oCarsten_PerFrame{ ZENFOR(0x00479E80, 0x00483F60, 0x004801E0, 0x004816C0), Hook_oCarsten_PerFrame };
+void Hook_oCarsten_PerFrame()
+{
+	Ivk_oCarsten_PerFrame();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

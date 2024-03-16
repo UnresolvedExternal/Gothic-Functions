@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[_d3dxCopyAddRef(): long]]></Title>
+			<Description><![CDATA[long __cdecl _d3dxCopyAddRef()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook__d3dxCopyAddRef();
+BindedHook Ivk__d3dxCopyAddRef{ ZENFOR(0x00763173, 0x007A0332, 0x007B03A1, 0x007BC867), Hook__d3dxCopyAddRef };
+long Hook__d3dxCopyAddRef()
+{
+	long result = Ivk__d3dxCopyAddRef();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

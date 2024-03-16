@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<oCSpell>::Insert(oCSpell*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCList<oCSpell>::Insert(oCSpell*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_oCSpell__Insert : zCList<oCSpell> { void operator()(oCSpell*); };
+BindedHook Ivk_zCList_oCSpell__Insert{ ZENFOR(0x006B91D0, 0x006EDD20, 0x00700BA0, 0x0075FDD0), &zCList_oCSpell__Insert::operator() };
+void zCList_oCSpell__Insert::operator()(oCSpell* a0)
+{
+	THISCALL(Ivk_zCList_oCSpell__Insert)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

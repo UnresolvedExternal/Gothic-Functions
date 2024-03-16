@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zLocal_Startup(): void]]></Title>
+			<Description><![CDATA[void __cdecl zLocal_Startup()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zLocal_Startup();
+BindedHook Ivk_zLocal_Startup{ ZENFOR(0x0075AD00, 0x0079D620, 0x007A7EE0, 0x007B4400), Hook_zLocal_Startup };
+void Hook_zLocal_Startup()
+{
+	Ivk_zLocal_Startup();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

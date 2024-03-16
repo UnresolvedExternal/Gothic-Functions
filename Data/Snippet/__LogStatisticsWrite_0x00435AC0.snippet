@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[LogStatisticsWrite(zSTRING const&): bool]]></Title>
+			<Description><![CDATA[bool __cdecl LogStatisticsWrite(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[bool Hook_LogStatisticsWrite(zSTRING const&);
+BindedHook Ivk_LogStatisticsWrite{ ZENFOR(0x00432EF0, 0x00436B30, 0x004355C0, 0x00435AC0), Hook_LogStatisticsWrite };
+bool Hook_LogStatisticsWrite(zSTRING const& a0)
+{
+	bool result = Ivk_LogStatisticsWrite(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

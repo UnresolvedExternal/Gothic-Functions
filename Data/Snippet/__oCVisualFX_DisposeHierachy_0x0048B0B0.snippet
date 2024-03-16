@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::DisposeHierachy(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall oCVisualFX::DisposeHierachy()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_DisposeHierachy : oCVisualFX { void operator()(); };
+BindedHook Ivk_oCVisualFX_DisposeHierachy{ ZENFOR(0x004835D0, 0x0048E760, 0x00489850, 0x0048B0B0), &oCVisualFX_DisposeHierachy::operator() };
+void oCVisualFX_DisposeHierachy::operator()()
+{
+	THISCALL(Ivk_oCVisualFX_DisposeHierachy)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

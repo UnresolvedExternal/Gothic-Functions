@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspNode::ClassifyRayToNode(zVEC3 const&, zVEC3 const&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCCBspNode::ClassifyRayToNode(zVEC3 const&, zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspNode_ClassifyRayToNode : zCCBspNode { int operator()(zVEC3 const&, zVEC3 const&); };
+BindedHook Ivk_zCCBspNode_ClassifyRayToNode{ ZENFOR(0x0052BF60, 0x00542680, 0x0053A920, 0x0053FA50), &zCCBspNode_ClassifyRayToNode::operator() };
+int zCCBspNode_ClassifyRayToNode::operator()(zVEC3 const& a0, zVEC3 const& a1)
+{
+	int result = THISCALL(Ivk_zCCBspNode_ClassifyRayToNode)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

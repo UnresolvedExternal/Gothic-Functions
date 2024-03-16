@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::SetPercentDone(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCParser::SetPercentDone(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_SetPercentDone : zCParser { void operator()(int); };
+BindedHook Ivk_zCParser_SetPercentDone{ ZENFOR(0x006E9EB0, 0x00722EE0, 0x00733830, 0x00793270), &zCParser_SetPercentDone::operator() };
+void zCParser_SetPercentDone::operator()(int a0)
+{
+	THISCALL(Ivk_zCParser_SetPercentDone)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

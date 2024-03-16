@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCText::InitText(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCText::InitText()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCText_InitText();
+BindedHook Ivk_oCText_InitText{ ZENFOR(0x006D1DD0, 0x00708AC0, 0x0071AD60, 0x0077A7A0), Hook_oCText_InitText };
+void Hook_oCText_InitText()
+{
+	Ivk_oCText_InitText();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

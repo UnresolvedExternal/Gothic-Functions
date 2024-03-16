@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureFileFormatInternal::LoadTexture(zSTRING const&, zCTextureExchange*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCTextureFileFormatInternal::LoadTexture(zSTRING const&, zCTextureExchange*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureFileFormatInternal_LoadTexture : zCTextureFileFormatInternal { int operator()(zSTRING const&, zCTextureExchange*); };
+BindedHook Ivk_zCTextureFileFormatInternal_LoadTexture{ ZENFOR(0x005C7D90, 0x005E6560, 0x005EBB10, 0x005F28C0), &zCTextureFileFormatInternal_LoadTexture::operator() };
+int zCTextureFileFormatInternal_LoadTexture::operator()(zSTRING const& a0, zCTextureExchange* a1)
+{
+	int result = THISCALL(Ivk_zCTextureFileFormatInternal_LoadTexture)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

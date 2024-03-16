@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[vidCreateSurface(SURFACE_INFO*): SURFACE*]]></Title>
+			<Description><![CDATA[SURFACE* __cdecl vidCreateSurface(SURFACE_INFO*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[SURFACE* Hook_vidCreateSurface(SURFACE_INFO*);
+BindedHook Ivk_vidCreateSurface{ ZENFOR(0x004F00E0, 0x005029A0, 0x004FB9A0, 0x004FE620), Hook_vidCreateSurface };
+SURFACE* Hook_vidCreateSurface(SURFACE_INFO* a0)
+{
+	SURFACE* result = Ivk_vidCreateSurface(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::DrawLineZ(float, float, float, float, float, float, zCOLOR): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCRenderer::DrawLineZ(float, float, float, float, float, float, zCOLOR)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_DrawLineZ : zCRenderer { void operator()(float, float, float, float, float, float, zCOLOR); };
+BindedHook Ivk_zCRenderer_DrawLineZ{ ZENFOR(0x00713910, 0x0074F630, 0x0075EA50, 0x00649FF0), &zCRenderer_DrawLineZ::operator() };
+void zCRenderer_DrawLineZ::operator()(float a0, float a1, float a2, float a3, float a4, float a5, zCOLOR a6)
+{
+	THISCALL(Ivk_zCRenderer_DrawLineZ)(a0, a1, a2, a3, a4, a5, a6);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

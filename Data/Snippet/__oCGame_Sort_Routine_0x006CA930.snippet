@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::Sort_Routine(oCGame::TObjectRoutine*, oCGame::TObjectRoutine*): int]]></Title>
+			<Description><![CDATA[private: static int __cdecl oCGame::Sort_Routine(oCGame::TObjectRoutine*, oCGame::TObjectRoutine*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_oCGame_Sort_Routine(oCGame::TObjectRoutine*, oCGame::TObjectRoutine*);
+BindedHook Ivk_oCGame_Sort_Routine{ ZENFOR(0x0063FEB0, 0x00666EE0, 0x0066DBB0, 0x006CA930), Hook_oCGame_Sort_Routine };
+int Hook_oCGame_Sort_Routine(oCGame::TObjectRoutine* a0, oCGame::TObjectRoutine* a1)
+{
+	int result = Ivk_oCGame_Sort_Routine(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

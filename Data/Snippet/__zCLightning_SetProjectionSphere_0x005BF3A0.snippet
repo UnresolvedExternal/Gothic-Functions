@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLightning::SetProjectionSphere(zTBSphere3D const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCLightning::SetProjectionSphere(zTBSphere3D const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCLightning_SetProjectionSphere : zCLightning { void operator()(zTBSphere3D const&); };
+BindedHook Ivk_zCLightning_SetProjectionSphere{ ZENFOR(0x0059D4D0, 0x005B9AA0, 0x005B9830, 0x005BF3A0), &zCLightning_SetProjectionSphere::operator() };
+void zCLightning_SetProjectionSphere::operator()(zTBSphere3D const& a0)
+{
+	THISCALL(Ivk_zCLightning_SetProjectionSphere)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

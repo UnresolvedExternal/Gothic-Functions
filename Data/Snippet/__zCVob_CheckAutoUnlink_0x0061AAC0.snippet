@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::CheckAutoUnlink(zCVob*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCVob::CheckAutoUnlink(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCVob_CheckAutoUnlink(zCVob*);
+BindedHook Ivk_zCVob_CheckAutoUnlink{ ZENFOR(0x005ED690, 0x0060DDB0, 0x00613400, 0x0061AAC0), Hook_zCVob_CheckAutoUnlink };
+void Hook_zCVob_CheckAutoUnlink(zCVob* a0)
+{
+	Ivk_zCVob_CheckAutoUnlink(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

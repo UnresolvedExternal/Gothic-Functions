@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::RelaxHandToTarget(zVEC3 const&, zVEC3 const&, int, float): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall oCAniCtrl_Human::RelaxHandToTarget(zVEC3 const&, zVEC3 const&, int, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_RelaxHandToTarget : oCAniCtrl_Human { void operator()(zVEC3 const&, zVEC3 const&, int, float); };
+BindedHook Ivk_oCAniCtrl_Human_RelaxHandToTarget{ ZENFOR(0x0062A650, 0x0064FA80, 0x00657020, 0x006B39B0), &oCAniCtrl_Human_RelaxHandToTarget::operator() };
+void oCAniCtrl_Human_RelaxHandToTarget::operator()(zVEC3 const& a0, zVEC3 const& a1, int a2, float a3)
+{
+	THISCALL(Ivk_oCAniCtrl_Human_RelaxHandToTarget)(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

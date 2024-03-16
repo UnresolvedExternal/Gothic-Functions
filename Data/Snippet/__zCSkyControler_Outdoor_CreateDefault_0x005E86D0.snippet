@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Outdoor::CreateDefault(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCSkyControler_Outdoor::CreateDefault()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Outdoor_CreateDefault : zCSkyControler_Outdoor { void operator()(); };
+BindedHook Ivk_zCSkyControler_Outdoor_CreateDefault{ ZENFOR(0x005BDEC0, 0x005DBBB0, 0x005E1920, 0x005E86D0), &zCSkyControler_Outdoor_CreateDefault::operator() };
+void zCSkyControler_Outdoor_CreateDefault::operator()()
+{
+	THISCALL(Ivk_zCSkyControler_Outdoor_CreateDefault)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::GlobalCleanUp(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCAICamera::GlobalCleanUp()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCAICamera_GlobalCleanUp();
+BindedHook Ivk_zCAICamera_GlobalCleanUp{ ZENFOR(0x00499400, 0x004A64B0, 0x0049E3B0, 0x004A0890), Hook_zCAICamera_GlobalCleanUp };
+void Hook_zCAICamera_GlobalCleanUp()
+{
+	Ivk_zCAICamera_GlobalCleanUp();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

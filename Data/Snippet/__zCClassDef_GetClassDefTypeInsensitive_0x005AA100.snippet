@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCClassDef::GetClassDefTypeInsensitive(zSTRING const&): zCClassDef*]]></Title>
+			<Description><![CDATA[public: static zCClassDef* __cdecl zCClassDef::GetClassDefTypeInsensitive(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCClassDef* Hook_zCClassDef_GetClassDefTypeInsensitive(zSTRING const&);
+BindedHook Ivk_zCClassDef_GetClassDefTypeInsensitive{ ZENFOR(0x0058A590, 0x005A59C0, 0x005A4BA0, 0x005AA100), Hook_zCClassDef_GetClassDefTypeInsensitive };
+zCClassDef* Hook_zCClassDef_GetClassDefTypeInsensitive(zSTRING const& a0)
+{
+	zCClassDef* result = Ivk_zCClassDef_GetClassDefTypeInsensitive(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

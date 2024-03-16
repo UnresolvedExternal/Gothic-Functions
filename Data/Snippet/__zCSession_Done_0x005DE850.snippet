@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSession::Done(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCSession::Done()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSession_Done : zCSession { void operator()(); };
+BindedHook Ivk_zCSession_Done{ ZENFOR(0x005B7330, 0x005D4CA0, 0x005D7A90, 0x005DE850), &zCSession_Done::operator() };
+void zCSession_Done::operator()()
+{
+	THISCALL(Ivk_zCSession_Done)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

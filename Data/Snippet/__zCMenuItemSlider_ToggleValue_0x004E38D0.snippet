@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemSlider::ToggleValue(int, int): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCMenuItemSlider::ToggleValue(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemSlider_ToggleValue : zCMenuItemSlider { int operator()(int, int); };
+BindedHook Ivk_zCMenuItemSlider_ToggleValue{ ZENFOR(0x004D6810, 0x004E7590, 0x004E0F20, 0x004E38D0), &zCMenuItemSlider_ToggleValue::operator() };
+int zCMenuItemSlider_ToggleValue::operator()(int a0, int a1)
+{
+	int result = THISCALL(Ivk_zCMenuItemSlider_ToggleValue)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

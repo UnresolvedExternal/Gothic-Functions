@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleEmitter::ConvertAnglesIntoBox(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCParticleEmitter::ConvertAnglesIntoBox()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleEmitter_ConvertAnglesIntoBox : zCParticleEmitter { void operator()(); };
+BindedHook Ivk_zCParticleEmitter_ConvertAnglesIntoBox{ ZENFOR(0x00593880, 0x005AF420, 0x005AF0B0, 0x005B4830), &zCParticleEmitter_ConvertAnglesIntoBox::operator() };
+void zCParticleEmitter_ConvertAnglesIntoBox::operator()()
+{
+	THISCALL(Ivk_zCParticleEmitter_ConvertAnglesIntoBox)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

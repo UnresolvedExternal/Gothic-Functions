@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::GetCollisionObject(): zCCollisionObject* [const]]]></Title>
+			<Description><![CDATA[public: zCCollisionObject* __thiscall zCVob::GetCollisionObject() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_GetCollisionObject : zCVob { zCCollisionObject* operator()() const; };
+BindedHook Ivk_zCVob_GetCollisionObject{ ZENFOR(0x005F10C0, 0x00611DB0, 0x00616F00, 0x0061E650), &zCVob_GetCollisionObject::operator() };
+zCCollisionObject* zCVob_GetCollisionObject::operator()() const
+{
+	zCCollisionObject* result = THISCALL(Ivk_zCVob_GetCollisionObject)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

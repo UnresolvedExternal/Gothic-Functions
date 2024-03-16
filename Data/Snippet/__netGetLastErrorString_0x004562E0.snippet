@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[netGetLastErrorString(): char*]]></Title>
+			<Description><![CDATA[char* __cdecl netGetLastErrorString()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[char* Hook_netGetLastErrorString();
+BindedHook Ivk_netGetLastErrorString{ ZENFOR(0x00451650, 0x00458030, 0x00455B90, 0x004562E0), Hook_netGetLastErrorString };
+char* Hook_netGetLastErrorString()
+{
+	char* result = Ivk_netGetLastErrorString();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

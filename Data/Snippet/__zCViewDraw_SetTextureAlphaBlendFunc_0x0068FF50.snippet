@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDraw::SetTextureAlphaBlendFunc(zTRnd_AlphaBlendFunc const&): void]]></Title>
+			<Description><![CDATA[public: void __fastcall zCViewDraw::SetTextureAlphaBlendFunc(zTRnd_AlphaBlendFunc const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDraw_SetTextureAlphaBlendFunc : zCViewDraw { void __fastcall operator()(zTRnd_AlphaBlendFunc const&); };
+BindedHook Ivk_zCViewDraw_SetTextureAlphaBlendFunc{ ZENFOR(0x00753480, 0x00795920, 0x007A01A0, 0x0068FF50), &zCViewDraw_SetTextureAlphaBlendFunc::operator() };
+void __fastcall zCViewDraw_SetTextureAlphaBlendFunc::operator()(zTRnd_AlphaBlendFunc const& a0)
+{
+	THISCALL(Ivk_zCViewDraw_SetTextureAlphaBlendFunc)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

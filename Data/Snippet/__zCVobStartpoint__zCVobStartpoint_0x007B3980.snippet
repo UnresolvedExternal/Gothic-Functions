@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobStartpoint::~zCVobStartpoint()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCVobStartpoint::~zCVobStartpoint()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobStartpoint_Destructor : zCVobStartpoint { void operator()(); };
+BindedHook Ivk_zCVobStartpoint_Destructor{ ZENFOR(0x00709CD0, 0x00744B10, 0x00753E80, 0x007B3980), &zCVobStartpoint_Destructor::operator() };
+void zCVobStartpoint_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVobStartpoint_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

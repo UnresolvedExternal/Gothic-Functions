@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::zCEventManager(zCVob*)]]></Title>
+			<Description><![CDATA[public: __thiscall zCEventManager::zCEventManager(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventManager_zCEventManager : zCEventManager { zCEventManager* operator()(zCVob*); };
+BindedHook Ivk_zCEventManager_zCEventManager{ ZENFOR(0x006DCE10, 0x00714FC0, 0x007266C0, 0x00786100), &zCEventManager_zCEventManager::operator() };
+zCEventManager* zCEventManager_zCEventManager::operator()(zCVob* a0)
+{
+	zCEventManager* result = THISCALL(Ivk_zCEventManager_zCEventManager)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

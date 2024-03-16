@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duDeviceNode::GetSurfaceFormatList(_D3DX_VIDMODEDESC*, unsigned long): CSurfaceFormatList*]]></Title>
+			<Description><![CDATA[public: CSurfaceFormatList* __thiscall CD3duDeviceNode::GetSurfaceFormatList(_D3DX_VIDMODEDESC*, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duDeviceNode_GetSurfaceFormatList : CD3duDeviceNode { CSurfaceFormatList* operator()(_D3DX_VIDMODEDESC*, unsigned long); };
+BindedHook Ivk_CD3duDeviceNode_GetSurfaceFormatList{ ZENFOR(0x0075DD46, 0x007A2029, 0x007AAF74, 0x007B743A), &CD3duDeviceNode_GetSurfaceFormatList::operator() };
+CSurfaceFormatList* CD3duDeviceNode_GetSurfaceFormatList::operator()(_D3DX_VIDMODEDESC* a0, unsigned long a1)
+{
+	CSurfaceFormatList* result = THISCALL(Ivk_CD3duDeviceNode_GetSurfaceFormatList)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

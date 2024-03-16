@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCFlash::zCBolt*>::~zCArray<zCFlash::zCBolt*>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zCFlash::zCBolt*>::~zCArray<zCFlash::zCBolt*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCFlash__zCBolt___Destructor : zCArray<zCFlash::zCBolt*> { void operator()(); };
+BindedHook Ivk_zCArray_zCFlash__zCBolt___Destructor{ ZENFOR(0x004C26F0, 0x004D2000, 0x004C94D0, 0x004CBA40), &zCArray_zCFlash__zCBolt___Destructor::operator() };
+void zCArray_zCFlash__zCBolt___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCFlash__zCBolt___Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

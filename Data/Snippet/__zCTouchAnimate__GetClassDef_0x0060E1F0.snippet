@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchAnimate::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCTouchAnimate::_GetClassDef() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchAnimate__GetClassDef : zCTouchAnimate { zCClassDef* operator()() const; };
+BindedHook Ivk_zCTouchAnimate__GetClassDef{ ZENFOR(0x005E1190, 0x00601000, 0x00606B30, 0x0060E1F0), &zCTouchAnimate__GetClassDef::operator() };
+zCClassDef* zCTouchAnimate__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCTouchAnimate__GetClassDef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

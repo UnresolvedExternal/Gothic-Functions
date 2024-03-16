@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::IsIn(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCMag_Book::IsIn(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_IsIn : oCMag_Book { int operator()(int); };
+BindedHook Ivk_oCMag_Book_IsIn{ ZENFOR(0x0046F680, 0x00478510, 0x00474E80, 0x00476220), &oCMag_Book_IsIn::operator() };
+int oCMag_Book_IsIn::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCMag_Book_IsIn)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

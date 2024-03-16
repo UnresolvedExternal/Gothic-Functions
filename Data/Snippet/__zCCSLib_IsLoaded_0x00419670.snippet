@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSLib::IsLoaded(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCCSLib::IsLoaded()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSLib_IsLoaded : zCCSLib { int operator()(); };
+BindedHook Ivk_zCCSLib_IsLoaded{ ZENFOR(0x00419120, 0x0041B040, 0x00419670, 0x00419670), &zCCSLib_IsLoaded::operator() };
+int zCCSLib_IsLoaded::operator()()
+{
+	int result = THISCALL(Ivk_zCCSLib_IsLoaded)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

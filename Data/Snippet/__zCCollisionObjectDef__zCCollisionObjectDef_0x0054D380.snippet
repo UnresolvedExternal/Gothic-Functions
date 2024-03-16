@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollisionObjectDef::~zCCollisionObjectDef()]]></Title>
+			<Description><![CDATA[public: __thiscall zCCollisionObjectDef::~zCCollisionObjectDef()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollisionObjectDef_Destructor : zCCollisionObjectDef { void operator()(); };
+BindedHook Ivk_zCCollisionObjectDef_Destructor{ ZENFOR(0x00538EC0, 0x00550100, 0x00548160, 0x0054D380), &zCCollisionObjectDef_Destructor::operator() };
+void zCCollisionObjectDef_Destructor::operator()()
+{
+	THISCALL(Ivk_zCCollisionObjectDef_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

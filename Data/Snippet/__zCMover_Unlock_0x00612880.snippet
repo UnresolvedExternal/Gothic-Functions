@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMover::Unlock(zCVob*): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCMover::Unlock(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMover_Unlock : zCMover { void operator()(zCVob*); };
+BindedHook Ivk_zCMover_Unlock{ ZENFOR(0x005E5950, 0x00605B10, 0x0060B1C0, 0x00612880), &zCMover_Unlock::operator() };
+void zCMover_Unlock::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCMover_Unlock)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

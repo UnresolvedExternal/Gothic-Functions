@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEngine::zCEngine()]]></Title>
+			<Description><![CDATA[public: __thiscall zCEngine::zCEngine()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEngine_zCEngine : zCEngine { zCEngine* operator()(); };
+BindedHook Ivk_zCEngine_zCEngine{ ZENFOR(0x00544300, 0x0055BCF0, 0x00553980, 0x00558BA0), &zCEngine_zCEngine::operator() };
+zCEngine* zCEngine_zCEngine::operator()()
+{
+	zCEngine* result = THISCALL(Ivk_zCEngine_zCEngine)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

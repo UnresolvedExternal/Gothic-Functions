@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::CalcPos(zCVob*, float): zVEC3]]></Title>
+			<Description><![CDATA[public: zVEC3 __thiscall oCMag_Book::CalcPos(zCVob*, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_CalcPos : oCMag_Book { zVEC3 operator()(zCVob*, float); };
+BindedHook Ivk_oCMag_Book_CalcPos{ ZENFOR(0x004713B0, 0x0047A340, 0x00476CD0, 0x00478070), &oCMag_Book_CalcPos::operator() };
+zVEC3 oCMag_Book_CalcPos::operator()(zCVob* a0, float a1)
+{
+	zVEC3 result = THISCALL(Ivk_oCMag_Book_CalcPos)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

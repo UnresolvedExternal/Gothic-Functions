@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerInfo::CreateFromBuffer(zCBuffer&): zCPlayerInfo*]]></Title>
+			<Description><![CDATA[public: static zCPlayerInfo* __cdecl zCPlayerInfo::CreateFromBuffer(zCBuffer&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCPlayerInfo* Hook_zCPlayerInfo_CreateFromBuffer(zCBuffer&);
+BindedHook Ivk_zCPlayerInfo_CreateFromBuffer{ ZENFOR(0x00462E70, 0x0046A920, 0x004678E0, 0x00468510), Hook_zCPlayerInfo_CreateFromBuffer };
+zCPlayerInfo* Hook_zCPlayerInfo_CreateFromBuffer(zCBuffer& a0)
+{
+	zCPlayerInfo* result = Ivk_zCPlayerInfo_CreateFromBuffer(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

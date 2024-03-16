@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCacheData<oCNpc const*, oCShrinkHelper>::GetData(oCNpc const* const&): oCShrinkHelper*]]></Title>
+			<Description><![CDATA[public: oCShrinkHelper* __thiscall zCCacheData<oCNpc const*, oCShrinkHelper>::GetData(oCNpc const* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCacheData_oCNpc_const___oCShrinkHelper__GetData : zCCacheData<oCNpc const*, oCShrinkHelper> { oCShrinkHelper* operator()(oCNpc const* const&); };
+BindedHook Ivk_zCCacheData_oCNpc_const___oCShrinkHelper__GetData{ ZENFOR(0x006BAA50, 0x006EF680, 0x007024D0, 0x00761900), &zCCacheData_oCNpc_const___oCShrinkHelper__GetData::operator() };
+oCShrinkHelper* zCCacheData_oCNpc_const___oCShrinkHelper__GetData::operator()(oCNpc const* const& a0)
+{
+	oCShrinkHelper* result = THISCALL(Ivk_zCCacheData_oCNpc_const___oCShrinkHelper__GetData)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

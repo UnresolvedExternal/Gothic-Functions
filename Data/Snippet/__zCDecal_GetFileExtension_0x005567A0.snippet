@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDecal::GetFileExtension(int): zSTRING const*]]></Title>
+			<Description><![CDATA[protected: virtual zSTRING const* __thiscall zCDecal::GetFileExtension(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCDecal_GetFileExtension : zCDecal { zSTRING const* operator()(int); };
+BindedHook Ivk_zCDecal_GetFileExtension{ ZENFOR(0x00542070, 0x005599F0, 0x00551580, 0x005567A0), &zCDecal_GetFileExtension::operator() };
+zSTRING const* zCDecal_GetFileExtension::operator()(int a0)
+{
+	zSTRING const* result = THISCALL(Ivk_zCDecal_GetFileExtension)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

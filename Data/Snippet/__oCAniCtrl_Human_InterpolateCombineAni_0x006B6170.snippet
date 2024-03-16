@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::InterpolateCombineAni(float, float, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCAniCtrl_Human::InterpolateCombineAni(float, float, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_InterpolateCombineAni : oCAniCtrl_Human { int operator()(float, float, int); };
+BindedHook Ivk_oCAniCtrl_Human_InterpolateCombineAni{ ZENFOR(0x0062CB50, 0x00652250, 0x006597E0, 0x006B6170), &oCAniCtrl_Human_InterpolateCombineAni::operator() };
+int oCAniCtrl_Human_InterpolateCombineAni::operator()(float a0, float a1, int a2)
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_InterpolateCombineAni)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

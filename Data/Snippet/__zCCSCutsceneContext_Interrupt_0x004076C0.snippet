@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCutsceneContext::Interrupt(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSCutsceneContext::Interrupt()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCutsceneContext_Interrupt : zCCSCutsceneContext { void operator()(); };
+BindedHook Ivk_zCCSCutsceneContext_Interrupt{ ZENFOR(0x00407450, 0x004081A0, 0x004076C0, 0x004076C0), &zCCSCutsceneContext_Interrupt::operator() };
+void zCCSCutsceneContext_Interrupt::operator()()
+{
+	THISCALL(Ivk_zCCSCutsceneContext_Interrupt)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

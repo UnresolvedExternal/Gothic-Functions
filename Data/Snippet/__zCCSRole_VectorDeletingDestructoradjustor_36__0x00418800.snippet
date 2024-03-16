@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSRole::VectorDeletingDestructoradjustor{36}(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCCSRole::VectorDeletingDestructoradjustor{36}(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSRole_VectorDeletingDestructoradjustor_36_ : zCCSRole { void* operator()(unsigned int); };
+BindedHook Ivk_zCCSRole_VectorDeletingDestructoradjustor_36_{ ZENFOR(0x00418330, 0x0041A180, 0x00418800, 0x00418800), &zCCSRole_VectorDeletingDestructoradjustor_36_::operator() };
+void* zCCSRole_VectorDeletingDestructoradjustor_36_::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCCSRole_VectorDeletingDestructoradjustor_36_)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

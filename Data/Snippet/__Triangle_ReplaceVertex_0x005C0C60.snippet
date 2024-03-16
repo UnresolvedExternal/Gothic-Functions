@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Triangle::ReplaceVertex(Vertex*, Vertex*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall Triangle::ReplaceVertex(Vertex*, Vertex*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct Triangle_ReplaceVertex : Triangle { void operator()(Vertex*, Vertex*); };
+BindedHook Ivk_Triangle_ReplaceVertex{ ZENFOR(0x0059EDC0, 0x005BB3F0, 0x005BB0F0, 0x005C0C60), &Triangle_ReplaceVertex::operator() };
+void Triangle_ReplaceVertex::operator()(Vertex* a0, Vertex* a1)
+{
+	THISCALL(Ivk_Triangle_ReplaceVertex)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::SolveLabels(zCPar_TreeNode*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCParser::SolveLabels(zCPar_TreeNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_SolveLabels : zCParser { void operator()(zCPar_TreeNode*); };
+BindedHook Ivk_zCParser_SolveLabels{ ZENFOR(0x006E8290, 0x00721210, 0x00731BB0, 0x007915F0), &zCParser_SolveLabels::operator() };
+void zCParser_SolveLabels::operator()(zCPar_TreeNode* a0)
+{
+	THISCALL(Ivk_zCParser_SolveLabels)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetEventManager::~zCNetEventManager()]]></Title>
+			<Description><![CDATA[protected: virtual __thiscall zCNetEventManager::~zCNetEventManager()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetEventManager_Destructor : zCNetEventManager { void operator()(); };
+BindedHook Ivk_zCNetEventManager_Destructor{ ZENFOR(0x004533F0, 0x00459F00, 0x00457C10, 0x00458360), &zCNetEventManager_Destructor::operator() };
+void zCNetEventManager_Destructor::operator()()
+{
+	THISCALL(Ivk_zCNetEventManager_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

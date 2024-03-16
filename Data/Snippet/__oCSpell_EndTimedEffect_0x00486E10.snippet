@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::EndTimedEffect(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCSpell::EndTimedEffect()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_EndTimedEffect : oCSpell { void operator()(); };
+BindedHook Ivk_oCSpell_EndTimedEffect{ ZENFOR(0x0047F330, 0x00489E60, 0x004857F0, 0x00486E10), &oCSpell_EndTimedEffect::operator() };
+void oCSpell_EndTimedEffect::operator()()
+{
+	THISCALL(Ivk_oCSpell_EndTimedEffect)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

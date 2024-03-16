@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::GetGame(): oCGame*]]></Title>
+			<Description><![CDATA[public: oCGame* __thiscall CGameManager::GetGame()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_GetGame : CGameManager { oCGame* operator()(); };
+BindedHook Ivk_CGameManager_GetGame{ ZENFOR(0x00429520, 0x0042C0F0, 0x0042AE90, 0x0042B1B0), &CGameManager_GetGame::operator() };
+oCGame* CGameManager_GetGame::operator()()
+{
+	oCGame* result = THISCALL(Ivk_CGameManager_GetGame)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

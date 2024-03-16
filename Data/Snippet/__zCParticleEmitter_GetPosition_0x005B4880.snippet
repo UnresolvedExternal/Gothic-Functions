@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleEmitter::GetPosition(): zVEC3]]></Title>
+			<Description><![CDATA[private: zVEC3 __thiscall zCParticleEmitter::GetPosition()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleEmitter_GetPosition : zCParticleEmitter { zVEC3 operator()(); };
+BindedHook Ivk_zCParticleEmitter_GetPosition{ ZENFOR(0x005938D0, 0x005AF470, 0x005AF100, 0x005B4880), &zCParticleEmitter_GetPosition::operator() };
+zVEC3 zCParticleEmitter_GetPosition::operator()()
+{
+	zVEC3 result = THISCALL(Ivk_zCParticleEmitter_GetPosition)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

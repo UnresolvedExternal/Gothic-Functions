@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[sysGotDebugger(): int]]></Title>
+			<Description><![CDATA[int __cdecl sysGotDebugger()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_sysGotDebugger();
+BindedHook Ivk_sysGotDebugger{ ZENFOR(0x004FA670, 0x0050D260, 0x00506480, 0x005091E0), Hook_sysGotDebugger };
+int Hook_sysGotDebugger()
+{
+	int result = Ivk_sysGotDebugger();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

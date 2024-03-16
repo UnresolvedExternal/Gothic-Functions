@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInputCallback::GetInput(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCInputCallback::GetInput()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCInputCallback_GetInput();
+BindedHook Ivk_zCInputCallback_GetInput{ ZENFOR(0x006FB9D0, 0x00735E40, 0x00745AC0, 0x007A55C0), Hook_zCInputCallback_GetInput };
+void Hook_zCInputCallback_GetInput()
+{
+	Ivk_zCInputCallback_GetInput();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

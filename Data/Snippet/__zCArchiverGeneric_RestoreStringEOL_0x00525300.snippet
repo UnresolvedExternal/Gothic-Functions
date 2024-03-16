@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::RestoreStringEOL(zSTRING&): void]]></Title>
+			<Description><![CDATA[protected: virtual void __fastcall zCArchiverGeneric::RestoreStringEOL(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_RestoreStringEOL : zCArchiverGeneric { void __fastcall operator()(zSTRING&); };
+BindedHook Ivk_zCArchiverGeneric_RestoreStringEOL{ ZENFOR(0x00514750, 0x00529D90, 0x00522530, 0x00525300), &zCArchiverGeneric_RestoreStringEOL::operator() };
+void __fastcall zCArchiverGeneric_RestoreStringEOL::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_zCArchiverGeneric_RestoreStringEOL)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsInFightRange(zCVob*, float&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::IsInFightRange(zCVob*, float&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsInFightRange : oCNpc { int operator()(zCVob*, float&); };
+BindedHook Ivk_oCNpc_IsInFightRange{ ZENFOR(0x007485F0, 0x00789770, 0x007936C0, 0x0067CB60), &oCNpc_IsInFightRange::operator() };
+int oCNpc_IsInFightRange::operator()(zCVob* a0, float& a1)
+{
+	int result = THISCALL(Ivk_oCNpc_IsInFightRange)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ofstream::ofstream(int)]]></Title>
+			<Description><![CDATA[public: __thiscall ofstream::ofstream(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ofstream_ofstream : ofstream { ofstream* operator()(int); };
+BindedHook Ivk_ofstream_ofstream{ ZENFOR(0x007751E3, 0x007B8FA3, 0x007C26CD, 0x007CEB8D), &ofstream_ofstream::operator() };
+ofstream* ofstream_ofstream::operator()(int a0)
+{
+	ofstream* result = THISCALL(Ivk_ofstream_ofstream)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

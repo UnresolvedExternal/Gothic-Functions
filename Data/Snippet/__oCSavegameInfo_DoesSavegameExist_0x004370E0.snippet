@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSavegameInfo::DoesSavegameExist(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCSavegameInfo::DoesSavegameExist()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSavegameInfo_DoesSavegameExist : oCSavegameInfo { int operator()(); };
+BindedHook Ivk_oCSavegameInfo_DoesSavegameExist{ ZENFOR(0x004340F0, 0x00437FD0, 0x00436BE0, 0x004370E0), &oCSavegameInfo_DoesSavegameExist::operator() };
+int oCSavegameInfo_DoesSavegameExist::operator()()
+{
+	int result = THISCALL(Ivk_oCSavegameInfo_DoesSavegameExist)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

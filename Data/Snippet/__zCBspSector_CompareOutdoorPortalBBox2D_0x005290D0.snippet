@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspSector::CompareOutdoorPortalBBox2D(void const*, void const*): int]]></Title>
+			<Description><![CDATA[private: static int __cdecl zCBspSector::CompareOutdoorPortalBBox2D(void const*, void const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCBspSector_CompareOutdoorPortalBBox2D(void const*, void const*);
+BindedHook Ivk_zCBspSector_CompareOutdoorPortalBBox2D{ ZENFOR(0x00518190, 0x0052DBB0, 0x005262E0, 0x005290D0), Hook_zCBspSector_CompareOutdoorPortalBBox2D };
+int Hook_zCBspSector_CompareOutdoorPortalBBox2D(void const* a0, void const* a1)
+{
+	int result = Ivk_zCBspSector_CompareOutdoorPortalBBox2D(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

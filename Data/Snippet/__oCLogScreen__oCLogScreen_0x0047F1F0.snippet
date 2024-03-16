@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCLogScreen::~oCLogScreen()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall oCLogScreen::~oCLogScreen()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCLogScreen_Destructor : oCLogScreen { void operator()(); };
+BindedHook Ivk_oCLogScreen_Destructor{ ZENFOR(0x00477CD0, 0x004818C0, 0x0047DD20, 0x0047F1F0), &oCLogScreen_Destructor::operator() };
+void oCLogScreen_Destructor::operator()()
+{
+	THISCALL(Ivk_oCLogScreen_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

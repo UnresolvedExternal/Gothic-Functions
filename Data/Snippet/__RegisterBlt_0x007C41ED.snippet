@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[RegisterBlt(TArray<BLTENTRY>**, _D3DX_SURFACEFORMAT, _D3DX_SURFACEFORMAT, _D3DX_FILTERTYPE, void*): void]]></Title>
+			<Description><![CDATA[void __cdecl RegisterBlt(TArray<BLTENTRY>**, _D3DX_SURFACEFORMAT, _D3DX_SURFACEFORMAT, _D3DX_FILTERTYPE, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_RegisterBlt(TArray<BLTENTRY>**, _D3DX_SURFACEFORMAT, _D3DX_SURFACEFORMAT, _D3DX_FILTERTYPE, void*);
+BindedHook Ivk_RegisterBlt{ ZENFOR(0x0076AAF9, 0x007AA6CE, 0x007B7D27, 0x007C41ED), Hook_RegisterBlt };
+void Hook_RegisterBlt(TArray<BLTENTRY>** a0, _D3DX_SURFACEFORMAT a1, _D3DX_SURFACEFORMAT a2, _D3DX_FILTERTYPE a3, void* a4)
+{
+	Ivk_RegisterBlt(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

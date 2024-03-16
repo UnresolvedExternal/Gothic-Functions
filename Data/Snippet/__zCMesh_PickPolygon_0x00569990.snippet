@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::PickPolygon(zVEC3 const&, zVEC3 const&, zVEC3&): zCPolygon*]]></Title>
+			<Description><![CDATA[public: zCPolygon* __thiscall zCMesh::PickPolygon(zVEC3 const&, zVEC3 const&, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_PickPolygon : zCMesh { zCPolygon* operator()(zVEC3 const&, zVEC3 const&, zVEC3&); };
+BindedHook Ivk_zCMesh_PickPolygon{ ZENFOR(0x00552140, 0x0056A7C0, 0x00564740, 0x00569990), &zCMesh_PickPolygon::operator() };
+zCPolygon* zCMesh_PickPolygon::operator()(zVEC3 const& a0, zVEC3 const& a1, zVEC3& a2)
+{
+	zCPolygon* result = THISCALL(Ivk_zCMesh_PickPolygon)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

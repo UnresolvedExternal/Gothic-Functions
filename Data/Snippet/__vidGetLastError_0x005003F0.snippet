@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[vidGetLastError(): char*]]></Title>
+			<Description><![CDATA[char* __cdecl vidGetLastError()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[char* Hook_vidGetLastError();
+BindedHook Ivk_vidGetLastError{ ZENFOR(0x004F1EB0, 0x00504820, 0x004FD770, 0x005003F0), Hook_vidGetLastError };
+char* Hook_vidGetLastError()
+{
+	char* result = Ivk_vidGetLastError();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureFileFormatTGA::ReadTGASpan(zFILE*, unsigned char*, int, int): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCTextureFileFormatTGA::ReadTGASpan(zFILE*, unsigned char*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureFileFormatTGA_ReadTGASpan : zCTextureFileFormatTGA { int operator()(zFILE*, unsigned char*, int, int); };
+BindedHook Ivk_zCTextureFileFormatTGA_ReadTGASpan{ ZENFOR(0x005C71B0, 0x005E58C0, 0x005EAF30, 0x005F1CE0), &zCTextureFileFormatTGA_ReadTGASpan::operator() };
+int zCTextureFileFormatTGA_ReadTGASpan::operator()(zFILE* a0, unsigned char* a1, int a2, int a3)
+{
+	int result = THISCALL(Ivk_zCTextureFileFormatTGA_ReadTGASpan)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

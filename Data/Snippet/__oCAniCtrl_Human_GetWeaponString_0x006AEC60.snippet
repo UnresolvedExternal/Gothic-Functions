@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::GetWeaponString(int): zSTRING]]></Title>
+			<Description><![CDATA[public: static zSTRING __cdecl oCAniCtrl_Human::GetWeaponString(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zSTRING Hook_oCAniCtrl_Human_GetWeaponString(int);
+BindedHook Ivk_oCAniCtrl_Human_GetWeaponString{ ZENFOR(0x00626100, 0x0064AF70, 0x006523E0, 0x006AEC60), Hook_oCAniCtrl_Human_GetWeaponString };
+zSTRING Hook_oCAniCtrl_Human_GetWeaponString(int a0)
+{
+	zSTRING result = Ivk_oCAniCtrl_Human_GetWeaponString(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

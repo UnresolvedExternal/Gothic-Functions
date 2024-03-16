@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcFocus::SetFocusMode(int): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCNpcFocus::SetFocusMode(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCNpcFocus_SetFocusMode(int);
+BindedHook Ivk_oCNpcFocus_SetFocusMode{ ZENFOR(0x00634E60, 0x0065AFF0, 0x00662290, 0x006BEC20), Hook_oCNpcFocus_SetFocusMode };
+void Hook_oCNpcFocus_SetFocusMode(int a0)
+{
+	Ivk_oCNpcFocus_SetFocusMode(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

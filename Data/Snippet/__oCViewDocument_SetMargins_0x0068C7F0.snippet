@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDocument::SetMargins(int, zCPosition&, zCPosition&, int): void]]></Title>
+			<Description><![CDATA[public: void __fastcall oCViewDocument::SetMargins(int, zCPosition&, zCPosition&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDocument_SetMargins : oCViewDocument { void __fastcall operator()(int, zCPosition&, zCPosition&, int); };
+BindedHook Ivk_oCViewDocument_SetMargins{ ZENFOR(0x00725340, 0x007625F0, 0x007717C0, 0x0068C7F0), &oCViewDocument_SetMargins::operator() };
+void __fastcall oCViewDocument_SetMargins::operator()(int a0, zCPosition& a1, zCPosition& a2, int a3)
+{
+	THISCALL(Ivk_oCViewDocument_SetMargins)(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

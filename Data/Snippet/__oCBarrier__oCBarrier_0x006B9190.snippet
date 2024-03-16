@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCBarrier::~oCBarrier()]]></Title>
+			<Description><![CDATA[public: __thiscall oCBarrier::~oCBarrier()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCBarrier_Destructor : oCBarrier { void operator()(); };
+BindedHook Ivk_oCBarrier_Destructor{ ZENFOR(0x006301C0, 0x00655AB0, 0x0065C800, 0x006B9190), &oCBarrier_Destructor::operator() };
+void oCBarrier_Destructor::operator()()
+{
+	THISCALL(Ivk_oCBarrier_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

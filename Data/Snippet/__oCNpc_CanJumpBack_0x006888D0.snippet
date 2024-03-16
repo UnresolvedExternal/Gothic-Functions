@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::CanJumpBack(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::CanJumpBack(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_CanJumpBack : oCNpc { int operator()(int); };
+BindedHook Ivk_oCNpc_CanJumpBack{ ZENFOR(0x00752980, 0x00794D30, 0x0079F3F0, 0x006888D0), &oCNpc_CanJumpBack::operator() };
+int oCNpc_CanJumpBack::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCNpc_CanJumpBack)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

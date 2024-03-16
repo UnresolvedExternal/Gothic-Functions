@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[EncodeBlockAlpha4(S3TC_COLOR* const, S3TCBlockAlpha4*): void]]></Title>
+			<Description><![CDATA[void __cdecl EncodeBlockAlpha4(S3TC_COLOR* const, S3TCBlockAlpha4*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_EncodeBlockAlpha4(S3TC_COLOR* const, S3TCBlockAlpha4*);
+BindedHook Ivk_EncodeBlockAlpha4{ ZENFOR(0x0076A8F4, 0x007AA34F, 0x007B7B22, 0x007C3FE8), Hook_EncodeBlockAlpha4 };
+void Hook_EncodeBlockAlpha4(S3TC_COLOR* const a0, S3TCBlockAlpha4* a1)
+{
+	Ivk_EncodeBlockAlpha4(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetNearestFightNpcLeft(): oCNpc*]]></Title>
+			<Description><![CDATA[public: oCNpc* __thiscall oCNpc::GetNearestFightNpcLeft()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetNearestFightNpcLeft : oCNpc { oCNpc* operator()(); };
+BindedHook Ivk_oCNpc_GetNearestFightNpcLeft{ ZENFOR(0x00690030, 0x006C13C0, 0x006D4600, 0x00732C20), &oCNpc_GetNearestFightNpcLeft::operator() };
+oCNpc* oCNpc_GetNearestFightNpcLeft::operator()()
+{
+	oCNpc* result = THISCALL(Ivk_oCNpc_GetNearestFightNpcLeft)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[_ValidateWrite(void*, unsigned int): int]]></Title>
+			<Description><![CDATA[int __cdecl _ValidateWrite(void*, unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook__ValidateWrite(void*, unsigned int);
+BindedHook Ivk__ValidateWrite{ ZENFOR(0x00782B59, 0x007C6751, 0x007CFE35, 0x007DC2F5), Hook__ValidateWrite };
+int Hook__ValidateWrite(void* a0, unsigned int a1)
+{
+	int result = Ivk__ValidateWrite(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

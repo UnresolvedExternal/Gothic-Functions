@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMoverControler::OnUntrigger(zCVob*, zCVob*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCMoverControler::OnUntrigger(zCVob*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMoverControler_OnUntrigger : zCMoverControler { void operator()(zCVob*, zCVob*); };
+BindedHook Ivk_zCMoverControler_OnUntrigger{ ZENFOR(0x005DF350, 0x005FF110, 0x00604DC0, 0x0060C480), &zCMoverControler_OnUntrigger::operator() };
+void zCMoverControler_OnUntrigger::operator()(zCVob* a0, zCVob* a1)
+{
+	THISCALL(Ivk_zCMoverControler_OnUntrigger)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

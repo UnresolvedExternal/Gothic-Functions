@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventMessage::TestClassIntegrity(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCEventMessage::TestClassIntegrity()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCEventMessage_TestClassIntegrity();
+BindedHook Ivk_zCEventMessage_TestClassIntegrity{ ZENFOR(0x005D9190, 0x005F8A00, 0x005FEB50, 0x006059E0), Hook_zCEventMessage_TestClassIntegrity };
+void Hook_zCEventMessage_TestClassIntegrity()
+{
+	Ivk_zCEventMessage_TestClassIntegrity();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

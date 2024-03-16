@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::WriteDWord(zSTRING const&, char const*, unsigned long, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCOption::WriteDWord(zSTRING const&, char const*, unsigned long, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_WriteDWord : zCOption { int operator()(zSTRING const&, char const*, unsigned long, int); };
+BindedHook Ivk_zCOption_WriteDWord{ ZENFOR(0x0045C980, 0x00463F40, 0x00461650, 0x00461E60), &zCOption_WriteDWord::operator() };
+int zCOption_WriteDWord::operator()(zSTRING const& a0, char const* a1, unsigned long a2, int a3)
+{
+	int result = THISCALL(Ivk_zCOption_WriteDWord)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

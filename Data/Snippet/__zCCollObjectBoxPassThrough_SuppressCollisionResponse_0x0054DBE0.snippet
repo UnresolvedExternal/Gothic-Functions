@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectBoxPassThrough::SuppressCollisionResponse(): int]]></Title>
+			<Description><![CDATA[public: virtual int __fastcall zCCollObjectBoxPassThrough::SuppressCollisionResponse()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectBoxPassThrough_SuppressCollisionResponse : zCCollObjectBoxPassThrough { int __fastcall operator()(); };
+BindedHook Ivk_zCCollObjectBoxPassThrough_SuppressCollisionResponse{ ZENFOR(0x00539730, 0x005509D0, 0x005489C0, 0x0054DBE0), &zCCollObjectBoxPassThrough_SuppressCollisionResponse::operator() };
+int __fastcall zCCollObjectBoxPassThrough_SuppressCollisionResponse::operator()()
+{
+	int result = THISCALL(Ivk_zCCollObjectBoxPassThrough_SuppressCollisionResponse)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

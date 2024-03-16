@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPathSearch::CorrectPosForNearClip(zVEC3&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCPathSearch::CorrectPosForNearClip(zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCPathSearch_CorrectPosForNearClip : zCPathSearch { int operator()(zVEC3&); };
+BindedHook Ivk_zCPathSearch_CorrectPosForNearClip{ ZENFOR(0x00000000, 0x00000000, 0x004AD350, 0x004AF880), &zCPathSearch_CorrectPosForNearClip::operator() };
+int zCPathSearch_CorrectPosForNearClip::operator()(zVEC3& a0)
+{
+	int result = THISCALL(Ivk_zCPathSearch_CorrectPosForNearClip)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

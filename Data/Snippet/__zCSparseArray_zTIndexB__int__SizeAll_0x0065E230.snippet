@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zTIndexB, int>::SizeAll(): unsigned long [const]]]></Title>
+			<Description><![CDATA[protected: virtual unsigned long __thiscall zCSparseArray<zTIndexB, int>::SizeAll() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zTIndexB__int__SizeAll : zCSparseArray<zTIndexB, int> { unsigned long operator()() const; };
+BindedHook Ivk_zCSparseArray_zTIndexB__int__SizeAll{ ZENFOR(0x0075A770, 0x0079CDD0, 0x007A76C0, 0x0065E230), &zCSparseArray_zTIndexB__int__SizeAll::operator() };
+unsigned long zCSparseArray_zTIndexB__int__SizeAll::operator()() const
+{
+	unsigned long result = THISCALL(Ivk_zCSparseArray_zTIndexB__int__SizeAll)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

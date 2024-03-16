@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWay::CanJump(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCWay::CanJump()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWay_CanJump : zCWay { int operator()(); };
+BindedHook Ivk_zCWay_CanJump{ ZENFOR(0x00705A10, 0x00740470, 0x0074FB10, 0x007AF610), &zCWay_CanJump::operator() };
+int zCWay_CanJump::operator()()
+{
+	int result = THISCALL(Ivk_zCWay_CanJump)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

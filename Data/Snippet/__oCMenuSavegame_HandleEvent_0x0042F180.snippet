@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenuSavegame::HandleEvent(int): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCMenuSavegame::HandleEvent(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenuSavegame_HandleEvent : oCMenuSavegame { int operator()(int); };
+BindedHook Ivk_oCMenuSavegame_HandleEvent{ ZENFOR(0x0042C830, 0x0042F970, 0x0042EE60, 0x0042F180), &oCMenuSavegame_HandleEvent::operator() };
+int oCMenuSavegame_HandleEvent::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCMenuSavegame_HandleEvent)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

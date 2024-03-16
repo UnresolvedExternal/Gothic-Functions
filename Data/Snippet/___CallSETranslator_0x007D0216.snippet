@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[_CallSETranslator(EHExceptionRecord*, EHRegistrationNode*, void*, void*, _s_FuncInfo const*, int, EHRegistrationNode*): int]]></Title>
+			<Description><![CDATA[int __cdecl _CallSETranslator(EHExceptionRecord*, EHRegistrationNode*, void*, void*, _s_FuncInfo const*, int, EHRegistrationNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook__CallSETranslator(EHExceptionRecord*, EHRegistrationNode*, void*, void*, _s_FuncInfo const*, int, EHRegistrationNode*);
+BindedHook Ivk__CallSETranslator{ ZENFOR(0x0077686C, 0x007BA62C, 0x007C3D56, 0x007D0216), Hook__CallSETranslator };
+int Hook__CallSETranslator(EHExceptionRecord* a0, EHRegistrationNode* a1, void* a2, void* a3, _s_FuncInfo const* a4, int a5, EHRegistrationNode* a6)
+{
+	int result = Ivk__CallSETranslator(a0, a1, a2, a3, a4, a5, a6);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

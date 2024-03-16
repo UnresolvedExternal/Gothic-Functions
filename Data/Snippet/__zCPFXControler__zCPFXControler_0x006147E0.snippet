@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPFXControler::~zCPFXControler()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCPFXControler::~zCPFXControler()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPFXControler_Destructor : zCPFXControler { void operator()(); };
+BindedHook Ivk_zCPFXControler_Destructor{ ZENFOR(0x005E7800, 0x00607B90, 0x0060D120, 0x006147E0), &zCPFXControler_Destructor::operator() };
+void zCPFXControler_Destructor::operator()()
+{
+	THISCALL(Ivk_zCPFXControler_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

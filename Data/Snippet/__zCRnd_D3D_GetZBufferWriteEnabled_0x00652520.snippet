@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::GetZBufferWriteEnabled(): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCRnd_D3D::GetZBufferWriteEnabled() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_GetZBufferWriteEnabled : zCRnd_D3D { int operator()() const; };
+BindedHook Ivk_zCRnd_D3D_GetZBufferWriteEnabled{ ZENFOR(0x00719E50, 0x00756040, 0x00765BC0, 0x00652520), &zCRnd_D3D_GetZBufferWriteEnabled::operator() };
+int zCRnd_D3D_GetZBufferWriteEnabled::operator()() const
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_GetZBufferWriteEnabled)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

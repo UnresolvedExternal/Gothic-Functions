@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer_D3D::SetIndexList(zCArray<unsigned short>const&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCVertexBuffer_D3D::SetIndexList(zCArray<unsigned short>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_D3D_SetIndexList : zCVertexBuffer_D3D { int operator()(zCArray<unsigned short>const&); };
+BindedHook Ivk_zCVertexBuffer_D3D_SetIndexList{ ZENFOR(0x0071ECB0, 0x0075B450, 0x0076AA60, 0x00657590), &zCVertexBuffer_D3D_SetIndexList::operator() };
+int zCVertexBuffer_D3D_SetIndexList::operator()(zCArray<unsigned short>const& a0)
+{
+	int result = THISCALL(Ivk_zCVertexBuffer_D3D_SetIndexList)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

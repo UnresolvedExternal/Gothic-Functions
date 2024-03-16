@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::StartStdFaceAni(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::StartStdFaceAni(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_StartStdFaceAni : oCNpc { int operator()(int); };
+BindedHook Ivk_oCNpc_StartStdFaceAni{ ZENFOR(0x00695540, 0x006C6F20, 0x006DA220, 0x00738960), &oCNpc_StartStdFaceAni::operator() };
+int oCNpc_StartStdFaceAni::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCNpc_StartStdFaceAni)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetCurrentFightMove(): int]]></Title>
+			<Description><![CDATA[private: int __thiscall oCNpc::GetCurrentFightMove()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetCurrentFightMove : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_GetCurrentFightMove{ ZENFOR(0x00748890, 0x00789AA0, 0x007939D0, 0x0067CE70), &oCNpc_GetCurrentFightMove::operator() };
+int oCNpc_GetCurrentFightMove::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_GetCurrentFightMove)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

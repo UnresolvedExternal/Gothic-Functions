@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CVideoModeList::GetVideoModeNode(CVideoModeNode**, _D3DX_VIDMODEDESC*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall CVideoModeList::GetVideoModeNode(CVideoModeNode**, _D3DX_VIDMODEDESC*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CVideoModeList_GetVideoModeNode : CVideoModeList { int operator()(CVideoModeNode**, _D3DX_VIDMODEDESC*); };
+BindedHook Ivk_CVideoModeList_GetVideoModeNode{ ZENFOR(0x0075E40C, 0x007A1C72, 0x007AB63A, 0x007B7B00), &CVideoModeList_GetVideoModeNode::operator() };
+int CVideoModeList_GetVideoModeNode::operator()(CVideoModeNode** a0, _D3DX_VIDMODEDESC* a1)
+{
+	int result = THISCALL(Ivk_CVideoModeList_GetVideoModeNode)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

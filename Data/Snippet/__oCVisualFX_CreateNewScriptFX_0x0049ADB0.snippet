@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::CreateNewScriptFX(zSTRING const&): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCVisualFX::CreateNewScriptFX(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCVisualFX_CreateNewScriptFX(zSTRING const&);
+BindedHook Ivk_oCVisualFX_CreateNewScriptFX{ ZENFOR(0x00490900, 0x0049CAC0, 0x00498C10, 0x0049ADB0), Hook_oCVisualFX_CreateNewScriptFX };
+void Hook_oCVisualFX_CreateNewScriptFX(zSTRING const& a0)
+{
+	Ivk_oCVisualFX_CreateNewScriptFX(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

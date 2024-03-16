@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPathSearch::~zCPathSearch()]]></Title>
+			<Description><![CDATA[public: __thiscall zCPathSearch::~zCPathSearch()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPathSearch_Destructor : zCPathSearch { void operator()(); };
+BindedHook Ivk_zCPathSearch_Destructor{ ZENFOR(0x0049F450, 0x004ACCF0, 0x004A48A0, 0x004A6DD0), &zCPathSearch_Destructor::operator() };
+void zCPathSearch_Destructor::operator()()
+{
+	THISCALL(Ivk_zCPathSearch_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

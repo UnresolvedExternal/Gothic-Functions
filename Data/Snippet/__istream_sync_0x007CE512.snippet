@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[istream::sync(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall istream::sync()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct istream_sync : istream { int operator()(); };
+BindedHook Ivk_istream_sync{ ZENFOR(0x00774B68, 0x007B8928, 0x007C2052, 0x007CE512), &istream_sync::operator() };
+int istream_sync::operator()()
+{
+	int result = THISCALL(Ivk_istream_sync)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCNpc::TActiveInfo>>::IndexIsEqual(void const*, void const*): int [const]]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCNpc::TActiveInfo>>::IndexIsEqual(void const*, void const*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___IndexIsEqual : zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCNpc::TActiveInfo>> { int operator()(void const*, void const*) const; };
+BindedHook Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___IndexIsEqual{ ZENFOR(0x006B98C0, 0x006EE460, 0x00701270, 0x00760500), &zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___IndexIsEqual::operator() };
+int zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___IndexIsEqual::operator()(void const* a0, void const* a1) const
+{
+	int result = THISCALL(Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCNpc__TActiveInfo___IndexIsEqual)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

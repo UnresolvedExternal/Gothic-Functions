@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler::GetFillBackground(): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCSkyControler::GetFillBackground() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_GetFillBackground : zCSkyControler { int operator()() const; };
+BindedHook Ivk_zCSkyControler_GetFillBackground{ ZENFOR(0x005B7EF0, 0x005D58D0, 0x005D8690, 0x005DF450), &zCSkyControler_GetFillBackground::operator() };
+int zCSkyControler_GetFillBackground::operator()() const
+{
+	int result = THISCALL(Ivk_zCSkyControler_GetFillBackground)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

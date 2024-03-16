@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::GetSelectedSpell(): oCSpell*]]></Title>
+			<Description><![CDATA[public: oCSpell* __thiscall oCMag_Book::GetSelectedSpell()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_GetSelectedSpell : oCMag_Book { oCSpell* operator()(); };
+BindedHook Ivk_oCMag_Book_GetSelectedSpell{ ZENFOR(0x00470AC0, 0x00479A10, 0x004763E0, 0x00477780), &oCMag_Book_GetSelectedSpell::operator() };
+oCSpell* oCMag_Book_GetSelectedSpell::operator()()
+{
+	oCSpell* result = THISCALL(Ivk_oCMag_Book_GetSelectedSpell)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

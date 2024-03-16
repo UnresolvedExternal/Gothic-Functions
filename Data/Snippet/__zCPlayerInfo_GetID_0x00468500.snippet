@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerInfo::GetID(): unsigned char [const]]]></Title>
+			<Description><![CDATA[public: unsigned char __thiscall zCPlayerInfo::GetID() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerInfo_GetID : zCPlayerInfo { unsigned char operator()() const; };
+BindedHook Ivk_zCPlayerInfo_GetID{ ZENFOR(0x00462E60, 0x0046A910, 0x004678D0, 0x00468500), &zCPlayerInfo_GetID::operator() };
+unsigned char zCPlayerInfo_GetID::operator()() const
+{
+	unsigned char result = THISCALL(Ivk_zCPlayerInfo_GetID)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

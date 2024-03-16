@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_File::SaveTree(int, zCPar_Symbol*, zDATE&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPar_File::SaveTree(int, zCPar_Symbol*, zDATE&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_File_SaveTree : zCPar_File { void operator()(int, zCPar_Symbol*, zDATE&); };
+BindedHook Ivk_zCPar_File_SaveTree{ ZENFOR(0x006E4350, 0x0071CC60, 0x0072DB60, 0x0078D5A0), &zCPar_File_SaveTree::operator() };
+void zCPar_File_SaveTree::operator()(int a0, zCPar_Symbol* a1, zDATE& a2)
+{
+	THISCALL(Ivk_zCPar_File_SaveTree)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

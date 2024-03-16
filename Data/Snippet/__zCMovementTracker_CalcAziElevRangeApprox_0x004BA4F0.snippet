@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::CalcAziElevRangeApprox(float const&, float const&, float const&): zVEC3&]]></Title>
+			<Description><![CDATA[public: zVEC3& __thiscall zCMovementTracker::CalcAziElevRangeApprox(float const&, float const&, float const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_CalcAziElevRangeApprox : zCMovementTracker { zVEC3& operator()(float const&, float const&, float const&); };
+BindedHook Ivk_zCMovementTracker_CalcAziElevRangeApprox{ ZENFOR(0x004B1810, 0x004C0160, 0x004B7F80, 0x004BA4F0), &zCMovementTracker_CalcAziElevRangeApprox::operator() };
+zVEC3& zCMovementTracker_CalcAziElevRangeApprox::operator()(float const& a0, float const& a1, float const& a2)
+{
+	zVEC3& result = THISCALL(Ivk_zCMovementTracker_CalcAziElevRangeApprox)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewStatusBar::SetRange(float, float): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCViewStatusBar::SetRange(float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewStatusBar_SetRange : zCViewStatusBar { void operator()(float, float); };
+BindedHook Ivk_zCViewStatusBar_SetRange{ ZENFOR(0x0046A3C0, 0x00472540, 0x0046EB40, 0x0046F770), &zCViewStatusBar_SetRange::operator() };
+void zCViewStatusBar_SetRange::operator()(float a0, float a1)
+{
+	THISCALL(Ivk_zCViewStatusBar_SetRange)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

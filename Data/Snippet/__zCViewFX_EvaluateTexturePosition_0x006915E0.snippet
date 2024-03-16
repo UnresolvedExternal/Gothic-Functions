@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewFX::EvaluateTexturePosition(): void]]></Title>
+			<Description><![CDATA[protected: virtual void __fastcall zCViewFX::EvaluateTexturePosition()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewFX_EvaluateTexturePosition : zCViewFX { void __fastcall operator()(); };
+BindedHook Ivk_zCViewFX_EvaluateTexturePosition{ ZENFOR(0x00754A80, 0x00796EE0, 0x007A1830, 0x006915E0), &zCViewFX_EvaluateTexturePosition::operator() };
+void __fastcall zCViewFX_EvaluateTexturePosition::operator()()
+{
+	THISCALL(Ivk_zCViewFX_EvaluateTexturePosition)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

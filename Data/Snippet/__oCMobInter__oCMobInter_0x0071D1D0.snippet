@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::~oCMobInter()]]></Title>
+			<Description><![CDATA[protected: virtual __thiscall oCMobInter::~oCMobInter()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_Destructor : oCMobInter { void operator()(); };
+BindedHook Ivk_oCMobInter_Destructor{ ZENFOR(0x0067BFC0, 0x006AA7F0, 0x006BF140, 0x0071D1D0), &oCMobInter_Destructor::operator() };
+void oCMobInter_Destructor::operator()()
+{
+	THISCALL(Ivk_oCMobInter_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

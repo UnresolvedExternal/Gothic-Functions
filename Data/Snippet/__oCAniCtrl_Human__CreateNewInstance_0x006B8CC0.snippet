@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::_CreateNewInstance(): zCObject*]]></Title>
+			<Description><![CDATA[private: static zCObject* __cdecl oCAniCtrl_Human::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_oCAniCtrl_Human__CreateNewInstance();
+BindedHook Ivk_oCAniCtrl_Human__CreateNewInstance{ ZENFOR(0x0062F4C0, 0x00654DC0, 0x0065C330, 0x006B8CC0), Hook_oCAniCtrl_Human__CreateNewInstance };
+zCObject* Hook_oCAniCtrl_Human__CreateNewInstance()
+{
+	zCObject* result = Ivk_oCAniCtrl_Human__CreateNewInstance();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

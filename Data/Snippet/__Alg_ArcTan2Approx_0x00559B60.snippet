@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Alg_ArcTan2Approx(float, float): float]]></Title>
+			<Description><![CDATA[float __cdecl Alg_ArcTan2Approx(float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+float Hook_Alg_ArcTan2Approx(float, float);
+BindedHook Ivk_Alg_ArcTan2Approx{ ZENFOR(0x00000000, 0x00000000, 0x00554940, 0x00559B60), Hook_Alg_ArcTan2Approx };
+float Hook_Alg_ArcTan2Approx(float a0, float a1)
+{
+	float result = Ivk_Alg_ArcTan2Approx(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

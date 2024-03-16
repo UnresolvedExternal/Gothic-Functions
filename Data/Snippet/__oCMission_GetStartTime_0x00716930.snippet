@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMission::GetStartTime(): float]]></Title>
+			<Description><![CDATA[private: float __thiscall oCMission::GetStartTime()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMission_GetStartTime : oCMission { float operator()(); };
+BindedHook Ivk_oCMission_GetStartTime{ ZENFOR(0x006758F0, 0x006A3990, 0x006B88A0, 0x00716930), &oCMission_GetStartTime::operator() };
+float oCMission_GetStartTime::operator()()
+{
+	float result = THISCALL(Ivk_oCMission_GetStartTime)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

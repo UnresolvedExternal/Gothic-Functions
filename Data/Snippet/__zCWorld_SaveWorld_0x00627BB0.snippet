@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::SaveWorld(zSTRING const&, zCWorld::zTWorldSaveMode, int, int): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCWorld::SaveWorld(zSTRING const&, zCWorld::zTWorldSaveMode, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_SaveWorld : zCWorld { int operator()(zSTRING const&, zCWorld::zTWorldSaveMode, int, int); };
+BindedHook Ivk_zCWorld_SaveWorld{ ZENFOR(0x005F9330, 0x0061A850, 0x00620430, 0x00627BB0), &zCWorld_SaveWorld::operator() };
+int zCWorld_SaveWorld::operator()(zSTRING const& a0, zCWorld::zTWorldSaveMode a1, int a2, int a3)
+{
+	int result = THISCALL(Ivk_zCWorld_SaveWorld)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

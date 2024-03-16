@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[netListenPacket(zTNetAddress*): void*]]></Title>
+			<Description><![CDATA[void* __cdecl netListenPacket(zTNetAddress*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void* Hook_netListenPacket(zTNetAddress*);
+BindedHook Ivk_netListenPacket{ ZENFOR(0x00450580, 0x00456F20, 0x00454AC0, 0x00455210), Hook_netListenPacket };
+void* Hook_netListenPacket(zTNetAddress* a0)
+{
+	void* result = Ivk_netListenPacket(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

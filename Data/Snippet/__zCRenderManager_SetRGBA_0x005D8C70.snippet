@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderManager::SetRGBA(zCShaderStage*): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCRenderManager::SetRGBA(zCShaderStage*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderManager_SetRGBA : zCRenderManager { void __fastcall operator()(zCShaderStage*); };
+BindedHook Ivk_zCRenderManager_SetRGBA{ ZENFOR(0x005B2430, 0x005CF680, 0x005D1EB0, 0x005D8C70), &zCRenderManager_SetRGBA::operator() };
+void __fastcall zCRenderManager_SetRGBA::operator()(zCShaderStage* a0)
+{
+	THISCALL(Ivk_zCRenderManager_SetRGBA)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerGroup::GetNearestPlayerToVob(zCVob*, zCPlayerInfo*): zCPlayerInfo*]]></Title>
+			<Description><![CDATA[public: zCPlayerInfo* __thiscall zCPlayerGroup::GetNearestPlayerToVob(zCVob*, zCPlayerInfo*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerGroup_GetNearestPlayerToVob : zCPlayerGroup { zCPlayerInfo* operator()(zCVob*, zCPlayerInfo*); };
+BindedHook Ivk_zCPlayerGroup_GetNearestPlayerToVob{ ZENFOR(0x00461D90, 0x00469790, 0x004667D0, 0x00467400), &zCPlayerGroup_GetNearestPlayerToVob::operator() };
+zCPlayerInfo* zCPlayerGroup_GetNearestPlayerToVob::operator()(zCVob* a0, zCPlayerInfo* a1)
+{
+	zCPlayerInfo* result = THISCALL(Ivk_zCPlayerGroup_GetNearestPlayerToVob)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

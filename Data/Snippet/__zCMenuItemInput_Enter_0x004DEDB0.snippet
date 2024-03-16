@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemInput::Enter(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCMenuItemInput::Enter()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemInput_Enter : zCMenuItemInput { void operator()(); };
+BindedHook Ivk_zCMenuItemInput_Enter{ ZENFOR(0x004D1F20, 0x004E2780, 0x004DC400, 0x004DEDB0), &zCMenuItemInput_Enter::operator() };
+void zCMenuItemInput_Enter::operator()()
+{
+	THISCALL(Ivk_zCMenuItemInput_Enter)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

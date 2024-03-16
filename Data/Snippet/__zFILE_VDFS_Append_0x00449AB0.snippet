@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_VDFS::Append(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zFILE_VDFS::Append()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_VDFS_Append : zFILE_VDFS { void operator()(); };
+BindedHook Ivk_zFILE_VDFS_Append{ ZENFOR(0x00445780, 0x0044B490, 0x00449450, 0x00449AB0), &zFILE_VDFS_Append::operator() };
+void zFILE_VDFS_Append::operator()()
+{
+	THISCALL(Ivk_zFILE_VDFS_Append)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

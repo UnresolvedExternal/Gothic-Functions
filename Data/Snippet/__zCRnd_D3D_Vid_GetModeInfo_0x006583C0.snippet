@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::Vid_GetModeInfo(zTRnd_VidModeInfo&, int): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCRnd_D3D::Vid_GetModeInfo(zTRnd_VidModeInfo&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_Vid_GetModeInfo : zCRnd_D3D { int operator()(zTRnd_VidModeInfo&, int); };
+BindedHook Ivk_zCRnd_D3D_Vid_GetModeInfo{ ZENFOR(0x0071FAA0, 0x0075C300, 0x0076B890, 0x006583C0), &zCRnd_D3D_Vid_GetModeInfo::operator() };
+int zCRnd_D3D_Vid_GetModeInfo::operator()(zTRnd_VidModeInfo& a0, int a1)
+{
+	int result = THISCALL(Ivk_zCRnd_D3D_Vid_GetModeInfo)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

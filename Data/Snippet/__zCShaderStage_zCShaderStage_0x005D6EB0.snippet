@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCShaderStage::zCShaderStage()]]></Title>
+			<Description><![CDATA[public: __thiscall zCShaderStage::zCShaderStage()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCShaderStage_zCShaderStage : zCShaderStage { zCShaderStage* operator()(); };
+BindedHook Ivk_zCShaderStage_zCShaderStage{ ZENFOR(0x005B1130, 0x005CE2F0, 0x005D02F0, 0x005D6EB0), &zCShaderStage_zCShaderStage::operator() };
+zCShaderStage* zCShaderStage_zCShaderStage::operator()()
+{
+	zCShaderStage* result = THISCALL(Ivk_zCShaderStage_zCShaderStage)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

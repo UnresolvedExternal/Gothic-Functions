@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewObject::UpdatePixelPositionChildren(): void]]></Title>
+			<Description><![CDATA[protected: void __fastcall zCViewObject::UpdatePixelPositionChildren()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewObject_UpdatePixelPositionChildren : zCViewObject { void __fastcall operator()(); };
+BindedHook Ivk_zCViewObject_UpdatePixelPositionChildren{ ZENFOR(0x00755AB0, 0x00797ED0, 0x007A2850, 0x00692600), &zCViewObject_UpdatePixelPositionChildren::operator() };
+void __fastcall zCViewObject_UpdatePixelPositionChildren::operator()()
+{
+	THISCALL(Ivk_zCViewObject_UpdatePixelPositionChildren)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

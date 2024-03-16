@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ToggleCapsLock(): void]]></Title>
+			<Description><![CDATA[void __cdecl ToggleCapsLock()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_ToggleCapsLock();
+BindedHook Ivk_ToggleCapsLock{ ZENFOR(0x0060F420, 0x00631E60, 0x00638970, 0x00695040), Hook_ToggleCapsLock };
+void Hook_ToggleCapsLock()
+{
+	Ivk_ToggleCapsLock();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

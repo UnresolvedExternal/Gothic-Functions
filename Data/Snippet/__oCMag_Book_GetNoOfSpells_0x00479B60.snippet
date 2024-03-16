@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::GetNoOfSpells(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCMag_Book::GetNoOfSpells()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_GetNoOfSpells : oCMag_Book { int operator()(); };
+BindedHook Ivk_oCMag_Book_GetNoOfSpells{ ZENFOR(0x00472DA0, 0x0047C040, 0x004787C0, 0x00479B60), &oCMag_Book_GetNoOfSpells::operator() };
+int oCMag_Book_GetNoOfSpells::operator()()
+{
+	int result = THISCALL(Ivk_oCMag_Book_GetNoOfSpells)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

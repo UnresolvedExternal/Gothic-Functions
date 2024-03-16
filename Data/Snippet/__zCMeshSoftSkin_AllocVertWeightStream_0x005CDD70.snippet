@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMeshSoftSkin::AllocVertWeightStream(int, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMeshSoftSkin::AllocVertWeightStream(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMeshSoftSkin_AllocVertWeightStream : zCMeshSoftSkin { void operator()(int, int); };
+BindedHook Ivk_zCMeshSoftSkin_AllocVertWeightStream{ ZENFOR(0x005A98F0, 0x005C6410, 0x005C7DC0, 0x005CDD70), &zCMeshSoftSkin_AllocVertWeightStream::operator() };
+void zCMeshSoftSkin_AllocVertWeightStream::operator()(int a0, int a1)
+{
+	THISCALL(Ivk_zCMeshSoftSkin_AllocVertWeightStream)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

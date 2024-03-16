@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_File::SetFileNumber(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPar_File::SetFileNumber(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_File_SetFileNumber : zCPar_File { void operator()(int); };
+BindedHook Ivk_zCPar_File_SetFileNumber{ ZENFOR(0x006E3F90, 0x0071C8B0, 0x0072D7B0, 0x0078D1F0), &zCPar_File_SetFileNumber::operator() };
+void zCPar_File_SetFileNumber::operator()(int a0)
+{
+	THISCALL(Ivk_zCPar_File_SetFileNumber)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

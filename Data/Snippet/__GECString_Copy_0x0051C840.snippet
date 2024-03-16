@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[GECString::Copy(char const*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall GECString::Copy(char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct GECString_Copy : GECString { void operator()(char const*); };
+BindedHook Ivk_GECString_Copy{ ZENFOR(0x0050C6C0, 0x00521460, 0x00519A70, 0x0051C840), &GECString_Copy::operator() };
+void GECString_Copy::operator()(char const* a0)
+{
+	THISCALL(Ivk_GECString_Copy)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

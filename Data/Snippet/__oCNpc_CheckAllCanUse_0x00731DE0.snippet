@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::CheckAllCanUse(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::CheckAllCanUse()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_CheckAllCanUse : oCNpc { void operator()(); };
+BindedHook Ivk_oCNpc_CheckAllCanUse{ ZENFOR(0x0068F340, 0x006BFFE0, 0x006D3930, 0x00731DE0), &oCNpc_CheckAllCanUse::operator() };
+void oCNpc_CheckAllCanUse::operator()()
+{
+	THISCALL(Ivk_oCNpc_CheckAllCanUse)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_VDFS::Read(char*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zFILE_VDFS::Read(char*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_VDFS_Read : zFILE_VDFS { int operator()(char*); };
+BindedHook Ivk_zFILE_VDFS_Read{ ZENFOR(0x004465A0, 0x0044C430, 0x0044A270, 0x0044A8D0), &zFILE_VDFS_Read::operator() };
+int zFILE_VDFS_Read::operator()(char* a0)
+{
+	int result = THISCALL(Ivk_zFILE_VDFS_Read)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

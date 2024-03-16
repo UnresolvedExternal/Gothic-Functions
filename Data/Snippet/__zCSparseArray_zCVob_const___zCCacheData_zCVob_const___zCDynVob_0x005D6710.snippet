@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCVob const*, zCCacheData<zCVob const*, zCDynVobLightCacheElement>>::SizeAll(): unsigned long [const]]]></Title>
+			<Description><![CDATA[protected: virtual unsigned long __thiscall zCSparseArray<zCVob const*, zCCacheData<zCVob const*, zCDynVobLightCacheElement>>::SizeAll() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___SizeAll : zCSparseArray<zCVob const*, zCCacheData<zCVob const*, zCDynVobLightCacheElement>> { unsigned long operator()() const; };
+BindedHook Ivk_zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___SizeAll{ ZENFOR(0x005B0E20, 0x005CDFD0, 0x005CFB50, 0x005D6710), &zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___SizeAll::operator() };
+unsigned long zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___SizeAll::operator()() const
+{
+	unsigned long result = THISCALL(Ivk_zCSparseArray_zCVob_const___zCCacheData_zCVob_const___zCDynVobLightCacheElement___SizeAll)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

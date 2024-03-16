@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::SetNextAni(int, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::SetNextAni(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_SetNextAni : oCAniCtrl_Human { void operator()(int, int); };
+BindedHook Ivk_oCAniCtrl_Human_SetNextAni{ ZENFOR(0x0061B980, 0x0063F320, 0x00647720, 0x006A3FA0), &oCAniCtrl_Human_SetNextAni::operator() };
+void oCAniCtrl_Human_SetNextAni::operator()(int a0, int a1)
+{
+	THISCALL(Ivk_oCAniCtrl_Human_SetNextAni)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

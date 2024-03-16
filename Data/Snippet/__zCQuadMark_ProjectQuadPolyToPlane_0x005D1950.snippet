@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::ProjectQuadPolyToPlane(zCQuadMark::zTQuadMarkPoly const&, zCQuadMark::zTQuadMarkPoly&, zTPlane const&): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCQuadMark::ProjectQuadPolyToPlane(zCQuadMark::zTQuadMarkPoly const&, zCQuadMark::zTQuadMarkPoly&, zTPlane const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_ProjectQuadPolyToPlane : zCQuadMark { void operator()(zCQuadMark::zTQuadMarkPoly const&, zCQuadMark::zTQuadMarkPoly&, zTPlane const&); };
+BindedHook Ivk_zCQuadMark_ProjectQuadPolyToPlane{ ZENFOR(0x005AC820, 0x005C9650, 0x005CADB0, 0x005D1950), &zCQuadMark_ProjectQuadPolyToPlane::operator() };
+void zCQuadMark_ProjectQuadPolyToPlane::operator()(zCQuadMark::zTQuadMarkPoly const& a0, zCQuadMark::zTQuadMarkPoly& a1, zTPlane const& a2)
+{
+	THISCALL(Ivk_zCQuadMark_ProjectQuadPolyToPlane)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

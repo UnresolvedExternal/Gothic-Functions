@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerGroup::IsMember(zCPlayerInfo*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCPlayerGroup::IsMember(zCPlayerInfo*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerGroup_IsMember : zCPlayerGroup { int operator()(zCPlayerInfo*); };
+BindedHook Ivk_zCPlayerGroup_IsMember{ ZENFOR(0x00461490, 0x00468E00, 0x00465E70, 0x00466AA0), &zCPlayerGroup_IsMember::operator() };
+int zCPlayerGroup_IsMember::operator()(zCPlayerInfo* a0)
+{
+	int result = THISCALL(Ivk_zCPlayerGroup_IsMember)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

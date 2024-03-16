@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::StreamConnect(zCNetHost*&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCNet::StreamConnect(zCNetHost*&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_StreamConnect : zCNet { int operator()(zCNetHost*&); };
+BindedHook Ivk_zCNet_StreamConnect{ ZENFOR(0x0044E380, 0x00454A90, 0x00452450, 0x00452BA0), &zCNet_StreamConnect::operator() };
+int zCNet_StreamConnect::operator()(zCNetHost*& a0)
+{
+	int result = THISCALL(Ivk_zCNet_StreamConnect)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

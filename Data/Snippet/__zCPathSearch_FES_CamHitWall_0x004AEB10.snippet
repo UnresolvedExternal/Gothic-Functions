@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPathSearch::FES_CamHitWall(zCArray<zSEvasionSearchDesc>&): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCPathSearch::FES_CamHitWall(zCArray<zSEvasionSearchDesc>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPathSearch_FES_CamHitWall : zCPathSearch { int operator()(zCArray<zSEvasionSearchDesc>&); };
+BindedHook Ivk_zCPathSearch_FES_CamHitWall{ ZENFOR(0x004A6F30, 0x004B4B00, 0x004AC5E0, 0x004AEB10), &zCPathSearch_FES_CamHitWall::operator() };
+int zCPathSearch_FES_CamHitWall::operator()(zCArray<zSEvasionSearchDesc>& a0)
+{
+	int result = THISCALL(Ivk_zCPathSearch_FES_CamHitWall)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

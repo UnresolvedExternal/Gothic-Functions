@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Spaces(int): zSTRING]]></Title>
+			<Description><![CDATA[zSTRING __cdecl Spaces(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zSTRING Hook_Spaces(int);
+BindedHook Ivk_Spaces{ ZENFOR(0x00465210, 0x0046CEF0, 0x00469D50, 0x0046A980), Hook_Spaces };
+zSTRING Hook_Spaces(int a0)
+{
+	zSTRING result = Ivk_Spaces(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

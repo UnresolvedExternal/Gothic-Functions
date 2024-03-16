@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::zCMenuItem(zSTRING const&)]]></Title>
+			<Description><![CDATA[public: __thiscall zCMenuItem::zCMenuItem(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItem_zCMenuItem : zCMenuItem { zCMenuItem* operator()(zSTRING const&); };
+BindedHook Ivk_zCMenuItem_zCMenuItem{ ZENFOR(0x004D1F90, 0x004E27F0, 0x004DC470, 0x004DEE20), &zCMenuItem_zCMenuItem::operator() };
+zCMenuItem* zCMenuItem_zCMenuItem::operator()(zSTRING const& a0)
+{
+	zCMenuItem* result = THISCALL(Ivk_zCMenuItem_zCMenuItem)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPool<zCVertFeature>::zCMemPool<zCVertFeature>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCMemPool<zCVertFeature>::zCMemPool<zCVertFeature>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPool_zCVertFeature__zCMemPool_zCVertFeature_ : zCMemPool<zCVertFeature> { zCMemPool<zCVertFeature>* operator()(); };
+BindedHook Ivk_zCMemPool_zCVertFeature__zCMemPool_zCVertFeature_{ ZENFOR(0x004FC270, 0x0050F340, 0x00508F00, 0x0050BCB0), &zCMemPool_zCVertFeature__zCMemPool_zCVertFeature_::operator() };
+zCMemPool<zCVertFeature>* zCMemPool_zCVertFeature__zCMemPool_zCVertFeature_::operator()()
+{
+	zCMemPool<zCVertFeature>* result = THISCALL(Ivk_zCMemPool_zCVertFeature__zCMemPool_zCVertFeature_)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

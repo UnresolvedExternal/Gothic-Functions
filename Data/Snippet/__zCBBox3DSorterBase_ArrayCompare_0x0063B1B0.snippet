@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBBox3DSorterBase::ArrayCompare(void const*, void const*): int]]></Title>
+			<Description><![CDATA[private: static int __cdecl zCBBox3DSorterBase::ArrayCompare(void const*, void const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCBBox3DSorterBase_ArrayCompare(void const*, void const*);
+BindedHook Ivk_zCBBox3DSorterBase_ArrayCompare{ ZENFOR(0x0060AB30, 0x0062D050, 0x006339E0, 0x0063B1B0), Hook_zCBBox3DSorterBase_ArrayCompare };
+int Hook_zCBBox3DSorterBase_ArrayCompare(void const* a0, void const* a1)
+{
+	int result = Ivk_zCBBox3DSorterBase_ArrayCompare(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

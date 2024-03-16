@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspTree::CollectPolysInBBox3DAngle(zTBBox3D const&, zVEC3 const&, float, float, zCPolygon**&, int&): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zCBspTree::CollectPolysInBBox3DAngle(zTBBox3D const&, zVEC3 const&, float, float, zCPolygon**&, int&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspTree_CollectPolysInBBox3DAngle : zCBspTree { int operator()(zTBBox3D const&, zVEC3 const&, float, float, zCPolygon**&, int&) const; };
+BindedHook Ivk_zCBspTree_CollectPolysInBBox3DAngle{ ZENFOR(0x0051A530, 0x005301F0, 0x00529EC0, 0x0052CE10), &zCBspTree_CollectPolysInBBox3DAngle::operator() };
+int zCBspTree_CollectPolysInBBox3DAngle::operator()(zTBBox3D const& a0, zVEC3 const& a1, float a2, float a3, zCPolygon**& a4, int& a5) const
+{
+	int result = THISCALL(Ivk_zCBspTree_CollectPolysInBBox3DAngle)(a0, a1, a2, a3, a4, a5);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

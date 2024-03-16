@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::DynLightScalePrelit(zCOLOR): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMesh::DynLightScalePrelit(zCOLOR)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_DynLightScalePrelit : zCMesh { void operator()(zCOLOR); };
+BindedHook Ivk_zCMesh_DynLightScalePrelit{ ZENFOR(0x00551A90, 0x0056A120, 0x005640F0, 0x00569340), &zCMesh_DynLightScalePrelit::operator() };
+void zCMesh_DynLightScalePrelit::operator()(zCOLOR a0)
+{
+	THISCALL(Ivk_zCMesh_DynLightScalePrelit)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetTradeItem(): oCItem*]]></Title>
+			<Description><![CDATA[public: oCItem* __thiscall oCNpc::GetTradeItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetTradeItem : oCNpc { oCItem* operator()(); };
+BindedHook Ivk_oCNpc_GetTradeItem{ ZENFOR(0x00633BC0, 0x00659A40, 0x00660BE0, 0x006BD570), &oCNpc_GetTradeItem::operator() };
+oCItem* oCNpc_GetTradeItem::operator()()
+{
+	oCItem* result = THISCALL(Ivk_oCNpc_GetTradeItem)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

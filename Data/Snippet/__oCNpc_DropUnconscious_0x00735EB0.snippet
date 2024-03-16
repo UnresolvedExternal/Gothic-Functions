@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::DropUnconscious(float, oCNpc*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::DropUnconscious(float, oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_DropUnconscious : oCNpc { void operator()(float, oCNpc*); };
+BindedHook Ivk_oCNpc_DropUnconscious{ ZENFOR(0x00692C10, 0x006C42F0, 0x006D7750, 0x00735EB0), &oCNpc_DropUnconscious::operator() };
+void oCNpc_DropUnconscious::operator()(float a0, oCNpc* a1)
+{
+	THISCALL(Ivk_oCNpc_DropUnconscious)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

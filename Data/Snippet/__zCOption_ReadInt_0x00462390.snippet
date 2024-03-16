@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::ReadInt(zSTRING const&, char const*, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCOption::ReadInt(zSTRING const&, char const*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_ReadInt : zCOption { int operator()(zSTRING const&, char const*, int); };
+BindedHook Ivk_zCOption_ReadInt{ ZENFOR(0x0045CDB0, 0x004645B0, 0x00461B80, 0x00462390), &zCOption_ReadInt::operator() };
+int zCOption_ReadInt::operator()(zSTRING const& a0, char const* a1, int a2)
+{
+	int result = THISCALL(Ivk_zCOption_ReadInt)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

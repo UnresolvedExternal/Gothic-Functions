@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCClassDef::zCClassDef(zSTRING const&, zSTRING const&, zCObject*(__cdecl*)(), unsigned long, unsigned long, unsigned short, zSTRING const&)]]></Title>
+			<Description><![CDATA[public: __thiscall zCClassDef::zCClassDef(zSTRING const&, zSTRING const&, zCObject*(__cdecl*)(), unsigned long, unsigned long, unsigned short, zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCClassDef_zCClassDef : zCClassDef { zCClassDef* operator()(zSTRING const&, zSTRING const&, zCObject*(__cdecl*)(), unsigned long, unsigned long, unsigned short, zSTRING const&); };
+BindedHook Ivk_zCClassDef_zCClassDef{ ZENFOR(0x0058AD70, 0x005A6240, 0x005A5380, 0x005AA8E0), &zCClassDef_zCClassDef::operator() };
+zCClassDef* zCClassDef_zCClassDef::operator()(zSTRING const& a0, zSTRING const& a1, zCObject*(__cdecl* a2)(), unsigned long a3, unsigned long a4, unsigned short a5, zSTRING const& a6)
+{
+	zCClassDef* result = THISCALL(Ivk_zCClassDef_zCClassDef)(a0, a1, a2, a3, a4, a5, a6);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

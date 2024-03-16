@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_DataStack::zCPar_DataStack()]]></Title>
+			<Description><![CDATA[public: __thiscall zCPar_DataStack::zCPar_DataStack()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_DataStack_zCPar_DataStack : zCPar_DataStack { zCPar_DataStack* operator()(); };
+BindedHook Ivk_zCPar_DataStack_zCPar_DataStack{ ZENFOR(0x006FB4C0, 0x00735910, 0x00745510, 0x007A4F50), &zCPar_DataStack_zCPar_DataStack::operator() };
+zCPar_DataStack* zCPar_DataStack_zCPar_DataStack::operator()()
+{
+	zCPar_DataStack* result = THISCALL(Ivk_zCPar_DataStack_zCPar_DataStack)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

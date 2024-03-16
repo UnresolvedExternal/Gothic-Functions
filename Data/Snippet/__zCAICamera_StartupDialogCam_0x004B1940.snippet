@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::StartupDialogCam(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCAICamera::StartupDialogCam()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAICamera_StartupDialogCam : zCAICamera { void operator()(); };
+BindedHook Ivk_zCAICamera_StartupDialogCam{ ZENFOR(0x004A9750, 0x004B7650, 0x004AF410, 0x004B1940), &zCAICamera_StartupDialogCam::operator() };
+void zCAICamera_StartupDialogCam::operator()()
+{
+	THISCALL(Ivk_zCAICamera_StartupDialogCam)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

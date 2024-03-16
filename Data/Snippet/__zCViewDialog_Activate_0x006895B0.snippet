@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialog::Activate(int): void]]></Title>
+			<Description><![CDATA[public: virtual void __fastcall zCViewDialog::Activate(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialog_Activate : zCViewDialog { void __fastcall operator()(int); };
+BindedHook Ivk_zCViewDialog_Activate{ ZENFOR(0x007250F0, 0x00762370, 0x00771580, 0x006895B0), &zCViewDialog_Activate::operator() };
+void __fastcall zCViewDialog_Activate::operator()(int a0)
+{
+	THISCALL(Ivk_zCViewDialog_Activate)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

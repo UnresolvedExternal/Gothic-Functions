@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CCapsFile::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[protected: void* __thiscall CCapsFile::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct CCapsFile_ScalarDeletingDestructor : CCapsFile { void* operator()(unsigned int); };
+BindedHook Ivk_CCapsFile_ScalarDeletingDestructor{ ZENFOR(0x0075C902, 0x00000000, 0x007A9B30, 0x007B5FF6), &CCapsFile_ScalarDeletingDestructor::operator() };
+void* CCapsFile_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_CCapsFile_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

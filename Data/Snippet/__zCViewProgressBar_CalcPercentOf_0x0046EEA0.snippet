@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewProgressBar::CalcPercentOf(float, float, float): float]]></Title>
+			<Description><![CDATA[private: float __thiscall zCViewProgressBar::CalcPercentOf(float, float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewProgressBar_CalcPercentOf : zCViewProgressBar { float operator()(float, float, float); };
+BindedHook Ivk_zCViewProgressBar_CalcPercentOf{ ZENFOR(0x00469BC0, 0x00471CF0, 0x0046E270, 0x0046EEA0), &zCViewProgressBar_CalcPercentOf::operator() };
+float zCViewProgressBar_CalcPercentOf::operator()(float a0, float a1, float a2)
+{
+	float result = THISCALL(Ivk_zCViewProgressBar_CalcPercentOf)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

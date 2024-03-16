@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::SetExt(zSTRING): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zFILE_FILE::SetExt(zSTRING)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_SetExt : zFILE_FILE { void operator()(zSTRING); };
+BindedHook Ivk_zFILE_FILE_SetExt{ ZENFOR(0x004420F0, 0x00447980, 0x00445A20, 0x00446050), &zFILE_FILE_SetExt::operator() };
+void zFILE_FILE_SetExt::operator()(zSTRING a0)
+{
+	THISCALL(Ivk_zFILE_FILE_SetExt)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

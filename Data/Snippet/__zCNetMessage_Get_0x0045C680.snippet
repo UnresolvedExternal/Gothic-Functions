@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetMessage::Get(void*, unsigned long const&): unsigned long]]></Title>
+			<Description><![CDATA[public: unsigned long __thiscall zCNetMessage::Get(void*, unsigned long const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetMessage_Get : zCNetMessage { unsigned long operator()(void*, unsigned long const&); };
+BindedHook Ivk_zCNetMessage_Get{ ZENFOR(0x00457600, 0x0045E610, 0x0045BF30, 0x0045C680), &zCNetMessage_Get::operator() };
+unsigned long zCNetMessage_Get::operator()(void* a0, unsigned long const& a1)
+{
+	unsigned long result = THISCALL(Ivk_zCNetMessage_Get)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

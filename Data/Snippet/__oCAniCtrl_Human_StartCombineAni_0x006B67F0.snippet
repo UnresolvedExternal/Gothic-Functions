@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::StartCombineAni(zVEC3&, int, float, float): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::StartCombineAni(zVEC3&, int, float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_StartCombineAni : oCAniCtrl_Human { void operator()(zVEC3&, int, float, float); };
+BindedHook Ivk_oCAniCtrl_Human_StartCombineAni{ ZENFOR(0x0062D050, 0x00652760, 0x00659E60, 0x006B67F0), &oCAniCtrl_Human_StartCombineAni::operator() };
+void oCAniCtrl_Human_StartCombineAni::operator()(zVEC3& a0, int a1, float a2, float a3)
+{
+	THISCALL(Ivk_oCAniCtrl_Human_StartCombineAni)(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

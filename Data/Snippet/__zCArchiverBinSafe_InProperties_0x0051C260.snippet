@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::InProperties(): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCArchiverBinSafe::InProperties() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_InProperties : zCArchiverBinSafe { int operator()() const; };
+BindedHook Ivk_zCArchiverBinSafe_InProperties{ ZENFOR(0x0050C140, 0x00520EB0, 0x00519490, 0x0051C260), &zCArchiverBinSafe_InProperties::operator() };
+int zCArchiverBinSafe_InProperties::operator()() const
+{
+	int result = THISCALL(Ivk_zCArchiverBinSafe_InProperties)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

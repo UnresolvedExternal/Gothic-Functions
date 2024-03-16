@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMeshAni::zCMorphMeshAni()]]></Title>
+			<Description><![CDATA[public: __thiscall zCMorphMeshAni::zCMorphMeshAni()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMeshAni_zCMorphMeshAni : zCMorphMeshAni { zCMorphMeshAni* operator()(); };
+BindedHook Ivk_zCMorphMeshAni_zCMorphMeshAni{ ZENFOR(0x00583630, 0x0059E170, 0x0059DBA0, 0x005A3100), &zCMorphMeshAni_zCMorphMeshAni::operator() };
+zCMorphMeshAni* zCMorphMeshAni_zCMorphMeshAni::operator()()
+{
+	zCMorphMeshAni* result = THISCALL(Ivk_zCMorphMeshAni_zCMorphMeshAni)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

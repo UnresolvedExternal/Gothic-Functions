@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zSEvasionSearchDesc::zSEvasionSearchOptions>::AllocDelta(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zSEvasionSearchDesc::zSEvasionSearchOptions>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zSEvasionSearchDesc__zSEvasionSearchOptions__AllocDelta : zCArray<zSEvasionSearchDesc::zSEvasionSearchOptions> { void operator()(int); };
+BindedHook Ivk_zCArray_zSEvasionSearchDesc__zSEvasionSearchOptions__AllocDelta{ ZENFOR(0x004A9100, 0x004B7030, 0x004AEE80, 0x004B13B0), &zCArray_zSEvasionSearchDesc__zSEvasionSearchOptions__AllocDelta::operator() };
+void zCArray_zSEvasionSearchDesc__zSEvasionSearchOptions__AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zSEvasionSearchDesc__zSEvasionSearchOptions__AllocDelta)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::GetFogRange(float&, float&, zTRnd_FogMode&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCRenderer::GetFogRange(float&, float&, zTRnd_FogMode&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_GetFogRange : zCRenderer { void operator()(float&, float&, zTRnd_FogMode&); };
+BindedHook Ivk_zCRenderer_GetFogRange{ ZENFOR(0x00713970, 0x0074F690, 0x0075EAC0, 0x0064A060), &zCRenderer_GetFogRange::operator() };
+void zCRenderer_GetFogRange::operator()(float& a0, float& a1, zTRnd_FogMode& a2)
+{
+	THISCALL(Ivk_zCRenderer_GetFogRange)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

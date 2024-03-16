@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[DXTryWarning(long, char const*): int]]></Title>
+			<Description><![CDATA[int __cdecl DXTryWarning(long, char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_DXTryWarning(long, char const*);
+BindedHook Ivk_DXTryWarning{ ZENFOR(0x00714A00, 0x007507E0, 0x00759A50, 0x00644FF0), Hook_DXTryWarning };
+int Hook_DXTryWarning(long a0, char const* a1)
+{
+	int result = Ivk_DXTryWarning(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

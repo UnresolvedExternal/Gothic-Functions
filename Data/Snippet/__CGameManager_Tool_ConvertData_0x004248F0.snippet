@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::Tool_ConvertData(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall CGameManager::Tool_ConvertData()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_Tool_ConvertData : CGameManager { void operator()(); };
+BindedHook Ivk_CGameManager_Tool_ConvertData{ ZENFOR(0x00423D00, 0x00426710, 0x004245C0, 0x004248F0), &CGameManager_Tool_ConvertData::operator() };
+void CGameManager_Tool_ConvertData::operator()()
+{
+	THISCALL(Ivk_CGameManager_Tool_ConvertData)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

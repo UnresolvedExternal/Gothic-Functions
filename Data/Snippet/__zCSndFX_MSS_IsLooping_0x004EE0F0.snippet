@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::IsLooping(): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCSndFX_MSS::IsLooping() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_IsLooping : zCSndFX_MSS { int operator()() const; };
+BindedHook Ivk_zCSndFX_MSS_IsLooping{ ZENFOR(0x004E0B40, 0x004F2500, 0x004EB470, 0x004EE0F0), &zCSndFX_MSS_IsLooping::operator() };
+int zCSndFX_MSS_IsLooping::operator()() const
+{
+	int result = THISCALL(Ivk_zCSndFX_MSS_IsLooping)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

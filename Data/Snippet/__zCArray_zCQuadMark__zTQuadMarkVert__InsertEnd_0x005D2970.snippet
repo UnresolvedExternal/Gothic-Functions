@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCQuadMark::zTQuadMarkVert>::InsertEnd(zCQuadMark::zTQuadMarkVert const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zCQuadMark::zTQuadMarkVert>::InsertEnd(zCQuadMark::zTQuadMarkVert const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCQuadMark__zTQuadMarkVert__InsertEnd : zCArray<zCQuadMark::zTQuadMarkVert> { void operator()(zCQuadMark::zTQuadMarkVert const&); };
+BindedHook Ivk_zCArray_zCQuadMark__zTQuadMarkVert__InsertEnd{ ZENFOR(0x005AD810, 0x005CA770, 0x005CBDC0, 0x005D2970), &zCArray_zCQuadMark__zTQuadMarkVert__InsertEnd::operator() };
+void zCArray_zCQuadMark__zTQuadMarkVert__InsertEnd::operator()(zCQuadMark::zTQuadMarkVert const& a0)
+{
+	THISCALL(Ivk_zCArray_zCQuadMark__zTQuadMarkVert__InsertEnd)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

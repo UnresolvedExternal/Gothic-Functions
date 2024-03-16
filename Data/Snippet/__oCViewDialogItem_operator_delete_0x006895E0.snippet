@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogItem::operator delete(void*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCViewDialogItem::operator delete(void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+void Hook_oCViewDialogItem_operator_delete(void*);
+BindedHook Ivk_oCViewDialogItem_operator_delete{ ZENFOR(0x00000000, 0x00000000, 0x00773890, 0x006895E0), Hook_oCViewDialogItem_operator_delete };
+void Hook_oCViewDialogItem_operator_delete(void* a0)
+{
+	Ivk_oCViewDialogItem_operator_delete(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

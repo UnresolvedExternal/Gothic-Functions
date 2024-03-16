@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[protected: virtual void* __thiscall zCAIPlayer::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2, G2A
+struct zCAIPlayer_ScalarDeletingDestructor : zCAIPlayer { void* operator()(unsigned int); };
+BindedHook Ivk_zCAIPlayer_ScalarDeletingDestructor{ ZENFOR(0x00000000, 0x0050FE50, 0x00509990, 0x0050C740), &zCAIPlayer_ScalarDeletingDestructor::operator() };
+void* zCAIPlayer_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCAIPlayer_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

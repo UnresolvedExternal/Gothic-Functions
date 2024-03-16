@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLightPreset::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCVobLightPreset::_GetClassDef() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobLightPreset__GetClassDef : zCVobLightPreset { zCClassDef* operator()() const; };
+BindedHook Ivk_zCVobLightPreset__GetClassDef{ ZENFOR(0x005D24B0, 0x005F16B0, 0x005F68A0, 0x005FD690), &zCVobLightPreset__GetClassDef::operator() };
+zCClassDef* zCVobLightPreset__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCVobLightPreset__GetClassDef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

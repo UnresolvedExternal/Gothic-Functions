@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::IsInAnyList(zCWaypoint*): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCWayNet::IsInAnyList(zCWaypoint*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_IsInAnyList : zCWayNet { int operator()(zCWaypoint*); };
+BindedHook Ivk_zCWayNet_IsInAnyList{ ZENFOR(0x00706BA0, 0x007416B0, 0x00750CA0, 0x007B07A0), &zCWayNet_IsInAnyList::operator() };
+int zCWayNet_IsInAnyList::operator()(zCWaypoint* a0)
+{
+	int result = THISCALL(Ivk_zCWayNet_IsInAnyList)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

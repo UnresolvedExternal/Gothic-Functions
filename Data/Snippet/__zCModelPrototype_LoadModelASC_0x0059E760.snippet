@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::LoadModelASC(zSTRING const&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCModelPrototype::LoadModelASC(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_LoadModelASC : zCModelPrototype { int operator()(zSTRING const&); };
+BindedHook Ivk_zCModelPrototype_LoadModelASC{ ZENFOR(0x0057EB20, 0x005993E0, 0x00599200, 0x0059E760), &zCModelPrototype_LoadModelASC::operator() };
+int zCModelPrototype_LoadModelASC::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_zCModelPrototype_LoadModelASC)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

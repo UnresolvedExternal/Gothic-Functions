@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTextureConvert::~zCTextureConvert()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCTextureConvert::~zCTextureConvert()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTextureConvert_Destructor : zCTextureConvert { void operator()(); };
+BindedHook Ivk_zCTextureConvert_Destructor{ ZENFOR(0x00722C60, 0x0075F730, 0x0076ED00, 0x0065B830), &zCTextureConvert_Destructor::operator() };
+void zCTextureConvert_Destructor::operator()()
+{
+	THISCALL(Ivk_zCTextureConvert_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

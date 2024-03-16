@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTex_D3D::Unlock(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCTex_D3D::Unlock()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTex_D3D_Unlock : zCTex_D3D { int operator()(); };
+BindedHook Ivk_zCTex_D3D_Unlock{ ZENFOR(0x0071B3A0, 0x007576E0, 0x00767190, 0x00653AF0), &zCTex_D3D_Unlock::operator() };
+int zCTex_D3D_Unlock::operator()()
+{
+	int result = THISCALL(Ivk_zCTex_D3D_Unlock)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

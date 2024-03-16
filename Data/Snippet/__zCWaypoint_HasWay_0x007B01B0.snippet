@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWaypoint::HasWay(zCWaypoint*): zCWay*]]></Title>
+			<Description><![CDATA[public: zCWay* __thiscall zCWaypoint::HasWay(zCWaypoint*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWaypoint_HasWay : zCWaypoint { zCWay* operator()(zCWaypoint*); };
+BindedHook Ivk_zCWaypoint_HasWay{ ZENFOR(0x007065B0, 0x007410C0, 0x007506B0, 0x007B01B0), &zCWaypoint_HasWay::operator() };
+zCWay* zCWaypoint_HasWay::operator()(zCWaypoint* a0)
+{
+	zCWay* result = THISCALL(Ivk_zCWaypoint_HasWay)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

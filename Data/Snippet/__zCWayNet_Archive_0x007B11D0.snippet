@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::Archive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCWayNet::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_Archive : zCWayNet { void operator()(zCArchiver&); };
+BindedHook Ivk_zCWayNet_Archive{ ZENFOR(0x007075B0, 0x00742100, 0x007516D0, 0x007B11D0), &zCWayNet_Archive::operator() };
+void zCWayNet_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCWayNet_Archive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

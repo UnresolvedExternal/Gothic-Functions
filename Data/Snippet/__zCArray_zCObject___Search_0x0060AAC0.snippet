@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCObject*>::Search(zCObject* const&): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zCArray<zCObject*>::Search(zCObject* const&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCObject___Search : zCArray<zCObject*> { int operator()(zCObject* const&) const; };
+BindedHook Ivk_zCArray_zCObject___Search{ ZENFOR(0x005DDCE0, 0x005FDA00, 0x00603800, 0x0060AAC0), &zCArray_zCObject___Search::operator() };
+int zCArray_zCObject___Search::operator()(zCObject* const& a0) const
+{
+	int result = THISCALL(Ivk_zCArray_zCObject___Search)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

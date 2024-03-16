@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::ResetWithVarReferenceList(zCArray<int>&, void*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCParser::ResetWithVarReferenceList(zCArray<int>&, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_ResetWithVarReferenceList : zCParser { void operator()(zCArray<int>&, void*); };
+BindedHook Ivk_zCParser_ResetWithVarReferenceList{ ZENFOR(0x006ED540, 0x00726AD0, 0x00737180, 0x00796BC0), &zCParser_ResetWithVarReferenceList::operator() };
+void zCParser_ResetWithVarReferenceList::operator()(zCArray<int>& a0, void* a1)
+{
+	THISCALL(Ivk_zCParser_ResetWithVarReferenceList)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

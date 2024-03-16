@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCCollObjectCharacter::PushAround(zVEC3 const&): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall oCCollObjectCharacter::PushAround(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCCollObjectCharacter_PushAround : oCCollObjectCharacter { void operator()(zVEC3 const&); };
+BindedHook Ivk_oCCollObjectCharacter_PushAround{ ZENFOR(0x0075AC00, 0x0079D500, 0x007A7DB0, 0x0065D1C0), &oCCollObjectCharacter_PushAround::operator() };
+void oCCollObjectCharacter_PushAround::operator()(zVEC3 const& a0)
+{
+	THISCALL(Ivk_oCCollObjectCharacter_PushAround)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

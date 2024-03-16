@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::IsGameRunning(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall CGameManager::IsGameRunning()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_IsGameRunning : CGameManager { int operator()(); };
+BindedHook Ivk_CGameManager_IsGameRunning{ ZENFOR(0x00429570, 0x0042C140, 0x0042AEE0, 0x0042B200), &CGameManager_IsGameRunning::operator() };
+int CGameManager_IsGameRunning::operator()()
+{
+	int result = THISCALL(Ivk_CGameManager_IsGameRunning)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

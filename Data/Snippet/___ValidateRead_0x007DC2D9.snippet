@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[_ValidateRead(void const*, unsigned int): int]]></Title>
+			<Description><![CDATA[int __cdecl _ValidateRead(void const*, unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook__ValidateRead(void const*, unsigned int);
+BindedHook Ivk__ValidateRead{ ZENFOR(0x00782B3D, 0x007C6735, 0x007CFE19, 0x007DC2D9), Hook__ValidateRead };
+int Hook__ValidateRead(void const* a0, unsigned int a1)
+{
+	int result = Ivk__ValidateRead(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

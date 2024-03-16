@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::MarkAsUsed(float, zCVob*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCMobInter::MarkAsUsed(float, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_MarkAsUsed : oCMobInter { void operator()(float, zCVob*); };
+BindedHook Ivk_oCMobInter_MarkAsUsed{ ZENFOR(0x0067F5D0, 0x006AE710, 0x006C2E90, 0x00720F20), &oCMobInter_MarkAsUsed::operator() };
+void oCMobInter_MarkAsUsed::operator()(float a0, zCVob* a1)
+{
+	THISCALL(Ivk_oCMobInter_MarkAsUsed)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::SendEndInteraction(oCNpc*, int, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCMobInter::SendEndInteraction(oCNpc*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_SendEndInteraction : oCMobInter { void operator()(oCNpc*, int, int); };
+BindedHook Ivk_oCMobInter_SendEndInteraction{ ZENFOR(0x0067DBD0, 0x006AC8C0, 0x006C0FF0, 0x0071F080), &oCMobInter_SendEndInteraction::operator() };
+void oCMobInter_SendEndInteraction::operator()(oCNpc* a0, int a1, int a2)
+{
+	THISCALL(Ivk_oCMobInter_SendEndInteraction)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

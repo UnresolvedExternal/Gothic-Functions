@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[LoadCacheBlock(PIXELCACHE_BLOCK*, SURFACE_DATA*): void]]></Title>
+			<Description><![CDATA[void __cdecl LoadCacheBlock(PIXELCACHE_BLOCK*, SURFACE_DATA*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_LoadCacheBlock(PIXELCACHE_BLOCK*, SURFACE_DATA*);
+BindedHook Ivk_LoadCacheBlock{ ZENFOR(0x0076A665, 0x007AACA0, 0x007B7893, 0x007C3D59), Hook_LoadCacheBlock };
+void Hook_LoadCacheBlock(PIXELCACHE_BLOCK* a0, SURFACE_DATA* a1)
+{
+	Ivk_LoadCacheBlock(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

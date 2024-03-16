@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIVobMove::DoAI(zCVob*, int&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCAIVobMove::DoAI(zCVob*, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIVobMove_DoAI : oCAIVobMove { void operator()(zCVob*, int&); };
+BindedHook Ivk_oCAIVobMove_DoAI{ ZENFOR(0x00617D10, 0x0063B000, 0x006430F0, 0x0069F8C0), &oCAIVobMove_DoAI::operator() };
+void oCAIVobMove_DoAI::operator()(zCVob* a0, int& a1)
+{
+	THISCALL(Ivk_oCAIVobMove_DoAI)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

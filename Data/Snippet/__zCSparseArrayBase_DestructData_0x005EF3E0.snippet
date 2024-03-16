@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArrayBase::DestructData(void*): void [const]]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArrayBase::DestructData(void*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArrayBase_DestructData : zCSparseArrayBase { void operator()(void*) const; };
+BindedHook Ivk_zCSparseArrayBase_DestructData{ ZENFOR(0x005C4A00, 0x005E2D60, 0x005E8630, 0x005EF3E0), &zCSparseArrayBase_DestructData::operator() };
+void zCSparseArrayBase_DestructData::operator()(void* a0) const
+{
+	THISCALL(Ivk_zCSparseArrayBase_DestructData)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

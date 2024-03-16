@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::GetNextWorldPoly(zCVertex*, zCVertex*): zCPolygon*]]></Title>
+			<Description><![CDATA[protected: zCPolygon* __thiscall zCQuadMark::GetNextWorldPoly(zCVertex*, zCVertex*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_GetNextWorldPoly : zCQuadMark { zCPolygon* operator()(zCVertex*, zCVertex*); };
+BindedHook Ivk_zCQuadMark_GetNextWorldPoly{ ZENFOR(0x005ACA80, 0x005C9900, 0x005CB010, 0x005D1BB0), &zCQuadMark_GetNextWorldPoly::operator() };
+zCPolygon* zCQuadMark_GetNextWorldPoly::operator()(zCVertex* a0, zCVertex* a1)
+{
+	zCPolygon* result = THISCALL(Ivk_zCQuadMark_GetNextWorldPoly)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

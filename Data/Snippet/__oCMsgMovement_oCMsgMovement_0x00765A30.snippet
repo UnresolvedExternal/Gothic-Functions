@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgMovement::oCMsgMovement(oCMsgMovement::TMovementSubType, zVEC3 const&)]]></Title>
+			<Description><![CDATA[public: __thiscall oCMsgMovement::oCMsgMovement(oCMsgMovement::TMovementSubType, zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgMovement_oCMsgMovement : oCMsgMovement { oCMsgMovement* operator()(oCMsgMovement::TMovementSubType, zVEC3 const&); };
+BindedHook Ivk_oCMsgMovement_oCMsgMovement{ ZENFOR(0x006BE890, 0x006F3BD0, 0x007064F0, 0x00765A30), &oCMsgMovement_oCMsgMovement::operator() };
+oCMsgMovement* oCMsgMovement_oCMsgMovement::operator()(oCMsgMovement::TMovementSubType a0, zVEC3 const& a1)
+{
+	oCMsgMovement* result = THISCALL(Ivk_oCMsgMovement_oCMsgMovement)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

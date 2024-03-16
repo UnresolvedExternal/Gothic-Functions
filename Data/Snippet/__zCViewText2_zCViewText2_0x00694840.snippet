@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewText2::zCViewText2(zSTRING&, zCPosition&, float, zCFont*)]]></Title>
+			<Description><![CDATA[public: __thiscall zCViewText2::zCViewText2(zSTRING&, zCPosition&, float, zCFont*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewText2_zCViewText2 : zCViewText2 { zCViewText2* operator()(zSTRING&, zCPosition&, float, zCFont*); };
+BindedHook Ivk_zCViewText2_zCViewText2{ ZENFOR(0x00757B90, 0x0079A090, 0x007A4A90, 0x00694840), &zCViewText2_zCViewText2::operator() };
+zCViewText2* zCViewText2_zCViewText2::operator()(zSTRING& a0, zCPosition& a1, float a2, zCFont* a3)
+{
+	zCViewText2* result = THISCALL(Ivk_zCViewText2_zCViewText2)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

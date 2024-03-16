@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResourceManager::CacheIn(zCResource*, float): zTResourceCacheState]]></Title>
+			<Description><![CDATA[protected: zTResourceCacheState __thiscall zCResourceManager::CacheIn(zCResource*, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResourceManager_CacheIn : zCResourceManager { zTResourceCacheState operator()(zCResource*, float); };
+BindedHook Ivk_zCResourceManager_CacheIn{ ZENFOR(0x005B5CB0, 0x005D3450, 0x005D6280, 0x005DD040), &zCResourceManager_CacheIn::operator() };
+zTResourceCacheState zCResourceManager_CacheIn::operator()(zCResource* a0, float a1)
+{
+	zTResourceCacheState result = THISCALL(Ivk_zCResourceManager_CacheIn)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

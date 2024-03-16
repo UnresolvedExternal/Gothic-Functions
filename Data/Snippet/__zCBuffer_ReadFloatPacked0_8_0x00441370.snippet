@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::ReadFloatPacked0_8(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall zCBuffer::ReadFloatPacked0_8()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_ReadFloatPacked0_8 : zCBuffer { float operator()(); };
+BindedHook Ivk_zCBuffer_ReadFloatPacked0_8{ ZENFOR(0x0043D570, 0x00442750, 0x00440D40, 0x00441370), &zCBuffer_ReadFloatPacked0_8::operator() };
+float zCBuffer_ReadFloatPacked0_8::operator()()
+{
+	float result = THISCALL(Ivk_zCBuffer_ReadFloatPacked0_8)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

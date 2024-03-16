@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMover::AdvanceKeyframe_KF(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCMover::AdvanceKeyframe_KF()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMover_AdvanceKeyframe_KF : zCMover { void operator()(); };
+BindedHook Ivk_zCMover_AdvanceKeyframe_KF{ ZENFOR(0x005E4530, 0x006044D0, 0x00609D10, 0x006113D0), &zCMover_AdvanceKeyframe_KF::operator() };
+void zCMover_AdvanceKeyframe_KF::operator()()
+{
+	THISCALL(Ivk_zCMover_AdvanceKeyframe_KF)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::DisableTransferMoreThanOneItem(int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCItemContainer::DisableTransferMoreThanOneItem(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemContainer_DisableTransferMoreThanOneItem : oCItemContainer { void operator()(int); };
+BindedHook Ivk_oCItemContainer_DisableTransferMoreThanOneItem{ ZENFOR(0x006665D0, 0x00693DC0, 0x006A7670, 0x00705100), &oCItemContainer_DisableTransferMoreThanOneItem::operator() };
+void oCItemContainer_DisableTransferMoreThanOneItem::operator()(int a0)
+{
+	THISCALL(Ivk_oCItemContainer_DisableTransferMoreThanOneItem)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

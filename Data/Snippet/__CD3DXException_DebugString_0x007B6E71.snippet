@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3DXException::DebugString(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall CD3DXException::DebugString()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3DXException_DebugString : CD3DXException { void operator()(); };
+BindedHook Ivk_CD3DXException_DebugString{ ZENFOR(0x0075D77D, 0x007A02F1, 0x007AA9AB, 0x007B6E71), &CD3DXException_DebugString::operator() };
+void CD3DXException_DebugString::operator()()
+{
+	THISCALL(Ivk_CD3DXException_DebugString)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

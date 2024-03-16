@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGuilds::GetAttitude(int, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCGuilds::GetAttitude(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGuilds_GetAttitude : oCGuilds { int operator()(int, int); };
+BindedHook Ivk_oCGuilds_GetAttitude{ ZENFOR(0x00663170, 0x0068FCD0, 0x006A32B0, 0x00700D40), &oCGuilds_GetAttitude::operator() };
+int oCGuilds_GetAttitude::operator()(int a0, int a1)
+{
+	int result = THISCALL(Ivk_oCGuilds_GetAttitude)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

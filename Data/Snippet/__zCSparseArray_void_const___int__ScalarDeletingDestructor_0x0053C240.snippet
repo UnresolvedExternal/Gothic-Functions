@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<void const*, int>::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCSparseArray<void const*, int>::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCSparseArray_void_const___int__ScalarDeletingDestructor : zCSparseArray<void const*, int> { void* operator()(unsigned int); };
+BindedHook Ivk_zCSparseArray_void_const___int__ScalarDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x00537420, 0x0053C240), &zCSparseArray_void_const___int__ScalarDeletingDestructor::operator() };
+void* zCSparseArray_void_const___int__ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCSparseArray_void_const___int__ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

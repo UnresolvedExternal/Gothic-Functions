@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPool<zCVertFeature>::~zCMemPool<zCVertFeature>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCMemPool<zCVertFeature>::~zCMemPool<zCVertFeature>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPool_zCVertFeature__Destructor : zCMemPool<zCVertFeature> { void operator()(); };
+BindedHook Ivk_zCMemPool_zCVertFeature__Destructor{ ZENFOR(0x004FB3C0, 0x0050E460, 0x00507E90, 0x0050AC40), &zCMemPool_zCVertFeature__Destructor::operator() };
+void zCMemPool_zCVertFeature__Destructor::operator()()
+{
+	THISCALL(Ivk_zCMemPool_zCVertFeature__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

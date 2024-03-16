@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::GetChecksumEnabled(): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCArchiverGeneric::GetChecksumEnabled() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_GetChecksumEnabled : zCArchiverGeneric { int operator()() const; };
+BindedHook Ivk_zCArchiverGeneric_GetChecksumEnabled{ ZENFOR(0x00511DC0, 0x00527100, 0x0051F370, 0x00522140), &zCArchiverGeneric_GetChecksumEnabled::operator() };
+int zCArchiverGeneric_GetChecksumEnabled::operator()() const
+{
+	int result = THISCALL(Ivk_zCArchiverGeneric_GetChecksumEnabled)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

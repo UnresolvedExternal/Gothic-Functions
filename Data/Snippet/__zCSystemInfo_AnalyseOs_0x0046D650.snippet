@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSystemInfo::AnalyseOs(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCSystemInfo::AnalyseOs()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSystemInfo_AnalyseOs : zCSystemInfo { void operator()(); };
+BindedHook Ivk_zCSystemInfo_AnalyseOs{ ZENFOR(0x00468480, 0x00470410, 0x0046CA20, 0x0046D650), &zCSystemInfo_AnalyseOs::operator() };
+void zCSystemInfo_AnalyseOs::operator()()
+{
+	THISCALL(Ivk_zCSystemInfo_AnalyseOs)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

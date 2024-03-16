@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::Register(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCMenuItem::Register()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItem_Register : zCMenuItem { void operator()(); };
+BindedHook Ivk_zCMenuItem_Register{ ZENFOR(0x004D38F0, 0x004E4250, 0x004DDE80, 0x004E0830), &zCMenuItem_Register::operator() };
+void zCMenuItem_Register::operator()()
+{
+	THISCALL(Ivk_zCMenuItem_Register)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

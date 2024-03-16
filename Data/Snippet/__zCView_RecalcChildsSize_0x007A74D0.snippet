@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::RecalcChildsSize(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCView::RecalcChildsSize()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_RecalcChildsSize : zCView { void operator()(); };
+BindedHook Ivk_zCView_RecalcChildsSize{ ZENFOR(0x006FD930, 0x00737D20, 0x007479D0, 0x007A74D0), &zCView_RecalcChildsSize::operator() };
+void zCView_RecalcChildsSize::operator()()
+{
+	THISCALL(Ivk_zCView_RecalcChildsSize)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

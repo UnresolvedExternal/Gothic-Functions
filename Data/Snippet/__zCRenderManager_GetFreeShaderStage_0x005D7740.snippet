@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderManager::GetFreeShaderStage(): zCShaderStage*]]></Title>
+			<Description><![CDATA[public: static zCShaderStage* __cdecl zCRenderManager::GetFreeShaderStage()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCShaderStage* Hook_zCRenderManager_GetFreeShaderStage();
+BindedHook Ivk_zCRenderManager_GetFreeShaderStage{ ZENFOR(0x005B19A0, 0x005CEB90, 0x005D0B80, 0x005D7740), Hook_zCRenderManager_GetFreeShaderStage };
+zCShaderStage* Hook_zCRenderManager_GetFreeShaderStage()
+{
+	zCShaderStage* result = Ivk_zCRenderManager_GetFreeShaderStage();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

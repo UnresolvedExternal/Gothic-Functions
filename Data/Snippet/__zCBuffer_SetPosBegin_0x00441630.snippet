@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::SetPosBegin(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCBuffer::SetPosBegin()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_SetPosBegin : zCBuffer { void operator()(); };
+BindedHook Ivk_zCBuffer_SetPosBegin{ ZENFOR(0x0043D830, 0x00442A40, 0x00441000, 0x00441630), &zCBuffer_SetPosBegin::operator() };
+void zCBuffer_SetPosBegin::operator()()
+{
+	THISCALL(Ivk_zCBuffer_SetPosBegin)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

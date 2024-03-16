@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[TArray<BLTENTRY>::operator[](int): BLTENTRY [const]]]></Title>
+			<Description><![CDATA[public: BLTENTRY __thiscall TArray<BLTENTRY>::operator[](int) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G2, G2A
+struct TArray_BLTENTRY__operator__ : TArray<BLTENTRY> { BLTENTRY operator()(int) const; };
+BindedHook Ivk_TArray_BLTENTRY__operator__{ ZENFOR(0x00763159, 0x00000000, 0x007B0387, 0x007BC84D), &TArray_BLTENTRY__operator__::operator() };
+BLTENTRY TArray_BLTENTRY__operator__::operator()(int a0) const
+{
+	BLTENTRY result = THISCALL(Ivk_TArray_BLTENTRY__operator__)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

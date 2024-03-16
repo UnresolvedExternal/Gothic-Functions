@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::ResetRotationsWorld(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCVob::ResetRotationsWorld()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_ResetRotationsWorld : zCVob { void operator()(); };
+BindedHook Ivk_zCVob_ResetRotationsWorld{ ZENFOR(0x005EEAB0, 0x0060F430, 0x006148F0, 0x0061C000), &zCVob_ResetRotationsWorld::operator() };
+void zCVob_ResetRotationsWorld::operator()()
+{
+	THISCALL(Ivk_zCVob_ResetRotationsWorld)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

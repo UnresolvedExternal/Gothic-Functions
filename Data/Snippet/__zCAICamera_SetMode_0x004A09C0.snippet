@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::SetMode(zSTRING&, zCArray<zCVob*>): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCAICamera::SetMode(zSTRING&, zCArray<zCVob*>)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAICamera_SetMode : zCAICamera { void operator()(zSTRING&, zCArray<zCVob*>); };
+BindedHook Ivk_zCAICamera_SetMode{ ZENFOR(0x004994E0, 0x004A65A0, 0x0049E4E0, 0x004A09C0), &zCAICamera_SetMode::operator() };
+void zCAICamera_SetMode::operator()(zSTRING& a0, zCArray<zCVob*> a1)
+{
+	THISCALL(Ivk_zCAICamera_SetMode)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

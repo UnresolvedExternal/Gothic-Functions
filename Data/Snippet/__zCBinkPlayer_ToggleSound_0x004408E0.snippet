@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBinkPlayer::ToggleSound(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCBinkPlayer::ToggleSound()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBinkPlayer_ToggleSound : zCBinkPlayer { int operator()(); };
+BindedHook Ivk_zCBinkPlayer_ToggleSound{ ZENFOR(0x0043CB30, 0x00441CE0, 0x004402B0, 0x004408E0), &zCBinkPlayer_ToggleSound::operator() };
+int zCBinkPlayer_ToggleSound::operator()()
+{
+	int result = THISCALL(Ivk_zCBinkPlayer_ToggleSound)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

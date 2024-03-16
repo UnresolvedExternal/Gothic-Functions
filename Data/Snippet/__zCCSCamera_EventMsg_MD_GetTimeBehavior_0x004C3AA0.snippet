@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera_EventMsg::MD_GetTimeBehavior(): zCEventMessage::zTTimeBehavior]]></Title>
+			<Description><![CDATA[public: virtual zCEventMessage::zTTimeBehavior __thiscall zCCSCamera_EventMsg::MD_GetTimeBehavior()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_EventMsg_MD_GetTimeBehavior : zCCSCamera_EventMsg { zCEventMessage::zTTimeBehavior operator()(); };
+BindedHook Ivk_zCCSCamera_EventMsg_MD_GetTimeBehavior{ ZENFOR(0x004BA6D0, 0x004C9A40, 0x004C1530, 0x004C3AA0), &zCCSCamera_EventMsg_MD_GetTimeBehavior::operator() };
+zCEventMessage::zTTimeBehavior zCCSCamera_EventMsg_MD_GetTimeBehavior::operator()()
+{
+	zCEventMessage::zTTimeBehavior result = THISCALL(Ivk_zCCSCamera_EventMsg_MD_GetTimeBehavior)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

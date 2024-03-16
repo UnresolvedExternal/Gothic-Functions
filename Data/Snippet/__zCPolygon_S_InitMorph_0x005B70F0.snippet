@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::S_InitMorph(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCPolygon::S_InitMorph()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+void Hook_zCPolygon_S_InitMorph();
+BindedHook Ivk_zCPolygon_S_InitMorph{ ZENFOR(0x00000000, 0x00000000, 0x005B1580, 0x005B70F0), Hook_zCPolygon_S_InitMorph };
+void Hook_zCPolygon_S_InitMorph()
+{
+	Ivk_zCPolygon_S_InitMorph();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

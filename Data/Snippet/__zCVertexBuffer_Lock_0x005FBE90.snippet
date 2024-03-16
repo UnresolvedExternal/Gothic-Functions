@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer::Lock(unsigned long): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCVertexBuffer::Lock(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_Lock : zCVertexBuffer { int operator()(unsigned long); };
+BindedHook Ivk_zCVertexBuffer_Lock{ ZENFOR(0x005D0D90, 0x005EFEF0, 0x005F50A0, 0x005FBE90), &zCVertexBuffer_Lock::operator() };
+int zCVertexBuffer_Lock::operator()(unsigned long a0)
+{
+	int result = THISCALL(Ivk_zCVertexBuffer_Lock)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

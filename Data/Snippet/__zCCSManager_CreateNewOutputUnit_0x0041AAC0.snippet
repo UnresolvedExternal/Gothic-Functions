@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::CreateNewOutputUnit(int): zCCSCutsceneContext*]]></Title>
+			<Description><![CDATA[public: zCCSCutsceneContext* __thiscall zCCSManager::CreateNewOutputUnit(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_CreateNewOutputUnit : zCCSManager { zCCSCutsceneContext* operator()(int); };
+BindedHook Ivk_zCCSManager_CreateNewOutputUnit{ ZENFOR(0x0041A660, 0x0041C660, 0x0041AAC0, 0x0041AAC0), &zCCSManager_CreateNewOutputUnit::operator() };
+zCCSCutsceneContext* zCCSManager_CreateNewOutputUnit::operator()(int a0)
+{
+	zCCSCutsceneContext* result = THISCALL(Ivk_zCCSManager_CreateNewOutputUnit)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::StartHitCombo(int, zCVob*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::StartHitCombo(int, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_StartHitCombo : oCAniCtrl_Human { void operator()(int, zCVob*); };
+BindedHook Ivk_oCAniCtrl_Human_StartHitCombo{ ZENFOR(0x00627560, 0x0064C5E0, 0x00653810, 0x006B00C0), &oCAniCtrl_Human_StartHitCombo::operator() };
+void oCAniCtrl_Human_StartHitCombo::operator()(int a0, zCVob* a1)
+{
+	THISCALL(Ivk_oCAniCtrl_Human_StartHitCombo)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

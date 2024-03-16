@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Indoor::zCSkyControler_Indoor()]]></Title>
+			<Description><![CDATA[public: __thiscall zCSkyControler_Indoor::zCSkyControler_Indoor()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Indoor_zCSkyControler_Indoor : zCSkyControler_Indoor { zCSkyControler_Indoor* operator()(); };
+BindedHook Ivk_zCSkyControler_Indoor_zCSkyControler_Indoor{ ZENFOR(0x005BB5D0, 0x005D9170, 0x005D9880, 0x005E0630), &zCSkyControler_Indoor_zCSkyControler_Indoor::operator() };
+zCSkyControler_Indoor* zCSkyControler_Indoor_zCSkyControler_Indoor::operator()()
+{
+	zCSkyControler_Indoor* result = THISCALL(Ivk_zCSkyControler_Indoor_zCSkyControler_Indoor)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

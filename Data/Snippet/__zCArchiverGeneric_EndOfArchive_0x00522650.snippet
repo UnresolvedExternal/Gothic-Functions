@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::EndOfArchive(): int]]></Title>
+			<Description><![CDATA[public: virtual int __fastcall zCArchiverGeneric::EndOfArchive()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_EndOfArchive : zCArchiverGeneric { int __fastcall operator()(); };
+BindedHook Ivk_zCArchiverGeneric_EndOfArchive{ ZENFOR(0x00512200, 0x00527570, 0x0051F880, 0x00522650), &zCArchiverGeneric_EndOfArchive::operator() };
+int __fastcall zCArchiverGeneric_EndOfArchive::operator()()
+{
+	int result = THISCALL(Ivk_zCArchiverGeneric_EndOfArchive)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

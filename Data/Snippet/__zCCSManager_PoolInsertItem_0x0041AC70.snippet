@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::PoolInsertItem(zCCSPoolItem*): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCCSManager::PoolInsertItem(zCCSPoolItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_PoolInsertItem : zCCSManager { void operator()(zCCSPoolItem*); };
+BindedHook Ivk_zCCSManager_PoolInsertItem{ ZENFOR(0x0041A830, 0x0041C830, 0x0041AC70, 0x0041AC70), &zCCSManager_PoolInsertItem::operator() };
+void zCCSManager_PoolInsertItem::operator()(zCCSPoolItem* a0)
+{
+	THISCALL(Ivk_zCCSManager_PoolInsertItem)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

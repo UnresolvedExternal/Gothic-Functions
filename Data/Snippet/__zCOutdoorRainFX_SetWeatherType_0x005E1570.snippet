@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOutdoorRainFX::SetWeatherType(zTWeather): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCOutdoorRainFX::SetWeatherType(zTWeather)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCOutdoorRainFX_SetWeatherType : zCOutdoorRainFX { void operator()(zTWeather); };
+BindedHook Ivk_zCOutdoorRainFX_SetWeatherType{ ZENFOR(0x00000000, 0x00000000, 0x005DA7C0, 0x005E1570), &zCOutdoorRainFX_SetWeatherType::operator() };
+void zCOutdoorRainFX_SetWeatherType::operator()(zTWeather a0)
+{
+	THISCALL(Ivk_zCOutdoorRainFX_SetWeatherType)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

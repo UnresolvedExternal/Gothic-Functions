@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[bad_typeid::~bad_typeid()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall bad_typeid::~bad_typeid()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct bad_typeid_Destructor : bad_typeid { void operator()(); };
+BindedHook Ivk_bad_typeid_Destructor{ ZENFOR(0x00776FB6, 0x007BAD76, 0x007C4496, 0x007D0956), &bad_typeid_Destructor::operator() };
+void bad_typeid_Destructor::operator()()
+{
+	THISCALL(Ivk_bad_typeid_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

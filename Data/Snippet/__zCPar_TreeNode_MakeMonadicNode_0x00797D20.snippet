@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_TreeNode::MakeMonadicNode(int, zCPar_TreeNode*): zCPar_TreeNode*]]></Title>
+			<Description><![CDATA[public: static zCPar_TreeNode* __cdecl zCPar_TreeNode::MakeMonadicNode(int, zCPar_TreeNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCPar_TreeNode* Hook_zCPar_TreeNode_MakeMonadicNode(int, zCPar_TreeNode*);
+BindedHook Ivk_zCPar_TreeNode_MakeMonadicNode{ ZENFOR(0x006EE1F0, 0x00727840, 0x007382E0, 0x00797D20), Hook_zCPar_TreeNode_MakeMonadicNode };
+zCPar_TreeNode* Hook_zCPar_TreeNode_MakeMonadicNode(int a0, zCPar_TreeNode* a1)
+{
+	zCPar_TreeNode* result = Ivk_zCPar_TreeNode_MakeMonadicNode(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

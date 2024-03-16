@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerGroup::RemoveGroupFromList(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCPlayerGroup::RemoveGroupFromList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerGroup_RemoveGroupFromList : zCPlayerGroup { void operator()(); };
+BindedHook Ivk_zCPlayerGroup_RemoveGroupFromList{ ZENFOR(0x00460E30, 0x00468780, 0x00465830, 0x00466460), &zCPlayerGroup_RemoveGroupFromList::operator() };
+void zCPlayerGroup_RemoveGroupFromList::operator()()
+{
+	THISCALL(Ivk_zCPlayerGroup_RemoveGroupFromList)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

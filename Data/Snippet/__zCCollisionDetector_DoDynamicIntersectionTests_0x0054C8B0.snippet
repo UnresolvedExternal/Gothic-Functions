@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollisionDetector::DoDynamicIntersectionTests(zCCollisionObject*, zCArray<zCCollisionObject*>&, zCArray<zCCollisionReport*>&): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCCollisionDetector::DoDynamicIntersectionTests(zCCollisionObject*, zCArray<zCCollisionObject*>&, zCArray<zCCollisionReport*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollisionDetector_DoDynamicIntersectionTests : zCCollisionDetector { void __fastcall operator()(zCCollisionObject*, zCArray<zCCollisionObject*>&, zCArray<zCCollisionReport*>&); };
+BindedHook Ivk_zCCollisionDetector_DoDynamicIntersectionTests{ ZENFOR(0x00538350, 0x0054F530, 0x00547690, 0x0054C8B0), &zCCollisionDetector_DoDynamicIntersectionTests::operator() };
+void __fastcall zCCollisionDetector_DoDynamicIntersectionTests::operator()(zCCollisionObject* a0, zCArray<zCCollisionObject*>& a1, zCArray<zCCollisionReport*>& a2)
+{
+	THISCALL(Ivk_zCCollisionDetector_DoDynamicIntersectionTests)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

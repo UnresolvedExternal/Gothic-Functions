@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelTexAniState::AddTexListFromProgMesh(zCProgMeshProto*, zCArray<zCTexture*>&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCModelTexAniState::AddTexListFromProgMesh(zCProgMeshProto*, zCArray<zCTexture*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelTexAniState_AddTexListFromProgMesh : zCModelTexAniState { void operator()(zCProgMeshProto*, zCArray<zCTexture*>&); };
+BindedHook Ivk_zCModelTexAniState_AddTexListFromProgMesh{ ZENFOR(0x0055DDF0, 0x00576170, 0x005722E0, 0x00577590), &zCModelTexAniState_AddTexListFromProgMesh::operator() };
+void zCModelTexAniState_AddTexListFromProgMesh::operator()(zCProgMeshProto* a0, zCArray<zCTexture*>& a1)
+{
+	THISCALL(Ivk_zCModelTexAniState_AddTexListFromProgMesh)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

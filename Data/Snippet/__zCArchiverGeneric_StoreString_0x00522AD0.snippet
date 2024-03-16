@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::StoreString(char const*): void]]></Title>
+			<Description><![CDATA[protected: virtual void __fastcall zCArchiverGeneric::StoreString(char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_StoreString : zCArchiverGeneric { void __fastcall operator()(char const*); };
+BindedHook Ivk_zCArchiverGeneric_StoreString{ ZENFOR(0x00512680, 0x00527A20, 0x0051FD00, 0x00522AD0), &zCArchiverGeneric_StoreString::operator() };
+void __fastcall zCArchiverGeneric_StoreString::operator()(char const* a0)
+{
+	THISCALL(Ivk_zCArchiverGeneric_StoreString)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

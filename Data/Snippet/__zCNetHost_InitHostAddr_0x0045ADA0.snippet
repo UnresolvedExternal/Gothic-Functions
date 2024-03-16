@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetHost::InitHostAddr(zTNetAddress* const): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCNetHost::InitHostAddr(zTNetAddress* const)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetHost_InitHostAddr : zCNetHost { void operator()(zTNetAddress* const); };
+BindedHook Ivk_zCNetHost_InitHostAddr{ ZENFOR(0x00455D00, 0x0045CC40, 0x0045A650, 0x0045ADA0), &zCNetHost_InitHostAddr::operator() };
+void zCNetHost_InitHostAddr::operator()(zTNetAddress* const a0)
+{
+	THISCALL(Ivk_zCNetHost_InitHostAddr)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

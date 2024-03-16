@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::SetLight(unsigned long, zCRenderLight*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCRenderer::SetLight(unsigned long, zCRenderLight*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_SetLight : zCRenderer { int operator()(unsigned long, zCRenderLight*); };
+BindedHook Ivk_zCRenderer_SetLight{ ZENFOR(0x00713BA0, 0x0074F8C0, 0x0075EDA0, 0x0064A340), &zCRenderer_SetLight::operator() };
+int zCRenderer_SetLight::operator()(unsigned long a0, zCRenderLight* a1)
+{
+	int result = THISCALL(Ivk_zCRenderer_SetLight)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

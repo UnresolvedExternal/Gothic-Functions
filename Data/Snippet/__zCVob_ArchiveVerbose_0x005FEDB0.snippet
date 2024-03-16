@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::ArchiveVerbose(zCArchiver&): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCVob::ArchiveVerbose(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_ArchiveVerbose : zCVob { void __fastcall operator()(zCArchiver&); };
+BindedHook Ivk_zCVob_ArchiveVerbose{ ZENFOR(0x005D3BB0, 0x005F2E60, 0x005F7FC0, 0x005FEDB0), &zCVob_ArchiveVerbose::operator() };
+void __fastcall zCVob_ArchiveVerbose::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCVob_ArchiveVerbose)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EV_EquipItem(oCMsgManipulate*): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall oCNpc::EV_EquipItem(oCMsgManipulate*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_EV_EquipItem : oCNpc { int operator()(oCMsgManipulate*); };
+BindedHook Ivk_oCNpc_EV_EquipItem{ ZENFOR(0x006AF8B0, 0x006E36D0, 0x006F6750, 0x00755580), &oCNpc_EV_EquipItem::operator() };
+int oCNpc_EV_EquipItem::operator()(oCMsgManipulate* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_EV_EquipItem)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

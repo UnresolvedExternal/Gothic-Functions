@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWaypoint::InsertWay(zCWay*): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCWaypoint::InsertWay(zCWay*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWaypoint_InsertWay : zCWaypoint { void operator()(zCWay*); };
+BindedHook Ivk_zCWaypoint_InsertWay{ ZENFOR(0x00706540, 0x00741050, 0x00750640, 0x007B0140), &zCWaypoint_InsertWay::operator() };
+void zCWaypoint_InsertWay::operator()(zCWay* a0)
+{
+	THISCALL(Ivk_zCWaypoint_InsertWay)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

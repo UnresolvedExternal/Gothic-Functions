@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBufferManager::ReleaseVertexBuffer(zCVertexBuffer*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCVertexBufferManager::ReleaseVertexBuffer(zCVertexBuffer*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBufferManager_ReleaseVertexBuffer : zCVertexBufferManager { int operator()(zCVertexBuffer*); };
+BindedHook Ivk_zCVertexBufferManager_ReleaseVertexBuffer{ ZENFOR(0x005D17D0, 0x005F0960, 0x005F5B80, 0x005FC970), &zCVertexBufferManager_ReleaseVertexBuffer::operator() };
+int zCVertexBufferManager_ReleaseVertexBuffer::operator()(zCVertexBuffer* a0)
+{
+	int result = THISCALL(Ivk_zCVertexBufferManager_ReleaseVertexBuffer)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

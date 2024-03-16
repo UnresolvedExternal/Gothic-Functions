@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCache<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>::PurgeCache(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCache<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo>::PurgeCache()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__PurgeCache : zCCache<zCAIPlayer const*, zCAIPlayer::zTLedgeInfo> { void operator()(); };
+BindedHook Ivk_zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__PurgeCache{ ZENFOR(0x00502B50, 0x00516640, 0x0050F8D0, 0x005126A0), &zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__PurgeCache::operator() };
+void zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__PurgeCache::operator()()
+{
+	THISCALL(Ivk_zCCache_zCAIPlayer_const___zCAIPlayer__zTLedgeInfo__PurgeCache)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

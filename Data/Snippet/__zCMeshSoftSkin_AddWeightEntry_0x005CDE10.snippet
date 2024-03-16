@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMeshSoftSkin::AddWeightEntry(zCMeshSoftSkin::zTWeightEntry const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMeshSoftSkin::AddWeightEntry(zCMeshSoftSkin::zTWeightEntry const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMeshSoftSkin_AddWeightEntry : zCMeshSoftSkin { void operator()(zCMeshSoftSkin::zTWeightEntry const&); };
+BindedHook Ivk_zCMeshSoftSkin_AddWeightEntry{ ZENFOR(0x005A99A0, 0x005C64C0, 0x005C7E60, 0x005CDE10), &zCMeshSoftSkin_AddWeightEntry::operator() };
+void zCMeshSoftSkin_AddWeightEntry::operator()(zCMeshSoftSkin::zTWeightEntry const& a0)
+{
+	THISCALL(Ivk_zCMeshSoftSkin_AddWeightEntry)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

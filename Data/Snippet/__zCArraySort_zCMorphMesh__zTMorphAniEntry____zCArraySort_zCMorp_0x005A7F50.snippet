@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCMorphMesh::zTMorphAniEntry*>::~zCArraySort<zCMorphMesh::zTMorphAniEntry*>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArraySort<zCMorphMesh::zTMorphAniEntry*>::~zCArraySort<zCMorphMesh::zTMorphAniEntry*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCMorphMesh__zTMorphAniEntry___Destructor : zCArraySort<zCMorphMesh::zTMorphAniEntry*> { void operator()(); };
+BindedHook Ivk_zCArraySort_zCMorphMesh__zTMorphAniEntry___Destructor{ ZENFOR(0x005884E0, 0x005A3610, 0x005A29F0, 0x005A7F50), &zCArraySort_zCMorphMesh__zTMorphAniEntry___Destructor::operator() };
+void zCArraySort_zCMorphMesh__zTMorphAniEntry___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArraySort_zCMorphMesh__zTMorphAniEntry___Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

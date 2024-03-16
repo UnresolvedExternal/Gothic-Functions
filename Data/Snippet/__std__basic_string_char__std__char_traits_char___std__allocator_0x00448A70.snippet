@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::basic_string<char, std::char_traits<char>, std::allocator<char>>::at(unsigned int): char&]]></Title>
+			<Description><![CDATA[public: char& __thiscall std::basic_string<char, std::char_traits<char>, std::allocator<char>>::at(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__basic_string_char__std__char_traits_char___std__allocator_char___at : std::basic_string<char, std::char_traits<char>, std::allocator<char>> { char& operator()(unsigned int); };
+BindedHook Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___at{ ZENFOR(0x004449E0, 0x0044A630, 0x00448440, 0x00448A70), &std__basic_string_char__std__char_traits_char___std__allocator_char___at::operator() };
+char& std__basic_string_char__std__char_traits_char___std__allocator_char___at::operator()(unsigned int a0)
+{
+	char& result = THISCALL(Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___at)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

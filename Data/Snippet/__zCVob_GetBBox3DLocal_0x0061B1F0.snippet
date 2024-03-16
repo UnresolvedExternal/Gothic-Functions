@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::GetBBox3DLocal(): zTBBox3D [const]]]></Title>
+			<Description><![CDATA[public: zTBBox3D __thiscall zCVob::GetBBox3DLocal() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_GetBBox3DLocal : zCVob { zTBBox3D operator()() const; };
+BindedHook Ivk_zCVob_GetBBox3DLocal{ ZENFOR(0x005EDCF0, 0x0060E470, 0x00613B30, 0x0061B1F0), &zCVob_GetBBox3DLocal::operator() };
+zTBBox3D zCVob_GetBBox3DLocal::operator()() const
+{
+	zTBBox3D result = THISCALL(Ivk_zCVob_GetBBox3DLocal)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

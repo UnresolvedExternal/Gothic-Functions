@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::PlayVideoEx(zSTRING, short, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall CGameManager::PlayVideoEx(zSTRING, short, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct CGameManager_PlayVideoEx : CGameManager { int operator()(zSTRING, short, int); };
+BindedHook Ivk_CGameManager_PlayVideoEx{ ZENFOR(0x00000000, 0x00000000, 0x0042B7F0, 0x0042BB10), &CGameManager_PlayVideoEx::operator() };
+int CGameManager_PlayVideoEx::operator()(zSTRING a0, short a1, int a2)
+{
+	int result = THISCALL(Ivk_CGameManager_PlayVideoEx)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTBBox2D::Draw(): void [const]]]></Title>
+			<Description><![CDATA[public: void __thiscall zTBBox2D::Draw() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTBBox2D_Draw : zTBBox2D { void operator()() const; };
+BindedHook Ivk_zTBBox2D_Draw{ ZENFOR(0x00532BC0, 0x00549710, 0x005419F0, 0x00546C10), &zTBBox2D_Draw::operator() };
+void zTBBox2D_Draw::operator()() const
+{
+	THISCALL(Ivk_zTBBox2D_Draw)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

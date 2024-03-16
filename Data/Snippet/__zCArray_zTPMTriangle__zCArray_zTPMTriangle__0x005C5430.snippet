@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zTPMTriangle>::zCArray<zTPMTriangle>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zTPMTriangle>::zCArray<zTPMTriangle>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zTPMTriangle__zCArray_zTPMTriangle_ : zCArray<zTPMTriangle> { zCArray<zTPMTriangle>* operator()(); };
+BindedHook Ivk_zCArray_zTPMTriangle__zCArray_zTPMTriangle_{ ZENFOR(0x005A3480, 0x005BFC70, 0x005BF8C0, 0x005C5430), &zCArray_zTPMTriangle__zCArray_zTPMTriangle_::operator() };
+zCArray<zTPMTriangle>* zCArray_zTPMTriangle__zCArray_zTPMTriangle_::operator()()
+{
+	zCArray<zTPMTriangle>* result = THISCALL(Ivk_zCArray_zTPMTriangle__zCArray_zTPMTriangle_)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

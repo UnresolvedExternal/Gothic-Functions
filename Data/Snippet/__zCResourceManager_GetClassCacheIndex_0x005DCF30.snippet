@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResourceManager::GetClassCacheIndex(zCClassDef*): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall zCResourceManager::GetClassCacheIndex(zCClassDef*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResourceManager_GetClassCacheIndex : zCResourceManager { int operator()(zCClassDef*); };
+BindedHook Ivk_zCResourceManager_GetClassCacheIndex{ ZENFOR(0x005B5BA0, 0x005D3330, 0x005D6170, 0x005DCF30), &zCResourceManager_GetClassCacheIndex::operator() };
+int zCResourceManager_GetClassCacheIndex::operator()(zCClassDef* a0)
+{
+	int result = THISCALL(Ivk_zCResourceManager_GetClassCacheIndex)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zClamp(float&, float, float): void]]></Title>
+			<Description><![CDATA[void __cdecl zClamp(float&, float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zClamp(float&, float, float);
+BindedHook Ivk_zClamp{ ZENFOR(0x0049DE30, 0x004AB620, 0x004AF3B0, 0x004B18E0), Hook_zClamp };
+void Hook_zClamp(float& a0, float a1, float a2)
+{
+	Ivk_zClamp(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

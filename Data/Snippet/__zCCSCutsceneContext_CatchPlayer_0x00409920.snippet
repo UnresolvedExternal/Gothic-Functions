@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCutsceneContext::CatchPlayer(zCVob*): zCVob*]]></Title>
+			<Description><![CDATA[private: virtual zCVob* __thiscall zCCSCutsceneContext::CatchPlayer(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCutsceneContext_CatchPlayer : zCCSCutsceneContext { zCVob* operator()(zCVob*); };
+BindedHook Ivk_zCCSCutsceneContext_CatchPlayer{ ZENFOR(0x00409680, 0x0040A650, 0x00409920, 0x00409920), &zCCSCutsceneContext_CatchPlayer::operator() };
+zCVob* zCCSCutsceneContext_CatchPlayer::operator()(zCVob* a0)
+{
+	zCVob* result = THISCALL(Ivk_zCCSCutsceneContext_CatchPlayer)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

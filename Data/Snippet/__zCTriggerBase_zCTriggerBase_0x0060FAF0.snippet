@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTriggerBase::zCTriggerBase()]]></Title>
+			<Description><![CDATA[public: __thiscall zCTriggerBase::zCTriggerBase()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTriggerBase_zCTriggerBase : zCTriggerBase { zCTriggerBase* operator()(); };
+BindedHook Ivk_zCTriggerBase_zCTriggerBase{ ZENFOR(0x005E2C80, 0x00602B90, 0x00608430, 0x0060FAF0), &zCTriggerBase_zCTriggerBase::operator() };
+zCTriggerBase* zCTriggerBase_zCTriggerBase::operator()()
+{
+	zCTriggerBase* result = THISCALL(Ivk_zCTriggerBase_zCTriggerBase)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

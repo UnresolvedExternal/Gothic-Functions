@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCutscene::SolveEventManager(int): zCEventManager*]]></Title>
+			<Description><![CDATA[protected: zCEventManager* __thiscall zCCutscene::SolveEventManager(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCutscene_SolveEventManager : zCCutscene { zCEventManager* operator()(int); };
+BindedHook Ivk_zCCutscene_SolveEventManager{ ZENFOR(0x00413CD0, 0x00415780, 0x00414280, 0x00414280), &zCCutscene_SolveEventManager::operator() };
+zCEventManager* zCCutscene_SolveEventManager::operator()(int a0)
+{
+	zCEventManager* result = THISCALL(Ivk_zCCutscene_SolveEventManager)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

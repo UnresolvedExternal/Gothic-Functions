@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamTrj_KeyFrame::ThisVobAddedToWorld(zCWorld*): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCCamTrj_KeyFrame::ThisVobAddedToWorld(zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamTrj_KeyFrame_ThisVobAddedToWorld : zCCamTrj_KeyFrame { void operator()(zCWorld*); };
+BindedHook Ivk_zCCamTrj_KeyFrame_ThisVobAddedToWorld{ ZENFOR(0x004B4C50, 0x004C3E40, 0x004BBA20, 0x004BDF90), &zCCamTrj_KeyFrame_ThisVobAddedToWorld::operator() };
+void zCCamTrj_KeyFrame_ThisVobAddedToWorld::operator()(zCWorld* a0)
+{
+	THISCALL(Ivk_zCCamTrj_KeyFrame_ThisVobAddedToWorld)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

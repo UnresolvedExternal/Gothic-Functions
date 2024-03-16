@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspBase::CollectPolysInBBox3DRec(): void [const]]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCBspBase::CollectPolysInBBox3DRec() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspBase_CollectPolysInBBox3DRec : zCBspBase { void operator()() const; };
+BindedHook Ivk_zCBspBase_CollectPolysInBBox3DRec{ ZENFOR(0x0051FE70, 0x00535CD0, 0x0052F920, 0x00532C80), &zCBspBase_CollectPolysInBBox3DRec::operator() };
+void zCBspBase_CollectPolysInBBox3DRec::operator()() const
+{
+	THISCALL(Ivk_zCBspBase_CollectPolysInBBox3DRec)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsInInv(zSTRING const&, int): oCItem*]]></Title>
+			<Description><![CDATA[public: oCItem* __thiscall oCNpc::IsInInv(zSTRING const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsInInv : oCNpc { oCItem* operator()(zSTRING const&, int); };
+BindedHook Ivk_oCNpc_IsInInv{ ZENFOR(0x006A4EA0, 0x006D7950, 0x006EA720, 0x00749200), &oCNpc_IsInInv::operator() };
+oCItem* oCNpc_IsInInv::operator()(zSTRING const& a0, int a1)
+{
+	oCItem* result = THISCALL(Ivk_oCNpc_IsInInv)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

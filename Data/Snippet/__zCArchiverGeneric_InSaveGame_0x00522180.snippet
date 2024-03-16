@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::InSaveGame(): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCArchiverGeneric::InSaveGame() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_InSaveGame : zCArchiverGeneric { int operator()() const; };
+BindedHook Ivk_zCArchiverGeneric_InSaveGame{ ZENFOR(0x00511E00, 0x00527140, 0x0051F3B0, 0x00522180), &zCArchiverGeneric_InSaveGame::operator() };
+int zCArchiverGeneric_InSaveGame::operator()() const
+{
+	int result = THISCALL(Ivk_zCArchiverGeneric_InSaveGame)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::ProcessMessageList(): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCEventManager::ProcessMessageList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventManager_ProcessMessageList : zCEventManager { void operator()(); };
+BindedHook Ivk_zCEventManager_ProcessMessageList{ ZENFOR(0x006DDD10, 0x00716060, 0x007275C0, 0x00787000), &zCEventManager_ProcessMessageList::operator() };
+void zCEventManager_ProcessMessageList::operator()()
+{
+	THISCALL(Ivk_zCEventManager_ProcessMessageList)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspSector::InitHorizonByOutdoorPortals(): void]]></Title>
+			<Description><![CDATA[private: static void __cdecl zCBspSector::InitHorizonByOutdoorPortals()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCBspSector_InitHorizonByOutdoorPortals();
+BindedHook Ivk_zCBspSector_InitHorizonByOutdoorPortals{ ZENFOR(0x005181D0, 0x0052DBF0, 0x00526320, 0x00529110), Hook_zCBspSector_InitHorizonByOutdoorPortals };
+void Hook_zCBspSector_InitHorizonByOutdoorPortals()
+{
+	Ivk_zCBspSector_InitHorizonByOutdoorPortals();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

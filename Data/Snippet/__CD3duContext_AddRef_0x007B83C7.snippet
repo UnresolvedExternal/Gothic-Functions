@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::AddRef(): unsigned long]]></Title>
+			<Description><![CDATA[public: virtual unsigned long __stdcall CD3duContext::AddRef()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext_AddRef : CD3duContext { unsigned long __stdcall operator()(); };
+BindedHook Ivk_CD3duContext_AddRef{ ZENFOR(0x0075ECD3, 0x007A2D79, 0x007ABF01, 0x007B83C7), &CD3duContext_AddRef::operator() };
+unsigned long __stdcall CD3duContext_AddRef::operator()()
+{
+	unsigned long result = THISCALL(Ivk_CD3duContext_AddRef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

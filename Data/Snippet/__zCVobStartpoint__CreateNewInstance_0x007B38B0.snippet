@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobStartpoint::_CreateNewInstance(): zCObject*]]></Title>
+			<Description><![CDATA[private: static zCObject* __cdecl zCVobStartpoint::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_zCVobStartpoint__CreateNewInstance();
+BindedHook Ivk_zCVobStartpoint__CreateNewInstance{ ZENFOR(0x00709BE0, 0x00744A20, 0x00753DB0, 0x007B38B0), Hook_zCVobStartpoint__CreateNewInstance };
+zCObject* Hook_zCVobStartpoint__CreateNewInstance()
+{
+	zCObject* result = Ivk_zCVobStartpoint__CreateNewInstance();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

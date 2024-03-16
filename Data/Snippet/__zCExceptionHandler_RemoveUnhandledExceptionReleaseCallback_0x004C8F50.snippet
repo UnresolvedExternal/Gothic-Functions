@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCExceptionHandler::RemoveUnhandledExceptionReleaseCallback(void(__cdecl*)()): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCExceptionHandler::RemoveUnhandledExceptionReleaseCallback(void(__cdecl*)())]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCExceptionHandler_RemoveUnhandledExceptionReleaseCallback(void(__cdecl*)());
+BindedHook Ivk_zCExceptionHandler_RemoveUnhandledExceptionReleaseCallback{ ZENFOR(0x004BFC10, 0x004CF3C0, 0x004C69E0, 0x004C8F50), Hook_zCExceptionHandler_RemoveUnhandledExceptionReleaseCallback };
+void Hook_zCExceptionHandler_RemoveUnhandledExceptionReleaseCallback(void(__cdecl* a0)())
+{
+	Ivk_zCExceptionHandler_RemoveUnhandledExceptionReleaseCallback(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

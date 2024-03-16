@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIVobMove::ClearIgnoreCDVob(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCAIVobMove::ClearIgnoreCDVob()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIVobMove_ClearIgnoreCDVob : oCAIVobMove { void operator()(); };
+BindedHook Ivk_oCAIVobMove_ClearIgnoreCDVob{ ZENFOR(0x00618030, 0x0063B340, 0x00643420, 0x0069FBF0), &oCAIVobMove_ClearIgnoreCDVob::operator() };
+void oCAIVobMove_ClearIgnoreCDVob::operator()()
+{
+	THISCALL(Ivk_oCAIVobMove_ClearIgnoreCDVob)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

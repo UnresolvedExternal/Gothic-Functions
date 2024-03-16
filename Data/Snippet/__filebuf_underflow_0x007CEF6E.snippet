@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[filebuf::underflow(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall filebuf::underflow()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct filebuf_underflow : filebuf { int operator()(); };
+BindedHook Ivk_filebuf_underflow{ ZENFOR(0x007755C4, 0x007B9384, 0x007C2AAE, 0x007CEF6E), &filebuf_underflow::operator() };
+int filebuf_underflow::operator()()
+{
+	int result = THISCALL(Ivk_filebuf_underflow)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

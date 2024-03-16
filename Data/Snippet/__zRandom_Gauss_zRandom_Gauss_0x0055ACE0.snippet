@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zRandom_Gauss::zRandom_Gauss(int, int)]]></Title>
+			<Description><![CDATA[public: __thiscall zRandom_Gauss::zRandom_Gauss(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zRandom_Gauss_zRandom_Gauss : zRandom_Gauss { zRandom_Gauss* operator()(int, int); };
+BindedHook Ivk_zRandom_Gauss_zRandom_Gauss{ ZENFOR(0x00000000, 0x00000000, 0x00555AC0, 0x0055ACE0), &zRandom_Gauss_zRandom_Gauss::operator() };
+zRandom_Gauss* zRandom_Gauss_zRandom_Gauss::operator()(int a0, int a1)
+{
+	zRandom_Gauss* result = THISCALL(Ivk_zRandom_Gauss_zRandom_Gauss)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

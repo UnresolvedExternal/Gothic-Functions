@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrow::ReportCollisionToAI(zCCollisionReport const&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCAIArrow::ReportCollisionToAI(zCCollisionReport const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIArrow_ReportCollisionToAI : oCAIArrow { void operator()(zCCollisionReport const&); };
+BindedHook Ivk_oCAIArrow_ReportCollisionToAI{ ZENFOR(0x006195E0, 0x0063CAA0, 0x00644CB0, 0x006A1530), &oCAIArrow_ReportCollisionToAI::operator() };
+void oCAIArrow_ReportCollisionToAI::operator()(zCCollisionReport const& a0)
+{
+	THISCALL(Ivk_oCAIArrow_ReportCollisionToAI)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zMAT4::zMAT4(zMAT4 const&)]]></Title>
+			<Description><![CDATA[public: __thiscall zMAT4::zMAT4(zMAT4 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zMAT4_zMAT4 : zMAT4 { zMAT4* operator()(zMAT4 const&); };
+BindedHook Ivk_zMAT4_zMAT4{ ZENFOR(0x004802C0, 0x0047B840, 0x00486630, 0x00487C90), &zMAT4_zMAT4::operator() };
+zMAT4* zMAT4_zMAT4::operator()(zMAT4 const& a0)
+{
+	zMAT4* result = THISCALL(Ivk_zMAT4_zMAT4)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

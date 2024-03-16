@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshBuilder::CreatePMTriPosList(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCProgMeshBuilder::CreatePMTriPosList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshBuilder_CreatePMTriPosList : zCProgMeshBuilder { void operator()(); };
+BindedHook Ivk_zCProgMeshBuilder_CreatePMTriPosList{ ZENFOR(0x0059F080, 0x005BB6B0, 0x005BB3B0, 0x005C0F20), &zCProgMeshBuilder_CreatePMTriPosList::operator() };
+void zCProgMeshBuilder_CreatePMTriPosList::operator()()
+{
+	THISCALL(Ivk_zCProgMeshBuilder_CreatePMTriPosList)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

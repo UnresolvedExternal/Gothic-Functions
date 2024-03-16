@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::WriteWord(unsigned short, int): unsigned long]]></Title>
+			<Description><![CDATA[public: unsigned long __thiscall zCBuffer::WriteWord(unsigned short, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_WriteWord : zCBuffer { unsigned long operator()(unsigned short, int); };
+BindedHook Ivk_zCBuffer_WriteWord{ ZENFOR(0x0043D140, 0x00442300, 0x00440910, 0x00440F40), &zCBuffer_WriteWord::operator() };
+unsigned long zCBuffer_WriteWord::operator()(unsigned short a0, int a1)
+{
+	unsigned long result = THISCALL(Ivk_zCBuffer_WriteWord)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::PutInSlot(TNpcSlot*, oCVob*, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::PutInSlot(TNpcSlot*, oCVob*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_PutInSlot : oCNpc { void operator()(TNpcSlot*, oCVob*, int); };
+BindedHook Ivk_oCNpc_PutInSlot{ ZENFOR(0x006A5A10, 0x006D8500, 0x006EB280, 0x00749D80), &oCNpc_PutInSlot::operator() };
+void oCNpc_PutInSlot::operator()(TNpcSlot* a0, oCVob* a1, int a2)
+{
+	THISCALL(Ivk_oCNpc_PutInSlot)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

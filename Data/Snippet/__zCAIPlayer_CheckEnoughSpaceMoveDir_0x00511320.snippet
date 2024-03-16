@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::CheckEnoughSpaceMoveDir(zVEC3 const&, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCAIPlayer::CheckEnoughSpaceMoveDir(zVEC3 const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_CheckEnoughSpaceMoveDir : zCAIPlayer { int operator()(zVEC3 const&, int); };
+BindedHook Ivk_zCAIPlayer_CheckEnoughSpaceMoveDir{ ZENFOR(0x005017C0, 0x00515000, 0x0050E550, 0x00511320), &zCAIPlayer_CheckEnoughSpaceMoveDir::operator() };
+int zCAIPlayer_CheckEnoughSpaceMoveDir::operator()(zVEC3 const& a0, int a1)
+{
+	int result = THISCALL(Ivk_zCAIPlayer_CheckEnoughSpaceMoveDir)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

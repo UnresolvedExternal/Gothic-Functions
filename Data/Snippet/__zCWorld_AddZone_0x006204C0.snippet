@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::AddZone(zCZone*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCWorld::AddZone(zCZone*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_AddZone : zCWorld { void operator()(zCZone*); };
+BindedHook Ivk_zCWorld_AddZone{ ZENFOR(0x005F2DA0, 0x00613B80, 0x00618D70, 0x006204C0), &zCWorld_AddZone::operator() };
+void zCWorld_AddZone::operator()(zCZone* a0)
+{
+	THISCALL(Ivk_zCWorld_AddZone)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

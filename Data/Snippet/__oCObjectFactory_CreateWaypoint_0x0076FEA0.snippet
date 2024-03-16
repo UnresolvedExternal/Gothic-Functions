@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCObjectFactory::CreateWaypoint(): zCWaypoint*]]></Title>
+			<Description><![CDATA[public: virtual zCWaypoint* __thiscall oCObjectFactory::CreateWaypoint()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCObjectFactory_CreateWaypoint : oCObjectFactory { zCWaypoint* operator()(); };
+BindedHook Ivk_oCObjectFactory_CreateWaypoint{ ZENFOR(0x006C8760, 0x006FE5C0, 0x00710930, 0x0076FEA0), &oCObjectFactory_CreateWaypoint::operator() };
+zCWaypoint* oCObjectFactory_CreateWaypoint::operator()()
+{
+	zCWaypoint* result = THISCALL(Ivk_oCObjectFactory_CreateWaypoint)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

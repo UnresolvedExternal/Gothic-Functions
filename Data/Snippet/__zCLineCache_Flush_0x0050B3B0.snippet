@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLineCache::Flush(zCViewBase*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCLineCache::Flush(zCViewBase*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCLineCache_Flush : zCLineCache { void operator()(zCViewBase*); };
+BindedHook Ivk_zCLineCache_Flush{ ZENFOR(0x004FB970, 0x0050EAC0, 0x00508600, 0x0050B3B0), &zCLineCache_Flush::operator() };
+void zCLineCache_Flush::operator()(zCViewBase* a0)
+{
+	THISCALL(Ivk_zCLineCache_Flush)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

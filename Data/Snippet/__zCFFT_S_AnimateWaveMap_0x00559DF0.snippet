@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFFT::S_AnimateWaveMap(float): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCFFT::S_AnimateWaveMap(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+void Hook_zCFFT_S_AnimateWaveMap(float);
+BindedHook Ivk_zCFFT_S_AnimateWaveMap{ ZENFOR(0x00000000, 0x00000000, 0x00554BD0, 0x00559DF0), Hook_zCFFT_S_AnimateWaveMap };
+void Hook_zCFFT_S_AnimateWaveMap(float a0)
+{
+	Ivk_zCFFT_S_AnimateWaveMap(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

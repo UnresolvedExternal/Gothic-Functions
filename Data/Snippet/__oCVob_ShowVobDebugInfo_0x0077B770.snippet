@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVob::ShowVobDebugInfo(zCCamera*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCVob::ShowVobDebugInfo(zCCamera*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCVob_ShowVobDebugInfo(zCCamera*);
+BindedHook Ivk_oCVob_ShowVobDebugInfo{ ZENFOR(0x006D2BC0, 0x00709C80, 0x0071BD30, 0x0077B770), Hook_oCVob_ShowVobDebugInfo };
+void Hook_oCVob_ShowVobDebugInfo(zCCamera* a0)
+{
+	Ivk_oCVob_ShowVobDebugInfo(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

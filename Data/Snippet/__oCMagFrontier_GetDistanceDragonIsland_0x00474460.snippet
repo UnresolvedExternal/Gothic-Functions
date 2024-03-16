@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMagFrontier::GetDistanceDragonIsland(zVEC3 const&, float&, zVEC3&): float]]></Title>
+			<Description><![CDATA[public: float __thiscall oCMagFrontier::GetDistanceDragonIsland(zVEC3 const&, float&, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCMagFrontier_GetDistanceDragonIsland : oCMagFrontier { float operator()(zVEC3 const&, float&, zVEC3&); };
+BindedHook Ivk_oCMagFrontier_GetDistanceDragonIsland{ ZENFOR(0x00000000, 0x00000000, 0x00473280, 0x00474460), &oCMagFrontier_GetDistanceDragonIsland::operator() };
+float oCMagFrontier_GetDistanceDragonIsland::operator()(zVEC3 const& a0, float& a1, zVEC3& a2)
+{
+	float result = THISCALL(Ivk_oCMagFrontier_GetDistanceDragonIsland)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

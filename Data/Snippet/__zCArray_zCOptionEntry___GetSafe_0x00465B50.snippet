@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCOptionEntry*>::GetSafe(int): zCOptionEntry*& [const]]]></Title>
+			<Description><![CDATA[public: zCOptionEntry*& __thiscall zCArray<zCOptionEntry*>::GetSafe(int) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCOptionEntry___GetSafe : zCArray<zCOptionEntry*> { zCOptionEntry*& operator()(int) const; };
+BindedHook Ivk_zCArray_zCOptionEntry___GetSafe{ ZENFOR(0x004604F0, 0x00467DF0, 0x00464F20, 0x00465B50), &zCArray_zCOptionEntry___GetSafe::operator() };
+zCOptionEntry*& zCArray_zCOptionEntry___GetSafe::operator()(int a0) const
+{
+	zCOptionEntry*& result = THISCALL(Ivk_zCArray_zCOptionEntry___GetSafe)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

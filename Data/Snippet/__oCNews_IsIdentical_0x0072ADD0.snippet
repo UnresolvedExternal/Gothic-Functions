@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNews::IsIdentical(int, oCNpc*, oCNpc*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNews::IsIdentical(int, oCNpc*, oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNews_IsIdentical : oCNews { int operator()(int, oCNpc*, oCNpc*); };
+BindedHook Ivk_oCNews_IsIdentical{ ZENFOR(0x00688BB0, 0x006B8DF0, 0x006CCD40, 0x0072ADD0), &oCNews_IsIdentical::operator() };
+int oCNews_IsIdentical::operator()(int a0, oCNpc* a1, oCNpc* a2)
+{
+	int result = THISCALL(Ivk_oCNews_IsIdentical)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

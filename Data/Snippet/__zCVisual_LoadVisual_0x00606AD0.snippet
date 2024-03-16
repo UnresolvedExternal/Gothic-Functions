@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVisual::LoadVisual(zSTRING const&): zCVisual*]]></Title>
+			<Description><![CDATA[public: static zCVisual* __cdecl zCVisual::LoadVisual(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCVisual* Hook_zCVisual_LoadVisual(zSTRING const&);
+BindedHook Ivk_zCVisual_LoadVisual{ ZENFOR(0x005DA1F0, 0x005F9B70, 0x005FFC40, 0x00606AD0), Hook_zCVisual_LoadVisual };
+zCVisual* Hook_zCVisual_LoadVisual(zSTRING const& a0)
+{
+	zCVisual* result = Ivk_zCVisual_LoadVisual(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

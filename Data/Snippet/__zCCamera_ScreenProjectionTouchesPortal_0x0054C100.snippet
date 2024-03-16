@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::ScreenProjectionTouchesPortal(zTBBox3D const&, zTBBox2D const&): int]]></Title>
+			<Description><![CDATA[public: int __fastcall zCCamera::ScreenProjectionTouchesPortal(zTBBox3D const&, zTBBox2D const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamera_ScreenProjectionTouchesPortal : zCCamera { int __fastcall operator()(zTBBox3D const&, zTBBox2D const&); };
+BindedHook Ivk_zCCamera_ScreenProjectionTouchesPortal{ ZENFOR(0x00537B80, 0x0054ED10, 0x00546EE0, 0x0054C100), &zCCamera_ScreenProjectionTouchesPortal::operator() };
+int __fastcall zCCamera_ScreenProjectionTouchesPortal::operator()(zTBBox3D const& a0, zTBBox2D const& a1)
+{
+	int result = THISCALL(Ivk_zCCamera_ScreenProjectionTouchesPortal)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

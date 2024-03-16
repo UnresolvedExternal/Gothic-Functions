@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewBase::FillZBuffer(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCViewBase::FillZBuffer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCViewBase_FillZBuffer : zCViewBase { void operator()(); };
+BindedHook Ivk_zCViewBase_FillZBuffer{ ZENFOR(0x00000000, 0x00000000, 0x0079F990, 0x0068DF80), &zCViewBase_FillZBuffer::operator() };
+void zCViewBase_FillZBuffer::operator()()
+{
+	THISCALL(Ivk_zCViewBase_FillZBuffer)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

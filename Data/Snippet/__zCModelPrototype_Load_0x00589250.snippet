@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::Load(zSTRING const&, zCModelPrototype*): zCModelPrototype*]]></Title>
+			<Description><![CDATA[public: static zCModelPrototype* __cdecl zCModelPrototype::Load(zSTRING const&, zCModelPrototype*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCModelPrototype* Hook_zCModelPrototype_Load(zSTRING const&, zCModelPrototype*);
+BindedHook Ivk_zCModelPrototype_Load{ ZENFOR(0x0056EA80, 0x00587E10, 0x00583CF0, 0x00589250), Hook_zCModelPrototype_Load };
+zCModelPrototype* Hook_zCModelPrototype_Load(zSTRING const& a0, zCModelPrototype* a1)
+{
+	zCModelPrototype* result = Ivk_zCModelPrototype_Load(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

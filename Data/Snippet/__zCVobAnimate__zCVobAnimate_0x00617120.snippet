@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobAnimate::~zCVobAnimate()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCVobAnimate::~zCVobAnimate()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobAnimate_Destructor : zCVobAnimate { void operator()(); };
+BindedHook Ivk_zCVobAnimate_Destructor{ ZENFOR(0x005EA070, 0x0060A680, 0x0060FA60, 0x00617120), &zCVobAnimate_Destructor::operator() };
+void zCVobAnimate_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVobAnimate_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

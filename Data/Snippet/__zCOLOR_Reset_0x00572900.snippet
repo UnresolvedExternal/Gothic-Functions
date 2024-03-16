@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOLOR::Reset(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCOLOR::Reset()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOLOR_Reset : zCOLOR { void operator()(); };
+BindedHook Ivk_zCOLOR_Reset{ ZENFOR(0x00559960, 0x00571AA0, 0x0056D650, 0x00572900), &zCOLOR_Reset::operator() };
+void zCOLOR_Reset::operator()()
+{
+	THISCALL(Ivk_zCOLOR_Reset)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

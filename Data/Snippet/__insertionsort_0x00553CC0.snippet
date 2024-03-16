@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[insertionsort(void*, unsigned int, unsigned int, int(__cdecl*)(void const*, void const*), bool): void]]></Title>
+			<Description><![CDATA[void __cdecl insertionsort(void*, unsigned int, unsigned int, int(__cdecl*)(void const*, void const*), bool)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_insertionsort(void*, unsigned int, unsigned int, int(__cdecl*)(void const*, void const*), bool);
+BindedHook Ivk_insertionsort{ ZENFOR(0x0053F570, 0x00556F40, 0x0054EAA0, 0x00553CC0), Hook_insertionsort };
+void Hook_insertionsort(void* a0, unsigned int a1, unsigned int a2, int(__cdecl* a3)(void const*, void const*), bool a4)
+{
+	Ivk_insertionsort(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

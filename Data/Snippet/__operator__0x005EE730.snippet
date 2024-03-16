@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[operator+(zCOLOR const&, zCOLOR const&): zCOLOR]]></Title>
+			<Description><![CDATA[zCOLOR __cdecl operator+(zCOLOR const&, zCOLOR const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+zCOLOR Hook_operator_(zCOLOR const&, zCOLOR const&);
+BindedHook Ivk_operator_{ ZENFOR(0x005CF880, 0x005EE730, 0x00000000, 0x00000000), Hook_operator_ };
+zCOLOR Hook_operator_(zCOLOR const& a0, zCOLOR const& a1)
+{
+	zCOLOR result = Ivk_operator_(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera_EventMsgActivate::MD_GetSubTypeString(int): zSTRING]]></Title>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zCCSCamera_EventMsgActivate::MD_GetSubTypeString(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_EventMsgActivate_MD_GetSubTypeString : zCCSCamera_EventMsgActivate { zSTRING operator()(int); };
+BindedHook Ivk_zCCSCamera_EventMsgActivate_MD_GetSubTypeString{ ZENFOR(0x004BDFB0, 0x004CD680, 0x004C4EA0, 0x004C7410), &zCCSCamera_EventMsgActivate_MD_GetSubTypeString::operator() };
+zSTRING zCCSCamera_EventMsgActivate_MD_GetSubTypeString::operator()(int a0)
+{
+	zSTRING result = THISCALL(Ivk_zCCSCamera_EventMsgActivate_MD_GetSubTypeString)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

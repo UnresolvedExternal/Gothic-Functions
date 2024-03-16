@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::_Xran(): void]]></Title>
+			<Description><![CDATA[void __cdecl std::_Xran()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_std___Xran();
+BindedHook Ivk_std___Xran{ ZENFOR(0x007762CD, 0x007BA08D, 0x007C37B7, 0x007CFC77), Hook_std___Xran };
+void Hook_std___Xran()
+{
+	Ivk_std___Xran();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Apply_Options_Game(): int]]></Title>
+			<Description><![CDATA[int __cdecl Apply_Options_Game()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_Apply_Options_Game();
+BindedHook Ivk_Apply_Options_Game{ ZENFOR(0x0042B320, 0x0042E270, 0x0042D3F0, 0x0042D710), Hook_Apply_Options_Game };
+int Hook_Apply_Options_Game()
+{
+	int result = Ivk_Apply_Options_Game();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

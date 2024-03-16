@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3dxFile::SetChild(unsigned long, unsigned long): void]]></Title>
+			<Description><![CDATA[public: void __thiscall CD3dxFile::SetChild(unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3dxFile_SetChild : CD3dxFile { void operator()(unsigned long, unsigned long); };
+BindedHook Ivk_CD3dxFile_SetChild{ ZENFOR(0x00760DB6, 0x007A60BF, 0x007ADFE4, 0x007BA4AA), &CD3dxFile_SetChild::operator() };
+void CD3dxFile_SetChild::operator()(unsigned long a0, unsigned long a1)
+{
+	THISCALL(Ivk_CD3dxFile_SetChild)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcFocus::IsNpcInAngle(float, float): int]]></Title>
+			<Description><![CDATA[private: int __thiscall oCNpcFocus::IsNpcInAngle(float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcFocus_IsNpcInAngle : oCNpcFocus { int operator()(float, float); };
+BindedHook Ivk_oCNpcFocus_IsNpcInAngle{ ZENFOR(0x00635430, 0x0065B5D0, 0x006628A0, 0x006BF230), &oCNpcFocus_IsNpcInAngle::operator() };
+int oCNpcFocus_IsNpcInAngle::operator()(float a0, float a1)
+{
+	int result = THISCALL(Ivk_oCNpcFocus_IsNpcInAngle)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

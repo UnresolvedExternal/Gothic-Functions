@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[HandleResultString(zSTRING): void]]></Title>
+			<Description><![CDATA[void __cdecl HandleResultString(zSTRING)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_HandleResultString(zSTRING);
+BindedHook Ivk_HandleResultString{ ZENFOR(0x004301F0, 0x00433D80, 0x004329E0, 0x00432EC0), Hook_HandleResultString };
+void Hook_HandleResultString(zSTRING a0)
+{
+	Ivk_HandleResultString(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

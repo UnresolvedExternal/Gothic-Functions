@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::DialogPresetIsValid(zCCSCamera*): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall zCAICamera::DialogPresetIsValid(zCCSCamera*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAICamera_DialogPresetIsValid : zCAICamera { int operator()(zCCSCamera*); };
+BindedHook Ivk_zCAICamera_DialogPresetIsValid{ ZENFOR(0x004AB9E0, 0x004B98D0, 0x004B1D60, 0x004B4290), &zCAICamera_DialogPresetIsValid::operator() };
+int zCAICamera_DialogPresetIsValid::operator()(zCCSCamera* a0)
+{
+	int result = THISCALL(Ivk_zCAICamera_DialogPresetIsValid)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

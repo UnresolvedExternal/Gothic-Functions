@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetRightHand(): oCVob*]]></Title>
+			<Description><![CDATA[public: oCVob* __thiscall oCNpc::GetRightHand()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetRightHand : oCNpc { oCVob* operator()(); };
+BindedHook Ivk_oCNpc_GetRightHand{ ZENFOR(0x00697750, 0x006C9360, 0x006DC390, 0x0073AB50), &oCNpc_GetRightHand::operator() };
+oCVob* oCNpc_GetRightHand::operator()()
+{
+	oCVob* result = THISCALL(Ivk_oCNpc_GetRightHand)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

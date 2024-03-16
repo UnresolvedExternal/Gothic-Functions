@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDXTCCache_D3D::zCDXTCCache_D3D()]]></Title>
+			<Description><![CDATA[public: __thiscall zCDXTCCache_D3D::zCDXTCCache_D3D()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCDXTCCache_D3D_zCDXTCCache_D3D : zCDXTCCache_D3D { zCDXTCCache_D3D* operator()(); };
+BindedHook Ivk_zCDXTCCache_D3D_zCDXTCCache_D3D{ ZENFOR(0x0070D6C0, 0x00748810, 0x00757970, 0x00642F10), &zCDXTCCache_D3D_zCDXTCCache_D3D::operator() };
+zCDXTCCache_D3D* zCDXTCCache_D3D_zCDXTCCache_D3D::operator()()
+{
+	zCDXTCCache_D3D* result = THISCALL(Ivk_zCDXTCCache_D3D_zCDXTCCache_D3D)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

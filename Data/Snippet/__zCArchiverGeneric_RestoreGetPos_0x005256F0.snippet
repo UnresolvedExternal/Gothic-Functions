@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::RestoreGetPos(): unsigned long]]></Title>
+			<Description><![CDATA[protected: virtual unsigned long __fastcall zCArchiverGeneric::RestoreGetPos()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_RestoreGetPos : zCArchiverGeneric { unsigned long __fastcall operator()(); };
+BindedHook Ivk_zCArchiverGeneric_RestoreGetPos{ ZENFOR(0x00514B40, 0x0052A210, 0x00522920, 0x005256F0), &zCArchiverGeneric_RestoreGetPos::operator() };
+unsigned long __fastcall zCArchiverGeneric_RestoreGetPos::operator()()
+{
+	unsigned long result = THISCALL(Ivk_zCArchiverGeneric_RestoreGetPos)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

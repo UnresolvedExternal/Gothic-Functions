@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::AlignToFloor(float): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCAIPlayer::AlignToFloor(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_AlignToFloor : zCAIPlayer { void operator()(float); };
+BindedHook Ivk_zCAIPlayer_AlignToFloor{ ZENFOR(0x00501760, 0x00514F70, 0x0050E4F0, 0x005112C0), &zCAIPlayer_AlignToFloor::operator() };
+void zCAIPlayer_AlignToFloor::operator()(float a0)
+{
+	THISCALL(Ivk_zCAIPlayer_AlignToFloor)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

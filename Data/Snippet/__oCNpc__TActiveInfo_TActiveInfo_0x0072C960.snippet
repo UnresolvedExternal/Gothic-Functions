@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::TActiveInfo::TActiveInfo(oCNpc const*)]]></Title>
+			<Description><![CDATA[public: __thiscall oCNpc::TActiveInfo::TActiveInfo(oCNpc const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc__TActiveInfo_TActiveInfo : oCNpc::TActiveInfo { void operator()(oCNpc const*); };
+BindedHook Ivk_oCNpc__TActiveInfo_TActiveInfo{ ZENFOR(0x0068A580, 0x006BAB10, 0x006CE8D0, 0x0072C960), &oCNpc__TActiveInfo_TActiveInfo::operator() };
+void oCNpc__TActiveInfo_TActiveInfo::operator()(oCNpc const* a0)
+{
+	THISCALL(Ivk_oCNpc__TActiveInfo_TActiveInfo)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

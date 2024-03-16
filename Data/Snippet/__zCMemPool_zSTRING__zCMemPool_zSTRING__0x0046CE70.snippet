@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPool<zSTRING>::zCMemPool<zSTRING>(unsigned int, unsigned int)]]></Title>
+			<Description><![CDATA[public: __thiscall zCMemPool<zSTRING>::zCMemPool<zSTRING>(unsigned int, unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPool_zSTRING__zCMemPool_zSTRING_ : zCMemPool<zSTRING> { zCMemPool<zSTRING>* operator()(unsigned int, unsigned int); };
+BindedHook Ivk_zCMemPool_zSTRING__zCMemPool_zSTRING_{ ZENFOR(0x00467CA0, 0x0046FC00, 0x0046C240, 0x0046CE70), &zCMemPool_zSTRING__zCMemPool_zSTRING_::operator() };
+zCMemPool<zSTRING>* zCMemPool_zSTRING__zCMemPool_zSTRING_::operator()(unsigned int a0, unsigned int a1)
+{
+	zCMemPool<zSTRING>* result = THISCALL(Ivk_zCMemPool_zSTRING__zCMemPool_zSTRING_)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

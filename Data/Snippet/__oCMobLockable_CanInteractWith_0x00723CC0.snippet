@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobLockable::CanInteractWith(oCNpc*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCMobLockable::CanInteractWith(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobLockable_CanInteractWith : oCMobLockable { int operator()(oCNpc*); };
+BindedHook Ivk_oCMobLockable_CanInteractWith{ ZENFOR(0x00681FC0, 0x006B16C0, 0x006C5C30, 0x00723CC0), &oCMobLockable_CanInteractWith::operator() };
+int oCMobLockable_CanInteractWith::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCMobLockable_CanInteractWith)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::LightingTestRay(zVEC3 const&, zVEC3 const&, zVEC3&, zCPolygon*&): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall zCWorld::LightingTestRay(zVEC3 const&, zVEC3 const&, zVEC3&, zCPolygon*&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_LightingTestRay : zCWorld { int operator()(zVEC3 const&, zVEC3 const&, zVEC3&, zCPolygon*&); };
+BindedHook Ivk_zCWorld_LightingTestRay{ ZENFOR(0x005FBE30, 0x0061D630, 0x006232F0, 0x0062AA70), &zCWorld_LightingTestRay::operator() };
+int zCWorld_LightingTestRay::operator()(zVEC3 const& a0, zVEC3 const& a1, zVEC3& a2, zCPolygon*& a3)
+{
+	int result = THISCALL(Ivk_zCWorld_LightingTestRay)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

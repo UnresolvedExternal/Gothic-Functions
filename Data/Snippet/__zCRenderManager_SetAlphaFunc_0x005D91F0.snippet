@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderManager::SetAlphaFunc(zCShader*, unsigned long, unsigned long): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCRenderManager::SetAlphaFunc(zCShader*, unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderManager_SetAlphaFunc : zCRenderManager { void __fastcall operator()(zCShader*, unsigned long, unsigned long); };
+BindedHook Ivk_zCRenderManager_SetAlphaFunc{ ZENFOR(0x005B2970, 0x005CFBE0, 0x005D2430, 0x005D91F0), &zCRenderManager_SetAlphaFunc::operator() };
+void __fastcall zCRenderManager_SetAlphaFunc::operator()(zCShader* a0, unsigned long a1, unsigned long a2)
+{
+	THISCALL(Ivk_zCRenderManager_SetAlphaFunc)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

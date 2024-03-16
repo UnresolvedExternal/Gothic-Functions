@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlock::InsertBlock(zCCSBlockBase*, int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSBlock::InsertBlock(zCCSBlockBase*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlock_InsertBlock : zCCSBlock { void operator()(zCCSBlockBase*, int); };
+BindedHook Ivk_zCCSBlock_InsertBlock{ ZENFOR(0x0040D730, 0x0040E9E0, 0x0040DB20, 0x0040DB20), &zCCSBlock_InsertBlock::operator() };
+void zCCSBlock_InsertBlock::operator()(zCCSBlockBase* a0, int a1)
+{
+	THISCALL(Ivk_zCCSBlock_InsertBlock)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

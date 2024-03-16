@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneVobFarPlaneDefault::~zCZoneVobFarPlaneDefault()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCZoneVobFarPlaneDefault::~zCZoneVobFarPlaneDefault()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZoneVobFarPlaneDefault_Destructor : zCZoneVobFarPlaneDefault { void operator()(); };
+BindedHook Ivk_zCZoneVobFarPlaneDefault_Destructor{ ZENFOR(0x00609A40, 0x0062BF40, 0x00632950, 0x0063A120), &zCZoneVobFarPlaneDefault_Destructor::operator() };
+void zCZoneVobFarPlaneDefault_Destructor::operator()()
+{
+	THISCALL(Ivk_zCZoneVobFarPlaneDefault_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

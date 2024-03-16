@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspBase::RenderOutdoor(zCBspBase*, zTBBox3D, int, int): void]]></Title>
+			<Description><![CDATA[protected: static void __fastcall zCBspBase::RenderOutdoor(zCBspBase*, zTBBox3D, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void __fastcall Hook_zCBspBase_RenderOutdoor(zCBspBase*, zTBBox3D, int, int);
+BindedHook Ivk_zCBspBase_RenderOutdoor{ ZENFOR(0x0051CBA0, 0x00532890, 0x0052C540, 0x0052F490), Hook_zCBspBase_RenderOutdoor };
+void __fastcall Hook_zCBspBase_RenderOutdoor(zCBspBase* a0, zTBBox3D a1, int a2, int a3)
+{
+	Ivk_zCBspBase_RenderOutdoor(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

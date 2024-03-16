@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::GetJumpUpHeight(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall zCAIPlayer::GetJumpUpHeight()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_GetJumpUpHeight : zCAIPlayer { float operator()(); };
+BindedHook Ivk_zCAIPlayer_GetJumpUpHeight{ ZENFOR(0x004FD040, 0x00510190, 0x00509CC0, 0x0050CA70), &zCAIPlayer_GetJumpUpHeight::operator() };
+float zCAIPlayer_GetJumpUpHeight::operator()()
+{
+	float result = THISCALL(Ivk_zCAIPlayer_GetJumpUpHeight)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

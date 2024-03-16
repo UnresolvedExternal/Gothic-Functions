@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::map<zSTRING, zCMapDetailTexture::zTMapDetailTextureEntry, std::less<zSTRING>, std::allocator<zCMapDetailTexture::zTMapDetailTextureEntry>>::operator[](zSTRING const&): zCMapDetailTexture::zTMapDetailTextureEntry&]]></Title>
+			<Description><![CDATA[public: zCMapDetailTexture::zTMapDetailTextureEntry& __thiscall std::map<zSTRING, zCMapDetailTexture::zTMapDetailTextureEntry, std::less<zSTRING>, std::allocator<zCMapDetailTexture::zTMapDetailTextureEntry>>::operator[](zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2
+struct std__map_zSTRING__zCMapDetailTexture__zTMapDetailTextureEntry__std__less_zSTRING___std__allocator_zCMapDetailTexture__zTMapDetailTextureEntry___operator__ : std::map<zSTRING, zCMapDetailTexture::zTMapDetailTextureEntry, std::less<zSTRING>, std::allocator<zCMapDetailTexture::zTMapDetailTextureEntry>> { zCMapDetailTexture::zTMapDetailTextureEntry& operator()(zSTRING const&); };
+BindedHook Ivk_std__map_zSTRING__zCMapDetailTexture__zTMapDetailTextureEntry__std__less_zSTRING___std__allocator_zCMapDetailTexture__zTMapDetailTextureEntry___operator__{ ZENFOR(0x00000000, 0x005D1550, 0x005D4650, 0x00000000), &std__map_zSTRING__zCMapDetailTexture__zTMapDetailTextureEntry__std__less_zSTRING___std__allocator_zCMapDetailTexture__zTMapDetailTextureEntry___operator__::operator() };
+zCMapDetailTexture::zTMapDetailTextureEntry& std__map_zSTRING__zCMapDetailTexture__zTMapDetailTextureEntry__std__less_zSTRING___std__allocator_zCMapDetailTexture__zTMapDetailTextureEntry___operator__::operator()(zSTRING const& a0)
+{
+	zCMapDetailTexture::zTMapDetailTextureEntry& result = THISCALL(Ivk_std__map_zSTRING__zCMapDetailTexture__zTMapDetailTextureEntry__std__less_zSTRING___std__allocator_zCMapDetailTexture__zTMapDetailTextureEntry___operator__)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

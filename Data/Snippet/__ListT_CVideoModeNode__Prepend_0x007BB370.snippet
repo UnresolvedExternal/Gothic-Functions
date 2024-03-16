@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CVideoModeNode>::Prepend(CVideoModeNode*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall ListT<CVideoModeNode>::Prepend(CVideoModeNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CVideoModeNode__Prepend : ListT<CVideoModeNode> { void operator()(CVideoModeNode*); };
+BindedHook Ivk_ListT_CVideoModeNode__Prepend{ ZENFOR(0x00761C7C, 0x007A7435, 0x007AEEAA, 0x007BB370), &ListT_CVideoModeNode__Prepend::operator() };
+void ListT_CVideoModeNode__Prepend::operator()(CVideoModeNode* a0)
+{
+	THISCALL(Ivk_ListT_CVideoModeNode__Prepend)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

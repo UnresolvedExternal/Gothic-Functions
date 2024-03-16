@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::LandAndStartAni(zCModelAni*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCAIPlayer::LandAndStartAni(zCModelAni*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_LandAndStartAni : zCAIPlayer { void operator()(zCModelAni*); };
+BindedHook Ivk_zCAIPlayer_LandAndStartAni{ ZENFOR(0x00502060, 0x00515AE0, 0x0050EDF0, 0x00511BC0), &zCAIPlayer_LandAndStartAni::operator() };
+void zCAIPlayer_LandAndStartAni::operator()(zCModelAni* a0)
+{
+	THISCALL(Ivk_zCAIPlayer_LandAndStartAni)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

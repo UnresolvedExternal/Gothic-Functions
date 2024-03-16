@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::MsgRecvToQueue(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCNet::MsgRecvToQueue()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_MsgRecvToQueue : zCNet { int operator()(); };
+BindedHook Ivk_zCNet_MsgRecvToQueue{ ZENFOR(0x0044DF40, 0x00454640, 0x00452010, 0x00452760), &zCNet_MsgRecvToQueue::operator() };
+int zCNet_MsgRecvToQueue::operator()()
+{
+	int result = THISCALL(Ivk_zCNet_MsgRecvToQueue)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

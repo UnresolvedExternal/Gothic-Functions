@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCDoc::~oCDoc()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall oCDoc::~oCDoc()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCDoc_Destructor : oCDoc { void operator()(); };
+BindedHook Ivk_oCDoc_Destructor{ ZENFOR(0x00634670, 0x0065A7D0, 0x006618A0, 0x006BE230), &oCDoc_Destructor::operator() };
+void oCDoc_Destructor::operator()()
+{
+	THISCALL(Ivk_oCDoc_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

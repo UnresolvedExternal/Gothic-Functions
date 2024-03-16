@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::zTModelLimbColl::~zTModelLimbColl()]]></Title>
+			<Description><![CDATA[public: __thiscall zCVob::zTModelLimbColl::~zTModelLimbColl()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob__zTModelLimbColl_Destructor : zCVob::zTModelLimbColl { void operator()(); };
+BindedHook Ivk_zCVob__zTModelLimbColl_Destructor{ ZENFOR(0x005D83B0, 0x005F7AA0, 0x005FCBD0, 0x00603A50), &zCVob__zTModelLimbColl_Destructor::operator() };
+void zCVob__zTModelLimbColl_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVob__zTModelLimbColl_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

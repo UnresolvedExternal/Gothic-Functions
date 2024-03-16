@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Outdoor::ColorizeSkySphere(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCSkyControler_Outdoor::ColorizeSkySphere()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCSkyControler_Outdoor_ColorizeSkySphere : zCSkyControler_Outdoor { void operator()(); };
+BindedHook Ivk_zCSkyControler_Outdoor_ColorizeSkySphere{ ZENFOR(0x005BF4B0, 0x005DD2D0, 0x00000000, 0x00000000), &zCSkyControler_Outdoor_ColorizeSkySphere::operator() };
+void zCSkyControler_Outdoor_ColorizeSkySphere::operator()()
+{
+	THISCALL(Ivk_zCSkyControler_Outdoor_ColorizeSkySphere)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

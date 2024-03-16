@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCutscene::RemoveRole(zCVob*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCutscene::RemoveRole(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCutscene_RemoveRole : zCCutscene { void operator()(zCVob*); };
+BindedHook Ivk_zCCutscene_RemoveRole{ ZENFOR(0x004109B0, 0x00411FE0, 0x00410EC0, 0x00410EC0), &zCCutscene_RemoveRole::operator() };
+void zCCutscene_RemoveRole::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCCutscene_RemoveRole)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

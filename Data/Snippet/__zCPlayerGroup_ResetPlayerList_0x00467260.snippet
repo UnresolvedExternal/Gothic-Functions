@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerGroup::ResetPlayerList(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPlayerGroup::ResetPlayerList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerGroup_ResetPlayerList : zCPlayerGroup { void operator()(); };
+BindedHook Ivk_zCPlayerGroup_ResetPlayerList{ ZENFOR(0x00461BF0, 0x00469610, 0x00466630, 0x00467260), &zCPlayerGroup_ResetPlayerList::operator() };
+void zCPlayerGroup_ResetPlayerList::operator()()
+{
+	THISCALL(Ivk_zCPlayerGroup_ResetPlayerList)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zDATE::ToString(zTDATE_CONVERT): zSTRING]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zDATE::ToString(zTDATE_CONVERT)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zDATE_ToString : zDATE { zSTRING operator()(zTDATE_CONVERT); };
+BindedHook Ivk_zDATE_ToString{ ZENFOR(0x0043E9F0, 0x00443D50, 0x004422D0, 0x00442900), &zDATE_ToString::operator() };
+zSTRING zDATE_ToString::operator()(zTDATE_CONVERT a0)
+{
+	zSTRING result = THISCALL(Ivk_zDATE_ToString)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

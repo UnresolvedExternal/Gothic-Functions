@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTBBox3D::GetCenterFloor(): zVEC3 [const]]]></Title>
+			<Description><![CDATA[public: zVEC3 __thiscall zTBBox3D::GetCenterFloor() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTBBox3D_GetCenterFloor : zTBBox3D { zVEC3 operator()() const; };
+BindedHook Ivk_zTBBox3D_GetCenterFloor{ ZENFOR(0x00539B90, 0x00550F10, 0x00548E20, 0x0054E040), &zTBBox3D_GetCenterFloor::operator() };
+zVEC3 zTBBox3D_GetCenterFloor::operator()() const
+{
+	zVEC3 result = THISCALL(Ivk_zTBBox3D_GetCenterFloor)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

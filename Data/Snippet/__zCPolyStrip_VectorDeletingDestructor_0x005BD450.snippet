@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolyStrip::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[protected: virtual void* __thiscall zCPolyStrip::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolyStrip_VectorDeletingDestructor : zCPolyStrip { void* operator()(unsigned int); };
+BindedHook Ivk_zCPolyStrip_VectorDeletingDestructor{ ZENFOR(0x0059B740, 0x005B7AE0, 0x005B78E0, 0x005BD450), &zCPolyStrip_VectorDeletingDestructor::operator() };
+void* zCPolyStrip_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCPolyStrip_VectorDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

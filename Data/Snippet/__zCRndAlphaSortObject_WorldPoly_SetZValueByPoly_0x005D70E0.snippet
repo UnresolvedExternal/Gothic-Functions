@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRndAlphaSortObject_WorldPoly::SetZValueByPoly(zCPolygon*, zTPlane const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCRndAlphaSortObject_WorldPoly::SetZValueByPoly(zCPolygon*, zTPlane const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRndAlphaSortObject_WorldPoly_SetZValueByPoly : zCRndAlphaSortObject_WorldPoly { void operator()(zCPolygon*, zTPlane const&); };
+BindedHook Ivk_zCRndAlphaSortObject_WorldPoly_SetZValueByPoly{ ZENFOR(0x005B1360, 0x005CE540, 0x005D0520, 0x005D70E0), &zCRndAlphaSortObject_WorldPoly_SetZValueByPoly::operator() };
+void zCRndAlphaSortObject_WorldPoly_SetZValueByPoly::operator()(zCPolygon* a0, zTPlane const& a1)
+{
+	THISCALL(Ivk_zCRndAlphaSortObject_WorldPoly_SetZValueByPoly)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

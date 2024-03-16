@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::GetVisualName(): zSTRING]]></Title>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zCMesh::GetVisualName()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_GetVisualName : zCMesh { zSTRING operator()(); };
+BindedHook Ivk_zCMesh_GetVisualName{ ZENFOR(0x0054FBC0, 0x00568130, 0x00561E00, 0x00567020), &zCMesh_GetVisualName::operator() };
+zSTRING zCMesh_GetVisualName::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zCMesh_GetVisualName)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

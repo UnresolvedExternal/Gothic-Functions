@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCParticleEmitter*>::InsertEnd(zCParticleEmitter* const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zCParticleEmitter*>::InsertEnd(zCParticleEmitter* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCArray_zCParticleEmitter___InsertEnd : zCArray<zCParticleEmitter*> { void operator()(zCParticleEmitter* const&); };
+BindedHook Ivk_zCArray_zCParticleEmitter___InsertEnd{ ZENFOR(0x00000000, 0x00000000, 0x0059D070, 0x005A25D0), &zCArray_zCParticleEmitter___InsertEnd::operator() };
+void zCArray_zCParticleEmitter___InsertEnd::operator()(zCParticleEmitter* const& a0)
+{
+	THISCALL(Ivk_zCArray_zCParticleEmitter___InsertEnd)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

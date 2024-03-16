@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetMessage::IsMultiMessage(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCNetMessage::IsMultiMessage()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetMessage_IsMultiMessage : zCNetMessage { int operator()(); };
+BindedHook Ivk_zCNetMessage_IsMultiMessage{ ZENFOR(0x00457B10, 0x0045EB60, 0x0045C440, 0x0045CB90), &zCNetMessage_IsMultiMessage::operator() };
+int zCNetMessage_IsMultiMessage::operator()()
+{
+	int result = THISCALL(Ivk_zCNetMessage_IsMultiMessage)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

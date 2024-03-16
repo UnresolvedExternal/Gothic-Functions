@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSys_DirectMusic::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCMusicSys_DirectMusic::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2A
+struct zCMusicSys_DirectMusic_ScalarDeletingDestructor : zCMusicSys_DirectMusic { void* operator()(unsigned int); };
+BindedHook Ivk_zCMusicSys_DirectMusic_ScalarDeletingDestructor{ ZENFOR(0x00000000, 0x004ECA60, 0x00000000, 0x004E89D0), &zCMusicSys_DirectMusic_ScalarDeletingDestructor::operator() };
+void* zCMusicSys_DirectMusic_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCMusicSys_DirectMusic_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

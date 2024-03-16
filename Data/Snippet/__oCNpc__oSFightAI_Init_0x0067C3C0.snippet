@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::oSFightAI::Init(zCParser*, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::oSFightAI::Init(zCParser*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCNpc__oSFightAI_Init : oCNpc::oSFightAI { void operator()(zCParser*, int); };
+BindedHook Ivk_oCNpc__oSFightAI_Init{ ZENFOR(0x00000000, 0x00000000, 0x00792FF0, 0x0067C3C0), &oCNpc__oSFightAI_Init::operator() };
+void oCNpc__oSFightAI_Init::operator()(zCParser* a0, int a1)
+{
+	THISCALL(Ivk_oCNpc__oSFightAI_Init)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::zTQuadMarkPoly::~zTQuadMarkPoly()]]></Title>
+			<Description><![CDATA[public: __thiscall zCQuadMark::zTQuadMarkPoly::~zTQuadMarkPoly()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark__zTQuadMarkPoly_Destructor : zCQuadMark::zTQuadMarkPoly { void operator()(); };
+BindedHook Ivk_zCQuadMark__zTQuadMarkPoly_Destructor{ ZENFOR(0x005ABA40, 0x005C86C0, 0x005C9FD0, 0x005D0B70), &zCQuadMark__zTQuadMarkPoly_Destructor::operator() };
+void zCQuadMark__zTQuadMarkPoly_Destructor::operator()()
+{
+	THISCALL(Ivk_zCQuadMark__zTQuadMarkPoly_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

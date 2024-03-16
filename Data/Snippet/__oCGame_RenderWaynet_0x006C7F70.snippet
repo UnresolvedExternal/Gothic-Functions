@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::RenderWaynet(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCGame::RenderWaynet()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_RenderWaynet : oCGame { void operator()(); };
+BindedHook Ivk_oCGame_RenderWaynet{ ZENFOR(0x0063D900, 0x006645D0, 0x0066B200, 0x006C7F70), &oCGame_RenderWaynet::operator() };
+void oCGame_RenderWaynet::operator()()
+{
+	THISCALL(Ivk_oCGame_RenderWaynet)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

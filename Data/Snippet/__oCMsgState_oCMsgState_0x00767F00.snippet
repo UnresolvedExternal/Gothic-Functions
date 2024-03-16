@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgState::oCMsgState(oCMsgState::TStateSubType, float)]]></Title>
+			<Description><![CDATA[public: __thiscall oCMsgState::oCMsgState(oCMsgState::TStateSubType, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgState_oCMsgState : oCMsgState { oCMsgState* operator()(oCMsgState::TStateSubType, float); };
+BindedHook Ivk_oCMsgState_oCMsgState{ ZENFOR(0x006C0D60, 0x006F60A0, 0x007089C0, 0x00767F00), &oCMsgState_oCMsgState::operator() };
+oCMsgState* oCMsgState_oCMsgState::operator()(oCMsgState::TStateSubType a0, float a1)
+{
+	oCMsgState* result = THISCALL(Ivk_oCMsgState_oCMsgState)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

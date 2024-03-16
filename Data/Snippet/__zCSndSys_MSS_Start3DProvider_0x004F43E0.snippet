@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::Start3DProvider(int): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCSndSys_MSS::Start3DProvider(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_Start3DProvider : zCSndSys_MSS { int operator()(int); };
+BindedHook Ivk_zCSndSys_MSS_Start3DProvider{ ZENFOR(0x004E6260, 0x004F8360, 0x004F1760, 0x004F43E0), &zCSndSys_MSS_Start3DProvider::operator() };
+int zCSndSys_MSS_Start3DProvider::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCSndSys_MSS_Start3DProvider)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

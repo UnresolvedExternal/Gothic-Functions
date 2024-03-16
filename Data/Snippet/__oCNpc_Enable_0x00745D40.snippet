@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::Enable(zVEC3&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCNpc::Enable(zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_Enable : oCNpc { void operator()(zVEC3&); };
+BindedHook Ivk_oCNpc_Enable{ ZENFOR(0x006A2000, 0x006D4820, 0x006E72C0, 0x00745D40), &oCNpc_Enable::operator() };
+void oCNpc_Enable::operator()(zVEC3& a0)
+{
+	THISCALL(Ivk_oCNpc_Enable)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

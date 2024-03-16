@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCVobWaypoint>::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: void* __thiscall zCList<zCVobWaypoint>::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCVobWaypoint__ScalarDeletingDestructor : zCList<zCVobWaypoint> { void* operator()(unsigned int); };
+BindedHook Ivk_zCList_zCVobWaypoint__ScalarDeletingDestructor{ ZENFOR(0x0070A590, 0x00745420, 0x007546F0, 0x007B41F0), &zCList_zCVobWaypoint__ScalarDeletingDestructor::operator() };
+void* zCList_zCVobWaypoint__ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCList_zCVobWaypoint__ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::DoDie(oCNpc*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCNpc::DoDie(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_DoDie : oCNpc { void operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_DoDie{ ZENFOR(0x006934A0, 0x006C4BF0, 0x006D8000, 0x00736760), &oCNpc_DoDie::operator() };
+void oCNpc_DoDie::operator()(oCNpc* a0)
+{
+	THISCALL(Ivk_oCNpc_DoDie)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

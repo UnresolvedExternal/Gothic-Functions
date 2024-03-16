@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::AdjustShapeToOrigin(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall oCVisualFX::AdjustShapeToOrigin()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_AdjustShapeToOrigin : oCVisualFX { void operator()(); };
+BindedHook Ivk_oCVisualFX_AdjustShapeToOrigin{ ZENFOR(0x0048F390, 0x0049B170, 0x00497230, 0x00498EE0), &oCVisualFX_AdjustShapeToOrigin::operator() };
+void oCVisualFX_AdjustShapeToOrigin::operator()()
+{
+	THISCALL(Ivk_oCVisualFX_AdjustShapeToOrigin)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

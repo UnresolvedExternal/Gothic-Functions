@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspSector::HasManyBigPortals(): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zCBspSector::HasManyBigPortals() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspSector_HasManyBigPortals : zCBspSector { int operator()() const; };
+BindedHook Ivk_zCBspSector_HasManyBigPortals{ ZENFOR(0x00518550, 0x0052DF80, 0x00526560, 0x00529350), &zCBspSector_HasManyBigPortals::operator() };
+int zCBspSector_HasManyBigPortals::operator()() const
+{
+	int result = THISCALL(Ivk_zCBspSector_HasManyBigPortals)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

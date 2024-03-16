@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLight::SumLightsAtPositionWS(zCArray<zCVobLight*>const&, zVEC3 const&, int): zCOLOR]]></Title>
+			<Description><![CDATA[public: static zCOLOR __cdecl zCVobLight::SumLightsAtPositionWS(zCArray<zCVobLight*>const&, zVEC3 const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCOLOR Hook_zCVobLight_SumLightsAtPositionWS(zCArray<zCVobLight*>const&, zVEC3 const&, int);
+BindedHook Ivk_zCVobLight_SumLightsAtPositionWS{ ZENFOR(0x005DBBE0, 0x005FB6E0, 0x00601630, 0x00608410), Hook_zCVobLight_SumLightsAtPositionWS };
+zCOLOR Hook_zCVobLight_SumLightsAtPositionWS(zCArray<zCVobLight*>const& a0, zVEC3 const& a1, int a2)
+{
+	zCOLOR result = Ivk_zCVobLight_SumLightsAtPositionWS(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

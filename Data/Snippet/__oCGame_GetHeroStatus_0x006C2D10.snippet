@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::GetHeroStatus(): oHEROSTATUS]]></Title>
+			<Description><![CDATA[public: oHEROSTATUS __thiscall oCGame::GetHeroStatus()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_GetHeroStatus : oCGame { oHEROSTATUS operator()(); };
+BindedHook Ivk_oCGame_GetHeroStatus{ ZENFOR(0x00638B60, 0x0065F0B0, 0x00666210, 0x006C2D10), &oCGame_GetHeroStatus::operator() };
+oHEROSTATUS oCGame_GetHeroStatus::operator()()
+{
+	oHEROSTATUS result = THISCALL(Ivk_oCGame_GetHeroStatus)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

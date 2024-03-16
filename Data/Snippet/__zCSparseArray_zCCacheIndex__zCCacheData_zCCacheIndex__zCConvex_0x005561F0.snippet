@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zCCacheIndex, zCCacheData<zCCacheIndex, zCConvexCollisionCache>>::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCSparseArray<zCCacheIndex, zCCacheData<zCCacheIndex, zCConvexCollisionCache>>::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A, G2A
+struct zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___VectorDeletingDestructor : zCSparseArray<zCCacheIndex, zCCacheData<zCCacheIndex, zCConvexCollisionCache>> { void* operator()(unsigned int); };
+BindedHook Ivk_zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___VectorDeletingDestructor{ ZENFOR(0x00541A90, 0x005593F0, 0x00000000, 0x005561F0), &zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___VectorDeletingDestructor::operator() };
+void* zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCSparseArray_zCCacheIndex__zCCacheData_zCCacheIndex__zCConvexCollisionCache___VectorDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

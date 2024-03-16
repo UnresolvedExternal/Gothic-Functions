@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAICamera::oCAICamera()]]></Title>
+			<Description><![CDATA[public: __thiscall oCAICamera::oCAICamera()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAICamera_oCAICamera : oCAICamera { oCAICamera* operator()(); };
+BindedHook Ivk_oCAICamera_oCAICamera{ ZENFOR(0x00616500, 0x00639450, 0x00641530, 0x0069DD00), &oCAICamera_oCAICamera::operator() };
+oCAICamera* oCAICamera_oCAICamera::operator()()
+{
+	oCAICamera* result = THISCALL(Ivk_oCAICamera_oCAICamera)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

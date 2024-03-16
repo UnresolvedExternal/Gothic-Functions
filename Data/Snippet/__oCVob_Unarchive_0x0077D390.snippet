@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVob::Unarchive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCVob::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVob_Unarchive : oCVob { void operator()(zCArchiver&); };
+BindedHook Ivk_oCVob_Unarchive{ ZENFOR(0x006D4670, 0x0070B940, 0x0071D950, 0x0077D390), &oCVob_Unarchive::operator() };
+void oCVob_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCVob_Unarchive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

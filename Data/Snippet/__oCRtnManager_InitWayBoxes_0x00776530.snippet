@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCRtnManager::InitWayBoxes(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCRtnManager::InitWayBoxes()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCRtnManager_InitWayBoxes : oCRtnManager { void operator()(); };
+BindedHook Ivk_oCRtnManager_InitWayBoxes{ ZENFOR(0x006CE450, 0x00704BE0, 0x00716FA0, 0x00776530), &oCRtnManager_InitWayBoxes::operator() };
+void oCRtnManager_InitWayBoxes::operator()()
+{
+	THISCALL(Ivk_oCRtnManager_InitWayBoxes)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

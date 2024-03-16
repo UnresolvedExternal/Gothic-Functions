@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::GetNumOfShortCom(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCCSManager::GetNumOfShortCom()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_GetNumOfShortCom : zCCSManager { int operator()(); };
+BindedHook Ivk_zCCSManager_GetNumOfShortCom{ ZENFOR(0x0041AC90, 0x0041CC80, 0x0041B0C0, 0x0041B0C0), &zCCSManager_GetNumOfShortCom::operator() };
+int zCCSManager_GetNumOfShortCom::operator()()
+{
+	int result = THISCALL(Ivk_zCCSManager_GetNumOfShortCom)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

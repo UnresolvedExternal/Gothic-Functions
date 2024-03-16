@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventCore::~zCEventCore()]]></Title>
+			<Description><![CDATA[protected: virtual __thiscall zCEventCore::~zCEventCore()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventCore_Destructor : zCEventCore { void operator()(); };
+BindedHook Ivk_zCEventCore_Destructor{ ZENFOR(0x005D9810, 0x005F9140, 0x005FF270, 0x00606100), &zCEventCore_Destructor::operator() };
+void zCEventCore_Destructor::operator()()
+{
+	THISCALL(Ivk_zCEventCore_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_SymbolTable::SetSize(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPar_SymbolTable::SetSize(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_SymbolTable_SetSize : zCPar_SymbolTable { void operator()(int); };
+BindedHook Ivk_zCPar_SymbolTable_SetSize{ ZENFOR(0x006FA9A0, 0x00734D40, 0x007449F0, 0x007A4430), &zCPar_SymbolTable_SetSize::operator() };
+void zCPar_SymbolTable_SetSize::operator()(int a0)
+{
+	THISCALL(Ivk_zCPar_SymbolTable_SetSize)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

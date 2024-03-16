@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCOption::zCOption()]]></Title>
+			<Description><![CDATA[public: __thiscall zCOption::zCOption()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCOption_zCOption : zCOption { zCOption* operator()(); };
+BindedHook Ivk_zCOption_zCOption{ ZENFOR(0x0045ADD0, 0x00462190, 0x0045FB40, 0x00460350), &zCOption_zCOption::operator() };
+zCOption* zCOption_zCOption::operator()()
+{
+	zCOption* result = THISCALL(Ivk_zCOption_zCOption)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

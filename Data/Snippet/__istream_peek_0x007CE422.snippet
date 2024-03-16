@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[istream::peek(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall istream::peek()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct istream_peek : istream { int operator()(); };
+BindedHook Ivk_istream_peek{ ZENFOR(0x00774A78, 0x007B8838, 0x007C1F62, 0x007CE422), &istream_peek::operator() };
+int istream_peek::operator()()
+{
+	int result = THISCALL(Ivk_istream_peek)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

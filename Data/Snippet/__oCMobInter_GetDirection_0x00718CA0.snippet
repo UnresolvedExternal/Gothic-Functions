@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::GetDirection(): oCMobInter::TMobInterDirection]]></Title>
+			<Description><![CDATA[public: virtual oCMobInter::TMobInterDirection __thiscall oCMobInter::GetDirection()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A, G2, G2A
+struct oCMobInter_GetDirection : oCMobInter { oCMobInter::TMobInterDirection operator()(); };
+BindedHook Ivk_oCMobInter_GetDirection{ ZENFOR(0x00000000, 0x006A6010, 0x006BAC10, 0x00718CA0), &oCMobInter_GetDirection::operator() };
+oCMobInter::TMobInterDirection oCMobInter_GetDirection::operator()()
+{
+	oCMobInter::TMobInterDirection result = THISCALL(Ivk_oCMobInter_GetDirection)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

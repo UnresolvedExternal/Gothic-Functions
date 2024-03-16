@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollisionDetector::RegisterStaticIntersectionTest(zCCollisionObjectDef*, zCCollisionObjectDef*, int(__cdecl*)(float, zCCollisionObject*, zMAT4 const&, zCCollisionObject*, zMAT4 const&, zCCollisionReport**)): void]]></Title>
+			<Description><![CDATA[public: virtual void __fastcall zCCollisionDetector::RegisterStaticIntersectionTest(zCCollisionObjectDef*, zCCollisionObjectDef*, int(__cdecl*)(float, zCCollisionObject*, zMAT4 const&, zCCollisionObject*, zMAT4 const&, zCCollisionReport**))]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollisionDetector_RegisterStaticIntersectionTest : zCCollisionDetector { void __fastcall operator()(zCCollisionObjectDef*, zCCollisionObjectDef*, int(__cdecl*)(float, zCCollisionObject*, zMAT4 const&, zCCollisionObject*, zMAT4 const&, zCCollisionReport**)); };
+BindedHook Ivk_zCCollisionDetector_RegisterStaticIntersectionTest{ ZENFOR(0x005381C0, 0x0054F390, 0x00547500, 0x0054C720), &zCCollisionDetector_RegisterStaticIntersectionTest::operator() };
+void __fastcall zCCollisionDetector_RegisterStaticIntersectionTest::operator()(zCCollisionObjectDef* a0, zCCollisionObjectDef* a1, int(__cdecl* a2)(float, zCCollisionObject*, zMAT4 const&, zCCollisionObject*, zMAT4 const&, zCCollisionReport**))
+{
+	THISCALL(Ivk_zCCollisionDetector_RegisterStaticIntersectionTest)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogStealContainer::SetAlignment(oCViewDialogStealContainer::oEStealContainerAlignment): void]]></Title>
+			<Description><![CDATA[public: void __fastcall oCViewDialogStealContainer::SetAlignment(oCViewDialogStealContainer::oEStealContainerAlignment)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogStealContainer_SetAlignment : oCViewDialogStealContainer { void __fastcall operator()(oCViewDialogStealContainer::oEStealContainerAlignment); };
+BindedHook Ivk_oCViewDialogStealContainer_SetAlignment{ ZENFOR(0x00727FC0, 0x00765AF0, 0x007746A0, 0x0068A3F0), &oCViewDialogStealContainer_SetAlignment::operator() };
+void __fastcall oCViewDialogStealContainer_SetAlignment::operator()(oCViewDialogStealContainer::oEStealContainerAlignment a0)
+{
+	THISCALL(Ivk_oCViewDialogStealContainer_SetAlignment)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

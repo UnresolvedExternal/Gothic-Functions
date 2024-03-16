@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSTRING::TrimRight(char): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zSTRING::TrimRight(char)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSTRING_TrimRight : zSTRING { void operator()(char); };
+BindedHook Ivk_zSTRING_TrimRight{ ZENFOR(0x004675A0, 0x0046F4A0, 0x0046BB40, 0x0046C770), &zSTRING_TrimRight::operator() };
+void zSTRING_TrimRight::operator()(char a0)
+{
+	THISCALL(Ivk_zSTRING_TrimRight)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

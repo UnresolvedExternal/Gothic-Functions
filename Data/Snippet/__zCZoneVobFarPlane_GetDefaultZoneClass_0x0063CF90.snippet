@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneVobFarPlane::GetDefaultZoneClass(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[public: virtual zCClassDef* __thiscall zCZoneVobFarPlane::GetDefaultZoneClass() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZoneVobFarPlane_GetDefaultZoneClass : zCZoneVobFarPlane { zCClassDef* operator()() const; };
+BindedHook Ivk_zCZoneVobFarPlane_GetDefaultZoneClass{ ZENFOR(0x0060C500, 0x0062EA70, 0x006357B0, 0x0063CF90), &zCZoneVobFarPlane_GetDefaultZoneClass::operator() };
+zCClassDef* zCZoneVobFarPlane_GetDefaultZoneClass::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCZoneVobFarPlane_GetDefaultZoneClass)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

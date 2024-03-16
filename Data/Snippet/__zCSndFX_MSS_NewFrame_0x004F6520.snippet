@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::NewFrame(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCSndFX_MSS::NewFrame()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCSndFX_MSS_NewFrame();
+BindedHook Ivk_zCSndFX_MSS_NewFrame{ ZENFOR(0x004E8290, 0x004FA470, 0x004F38A0, 0x004F6520), Hook_zCSndFX_MSS_NewFrame };
+void Hook_zCSndFX_MSS_NewFrame()
+{
+	Ivk_zCSndFX_MSS_NewFrame();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

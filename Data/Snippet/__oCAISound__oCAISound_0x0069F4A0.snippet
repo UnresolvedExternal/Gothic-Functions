@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAISound::~oCAISound()]]></Title>
+			<Description><![CDATA[protected: virtual __thiscall oCAISound::~oCAISound()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAISound_Destructor : oCAISound { void operator()(); };
+BindedHook Ivk_oCAISound_Destructor{ ZENFOR(0x00617940, 0x0063ABE0, 0x00642CD0, 0x0069F4A0), &oCAISound_Destructor::operator() };
+void oCAISound_Destructor::operator()()
+{
+	THISCALL(Ivk_oCAISound_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

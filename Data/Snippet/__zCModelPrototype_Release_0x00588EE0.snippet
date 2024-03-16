@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::Release(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCModelPrototype::Release()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_Release : zCModelPrototype { int operator()(); };
+BindedHook Ivk_zCModelPrototype_Release{ ZENFOR(0x0056E710, 0x00587A90, 0x00583980, 0x00588EE0), &zCModelPrototype_Release::operator() };
+int zCModelPrototype_Release::operator()()
+{
+	int result = THISCALL(Ivk_zCModelPrototype_Release)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

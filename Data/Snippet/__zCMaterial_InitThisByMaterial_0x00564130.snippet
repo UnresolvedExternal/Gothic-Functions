@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMaterial::InitThisByMaterial(zCMaterial const&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCMaterial::InitThisByMaterial(zCMaterial const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMaterial_InitThisByMaterial : zCMaterial { void operator()(zCMaterial const&); };
+BindedHook Ivk_zCMaterial_InitThisByMaterial{ ZENFOR(0x0054D2F0, 0x005656A0, 0x0055EF10, 0x00564130), &zCMaterial_InitThisByMaterial::operator() };
+void zCMaterial_InitThisByMaterial::operator()(zCMaterial const& a0)
+{
+	THISCALL(Ivk_zCMaterial_InitThisByMaterial)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

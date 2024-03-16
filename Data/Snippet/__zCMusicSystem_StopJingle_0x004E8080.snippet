@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSystem::StopJingle(int const&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCMusicSystem::StopJingle(int const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSystem_StopJingle : zCMusicSystem { void operator()(int const&); };
+BindedHook Ivk_zCMusicSystem_StopJingle{ ZENFOR(0x004DAE20, 0x004EBFB0, 0x004E5570, 0x004E8080), &zCMusicSystem_StopJingle::operator() };
+void zCMusicSystem_StopJingle::operator()(int const& a0)
+{
+	THISCALL(Ivk_zCMusicSystem_StopJingle)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

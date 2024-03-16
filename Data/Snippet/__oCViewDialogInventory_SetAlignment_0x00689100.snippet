@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogInventory::SetAlignment(oCViewDialogInventory::oEInventoryAlignment): void]]></Title>
+			<Description><![CDATA[public: void __fastcall oCViewDialogInventory::SetAlignment(oCViewDialogInventory::oEInventoryAlignment)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogInventory_SetAlignment : oCViewDialogInventory { void __fastcall operator()(oCViewDialogInventory::oEInventoryAlignment); };
+BindedHook Ivk_oCViewDialogInventory_SetAlignment{ ZENFOR(0x00726B00, 0x00764350, 0x007733E0, 0x00689100), &oCViewDialogInventory_SetAlignment::operator() };
+void __fastcall oCViewDialogInventory_SetAlignment::operator()(oCViewDialogInventory::oEInventoryAlignment a0)
+{
+	THISCALL(Ivk_oCViewDialogInventory_SetAlignment)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

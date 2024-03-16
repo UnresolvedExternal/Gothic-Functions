@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EV_WaitForQuestion(oCMsgConversation*): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall oCNpc::EV_WaitForQuestion(oCMsgConversation*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_EV_WaitForQuestion : oCNpc { int operator()(oCMsgConversation*); };
+BindedHook Ivk_oCNpc_EV_WaitForQuestion{ ZENFOR(0x00633390, 0x006591C0, 0x00660390, 0x006BCD20), &oCNpc_EV_WaitForQuestion::operator() };
+int oCNpc_EV_WaitForQuestion::operator()(oCMsgConversation* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_EV_WaitForQuestion)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

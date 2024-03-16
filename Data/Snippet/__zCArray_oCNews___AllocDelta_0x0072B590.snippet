@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<oCNews*>::AllocDelta(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<oCNews*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_oCNews___AllocDelta : zCArray<oCNews*> { void operator()(int); };
+BindedHook Ivk_zCArray_oCNews___AllocDelta{ ZENFOR(0x00689380, 0x006B9650, 0x006CD500, 0x0072B590), &zCArray_oCNews___AllocDelta::operator() };
+void zCArray_oCNews___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_oCNews___AllocDelta)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

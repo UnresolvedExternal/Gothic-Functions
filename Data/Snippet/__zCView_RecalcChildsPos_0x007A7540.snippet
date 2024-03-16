@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::RecalcChildsPos(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCView::RecalcChildsPos()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_RecalcChildsPos : zCView { void operator()(); };
+BindedHook Ivk_zCView_RecalcChildsPos{ ZENFOR(0x006FD9A0, 0x00737DA0, 0x00747A40, 0x007A7540), &zCView_RecalcChildsPos::operator() };
+void zCView_RecalcChildsPos::operator()()
+{
+	THISCALL(Ivk_zCView_RecalcChildsPos)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolyStrip::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCPolyStrip::_GetClassDef() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolyStrip__GetClassDef : zCPolyStrip { zCClassDef* operator()() const; };
+BindedHook Ivk_zCPolyStrip__GetClassDef{ ZENFOR(0x004C0DC0, 0x004D06F0, 0x004C7B90, 0x004CA100), &zCPolyStrip__GetClassDef::operator() };
+zCClassDef* zCPolyStrip__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCPolyStrip__GetClassDef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

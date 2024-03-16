@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcFocus::GetAzi(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall oCNpcFocus::GetAzi()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcFocus_GetAzi : oCNpcFocus { float operator()(); };
+BindedHook Ivk_oCNpcFocus_GetAzi{ ZENFOR(0x00635580, 0x0065B720, 0x006629F0, 0x006BF380), &oCNpcFocus_GetAzi::operator() };
+float oCNpcFocus_GetAzi::operator()()
+{
+	float result = THISCALL(Ivk_oCNpcFocus_GetAzi)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

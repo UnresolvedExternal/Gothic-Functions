@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMeshAni::Load(zCFileBIN&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCMorphMeshAni::Load(zCFileBIN&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMeshAni_Load : zCMorphMeshAni { void operator()(zCFileBIN&); };
+BindedHook Ivk_zCMorphMeshAni_Load{ ZENFOR(0x005837C0, 0x0059E320, 0x0059DD30, 0x005A3290), &zCMorphMeshAni_Load::operator() };
+void zCMorphMeshAni_Load::operator()(zCFileBIN& a0)
+{
+	THISCALL(Ivk_zCMorphMeshAni_Load)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemList::DrawFront(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCMenuItemList::DrawFront()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemList_DrawFront : zCMenuItemList { void operator()(); };
+BindedHook Ivk_zCMenuItemList_DrawFront{ ZENFOR(0x004D9330, 0x004EA450, 0x004E3BA0, 0x004E6550), &zCMenuItemList_DrawFront::operator() };
+void zCMenuItemList_DrawFront::operator()()
+{
+	THISCALL(Ivk_zCMenuItemList_DrawFront)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

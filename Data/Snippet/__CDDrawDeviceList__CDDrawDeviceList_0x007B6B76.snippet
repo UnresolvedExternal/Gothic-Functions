@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CDDrawDeviceList::~CDDrawDeviceList()]]></Title>
+			<Description><![CDATA[public: __thiscall CDDrawDeviceList::~CDDrawDeviceList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CDDrawDeviceList_Destructor : CDDrawDeviceList { void operator()(); };
+BindedHook Ivk_CDDrawDeviceList_Destructor{ ZENFOR(0x0075D482, 0x007A0062, 0x007AA6B0, 0x007B6B76), &CDDrawDeviceList_Destructor::operator() };
+void CDDrawDeviceList_Destructor::operator()()
+{
+	THISCALL(Ivk_CDDrawDeviceList_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

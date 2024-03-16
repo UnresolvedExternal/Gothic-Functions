@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[__CxxSetUnhandledExceptionFilter(): void]]></Title>
+			<Description><![CDATA[void __cdecl __CxxSetUnhandledExceptionFilter()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook___CxxSetUnhandledExceptionFilter();
+BindedHook Ivk___CxxSetUnhandledExceptionFilter{ ZENFOR(0x0078257F, 0x007C6176, 0x007CF8DE, 0x007DBD9E), Hook___CxxSetUnhandledExceptionFilter };
+void Hook___CxxSetUnhandledExceptionFilter()
+{
+	Ivk___CxxSetUnhandledExceptionFilter();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

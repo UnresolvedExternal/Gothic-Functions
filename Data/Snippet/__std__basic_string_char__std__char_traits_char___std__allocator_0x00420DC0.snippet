@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::basic_string<char, std::char_traits<char>, std::allocator<char>>::append(std::basic_string<char, std::char_traits<char>, std::allocator<char>>const&, unsigned int, unsigned int): std::basic_string<char, std::char_traits<char>, std::allocator<char>>&]]></Title>
+			<Description><![CDATA[public: std::basic_string<char, std::char_traits<char>, std::allocator<char>>& __thiscall std::basic_string<char, std::char_traits<char>, std::allocator<char>>::append(std::basic_string<char, std::char_traits<char>, std::allocator<char>>const&, unsigned int, unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__basic_string_char__std__char_traits_char___std__allocator_char___append : std::basic_string<char, std::char_traits<char>, std::allocator<char>> { std::basic_string<char, std::char_traits<char>, std::allocator<char>>& operator()(std::basic_string<char, std::char_traits<char>, std::allocator<char>>const&, unsigned int, unsigned int); };
+BindedHook Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___append{ ZENFOR(0x00420670, 0x00422A20, 0x00420A90, 0x00420DC0), &std__basic_string_char__std__char_traits_char___std__allocator_char___append::operator() };
+std::basic_string<char, std::char_traits<char>, std::allocator<char>>& std__basic_string_char__std__char_traits_char___std__allocator_char___append::operator()(std::basic_string<char, std::char_traits<char>, std::allocator<char>>const& a0, unsigned int a1, unsigned int a2)
+{
+	std::basic_string<char, std::char_traits<char>, std::allocator<char>>& result = THISCALL(Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___append)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

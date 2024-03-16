@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::SetCollisionCandidates(zCArray<zCVob*>): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCVisualFX::SetCollisionCandidates(zCArray<zCVob*>)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_SetCollisionCandidates : oCVisualFX { void operator()(zCArray<zCVob*>); };
+BindedHook Ivk_oCVisualFX_SetCollisionCandidates{ ZENFOR(0x0048DCD0, 0x004998A0, 0x00494D10, 0x004968E0), &oCVisualFX_SetCollisionCandidates::operator() };
+void oCVisualFX_SetCollisionCandidates::operator()(zCArray<zCVob*> a0)
+{
+	THISCALL(Ivk_oCVisualFX_SetCollisionCandidates)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

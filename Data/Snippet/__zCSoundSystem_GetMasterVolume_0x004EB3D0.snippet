@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundSystem::GetMasterVolume(): float]]></Title>
+			<Description><![CDATA[public: virtual float __thiscall zCSoundSystem::GetMasterVolume()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundSystem_GetMasterVolume : zCSoundSystem { float operator()(); };
+BindedHook Ivk_zCSoundSystem_GetMasterVolume{ ZENFOR(0x004DDE50, 0x004EF300, 0x004E8750, 0x004EB3D0), &zCSoundSystem_GetMasterVolume::operator() };
+float zCSoundSystem_GetMasterVolume::operator()()
+{
+	float result = THISCALL(Ivk_zCSoundSystem_GetMasterVolume)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerInfo::SetPingEnd(): unsigned long]]></Title>
+			<Description><![CDATA[public: unsigned long __thiscall zCPlayerInfo::SetPingEnd()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerInfo_SetPingEnd : zCPlayerInfo { unsigned long operator()(); };
+BindedHook Ivk_zCPlayerInfo_SetPingEnd{ ZENFOR(0x00463470, 0x0046AF80, 0x00467F20, 0x00468B50), &zCPlayerInfo_SetPingEnd::operator() };
+unsigned long zCPlayerInfo_SetPingEnd::operator()()
+{
+	unsigned long result = THISCALL(Ivk_zCPlayerInfo_SetPingEnd)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

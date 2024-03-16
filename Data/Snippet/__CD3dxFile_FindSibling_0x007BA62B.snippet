@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3dxFile::FindSibling(unsigned long, unsigned long, void const*, unsigned long): unsigned long]]></Title>
+			<Description><![CDATA[public: unsigned long __thiscall CD3dxFile::FindSibling(unsigned long, unsigned long, void const*, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3dxFile_FindSibling : CD3dxFile { unsigned long operator()(unsigned long, unsigned long, void const*, unsigned long); };
+BindedHook Ivk_CD3dxFile_FindSibling{ ZENFOR(0x00760F37, 0x007A6243, 0x007AE165, 0x007BA62B), &CD3dxFile_FindSibling::operator() };
+unsigned long CD3dxFile_FindSibling::operator()(unsigned long a0, unsigned long a1, void const* a2, unsigned long a3)
+{
+	unsigned long result = THISCALL(Ivk_CD3dxFile_FindSibling)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

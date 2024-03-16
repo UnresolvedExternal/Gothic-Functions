@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::Cast(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCSpell::Cast()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_Cast : oCSpell { int operator()(); };
+BindedHook Ivk_oCSpell_Cast{ ZENFOR(0x0047CFB0, 0x004877A0, 0x00483D00, 0x00485360), &oCSpell_Cast::operator() };
+int oCSpell_Cast::operator()()
+{
+	int result = THISCALL(Ivk_oCSpell_Cast)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

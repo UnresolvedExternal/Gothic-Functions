@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::SetSpellTargetTypes(int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCVisualFX::SetSpellTargetTypes(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_SetSpellTargetTypes : oCVisualFX { void operator()(int); };
+BindedHook Ivk_oCVisualFX_SetSpellTargetTypes{ ZENFOR(0x00482780, 0x0048D7E0, 0x004889E0, 0x0048A1C0), &oCVisualFX_SetSpellTargetTypes::operator() };
+void oCVisualFX_SetSpellTargetTypes::operator()(int a0)
+{
+	THISCALL(Ivk_oCVisualFX_SetSpellTargetTypes)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

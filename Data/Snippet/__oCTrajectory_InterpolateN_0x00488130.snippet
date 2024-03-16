@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTrajectory::InterpolateN(float): zMAT4]]></Title>
+			<Description><![CDATA[public: zMAT4 __thiscall oCTrajectory::InterpolateN(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTrajectory_InterpolateN : oCTrajectory { zMAT4 operator()(float); };
+BindedHook Ivk_oCTrajectory_InterpolateN{ ZENFOR(0x00480740, 0x0048B600, 0x00486AD0, 0x00488130), &oCTrajectory_InterpolateN::operator() };
+zMAT4 oCTrajectory_InterpolateN::operator()(float a0)
+{
+	zMAT4 result = THISCALL(Ivk_oCTrajectory_InterpolateN)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

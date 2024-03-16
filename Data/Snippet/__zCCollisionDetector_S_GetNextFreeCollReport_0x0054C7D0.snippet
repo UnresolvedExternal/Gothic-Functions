@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollisionDetector::S_GetNextFreeCollReport(): zCCollisionReport*]]></Title>
+			<Description><![CDATA[public: static zCCollisionReport* __cdecl zCCollisionDetector::S_GetNextFreeCollReport()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCCollisionReport* Hook_zCCollisionDetector_S_GetNextFreeCollReport();
+BindedHook Ivk_zCCollisionDetector_S_GetNextFreeCollReport{ ZENFOR(0x00538270, 0x0054F440, 0x005475B0, 0x0054C7D0), Hook_zCCollisionDetector_S_GetNextFreeCollReport };
+zCCollisionReport* Hook_zCCollisionDetector_S_GetNextFreeCollReport()
+{
+	zCCollisionReport* result = Ivk_zCCollisionDetector_S_GetNextFreeCollReport();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

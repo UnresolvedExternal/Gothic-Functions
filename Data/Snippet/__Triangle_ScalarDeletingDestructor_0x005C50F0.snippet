@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Triangle::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: void* __thiscall Triangle::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct Triangle_ScalarDeletingDestructor : Triangle { void* operator()(unsigned int); };
+BindedHook Ivk_Triangle_ScalarDeletingDestructor{ ZENFOR(0x005A3110, 0x005BF900, 0x005BF580, 0x005C50F0), &Triangle_ScalarDeletingDestructor::operator() };
+void* Triangle_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_Triangle_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

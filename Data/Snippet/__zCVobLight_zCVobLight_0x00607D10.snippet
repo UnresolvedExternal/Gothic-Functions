@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLight::zCVobLight()]]></Title>
+			<Description><![CDATA[public: __thiscall zCVobLight::zCVobLight()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobLight_zCVobLight : zCVobLight { zCVobLight* operator()(); };
+BindedHook Ivk_zCVobLight_zCVobLight{ ZENFOR(0x005DB4A0, 0x005FAFC0, 0x00600EF0, 0x00607D10), &zCVobLight_zCVobLight::operator() };
+zCVobLight* zCVobLight_zCVobLight::operator()()
+{
+	zCVobLight* result = THISCALL(Ivk_zCVobLight_zCVobLight)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

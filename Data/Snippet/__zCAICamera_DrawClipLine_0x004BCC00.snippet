@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::DrawClipLine(zVEC3 const&, zVEC3 const&, zCOLOR): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCAICamera::DrawClipLine(zVEC3 const&, zVEC3 const&, zCOLOR)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAICamera_DrawClipLine : zCAICamera { void operator()(zVEC3 const&, zVEC3 const&, zCOLOR); };
+BindedHook Ivk_zCAICamera_DrawClipLine{ ZENFOR(0x004B3B60, 0x004C2920, 0x004BA690, 0x004BCC00), &zCAICamera_DrawClipLine::operator() };
+void zCAICamera_DrawClipLine::operator()(zVEC3 const& a0, zVEC3 const& a1, zCOLOR a2)
+{
+	THISCALL(Ivk_zCAICamera_DrawClipLine)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

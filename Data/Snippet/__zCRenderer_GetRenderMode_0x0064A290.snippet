@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::GetRenderMode(): zTRnd_RenderMode [const]]]></Title>
+			<Description><![CDATA[public: virtual zTRnd_RenderMode __thiscall zCRenderer::GetRenderMode() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_GetRenderMode : zCRenderer { zTRnd_RenderMode operator()() const; };
+BindedHook Ivk_zCRenderer_GetRenderMode{ ZENFOR(0x00713AF0, 0x0074F810, 0x0075ECF0, 0x0064A290), &zCRenderer_GetRenderMode::operator() };
+zTRnd_RenderMode zCRenderer_GetRenderMode::operator()() const
+{
+	zTRnd_RenderMode result = THISCALL(Ivk_zCRenderer_GetRenderMode)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

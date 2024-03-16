@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zVEC3>::zCArray<zVEC3>(zCArray<zVEC3>const&)]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zVEC3>::zCArray<zVEC3>(zCArray<zVEC3>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zVEC3__zCArray_zVEC3_ : zCArray<zVEC3> { zCArray<zVEC3>* operator()(zCArray<zVEC3>const&); };
+BindedHook Ivk_zCArray_zVEC3__zCArray_zVEC3_{ ZENFOR(0x005A3590, 0x005BFCB0, 0x005BF9C0, 0x005C5530), &zCArray_zVEC3__zCArray_zVEC3_::operator() };
+zCArray<zVEC3>* zCArray_zVEC3__zCArray_zVEC3_::operator()(zCArray<zVEC3>const& a0)
+{
+	zCArray<zVEC3>* result = THISCALL(Ivk_zCArray_zVEC3__zCArray_zVEC3_)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

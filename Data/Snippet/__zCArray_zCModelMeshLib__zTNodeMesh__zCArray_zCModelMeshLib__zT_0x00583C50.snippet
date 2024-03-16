@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCModelMeshLib::zTNodeMesh>::zCArray<zCModelMeshLib::zTNodeMesh>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zCModelMeshLib::zTNodeMesh>::zCArray<zCModelMeshLib::zTNodeMesh>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCModelMeshLib__zTNodeMesh__zCArray_zCModelMeshLib__zTNodeMesh_ : zCArray<zCModelMeshLib::zTNodeMesh> { zCArray<zCModelMeshLib::zTNodeMesh>* operator()(); };
+BindedHook Ivk_zCArray_zCModelMeshLib__zTNodeMesh__zCArray_zCModelMeshLib__zTNodeMesh_{ ZENFOR(0x00569280, 0x00582100, 0x0057E6F0, 0x00583C50), &zCArray_zCModelMeshLib__zTNodeMesh__zCArray_zCModelMeshLib__zTNodeMesh_::operator() };
+zCArray<zCModelMeshLib::zTNodeMesh>* zCArray_zCModelMeshLib__zTNodeMesh__zCArray_zCModelMeshLib__zTNodeMesh_::operator()()
+{
+	zCArray<zCModelMeshLib::zTNodeMesh>* result = THISCALL(Ivk_zCArray_zCModelMeshLib__zTNodeMesh__zCArray_zCModelMeshLib__zTNodeMesh_)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

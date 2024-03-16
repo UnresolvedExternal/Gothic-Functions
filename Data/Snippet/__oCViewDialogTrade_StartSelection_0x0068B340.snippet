@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogTrade::StartSelection(): void]]></Title>
+			<Description><![CDATA[public: virtual void __fastcall oCViewDialogTrade::StartSelection()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogTrade_StartSelection : oCViewDialogTrade { void __fastcall operator()(); };
+BindedHook Ivk_oCViewDialogTrade_StartSelection{ ZENFOR(0x00729660, 0x00767500, 0x00775610, 0x0068B340), &oCViewDialogTrade_StartSelection::operator() };
+void __fastcall oCViewDialogTrade_StartSelection::operator()()
+{
+	THISCALL(Ivk_oCViewDialogTrade_StartSelection)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

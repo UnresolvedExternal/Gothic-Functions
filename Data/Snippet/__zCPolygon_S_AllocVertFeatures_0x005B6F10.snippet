@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::S_AllocVertFeatures(int): zCVertFeature*]]></Title>
+			<Description><![CDATA[public: static zCVertFeature* __cdecl zCPolygon::S_AllocVertFeatures(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCVertFeature* Hook_zCPolygon_S_AllocVertFeatures(int);
+BindedHook Ivk_zCPolygon_S_AllocVertFeatures{ ZENFOR(0x00595A60, 0x005B1950, 0x005B13A0, 0x005B6F10), Hook_zCPolygon_S_AllocVertFeatures };
+zCVertFeature* Hook_zCPolygon_S_AllocVertFeatures(int a0)
+{
+	zCVertFeature* result = Ivk_zCPolygon_S_AllocVertFeatures(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

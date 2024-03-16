@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInfoManager::RestoreParserInstances(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCInfoManager::RestoreParserInstances()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInfoManager_RestoreParserInstances : oCInfoManager { void operator()(); };
+BindedHook Ivk_oCInfoManager_RestoreParserInstances{ ZENFOR(0x006654A0, 0x00692780, 0x006A5900, 0x00703390), &oCInfoManager_RestoreParserInstances::operator() };
+void oCInfoManager_RestoreParserInstances::operator()()
+{
+	THISCALL(Ivk_oCInfoManager_RestoreParserInstances)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

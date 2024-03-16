@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::GetHitDirection(): zSTRING]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall oCAniCtrl_Human::GetHitDirection()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_GetHitDirection : oCAniCtrl_Human { zSTRING operator()(); };
+BindedHook Ivk_oCAniCtrl_Human_GetHitDirection{ ZENFOR(0x006283A0, 0x0064D490, 0x00654B00, 0x006B1490), &oCAniCtrl_Human_GetHitDirection::operator() };
+zSTRING oCAniCtrl_Human_GetHitDirection::operator()()
+{
+	zSTRING result = THISCALL(Ivk_oCAniCtrl_Human_GetHitDirection)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

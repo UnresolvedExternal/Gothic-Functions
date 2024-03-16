@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_DataStack::Clear(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPar_DataStack::Clear()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_DataStack_Clear : zCPar_DataStack { void operator()(); };
+BindedHook Ivk_zCPar_DataStack_Clear{ ZENFOR(0x006FB560, 0x007359B0, 0x00745680, 0x007A5180), &zCPar_DataStack_Clear::operator() };
+void zCPar_DataStack_Clear::operator()()
+{
+	THISCALL(Ivk_zCPar_DataStack_Clear)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

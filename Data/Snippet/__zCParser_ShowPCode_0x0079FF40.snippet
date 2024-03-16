@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::ShowPCode(int, zCView*, int): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCParser::ShowPCode(int, zCView*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_ShowPCode : zCParser { void operator()(int, zCView*, int); };
+BindedHook Ivk_zCParser_ShowPCode{ ZENFOR(0x006F65F0, 0x00730590, 0x00740500, 0x0079FF40), &zCParser_ShowPCode::operator() };
+void zCParser_ShowPCode::operator()(int a0, zCView* a1, int a2)
+{
+	THISCALL(Ivk_zCParser_ShowPCode)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

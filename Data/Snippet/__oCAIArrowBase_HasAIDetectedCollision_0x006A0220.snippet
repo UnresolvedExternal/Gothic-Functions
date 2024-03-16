@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrowBase::HasAIDetectedCollision(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCAIArrowBase::HasAIDetectedCollision()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIArrowBase_HasAIDetectedCollision : oCAIArrowBase { int operator()(); };
+BindedHook Ivk_oCAIArrowBase_HasAIDetectedCollision{ ZENFOR(0x00618640, 0x0063B9D0, 0x00643A50, 0x006A0220), &oCAIArrowBase_HasAIDetectedCollision::operator() };
+int oCAIArrowBase_HasAIDetectedCollision::operator()()
+{
+	int result = THISCALL(Ivk_oCAIArrowBase_HasAIDetectedCollision)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

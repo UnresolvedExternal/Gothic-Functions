@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetAdditionalVisuals(zSTRING&, int, int, zSTRING&, int, int, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetAdditionalVisuals(zSTRING&, int, int, zSTRING&, int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetAdditionalVisuals : oCNpc { void operator()(zSTRING&, int, int, zSTRING&, int, int, int); };
+BindedHook Ivk_oCNpc_SetAdditionalVisuals{ ZENFOR(0x00694EF0, 0x006C6850, 0x006D9C10, 0x00738350), &oCNpc_SetAdditionalVisuals::operator() };
+void oCNpc_SetAdditionalVisuals::operator()(zSTRING& a0, int a1, int a2, zSTRING& a3, int a4, int a5, int a6)
+{
+	THISCALL(Ivk_oCNpc_SetAdditionalVisuals)(a0, a1, a2, a3, a4, a5, a6);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

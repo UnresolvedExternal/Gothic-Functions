@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CopyInSingleMipChain(IDirectDrawSurface7*, unsigned char**, unsigned char*): long]]></Title>
+			<Description><![CDATA[long __cdecl CopyInSingleMipChain(IDirectDrawSurface7*, unsigned char**, unsigned char*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook_CopyInSingleMipChain(IDirectDrawSurface7*, unsigned char**, unsigned char*);
+BindedHook Ivk_CopyInSingleMipChain{ ZENFOR(0x0076457D, 0x007ABF16, 0x007B17AB, 0x007BDC71), Hook_CopyInSingleMipChain };
+long Hook_CopyInSingleMipChain(IDirectDrawSurface7* a0, unsigned char** a1, unsigned char* a2)
+{
+	long result = Ivk_CopyInSingleMipChain(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

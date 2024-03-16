@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::CalcPrevNextActKeyOfTime(float const&, zCArray<zCCamTrj_KeyFrame*>&, int&, int&, int&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCCSCamera::CalcPrevNextActKeyOfTime(float const&, zCArray<zCCamTrj_KeyFrame*>&, int&, int&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_CalcPrevNextActKeyOfTime : zCCSCamera { void operator()(float const&, zCArray<zCCamTrj_KeyFrame*>&, int&, int&, int&); };
+BindedHook Ivk_zCCSCamera_CalcPrevNextActKeyOfTime{ ZENFOR(0x004BCF00, 0x004CC450, 0x004C3CA0, 0x004C6210), &zCCSCamera_CalcPrevNextActKeyOfTime::operator() };
+void zCCSCamera_CalcPrevNextActKeyOfTime::operator()(float const& a0, zCArray<zCCamTrj_KeyFrame*>& a1, int& a2, int& a3, int& a4)
+{
+	THISCALL(Ivk_zCCSCamera_CalcPrevNextActKeyOfTime)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSavegameManager::GetSavegame(int): oCSavegameInfo*]]></Title>
+			<Description><![CDATA[public: oCSavegameInfo* __thiscall oCSavegameManager::GetSavegame(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSavegameManager_GetSavegame : oCSavegameManager { oCSavegameInfo* operator()(int); };
+BindedHook Ivk_oCSavegameManager_GetSavegame{ ZENFOR(0x00435D90, 0x0043A130, 0x00438CB0, 0x004392E0), &oCSavegameManager_GetSavegame::operator() };
+oCSavegameInfo* oCSavegameManager_GetSavegame::operator()(int a0)
+{
+	oCSavegameInfo* result = THISCALL(Ivk_oCSavegameManager_GetSavegame)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderManager::AddPoly(zCPolygon*): void]]></Title>
+			<Description><![CDATA[public: void __fastcall zCRenderManager::AddPoly(zCPolygon*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCRenderManager_AddPoly : zCRenderManager { void __fastcall operator()(zCPolygon*); };
+BindedHook Ivk_zCRenderManager_AddPoly{ ZENFOR(0x005B1A90, 0x005CECA0, 0x00000000, 0x00000000), &zCRenderManager_AddPoly::operator() };
+void __fastcall zCRenderManager_AddPoly::operator()(zCPolygon* a0)
+{
+	THISCALL(Ivk_zCRenderManager_AddPoly)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

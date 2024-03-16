@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::Write(void const*, long): long]]></Title>
+			<Description><![CDATA[public: virtual long __thiscall zFILE_FILE::Write(void const*, long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_Write : zFILE_FILE { long operator()(void const*, long); };
+BindedHook Ivk_zFILE_FILE_Write{ ZENFOR(0x00440510, 0x00445B00, 0x00443E00, 0x00444430), &zFILE_FILE_Write::operator() };
+long zFILE_FILE_Write::operator()(void const* a0, long a1)
+{
+	long result = THISCALL(Ivk_zFILE_FILE_Write)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

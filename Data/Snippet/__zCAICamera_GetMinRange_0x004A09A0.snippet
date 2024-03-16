@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::GetMinRange(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall zCAICamera::GetMinRange()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAICamera_GetMinRange : zCAICamera { float operator()(); };
+BindedHook Ivk_zCAICamera_GetMinRange{ ZENFOR(0x004994C0, 0x004A6580, 0x0049E4C0, 0x004A09A0), &zCAICamera_GetMinRange::operator() };
+float zCAICamera_GetMinRange::operator()()
+{
+	float result = THISCALL(Ivk_zCAICamera_GetMinRange)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

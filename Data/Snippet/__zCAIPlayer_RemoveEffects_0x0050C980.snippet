@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::RemoveEffects(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCAIPlayer::RemoveEffects()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_RemoveEffects : zCAIPlayer { void operator()(); };
+BindedHook Ivk_zCAIPlayer_RemoveEffects{ ZENFOR(0x004FCF50, 0x00510090, 0x00509BD0, 0x0050C980), &zCAIPlayer_RemoveEffects::operator() };
+void zCAIPlayer_RemoveEffects::operator()()
+{
+	THISCALL(Ivk_zCAIPlayer_RemoveEffects)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::FindMeshTreeNode(zSTRING const&, zCTree<zCModelNode>*): zCTree<zCModelNode>*]]></Title>
+			<Description><![CDATA[public: zCTree<zCModelNode>* __thiscall zCModelPrototype::FindMeshTreeNode(zSTRING const&, zCTree<zCModelNode>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_FindMeshTreeNode : zCModelPrototype { zCTree<zCModelNode>* operator()(zSTRING const&, zCTree<zCModelNode>*); };
+BindedHook Ivk_zCModelPrototype_FindMeshTreeNode{ ZENFOR(0x0056F410, 0x00588820, 0x00584640, 0x00589BA0), &zCModelPrototype_FindMeshTreeNode::operator() };
+zCTree<zCModelNode>* zCModelPrototype_FindMeshTreeNode::operator()(zSTRING const& a0, zCTree<zCModelNode>* a1)
+{
+	zCTree<zCModelNode>* result = THISCALL(Ivk_zCModelPrototype_FindMeshTreeNode)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobSound::ProcessZoneList(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCVobSound::ProcessZoneList(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobSound_ProcessZoneList : zCVobSound { void operator()(zCArraySort<zCZone*>const&, zCArraySort<zCZone*>const&, zCWorld*); };
+BindedHook Ivk_zCVobSound_ProcessZoneList{ ZENFOR(0x0060DDB0, 0x006304E0, 0x006370E0, 0x0063E8D0), &zCVobSound_ProcessZoneList::operator() };
+void zCVobSound_ProcessZoneList::operator()(zCArraySort<zCZone*>const& a0, zCArraySort<zCZone*>const& a1, zCWorld* a2)
+{
+	THISCALL(Ivk_zCVobSound_ProcessZoneList)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

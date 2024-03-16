@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVideoPlayer::~zCVideoPlayer()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCVideoPlayer::~zCVideoPlayer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVideoPlayer_Destructor : zCVideoPlayer { void operator()(); };
+BindedHook Ivk_zCVideoPlayer_Destructor{ ZENFOR(0x00469230, 0x004712F0, 0x0046D8E0, 0x0046E510), &zCVideoPlayer_Destructor::operator() };
+void zCVideoPlayer_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVideoPlayer_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCPortalRoomManager::SavePortalData(zCArchiver&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCPortalRoomManager::SavePortalData(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCPortalRoomManager_SavePortalData : oCPortalRoomManager { void operator()(zCArchiver&); };
+BindedHook Ivk_oCPortalRoomManager_SavePortalData{ ZENFOR(0x006CBFC0, 0x00702380, 0x007145E0, 0x00773B70), &oCPortalRoomManager_SavePortalData::operator() };
+void oCPortalRoomManager_SavePortalData::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCPortalRoomManager_SavePortalData)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

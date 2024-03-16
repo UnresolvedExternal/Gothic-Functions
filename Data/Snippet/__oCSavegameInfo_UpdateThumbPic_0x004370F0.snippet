@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSavegameInfo::UpdateThumbPic(zCTextureConvert*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCSavegameInfo::UpdateThumbPic(zCTextureConvert*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSavegameInfo_UpdateThumbPic : oCSavegameInfo { void operator()(zCTextureConvert*); };
+BindedHook Ivk_oCSavegameInfo_UpdateThumbPic{ ZENFOR(0x00434100, 0x00437FE0, 0x00436BF0, 0x004370F0), &oCSavegameInfo_UpdateThumbPic::operator() };
+void oCSavegameInfo_UpdateThumbPic::operator()(zCTextureConvert* a0)
+{
+	THISCALL(Ivk_oCSavegameInfo_UpdateThumbPic)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

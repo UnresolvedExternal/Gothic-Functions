@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ostream::~ostream()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall ostream::~ostream()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ostream_Destructor : ostream { void operator()(); };
+BindedHook Ivk_ostream_Destructor{ ZENFOR(0x0077438F, 0x007B814F, 0x007C1879, 0x007CDD39), &ostream_Destructor::operator() };
+void ostream_Destructor::operator()()
+{
+	THISCALL(Ivk_ostream_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

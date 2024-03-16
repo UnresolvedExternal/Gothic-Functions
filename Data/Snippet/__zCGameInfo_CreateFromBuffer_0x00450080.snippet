@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCGameInfo::CreateFromBuffer(zCBuffer&): zCGameInfo*]]></Title>
+			<Description><![CDATA[public: static zCGameInfo* __cdecl zCGameInfo::CreateFromBuffer(zCBuffer&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCGameInfo* Hook_zCGameInfo_CreateFromBuffer(zCBuffer&);
+BindedHook Ivk_zCGameInfo_CreateFromBuffer{ ZENFOR(0x0044B900, 0x00451E90, 0x0044F930, 0x00450080), Hook_zCGameInfo_CreateFromBuffer };
+zCGameInfo* Hook_zCGameInfo_CreateFromBuffer(zCBuffer& a0)
+{
+	zCGameInfo* result = Ivk_zCGameInfo_CreateFromBuffer(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

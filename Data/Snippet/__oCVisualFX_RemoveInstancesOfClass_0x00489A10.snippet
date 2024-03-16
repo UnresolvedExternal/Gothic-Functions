@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::RemoveInstancesOfClass(zCClassDef&, int): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCVisualFX::RemoveInstancesOfClass(zCClassDef&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCVisualFX_RemoveInstancesOfClass(zCClassDef&, int);
+BindedHook Ivk_oCVisualFX_RemoveInstancesOfClass{ ZENFOR(0x00481EA0, 0x0048CF00, 0x00488250, 0x00489A10), Hook_oCVisualFX_RemoveInstancesOfClass };
+void Hook_oCVisualFX_RemoveInstancesOfClass(zCClassDef& a0, int a1)
+{
+	Ivk_oCVisualFX_RemoveInstancesOfClass(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

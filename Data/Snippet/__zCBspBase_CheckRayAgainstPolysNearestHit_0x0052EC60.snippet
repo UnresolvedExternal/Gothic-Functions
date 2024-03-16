@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspBase::CheckRayAgainstPolysNearestHit(zVEC3 const&, zVEC3 const&, zVEC3&): int [const]]]></Title>
+			<Description><![CDATA[protected: int __fastcall zCBspBase::CheckRayAgainstPolysNearestHit(zVEC3 const&, zVEC3 const&, zVEC3&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A, G2
+struct zCBspBase_CheckRayAgainstPolysNearestHit : zCBspBase { int __fastcall operator()(zVEC3 const&, zVEC3 const&, zVEC3&) const; };
+BindedHook Ivk_zCBspBase_CheckRayAgainstPolysNearestHit{ ZENFOR(0x0051F2A0, 0x00535090, 0x0052EC60, 0x00000000), &zCBspBase_CheckRayAgainstPolysNearestHit::operator() };
+int __fastcall zCBspBase_CheckRayAgainstPolysNearestHit::operator()(zVEC3 const& a0, zVEC3 const& a1, zVEC3& a2) const
+{
+	int result = THISCALL(Ivk_zCBspBase_CheckRayAgainstPolysNearestHit)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

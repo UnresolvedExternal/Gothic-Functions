@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCutscene::CSCheck(int&): int]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall zCCutscene::CSCheck(int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCutscene_CSCheck : zCCutscene { int operator()(int&); };
+BindedHook Ivk_zCCutscene_CSCheck{ ZENFOR(0x00410A30, 0x00412060, 0x00410F40, 0x00410F40), &zCCutscene_CSCheck::operator() };
+int zCCutscene_CSCheck::operator()(int& a0)
+{
+	int result = THISCALL(Ivk_zCCutscene_CSCheck)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

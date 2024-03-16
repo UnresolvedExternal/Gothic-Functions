@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTMenuItemListElement::~zTMenuItemListElement()]]></Title>
+			<Description><![CDATA[public: __thiscall zTMenuItemListElement::~zTMenuItemListElement()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTMenuItemListElement_Destructor : zTMenuItemListElement { void operator()(); };
+BindedHook Ivk_zTMenuItemListElement_Destructor{ ZENFOR(0x00475490, 0x0047ECC0, 0x0047B130, 0x0047C600), &zTMenuItemListElement_Destructor::operator() };
+void zTMenuItemListElement_Destructor::operator()()
+{
+	THISCALL(Ivk_zTMenuItemListElement_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

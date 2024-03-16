@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobSwitch::oCMobSwitch()]]></Title>
+			<Description><![CDATA[public: __thiscall oCMobSwitch::oCMobSwitch()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobSwitch_oCMobSwitch : oCMobSwitch { oCMobSwitch* operator()(); };
+BindedHook Ivk_oCMobSwitch_oCMobSwitch{ ZENFOR(0x006817E0, 0x006B0E80, 0x006C5450, 0x007234E0), &oCMobSwitch_oCMobSwitch::operator() };
+oCMobSwitch* oCMobSwitch_oCMobSwitch::operator()()
+{
+	oCMobSwitch* result = THISCALL(Ivk_oCMobSwitch_oCMobSwitch)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

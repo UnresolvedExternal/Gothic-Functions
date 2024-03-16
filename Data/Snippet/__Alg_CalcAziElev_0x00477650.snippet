@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Alg_CalcAziElev(zVEC3 const&, float&, float&): void]]></Title>
+			<Description><![CDATA[void __cdecl Alg_CalcAziElev(zVEC3 const&, float&, float&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Alg_CalcAziElev(zVEC3 const&, float&, float&);
+BindedHook Ivk_Alg_CalcAziElev{ ZENFOR(0x00470990, 0x004798E0, 0x004762B0, 0x00477650), Hook_Alg_CalcAziElev };
+void Hook_Alg_CalcAziElev(zVEC3 const& a0, float& a1, float& a2)
+{
+	Ivk_Alg_CalcAziElev(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

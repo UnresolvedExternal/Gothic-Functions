@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::CheckRayPolyIntersection(zCProgMeshProto::zCSubMesh*, int, zVEC3 const&, zVEC3 const&, zVEC3&, float&): int [const]]]></Title>
+			<Description><![CDATA[private: int __fastcall zCProgMeshProto::CheckRayPolyIntersection(zCProgMeshProto::zCSubMesh*, int, zVEC3 const&, zVEC3 const&, zVEC3&, float&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_CheckRayPolyIntersection : zCProgMeshProto { int __fastcall operator()(zCProgMeshProto::zCSubMesh*, int, zVEC3 const&, zVEC3 const&, zVEC3&, float&) const; };
+BindedHook Ivk_zCProgMeshProto_CheckRayPolyIntersection{ ZENFOR(0x005A5CE0, 0x005C2590, 0x005C2030, 0x005C7BF0), &zCProgMeshProto_CheckRayPolyIntersection::operator() };
+int __fastcall zCProgMeshProto_CheckRayPolyIntersection::operator()(zCProgMeshProto::zCSubMesh* a0, int a1, zVEC3 const& a2, zVEC3 const& a3, zVEC3& a4, float& a5) const
+{
+	int result = THISCALL(Ivk_zCProgMeshProto_CheckRayPolyIntersection)(a0, a1, a2, a3, a4, a5);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

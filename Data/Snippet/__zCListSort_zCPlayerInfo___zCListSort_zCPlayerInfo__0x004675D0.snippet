@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCListSort<zCPlayerInfo>::~zCListSort<zCPlayerInfo>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCListSort<zCPlayerInfo>::~zCListSort<zCPlayerInfo>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCListSort_zCPlayerInfo__Destructor : zCListSort<zCPlayerInfo> { void operator()(); };
+BindedHook Ivk_zCListSort_zCPlayerInfo__Destructor{ ZENFOR(0x00461F70, 0x00469960, 0x004669A0, 0x004675D0), &zCListSort_zCPlayerInfo__Destructor::operator() };
+void zCListSort_zCPlayerInfo__Destructor::operator()()
+{
+	THISCALL(Ivk_zCListSort_zCPlayerInfo__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

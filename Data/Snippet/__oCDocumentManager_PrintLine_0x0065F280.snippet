@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCDocumentManager::PrintLine(int, int, zSTRING&): void]]></Title>
+			<Description><![CDATA[public: void __fastcall oCDocumentManager::PrintLine(int, int, zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCDocumentManager_PrintLine : oCDocumentManager { void __fastcall operator()(int, int, zSTRING&); };
+BindedHook Ivk_oCDocumentManager_PrintLine{ ZENFOR(0x00724B60, 0x00761AB0, 0x00770D30, 0x0065F280), &oCDocumentManager_PrintLine::operator() };
+void __fastcall oCDocumentManager_PrintLine::operator()(int a0, int a1, zSTRING& a2)
+{
+	THISCALL(Ivk_oCDocumentManager_PrintLine)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

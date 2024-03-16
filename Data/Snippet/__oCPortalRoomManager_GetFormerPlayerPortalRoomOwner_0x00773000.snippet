@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCPortalRoomManager::GetFormerPlayerPortalRoomOwner(): oCNpc*]]></Title>
+			<Description><![CDATA[public: oCNpc* __thiscall oCPortalRoomManager::GetFormerPlayerPortalRoomOwner()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCPortalRoomManager_GetFormerPlayerPortalRoomOwner : oCPortalRoomManager { oCNpc* operator()(); };
+BindedHook Ivk_oCPortalRoomManager_GetFormerPlayerPortalRoomOwner{ ZENFOR(0x006CB5C0, 0x007018A0, 0x00713A70, 0x00773000), &oCPortalRoomManager_GetFormerPlayerPortalRoomOwner::operator() };
+oCNpc* oCPortalRoomManager_GetFormerPlayerPortalRoomOwner::operator()()
+{
+	oCNpc* result = THISCALL(Ivk_oCPortalRoomManager_GetFormerPlayerPortalRoomOwner)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

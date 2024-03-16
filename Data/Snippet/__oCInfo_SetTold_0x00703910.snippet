@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInfo::SetTold(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCInfo::SetTold(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInfo_SetTold : oCInfo { void operator()(int); };
+BindedHook Ivk_oCInfo_SetTold{ ZENFOR(0x00665840, 0x00692D60, 0x006A5E80, 0x00703910), &oCInfo_SetTold::operator() };
+void oCInfo_SetTold::operator()(int a0)
+{
+	THISCALL(Ivk_oCInfo_SetTold)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

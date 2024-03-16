@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::HasFlag(unsigned long, unsigned long): int]]></Title>
+			<Description><![CDATA[private: int __thiscall oCNpc::HasFlag(unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_HasFlag : oCNpc { int operator()(unsigned long, unsigned long); };
+BindedHook Ivk_oCNpc_HasFlag{ ZENFOR(0x00747B40, 0x00788990, 0x00792950, 0x0067BD20), &oCNpc_HasFlag::operator() };
+int oCNpc_HasFlag::operator()(unsigned long a0, unsigned long a1)
+{
+	int result = THISCALL(Ivk_oCNpc_HasFlag)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

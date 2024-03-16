@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::GetPrimitiveCC(): zCConvexPrimitive* [const]]]></Title>
+			<Description><![CDATA[public: virtual zCConvexPrimitive* __thiscall zCCollObjectCharacter::GetPrimitiveCC() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectCharacter_GetPrimitiveCC : zCCollObjectCharacter { zCConvexPrimitive* operator()() const; };
+BindedHook Ivk_zCCollObjectCharacter_GetPrimitiveCC{ ZENFOR(0x0053B510, 0x005528B0, 0x0054A7F0, 0x0054FA10), &zCCollObjectCharacter_GetPrimitiveCC::operator() };
+zCConvexPrimitive* zCCollObjectCharacter_GetPrimitiveCC::operator()() const
+{
+	zCConvexPrimitive* result = THISCALL(Ivk_zCCollObjectCharacter_GetPrimitiveCC)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

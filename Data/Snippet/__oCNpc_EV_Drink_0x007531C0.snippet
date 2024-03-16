@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EV_Drink(oCMsgUseItem*): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall oCNpc::EV_Drink(oCMsgUseItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_EV_Drink : oCNpc { int operator()(oCMsgUseItem*); };
+BindedHook Ivk_oCNpc_EV_Drink{ ZENFOR(0x006AD750, 0x006E0E90, 0x006F43E0, 0x007531C0), &oCNpc_EV_Drink::operator() };
+int oCNpc_EV_Drink::operator()(oCMsgUseItem* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_EV_Drink)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

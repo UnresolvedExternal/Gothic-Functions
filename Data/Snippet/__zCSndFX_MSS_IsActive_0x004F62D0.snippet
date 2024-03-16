@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFX_MSS::IsActive(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCSndFX_MSS::IsActive()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFX_MSS_IsActive : zCSndFX_MSS { int operator()(); };
+BindedHook Ivk_zCSndFX_MSS_IsActive{ ZENFOR(0x004E8040, 0x004FA220, 0x004F3650, 0x004F62D0), &zCSndFX_MSS_IsActive::operator() };
+int zCSndFX_MSS_IsActive::operator()()
+{
+	int result = THISCALL(Ivk_zCSndFX_MSS_IsActive)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

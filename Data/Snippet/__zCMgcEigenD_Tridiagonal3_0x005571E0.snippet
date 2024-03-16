@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMgcEigenD::Tridiagonal3(double**, double*, double*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCMgcEigenD::Tridiagonal3(double**, double*, double*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMgcEigenD_Tridiagonal3 : zCMgcEigenD { void operator()(double**, double*, double*); };
+BindedHook Ivk_zCMgcEigenD_Tridiagonal3{ ZENFOR(0x00542940, 0x0055A310, 0x00551FC0, 0x005571E0), &zCMgcEigenD_Tridiagonal3::operator() };
+void zCMgcEigenD_Tridiagonal3::operator()(double** a0, double* a1, double* a2)
+{
+	THISCALL(Ivk_zCMgcEigenD_Tridiagonal3)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

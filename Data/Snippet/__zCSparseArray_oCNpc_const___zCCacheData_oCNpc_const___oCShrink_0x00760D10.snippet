@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCShrinkHelper>>::DestructIndex(void*): void [const]]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCShrinkHelper>>::DestructIndex(void*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___DestructIndex : zCSparseArray<oCNpc const*, zCCacheData<oCNpc const*, oCShrinkHelper>> { void operator()(void*) const; };
+BindedHook Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___DestructIndex{ ZENFOR(0x006BA120, 0x006EED10, 0x00701AD0, 0x00760D10), &zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___DestructIndex::operator() };
+void zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___DestructIndex::operator()(void* a0) const
+{
+	THISCALL(Ivk_zCSparseArray_oCNpc_const___zCCacheData_oCNpc_const___oCShrinkHelper___DestructIndex)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

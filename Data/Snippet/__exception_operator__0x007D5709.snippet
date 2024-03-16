@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[exception::operator=(exception const&): exception&]]></Title>
+			<Description><![CDATA[public: exception& __thiscall exception::operator=(exception const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct exception_operator_ : exception { exception& operator()(exception const&); };
+BindedHook Ivk_exception_operator_{ ZENFOR(0x0077BE29, 0x007BFBE9, 0x007C9249, 0x007D5709), &exception_operator_::operator() };
+exception& exception_operator_::operator()(exception const& a0)
+{
+	exception& result = THISCALL(Ivk_exception_operator_)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

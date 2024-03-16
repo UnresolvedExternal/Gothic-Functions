@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSystem::PlayThemeByScript(zSTRING const&, int, int*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCMusicSystem::PlayThemeByScript(zSTRING const&, int, int*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSystem_PlayThemeByScript : zCMusicSystem { void operator()(zSTRING const&, int, int*); };
+BindedHook Ivk_zCMusicSystem_PlayThemeByScript{ ZENFOR(0x004DAD80, 0x004EBF10, 0x004E54D0, 0x004E7FE0), &zCMusicSystem_PlayThemeByScript::operator() };
+void zCMusicSystem_PlayThemeByScript::operator()(zSTRING const& a0, int a1, int* a2)
+{
+	THISCALL(Ivk_zCMusicSystem_PlayThemeByScript)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

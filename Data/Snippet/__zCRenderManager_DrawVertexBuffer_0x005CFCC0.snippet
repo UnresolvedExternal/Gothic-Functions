@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderManager::DrawVertexBuffer(zCVertexBuffer*, int, int, unsigned short*, unsigned long, zCMaterial*): void]]></Title>
+			<Description><![CDATA[public: void __fastcall zCRenderManager::DrawVertexBuffer(zCVertexBuffer*, int, int, unsigned short*, unsigned long, zCMaterial*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCRenderManager_DrawVertexBuffer : zCRenderManager { void __fastcall operator()(zCVertexBuffer*, int, int, unsigned short*, unsigned long, zCMaterial*); };
+BindedHook Ivk_zCRenderManager_DrawVertexBuffer{ ZENFOR(0x005B2A50, 0x005CFCC0, 0x00000000, 0x00000000), &zCRenderManager_DrawVertexBuffer::operator() };
+void __fastcall zCRenderManager_DrawVertexBuffer::operator()(zCVertexBuffer* a0, int a1, int a2, unsigned short* a3, unsigned long a4, zCMaterial* a5)
+{
+	THISCALL(Ivk_zCRenderManager_DrawVertexBuffer)(a0, a1, a2, a3, a4, a5);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

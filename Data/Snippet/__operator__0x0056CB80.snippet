@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[operator+(zVEC2 const&, zVEC2 const&): zVEC2]]></Title>
+			<Description><![CDATA[zVEC2 __cdecl operator+(zVEC2 const&, zVEC2 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zVEC2 Hook_operator_(zVEC2 const&, zVEC2 const&);
+BindedHook Ivk_operator_{ ZENFOR(0x00554B20, 0x0056D270, 0x00567930, 0x0056CB80), Hook_operator_ };
+zVEC2 Hook_operator_(zVEC2 const& a0, zVEC2 const& a1)
+{
+	zVEC2 result = Ivk_operator_(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

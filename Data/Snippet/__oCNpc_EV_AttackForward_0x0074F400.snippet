@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EV_AttackForward(oCMsgAttack*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::EV_AttackForward(oCMsgAttack*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_EV_AttackForward : oCNpc { int operator()(oCMsgAttack*); };
+BindedHook Ivk_oCNpc_EV_AttackForward{ ZENFOR(0x006AA870, 0x006DD630, 0x006F0620, 0x0074F400), &oCNpc_EV_AttackForward::operator() };
+int oCNpc_EV_AttackForward::operator()(oCMsgAttack* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_EV_AttackForward)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

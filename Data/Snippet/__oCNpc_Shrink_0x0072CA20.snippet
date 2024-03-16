@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::Shrink(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::Shrink()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_Shrink : oCNpc { void operator()(); };
+BindedHook Ivk_oCNpc_Shrink{ ZENFOR(0x0068A640, 0x006BABD0, 0x006CE990, 0x0072CA20), &oCNpc_Shrink::operator() };
+void oCNpc_Shrink::operator()()
+{
+	THISCALL(Ivk_oCNpc_Shrink)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

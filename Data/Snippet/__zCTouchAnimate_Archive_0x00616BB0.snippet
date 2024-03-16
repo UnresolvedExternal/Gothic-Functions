@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchAnimate::Archive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCTouchAnimate::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchAnimate_Archive : zCTouchAnimate { void operator()(zCArchiver&); };
+BindedHook Ivk_zCTouchAnimate_Archive{ ZENFOR(0x005E9B00, 0x0060A130, 0x0060F4F0, 0x00616BB0), &zCTouchAnimate_Archive::operator() };
+void zCTouchAnimate_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCTouchAnimate_Archive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

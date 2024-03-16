@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::Moving(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall oCAIHuman::Moving()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_Moving : oCAIHuman { void operator()(); };
+BindedHook Ivk_oCAIHuman_Moving{ ZENFOR(0x006158F0, 0x006387D0, 0x0063F1E0, 0x0069B9B0), &oCAIHuman_Moving::operator() };
+void oCAIHuman_Moving::operator()()
+{
+	THISCALL(Ivk_oCAIHuman_Moving)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

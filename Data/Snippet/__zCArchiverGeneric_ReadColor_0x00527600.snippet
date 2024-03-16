@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::ReadColor(char const*): zCOLOR]]></Title>
+			<Description><![CDATA[public: virtual zCOLOR __fastcall zCArchiverGeneric::ReadColor(char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_ReadColor : zCArchiverGeneric { zCOLOR __fastcall operator()(char const*); };
+BindedHook Ivk_zCArchiverGeneric_ReadColor{ ZENFOR(0x005169C0, 0x0052C350, 0x00524830, 0x00527600), &zCArchiverGeneric_ReadColor::operator() };
+zCOLOR __fastcall zCArchiverGeneric_ReadColor::operator()(char const* a0)
+{
+	zCOLOR result = THISCALL(Ivk_zCArchiverGeneric_ReadColor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

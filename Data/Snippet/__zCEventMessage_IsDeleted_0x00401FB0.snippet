@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventMessage::IsDeleted(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCEventMessage::IsDeleted()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventMessage_IsDeleted : zCEventMessage { int operator()(); };
+BindedHook Ivk_zCEventMessage_IsDeleted{ ZENFOR(0x00401E60, 0x00402270, 0x00401FB0, 0x00401FB0), &zCEventMessage_IsDeleted::operator() };
+int zCEventMessage_IsDeleted::operator()()
+{
+	int result = THISCALL(Ivk_zCEventMessage_IsDeleted)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

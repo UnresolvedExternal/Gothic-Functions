@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCBarrier::RenderThunderList(zTRenderContext&): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall oCBarrier::RenderThunderList(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCBarrier_RenderThunderList : oCBarrier { void operator()(zTRenderContext&); };
+BindedHook Ivk_oCBarrier_RenderThunderList{ ZENFOR(0x00631FD0, 0x00657AF0, 0x0065EDE0, 0x006BB770), &oCBarrier_RenderThunderList::operator() };
+void oCBarrier_RenderThunderList::operator()(zTRenderContext& a0)
+{
+	THISCALL(Ivk_oCBarrier_RenderThunderList)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

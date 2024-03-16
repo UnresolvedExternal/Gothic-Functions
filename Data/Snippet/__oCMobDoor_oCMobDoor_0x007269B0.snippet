@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobDoor::oCMobDoor()]]></Title>
+			<Description><![CDATA[public: __thiscall oCMobDoor::oCMobDoor()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobDoor_oCMobDoor : oCMobDoor { oCMobDoor* operator()(); };
+BindedHook Ivk_oCMobDoor_oCMobDoor{ ZENFOR(0x006848F0, 0x006B44E0, 0x006C8920, 0x007269B0), &oCMobDoor_oCMobDoor::operator() };
+oCMobDoor* oCMobDoor_oCMobDoor::operator()()
+{
+	oCMobDoor* result = THISCALL(Ivk_oCMobDoor_oCMobDoor)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

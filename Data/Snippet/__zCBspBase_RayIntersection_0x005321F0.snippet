@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspBase::RayIntersection(zVEC3 const&, zVEC3 const&, zVEC3&): int [const]]]></Title>
+			<Description><![CDATA[protected: int __fastcall zCBspBase::RayIntersection(zVEC3 const&, zVEC3 const&, zVEC3&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspBase_RayIntersection : zCBspBase { int __fastcall operator()(zVEC3 const&, zVEC3 const&, zVEC3&) const; };
+BindedHook Ivk_zCBspBase_RayIntersection{ ZENFOR(0x0051F5E0, 0x00535450, 0x0052EFC0, 0x005321F0), &zCBspBase_RayIntersection::operator() };
+int __fastcall zCBspBase_RayIntersection::operator()(zVEC3 const& a0, zVEC3 const& a1, zVEC3& a2) const
+{
+	int result = THISCALL(Ivk_zCBspBase_RayIntersection)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

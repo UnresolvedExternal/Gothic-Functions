@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConsole::GetWorld(): zCWorld*]]></Title>
+			<Description><![CDATA[public: zCWorld* __thiscall zCConsole::GetWorld()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConsole_GetWorld : zCConsole { zCWorld* operator()(); };
+BindedHook Ivk_zCConsole_GetWorld{ ZENFOR(0x006D9240, 0x00710E50, 0x007229A0, 0x007823E0), &zCConsole_GetWorld::operator() };
+zCWorld* zCConsole_GetWorld::operator()()
+{
+	zCWorld* result = THISCALL(Ivk_zCConsole_GetWorld)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

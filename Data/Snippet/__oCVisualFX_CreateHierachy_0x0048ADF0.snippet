@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::CreateHierachy(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall oCVisualFX::CreateHierachy()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisualFX_CreateHierachy : oCVisualFX { void operator()(); };
+BindedHook Ivk_oCVisualFX_CreateHierachy{ ZENFOR(0x00483300, 0x0048E490, 0x004895B0, 0x0048ADF0), &oCVisualFX_CreateHierachy::operator() };
+void oCVisualFX_CreateHierachy::operator()()
+{
+	THISCALL(Ivk_oCVisualFX_CreateHierachy)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

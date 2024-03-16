@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::GetD3D(): IDirect3D7*]]></Title>
+			<Description><![CDATA[public: virtual IDirect3D7* __stdcall CD3duContext::GetD3D()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext_GetD3D : CD3duContext { IDirect3D7* __stdcall operator()(); };
+BindedHook Ivk_CD3duContext_GetD3D{ ZENFOR(0x0075ED20, 0x007A302B, 0x007ABF4E, 0x007B8414), &CD3duContext_GetD3D::operator() };
+IDirect3D7* __stdcall CD3duContext_GetD3D::operator()()
+{
+	IDirect3D7* result = THISCALL(Ivk_CD3duContext_GetD3D)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::GetMaxSize(): unsigned long [const]]]></Title>
+			<Description><![CDATA[public: unsigned long __thiscall zCBuffer::GetMaxSize() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_GetMaxSize : zCBuffer { unsigned long operator()() const; };
+BindedHook Ivk_zCBuffer_GetMaxSize{ ZENFOR(0x0043D880, 0x00442A90, 0x00441050, 0x00441680), &zCBuffer_GetMaxSize::operator() };
+unsigned long zCBuffer_GetMaxSize::operator()() const
+{
+	unsigned long result = THISCALL(Ivk_zCBuffer_GetMaxSize)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

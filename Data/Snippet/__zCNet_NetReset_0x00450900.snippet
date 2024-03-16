@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::NetReset(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCNet::NetReset(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_NetReset : zCNet { int operator()(int); };
+BindedHook Ivk_zCNet_NetReset{ ZENFOR(0x0044C190, 0x00452730, 0x004501B0, 0x00450900), &zCNet_NetReset::operator() };
+int zCNet_NetReset::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCNet_NetReset)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

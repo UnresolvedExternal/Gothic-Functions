@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMaterial::SetTexture(zSTRING&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMaterial::SetTexture(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMaterial_SetTexture : zCMaterial { void operator()(zSTRING&); };
+BindedHook Ivk_zCMaterial_SetTexture{ ZENFOR(0x0054DAC0, 0x00565EF0, 0x0055F7C0, 0x005649E0), &zCMaterial_SetTexture::operator() };
+void zCMaterial_SetTexture::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_zCMaterial_SetTexture)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

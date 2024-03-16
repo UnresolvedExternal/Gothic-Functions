@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::GetCamKey(int): zCCamTrj_KeyFrame*]]></Title>
+			<Description><![CDATA[public: zCCamTrj_KeyFrame* __thiscall zCCSCamera::GetCamKey(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_GetCamKey : zCCSCamera { zCCamTrj_KeyFrame* operator()(int); };
+BindedHook Ivk_zCCSCamera_GetCamKey{ ZENFOR(0x004AB9A0, 0x004B9890, 0x004B1D20, 0x004B4250), &zCCSCamera_GetCamKey::operator() };
+zCCamTrj_KeyFrame* zCCSCamera_GetCamKey::operator()(int a0)
+{
+	zCCamTrj_KeyFrame* result = THISCALL(Ivk_zCCSCamera_GetCamKey)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

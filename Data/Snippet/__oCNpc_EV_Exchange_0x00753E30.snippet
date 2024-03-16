@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::EV_Exchange(oCMsgManipulate*): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall oCNpc::EV_Exchange(oCMsgManipulate*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_EV_Exchange : oCNpc { int operator()(oCMsgManipulate*); };
+BindedHook Ivk_oCNpc_EV_Exchange{ ZENFOR(0x006AE310, 0x006E1B00, 0x006F5000, 0x00753E30), &oCNpc_EV_Exchange::operator() };
+int oCNpc_EV_Exchange::operator()(oCMsgManipulate* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_EV_Exchange)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogItemContainer::SetAlignment(oCViewDialogItemContainer::oEItemContainerAlignment): void]]></Title>
+			<Description><![CDATA[public: void __fastcall oCViewDialogItemContainer::SetAlignment(oCViewDialogItemContainer::oEItemContainerAlignment)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogItemContainer_SetAlignment : oCViewDialogItemContainer { void __fastcall operator()(oCViewDialogItemContainer::oEItemContainerAlignment); };
+BindedHook Ivk_oCViewDialogItemContainer_SetAlignment{ ZENFOR(0x00727590, 0x00764E20, 0x00773DF0, 0x00689B40), &oCViewDialogItemContainer_SetAlignment::operator() };
+void __fastcall oCViewDialogItemContainer_SetAlignment::operator()(oCViewDialogItemContainer::oEItemContainerAlignment a0)
+{
+	THISCALL(Ivk_oCViewDialogItemContainer_SetAlignment)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSys_DirectMusic::IsJingleActive(int const&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCMusicSys_DirectMusic::IsJingleActive(int const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSys_DirectMusic_IsJingleActive : zCMusicSys_DirectMusic { int operator()(int const&); };
+BindedHook Ivk_zCMusicSys_DirectMusic_IsJingleActive{ ZENFOR(0x004DAEF0, 0x004EC080, 0x004E5640, 0x004E8150), &zCMusicSys_DirectMusic_IsJingleActive::operator() };
+int zCMusicSys_DirectMusic_IsJingleActive::operator()(int const& a0)
+{
+	int result = THISCALL(Ivk_zCMusicSys_DirectMusic_IsJingleActive)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::SetModelScale(zVEC3 const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCModel::SetModelScale(zVEC3 const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_SetModelScale : zCModel { void operator()(zVEC3 const&); };
+BindedHook Ivk_zCModel_SetModelScale{ ZENFOR(0x00563BC0, 0x0057C430, 0x00578710, 0x0057DC30), &zCModel_SetModelScale::operator() };
+void zCModel_SetModelScale::operator()(zVEC3 const& a0)
+{
+	THISCALL(Ivk_zCModel_SetModelScale)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPoolBlock::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: void* __thiscall zCMemPoolBlock::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPoolBlock_ScalarDeletingDestructor : zCMemPoolBlock { void* operator()(unsigned int); };
+BindedHook Ivk_zCMemPoolBlock_ScalarDeletingDestructor{ ZENFOR(0x0054F130, 0x00567650, 0x00561280, 0x005664A0), &zCMemPoolBlock_ScalarDeletingDestructor::operator() };
+void* zCMemPoolBlock_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCMemPoolBlock_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

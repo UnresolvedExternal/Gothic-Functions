@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[GETStringMap<unsigned long>::GetNextElement(unsigned long&, GECString&, unsigned long*&, unsigned long&): bool]]></Title>
+			<Description><![CDATA[public: bool __thiscall GETStringMap<unsigned long>::GetNextElement(unsigned long&, GECString&, unsigned long*&, unsigned long&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct GETStringMap_unsigned_long__GetNextElement : GETStringMap<unsigned long> { bool operator()(unsigned long&, GECString&, unsigned long*&, unsigned long&); };
+BindedHook Ivk_GETStringMap_unsigned_long__GetNextElement{ ZENFOR(0x005114E0, 0x005267D0, 0x0051EAB0, 0x00521880), &GETStringMap_unsigned_long__GetNextElement::operator() };
+bool GETStringMap_unsigned_long__GetNextElement::operator()(unsigned long& a0, GECString& a1, unsigned long*& a2, unsigned long& a3)
+{
+	bool result = THISCALL(Ivk_GETStringMap_unsigned_long__GetNextElement)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

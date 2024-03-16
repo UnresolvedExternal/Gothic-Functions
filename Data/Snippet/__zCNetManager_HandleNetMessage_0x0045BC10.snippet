@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetManager::HandleNetMessage(zCNetMessage*, unsigned short const&, zCClassDef*, zCWorld*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCNetManager::HandleNetMessage(zCNetMessage*, unsigned short const&, zCClassDef*, zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetManager_HandleNetMessage : zCNetManager { int operator()(zCNetMessage*, unsigned short const&, zCClassDef*, zCWorld*); };
+BindedHook Ivk_zCNetManager_HandleNetMessage{ ZENFOR(0x00456B60, 0x0045DB20, 0x0045B4C0, 0x0045BC10), &zCNetManager_HandleNetMessage::operator() };
+int zCNetManager_HandleNetMessage::operator()(zCNetMessage* a0, unsigned short const& a1, zCClassDef* a2, zCWorld* a3)
+{
+	int result = THISCALL(Ivk_zCNetManager_HandleNetMessage)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

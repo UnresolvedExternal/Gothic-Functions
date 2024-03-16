@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCClassDef::ObjectDeleted(zCObject*, zCClassDef*): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCClassDef::ObjectDeleted(zCObject*, zCClassDef*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCClassDef_ObjectDeleted(zCObject*, zCClassDef*);
+BindedHook Ivk_zCClassDef_ObjectDeleted{ ZENFOR(0x0058B4A0, 0x005A69D0, 0x005A5A70, 0x005AAFD0), Hook_zCClassDef_ObjectDeleted };
+void Hook_zCClassDef_ObjectDeleted(zCObject* a0, zCClassDef* a1)
+{
+	Ivk_zCClassDef_ObjectDeleted(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

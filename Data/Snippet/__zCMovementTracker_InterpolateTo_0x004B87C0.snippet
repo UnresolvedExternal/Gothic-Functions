@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::InterpolateTo(zSPathSearchResult const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMovementTracker::InterpolateTo(zSPathSearchResult const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_InterpolateTo : zCMovementTracker { void operator()(zSPathSearchResult const&); };
+BindedHook Ivk_zCMovementTracker_InterpolateTo{ ZENFOR(0x004AFEF0, 0x004BE310, 0x004B6290, 0x004B87C0), &zCMovementTracker_InterpolateTo::operator() };
+void zCMovementTracker_InterpolateTo::operator()(zSPathSearchResult const& a0)
+{
+	THISCALL(Ivk_zCMovementTracker_InterpolateTo)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

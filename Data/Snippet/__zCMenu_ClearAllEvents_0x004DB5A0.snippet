@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenu::ClearAllEvents(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCMenu::ClearAllEvents()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenu_ClearAllEvents : zCMenu { void operator()(); };
+BindedHook Ivk_zCMenu_ClearAllEvents{ ZENFOR(0x004CE9B0, 0x004DF240, 0x004D8F00, 0x004DB5A0), &zCMenu_ClearAllEvents::operator() };
+void zCMenu_ClearAllEvents::operator()()
+{
+	THISCALL(Ivk_zCMenu_ClearAllEvents)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

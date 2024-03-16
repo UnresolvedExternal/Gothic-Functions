@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCZoneMusic::ReleaseTempZoneList(oCZoneMusicList*): void]]></Title>
+			<Description><![CDATA[protected: static void __cdecl oCZoneMusic::ReleaseTempZoneList(oCZoneMusicList*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCZoneMusic_ReleaseTempZoneList(oCZoneMusicList*);
+BindedHook Ivk_oCZoneMusic_ReleaseTempZoneList{ ZENFOR(0x0070BEA0, 0x00746EA0, 0x007560C0, 0x00641660), Hook_oCZoneMusic_ReleaseTempZoneList };
+void Hook_oCZoneMusic_ReleaseTempZoneList(oCZoneMusicList* a0)
+{
+	Ivk_oCZoneMusic_ReleaseTempZoneList(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

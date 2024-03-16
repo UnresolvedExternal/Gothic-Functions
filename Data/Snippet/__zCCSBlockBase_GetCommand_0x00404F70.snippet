@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlockBase::GetCommand(): zCEventMessage*]]></Title>
+			<Description><![CDATA[public: virtual zCEventMessage* __thiscall zCCSBlockBase::GetCommand()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlockBase_GetCommand : zCCSBlockBase { zCEventMessage* operator()(); };
+BindedHook Ivk_zCCSBlockBase_GetCommand{ ZENFOR(0x00404E40, 0x00405690, 0x00404F70, 0x00404F70), &zCCSBlockBase_GetCommand::operator() };
+zCEventMessage* zCCSBlockBase_GetCommand::operator()()
+{
+	zCEventMessage* result = THISCALL(Ivk_zCCSBlockBase_GetCommand)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

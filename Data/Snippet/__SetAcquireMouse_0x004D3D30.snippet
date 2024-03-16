@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[SetAcquireMouse(): int]]></Title>
+			<Description><![CDATA[int __cdecl SetAcquireMouse()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+int Hook_SetAcquireMouse();
+BindedHook Ivk_SetAcquireMouse{ ZENFOR(0x00000000, 0x00000000, 0x004D1770, 0x004D3D30), Hook_SetAcquireMouse };
+int Hook_SetAcquireMouse()
+{
+	int result = Ivk_SetAcquireMouse();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

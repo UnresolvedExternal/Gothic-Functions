@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::LightClippedPoly(zCArray<zCVobLight*>const&, int): void]]></Title>
+			<Description><![CDATA[public: void __fastcall zCPolygon::LightClippedPoly(zCArray<zCVobLight*>const&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCPolygon_LightClippedPoly : zCPolygon { void __fastcall operator()(zCArray<zCVobLight*>const&, int); };
+BindedHook Ivk_zCPolygon_LightClippedPoly{ ZENFOR(0x00597370, 0x005B3370, 0x00000000, 0x00000000), &zCPolygon_LightClippedPoly::operator() };
+void __fastcall zCPolygon_LightClippedPoly::operator()(zCArray<zCVobLight*>const& a0, int a1)
+{
+	THISCALL(Ivk_zCPolygon_LightClippedPoly)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

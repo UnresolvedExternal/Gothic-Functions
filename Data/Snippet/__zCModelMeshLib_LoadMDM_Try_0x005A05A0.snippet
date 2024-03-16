@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelMeshLib::LoadMDM_Try(zSTRING const&, zCModelPrototype*, zCModel*, zCModelMeshLib**): int]]></Title>
+			<Description><![CDATA[private: static int __cdecl zCModelMeshLib::LoadMDM_Try(zSTRING const&, zCModelPrototype*, zCModel*, zCModelMeshLib**)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCModelMeshLib_LoadMDM_Try(zSTRING const&, zCModelPrototype*, zCModel*, zCModelMeshLib**);
+BindedHook Ivk_zCModelMeshLib_LoadMDM_Try{ ZENFOR(0x00580B00, 0x0059B4A0, 0x0059B040, 0x005A05A0), Hook_zCModelMeshLib_LoadMDM_Try };
+int Hook_zCModelMeshLib_LoadMDM_Try(zSTRING const& a0, zCModelPrototype* a1, zCModel* a2, zCModelMeshLib** a3)
+{
+	int result = Ivk_zCModelMeshLib_LoadMDM_Try(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

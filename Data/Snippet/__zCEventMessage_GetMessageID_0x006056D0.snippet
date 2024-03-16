@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventMessage::GetMessageID(): unsigned long [const]]]></Title>
+			<Description><![CDATA[protected: unsigned long __thiscall zCEventMessage::GetMessageID() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventMessage_GetMessageID : zCEventMessage { unsigned long operator()() const; };
+BindedHook Ivk_zCEventMessage_GetMessageID{ ZENFOR(0x005D8E80, 0x005F86A0, 0x005FE840, 0x006056D0), &zCEventMessage_GetMessageID::operator() };
+unsigned long zCEventMessage_GetMessageID::operator()() const
+{
+	unsigned long result = THISCALL(Ivk_zCEventMessage_GetMessageID)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

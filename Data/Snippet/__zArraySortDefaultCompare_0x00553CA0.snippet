@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zArraySortDefaultCompare(void const*, void const*): int]]></Title>
+			<Description><![CDATA[int __cdecl zArraySortDefaultCompare(void const*, void const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zArraySortDefaultCompare(void const*, void const*);
+BindedHook Ivk_zArraySortDefaultCompare{ ZENFOR(0x0053F550, 0x00556F20, 0x0054EA80, 0x00553CA0), Hook_zArraySortDefaultCompare };
+int Hook_zArraySortDefaultCompare(void const* a0, void const* a1)
+{
+	int result = Ivk_zArraySortDefaultCompare(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

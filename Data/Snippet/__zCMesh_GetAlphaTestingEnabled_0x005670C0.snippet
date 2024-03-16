@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::GetAlphaTestingEnabled(): int [const]]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCMesh::GetAlphaTestingEnabled() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCMesh_GetAlphaTestingEnabled : zCMesh { int operator()() const; };
+BindedHook Ivk_zCMesh_GetAlphaTestingEnabled{ ZENFOR(0x00000000, 0x00000000, 0x00561EA0, 0x005670C0), &zCMesh_GetAlphaTestingEnabled::operator() };
+int zCMesh_GetAlphaTestingEnabled::operator()() const
+{
+	int result = THISCALL(Ivk_zCMesh_GetAlphaTestingEnabled)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::GetArea(): float [const]]]></Title>
+			<Description><![CDATA[public: float __thiscall zCPolygon::GetArea() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolygon_GetArea : zCPolygon { float operator()() const; };
+BindedHook Ivk_zCPolygon_GetArea{ ZENFOR(0x00599D20, 0x005B5E90, 0x005B5C60, 0x005BB7D0), &zCPolygon_GetArea::operator() };
+float zCPolygon_GetArea::operator()() const
+{
+	float result = THISCALL(Ivk_zCPolygon_GetArea)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

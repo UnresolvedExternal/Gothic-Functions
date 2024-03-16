@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgUseItem::oCMsgUseItem()]]></Title>
+			<Description><![CDATA[public: __thiscall oCMsgUseItem::oCMsgUseItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgUseItem_oCMsgUseItem : oCMsgUseItem { oCMsgUseItem* operator()(); };
+BindedHook Ivk_oCMsgUseItem_oCMsgUseItem{ ZENFOR(0x006C0880, 0x006F5BC0, 0x007084E0, 0x00767A20), &oCMsgUseItem_oCMsgUseItem::operator() };
+oCMsgUseItem* oCMsgUseItem_oCMsgUseItem::operator()()
+{
+	oCMsgUseItem* result = THISCALL(Ivk_oCMsgUseItem_oCMsgUseItem)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

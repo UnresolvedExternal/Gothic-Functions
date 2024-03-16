@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgMovement::Delete(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMsgMovement::Delete()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgMovement_Delete : oCMsgMovement { void operator()(); };
+BindedHook Ivk_oCMsgMovement_Delete{ ZENFOR(0x006BF510, 0x006F4830, 0x00707170, 0x007666B0), &oCMsgMovement_Delete::operator() };
+void oCMsgMovement_Delete::operator()()
+{
+	THISCALL(Ivk_oCMsgMovement_Delete)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

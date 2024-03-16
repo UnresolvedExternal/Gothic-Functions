@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::DebugMessage(zSTRING const&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCArchiverGeneric::DebugMessage(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_DebugMessage : zCArchiverGeneric { void operator()(zSTRING const&); };
+BindedHook Ivk_zCArchiverGeneric_DebugMessage{ ZENFOR(0x00511F70, 0x005272C0, 0x0051F520, 0x005222F0), &zCArchiverGeneric_DebugMessage::operator() };
+void zCArchiverGeneric_DebugMessage::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCArchiverGeneric_DebugMessage)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCZoneMusic::~oCZoneMusic()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall oCZoneMusic::~oCZoneMusic()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCZoneMusic_Destructor : oCZoneMusic { void operator()(); };
+BindedHook Ivk_oCZoneMusic_Destructor{ ZENFOR(0x0070AE70, 0x00745D30, 0x00754FB0, 0x00640550), &oCZoneMusic_Destructor::operator() };
+void oCZoneMusic_Destructor::operator()()
+{
+	THISCALL(Ivk_oCZoneMusic_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

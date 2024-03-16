@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::AddPoly(zVEC3&, zVEC3&, zVEC3&, zVEC2&, zVEC2&, zVEC2&): zCPolygon*]]></Title>
+			<Description><![CDATA[public: zCPolygon* __thiscall zCMesh::AddPoly(zVEC3&, zVEC3&, zVEC3&, zVEC2&, zVEC2&, zVEC2&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_AddPoly : zCMesh { zCPolygon* operator()(zVEC3&, zVEC3&, zVEC3&, zVEC2&, zVEC2&, zVEC2&); };
+BindedHook Ivk_zCMesh_AddPoly{ ZENFOR(0x005512F0, 0x00569980, 0x005639C0, 0x00568C10), &zCMesh_AddPoly::operator() };
+zCPolygon* zCMesh_AddPoly::operator()(zVEC3& a0, zVEC3& a1, zVEC3& a2, zVEC2& a3, zVEC2& a4, zVEC2& a5)
+{
+	zCPolygon* result = THISCALL(Ivk_zCMesh_AddPoly)(a0, a1, a2, a3, a4, a5);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

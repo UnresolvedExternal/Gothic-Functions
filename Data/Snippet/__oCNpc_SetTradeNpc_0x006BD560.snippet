@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetTradeNpc(oCNpc*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetTradeNpc(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetTradeNpc : oCNpc { void operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_SetTradeNpc{ ZENFOR(0x00633BB0, 0x00659A30, 0x00660BD0, 0x006BD560), &oCNpc_SetTradeNpc::operator() };
+void oCNpc_SetTradeNpc::operator()(oCNpc* a0)
+{
+	THISCALL(Ivk_oCNpc_SetTradeNpc)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

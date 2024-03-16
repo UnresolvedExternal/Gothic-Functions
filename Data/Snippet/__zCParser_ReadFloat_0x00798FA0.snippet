@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::ReadFloat(): float]]></Title>
+			<Description><![CDATA[private: float __thiscall zCParser::ReadFloat()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_ReadFloat : zCParser { float operator()(); };
+BindedHook Ivk_zCParser_ReadFloat{ ZENFOR(0x006EF480, 0x00728BC0, 0x00739560, 0x00798FA0), &zCParser_ReadFloat::operator() };
+float zCParser_ReadFloat::operator()()
+{
+	float result = THISCALL(Ivk_zCParser_ReadFloat)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

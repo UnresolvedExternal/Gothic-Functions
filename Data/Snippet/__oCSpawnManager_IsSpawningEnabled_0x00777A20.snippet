@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpawnManager::IsSpawningEnabled(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCSpawnManager::IsSpawningEnabled()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpawnManager_IsSpawningEnabled : oCSpawnManager { int operator()(); };
+BindedHook Ivk_oCSpawnManager_IsSpawningEnabled{ ZENFOR(0x006CF7E0, 0x00706200, 0x00718490, 0x00777A20), &oCSpawnManager_IsSpawningEnabled::operator() };
+int oCSpawnManager_IsSpawningEnabled::operator()()
+{
+	int result = THISCALL(Ivk_oCSpawnManager_IsSpawningEnabled)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

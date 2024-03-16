@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCWaypoint::CanBeUsed(zCVob const*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCWaypoint::CanBeUsed(zCVob const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCWaypoint_CanBeUsed : oCWaypoint { int operator()(zCVob const*); };
+BindedHook Ivk_oCWaypoint_CanBeUsed{ ZENFOR(0x006D5030, 0x0070C5E0, 0x0071E520, 0x0077DF60), &oCWaypoint_CanBeUsed::operator() };
+int oCWaypoint_CanBeUsed::operator()(zCVob const* a0)
+{
+	int result = THISCALL(Ivk_oCWaypoint_CanBeUsed)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTBCylinder3D::SetByBBox3D(zTBBox3D): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zTBCylinder3D::SetByBBox3D(zTBBox3D)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTBCylinder3D_SetByBBox3D : zTBCylinder3D { void operator()(zTBBox3D); };
+BindedHook Ivk_zTBCylinder3D_SetByBBox3D{ ZENFOR(0x00530340, 0x00546B60, 0x0053EE80, 0x00543F30), &zTBCylinder3D_SetByBBox3D::operator() };
+void zTBCylinder3D_SetByBBox3D::operator()(zTBBox3D a0)
+{
+	THISCALL(Ivk_zTBCylinder3D_SetByBBox3D)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

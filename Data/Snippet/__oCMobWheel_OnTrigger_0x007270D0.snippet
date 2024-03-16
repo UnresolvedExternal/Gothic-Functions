@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobWheel::OnTrigger(zCVob*, zCVob*): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall oCMobWheel::OnTrigger(zCVob*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobWheel_OnTrigger : oCMobWheel { void operator()(zCVob*, zCVob*); };
+BindedHook Ivk_oCMobWheel_OnTrigger{ ZENFOR(0x00685000, 0x006B4C20, 0x006C9040, 0x007270D0), &oCMobWheel_OnTrigger::operator() };
+void oCMobWheel_OnTrigger::operator()(zCVob* a0, zCVob* a1)
+{
+	THISCALL(Ivk_oCMobWheel_OnTrigger)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

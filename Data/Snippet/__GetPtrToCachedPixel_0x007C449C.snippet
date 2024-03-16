@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[GetPtrToCachedPixel(long, long, SURFACE_DATA*): unsigned long*]]></Title>
+			<Description><![CDATA[unsigned long* __cdecl GetPtrToCachedPixel(long, long, SURFACE_DATA*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned long* Hook_GetPtrToCachedPixel(long, long, SURFACE_DATA*);
+BindedHook Ivk_GetPtrToCachedPixel{ ZENFOR(0x0076ADA8, 0x007AAE57, 0x007B7FD6, 0x007C449C), Hook_GetPtrToCachedPixel };
+unsigned long* Hook_GetPtrToCachedPixel(long a0, long a1, SURFACE_DATA* a2)
+{
+	unsigned long* result = Ivk_GetPtrToCachedPixel(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

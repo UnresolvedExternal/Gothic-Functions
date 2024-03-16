@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[netGetPacketHandle(unsigned long): void*]]></Title>
+			<Description><![CDATA[void* __cdecl netGetPacketHandle(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void* Hook_netGetPacketHandle(unsigned long);
+BindedHook Ivk_netGetPacketHandle{ ZENFOR(0x00450F40, 0x004578F0, 0x00455480, 0x00455BD0), Hook_netGetPacketHandle };
+void* Hook_netGetPacketHandle(unsigned long a0)
+{
+	void* result = Ivk_netGetPacketHandle(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

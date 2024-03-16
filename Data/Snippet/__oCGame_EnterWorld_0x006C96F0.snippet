@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::EnterWorld(oCNpc*, int, zSTRING const&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCGame::EnterWorld(oCNpc*, int, zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_EnterWorld : oCGame { void operator()(oCNpc*, int, zSTRING const&); };
+BindedHook Ivk_oCGame_EnterWorld{ ZENFOR(0x0063EAD0, 0x00665950, 0x0066C970, 0x006C96F0), &oCGame_EnterWorld::operator() };
+void oCGame_EnterWorld::operator()(oCNpc* a0, int a1, zSTRING const& a2)
+{
+	THISCALL(Ivk_oCGame_EnterWorld)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

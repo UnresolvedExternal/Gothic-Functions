@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::zCWorld()]]></Title>
+			<Description><![CDATA[public: __thiscall zCWorld::zCWorld()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_zCWorld : zCWorld { zCWorld* operator()(); };
+BindedHook Ivk_zCWorld_zCWorld{ ZENFOR(0x005F2410, 0x006131C0, 0x006182F0, 0x0061FA40), &zCWorld_zCWorld::operator() };
+zCWorld* zCWorld_zCWorld::operator()()
+{
+	zCWorld* result = THISCALL(Ivk_zCWorld_zCWorld)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

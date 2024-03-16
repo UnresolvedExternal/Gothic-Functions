@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CDDrawDeviceNode::_D3DEnumCBListSurfaceFormats(_DDPIXELFORMAT*, void*): long]]></Title>
+			<Description><![CDATA[public: static long __stdcall CDDrawDeviceNode::_D3DEnumCBListSurfaceFormats(_DDPIXELFORMAT*, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long __stdcall Hook_CDDrawDeviceNode__D3DEnumCBListSurfaceFormats(_DDPIXELFORMAT*, void*);
+BindedHook Ivk_CDDrawDeviceNode__D3DEnumCBListSurfaceFormats{ ZENFOR(0x00761AA9, 0x007A6F78, 0x007AECD7, 0x007BB19D), Hook_CDDrawDeviceNode__D3DEnumCBListSurfaceFormats };
+long __stdcall Hook_CDDrawDeviceNode__D3DEnumCBListSurfaceFormats(_DDPIXELFORMAT* a0, void* a1)
+{
+	long result = Ivk_CDDrawDeviceNode__D3DEnumCBListSurfaceFormats(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

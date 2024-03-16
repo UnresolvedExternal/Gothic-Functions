@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRoute::GetInterpolatedPosition(float, int, zVEC3&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCRoute::GetInterpolatedPosition(float, int, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRoute_GetInterpolatedPosition : zCRoute { int operator()(float, int, zVEC3&); };
+BindedHook Ivk_zCRoute_GetInterpolatedPosition{ ZENFOR(0x007090A0, 0x00743E80, 0x007532A0, 0x007B2DA0), &zCRoute_GetInterpolatedPosition::operator() };
+int zCRoute_GetInterpolatedPosition::operator()(float a0, int a1, zVEC3& a2)
+{
+	int result = THISCALL(Ivk_zCRoute_GetInterpolatedPosition)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

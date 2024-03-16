@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetAngle(zCVob*): float]]></Title>
+			<Description><![CDATA[public: float __thiscall oCNpc::GetAngle(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetAngle : oCNpc { float operator()(zCVob*); };
+BindedHook Ivk_oCNpc_GetAngle{ ZENFOR(0x0074BC10, 0x0078D5A0, 0x00797CE0, 0x006811C0), &oCNpc_GetAngle::operator() };
+float oCNpc_GetAngle::operator()(zCVob* a0)
+{
+	float result = THISCALL(Ivk_oCNpc_GetAngle)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

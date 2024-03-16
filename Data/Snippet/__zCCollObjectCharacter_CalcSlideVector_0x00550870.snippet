@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::CalcSlideVector(zVEC3 const&, zVEC3 const&, zVEC3&, zVEC3&, float&): int]]></Title>
+			<Description><![CDATA[private: int __fastcall zCCollObjectCharacter::CalcSlideVector(zVEC3 const&, zVEC3 const&, zVEC3&, zVEC3&, float&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectCharacter_CalcSlideVector : zCCollObjectCharacter { int __fastcall operator()(zVEC3 const&, zVEC3 const&, zVEC3&, zVEC3&, float&); };
+BindedHook Ivk_zCCollObjectCharacter_CalcSlideVector{ ZENFOR(0x0053C380, 0x00553900, 0x0054B650, 0x00550870), &zCCollObjectCharacter_CalcSlideVector::operator() };
+int __fastcall zCCollObjectCharacter_CalcSlideVector::operator()(zVEC3 const& a0, zVEC3 const& a1, zVEC3& a2, zVEC3& a3, float& a4)
+{
+	int result = THISCALL(Ivk_zCCollObjectCharacter_CalcSlideVector)(a0, a1, a2, a3, a4);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcInventory::HandleTrade(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpcInventory::HandleTrade(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcInventory_HandleTrade : oCNpcInventory { int operator()(int); };
+BindedHook Ivk_oCNpcInventory_HandleTrade{ ZENFOR(0x0066E150, 0x0069B970, 0x006B02E0, 0x0070DE00), &oCNpcInventory_HandleTrade::operator() };
+int oCNpcInventory_HandleTrade::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCNpcInventory_HandleTrade)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCMenu*>::InsertSort(zCMenu* const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zCMenu*>::InsertSort(zCMenu* const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCMenu___InsertSort : zCArraySort<zCMenu*> { void operator()(zCMenu* const&); };
+BindedHook Ivk_zCArraySort_zCMenu___InsertSort{ ZENFOR(0x004D1270, 0x004E19B0, 0x004DB750, 0x004DE100), &zCArraySort_zCMenu___InsertSort::operator() };
+void zCArraySort_zCMenu___InsertSort::operator()(zCMenu* const& a0)
+{
+	THISCALL(Ivk_zCArraySort_zCMenu___InsertSort)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

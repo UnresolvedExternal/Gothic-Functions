@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCMenuItem*>::AllocDelta(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zCMenuItem*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCMenuItem___AllocDelta : zCArray<zCMenuItem*> { void operator()(int); };
+BindedHook Ivk_zCArray_zCMenuItem___AllocDelta{ ZENFOR(0x004D14A0, 0x004E1C00, 0x004DB960, 0x004DE310), &zCArray_zCMenuItem___AllocDelta::operator() };
+void zCArray_zCMenuItem___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zCMenuItem___AllocDelta)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

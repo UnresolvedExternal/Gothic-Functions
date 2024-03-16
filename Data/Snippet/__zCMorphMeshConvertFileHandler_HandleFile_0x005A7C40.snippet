@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMeshConvertFileHandler::HandleFile(zSTRING const&, char const*, _finddata_t): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCMorphMeshConvertFileHandler::HandleFile(zSTRING const&, char const*, _finddata_t)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMeshConvertFileHandler_HandleFile : zCMorphMeshConvertFileHandler { int operator()(zSTRING const&, char const*, _finddata_t); };
+BindedHook Ivk_zCMorphMeshConvertFileHandler_HandleFile{ ZENFOR(0x005881A0, 0x005A3290, 0x005A26E0, 0x005A7C40), &zCMorphMeshConvertFileHandler_HandleFile::operator() };
+int zCMorphMeshConvertFileHandler_HandleFile::operator()(zSTRING const& a0, char const* a1, _finddata_t a2)
+{
+	int result = THISCALL(Ivk_zCMorphMeshConvertFileHandler_HandleFile)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

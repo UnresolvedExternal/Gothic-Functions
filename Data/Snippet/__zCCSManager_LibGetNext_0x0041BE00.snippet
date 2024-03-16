@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::LibGetNext(): zCCSBlock*]]></Title>
+			<Description><![CDATA[public: virtual zCCSBlock* __thiscall zCCSManager::LibGetNext()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_LibGetNext : zCCSManager { zCCSBlock* operator()(); };
+BindedHook Ivk_zCCSManager_LibGetNext{ ZENFOR(0x0041B910, 0x0041D7F0, 0x0041BC10, 0x0041BE00), &zCCSManager_LibGetNext::operator() };
+zCCSBlock* zCCSManager_LibGetNext::operator()()
+{
+	zCCSBlock* result = THISCALL(Ivk_zCCSManager_LibGetNext)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

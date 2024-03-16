@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTree<zCModelNode>::DeleteDataSubtree(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCTree<zCModelNode>::DeleteDataSubtree()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTree_zCModelNode__DeleteDataSubtree : zCTree<zCModelNode> { void operator()(); };
+BindedHook Ivk_zCTree_zCModelNode__DeleteDataSubtree{ ZENFOR(0x00582430, 0x0059CF40, 0x0059C980, 0x005A1EE0), &zCTree_zCModelNode__DeleteDataSubtree::operator() };
+void zCTree_zCModelNode__DeleteDataSubtree::operator()()
+{
+	THISCALL(Ivk_zCTree_zCModelNode__DeleteDataSubtree)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

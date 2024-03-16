@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgManipulate::MD_GetNumOfSubTypes(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCMsgManipulate::MD_GetNumOfSubTypes()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgManipulate_MD_GetNumOfSubTypes : oCMsgManipulate { int operator()(); };
+BindedHook Ivk_oCMsgManipulate_MD_GetNumOfSubTypes{ ZENFOR(0x006C23A0, 0x006F7700, 0x0070A000, 0x00769540), &oCMsgManipulate_MD_GetNumOfSubTypes::operator() };
+int oCMsgManipulate_MD_GetNumOfSubTypes::operator()()
+{
+	int result = THISCALL(Ivk_oCMsgManipulate_MD_GetNumOfSubTypes)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

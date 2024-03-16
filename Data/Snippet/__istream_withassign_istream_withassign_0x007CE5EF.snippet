@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[istream_withassign::istream_withassign()]]></Title>
+			<Description><![CDATA[public: __thiscall istream_withassign::istream_withassign()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct istream_withassign_istream_withassign : istream_withassign { istream_withassign* operator()(); };
+BindedHook Ivk_istream_withassign_istream_withassign{ ZENFOR(0x00774C45, 0x007B8A05, 0x007C212F, 0x007CE5EF), &istream_withassign_istream_withassign::operator() };
+istream_withassign* istream_withassign_istream_withassign::operator()()
+{
+	istream_withassign* result = THISCALL(Ivk_istream_withassign_istream_withassign)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

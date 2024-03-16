@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::AssessEnterRoom_S(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::AssessEnterRoom_S()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_AssessEnterRoom_S : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_AssessEnterRoom_S{ ZENFOR(0x006B6BB0, 0x006EB4F0, 0x006FE570, 0x0075D4F0), &oCNpc_AssessEnterRoom_S::operator() };
+int oCNpc_AssessEnterRoom_S::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_AssessEnterRoom_S)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

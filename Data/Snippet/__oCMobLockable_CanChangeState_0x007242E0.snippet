@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobLockable::CanChangeState(oCNpc*, int, int): int]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall oCMobLockable::CanChangeState(oCNpc*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobLockable_CanChangeState : oCMobLockable { int operator()(oCNpc*, int, int); };
+BindedHook Ivk_oCMobLockable_CanChangeState{ ZENFOR(0x006825B0, 0x006B1D00, 0x006C6250, 0x007242E0), &oCMobLockable_CanChangeState::operator() };
+int oCMobLockable_CanChangeState::operator()(oCNpc* a0, int a1, int a2)
+{
+	int result = THISCALL(Ivk_oCMobLockable_CanChangeState)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

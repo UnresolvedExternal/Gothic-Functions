@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyLayer::RenderSkyPoly(zCSkyState*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCSkyLayer::RenderSkyPoly(zCSkyState*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyLayer_RenderSkyPoly : zCSkyLayer { void operator()(zCSkyState*); };
+BindedHook Ivk_zCSkyLayer_RenderSkyPoly{ ZENFOR(0x005BEE20, 0x005DCC00, 0x005DE080, 0x005E4E30), &zCSkyLayer_RenderSkyPoly::operator() };
+void zCSkyLayer_RenderSkyPoly::operator()(zCSkyState* a0)
+{
+	THISCALL(Ivk_zCSkyLayer_RenderSkyPoly)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

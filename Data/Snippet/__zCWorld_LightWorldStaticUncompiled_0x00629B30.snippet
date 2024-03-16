@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::LightWorldStaticUncompiled(zCTree<zCVob>*): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCWorld::LightWorldStaticUncompiled(zCTree<zCVob>*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_LightWorldStaticUncompiled : zCWorld { void operator()(zCTree<zCVob>*); };
+BindedHook Ivk_zCWorld_LightWorldStaticUncompiled{ ZENFOR(0x005FB120, 0x0061C840, 0x006223B0, 0x00629B30), &zCWorld_LightWorldStaticUncompiled::operator() };
+void zCWorld_LightWorldStaticUncompiled::operator()(zCTree<zCVob>* a0)
+{
+	THISCALL(Ivk_zCWorld_LightWorldStaticUncompiled)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

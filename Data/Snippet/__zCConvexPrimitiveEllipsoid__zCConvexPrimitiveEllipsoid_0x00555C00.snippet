@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCConvexPrimitiveEllipsoid::~zCConvexPrimitiveEllipsoid()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCConvexPrimitiveEllipsoid::~zCConvexPrimitiveEllipsoid()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCConvexPrimitiveEllipsoid_Destructor : zCConvexPrimitiveEllipsoid { void operator()(); };
+BindedHook Ivk_zCConvexPrimitiveEllipsoid_Destructor{ ZENFOR(0x005414B0, 0x00558DF0, 0x005509E0, 0x00555C00), &zCConvexPrimitiveEllipsoid_Destructor::operator() };
+void zCConvexPrimitiveEllipsoid_Destructor::operator()()
+{
+	THISCALL(Ivk_zCConvexPrimitiveEllipsoid_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

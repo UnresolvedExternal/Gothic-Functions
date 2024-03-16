@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelNodeInst::FindMasterAni(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCModelNodeInst::FindMasterAni()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelNodeInst_FindMasterAni : zCModelNodeInst { void operator()(); };
+BindedHook Ivk_zCModelNodeInst_FindMasterAni{ ZENFOR(0x00564DA0, 0x0057D720, 0x00579900, 0x0057EE20), &zCModelNodeInst_FindMasterAni::operator() };
+void zCModelNodeInst_FindMasterAni::operator()()
+{
+	THISCALL(Ivk_zCModelNodeInst_FindMasterAni)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVolatileMemoryBase::Alloc(): void*]]></Title>
+			<Description><![CDATA[public: void* __thiscall zCVolatileMemoryBase::Alloc()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVolatileMemoryBase_Alloc : zCVolatileMemoryBase { void* operator()(); };
+BindedHook Ivk_zCVolatileMemoryBase_Alloc{ ZENFOR(0x0054EDD0, 0x005672D0, 0x00560F40, 0x00566160), &zCVolatileMemoryBase_Alloc::operator() };
+void* zCVolatileMemoryBase_Alloc::operator()()
+{
+	void* result = THISCALL(Ivk_zCVolatileMemoryBase_Alloc)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

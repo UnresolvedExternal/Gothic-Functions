@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorldInfo::GetLevelMaster(): zCPlayerInfo*]]></Title>
+			<Description><![CDATA[public: zCPlayerInfo* __thiscall zCWorldInfo::GetLevelMaster()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorldInfo_GetLevelMaster : zCWorldInfo { zCPlayerInfo* operator()(); };
+BindedHook Ivk_zCWorldInfo_GetLevelMaster{ ZENFOR(0x0046A7B0, 0x004729B0, 0x0046EF70, 0x0046FBA0), &zCWorldInfo_GetLevelMaster::operator() };
+zCPlayerInfo* zCWorldInfo_GetLevelMaster::operator()()
+{
+	zCPlayerInfo* result = THISCALL(Ivk_zCWorldInfo_GetLevelMaster)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

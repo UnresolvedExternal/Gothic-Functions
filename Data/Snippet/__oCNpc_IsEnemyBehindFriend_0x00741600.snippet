@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::IsEnemyBehindFriend(oCNpc*): oCNpc*]]></Title>
+			<Description><![CDATA[public: oCNpc* __thiscall oCNpc::IsEnemyBehindFriend(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_IsEnemyBehindFriend : oCNpc { oCNpc* operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_IsEnemyBehindFriend{ ZENFOR(0x0069DB70, 0x006CFDD0, 0x006E2BF0, 0x00741600), &oCNpc_IsEnemyBehindFriend::operator() };
+oCNpc* oCNpc_IsEnemyBehindFriend::operator()(oCNpc* a0)
+{
+	oCNpc* result = THISCALL(Ivk_oCNpc_IsEnemyBehindFriend)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobBBox3DSorter<zCZone>::GetBBox(zCBBox3DSorterBase::zTNode const*): zTBBox3D const&]]></Title>
+			<Description><![CDATA[private: virtual zTBBox3D const& __thiscall zCVobBBox3DSorter<zCZone>::GetBBox(zCBBox3DSorterBase::zTNode const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobBBox3DSorter_zCZone__GetBBox : zCVobBBox3DSorter<zCZone> { zTBBox3D const& operator()(zCBBox3DSorterBase::zTNode const*); };
+BindedHook Ivk_zCVobBBox3DSorter_zCZone__GetBBox{ ZENFOR(0x005FA0F0, 0x0061B640, 0x00621160, 0x006288E0), &zCVobBBox3DSorter_zCZone__GetBBox::operator() };
+zTBBox3D const& zCVobBBox3DSorter_zCZone__GetBBox::operator()(zCBBox3DSorterBase::zTNode const* a0)
+{
+	zTBBox3D const& result = THISCALL(Ivk_zCVobBBox3DSorter_zCZone__GetBBox)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

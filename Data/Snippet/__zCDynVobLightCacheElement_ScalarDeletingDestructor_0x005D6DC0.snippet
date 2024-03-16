@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDynVobLightCacheElement::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: void* __thiscall zCDynVobLightCacheElement::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCDynVobLightCacheElement_ScalarDeletingDestructor : zCDynVobLightCacheElement { void* operator()(unsigned int); };
+BindedHook Ivk_zCDynVobLightCacheElement_ScalarDeletingDestructor{ ZENFOR(0x005B1040, 0x005CE200, 0x005D0200, 0x005D6DC0), &zCDynVobLightCacheElement_ScalarDeletingDestructor::operator() };
+void* zCDynVobLightCacheElement_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCDynVobLightCacheElement_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

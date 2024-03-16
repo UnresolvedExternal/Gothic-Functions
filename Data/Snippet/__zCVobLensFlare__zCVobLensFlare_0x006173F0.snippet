@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLensFlare::~zCVobLensFlare()]]></Title>
+			<Description><![CDATA[protected: virtual __thiscall zCVobLensFlare::~zCVobLensFlare()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobLensFlare_Destructor : zCVobLensFlare { void operator()(); };
+BindedHook Ivk_zCVobLensFlare_Destructor{ ZENFOR(0x005EA340, 0x0060A950, 0x0060FD30, 0x006173F0), &zCVobLensFlare_Destructor::operator() };
+void zCVobLensFlare_Destructor::operator()()
+{
+	THISCALL(Ivk_zCVobLensFlare_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

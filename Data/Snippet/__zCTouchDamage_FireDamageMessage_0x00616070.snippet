@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTouchDamage::FireDamageMessage(zCVob*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCTouchDamage::FireDamageMessage(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTouchDamage_FireDamageMessage : zCTouchDamage { void operator()(zCVob*); };
+BindedHook Ivk_zCTouchDamage_FireDamageMessage{ ZENFOR(0x005E8FC0, 0x00609540, 0x0060E9B0, 0x00616070), &zCTouchDamage_FireDamageMessage::operator() };
+void zCTouchDamage_FireDamageMessage::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_zCTouchDamage_FireDamageMessage)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTBBox2D::Classify(zTBBox2D const&): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zTBBox2D::Classify(zTBBox2D const&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zTBBox2D_Classify : zTBBox2D { int operator()(zTBBox2D const&) const; };
+BindedHook Ivk_zTBBox2D_Classify{ ZENFOR(0x00532AC0, 0x00549610, 0x005418F0, 0x00546B10), &zTBBox2D_Classify::operator() };
+int zTBBox2D_Classify::operator()(zTBBox2D const& a0) const
+{
+	int result = THISCALL(Ivk_zTBBox2D_Classify)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

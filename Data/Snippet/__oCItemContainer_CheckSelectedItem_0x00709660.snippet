@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::CheckSelectedItem(): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall oCItemContainer::CheckSelectedItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemContainer_CheckSelectedItem : oCItemContainer { void operator()(); };
+BindedHook Ivk_oCItemContainer_CheckSelectedItem{ ZENFOR(0x00669560, 0x006970C0, 0x006ABB70, 0x00709660), &oCItemContainer_CheckSelectedItem::operator() };
+void oCItemContainer_CheckSelectedItem::operator()()
+{
+	THISCALL(Ivk_oCItemContainer_CheckSelectedItem)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

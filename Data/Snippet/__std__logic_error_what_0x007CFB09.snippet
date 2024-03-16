@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::logic_error::what(): char const* [const]]]></Title>
+			<Description><![CDATA[public: virtual char const* __thiscall std::logic_error::what() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__logic_error_what : std::logic_error { char const* operator()() const; };
+BindedHook Ivk_std__logic_error_what{ ZENFOR(0x0077615F, 0x007B9F1F, 0x007C3649, 0x007CFB09), &std__logic_error_what::operator() };
+char const* std__logic_error_what::operator()() const
+{
+	char const* result = THISCALL(Ivk_std__logic_error_what)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

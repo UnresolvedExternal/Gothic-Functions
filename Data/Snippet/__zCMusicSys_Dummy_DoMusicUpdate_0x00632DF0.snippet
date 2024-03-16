@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSys_Dummy::DoMusicUpdate(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCMusicSys_Dummy::DoMusicUpdate()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSys_Dummy_DoMusicUpdate : zCMusicSys_Dummy { void operator()(); };
+BindedHook Ivk_zCMusicSys_Dummy_DoMusicUpdate{ ZENFOR(0x00603AD0, 0x00625B20, 0x0062B620, 0x00632DF0), &zCMusicSys_Dummy_DoMusicUpdate::operator() };
+void zCMusicSys_Dummy_DoMusicUpdate::operator()()
+{
+	THISCALL(Ivk_zCMusicSys_Dummy_DoMusicUpdate)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogStealContainer::oCViewDialogStealContainer()]]></Title>
+			<Description><![CDATA[public: __thiscall oCViewDialogStealContainer::oCViewDialogStealContainer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogStealContainer_oCViewDialogStealContainer : oCViewDialogStealContainer { oCViewDialogStealContainer* operator()(); };
+BindedHook Ivk_oCViewDialogStealContainer_oCViewDialogStealContainer{ ZENFOR(0x00727ED0, 0x00765A00, 0x007745B0, 0x0068A300), &oCViewDialogStealContainer_oCViewDialogStealContainer::operator() };
+oCViewDialogStealContainer* oCViewDialogStealContainer_oCViewDialogStealContainer::operator()()
+{
+	oCViewDialogStealContainer* result = THISCALL(Ivk_oCViewDialogStealContainer_oCViewDialogStealContainer)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

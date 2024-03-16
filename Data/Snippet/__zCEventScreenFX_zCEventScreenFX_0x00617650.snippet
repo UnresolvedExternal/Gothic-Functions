@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventScreenFX::zCEventScreenFX(zCEventScreenFX::zTEventScreenFXSubType, float, zCOLOR, float)]]></Title>
+			<Description><![CDATA[public: __thiscall zCEventScreenFX::zCEventScreenFX(zCEventScreenFX::zTEventScreenFXSubType, float, zCOLOR, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventScreenFX_zCEventScreenFX : zCEventScreenFX { zCEventScreenFX* operator()(zCEventScreenFX::zTEventScreenFXSubType, float, zCOLOR, float); };
+BindedHook Ivk_zCEventScreenFX_zCEventScreenFX{ ZENFOR(0x005EA5A0, 0x0060ABD0, 0x0060FF90, 0x00617650), &zCEventScreenFX_zCEventScreenFX::operator() };
+zCEventScreenFX* zCEventScreenFX_zCEventScreenFX::operator()(zCEventScreenFX::zTEventScreenFXSubType a0, float a1, zCOLOR a2, float a3)
+{
+	zCEventScreenFX* result = THISCALL(Ivk_zCEventScreenFX_zCEventScreenFX)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

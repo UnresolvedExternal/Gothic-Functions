@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::SetJoyDigitalEmu(int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCInput::SetJoyDigitalEmu(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_SetJoyDigitalEmu : zCInput { void operator()(int); };
+BindedHook Ivk_zCInput_SetJoyDigitalEmu{ ZENFOR(0x004C2970, 0x004D2280, 0x004C9740, 0x004CBCB0), &zCInput_SetJoyDigitalEmu::operator() };
+void zCInput_SetJoyDigitalEmu::operator()(int a0)
+{
+	THISCALL(Ivk_zCInput_SetJoyDigitalEmu)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

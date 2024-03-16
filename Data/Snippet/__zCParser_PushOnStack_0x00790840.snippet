@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::PushOnStack(zCPar_TreeNode*): zCPar_TreeNode*]]></Title>
+			<Description><![CDATA[private: zCPar_TreeNode* __thiscall zCParser::PushOnStack(zCPar_TreeNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_PushOnStack : zCParser { zCPar_TreeNode* operator()(zCPar_TreeNode*); };
+BindedHook Ivk_zCParser_PushOnStack{ ZENFOR(0x006E75A0, 0x007202F0, 0x00730E00, 0x00790840), &zCParser_PushOnStack::operator() };
+zCPar_TreeNode* zCParser_PushOnStack::operator()(zCPar_TreeNode* a0)
+{
+	zCPar_TreeNode* result = THISCALL(Ivk_zCParser_PushOnStack)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

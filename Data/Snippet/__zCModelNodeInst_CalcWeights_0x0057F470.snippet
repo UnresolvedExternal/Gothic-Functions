@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelNodeInst::CalcWeights(zCModel*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCModelNodeInst::CalcWeights(zCModel*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelNodeInst_CalcWeights : zCModelNodeInst { void operator()(zCModel*); };
+BindedHook Ivk_zCModelNodeInst_CalcWeights{ ZENFOR(0x005653F0, 0x0057DD70, 0x00579F50, 0x0057F470), &zCModelNodeInst_CalcWeights::operator() };
+void zCModelNodeInst_CalcWeights::operator()(zCModel* a0)
+{
+	THISCALL(Ivk_zCModelNodeInst_CalcWeights)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

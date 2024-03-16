@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAccountInfo::Add(char const*, int, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCAccountInfo::Add(char const*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAccountInfo_Add : zCAccountInfo { void operator()(char const*, int, int); };
+BindedHook Ivk_zCAccountInfo_Add{ ZENFOR(0x00759B10, 0x0079C100, 0x007A6A20, 0x0065D590), &zCAccountInfo_Add::operator() };
+void zCAccountInfo_Add::operator()(char const* a0, int a1, int a2)
+{
+	THISCALL(Ivk_zCAccountInfo_Add)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

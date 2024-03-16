@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::IsIntroActive(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall CGameManager::IsIntroActive()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_IsIntroActive : CGameManager { int operator()(); };
+BindedHook Ivk_CGameManager_IsIntroActive{ ZENFOR(0x00429530, 0x0042C100, 0x0042AEA0, 0x0042B1C0), &CGameManager_IsIntroActive::operator() };
+int CGameManager_IsIntroActive::operator()()
+{
+	int result = THISCALL(Ivk_CGameManager_IsIntroActive)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

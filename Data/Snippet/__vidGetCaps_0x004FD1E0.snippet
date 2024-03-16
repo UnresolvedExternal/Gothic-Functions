@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[vidGetCaps(unsigned long): unsigned long]]></Title>
+			<Description><![CDATA[unsigned long __cdecl vidGetCaps(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[unsigned long Hook_vidGetCaps(unsigned long);
+BindedHook Ivk_vidGetCaps{ ZENFOR(0x004EECA0, 0x00501500, 0x004FA560, 0x004FD1E0), Hook_vidGetCaps };
+unsigned long Hook_vidGetCaps(unsigned long a0)
+{
+	unsigned long result = Ivk_vidGetCaps(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

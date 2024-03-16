@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundFXDummy::~zCSoundFXDummy()]]></Title>
+			<Description><![CDATA[public: virtual __thiscall zCSoundFXDummy::~zCSoundFXDummy()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundFXDummy_Destructor : zCSoundFXDummy { void operator()(); };
+BindedHook Ivk_zCSoundFXDummy_Destructor{ ZENFOR(0x006037F0, 0x00625830, 0x0062B380, 0x00632B50), &zCSoundFXDummy_Destructor::operator() };
+void zCSoundFXDummy_Destructor::operator()()
+{
+	THISCALL(Ivk_zCSoundFXDummy_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

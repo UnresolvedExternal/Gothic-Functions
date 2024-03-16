@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::GameSessionReset(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall CGameManager::GameSessionReset()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_GameSessionReset : CGameManager { void operator()(); };
+BindedHook Ivk_CGameManager_GameSessionReset{ ZENFOR(0x00425E40, 0x00428800, 0x004269E0, 0x00426D20), &CGameManager_GameSessionReset::operator() };
+void CGameManager_GameSessionReset::operator()()
+{
+	THISCALL(Ivk_CGameManager_GameSessionReset)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

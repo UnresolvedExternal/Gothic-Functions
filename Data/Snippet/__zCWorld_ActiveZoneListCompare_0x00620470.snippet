@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::ActiveZoneListCompare(void const*, void const*): int]]></Title>
+			<Description><![CDATA[private: static int __cdecl zCWorld::ActiveZoneListCompare(void const*, void const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCWorld_ActiveZoneListCompare(void const*, void const*);
+BindedHook Ivk_zCWorld_ActiveZoneListCompare{ ZENFOR(0x005F2D50, 0x00613B30, 0x00618D20, 0x00620470), Hook_zCWorld_ActiveZoneListCompare };
+int Hook_zCWorld_ActiveZoneListCompare(void const* a0, void const* a1)
+{
+	int result = Ivk_zCWorld_ActiveZoneListCompare(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

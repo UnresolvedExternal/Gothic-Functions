@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zVEC3::IsEqualEps(zVEC3 const&): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zVEC3::IsEqualEps(zVEC3 const&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zVEC3_IsEqualEps : zVEC3 { int operator()(zVEC3 const&) const; };
+BindedHook Ivk_zVEC3_IsEqualEps{ ZENFOR(0x00528CA0, 0x0053F2F0, 0x0055F660, 0x00564880), &zVEC3_IsEqualEps::operator() };
+int zVEC3_IsEqualEps::operator()(zVEC3 const& a0) const
+{
+	int result = THISCALL(Ivk_zVEC3_IsEqualEps)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

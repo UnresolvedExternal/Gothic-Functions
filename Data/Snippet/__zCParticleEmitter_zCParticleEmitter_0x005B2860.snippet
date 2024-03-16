@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParticleEmitter::zCParticleEmitter()]]></Title>
+			<Description><![CDATA[public: __thiscall zCParticleEmitter::zCParticleEmitter()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParticleEmitter_zCParticleEmitter : zCParticleEmitter { zCParticleEmitter* operator()(); };
+BindedHook Ivk_zCParticleEmitter_zCParticleEmitter{ ZENFOR(0x00591DC0, 0x005AD6F0, 0x005AD200, 0x005B2860), &zCParticleEmitter_zCParticleEmitter::operator() };
+zCParticleEmitter* zCParticleEmitter_zCParticleEmitter::operator()()
+{
+	zCParticleEmitter* result = THISCALL(Ivk_zCParticleEmitter_zCParticleEmitter)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

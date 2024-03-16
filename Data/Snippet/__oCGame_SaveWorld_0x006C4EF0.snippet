@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::SaveWorld(zSTRING const&, zCWorld::zTWorldSaveMode, int, int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCGame::SaveWorld(zSTRING const&, zCWorld::zTWorldSaveMode, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_SaveWorld : oCGame { void operator()(zSTRING const&, zCWorld::zTWorldSaveMode, int, int); };
+BindedHook Ivk_oCGame_SaveWorld{ ZENFOR(0x0063AA20, 0x00661300, 0x00668270, 0x006C4EF0), &oCGame_SaveWorld::operator() };
+void oCGame_SaveWorld::operator()(zSTRING const& a0, zCWorld::zTWorldSaveMode a1, int a2, int a3)
+{
+	THISCALL(Ivk_oCGame_SaveWorld)(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

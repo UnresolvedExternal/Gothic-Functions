@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::PropagateCollObjectStates(zCAIPlayer::zTMovementState): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCAIPlayer::PropagateCollObjectStates(zCAIPlayer::zTMovementState)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_PropagateCollObjectStates : zCAIPlayer { void operator()(zCAIPlayer::zTMovementState); };
+BindedHook Ivk_zCAIPlayer_PropagateCollObjectStates{ ZENFOR(0x004FE610, 0x00511A70, 0x0050B3D0, 0x0050E180), &zCAIPlayer_PropagateCollObjectStates::operator() };
+void zCAIPlayer_PropagateCollObjectStates::operator()(zCAIPlayer::zTMovementState a0)
+{
+	THISCALL(Ivk_zCAIPlayer_PropagateCollObjectStates)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

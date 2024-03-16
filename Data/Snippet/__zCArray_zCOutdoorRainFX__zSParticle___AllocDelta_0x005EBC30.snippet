@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCOutdoorRainFX::zSParticle*>::AllocDelta(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zCOutdoorRainFX::zSParticle*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCOutdoorRainFX__zSParticle___AllocDelta : zCArray<zCOutdoorRainFX::zSParticle*> { void operator()(int); };
+BindedHook Ivk_zCArray_zCOutdoorRainFX__zSParticle___AllocDelta{ ZENFOR(0x005C15B0, 0x005DF4F0, 0x005E4E80, 0x005EBC30), &zCArray_zCOutdoorRainFX__zSParticle___AllocDelta::operator() };
+void zCArray_zCOutdoorRainFX__zSParticle___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zCOutdoorRainFX__zSParticle___AllocDelta)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

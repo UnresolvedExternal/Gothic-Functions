@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[operator*(zMAT3 const&, float): zMAT3]]></Title>
+			<Description><![CDATA[zMAT3 __cdecl operator*(zMAT3 const&, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zMAT3 Hook_operator_(zMAT3 const&, float);
+BindedHook Ivk_operator_{ ZENFOR(0x00504550, 0x00518160, 0x00511390, 0x00514160), Hook_operator_ };
+zMAT3 Hook_operator_(zMAT3 const& a0, float a1)
+{
+	zMAT3 result = Ivk_operator_(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

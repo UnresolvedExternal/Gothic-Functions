@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexture::ScanConvertTextures(zSTRING): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCTexture::ScanConvertTextures(zSTRING)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+void Hook_zCTexture_ScanConvertTextures(zSTRING);
+BindedHook Ivk_zCTexture_ScanConvertTextures{ ZENFOR(0x00000000, 0x00000000, 0x005F1150, 0x005F7F40), Hook_zCTexture_ScanConvertTextures };
+void Hook_zCTexture_ScanConvertTextures(zSTRING a0)
+{
+	Ivk_zCTexture_ScanConvertTextures(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

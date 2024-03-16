@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFontMan::SearchFont(zSTRING const&): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCFontMan::SearchFont(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFontMan_SearchFont : zCFontMan { int operator()(zSTRING const&); };
+BindedHook Ivk_zCFontMan_SearchFont{ ZENFOR(0x006DEE80, 0x007172A0, 0x007286D0, 0x00788110), &zCFontMan_SearchFont::operator() };
+int zCFontMan_SearchFont::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_zCFontMan_SearchFont)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

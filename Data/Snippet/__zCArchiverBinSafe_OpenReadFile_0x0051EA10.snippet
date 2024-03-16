@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::OpenReadFile(zFILE*, zTArchiveMode, int, int, int): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCArchiverBinSafe::OpenReadFile(zFILE*, zTArchiveMode, int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_OpenReadFile : zCArchiverBinSafe { void operator()(zFILE*, zTArchiveMode, int, int, int); };
+BindedHook Ivk_zCArchiverBinSafe_OpenReadFile{ ZENFOR(0x0050E6C0, 0x00523700, 0x0051BC40, 0x0051EA10), &zCArchiverBinSafe_OpenReadFile::operator() };
+void zCArchiverBinSafe_OpenReadFile::operator()(zFILE* a0, zTArchiveMode a1, int a2, int a3, int a4)
+{
+	THISCALL(Ivk_zCArchiverBinSafe_OpenReadFile)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

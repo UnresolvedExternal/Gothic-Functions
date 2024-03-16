@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItem::GetIsVisible(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCMenuItem::GetIsVisible()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItem_GetIsVisible : zCMenuItem { int operator()(); };
+BindedHook Ivk_zCMenuItem_GetIsVisible{ ZENFOR(0x004D4E80, 0x004E59D0, 0x004DF490, 0x004E1E40), &zCMenuItem_GetIsVisible::operator() };
+int zCMenuItem_GetIsVisible::operator()()
+{
+	int result = THISCALL(Ivk_zCMenuItem_GetIsVisible)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

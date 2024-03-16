@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCLogManager::Archive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[public: void __fastcall oCLogManager::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCLogManager_Archive : oCLogManager { void __fastcall operator()(zCArchiver&); };
+BindedHook Ivk_oCLogManager_Archive{ ZENFOR(0x0072E810, 0x0076CE50, 0x0077A400, 0x00663640), &oCLogManager_Archive::operator() };
+void __fastcall oCLogManager_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCLogManager_Archive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

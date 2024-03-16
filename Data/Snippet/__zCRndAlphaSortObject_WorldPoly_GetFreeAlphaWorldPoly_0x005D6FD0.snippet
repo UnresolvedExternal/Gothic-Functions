@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRndAlphaSortObject_WorldPoly::GetFreeAlphaWorldPoly(): zCRndAlphaSortObject_WorldPoly*]]></Title>
+			<Description><![CDATA[public: static zCRndAlphaSortObject_WorldPoly* __cdecl zCRndAlphaSortObject_WorldPoly::GetFreeAlphaWorldPoly()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCRndAlphaSortObject_WorldPoly* Hook_zCRndAlphaSortObject_WorldPoly_GetFreeAlphaWorldPoly();
+BindedHook Ivk_zCRndAlphaSortObject_WorldPoly_GetFreeAlphaWorldPoly{ ZENFOR(0x005B1250, 0x005CE410, 0x005D0410, 0x005D6FD0), Hook_zCRndAlphaSortObject_WorldPoly_GetFreeAlphaWorldPoly };
+zCRndAlphaSortObject_WorldPoly* Hook_zCRndAlphaSortObject_WorldPoly_GetFreeAlphaWorldPoly()
+{
+	zCRndAlphaSortObject_WorldPoly* result = Ivk_zCRndAlphaSortObject_WorldPoly_GetFreeAlphaWorldPoly();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

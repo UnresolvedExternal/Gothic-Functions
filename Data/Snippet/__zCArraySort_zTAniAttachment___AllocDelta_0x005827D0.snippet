@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zTAniAttachment*>::AllocDelta(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zTAniAttachment*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zCArraySort_zTAniAttachment___AllocDelta : zCArraySort<zTAniAttachment*> { void operator()(int); };
+BindedHook Ivk_zCArraySort_zTAniAttachment___AllocDelta{ ZENFOR(0x00569940, 0x005827D0, 0x00000000, 0x00000000), &zCArraySort_zTAniAttachment___AllocDelta::operator() };
+void zCArraySort_zTAniAttachment___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArraySort_zTAniAttachment___AllocDelta)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

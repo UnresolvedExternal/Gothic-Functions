@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobSoundDaytime::GetZoneMotherClass(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[public: virtual zCClassDef* __thiscall zCVobSoundDaytime::GetZoneMotherClass() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobSoundDaytime_GetZoneMotherClass : zCVobSoundDaytime { zCClassDef* operator()() const; };
+BindedHook Ivk_zCVobSoundDaytime_GetZoneMotherClass{ ZENFOR(0x0060A9A0, 0x0062CEC0, 0x00633850, 0x0063B020), &zCVobSoundDaytime_GetZoneMotherClass::operator() };
+zCClassDef* zCVobSoundDaytime_GetZoneMotherClass::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCVobSoundDaytime_GetZoneMotherClass)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

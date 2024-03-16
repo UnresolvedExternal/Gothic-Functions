@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBinTree3DS::CreateNodeList(int, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCBinTree3DS::CreateNodeList(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBinTree3DS_CreateNodeList : zCBinTree3DS { void operator()(int, int); };
+BindedHook Ivk_zCBinTree3DS_CreateNodeList{ ZENFOR(0x00547830, 0x0055F770, 0x00559360, 0x0055E580), &zCBinTree3DS_CreateNodeList::operator() };
+void zCBinTree3DS_CreateNodeList::operator()(int a0, int a1)
+{
+	THISCALL(Ivk_zCBinTree3DS_CreateNodeList)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_SymbolTable::IsIn(zSTRING const&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCPar_SymbolTable::IsIn(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_SymbolTable_IsIn : zCPar_SymbolTable { int operator()(zSTRING const&); };
+BindedHook Ivk_zCPar_SymbolTable_IsIn{ ZENFOR(0x006F9E90, 0x00734230, 0x00743F20, 0x007A3960), &zCPar_SymbolTable_IsIn::operator() };
+int zCPar_SymbolTable_IsIn::operator()(zSTRING const& a0)
+{
+	int result = THISCALL(Ivk_zCPar_SymbolTable_IsIn)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuildPortal::~zCBuildPortal()]]></Title>
+			<Description><![CDATA[public: __thiscall zCBuildPortal::~zCBuildPortal()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuildPortal_Destructor : zCBuildPortal { void operator()(); };
+BindedHook Ivk_zCBuildPortal_Destructor{ ZENFOR(0x0052E3A0, 0x00544D10, 0x0053CC50, 0x00541D60), &zCBuildPortal_Destructor::operator() };
+void zCBuildPortal_Destructor::operator()()
+{
+	THISCALL(Ivk_zCBuildPortal_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

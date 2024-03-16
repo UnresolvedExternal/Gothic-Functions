@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::GetAniFromAniID(int): zCModelAni* [const]]]></Title>
+			<Description><![CDATA[public: zCModelAni* __thiscall zCModel::GetAniFromAniID(int) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_GetAniFromAniID : zCModel { zCModelAni* operator()(int) const; };
+BindedHook Ivk_zCModel_GetAniFromAniID{ ZENFOR(0x0046D1E0, 0x00475680, 0x00471E30, 0x00472F50), &zCModel_GetAniFromAniID::operator() };
+zCModelAni* zCModel_GetAniFromAniID::operator()(int a0) const
+{
+	zCModelAni* result = THISCALL(Ivk_zCModel_GetAniFromAniID)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

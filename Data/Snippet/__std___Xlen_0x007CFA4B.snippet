@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::_Xlen(): void]]></Title>
+			<Description><![CDATA[void __cdecl std::_Xlen()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_std___Xlen();
+BindedHook Ivk_std___Xlen{ ZENFOR(0x007760A1, 0x007B9E61, 0x007C358B, 0x007CFA4B), Hook_std___Xlen };
+void Hook_std___Xlen()
+{
+	Ivk_std___Xlen();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

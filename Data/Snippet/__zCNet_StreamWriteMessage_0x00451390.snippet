@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::StreamWriteMessage(zCNetMessage*&): unsigned long]]></Title>
+			<Description><![CDATA[protected: unsigned long __thiscall zCNet::StreamWriteMessage(zCNetMessage*&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_StreamWriteMessage : zCNet { unsigned long operator()(zCNetMessage*&); };
+BindedHook Ivk_zCNet_StreamWriteMessage{ ZENFOR(0x0044CC10, 0x00453210, 0x00450C40, 0x00451390), &zCNet_StreamWriteMessage::operator() };
+unsigned long zCNet_StreamWriteMessage::operator()(zCNetMessage*& a0)
+{
+	unsigned long result = THISCALL(Ivk_zCNet_StreamWriteMessage)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::GetDisguiseGuild(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCItem::GetDisguiseGuild()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_GetDisguiseGuild : oCItem { int operator()(); };
+BindedHook Ivk_oCItem_GetDisguiseGuild{ ZENFOR(0x006720D0, 0x0069FA30, 0x006B4A30, 0x007127E0), &oCItem_GetDisguiseGuild::operator() };
+int oCItem_GetDisguiseGuild::operator()()
+{
+	int result = THISCALL(Ivk_oCItem_GetDisguiseGuild)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

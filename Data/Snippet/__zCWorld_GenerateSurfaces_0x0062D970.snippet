@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::GenerateSurfaces(int, zTBBox3D*): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCWorld::GenerateSurfaces(int, zTBBox3D*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_GenerateSurfaces : zCWorld { void operator()(int, zTBBox3D*); };
+BindedHook Ivk_zCWorld_GenerateSurfaces{ ZENFOR(0x005FED20, 0x00620830, 0x006261F0, 0x0062D970), &zCWorld_GenerateSurfaces::operator() };
+void zCWorld_GenerateSurfaces::operator()(int a0, zTBBox3D* a1)
+{
+	THISCALL(Ivk_zCWorld_GenerateSurfaces)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

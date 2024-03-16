@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zLocal_PerFrame(): void]]></Title>
+			<Description><![CDATA[void __cdecl zLocal_PerFrame()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zLocal_PerFrame();
+BindedHook Ivk_zLocal_PerFrame{ ZENFOR(0x0075AD20, 0x0079D640, 0x007A7F00, 0x007B4420), Hook_zLocal_PerFrame };
+void Hook_zLocal_PerFrame()
+{
+	Ivk_zLocal_PerFrame();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

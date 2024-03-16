@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMover::MoveToKeyframe(int): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCMover::MoveToKeyframe(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMover_MoveToKeyframe : zCMover { void operator()(int); };
+BindedHook Ivk_zCMover_MoveToKeyframe{ ZENFOR(0x005E56A0, 0x00605860, 0x0060AF10, 0x006125D0), &zCMover_MoveToKeyframe::operator() };
+void zCMover_MoveToKeyframe::operator()(int a0)
+{
+	THISCALL(Ivk_zCMover_MoveToKeyframe)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

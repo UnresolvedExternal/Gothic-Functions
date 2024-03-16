@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::ReadVarType(): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCParser::ReadVarType()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_ReadVarType : zCParser { int operator()(); };
+BindedHook Ivk_zCParser_ReadVarType{ ZENFOR(0x006EED90, 0x00728460, 0x00738E70, 0x007988B0), &zCParser_ReadVarType::operator() };
+int zCParser_ReadVarType::operator()()
+{
+	int result = THISCALL(Ivk_zCParser_ReadVarType)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

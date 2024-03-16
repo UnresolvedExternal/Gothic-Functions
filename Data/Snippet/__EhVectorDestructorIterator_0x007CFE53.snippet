@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[EhVectorDestructorIterator(void*, unsigned int, int, void(__thiscall*)(void*)): void]]></Title>
+			<Description><![CDATA[void __stdcall EhVectorDestructorIterator(void*, unsigned int, int, void(__thiscall*)(void*))]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void __stdcall Hook_EhVectorDestructorIterator(void*, unsigned int, int, void(__thiscall*)(void*));
+BindedHook Ivk_EhVectorDestructorIterator{ ZENFOR(0x007764A9, 0x007BA269, 0x007C3993, 0x007CFE53), Hook_EhVectorDestructorIterator };
+void __stdcall Hook_EhVectorDestructorIterator(void* a0, unsigned int a1, int a2, void(__thiscall* a3)(void*))
+{
+	Ivk_EhVectorDestructorIterator(a0, a1, a2, a3);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

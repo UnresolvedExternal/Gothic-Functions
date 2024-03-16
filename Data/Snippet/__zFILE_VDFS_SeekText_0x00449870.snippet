@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_VDFS::SeekText(zSTRING const&): zSTRING]]></Title>
+			<Description><![CDATA[public: virtual zSTRING __thiscall zFILE_VDFS::SeekText(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zFILE_VDFS_SeekText : zFILE_VDFS { zSTRING operator()(zSTRING const&); };
+BindedHook Ivk_zFILE_VDFS_SeekText{ ZENFOR(0x00000000, 0x00000000, 0x00449210, 0x00449870), &zFILE_VDFS_SeekText::operator() };
+zSTRING zFILE_VDFS_SeekText::operator()(zSTRING const& a0)
+{
+	zSTRING result = THISCALL(Ivk_zFILE_VDFS_SeekText)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

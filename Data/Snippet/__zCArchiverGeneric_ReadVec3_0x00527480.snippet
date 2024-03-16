@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::ReadVec3(char const*): zVEC3]]></Title>
+			<Description><![CDATA[public: virtual zVEC3 __fastcall zCArchiverGeneric::ReadVec3(char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_ReadVec3 : zCArchiverGeneric { zVEC3 __fastcall operator()(char const*); };
+BindedHook Ivk_zCArchiverGeneric_ReadVec3{ ZENFOR(0x00516840, 0x0052C1B0, 0x005246B0, 0x00527480), &zCArchiverGeneric_ReadVec3::operator() };
+zVEC3 __fastcall zCArchiverGeneric_ReadVec3::operator()(char const* a0)
+{
+	zVEC3 result = THISCALL(Ivk_zCArchiverGeneric_ReadVec3)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

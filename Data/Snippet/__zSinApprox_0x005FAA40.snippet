@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSinApprox(float): float]]></Title>
+			<Description><![CDATA[float __cdecl zSinApprox(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[float Hook_zSinApprox(float);
+BindedHook Ivk_zSinApprox{ ZENFOR(0x005CF720, 0x005EE5D0, 0x005F3C50, 0x005FAA40), Hook_zSinApprox };
+float Hook_zSinApprox(float a0)
+{
+	float result = Ivk_zSinApprox(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

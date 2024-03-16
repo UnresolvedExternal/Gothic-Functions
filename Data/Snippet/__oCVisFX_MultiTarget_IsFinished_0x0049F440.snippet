@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisFX_MultiTarget::IsFinished(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCVisFX_MultiTarget::IsFinished()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCVisFX_MultiTarget_IsFinished : oCVisFX_MultiTarget { int operator()(); };
+BindedHook Ivk_oCVisFX_MultiTarget_IsFinished{ ZENFOR(0x00498010, 0x004A50A0, 0x0049D0E0, 0x0049F440), &oCVisFX_MultiTarget_IsFinished::operator() };
+int oCVisFX_MultiTarget_IsFinished::operator()()
+{
+	int result = THISCALL(Ivk_oCVisFX_MultiTarget_IsFinished)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTriggerList::Init(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCTriggerList::Init()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTriggerList_Init : zCTriggerList { void operator()(); };
+BindedHook Ivk_zCTriggerList_Init{ ZENFOR(0x005E7E00, 0x006081A0, 0x0060D740, 0x00614E00), &zCTriggerList_Init::operator() };
+void zCTriggerList_Init::operator()()
+{
+	THISCALL(Ivk_zCTriggerList_Init)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

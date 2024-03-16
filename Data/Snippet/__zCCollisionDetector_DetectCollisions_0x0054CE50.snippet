@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollisionDetector::DetectCollisions(zCCollisionObject*, zCArray<zCCollisionObject*>const&, zCArray<zCCollisionReport*>&): void]]></Title>
+			<Description><![CDATA[public: virtual void __fastcall zCCollisionDetector::DetectCollisions(zCCollisionObject*, zCArray<zCCollisionObject*>const&, zCArray<zCCollisionReport*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollisionDetector_DetectCollisions : zCCollisionDetector { void __fastcall operator()(zCCollisionObject*, zCArray<zCCollisionObject*>const&, zCArray<zCCollisionReport*>&); };
+BindedHook Ivk_zCCollisionDetector_DetectCollisions{ ZENFOR(0x005388C0, 0x0054FB10, 0x00547C30, 0x0054CE50), &zCCollisionDetector_DetectCollisions::operator() };
+void __fastcall zCCollisionDetector_DetectCollisions::operator()(zCCollisionObject* a0, zCArray<zCCollisionObject*>const& a1, zCArray<zCCollisionReport*>& a2)
+{
+	THISCALL(Ivk_zCCollisionDetector_DetectCollisions)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

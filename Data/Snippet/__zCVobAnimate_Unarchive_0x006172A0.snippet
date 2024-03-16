@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobAnimate::Unarchive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCVobAnimate::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobAnimate_Unarchive : zCVobAnimate { void operator()(zCArchiver&); };
+BindedHook Ivk_zCVobAnimate_Unarchive{ ZENFOR(0x005EA1F0, 0x0060A800, 0x0060FBE0, 0x006172A0), &zCVobAnimate_Unarchive::operator() };
+void zCVobAnimate_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCVobAnimate_Unarchive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

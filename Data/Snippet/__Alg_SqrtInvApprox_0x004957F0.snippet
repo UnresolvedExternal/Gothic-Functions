@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Alg_SqrtInvApprox(float): float]]></Title>
+			<Description><![CDATA[float __cdecl Alg_SqrtInvApprox(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[float Hook_Alg_SqrtInvApprox(float);
+BindedHook Ivk_Alg_SqrtInvApprox{ ZENFOR(0x005094C0, 0x0051DFD0, 0x00493C10, 0x004957F0), Hook_Alg_SqrtInvApprox };
+float Hook_Alg_SqrtInvApprox(float a0)
+{
+	float result = Ivk_Alg_SqrtInvApprox(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

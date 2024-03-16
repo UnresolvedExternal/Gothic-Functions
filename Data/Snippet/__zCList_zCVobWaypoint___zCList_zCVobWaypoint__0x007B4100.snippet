@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCVobWaypoint>::~zCList<zCVobWaypoint>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCList<zCVobWaypoint>::~zCList<zCVobWaypoint>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCVobWaypoint__Destructor : zCList<zCVobWaypoint> { void operator()(); };
+BindedHook Ivk_zCList_zCVobWaypoint__Destructor{ ZENFOR(0x0070A490, 0x00745320, 0x00754600, 0x007B4100), &zCList_zCVobWaypoint__Destructor::operator() };
+void zCList_zCVobWaypoint__Destructor::operator()()
+{
+	THISCALL(Ivk_zCList_zCVobWaypoint__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

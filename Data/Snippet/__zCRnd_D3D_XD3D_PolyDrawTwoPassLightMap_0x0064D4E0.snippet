@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::XD3D_PolyDrawTwoPassLightMap(zCPolygon*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCRnd_D3D::XD3D_PolyDrawTwoPassLightMap(zCPolygon*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_XD3D_PolyDrawTwoPassLightMap : zCRnd_D3D { void operator()(zCPolygon*); };
+BindedHook Ivk_zCRnd_D3D_XD3D_PolyDrawTwoPassLightMap{ ZENFOR(0x007166D0, 0x00752620, 0x00761F40, 0x0064D4E0), &zCRnd_D3D_XD3D_PolyDrawTwoPassLightMap::operator() };
+void zCRnd_D3D_XD3D_PolyDrawTwoPassLightMap::operator()(zCPolygon* a0)
+{
+	THISCALL(Ivk_zCRnd_D3D_XD3D_PolyDrawTwoPassLightMap)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

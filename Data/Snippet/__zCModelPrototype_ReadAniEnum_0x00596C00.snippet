@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ReadAniEnum(int, zCFileBIN&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::ReadAniEnum(int, zCFileBIN&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCModelPrototype_ReadAniEnum : zCModelPrototype { void operator()(int, zCFileBIN&); };
+BindedHook Ivk_zCModelPrototype_ReadAniEnum{ ZENFOR(0x00000000, 0x00000000, 0x005916A0, 0x00596C00), &zCModelPrototype_ReadAniEnum::operator() };
+void zCModelPrototype_ReadAniEnum::operator()(int a0, zCFileBIN& a1)
+{
+	THISCALL(Ivk_zCModelPrototype_ReadAniEnum)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

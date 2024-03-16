@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArraySort<zCPolygon*>::AllocDelta(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArraySort<zCPolygon*>::AllocDelta(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArraySort_zCPolygon___AllocDelta : zCArraySort<zCPolygon*> { void operator()(int); };
+BindedHook Ivk_zCArraySort_zCPolygon___AllocDelta{ ZENFOR(0x0052E000, 0x00544960, 0x00537B20, 0x0053C9A0), &zCArraySort_zCPolygon___AllocDelta::operator() };
+void zCArraySort_zCPolygon___AllocDelta::operator()(int a0)
+{
+	THISCALL(Ivk_zCArraySort_zCPolygon___AllocDelta)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

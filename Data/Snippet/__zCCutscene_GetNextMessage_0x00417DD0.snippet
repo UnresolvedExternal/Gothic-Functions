@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCutscene::GetNextMessage(zTCSBlockPosition&): zCEventMessage*]]></Title>
+			<Description><![CDATA[public: zCEventMessage* __thiscall zCCutscene::GetNextMessage(zTCSBlockPosition&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCutscene_GetNextMessage : zCCutscene { zCEventMessage* operator()(zTCSBlockPosition&); };
+BindedHook Ivk_zCCutscene_GetNextMessage{ ZENFOR(0x00417720, 0x00419560, 0x00417DD0, 0x00417DD0), &zCCutscene_GetNextMessage::operator() };
+zCEventMessage* zCCutscene_GetNextMessage::operator()(zTCSBlockPosition& a0)
+{
+	zCEventMessage* result = THISCALL(Ivk_zCCutscene_GetNextMessage)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

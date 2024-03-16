@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::AllowDiscardingOfSubtree(): int]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall oCNpc::AllowDiscardingOfSubtree()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_AllowDiscardingOfSubtree : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_AllowDiscardingOfSubtree{ ZENFOR(0x006A4A60, 0x006D7520, 0x006EA300, 0x00748DE0), &oCNpc_AllowDiscardingOfSubtree::operator() };
+int oCNpc_AllowDiscardingOfSubtree::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_AllowDiscardingOfSubtree)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

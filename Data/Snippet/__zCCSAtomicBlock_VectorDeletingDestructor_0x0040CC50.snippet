@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSAtomicBlock::VectorDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCCSAtomicBlock::VectorDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A, G2
+struct zCCSAtomicBlock_VectorDeletingDestructor : zCCSAtomicBlock { void* operator()(unsigned int); };
+BindedHook Ivk_zCCSAtomicBlock_VectorDeletingDestructor{ ZENFOR(0x0040C860, 0x0040DAC0, 0x0040CC50, 0x00000000), &zCCSAtomicBlock_VectorDeletingDestructor::operator() };
+void* zCCSAtomicBlock_VectorDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCCSAtomicBlock_VectorDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

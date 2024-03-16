@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPathSearch::SwitchSearch(zSEvasionSearchDesc const&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCPathSearch::SwitchSearch(zSEvasionSearchDesc const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPathSearch_SwitchSearch : zCPathSearch { int operator()(zSEvasionSearchDesc const&); };
+BindedHook Ivk_zCPathSearch_SwitchSearch{ ZENFOR(0x0049FC40, 0x004AD570, 0x004A5090, 0x004A75C0), &zCPathSearch_SwitchSearch::operator() };
+int zCPathSearch_SwitchSearch::operator()(zSEvasionSearchDesc const& a0)
+{
+	int result = THISCALL(Ivk_zCPathSearch_SwitchSearch)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

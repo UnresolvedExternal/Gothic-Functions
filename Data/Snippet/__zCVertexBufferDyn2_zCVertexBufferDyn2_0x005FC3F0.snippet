@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBufferDyn2::zCVertexBufferDyn2(unsigned long, unsigned long)]]></Title>
+			<Description><![CDATA[public: __thiscall zCVertexBufferDyn2::zCVertexBufferDyn2(unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBufferDyn2_zCVertexBufferDyn2 : zCVertexBufferDyn2 { zCVertexBufferDyn2* operator()(unsigned long, unsigned long); };
+BindedHook Ivk_zCVertexBufferDyn2_zCVertexBufferDyn2{ ZENFOR(0x005D1380, 0x005F0510, 0x005F5600, 0x005FC3F0), &zCVertexBufferDyn2_zCVertexBufferDyn2::operator() };
+zCVertexBufferDyn2* zCVertexBufferDyn2_zCVertexBufferDyn2::operator()(unsigned long a0, unsigned long a1)
+{
+	zCVertexBufferDyn2* result = THISCALL(Ivk_zCVertexBufferDyn2_zCVertexBufferDyn2)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

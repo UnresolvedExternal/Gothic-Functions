@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTriggerWorldStart::OnTrigger(zCVob*, zCVob*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCTriggerWorldStart::OnTrigger(zCVob*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTriggerWorldStart_OnTrigger : zCTriggerWorldStart { void operator()(zCVob*, zCVob*); };
+BindedHook Ivk_zCTriggerWorldStart_OnTrigger{ ZENFOR(0x005ED0D0, 0x0060D790, 0x00612E50, 0x0061A510), &zCTriggerWorldStart_OnTrigger::operator() };
+void zCTriggerWorldStart_OnTrigger::operator()(zCVob* a0, zCVob* a1)
+{
+	THISCALL(Ivk_zCTriggerWorldStart_OnTrigger)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

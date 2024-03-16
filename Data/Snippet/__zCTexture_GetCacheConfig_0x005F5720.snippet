@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexture::GetCacheConfig(unsigned long&, unsigned long&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCTexture::GetCacheConfig(unsigned long&, unsigned long&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTexture_GetCacheConfig : zCTexture { void operator()(unsigned long&, unsigned long&); };
+BindedHook Ivk_zCTexture_GetCacheConfig{ ZENFOR(0x005CA830, 0x005E9120, 0x005EE970, 0x005F5720), &zCTexture_GetCacheConfig::operator() };
+void zCTexture_GetCacheConfig::operator()(unsigned long& a0, unsigned long& a1)
+{
+	THISCALL(Ivk_zCTexture_GetCacheConfig)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

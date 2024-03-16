@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zTIndexA, int>::DataPtr(unsigned long): void* [const]]]></Title>
+			<Description><![CDATA[protected: virtual void* __thiscall zCSparseArray<zTIndexA, int>::DataPtr(unsigned long) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zTIndexA__int__DataPtr : zCSparseArray<zTIndexA, int> { void* operator()(unsigned long) const; };
+BindedHook Ivk_zCSparseArray_zTIndexA__int__DataPtr{ ZENFOR(0x0075A5B0, 0x0079CC10, 0x007A7500, 0x0065E070), &zCSparseArray_zTIndexA__int__DataPtr::operator() };
+void* zCSparseArray_zTIndexA__int__DataPtr::operator()(unsigned long a0) const
+{
+	void* result = THISCALL(Ivk_zCSparseArray_zTIndexA__int__DataPtr)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

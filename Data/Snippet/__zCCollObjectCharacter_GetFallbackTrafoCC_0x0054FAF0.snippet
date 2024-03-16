@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::GetFallbackTrafoCC(zMAT4 const&, zMAT4 const&, zVEC3 const&, int, zMAT4&): void [const]]]></Title>
+			<Description><![CDATA[private: void __fastcall zCCollObjectCharacter::GetFallbackTrafoCC(zMAT4 const&, zMAT4 const&, zVEC3 const&, int, zMAT4&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectCharacter_GetFallbackTrafoCC : zCCollObjectCharacter { void __fastcall operator()(zMAT4 const&, zMAT4 const&, zVEC3 const&, int, zMAT4&) const; };
+BindedHook Ivk_zCCollObjectCharacter_GetFallbackTrafoCC{ ZENFOR(0x0053B600, 0x005529A0, 0x0054A8D0, 0x0054FAF0), &zCCollObjectCharacter_GetFallbackTrafoCC::operator() };
+void __fastcall zCCollObjectCharacter_GetFallbackTrafoCC::operator()(zMAT4 const& a0, zMAT4 const& a1, zVEC3 const& a2, int a3, zMAT4& a4) const
+{
+	THISCALL(Ivk_zCCollObjectCharacter_GetFallbackTrafoCC)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

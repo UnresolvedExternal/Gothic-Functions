@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCModel::zTMdl_StartedVobFX>::~zCArray<zCModel::zTMdl_StartedVobFX>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zCModel::zTMdl_StartedVobFX>::~zCArray<zCModel::zTMdl_StartedVobFX>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCModel__zTMdl_StartedVobFX__Destructor : zCArray<zCModel::zTMdl_StartedVobFX> { void operator()(); };
+BindedHook Ivk_zCArray_zCModel__zTMdl_StartedVobFX__Destructor{ ZENFOR(0x00569540, 0x005823D0, 0x0057E9B0, 0x00583F10), &zCArray_zCModel__zTMdl_StartedVobFX__Destructor::operator() };
+void zCArray_zCModel__zTMdl_StartedVobFX__Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCModel__zTMdl_StartedVobFX__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::FindMobInter(zSTRING const&): oCMobInter*]]></Title>
+			<Description><![CDATA[public: oCMobInter* __thiscall oCNpc::FindMobInter(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_FindMobInter : oCNpc { oCMobInter* operator()(zSTRING const&); };
+BindedHook Ivk_oCNpc_FindMobInter{ ZENFOR(0x0069C720, 0x006CE890, 0x006E1580, 0x0073FE70), &oCNpc_FindMobInter::operator() };
+oCMobInter* oCNpc_FindMobInter::operator()(zSTRING const& a0)
+{
+	oCMobInter* result = THISCALL(Ivk_oCNpc_FindMobInter)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

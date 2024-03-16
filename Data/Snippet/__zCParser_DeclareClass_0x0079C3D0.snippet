@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::DeclareClass(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCParser::DeclareClass()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_DeclareClass : zCParser { void operator()(); };
+BindedHook Ivk_zCParser_DeclareClass{ ZENFOR(0x006F2AB0, 0x0072C4D0, 0x0073C990, 0x0079C3D0), &zCParser_DeclareClass::operator() };
+void zCParser_DeclareClass::operator()()
+{
+	THISCALL(Ivk_zCParser_DeclareClass)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

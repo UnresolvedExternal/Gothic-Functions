@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenu_Status::SetExperience(unsigned long, unsigned long, unsigned long): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCMenu_Status::SetExperience(unsigned long, unsigned long, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenu_Status_SetExperience : oCMenu_Status { void operator()(unsigned long, unsigned long, unsigned long); };
+BindedHook Ivk_oCMenu_Status_SetExperience{ ZENFOR(0x00475FC0, 0x0047F890, 0x0047BD50, 0x0047D220), &oCMenu_Status_SetExperience::operator() };
+void oCMenu_Status_SetExperience::operator()(unsigned long a0, unsigned long a1, unsigned long a2)
+{
+	THISCALL(Ivk_oCMenu_Status_SetExperience)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPlayerInfo::CreatePlayerVobFromScript(): zCVob*]]></Title>
+			<Description><![CDATA[public: zCVob* __thiscall zCPlayerInfo::CreatePlayerVobFromScript()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPlayerInfo_CreatePlayerVobFromScript : zCPlayerInfo { zCVob* operator()(); };
+BindedHook Ivk_zCPlayerInfo_CreatePlayerVobFromScript{ ZENFOR(0x00463240, 0x0046AD50, 0x00467D00, 0x00468930), &zCPlayerInfo_CreatePlayerVobFromScript::operator() };
+zCVob* zCPlayerInfo_CreatePlayerVobFromScript::operator()()
+{
+	zCVob* result = THISCALL(Ivk_zCPlayerInfo_CreatePlayerVobFromScript)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

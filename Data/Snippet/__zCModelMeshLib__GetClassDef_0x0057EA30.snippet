@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelMeshLib::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCModelMeshLib::_GetClassDef() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelMeshLib__GetClassDef : zCModelMeshLib { zCClassDef* operator()() const; };
+BindedHook Ivk_zCModelMeshLib__GetClassDef{ ZENFOR(0x005649B0, 0x0057D310, 0x00579510, 0x0057EA30), &zCModelMeshLib__GetClassDef::operator() };
+zCClassDef* zCModelMeshLib__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCModelMeshLib__GetClassDef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

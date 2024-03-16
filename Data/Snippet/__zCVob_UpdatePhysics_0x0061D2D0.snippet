@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::UpdatePhysics(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCVob::UpdatePhysics()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_UpdatePhysics : zCVob { void operator()(); };
+BindedHook Ivk_zCVob_UpdatePhysics{ ZENFOR(0x005EFD60, 0x006108C0, 0x00615B90, 0x0061D2D0), &zCVob_UpdatePhysics::operator() };
+void zCVob_UpdatePhysics::operator()()
+{
+	THISCALL(Ivk_zCVob_UpdatePhysics)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

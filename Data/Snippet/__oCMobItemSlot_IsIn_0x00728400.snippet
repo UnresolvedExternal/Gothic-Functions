@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobItemSlot::IsIn(int): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCMobItemSlot::IsIn(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobItemSlot_IsIn : oCMobItemSlot { int operator()(int); };
+BindedHook Ivk_oCMobItemSlot_IsIn{ ZENFOR(0x00686380, 0x006B6110, 0x006CA370, 0x00728400), &oCMobItemSlot_IsIn::operator() };
+int oCMobItemSlot_IsIn::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCMobItemSlot_IsIn)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

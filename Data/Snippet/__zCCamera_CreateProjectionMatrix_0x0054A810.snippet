@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::CreateProjectionMatrix(zMAT4&, float, float, float, float): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCCamera::CreateProjectionMatrix(zMAT4&, float, float, float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamera_CreateProjectionMatrix : zCCamera { void operator()(zMAT4&, float, float, float, float); };
+BindedHook Ivk_zCCamera_CreateProjectionMatrix{ ZENFOR(0x005365D0, 0x0054D5B0, 0x005455F0, 0x0054A810), &zCCamera_CreateProjectionMatrix::operator() };
+void zCCamera_CreateProjectionMatrix::operator()(zMAT4& a0, float a1, float a2, float a3, float a4)
+{
+	THISCALL(Ivk_zCCamera_CreateProjectionMatrix)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

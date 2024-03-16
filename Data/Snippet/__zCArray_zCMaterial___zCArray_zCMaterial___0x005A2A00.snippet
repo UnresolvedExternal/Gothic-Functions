@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCMaterial*>::zCArray<zCMaterial*>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zCMaterial*>::zCArray<zCMaterial*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCMaterial___zCArray_zCMaterial__ : zCArray<zCMaterial*> { zCArray<zCMaterial*>* operator()(); };
+BindedHook Ivk_zCArray_zCMaterial___zCArray_zCMaterial__{ ZENFOR(0x00582F70, 0x0059DAB0, 0x0059D4A0, 0x005A2A00), &zCArray_zCMaterial___zCArray_zCMaterial__::operator() };
+zCArray<zCMaterial*>* zCArray_zCMaterial___zCArray_zCMaterial__::operator()()
+{
+	zCArray<zCMaterial*>* result = THISCALL(Ivk_zCArray_zCMaterial___zCArray_zCMaterial__)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

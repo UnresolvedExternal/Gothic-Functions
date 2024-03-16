@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Outdoor::ApplyStateTexToLayer(int, int): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCSkyControler_Outdoor::ApplyStateTexToLayer(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Outdoor_ApplyStateTexToLayer : zCSkyControler_Outdoor { void operator()(int, int); };
+BindedHook Ivk_zCSkyControler_Outdoor_ApplyStateTexToLayer{ ZENFOR(0x005BCFF0, 0x005DAC00, 0x005E05B0, 0x005E7360), &zCSkyControler_Outdoor_ApplyStateTexToLayer::operator() };
+void zCSkyControler_Outdoor_ApplyStateTexToLayer::operator()(int a0, int a1)
+{
+	THISCALL(Ivk_zCSkyControler_Outdoor_ApplyStateTexToLayer)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

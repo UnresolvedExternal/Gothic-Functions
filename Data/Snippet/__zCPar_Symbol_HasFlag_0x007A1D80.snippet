@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_Symbol::HasFlag(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCPar_Symbol::HasFlag(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_Symbol_HasFlag : zCPar_Symbol { int operator()(int); };
+BindedHook Ivk_zCPar_Symbol_HasFlag{ ZENFOR(0x006F8480, 0x007326F0, 0x00742340, 0x007A1D80), &zCPar_Symbol_HasFlag::operator() };
+int zCPar_Symbol_HasFlag::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCPar_Symbol_HasFlag)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::CheckTexUVOnPlane(zCArray<zCVertex*>const&, zCArray<zCVertFeature>const&): int]]></Title>
+			<Description><![CDATA[private: static int __cdecl zCMesh::CheckTexUVOnPlane(zCArray<zCVertex*>const&, zCArray<zCVertFeature>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCMesh_CheckTexUVOnPlane(zCArray<zCVertex*>const&, zCArray<zCVertFeature>const&);
+BindedHook Ivk_zCMesh_CheckTexUVOnPlane{ ZENFOR(0x00554640, 0x0056CD10, 0x00567450, 0x0056C6A0), Hook_zCMesh_CheckTexUVOnPlane };
+int Hook_zCMesh_CheckTexUVOnPlane(zCArray<zCVertex*>const& a0, zCArray<zCVertFeature>const& a1)
+{
+	int result = Ivk_zCMesh_CheckTexUVOnPlane(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

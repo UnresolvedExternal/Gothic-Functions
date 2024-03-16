@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCOLOR>::operator=(zCArray<zCOLOR>const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zCOLOR>::operator=(zCArray<zCOLOR>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCOLOR__operator_ : zCArray<zCOLOR> { void operator()(zCArray<zCOLOR>const&); };
+BindedHook Ivk_zCArray_zCOLOR__operator_{ ZENFOR(0x005DDE20, 0x005FDB40, 0x00603920, 0x0060ABE0), &zCArray_zCOLOR__operator_::operator() };
+void zCArray_zCOLOR__operator_::operator()(zCArray<zCOLOR>const& a0)
+{
+	THISCALL(Ivk_zCArray_zCOLOR__operator_)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

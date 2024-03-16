@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[TNpcSlot::TNpcSlot()]]></Title>
+			<Description><![CDATA[public: __thiscall TNpcSlot::TNpcSlot()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct TNpcSlot_TNpcSlot : TNpcSlot { TNpcSlot* operator()(); };
+BindedHook Ivk_TNpcSlot_TNpcSlot{ ZENFOR(0x0068BE00, 0x006BC4D0, 0x006D0100, 0x0072E330), &TNpcSlot_TNpcSlot::operator() };
+TNpcSlot* TNpcSlot_TNpcSlot::operator()()
+{
+	TNpcSlot* result = THISCALL(Ivk_TNpcSlot_TNpcSlot)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

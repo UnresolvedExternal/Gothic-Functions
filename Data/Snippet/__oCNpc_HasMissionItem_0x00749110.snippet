@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::HasMissionItem(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::HasMissionItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_HasMissionItem : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_HasMissionItem{ ZENFOR(0x006A4D90, 0x006D7850, 0x006EA630, 0x00749110), &oCNpc_HasMissionItem::operator() };
+int oCNpc_HasMissionItem::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_HasMissionItem)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

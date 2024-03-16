@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetVobControl::HandleNetMessage(zCNetMessage*, unsigned short const&, zCWorld*): int]]></Title>
+			<Description><![CDATA[public: static int __cdecl zCNetVobControl::HandleNetMessage(zCNetMessage*, unsigned short const&, zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCNetVobControl_HandleNetMessage(zCNetMessage*, unsigned short const&, zCWorld*);
+BindedHook Ivk_zCNetVobControl_HandleNetMessage{ ZENFOR(0x004590C0, 0x004602D0, 0x0045DC60, 0x0045E3B0), Hook_zCNetVobControl_HandleNetMessage };
+int Hook_zCNetVobControl_HandleNetMessage(zCNetMessage* a0, unsigned short const& a1, zCWorld* a2)
+{
+	int result = Ivk_zCNetVobControl_HandleNetMessage(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

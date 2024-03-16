@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCThread::SuspendThread(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCThread::SuspendThread()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCThread_SuspendThread : zCThread { int operator()(); };
+BindedHook Ivk_zCThread_SuspendThread{ ZENFOR(0x005CE220, 0x005ECF70, 0x005F2580, 0x005F9370), &zCThread_SuspendThread::operator() };
+int zCThread_SuspendThread::operator()()
+{
+	int result = THISCALL(Ivk_zCThread_SuspendThread)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

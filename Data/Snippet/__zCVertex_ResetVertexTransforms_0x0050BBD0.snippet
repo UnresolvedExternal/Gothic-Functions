@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertex::ResetVertexTransforms(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl zCVertex::ResetVertexTransforms()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCVertex_ResetVertexTransforms();
+BindedHook Ivk_zCVertex_ResetVertexTransforms{ ZENFOR(0x004FC190, 0x0050F260, 0x00508E20, 0x0050BBD0), Hook_zCVertex_ResetVertexTransforms };
+void Hook_zCVertex_ResetVertexTransforms()
+{
+	Ivk_zCVertex_ResetVertexTransforms();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

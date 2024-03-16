@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCDocumentManager::SetLevelCoords(int, int, int, int, int): void]]></Title>
+			<Description><![CDATA[public: void __fastcall oCDocumentManager::SetLevelCoords(int, int, int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCDocumentManager_SetLevelCoords : oCDocumentManager { void __fastcall operator()(int, int, int, int, int); };
+BindedHook Ivk_oCDocumentManager_SetLevelCoords{ ZENFOR(0x00000000, 0x00000000, 0x00770CD0, 0x0065F220), &oCDocumentManager_SetLevelCoords::operator() };
+void __fastcall oCDocumentManager_SetLevelCoords::operator()(int a0, int a1, int a2, int a3, int a4)
+{
+	THISCALL(Ivk_oCDocumentManager_SetLevelCoords)(a0, a1, a2, a3, a4);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSkyControler_Barrier::oCSkyControler_Barrier()]]></Title>
+			<Description><![CDATA[public: __thiscall oCSkyControler_Barrier::oCSkyControler_Barrier()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSkyControler_Barrier_oCSkyControler_Barrier : oCSkyControler_Barrier { oCSkyControler_Barrier* operator()(); };
+BindedHook Ivk_oCSkyControler_Barrier_oCSkyControler_Barrier{ ZENFOR(0x00632010, 0x00657B30, 0x0065EE20, 0x006BB7B0), &oCSkyControler_Barrier_oCSkyControler_Barrier::operator() };
+oCSkyControler_Barrier* oCSkyControler_Barrier_oCSkyControler_Barrier::operator()()
+{
+	oCSkyControler_Barrier* result = THISCALL(Ivk_oCSkyControler_Barrier_oCSkyControler_Barrier)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

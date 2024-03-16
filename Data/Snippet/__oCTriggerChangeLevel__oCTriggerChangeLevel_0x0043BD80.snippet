@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTriggerChangeLevel::~oCTriggerChangeLevel()]]></Title>
+			<Description><![CDATA[protected: virtual __thiscall oCTriggerChangeLevel::~oCTriggerChangeLevel()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTriggerChangeLevel_Destructor : oCTriggerChangeLevel { void operator()(); };
+BindedHook Ivk_oCTriggerChangeLevel_Destructor{ ZENFOR(0x004382D0, 0x0043CC60, 0x0043B750, 0x0043BD80), &oCTriggerChangeLevel_Destructor::operator() };
+void oCTriggerChangeLevel_Destructor::operator()()
+{
+	THISCALL(Ivk_oCTriggerChangeLevel_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

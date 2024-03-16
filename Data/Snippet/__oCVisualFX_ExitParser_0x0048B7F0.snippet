@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::ExitParser(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCVisualFX::ExitParser()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCVisualFX_ExitParser();
+BindedHook Ivk_oCVisualFX_ExitParser{ ZENFOR(0x00483B60, 0x0048EC80, 0x00489E80, 0x0048B7F0), Hook_oCVisualFX_ExitParser };
+void Hook_oCVisualFX_ExitParser()
+{
+	Ivk_oCVisualFX_ExitParser();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

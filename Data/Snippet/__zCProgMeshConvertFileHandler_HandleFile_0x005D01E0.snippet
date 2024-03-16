@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshConvertFileHandler::HandleFile(zSTRING const&, char const*, _finddata_t): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCProgMeshConvertFileHandler::HandleFile(zSTRING const&, char const*, _finddata_t)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshConvertFileHandler_HandleFile : zCProgMeshConvertFileHandler { int operator()(zSTRING const&, char const*, _finddata_t); };
+BindedHook Ivk_zCProgMeshConvertFileHandler_HandleFile{ ZENFOR(0x005AB140, 0x005C7D60, 0x005C9640, 0x005D01E0), &zCProgMeshConvertFileHandler_HandleFile::operator() };
+int zCProgMeshConvertFileHandler_HandleFile::operator()(zSTRING const& a0, char const* a1, _finddata_t a2)
+{
+	int result = THISCALL(Ivk_zCProgMeshConvertFileHandler_HandleFile)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

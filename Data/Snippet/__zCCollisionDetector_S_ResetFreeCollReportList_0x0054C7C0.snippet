@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollisionDetector::S_ResetFreeCollReportList(): void]]></Title>
+			<Description><![CDATA[private: static void __cdecl zCCollisionDetector::S_ResetFreeCollReportList()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_zCCollisionDetector_S_ResetFreeCollReportList();
+BindedHook Ivk_zCCollisionDetector_S_ResetFreeCollReportList{ ZENFOR(0x00538260, 0x0054F430, 0x005475A0, 0x0054C7C0), Hook_zCCollisionDetector_S_ResetFreeCollReportList };
+void Hook_zCCollisionDetector_S_ResetFreeCollReportList()
+{
+	Ivk_zCCollisionDetector_S_ResetFreeCollReportList();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

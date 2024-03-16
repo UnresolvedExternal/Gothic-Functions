@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::ReadInt(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCBuffer::ReadInt(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_ReadInt : zCBuffer { int operator()(int); };
+BindedHook Ivk_zCBuffer_ReadInt{ ZENFOR(0x0043D500, 0x004426E0, 0x00440CD0, 0x00441300), &zCBuffer_ReadInt::operator() };
+int zCBuffer_ReadInt::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCBuffer_ReadInt)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

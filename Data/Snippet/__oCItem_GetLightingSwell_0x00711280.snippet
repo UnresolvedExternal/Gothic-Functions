@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::GetLightingSwell(): int]]></Title>
+			<Description><![CDATA[public: static int __cdecl oCItem::GetLightingSwell()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_oCItem_GetLightingSwell();
+BindedHook Ivk_oCItem_GetLightingSwell{ ZENFOR(0x00670DD0, 0x0069E6A0, 0x006B35E0, 0x00711280), Hook_oCItem_GetLightingSwell };
+int Hook_oCItem_GetLightingSwell()
+{
+	int result = Ivk_oCItem_GetLightingSwell();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

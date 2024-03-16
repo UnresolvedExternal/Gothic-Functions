@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSoundSystem::GetNumProvider(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCSoundSystem::GetNumProvider()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSoundSystem_GetNumProvider : zCSoundSystem { int operator()(); };
+BindedHook Ivk_zCSoundSystem_GetNumProvider{ ZENFOR(0x004DDEF0, 0x004EF3A0, 0x004E87F0, 0x004EB470), &zCSoundSystem_GetNumProvider::operator() };
+int zCSoundSystem_GetNumProvider::operator()()
+{
+	int result = THISCALL(Ivk_zCSoundSystem_GetNumProvider)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[_d3dxCopyFromBits(_D3DX_SURFACEFORMAT, int, int, int, void*, IDirectDrawPalette*, IDirectDrawSurface7*, tagRECT*, tagRECT*, _D3DX_FILTERTYPE): long]]></Title>
+			<Description><![CDATA[long __cdecl _d3dxCopyFromBits(_D3DX_SURFACEFORMAT, int, int, int, void*, IDirectDrawPalette*, IDirectDrawSurface7*, tagRECT*, tagRECT*, _D3DX_FILTERTYPE)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long Hook__d3dxCopyFromBits(_D3DX_SURFACEFORMAT, int, int, int, void*, IDirectDrawPalette*, IDirectDrawSurface7*, tagRECT*, tagRECT*, _D3DX_FILTERTYPE);
+BindedHook Ivk__d3dxCopyFromBits{ ZENFOR(0x0076387D, 0x007A0761, 0x007B0AAB, 0x007BCF71), Hook__d3dxCopyFromBits };
+long Hook__d3dxCopyFromBits(_D3DX_SURFACEFORMAT a0, int a1, int a2, int a3, void* a4, IDirectDrawPalette* a5, IDirectDrawSurface7* a6, tagRECT* a7, tagRECT* a8, _D3DX_FILTERTYPE a9)
+{
+	long result = Ivk__d3dxCopyFromBits(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

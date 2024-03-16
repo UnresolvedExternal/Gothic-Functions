@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::WriteASCIILine(char const*, char const*, zSTRING const&): void]]></Title>
+			<Description><![CDATA[protected: virtual void __fastcall zCArchiverBinSafe::WriteASCIILine(char const*, char const*, zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_WriteASCIILine : zCArchiverBinSafe { void __fastcall operator()(char const*, char const*, zSTRING const&); };
+BindedHook Ivk_zCArchiverBinSafe_WriteASCIILine{ ZENFOR(0x0050CCD0, 0x00521AB0, 0x0051A070, 0x0051CE40), &zCArchiverBinSafe_WriteASCIILine::operator() };
+void __fastcall zCArchiverBinSafe_WriteASCIILine::operator()(char const* a0, char const* a1, zSTRING const& a2)
+{
+	THISCALL(Ivk_zCArchiverBinSafe_WriteASCIILine)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

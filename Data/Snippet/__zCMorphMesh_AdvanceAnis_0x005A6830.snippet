@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::AdvanceAnis(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCMorphMesh::AdvanceAnis()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_AdvanceAnis : zCMorphMesh { void operator()(); };
+BindedHook Ivk_zCMorphMesh_AdvanceAnis{ ZENFOR(0x00586E90, 0x005A1E90, 0x005A12D0, 0x005A6830), &zCMorphMesh_AdvanceAnis::operator() };
+void zCMorphMesh_AdvanceAnis::operator()()
+{
+	THISCALL(Ivk_zCMorphMesh_AdvanceAnis)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

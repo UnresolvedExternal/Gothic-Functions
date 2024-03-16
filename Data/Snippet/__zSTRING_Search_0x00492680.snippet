@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSTRING::Search(zSTRING const&, unsigned int): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zSTRING::Search(zSTRING const&, unsigned int) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSTRING_Search : zSTRING { int operator()(zSTRING const&, unsigned int) const; };
+BindedHook Ivk_zSTRING_Search{ ZENFOR(0x00489C00, 0x00495310, 0x00490C70, 0x00492680), &zSTRING_Search::operator() };
+int zSTRING_Search::operator()(zSTRING const& a0, unsigned int a1) const
+{
+	int result = THISCALL(Ivk_zSTRING_Search)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

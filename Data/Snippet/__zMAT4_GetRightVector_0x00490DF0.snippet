@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zMAT4::GetRightVector(): zVEC3 [const]]]></Title>
+			<Description><![CDATA[public: zVEC3 __thiscall zMAT4::GetRightVector() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zMAT4_GetRightVector : zMAT4 { zVEC3 operator()() const; };
+BindedHook Ivk_zMAT4_GetRightVector{ ZENFOR(0x00488FB0, 0x00494150, 0x0048F450, 0x00490DF0), &zMAT4_GetRightVector::operator() };
+zVEC3 zMAT4_GetRightVector::operator()() const
+{
+	zVEC3 result = THISCALL(Ivk_zMAT4_GetRightVector)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

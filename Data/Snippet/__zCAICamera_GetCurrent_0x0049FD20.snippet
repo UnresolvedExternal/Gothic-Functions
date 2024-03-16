@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAICamera::GetCurrent(): zCAICamera*]]></Title>
+			<Description><![CDATA[public: static zCAICamera* __cdecl zCAICamera::GetCurrent()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCAICamera* Hook_zCAICamera_GetCurrent();
+BindedHook Ivk_zCAICamera_GetCurrent{ ZENFOR(0x004988E0, 0x004A59B0, 0x0049D9C0, 0x0049FD20), Hook_zCAICamera_GetCurrent };
+zCAICamera* Hook_zCAICamera_GetCurrent()
+{
+	zCAICamera* result = Ivk_zCAICamera_GetCurrent();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

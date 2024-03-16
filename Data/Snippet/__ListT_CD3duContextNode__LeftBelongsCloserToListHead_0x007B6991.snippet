@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[ListT<CD3duContextNode>::LeftBelongsCloserToListHead(CD3duContextNode*, CD3duContextNode*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall ListT<CD3duContextNode>::LeftBelongsCloserToListHead(CD3duContextNode*, CD3duContextNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct ListT_CD3duContextNode__LeftBelongsCloserToListHead : ListT<CD3duContextNode> { int operator()(CD3duContextNode*, CD3duContextNode*); };
+BindedHook Ivk_ListT_CD3duContextNode__LeftBelongsCloserToListHead{ ZENFOR(0x0075D29D, 0x0079FFFA, 0x007AA4CB, 0x007B6991), &ListT_CD3duContextNode__LeftBelongsCloserToListHead::operator() };
+int ListT_CD3duContextNode__LeftBelongsCloserToListHead::operator()(CD3duContextNode* a0, CD3duContextNode* a1)
+{
+	int result = THISCALL(Ivk_ListT_CD3duContextNode__LeftBelongsCloserToListHead)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

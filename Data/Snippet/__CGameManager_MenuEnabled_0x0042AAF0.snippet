@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::MenuEnabled(int&): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall CGameManager::MenuEnabled(int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_MenuEnabled : CGameManager { int operator()(int&); };
+BindedHook Ivk_CGameManager_MenuEnabled{ ZENFOR(0x00429140, 0x0042BDF0, 0x0042A7D0, 0x0042AAF0), &CGameManager_MenuEnabled::operator() };
+int CGameManager_MenuEnabled::operator()(int& a0)
+{
+	int result = THISCALL(Ivk_CGameManager_MenuEnabled)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

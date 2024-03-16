@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::SetShowPlayerStatus(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCGame::SetShowPlayerStatus(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_SetShowPlayerStatus : oCGame { void operator()(int); };
+BindedHook Ivk_oCGame_SetShowPlayerStatus{ ZENFOR(0x00638BE0, 0x0065F130, 0x00666290, 0x006C2D90), &oCGame_SetShowPlayerStatus::operator() };
+void oCGame_SetShowPlayerStatus::operator()(int a0)
+{
+	THISCALL(Ivk_oCGame_SetShowPlayerStatus)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

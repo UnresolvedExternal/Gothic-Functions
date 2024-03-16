@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput_Win32::GetAutoRepeatDelayRate(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall zCInput_Win32::GetAutoRepeatDelayRate()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_Win32_GetAutoRepeatDelayRate : zCInput_Win32 { float operator()(); };
+BindedHook Ivk_zCInput_Win32_GetAutoRepeatDelayRate{ ZENFOR(0x004C8850, 0x004D8870, 0x004D2D60, 0x004D5320), &zCInput_Win32_GetAutoRepeatDelayRate::operator() };
+float zCInput_Win32_GetAutoRepeatDelayRate::operator()()
+{
+	float result = THISCALL(Ivk_zCInput_Win32_GetAutoRepeatDelayRate)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

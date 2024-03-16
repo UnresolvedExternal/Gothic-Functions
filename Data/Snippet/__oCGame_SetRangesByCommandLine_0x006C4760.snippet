@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::SetRangesByCommandLine(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCGame::SetRangesByCommandLine()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_SetRangesByCommandLine : oCGame { void operator()(); };
+BindedHook Ivk_oCGame_SetRangesByCommandLine{ ZENFOR(0x0063A270, 0x00660AB0, 0x00667AE0, 0x006C4760), &oCGame_SetRangesByCommandLine::operator() };
+void oCGame_SetRangesByCommandLine::operator()()
+{
+	THISCALL(Ivk_oCGame_SetRangesByCommandLine)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

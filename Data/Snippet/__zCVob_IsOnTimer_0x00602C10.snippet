@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::IsOnTimer(): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zCVob::IsOnTimer() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_IsOnTimer : zCVob { int operator()() const; };
+BindedHook Ivk_zCVob_IsOnTimer{ ZENFOR(0x005D7550, 0x005F6B90, 0x005FBDE0, 0x00602C10), &zCVob_IsOnTimer::operator() };
+int zCVob_IsOnTimer::operator()() const
+{
+	int result = THISCALL(Ivk_zCVob_IsOnTimer)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

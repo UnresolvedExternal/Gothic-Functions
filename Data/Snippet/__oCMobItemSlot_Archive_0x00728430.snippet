@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobItemSlot::Archive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall oCMobItemSlot::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobItemSlot_Archive : oCMobItemSlot { void operator()(zCArchiver&); };
+BindedHook Ivk_oCMobItemSlot_Archive{ ZENFOR(0x006863B0, 0x006B6140, 0x006CA3A0, 0x00728430), &oCMobItemSlot_Archive::operator() };
+void oCMobItemSlot_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCMobItemSlot_Archive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

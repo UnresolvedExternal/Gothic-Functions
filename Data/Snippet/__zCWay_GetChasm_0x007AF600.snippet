@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWay::GetChasm(): float]]></Title>
+			<Description><![CDATA[public: virtual float __thiscall zCWay::GetChasm()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWay_GetChasm : zCWay { float operator()(); };
+BindedHook Ivk_zCWay_GetChasm{ ZENFOR(0x00705A00, 0x00740460, 0x0074FB00, 0x007AF600), &zCWay_GetChasm::operator() };
+float zCWay_GetChasm::operator()()
+{
+	float result = THISCALL(Ivk_zCWay_GetChasm)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

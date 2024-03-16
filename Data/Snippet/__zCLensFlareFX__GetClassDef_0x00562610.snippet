@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCLensFlareFX::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCLensFlareFX::_GetClassDef() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCLensFlareFX__GetClassDef : zCLensFlareFX { zCClassDef* operator()() const; };
+BindedHook Ivk_zCLensFlareFX__GetClassDef{ ZENFOR(0x0054B8A0, 0x00563B50, 0x0055D3F0, 0x00562610), &zCLensFlareFX__GetClassDef::operator() };
+zCClassDef* zCLensFlareFX__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCLensFlareFX__GetClassDef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

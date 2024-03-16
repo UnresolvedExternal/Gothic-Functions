@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::ShouldAddThisVobToBsp(zCVob*): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zCWorld::ShouldAddThisVobToBsp(zCVob*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_ShouldAddThisVobToBsp : zCWorld { int operator()(zCVob*) const; };
+BindedHook Ivk_zCWorld_ShouldAddThisVobToBsp{ ZENFOR(0x005F62E0, 0x006172A0, 0x0061D020, 0x006247B0), &zCWorld_ShouldAddThisVobToBsp::operator() };
+int zCWorld_ShouldAddThisVobToBsp::operator()(zCVob* a0) const
+{
+	int result = THISCALL(Ivk_zCWorld_ShouldAddThisVobToBsp)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

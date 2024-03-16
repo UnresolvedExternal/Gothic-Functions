@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::SupportsTextureFormat(zTRnd_TextureFormat): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCRenderer::SupportsTextureFormat(zTRnd_TextureFormat)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_SupportsTextureFormat : zCRenderer { int operator()(zTRnd_TextureFormat); };
+BindedHook Ivk_zCRenderer_SupportsTextureFormat{ ZENFOR(0x00713B50, 0x0074F870, 0x0075ED50, 0x0064A2F0), &zCRenderer_SupportsTextureFormat::operator() };
+int zCRenderer_SupportsTextureFormat::operator()(zTRnd_TextureFormat a0)
+{
+	int result = THISCALL(Ivk_zCRenderer_SupportsTextureFormat)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

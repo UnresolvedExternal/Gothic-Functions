@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFileBIN::BinReadCompareSrcFileStats(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCFileBIN::BinReadCompareSrcFileStats()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFileBIN_BinReadCompareSrcFileStats : zCFileBIN { int operator()(); };
+BindedHook Ivk_zCFileBIN_BinReadCompareSrcFileStats{ ZENFOR(0x00570240, 0x005896D0, 0x00585410, 0x0058A970), &zCFileBIN_BinReadCompareSrcFileStats::operator() };
+int zCFileBIN_BinReadCompareSrcFileStats::operator()()
+{
+	int result = THISCALL(Ivk_zCFileBIN_BinReadCompareSrcFileStats)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

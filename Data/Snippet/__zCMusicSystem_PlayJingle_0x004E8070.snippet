@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMusicSystem::PlayJingle(zCMusicJingle const*, float const&, zTMus_TransSubType const&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCMusicSystem::PlayJingle(zCMusicJingle const*, float const&, zTMus_TransSubType const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMusicSystem_PlayJingle : zCMusicSystem { int operator()(zCMusicJingle const*, float const&, zTMus_TransSubType const&); };
+BindedHook Ivk_zCMusicSystem_PlayJingle{ ZENFOR(0x004DAE10, 0x004EBFA0, 0x004E5560, 0x004E8070), &zCMusicSystem_PlayJingle::operator() };
+int zCMusicSystem_PlayJingle::operator()(zCMusicJingle const* a0, float const& a1, zTMus_TransSubType const& a2)
+{
+	int result = THISCALL(Ivk_zCMusicSystem_PlayJingle)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

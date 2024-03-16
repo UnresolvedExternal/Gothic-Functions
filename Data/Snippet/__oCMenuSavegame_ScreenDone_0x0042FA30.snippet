@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenuSavegame::ScreenDone(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMenuSavegame::ScreenDone()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenuSavegame_ScreenDone : oCMenuSavegame { void operator()(); };
+BindedHook Ivk_oCMenuSavegame_ScreenDone{ ZENFOR(0x0042D170, 0x00430340, 0x0042F710, 0x0042FA30), &oCMenuSavegame_ScreenDone::operator() };
+void oCMenuSavegame_ScreenDone::operator()()
+{
+	THISCALL(Ivk_oCMenuSavegame_ScreenDone)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

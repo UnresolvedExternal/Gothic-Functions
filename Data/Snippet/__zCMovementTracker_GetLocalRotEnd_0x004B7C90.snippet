@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMovementTracker::GetLocalRotEnd(): zMAT4]]></Title>
+			<Description><![CDATA[public: zMAT4 __thiscall zCMovementTracker::GetLocalRotEnd()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMovementTracker_GetLocalRotEnd : zCMovementTracker { zMAT4 operator()(); };
+BindedHook Ivk_zCMovementTracker_GetLocalRotEnd{ ZENFOR(0x004AF400, 0x004BD7B0, 0x004B5760, 0x004B7C90), &zCMovementTracker_GetLocalRotEnd::operator() };
+zMAT4 zCMovementTracker_GetLocalRotEnd::operator()()
+{
+	zMAT4 result = THISCALL(Ivk_zCMovementTracker_GetLocalRotEnd)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

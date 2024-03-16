@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::ClearVobDependencies(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCWayNet::ClearVobDependencies()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_ClearVobDependencies : zCWayNet { void operator()(); };
+BindedHook Ivk_zCWayNet_ClearVobDependencies{ ZENFOR(0x00703EE0, 0x0073E6D0, 0x0074DFF0, 0x007ADAF0), &zCWayNet_ClearVobDependencies::operator() };
+void zCWayNet_ClearVobDependencies::operator()()
+{
+	THISCALL(Ivk_zCWayNet_ClearVobDependencies)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolygon::TexApplyPlanarMapping(float, float, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCPolygon::TexApplyPlanarMapping(float, float, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolygon_TexApplyPlanarMapping : zCPolygon { void operator()(float, float, int); };
+BindedHook Ivk_zCPolygon_TexApplyPlanarMapping{ ZENFOR(0x00599100, 0x005B51C0, 0x005B5060, 0x005BABD0), &zCPolygon_TexApplyPlanarMapping::operator() };
+void zCPolygon_TexApplyPlanarMapping::operator()(float a0, float a1, int a2)
+{
+	THISCALL(Ivk_zCPolygon_TexApplyPlanarMapping)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

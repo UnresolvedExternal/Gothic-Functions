@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::DoShootArrow(int): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCNpc::DoShootArrow(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_DoShootArrow : oCNpc { int operator()(int); };
+BindedHook Ivk_oCNpc_DoShootArrow{ ZENFOR(0x006A09F0, 0x006D3100, 0x006E5C20, 0x007446B0), &oCNpc_DoShootArrow::operator() };
+int oCNpc_DoShootArrow::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCNpc_DoShootArrow)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspSector::RenderSector(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCBspSector::RenderSector()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspSector_RenderSector : zCBspSector { void operator()(); };
+BindedHook Ivk_zCBspSector_RenderSector{ ZENFOR(0x00520C50, 0x00536B70, 0x005311B0, 0x00534510), &zCBspSector_RenderSector::operator() };
+void zCBspSector_RenderSector::operator()()
+{
+	THISCALL(Ivk_zCBspSector_RenderSector)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

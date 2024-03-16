@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgMovement::MD_SetVobRefName(zSTRING const&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMsgMovement::MD_SetVobRefName(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgMovement_MD_SetVobRefName : oCMsgMovement { void operator()(zSTRING const&); };
+BindedHook Ivk_oCMsgMovement_MD_SetVobRefName{ ZENFOR(0x006BF3C0, 0x006F46E0, 0x00707020, 0x00766560), &oCMsgMovement_MD_SetVobRefName::operator() };
+void oCMsgMovement_MD_SetVobRefName::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_oCMsgMovement_MD_SetVobRefName)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

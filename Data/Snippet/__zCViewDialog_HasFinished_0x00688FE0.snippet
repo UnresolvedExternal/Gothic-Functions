@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewDialog::HasFinished(): int]]></Title>
+			<Description><![CDATA[public: virtual int __fastcall zCViewDialog::HasFinished()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewDialog_HasFinished : zCViewDialog { int __fastcall operator()(); };
+BindedHook Ivk_zCViewDialog_HasFinished{ ZENFOR(0x00725100, 0x00762380, 0x00771590, 0x00688FE0), &zCViewDialog_HasFinished::operator() };
+int __fastcall zCViewDialog_HasFinished::operator()()
+{
+	int result = THISCALL(Ivk_zCViewDialog_HasFinished)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

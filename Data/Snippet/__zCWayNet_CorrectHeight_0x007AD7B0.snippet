@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::CorrectHeight(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCWayNet::CorrectHeight()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_CorrectHeight : zCWayNet { void operator()(); };
+BindedHook Ivk_zCWayNet_CorrectHeight{ ZENFOR(0x00703BA0, 0x0073E390, 0x0074DCB0, 0x007AD7B0), &zCWayNet_CorrectHeight::operator() };
+void zCWayNet_CorrectHeight::operator()()
+{
+	THISCALL(Ivk_zCWayNet_CorrectHeight)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

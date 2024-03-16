@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Alg_Rotation3DN(zVEC3 const&, float): zMAT4]]></Title>
+			<Description><![CDATA[zMAT4 __cdecl Alg_Rotation3DN(zVEC3 const&, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zMAT4 Hook_Alg_Rotation3DN(zVEC3 const&, float);
+BindedHook Ivk_Alg_Rotation3DN{ ZENFOR(0x00508100, 0x0051C9B0, 0x00515020, 0x00517DF0), Hook_Alg_Rotation3DN };
+zMAT4 Hook_Alg_Rotation3DN(zVEC3 const& a0, float a1)
+{
+	zMAT4 result = Ivk_Alg_Rotation3DN(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshBuilder::BuildProgMeshProto(zCMesh*, zCProgMeshProto*, zCArray<int>*, int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCProgMeshBuilder::BuildProgMeshProto(zCMesh*, zCProgMeshProto*, zCArray<int>*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshBuilder_BuildProgMeshProto : zCProgMeshBuilder { int operator()(zCMesh*, zCProgMeshProto*, zCArray<int>*, int); };
+BindedHook Ivk_zCProgMeshBuilder_BuildProgMeshProto{ ZENFOR(0x005A1F90, 0x005BE6D0, 0x005BE2D0, 0x005C3E40), &zCProgMeshBuilder_BuildProgMeshProto::operator() };
+int zCProgMeshBuilder_BuildProgMeshProto::operator()(zCMesh* a0, zCProgMeshProto* a1, zCArray<int>* a2, int a3)
+{
+	int result = THISCALL(Ivk_zCProgMeshBuilder_BuildProgMeshProto)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

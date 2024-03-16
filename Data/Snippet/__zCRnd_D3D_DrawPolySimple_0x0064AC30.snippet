@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::DrawPolySimple(zCTexture*, zTRndSimpleVertex*, int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::DrawPolySimple(zCTexture*, zTRndSimpleVertex*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_DrawPolySimple : zCRnd_D3D { void operator()(zCTexture*, zTRndSimpleVertex*, int); };
+BindedHook Ivk_zCRnd_D3D_DrawPolySimple{ ZENFOR(0x007143F0, 0x007501C0, 0x0075F690, 0x0064AC30), &zCRnd_D3D_DrawPolySimple::operator() };
+void zCRnd_D3D_DrawPolySimple::operator()(zCTexture* a0, zTRndSimpleVertex* a1, int a2)
+{
+	THISCALL(Ivk_zCRnd_D3D_DrawPolySimple)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

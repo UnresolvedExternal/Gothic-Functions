@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Outdoor::ResetTime(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCSkyControler_Outdoor::ResetTime()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Outdoor_ResetTime : zCSkyControler_Outdoor { void operator()(); };
+BindedHook Ivk_zCSkyControler_Outdoor_ResetTime{ ZENFOR(0x005BE930, 0x005DC6D0, 0x005E25D0, 0x005E9380), &zCSkyControler_Outdoor_ResetTime::operator() };
+void zCSkyControler_Outdoor_ResetTime::operator()()
+{
+	THISCALL(Ivk_zCSkyControler_Outdoor_ResetTime)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

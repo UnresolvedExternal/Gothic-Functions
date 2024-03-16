@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::Render(zTRenderContext&): int]]></Title>
+			<Description><![CDATA[public: virtual int __fastcall oCItem::Render(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_Render : oCItem { int __fastcall operator()(zTRenderContext&); };
+BindedHook Ivk_oCItem_Render{ ZENFOR(0x006734F0, 0x006A0FC0, 0x006B5F90, 0x00714020), &oCItem_Render::operator() };
+int __fastcall oCItem_Render::operator()(zTRenderContext& a0)
+{
+	int result = THISCALL(Ivk_oCItem_Render)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

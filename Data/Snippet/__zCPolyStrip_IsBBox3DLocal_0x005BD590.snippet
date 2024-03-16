@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPolyStrip::IsBBox3DLocal(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCPolyStrip::IsBBox3DLocal()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPolyStrip_IsBBox3DLocal : zCPolyStrip { int operator()(); };
+BindedHook Ivk_zCPolyStrip_IsBBox3DLocal{ ZENFOR(0x0059B870, 0x005B7C20, 0x005B7A20, 0x005BD590), &zCPolyStrip_IsBBox3DLocal::operator() };
+int zCPolyStrip_IsBBox3DLocal::operator()()
+{
+	int result = THISCALL(Ivk_zCPolyStrip_IsBBox3DLocal)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

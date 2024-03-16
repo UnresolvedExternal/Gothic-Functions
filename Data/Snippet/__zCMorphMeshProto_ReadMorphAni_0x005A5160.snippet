@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMeshProto::ReadMorphAni(zCArray<int>const&): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCMorphMeshProto::ReadMorphAni(zCArray<int>const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMeshProto_ReadMorphAni : zCMorphMeshProto { void operator()(zCArray<int>const&); };
+BindedHook Ivk_zCMorphMeshProto_ReadMorphAni{ ZENFOR(0x005857F0, 0x005A04F0, 0x0059FC00, 0x005A5160), &zCMorphMeshProto_ReadMorphAni::operator() };
+void zCMorphMeshProto_ReadMorphAni::operator()(zCArray<int>const& a0)
+{
+	THISCALL(Ivk_zCMorphMeshProto_ReadMorphAni)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

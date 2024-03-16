@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::CreateDynamicVertexBuffer(): int]]></Title>
+			<Description><![CDATA[private: static int __cdecl zCProgMeshProto::CreateDynamicVertexBuffer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCProgMeshProto_CreateDynamicVertexBuffer();
+BindedHook Ivk_zCProgMeshProto_CreateDynamicVertexBuffer{ ZENFOR(0x005A65E0, 0x005C2EF0, 0x005C2F70, 0x005C8D20), Hook_zCProgMeshProto_CreateDynamicVertexBuffer };
+int Hook_zCProgMeshProto_CreateDynamicVertexBuffer()
+{
+	int result = Ivk_zCProgMeshProto_CreateDynamicVertexBuffer();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

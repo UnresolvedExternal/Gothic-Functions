@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPathSearch::CanEvadeTo(zSPathSearchState&): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCPathSearch::CanEvadeTo(zSPathSearchState&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPathSearch_CanEvadeTo : zCPathSearch { int operator()(zSPathSearchState&); };
+BindedHook Ivk_zCPathSearch_CanEvadeTo{ ZENFOR(0x004A1020, 0x004AEB60, 0x004A6610, 0x004A8B40), &zCPathSearch_CanEvadeTo::operator() };
+int zCPathSearch_CanEvadeTo::operator()(zSPathSearchState& a0)
+{
+	int result = THISCALL(Ivk_zCPathSearch_CanEvadeTo)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

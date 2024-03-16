@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Gfx_Setpal(unsigned char*): void]]></Title>
+			<Description><![CDATA[void __cdecl Gfx_Setpal(unsigned char*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Gfx_Setpal(unsigned char*);
+BindedHook Ivk_Gfx_Setpal{ ZENFOR(0x006E3B50, 0x0071C430, 0x0072D380, 0x0078CDC0), Hook_Gfx_Setpal };
+void Hook_Gfx_Setpal(unsigned char* a0)
+{
+	Ivk_Gfx_Setpal(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

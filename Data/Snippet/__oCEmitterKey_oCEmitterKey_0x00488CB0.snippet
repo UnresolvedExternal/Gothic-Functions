@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCEmitterKey::oCEmitterKey()]]></Title>
+			<Description><![CDATA[public: __thiscall oCEmitterKey::oCEmitterKey()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCEmitterKey_oCEmitterKey : oCEmitterKey { oCEmitterKey* operator()(); };
+BindedHook Ivk_oCEmitterKey_oCEmitterKey{ ZENFOR(0x004812F0, 0x0048C1C0, 0x00487650, 0x00488CB0), &oCEmitterKey_oCEmitterKey::operator() };
+oCEmitterKey* oCEmitterKey_oCEmitterKey::operator()()
+{
+	oCEmitterKey* result = THISCALL(Ivk_oCEmitterKey_oCEmitterKey)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

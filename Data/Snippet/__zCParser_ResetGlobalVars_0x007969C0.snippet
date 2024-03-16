@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::ResetGlobalVars(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCParser::ResetGlobalVars()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_ResetGlobalVars : zCParser { int operator()(); };
+BindedHook Ivk_zCParser_ResetGlobalVars{ ZENFOR(0x006ED340, 0x007268D0, 0x00736F80, 0x007969C0), &zCParser_ResetGlobalVars::operator() };
+int zCParser_ResetGlobalVars::operator()()
+{
+	int result = THISCALL(Ivk_zCParser_ResetGlobalVars)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

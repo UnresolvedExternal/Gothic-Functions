@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNews::CheckRemainingNews(): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCNews::CheckRemainingNews()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCNews_CheckRemainingNews();
+BindedHook Ivk_oCNews_CheckRemainingNews{ ZENFOR(0x00688230, 0x006B8370, 0x006CC2F0, 0x0072A380), Hook_oCNews_CheckRemainingNews };
+void Hook_oCNews_CheckRemainingNews()
+{
+	Ivk_oCNews_CheckRemainingNews();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

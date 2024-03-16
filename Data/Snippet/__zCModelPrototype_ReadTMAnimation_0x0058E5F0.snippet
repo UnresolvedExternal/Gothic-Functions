@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::ReadTMAnimation(zCModelNode*, zMAT4*&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCModelPrototype::ReadTMAnimation(zCModelNode*, zMAT4*&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_ReadTMAnimation : zCModelPrototype { void operator()(zCModelNode*, zMAT4*&); };
+BindedHook Ivk_zCModelPrototype_ReadTMAnimation{ ZENFOR(0x00573E80, 0x0058D850, 0x00589090, 0x0058E5F0), &zCModelPrototype_ReadTMAnimation::operator() };
+void zCModelPrototype_ReadTMAnimation::operator()(zCModelNode* a0, zMAT4*& a1)
+{
+	THISCALL(Ivk_zCModelPrototype_ReadTMAnimation)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

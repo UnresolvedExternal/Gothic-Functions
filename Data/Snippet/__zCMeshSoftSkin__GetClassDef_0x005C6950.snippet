@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMeshSoftSkin::_GetClassDef(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[private: virtual zCClassDef* __thiscall zCMeshSoftSkin::_GetClassDef() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMeshSoftSkin__GetClassDef : zCMeshSoftSkin { zCClassDef* operator()() const; };
+BindedHook Ivk_zCMeshSoftSkin__GetClassDef{ ZENFOR(0x005A4B30, 0x005C12D0, 0x005C0DE0, 0x005C6950), &zCMeshSoftSkin__GetClassDef::operator() };
+zCClassDef* zCMeshSoftSkin__GetClassDef::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCMeshSoftSkin__GetClassDef)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

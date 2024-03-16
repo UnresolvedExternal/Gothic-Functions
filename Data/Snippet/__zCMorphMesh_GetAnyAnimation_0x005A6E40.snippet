@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::GetAnyAnimation(): zSTRING const*]]></Title>
+			<Description><![CDATA[public: virtual zSTRING const* __thiscall zCMorphMesh::GetAnyAnimation()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_GetAnyAnimation : zCMorphMesh { zSTRING const* operator()(); };
+BindedHook Ivk_zCMorphMesh_GetAnyAnimation{ ZENFOR(0x005874A0, 0x005A2460, 0x005A18E0, 0x005A6E40), &zCMorphMesh_GetAnyAnimation::operator() };
+zSTRING const* zCMorphMesh_GetAnyAnimation::operator()()
+{
+	zSTRING const* result = THISCALL(Ivk_zCMorphMesh_GetAnyAnimation)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::GetStopTurnVobSign(): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall oCAniCtrl_Human::GetStopTurnVobSign()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_GetStopTurnVobSign : oCAniCtrl_Human { int operator()(); };
+BindedHook Ivk_oCAniCtrl_Human_GetStopTurnVobSign{ ZENFOR(0x00627690, 0x0064C710, 0x00653950, 0x006B0200), &oCAniCtrl_Human_GetStopTurnVobSign::operator() };
+int oCAniCtrl_Human_GetStopTurnVobSign::operator()()
+{
+	int result = THISCALL(Ivk_oCAniCtrl_Human_GetStopTurnVobSign)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

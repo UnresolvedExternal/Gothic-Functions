@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBBox3DSorterBase::Insert(void*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCBBox3DSorterBase::Insert(void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBBox3DSorterBase_Insert : zCBBox3DSorterBase { void operator()(void*); };
+BindedHook Ivk_zCBBox3DSorterBase_Insert{ ZENFOR(0x0060AD40, 0x0062D250, 0x00633BE0, 0x0063B3B0), &zCBBox3DSorterBase_Insert::operator() };
+void zCBBox3DSorterBase_Insert::operator()(void* a0)
+{
+	THISCALL(Ivk_zCBBox3DSorterBase_Insert)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

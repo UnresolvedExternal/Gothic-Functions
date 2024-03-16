@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::zFILE_FILE()]]></Title>
+			<Description><![CDATA[public: __thiscall zFILE_FILE::zFILE_FILE()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_zFILE_FILE : zFILE_FILE { zFILE_FILE* operator()(); };
+BindedHook Ivk_zFILE_FILE_zFILE_FILE{ ZENFOR(0x0043F0C0, 0x004444B0, 0x004429A0, 0x00442FD0), &zFILE_FILE_zFILE_FILE::operator() };
+zFILE_FILE* zFILE_FILE_zFILE_FILE::operator()()
+{
+	zFILE_FILE* result = THISCALL(Ivk_zFILE_FILE_zFILE_FILE)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

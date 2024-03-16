@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCGame::CallScriptStartup(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall oCGame::CallScriptStartup()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCGame_CallScriptStartup : oCGame { void operator()(); };
+BindedHook Ivk_oCGame_CallScriptStartup{ ZENFOR(0x00637C10, 0x0065E050, 0x00665170, 0x006C1C70), &oCGame_CallScriptStartup::operator() };
+void oCGame_CallScriptStartup::operator()()
+{
+	THISCALL(Ivk_oCGame_CallScriptStartup)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

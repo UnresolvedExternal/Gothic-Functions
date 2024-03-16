@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer_D3D::GetIndexListPtr(): unsigned short*]]></Title>
+			<Description><![CDATA[public: virtual unsigned short* __thiscall zCVertexBuffer_D3D::GetIndexListPtr()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_D3D_GetIndexListPtr : zCVertexBuffer_D3D { unsigned short* operator()(); };
+BindedHook Ivk_zCVertexBuffer_D3D_GetIndexListPtr{ ZENFOR(0x0071EC90, 0x0075B430, 0x0076AA40, 0x00657570), &zCVertexBuffer_D3D_GetIndexListPtr::operator() };
+unsigned short* zCVertexBuffer_D3D_GetIndexListPtr::operator()()
+{
+	unsigned short* result = THISCALL(Ivk_zCVertexBuffer_D3D_GetIndexListPtr)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

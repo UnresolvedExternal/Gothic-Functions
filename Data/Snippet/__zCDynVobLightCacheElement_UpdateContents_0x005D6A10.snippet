@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCDynVobLightCacheElement::UpdateContents(zCVob const*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCDynVobLightCacheElement::UpdateContents(zCVob const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCDynVobLightCacheElement_UpdateContents : zCDynVobLightCacheElement { void operator()(zCVob const*); };
+BindedHook Ivk_zCDynVobLightCacheElement_UpdateContents{ ZENFOR(0x005AF930, 0x005CC920, 0x005CFE50, 0x005D6A10), &zCDynVobLightCacheElement_UpdateContents::operator() };
+void zCDynVobLightCacheElement_UpdateContents::operator()(zCVob const* a0)
+{
+	THISCALL(Ivk_zCDynVobLightCacheElement_UpdateContents)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

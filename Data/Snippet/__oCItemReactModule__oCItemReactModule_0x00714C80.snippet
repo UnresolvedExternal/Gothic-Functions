@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemReactModule::~oCItemReactModule()]]></Title>
+			<Description><![CDATA[public: __thiscall oCItemReactModule::~oCItemReactModule()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemReactModule_Destructor : oCItemReactModule { void operator()(); };
+BindedHook Ivk_oCItemReactModule_Destructor{ ZENFOR(0x00673C60, 0x006A1A30, 0x006B6BF0, 0x00714C80), &oCItemReactModule_Destructor::operator() };
+void oCItemReactModule_Destructor::operator()()
+{
+	THISCALL(Ivk_oCItemReactModule_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

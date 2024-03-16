@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CMov_Movement::CMov_Movement(zCVob*)]]></Title>
+			<Description><![CDATA[public: __thiscall CMov_Movement::CMov_Movement(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CMov_Movement_CMov_Movement : CMov_Movement { CMov_Movement* operator()(zCVob*); };
+BindedHook Ivk_CMov_Movement_CMov_Movement{ ZENFOR(0x005885C0, 0x005A36F0, 0x005A2AC0, 0x005A8020), &CMov_Movement_CMov_Movement::operator() };
+CMov_Movement* CMov_Movement_CMov_Movement::operator()(zCVob* a0)
+{
+	CMov_Movement* result = THISCALL(Ivk_CMov_Movement_CMov_Movement)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAniCtrl_Human::CreateHit(zCVob*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCAniCtrl_Human::CreateHit(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAniCtrl_Human_CreateHit : oCAniCtrl_Human { void operator()(zCVob*); };
+BindedHook Ivk_oCAniCtrl_Human_CreateHit{ ZENFOR(0x00627C80, 0x0064CCF0, 0x00653EF0, 0x006B0830), &oCAniCtrl_Human_CreateHit::operator() };
+void oCAniCtrl_Human_CreateHit::operator()(zCVob* a0)
+{
+	THISCALL(Ivk_oCAniCtrl_Human_CreateHit)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

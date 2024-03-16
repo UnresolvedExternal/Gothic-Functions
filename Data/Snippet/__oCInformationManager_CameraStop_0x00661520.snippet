@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCInformationManager::CameraStop(): void]]></Title>
+			<Description><![CDATA[protected: void __fastcall oCInformationManager::CameraStop()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCInformationManager_CameraStop : oCInformationManager { void __fastcall operator()(); };
+BindedHook Ivk_oCInformationManager_CameraStop{ ZENFOR(0x0072C810, 0x0076ADE0, 0x00778300, 0x00661520), &oCInformationManager_CameraStop::operator() };
+void __fastcall oCInformationManager_CameraStop::operator()()
+{
+	THISCALL(Ivk_oCInformationManager_CameraStop)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[_GetRangeOfTrysToCheck(_s_FuncInfo const*, int, int, unsigned int*, unsigned int*): _s_TryBlockMapEntry const*]]></Title>
+			<Description><![CDATA[_s_TryBlockMapEntry const* __cdecl _GetRangeOfTrysToCheck(_s_FuncInfo const*, int, int, unsigned int*, unsigned int*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[_s_TryBlockMapEntry const* Hook__GetRangeOfTrysToCheck(_s_FuncInfo const*, int, int, unsigned int*, unsigned int*);
+BindedHook Ivk__GetRangeOfTrysToCheck{ ZENFOR(0x00776997, 0x007BA757, 0x007C3E81, 0x007D0341), Hook__GetRangeOfTrysToCheck };
+_s_TryBlockMapEntry const* Hook__GetRangeOfTrysToCheck(_s_FuncInfo const* a0, int a1, int a2, unsigned int* a3, unsigned int* a4)
+{
+	_s_TryBlockMapEntry const* result = Ivk__GetRangeOfTrysToCheck(a0, a1, a2, a3, a4);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

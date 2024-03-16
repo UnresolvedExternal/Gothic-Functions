@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSPlayer::ForgetCutscene(zCCutscene*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCCSPlayer::ForgetCutscene(zCCutscene*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSPlayer_ForgetCutscene : zCCSPlayer { void operator()(zCCutscene*); };
+BindedHook Ivk_zCCSPlayer_ForgetCutscene{ ZENFOR(0x0041D7A0, 0x0041F7C0, 0x0041DA80, 0x0041DDB0), &zCCSPlayer_ForgetCutscene::operator() };
+void zCCSPlayer_ForgetCutscene::operator()(zCCutscene* a0)
+{
+	THISCALL(Ivk_zCCSPlayer_ForgetCutscene)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

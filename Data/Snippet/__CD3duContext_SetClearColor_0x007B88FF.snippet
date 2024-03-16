@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CD3duContext::SetClearColor(unsigned long): long]]></Title>
+			<Description><![CDATA[public: virtual long __stdcall CD3duContext::SetClearColor(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CD3duContext_SetClearColor : CD3duContext { long __stdcall operator()(unsigned long); };
+BindedHook Ivk_CD3duContext_SetClearColor{ ZENFOR(0x0075F20B, 0x007A3AE6, 0x007AC439, 0x007B88FF), &CD3duContext_SetClearColor::operator() };
+long __stdcall CD3duContext_SetClearColor::operator()(unsigned long a0)
+{
+	long result = THISCALL(Ivk_CD3duContext_SetClearColor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

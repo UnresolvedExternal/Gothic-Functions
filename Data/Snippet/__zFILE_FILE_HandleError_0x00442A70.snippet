@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::HandleError(zSTRING const&, zSTRING const&, zERROR_TYPE): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall zFILE_FILE::HandleError(zSTRING const&, zSTRING const&, zERROR_TYPE)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_HandleError : zFILE_FILE { int operator()(zSTRING const&, zSTRING const&, zERROR_TYPE); };
+BindedHook Ivk_zFILE_FILE_HandleError{ ZENFOR(0x0043EB60, 0x00443F00, 0x00442440, 0x00442A70), &zFILE_FILE_HandleError::operator() };
+int zFILE_FILE_HandleError::operator()(zSTRING const& a0, zSTRING const& a1, zERROR_TYPE a2)
+{
+	int result = THISCALL(Ivk_zFILE_FILE_HandleError)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

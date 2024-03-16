@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCCSPlayer::oCCSPlayer()]]></Title>
+			<Description><![CDATA[public: __thiscall oCCSPlayer::oCCSPlayer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCCSPlayer_oCCSPlayer : oCCSPlayer { oCCSPlayer* operator()(); };
+BindedHook Ivk_oCCSPlayer_oCCSPlayer{ ZENFOR(0x00403750, 0x00403E70, 0x004038D0, 0x004038D0), &oCCSPlayer_oCCSPlayer::operator() };
+oCCSPlayer* oCCSPlayer_oCCSPlayer::operator()()
+{
+	oCCSPlayer* result = THISCALL(Ivk_oCCSPlayer_oCCSPlayer)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

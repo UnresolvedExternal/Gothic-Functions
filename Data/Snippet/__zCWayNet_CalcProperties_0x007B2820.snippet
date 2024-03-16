@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::CalcProperties(zCWorld*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCWayNet::CalcProperties(zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_CalcProperties : zCWayNet { void operator()(zCWorld*); };
+BindedHook Ivk_zCWayNet_CalcProperties{ ZENFOR(0x00708B20, 0x00743840, 0x00752D20, 0x007B2820), &zCWayNet_CalcProperties::operator() };
+void zCWayNet_CalcProperties::operator()(zCWorld* a0)
+{
+	THISCALL(Ivk_zCWayNet_CalcProperties)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIArrowBase::DoAI(zCVob*, int&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCAIArrowBase::DoAI(zCVob*, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIArrowBase_DoAI : oCAIArrowBase { void operator()(zCVob*, int&); };
+BindedHook Ivk_oCAIArrowBase_DoAI{ ZENFOR(0x00618A80, 0x0063BE70, 0x00643E60, 0x006A0640), &oCAIArrowBase_DoAI::operator() };
+void oCAIArrowBase_DoAI::operator()(zCVob* a0, int& a1)
+{
+	THISCALL(Ivk_oCAIArrowBase_DoAI)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

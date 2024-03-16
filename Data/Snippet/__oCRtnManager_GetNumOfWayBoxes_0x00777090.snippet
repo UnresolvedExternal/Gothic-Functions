@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCRtnManager::GetNumOfWayBoxes(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCRtnManager::GetNumOfWayBoxes()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCRtnManager_GetNumOfWayBoxes : oCRtnManager { int operator()(); };
+BindedHook Ivk_oCRtnManager_GetNumOfWayBoxes{ ZENFOR(0x006CF060, 0x007057F0, 0x00717B00, 0x00777090), &oCRtnManager_GetNumOfWayBoxes::operator() };
+int oCRtnManager_GetNumOfWayBoxes::operator()()
+{
+	int result = THISCALL(Ivk_oCRtnManager_GetNumOfWayBoxes)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

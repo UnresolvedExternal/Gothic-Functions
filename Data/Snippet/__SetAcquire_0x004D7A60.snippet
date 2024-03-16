@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[SetAcquire(): int]]></Title>
+			<Description><![CDATA[int __cdecl SetAcquire()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+int Hook_SetAcquire();
+BindedHook Ivk_SetAcquire{ ZENFOR(0x004C7F10, 0x004D7A60, 0x00000000, 0x00000000), Hook_SetAcquire };
+int Hook_SetAcquire()
+{
+	int result = Ivk_SetAcquire();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

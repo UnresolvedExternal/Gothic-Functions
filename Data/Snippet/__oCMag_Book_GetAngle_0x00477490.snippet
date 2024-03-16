@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::GetAngle(zCVob*): float]]></Title>
+			<Description><![CDATA[public: float __thiscall oCMag_Book::GetAngle(zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_GetAngle : oCMag_Book { float operator()(zCVob*); };
+BindedHook Ivk_oCMag_Book_GetAngle{ ZENFOR(0x004707D0, 0x004796E0, 0x004760F0, 0x00477490), &oCMag_Book_GetAngle::operator() };
+float oCMag_Book_GetAngle::operator()(zCVob* a0)
+{
+	float result = THISCALL(Ivk_oCMag_Book_GetAngle)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

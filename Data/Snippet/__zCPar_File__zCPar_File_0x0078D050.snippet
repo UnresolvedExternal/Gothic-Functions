@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_File::~zCPar_File()]]></Title>
+			<Description><![CDATA[public: __thiscall zCPar_File::~zCPar_File()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_File_Destructor : zCPar_File { void operator()(); };
+BindedHook Ivk_zCPar_File_Destructor{ ZENFOR(0x006E3DF0, 0x0071C6D0, 0x0072D610, 0x0078D050), &zCPar_File_Destructor::operator() };
+void zCPar_File_Destructor::operator()()
+{
+	THISCALL(Ivk_zCPar_File_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

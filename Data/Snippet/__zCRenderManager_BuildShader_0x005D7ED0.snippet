@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderManager::BuildShader(zCMaterial*, zCTexture*, unsigned long, int, int, zCShader*&): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCRenderManager::BuildShader(zCMaterial*, zCTexture*, unsigned long, int, int, zCShader*&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct zCRenderManager_BuildShader : zCRenderManager { void __fastcall operator()(zCMaterial*, zCTexture*, unsigned long, int, int, zCShader*&); };
+BindedHook Ivk_zCRenderManager_BuildShader{ ZENFOR(0x00000000, 0x00000000, 0x005D1110, 0x005D7ED0), &zCRenderManager_BuildShader::operator() };
+void __fastcall zCRenderManager_BuildShader::operator()(zCMaterial* a0, zCTexture* a1, unsigned long a2, int a3, int a4, zCShader*& a5)
+{
+	THISCALL(Ivk_zCRenderManager_BuildShader)(a0, a1, a2, a3, a4, a5);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

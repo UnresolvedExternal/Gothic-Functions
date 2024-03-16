@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::BeginStateSwitch(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCAIPlayer::BeginStateSwitch()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_BeginStateSwitch : zCAIPlayer { void operator()(); };
+BindedHook Ivk_zCAIPlayer_BeginStateSwitch{ ZENFOR(0x00502160, 0x00515BE0, 0x0050EEF0, 0x00511CC0), &zCAIPlayer_BeginStateSwitch::operator() };
+void zCAIPlayer_BeginStateSwitch::operator()()
+{
+	THISCALL(Ivk_zCAIPlayer_BeginStateSwitch)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

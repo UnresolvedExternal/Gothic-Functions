@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewBase::ClipLine(int&, int&, int&, int&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCViewBase::ClipLine(int&, int&, int&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewBase_ClipLine : zCViewBase { int operator()(int&, int&, int&, int&); };
+BindedHook Ivk_zCViewBase_ClipLine{ ZENFOR(0x00752EC0, 0x00795340, 0x0079F940, 0x0068DF30), &zCViewBase_ClipLine::operator() };
+int zCViewBase_ClipLine::operator()(int& a0, int& a1, int& a2, int& a3)
+{
+	int result = THISCALL(Ivk_zCViewBase_ClipLine)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

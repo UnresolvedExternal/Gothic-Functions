@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::TestHardCollisions(zVEC3 const&, zVEC3 const&, zVEC3&, zCCollObjectCharacter::zTSpatialState&, zVEC3&): int]]></Title>
+			<Description><![CDATA[private: int __fastcall zCCollObjectCharacter::TestHardCollisions(zVEC3 const&, zVEC3 const&, zVEC3&, zCCollObjectCharacter::zTSpatialState&, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectCharacter_TestHardCollisions : zCCollObjectCharacter { int __fastcall operator()(zVEC3 const&, zVEC3 const&, zVEC3&, zCCollObjectCharacter::zTSpatialState&, zVEC3&); };
+BindedHook Ivk_zCCollObjectCharacter_TestHardCollisions{ ZENFOR(0x0053CC60, 0x00554250, 0x0054BF30, 0x00551150), &zCCollObjectCharacter_TestHardCollisions::operator() };
+int __fastcall zCCollObjectCharacter_TestHardCollisions::operator()(zVEC3 const& a0, zVEC3 const& a1, zVEC3& a2, zCCollObjectCharacter::zTSpatialState& a3, zVEC3& a4)
+{
+	int result = THISCALL(Ivk_zCCollObjectCharacter_TestHardCollisions)(a0, a1, a2, a3, a4);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

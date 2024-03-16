@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpawnManager::RemoveFromList(oCSpawnManager::oSSpawnNode*): void]]></Title>
+			<Description><![CDATA[private: void __thiscall oCSpawnManager::RemoveFromList(oCSpawnManager::oSSpawnNode*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpawnManager_RemoveFromList : oCSpawnManager { void operator()(oCSpawnManager::oSSpawnNode*); };
+BindedHook Ivk_oCSpawnManager_RemoveFromList{ ZENFOR(0x006CF770, 0x00706190, 0x00718420, 0x007779B0), &oCSpawnManager_RemoveFromList::operator() };
+void oCSpawnManager_RemoveFromList::operator()(oCSpawnManager::oSSpawnNode* a0)
+{
+	THISCALL(Ivk_oCSpawnManager_RemoveFromList)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

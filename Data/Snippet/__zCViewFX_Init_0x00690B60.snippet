@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewFX::Init(zCViewObject*, int, unsigned long, unsigned long, float, float, zSTRING&): void]]></Title>
+			<Description><![CDATA[public: void __fastcall zCViewFX::Init(zCViewObject*, int, unsigned long, unsigned long, float, float, zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewFX_Init : zCViewFX { void __fastcall operator()(zCViewObject*, int, unsigned long, unsigned long, float, float, zSTRING&); };
+BindedHook Ivk_zCViewFX_Init{ ZENFOR(0x00754020, 0x007964E0, 0x007A0DB0, 0x00690B60), &zCViewFX_Init::operator() };
+void __fastcall zCViewFX_Init::operator()(zCViewObject* a0, int a1, unsigned long a2, unsigned long a3, float a4, float a5, zSTRING& a6)
+{
+	THISCALL(Ivk_zCViewFX_Init)(a0, a1, a2, a3, a4, a5, a6);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

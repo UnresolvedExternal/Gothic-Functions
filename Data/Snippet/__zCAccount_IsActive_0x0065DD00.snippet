@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAccount::IsActive(): int]]></Title>
+			<Description><![CDATA[public: static int __cdecl zCAccount::IsActive()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCAccount_IsActive();
+BindedHook Ivk_zCAccount_IsActive{ ZENFOR(0x0075A240, 0x0079C880, 0x007A7190, 0x0065DD00), Hook_zCAccount_IsActive };
+int Hook_zCAccount_IsActive()
+{
+	int result = Ivk_zCAccount_IsActive();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

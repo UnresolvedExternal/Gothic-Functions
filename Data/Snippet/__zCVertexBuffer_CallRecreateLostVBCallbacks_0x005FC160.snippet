@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer::CallRecreateLostVBCallbacks(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCVertexBuffer::CallRecreateLostVBCallbacks()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_CallRecreateLostVBCallbacks : zCVertexBuffer { int operator()(); };
+BindedHook Ivk_zCVertexBuffer_CallRecreateLostVBCallbacks{ ZENFOR(0x005D1080, 0x005F01F0, 0x005F5370, 0x005FC160), &zCVertexBuffer_CallRecreateLostVBCallbacks::operator() };
+int zCVertexBuffer_CallRecreateLostVBCallbacks::operator()()
+{
+	int result = THISCALL(Ivk_zCVertexBuffer_CallRecreateLostVBCallbacks)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

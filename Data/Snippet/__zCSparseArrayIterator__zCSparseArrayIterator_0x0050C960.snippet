@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArrayIterator::~zCSparseArrayIterator()]]></Title>
+			<Description><![CDATA[public: __thiscall zCSparseArrayIterator::~zCSparseArrayIterator()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArrayIterator_Destructor : zCSparseArrayIterator { void operator()(); };
+BindedHook Ivk_zCSparseArrayIterator_Destructor{ ZENFOR(0x004FCF30, 0x00510070, 0x00509BB0, 0x0050C960), &zCSparseArrayIterator_Destructor::operator() };
+void zCSparseArrayIterator_Destructor::operator()()
+{
+	THISCALL(Ivk_zCSparseArrayIterator_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

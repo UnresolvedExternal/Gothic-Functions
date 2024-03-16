@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneZFog::GetActiveRange(float): float]]></Title>
+			<Description><![CDATA[protected: float __thiscall zCZoneZFog::GetActiveRange(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZoneZFog_GetActiveRange : zCZoneZFog { float operator()(float); };
+BindedHook Ivk_zCZoneZFog_GetActiveRange{ ZENFOR(0x0060C030, 0x0062E5D0, 0x00634F20, 0x0063C700), &zCZoneZFog_GetActiveRange::operator() };
+float zCZoneZFog_GetActiveRange::operator()(float a0)
+{
+	float result = THISCALL(Ivk_zCZoneZFog_GetActiveRange)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

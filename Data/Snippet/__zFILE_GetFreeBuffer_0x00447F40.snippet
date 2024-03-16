@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE::GetFreeBuffer(): zCBuffer*]]></Title>
+			<Description><![CDATA[protected: static zCBuffer* __cdecl zFILE::GetFreeBuffer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCBuffer* Hook_zFILE_GetFreeBuffer();
+BindedHook Ivk_zFILE_GetFreeBuffer{ ZENFOR(0x00443F50, 0x00449B10, 0x00447910, 0x00447F40), Hook_zFILE_GetFreeBuffer };
+zCBuffer* Hook_zFILE_GetFreeBuffer()
+{
+	zCBuffer* result = Ivk_zFILE_GetFreeBuffer();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

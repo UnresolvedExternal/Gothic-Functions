@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewObject::GetCode(int, int): int]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall zCViewObject::GetCode(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewObject_GetCode : zCViewObject { int operator()(int, int); };
+BindedHook Ivk_zCViewObject_GetCode{ ZENFOR(0x007562F0, 0x00798760, 0x007A3090, 0x00692E40), &zCViewObject_GetCode::operator() };
+int zCViewObject_GetCode::operator()(int a0, int a1)
+{
+	int result = THISCALL(Ivk_zCViewObject_GetCode)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

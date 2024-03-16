@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSBlock::Unarchive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCCSBlock::Unarchive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSBlock_Unarchive : zCCSBlock { void operator()(zCArchiver&); };
+BindedHook Ivk_zCCSBlock_Unarchive{ ZENFOR(0x00416860, 0x00418610, 0x00416E50, 0x00416E50), &zCCSBlock_Unarchive::operator() };
+void zCCSBlock_Unarchive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCCSBlock_Unarchive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

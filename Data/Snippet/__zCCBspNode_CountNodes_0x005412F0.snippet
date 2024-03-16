@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCBspNode::CountNodes(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCCBspNode::CountNodes()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCBspNode_CountNodes : zCCBspNode { int operator()(); };
+BindedHook Ivk_zCCBspNode_CountNodes{ ZENFOR(0x0052D770, 0x00543FF0, 0x0053C1E0, 0x005412F0), &zCCBspNode_CountNodes::operator() };
+int zCCBspNode_CountNodes::operator()()
+{
+	int result = THISCALL(Ivk_zCCBspNode_CountNodes)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

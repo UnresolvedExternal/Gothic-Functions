@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::SearchNode(zSTRING const&): zCModelNodeInst*]]></Title>
+			<Description><![CDATA[public: zCModelNodeInst* __thiscall zCModel::SearchNode(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_SearchNode : zCModel { zCModelNodeInst* operator()(zSTRING const&); };
+BindedHook Ivk_zCModel_SearchNode{ ZENFOR(0x00563F80, 0x0057C810, 0x00578AD0, 0x0057DFF0), &zCModel_SearchNode::operator() };
+zCModelNodeInst* zCModel_SearchNode::operator()(zSTRING const& a0)
+{
+	zCModelNodeInst* result = THISCALL(Ivk_zCModel_SearchNode)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

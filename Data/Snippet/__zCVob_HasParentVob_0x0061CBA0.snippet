@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::HasParentVob(): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall zCVob::HasParentVob() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_HasParentVob : zCVob { int operator()() const; };
+BindedHook Ivk_zCVob_HasParentVob{ ZENFOR(0x005EF620, 0x00610090, 0x00615460, 0x0061CBA0), &zCVob_HasParentVob::operator() };
+int zCVob_HasParentVob::operator()() const
+{
+	int result = THISCALL(Ivk_zCVob_HasParentVob)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

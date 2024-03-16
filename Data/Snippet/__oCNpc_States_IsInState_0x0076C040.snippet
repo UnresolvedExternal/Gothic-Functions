@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc_States::IsInState(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc_States::IsInState(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_States_IsInState : oCNpc_States { int operator()(int); };
+BindedHook Ivk_oCNpc_States_IsInState{ ZENFOR(0x006C4C90, 0x006FA3C0, 0x0070CAE0, 0x0076C040), &oCNpc_States_IsInState::operator() };
+int oCNpc_States_IsInState::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCNpc_States_IsInState)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

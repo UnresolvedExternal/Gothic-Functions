@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zERROR::GetTargetDescription(): zSTRING]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zERROR::GetTargetDescription()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zERROR_GetTargetDescription : zERROR { zSTRING operator()(); };
+BindedHook Ivk_zERROR_GetTargetDescription{ ZENFOR(0x00449A40, 0x0044FCE0, 0x0044DA80, 0x0044E1D0), &zERROR_GetTargetDescription::operator() };
+zSTRING zERROR_GetTargetDescription::operator()()
+{
+	zSTRING result = THISCALL(Ivk_zERROR_GetTargetDescription)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

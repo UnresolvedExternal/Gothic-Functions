@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[Game_ParserDebug(zSTRING&): void]]></Title>
+			<Description><![CDATA[void __cdecl Game_ParserDebug(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_Game_ParserDebug(zSTRING&);
+BindedHook Ivk_Game_ParserDebug{ ZENFOR(0x00641320, 0x006684C0, 0x0066F220, 0x006CBFA0), Hook_Game_ParserDebug };
+void Hook_Game_ParserDebug(zSTRING& a0)
+{
+	Ivk_Game_ParserDebug(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

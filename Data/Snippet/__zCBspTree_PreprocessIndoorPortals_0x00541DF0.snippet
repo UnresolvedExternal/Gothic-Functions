@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspTree::PreprocessIndoorPortals(zCMesh*, zCArray<zCBuildPortal*>&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCBspTree::PreprocessIndoorPortals(zCMesh*, zCArray<zCBuildPortal*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspTree_PreprocessIndoorPortals : zCBspTree { void operator()(zCMesh*, zCArray<zCBuildPortal*>&); };
+BindedHook Ivk_zCBspTree_PreprocessIndoorPortals{ ZENFOR(0x0052E430, 0x00544DA0, 0x0053CCE0, 0x00541DF0), &zCBspTree_PreprocessIndoorPortals::operator() };
+void zCBspTree_PreprocessIndoorPortals::operator()(zCMesh* a0, zCArray<zCBuildPortal*>& a1)
+{
+	THISCALL(Ivk_zCBspTree_PreprocessIndoorPortals)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::basic_string<char, std::char_traits<char>, std::allocator<char>>::compare(std::basic_string<char, std::char_traits<char>, std::allocator<char>>const&): int [const]]]></Title>
+			<Description><![CDATA[public: int __thiscall std::basic_string<char, std::char_traits<char>, std::allocator<char>>::compare(std::basic_string<char, std::char_traits<char>, std::allocator<char>>const&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__basic_string_char__std__char_traits_char___std__allocator_char___compare : std::basic_string<char, std::char_traits<char>, std::allocator<char>> { int operator()(std::basic_string<char, std::char_traits<char>, std::allocator<char>>const&) const; };
+BindedHook Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___compare{ ZENFOR(0x00417A40, 0x00419870, 0x004180B0, 0x004180B0), &std__basic_string_char__std__char_traits_char___std__allocator_char___compare::operator() };
+int std__basic_string_char__std__char_traits_char___std__allocator_char___compare::operator()(std::basic_string<char, std::char_traits<char>, std::allocator<char>>const& a0) const
+{
+	int result = THISCALL(Ivk_std__basic_string_char__std__char_traits_char___std__allocator_char___compare)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

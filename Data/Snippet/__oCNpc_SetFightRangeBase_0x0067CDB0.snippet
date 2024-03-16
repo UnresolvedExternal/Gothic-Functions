@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetFightRangeBase(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetFightRangeBase(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetFightRangeBase : oCNpc { void operator()(int); };
+BindedHook Ivk_oCNpc_SetFightRangeBase{ ZENFOR(0x007487F0, 0x00789A00, 0x00793910, 0x0067CDB0), &oCNpc_SetFightRangeBase::operator() };
+void oCNpc_SetFightRangeBase::operator()(int a0)
+{
+	THISCALL(Ivk_oCNpc_SetFightRangeBase)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

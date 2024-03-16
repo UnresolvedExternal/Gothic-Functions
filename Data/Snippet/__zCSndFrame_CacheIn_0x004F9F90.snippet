@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFrame::CacheIn(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCSndFrame::CacheIn()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFrame_CacheIn : zCSndFrame { void operator()(); };
+BindedHook Ivk_zCSndFrame_CacheIn{ ZENFOR(0x004EB9E0, 0x004FDF40, 0x004F7310, 0x004F9F90), &zCSndFrame_CacheIn::operator() };
+void zCSndFrame_CacheIn::operator()()
+{
+	THISCALL(Ivk_zCSndFrame_CacheIn)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

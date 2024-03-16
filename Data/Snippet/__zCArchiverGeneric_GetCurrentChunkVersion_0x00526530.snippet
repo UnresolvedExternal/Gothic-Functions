@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverGeneric::GetCurrentChunkVersion(): unsigned short]]></Title>
+			<Description><![CDATA[public: virtual unsigned short __fastcall zCArchiverGeneric::GetCurrentChunkVersion()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverGeneric_GetCurrentChunkVersion : zCArchiverGeneric { unsigned short __fastcall operator()(); };
+BindedHook Ivk_zCArchiverGeneric_GetCurrentChunkVersion{ ZENFOR(0x00515990, 0x0052B210, 0x00523760, 0x00526530), &zCArchiverGeneric_GetCurrentChunkVersion::operator() };
+unsigned short __fastcall zCArchiverGeneric_GetCurrentChunkVersion::operator()()
+{
+	unsigned short result = THISCALL(Ivk_zCArchiverGeneric_GetCurrentChunkVersion)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

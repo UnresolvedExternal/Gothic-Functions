@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobInter::IsAvailable(oCNpc*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCMobInter::IsAvailable(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobInter_IsAvailable : oCMobInter { int operator()(oCNpc*); };
+BindedHook Ivk_oCMobInter_IsAvailable{ ZENFOR(0x0067F570, 0x006AE6B0, 0x006C2E30, 0x00720EC0), &oCMobInter_IsAvailable::operator() };
+int oCMobInter_IsAvailable::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCMobInter_IsAvailable)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

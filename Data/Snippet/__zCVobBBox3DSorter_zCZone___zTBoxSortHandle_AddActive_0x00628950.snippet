@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobBBox3DSorter<zCZone>::zTBoxSortHandle::AddActive(void*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCVobBBox3DSorter<zCZone>::zTBoxSortHandle::AddActive(void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobBBox3DSorter_zCZone___zTBoxSortHandle_AddActive : zCVobBBox3DSorter<zCZone>::zTBoxSortHandle { void operator()(void*); };
+BindedHook Ivk_zCVobBBox3DSorter_zCZone___zTBoxSortHandle_AddActive{ ZENFOR(0x005FA160, 0x0061B6B0, 0x006211D0, 0x00628950), &zCVobBBox3DSorter_zCZone___zTBoxSortHandle_AddActive::operator() };
+void zCVobBBox3DSorter_zCZone___zTBoxSortHandle_AddActive::operator()(void* a0)
+{
+	THISCALL(Ivk_zCVobBBox3DSorter_zCZone___zTBoxSortHandle_AddActive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

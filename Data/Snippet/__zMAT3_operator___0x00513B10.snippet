@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zMAT3::operator*=(float): zMAT3&]]></Title>
+			<Description><![CDATA[public: zMAT3& __thiscall zMAT3::operator*=(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zMAT3_operator__ : zMAT3 { zMAT3& operator()(float); };
+BindedHook Ivk_zMAT3_operator__{ ZENFOR(0x00503F00, 0x00517A80, 0x00510D40, 0x00513B10), &zMAT3_operator__::operator() };
+zMAT3& zMAT3_operator__::operator()(float a0)
+{
+	zMAT3& result = THISCALL(Ivk_zMAT3_operator__)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

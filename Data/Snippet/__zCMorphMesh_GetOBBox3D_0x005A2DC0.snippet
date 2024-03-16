@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMesh::GetOBBox3D(): zCOBBox3D*]]></Title>
+			<Description><![CDATA[public: virtual zCOBBox3D* __thiscall zCMorphMesh::GetOBBox3D()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMorphMesh_GetOBBox3D : zCMorphMesh { zCOBBox3D* operator()(); };
+BindedHook Ivk_zCMorphMesh_GetOBBox3D{ ZENFOR(0x00583310, 0x0059DE60, 0x0059D860, 0x005A2DC0), &zCMorphMesh_GetOBBox3D::operator() };
+zCOBBox3D* zCMorphMesh_GetOBBox3D::operator()()
+{
+	zCOBBox3D* result = THISCALL(Ivk_zCMorphMesh_GetOBBox3D)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

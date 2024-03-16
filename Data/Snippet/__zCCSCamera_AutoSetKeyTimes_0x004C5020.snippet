@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera::AutoSetKeyTimes(zCArray<zCCamTrj_KeyFrame*>&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCCSCamera::AutoSetKeyTimes(zCArray<zCCamTrj_KeyFrame*>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_AutoSetKeyTimes : zCCSCamera { void operator()(zCArray<zCCamTrj_KeyFrame*>&); };
+BindedHook Ivk_zCCSCamera_AutoSetKeyTimes{ ZENFOR(0x004BBC30, 0x004CB120, 0x004C2AB0, 0x004C5020), &zCCSCamera_AutoSetKeyTimes::operator() };
+void zCCSCamera_AutoSetKeyTimes::operator()(zCArray<zCCamTrj_KeyFrame*>& a0)
+{
+	THISCALL(Ivk_zCCSCamera_AutoSetKeyTimes)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEngine::Shutdown(): int]]></Title>
+			<Description><![CDATA[public: static int __cdecl zCEngine::Shutdown()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_zCEngine_Shutdown();
+BindedHook Ivk_zCEngine_Shutdown{ ZENFOR(0x00544930, 0x0055C380, 0x00553FE0, 0x00559200), Hook_zCEngine_Shutdown };
+int Hook_zCEngine_Shutdown()
+{
+	int result = Ivk_zCEngine_Shutdown();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

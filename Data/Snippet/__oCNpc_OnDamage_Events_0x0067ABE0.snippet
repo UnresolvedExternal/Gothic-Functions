@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::OnDamage_Events(oCNpc::oSDamageDescriptor&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::OnDamage_Events(oCNpc::oSDamageDescriptor&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_OnDamage_Events : oCNpc { void operator()(oCNpc::oSDamageDescriptor&); };
+BindedHook Ivk_oCNpc_OnDamage_Events{ ZENFOR(0x00746950, 0x00787810, 0x00791830, 0x0067ABE0), &oCNpc_OnDamage_Events::operator() };
+void oCNpc_OnDamage_Events::operator()(oCNpc::oSDamageDescriptor& a0)
+{
+	THISCALL(Ivk_oCNpc_OnDamage_Events)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

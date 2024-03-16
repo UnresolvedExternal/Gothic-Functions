@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCProgMeshProto::Render(zTRenderContext&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCProgMeshProto::Render(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCProgMeshProto_Render : zCProgMeshProto { int operator()(zTRenderContext&); };
+BindedHook Ivk_zCProgMeshProto_Render{ ZENFOR(0x005A6B20, 0x005C3460, 0x005C34C0, 0x005C9470), &zCProgMeshProto_Render::operator() };
+int zCProgMeshProto_Render::operator()(zTRenderContext& a0)
+{
+	int result = THISCALL(Ivk_zCProgMeshProto_Render)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

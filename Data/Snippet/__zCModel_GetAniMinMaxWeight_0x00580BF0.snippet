@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::GetAniMinMaxWeight(zCModelAniActive*, float&, float&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCModel::GetAniMinMaxWeight(zCModelAniActive*, float&, float&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_GetAniMinMaxWeight : zCModel { void operator()(zCModelAniActive*, float&, float&); };
+BindedHook Ivk_zCModel_GetAniMinMaxWeight{ ZENFOR(0x00566AE0, 0x0057F6C0, 0x0057B690, 0x00580BF0), &zCModel_GetAniMinMaxWeight::operator() };
+void zCModel_GetAniMinMaxWeight::operator()(zCModelAniActive* a0, float& a1, float& a2)
+{
+	THISCALL(Ivk_zCModel_GetAniMinMaxWeight)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

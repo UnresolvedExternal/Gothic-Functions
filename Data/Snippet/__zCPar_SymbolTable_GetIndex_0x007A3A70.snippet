@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_SymbolTable::GetIndex(zCPar_Symbol*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCPar_SymbolTable::GetIndex(zCPar_Symbol*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_SymbolTable_GetIndex : zCPar_SymbolTable { int operator()(zCPar_Symbol*); };
+BindedHook Ivk_zCPar_SymbolTable_GetIndex{ ZENFOR(0x006F9FA0, 0x00734330, 0x00744030, 0x007A3A70), &zCPar_SymbolTable_GetIndex::operator() };
+int zCPar_SymbolTable_GetIndex::operator()(zCPar_Symbol* a0)
+{
+	int result = THISCALL(Ivk_zCPar_SymbolTable_GetIndex)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

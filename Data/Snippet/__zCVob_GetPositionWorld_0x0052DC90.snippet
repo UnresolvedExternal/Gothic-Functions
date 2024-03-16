@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::GetPositionWorld(): zVEC3 [const]]]></Title>
+			<Description><![CDATA[public: zVEC3 __thiscall zCVob::GetPositionWorld() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_GetPositionWorld : zCVob { zVEC3 operator()() const; };
+BindedHook Ivk_zCVob_GetPositionWorld{ ZENFOR(0x0051B3C0, 0x00489680, 0x0052AD40, 0x0052DC90), &zCVob_GetPositionWorld::operator() };
+zVEC3 zCVob_GetPositionWorld::operator()() const
+{
+	zVEC3 result = THISCALL(Ivk_zCVob_GetPositionWorld)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

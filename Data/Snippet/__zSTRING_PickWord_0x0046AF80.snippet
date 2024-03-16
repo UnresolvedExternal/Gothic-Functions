@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zSTRING::PickWord(unsigned int, zSTRING const&, zSTRING const&): zSTRING [const]]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zSTRING::PickWord(unsigned int, zSTRING const&, zSTRING const&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zSTRING_PickWord : zSTRING { zSTRING operator()(unsigned int, zSTRING const&, zSTRING const&) const; };
+BindedHook Ivk_zSTRING_PickWord{ ZENFOR(0x00465DB0, 0x0046DAC0, 0x0046A350, 0x0046AF80), &zSTRING_PickWord::operator() };
+zSTRING zSTRING_PickWord::operator()(unsigned int a0, zSTRING const& a1, zSTRING const& a2) const
+{
+	zSTRING result = THISCALL(Ivk_zSTRING_PickWord)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

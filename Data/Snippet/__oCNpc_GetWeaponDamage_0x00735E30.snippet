@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetWeaponDamage(oCItem*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::GetWeaponDamage(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetWeaponDamage : oCNpc { int operator()(oCItem*); };
+BindedHook Ivk_oCNpc_GetWeaponDamage{ ZENFOR(0x00692B90, 0x006C4270, 0x006D76D0, 0x00735E30), &oCNpc_GetWeaponDamage::operator() };
+int oCNpc_GetWeaponDamage::operator()(oCItem* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_GetWeaponDamage)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[netSetTimeOut(int, zTNetTimeout*): void]]></Title>
+			<Description><![CDATA[void __cdecl netSetTimeOut(int, zTNetTimeout*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_netSetTimeOut(int, zTNetTimeout*);
+BindedHook Ivk_netSetTimeOut{ ZENFOR(0x00451590, 0x00457F70, 0x00455AD0, 0x00456220), Hook_netSetTimeOut };
+void Hook_netSetTimeOut(int a0, zTNetTimeout* a1)
+{
+	Ivk_netSetTimeOut(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

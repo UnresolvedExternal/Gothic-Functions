@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventManager::SendMessageToHost(zCEventMessage*, zCVob*, zCVob*): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCEventManager::SendMessageToHost(zCEventMessage*, zCVob*, zCVob*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventManager_SendMessageToHost : zCEventManager { void operator()(zCEventMessage*, zCVob*, zCVob*); };
+BindedHook Ivk_zCEventManager_SendMessageToHost{ ZENFOR(0x006DD970, 0x00715C10, 0x00727220, 0x00786C60), &zCEventManager_SendMessageToHost::operator() };
+void zCEventManager_SendMessageToHost::operator()(zCEventMessage* a0, zCVob* a1, zCVob* a2)
+{
+	THISCALL(Ivk_zCEventManager_SendMessageToHost)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

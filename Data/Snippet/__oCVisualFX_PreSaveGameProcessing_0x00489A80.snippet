@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::PreSaveGameProcessing(int): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCVisualFX::PreSaveGameProcessing(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCVisualFX_PreSaveGameProcessing(int);
+BindedHook Ivk_oCVisualFX_PreSaveGameProcessing{ ZENFOR(0x004820A0, 0x0048D100, 0x004882C0, 0x00489A80), Hook_oCVisualFX_PreSaveGameProcessing };
+void Hook_oCVisualFX_PreSaveGameProcessing(int a0)
+{
+	Ivk_oCVisualFX_PreSaveGameProcessing(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

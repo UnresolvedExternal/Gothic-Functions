@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::TraceRayFirstHit(zVEC3 const&, zVEC3 const&, zCVob*, int): int]]></Title>
+			<Description><![CDATA[public: int __fastcall zCWorld::TraceRayFirstHit(zVEC3 const&, zVEC3 const&, zCVob*, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_TraceRayFirstHit : zCWorld { int __fastcall operator()(zVEC3 const&, zVEC3 const&, zCVob*, int); };
+BindedHook Ivk_zCWorld_TraceRayFirstHit{ ZENFOR(0x005F4590, 0x006154C0, 0x0061A6E0, 0x00621E70), &zCWorld_TraceRayFirstHit::operator() };
+int __fastcall zCWorld_TraceRayFirstHit::operator()(zVEC3 const& a0, zVEC3 const& a1, zCVob* a2, int a3)
+{
+	int result = THISCALL(Ivk_zCWorld_TraceRayFirstHit)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

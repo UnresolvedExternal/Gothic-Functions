@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMemPool<zCDynVobLightCacheElement>::~zCMemPool<zCDynVobLightCacheElement>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCMemPool<zCDynVobLightCacheElement>::~zCMemPool<zCDynVobLightCacheElement>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMemPool_zCDynVobLightCacheElement__Destructor : zCMemPool<zCDynVobLightCacheElement> { void operator()(); };
+BindedHook Ivk_zCMemPool_zCDynVobLightCacheElement__Destructor{ ZENFOR(0x005AF750, 0x005CC730, 0x005CDE90, 0x005D4A40), &zCMemPool_zCDynVobLightCacheElement__Destructor::operator() };
+void zCMemPool_zCDynVobLightCacheElement__Destructor::operator()()
+{
+	THISCALL(Ivk_zCMemPool_zCDynVobLightCacheElement__Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zMAT4::GetDescriptionPos(): zSTRING [const]]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall zMAT4::GetDescriptionPos() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zMAT4_GetDescriptionPos : zMAT4 { zSTRING operator()() const; };
+BindedHook Ivk_zMAT4_GetDescriptionPos{ ZENFOR(0x00506260, 0x0051A260, 0x00513110, 0x00515EE0), &zMAT4_GetDescriptionPos::operator() };
+zSTRING zMAT4_GetDescriptionPos::operator()() const
+{
+	zSTRING result = THISCALL(Ivk_zMAT4_GetDescriptionPos)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::GetInvSplitScreen(): int]]></Title>
+			<Description><![CDATA[public: static int __cdecl oCItemContainer::GetInvSplitScreen()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+int Hook_oCItemContainer_GetInvSplitScreen();
+BindedHook Ivk_oCItemContainer_GetInvSplitScreen{ ZENFOR(0x00000000, 0x00000000, 0x006A6B50, 0x007045E0), Hook_oCItemContainer_GetInvSplitScreen };
+int Hook_oCItemContainer_GetInvSplitScreen()
+{
+	int result = Ivk_oCItemContainer_GetInvSplitScreen();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

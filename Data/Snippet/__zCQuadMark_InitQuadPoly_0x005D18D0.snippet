@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCQuadMark::InitQuadPoly(zCQuadMark::zTQuadMarkPoly&, zCPolygon*): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCQuadMark::InitQuadPoly(zCQuadMark::zTQuadMarkPoly&, zCPolygon*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCQuadMark_InitQuadPoly : zCQuadMark { void operator()(zCQuadMark::zTQuadMarkPoly&, zCPolygon*); };
+BindedHook Ivk_zCQuadMark_InitQuadPoly{ ZENFOR(0x005AC7A0, 0x005C95D0, 0x005CAD30, 0x005D18D0), &zCQuadMark_InitQuadPoly::operator() };
+void zCQuadMark_InitQuadPoly::operator()(zCQuadMark::zTQuadMarkPoly& a0, zCPolygon* a1)
+{
+	THISCALL(Ivk_zCQuadMark_InitQuadPoly)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

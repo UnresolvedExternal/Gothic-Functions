@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogTrade::OnMoveLeft(): int]]></Title>
+			<Description><![CDATA[protected: int __fastcall oCViewDialogTrade::OnMoveLeft()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogTrade_OnMoveLeft : oCViewDialogTrade { int __fastcall operator()(); };
+BindedHook Ivk_oCViewDialogTrade_OnMoveLeft{ ZENFOR(0x0072A230, 0x00768130, 0x00775A60, 0x0068B790), &oCViewDialogTrade_OnMoveLeft::operator() };
+int __fastcall oCViewDialogTrade_OnMoveLeft::operator()()
+{
+	int result = THISCALL(Ivk_oCViewDialogTrade_OnMoveLeft)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

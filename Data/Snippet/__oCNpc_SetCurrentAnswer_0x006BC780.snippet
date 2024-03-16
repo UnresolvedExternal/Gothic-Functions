@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetCurrentAnswer(int, int, oCNpc*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::SetCurrentAnswer(int, int, oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetCurrentAnswer : oCNpc { int operator()(int, int, oCNpc*); };
+BindedHook Ivk_oCNpc_SetCurrentAnswer{ ZENFOR(0x00632DF0, 0x00658BF0, 0x0065FDF0, 0x006BC780), &oCNpc_SetCurrentAnswer::operator() };
+int oCNpc_SetCurrentAnswer::operator()(int a0, int a1, oCNpc* a2)
+{
+	int result = THISCALL(Ivk_oCNpc_SetCurrentAnswer)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

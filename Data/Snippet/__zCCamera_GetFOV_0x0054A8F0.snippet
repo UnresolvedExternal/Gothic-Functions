@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCamera::GetFOV(float&, float&): void [const]]]></Title>
+			<Description><![CDATA[public: void __thiscall zCCamera::GetFOV(float&, float&) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCamera_GetFOV : zCCamera { void operator()(float&, float&) const; };
+BindedHook Ivk_zCCamera_GetFOV{ ZENFOR(0x005366B0, 0x0054D690, 0x005456D0, 0x0054A8F0), &zCCamera_GetFOV::operator() };
+void zCCamera_GetFOV::operator()(float& a0, float& a1) const
+{
+	THISCALL(Ivk_zCCamera_GetFOV)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

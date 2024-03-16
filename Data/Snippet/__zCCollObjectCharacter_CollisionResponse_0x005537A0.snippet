@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::CollisionResponse(zCArray<zCCollisionReport*>const&, int&): void]]></Title>
+			<Description><![CDATA[public: virtual void __fastcall zCCollObjectCharacter::CollisionResponse(zCArray<zCCollisionReport*>const&, int&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectCharacter_CollisionResponse : zCCollObjectCharacter { void __fastcall operator()(zCArray<zCCollisionReport*>const&, int&); };
+BindedHook Ivk_zCCollObjectCharacter_CollisionResponse{ ZENFOR(0x0053F060, 0x00556920, 0x0054E580, 0x005537A0), &zCCollObjectCharacter_CollisionResponse::operator() };
+void __fastcall zCCollObjectCharacter_CollisionResponse::operator()(zCArray<zCCollisionReport*>const& a0, int& a1)
+{
+	THISCALL(Ivk_zCCollObjectCharacter_CollisionResponse)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFlash::zCBolt::Render(zTRenderContext&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCFlash::zCBolt::Render(zTRenderContext&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFlash__zCBolt_Render : zCFlash::zCBolt { int operator()(zTRenderContext&); };
+BindedHook Ivk_zCFlash__zCBolt_Render{ ZENFOR(0x004C1FF0, 0x004D1910, 0x004C8DB0, 0x004CB320), &zCFlash__zCBolt_Render::operator() };
+int zCFlash__zCBolt_Render::operator()(zTRenderContext& a0)
+{
+	int result = THISCALL(Ivk_zCFlash__zCBolt_Render)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

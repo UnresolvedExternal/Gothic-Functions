@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CSurfaceLock::CSurfaceLock(IDirectDrawSurface7*, tagRECT*)]]></Title>
+			<Description><![CDATA[public: __thiscall CSurfaceLock::CSurfaceLock(IDirectDrawSurface7*, tagRECT*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CSurfaceLock_CSurfaceLock : CSurfaceLock { CSurfaceLock* operator()(IDirectDrawSurface7*, tagRECT*); };
+BindedHook Ivk_CSurfaceLock_CSurfaceLock{ ZENFOR(0x0076AB87, 0x007AA781, 0x007B7DB5, 0x007C427B), &CSurfaceLock_CSurfaceLock::operator() };
+CSurfaceLock* CSurfaceLock_CSurfaceLock::operator()(IDirectDrawSurface7* a0, tagRECT* a1)
+{
+	CSurfaceLock* result = THISCALL(Ivk_CSurfaceLock_CSurfaceLock)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

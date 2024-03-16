@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetHost::Init(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCNetHost::Init()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetHost_Init : zCNetHost { void operator()(); };
+BindedHook Ivk_zCNetHost_Init{ ZENFOR(0x00455A90, 0x0045C9A0, 0x0045A3E0, 0x0045AB30), &zCNetHost_Init::operator() };
+void zCNetHost_Init::operator()()
+{
+	THISCALL(Ivk_zCNetHost_Init)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

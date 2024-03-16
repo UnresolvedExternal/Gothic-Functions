@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCResourceManager::UnlockCacheInQueue(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCResourceManager::UnlockCacheInQueue()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCResourceManager_UnlockCacheInQueue : zCResourceManager { void operator()(); };
+BindedHook Ivk_zCResourceManager_UnlockCacheInQueue{ ZENFOR(0x005B6540, 0x005D3D40, 0x005D6B20, 0x005DD8E0), &zCResourceManager_UnlockCacheInQueue::operator() };
+void zCResourceManager_UnlockCacheInQueue::operator()()
+{
+	THISCALL(Ivk_zCResourceManager_UnlockCacheInQueue)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera_EventMsgActivate::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[protected: virtual void* __thiscall zCCSCamera_EventMsgActivate::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCCSCamera_EventMsgActivate_ScalarDeletingDestructor : zCCSCamera_EventMsgActivate { void* operator()(unsigned int); };
+BindedHook Ivk_zCCSCamera_EventMsgActivate_ScalarDeletingDestructor{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x00402210), &zCCSCamera_EventMsgActivate_ScalarDeletingDestructor::operator() };
+void* zCCSCamera_EventMsgActivate_ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCCSCamera_EventMsgActivate_ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

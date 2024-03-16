@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWayNet::InsertWaypoint(float, float, float): zCWaypoint*]]></Title>
+			<Description><![CDATA[public: zCWaypoint* __thiscall zCWayNet::InsertWaypoint(float, float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWayNet_InsertWaypoint : zCWayNet { zCWaypoint* operator()(float, float, float); };
+BindedHook Ivk_zCWayNet_InsertWaypoint{ ZENFOR(0x007033E0, 0x0073DBE0, 0x0074D4F0, 0x007ACFF0), &zCWayNet_InsertWaypoint::operator() };
+zCWaypoint* zCWayNet_InsertWaypoint::operator()(float a0, float a1, float a2)
+{
+	zCWaypoint* result = THISCALL(Ivk_zCWayNet_InsertWaypoint)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

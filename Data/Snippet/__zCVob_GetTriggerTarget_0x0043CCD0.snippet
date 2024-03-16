@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVob::GetTriggerTarget(int): zSTRING const* [const]]]></Title>
+			<Description><![CDATA[public: virtual zSTRING const* __thiscall zCVob::GetTriggerTarget(int) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVob_GetTriggerTarget : zCVob { zSTRING const* operator()(int) const; };
+BindedHook Ivk_zCVob_GetTriggerTarget{ ZENFOR(0x00439240, 0x0043DCC0, 0x0043C6A0, 0x0043CCD0), &zCVob_GetTriggerTarget::operator() };
+zSTRING const* zCVob_GetTriggerTarget::operator()(int a0) const
+{
+	zSTRING const* result = THISCALL(Ivk_zCVob_GetTriggerTarget)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

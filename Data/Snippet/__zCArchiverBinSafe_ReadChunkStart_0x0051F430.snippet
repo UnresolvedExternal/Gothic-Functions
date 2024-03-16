@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::ReadChunkStart(char const*): int]]></Title>
+			<Description><![CDATA[protected: virtual int __fastcall zCArchiverBinSafe::ReadChunkStart(char const*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_ReadChunkStart : zCArchiverBinSafe { int __fastcall operator()(char const*); };
+BindedHook Ivk_zCArchiverBinSafe_ReadChunkStart{ ZENFOR(0x0050F060, 0x00524160, 0x0051C660, 0x0051F430), &zCArchiverBinSafe_ReadChunkStart::operator() };
+int __fastcall zCArchiverBinSafe_ReadChunkStart::operator()(char const* a0)
+{
+	int result = THISCALL(Ivk_zCArchiverBinSafe_ReadChunkStart)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

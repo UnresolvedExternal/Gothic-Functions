@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCAIPlayer::StartPhysicsWithVel(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCAIPlayer::StartPhysicsWithVel()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCAIPlayer_StartPhysicsWithVel : zCAIPlayer { void operator()(); };
+BindedHook Ivk_zCAIPlayer_StartPhysicsWithVel{ ZENFOR(0x005021F0, 0x00515C70, 0x0050EF80, 0x00511D50), &zCAIPlayer_StartPhysicsWithVel::operator() };
+void zCAIPlayer_StartPhysicsWithVel::operator()()
+{
+	THISCALL(Ivk_zCAIPlayer_StartPhysicsWithVel)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::CreateNewSpell(int): oCSpell*]]></Title>
+			<Description><![CDATA[public: oCSpell* __thiscall oCMag_Book::CreateNewSpell(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_CreateNewSpell : oCMag_Book { oCSpell* operator()(int); };
+BindedHook Ivk_oCMag_Book_CreateNewSpell{ ZENFOR(0x0046F270, 0x004780C0, 0x00474AB0, 0x00475E50), &oCMag_Book_CreateNewSpell::operator() };
+oCSpell* oCMag_Book_CreateNewSpell::operator()(int a0)
+{
+	oCSpell* result = THISCALL(Ivk_oCMag_Book_CreateNewSpell)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

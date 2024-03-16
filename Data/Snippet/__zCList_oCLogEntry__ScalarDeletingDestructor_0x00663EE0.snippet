@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<oCLogEntry>::ScalarDeletingDestructor(unsigned int): void*]]></Title>
+			<Description><![CDATA[public: void* __thiscall zCList<oCLogEntry>::ScalarDeletingDestructor(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_oCLogEntry__ScalarDeletingDestructor : zCList<oCLogEntry> { void* operator()(unsigned int); };
+BindedHook Ivk_zCList_oCLogEntry__ScalarDeletingDestructor{ ZENFOR(0x0072F0F0, 0x0076D770, 0x0077AC70, 0x00663EE0), &zCList_oCLogEntry__ScalarDeletingDestructor::operator() };
+void* zCList_oCLogEntry__ScalarDeletingDestructor::operator()(unsigned int a0)
+{
+	void* result = THISCALL(Ivk_zCList_oCLogEntry__ScalarDeletingDestructor)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

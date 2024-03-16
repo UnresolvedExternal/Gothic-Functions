@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSAtomicBlock::_CreateNewInstance(): zCObject*]]></Title>
+			<Description><![CDATA[private: static zCObject* __cdecl zCCSAtomicBlock::_CreateNewInstance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCObject* Hook_zCCSAtomicBlock__CreateNewInstance();
+BindedHook Ivk_zCCSAtomicBlock__CreateNewInstance{ ZENFOR(0x0040A470, 0x0040B520, 0x0040A820, 0x0040A820), Hook_zCCSAtomicBlock__CreateNewInstance };
+zCObject* Hook_zCCSAtomicBlock__CreateNewInstance()
+{
+	zCObject* result = Ivk_zCCSAtomicBlock__CreateNewInstance();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

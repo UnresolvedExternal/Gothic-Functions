@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTexture::zCTexture()]]></Title>
+			<Description><![CDATA[public: __thiscall zCTexture::zCTexture()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTexture_zCTexture : zCTexture { zCTexture* operator()(); };
+BindedHook Ivk_zCTexture_zCTexture{ ZENFOR(0x005C87E0, 0x005E70B0, 0x005EC5E0, 0x005F3390), &zCTexture_zCTexture::operator() };
+zCTexture* zCTexture_zCTexture::operator()()
+{
+	zCTexture* result = THISCALL(Ivk_zCTexture_zCTexture)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

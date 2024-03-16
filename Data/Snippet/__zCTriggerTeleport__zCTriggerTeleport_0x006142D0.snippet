@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTriggerTeleport::~zCTriggerTeleport()]]></Title>
+			<Description><![CDATA[protected: virtual __thiscall zCTriggerTeleport::~zCTriggerTeleport()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTriggerTeleport_Destructor : zCTriggerTeleport { void operator()(); };
+BindedHook Ivk_zCTriggerTeleport_Destructor{ ZENFOR(0x005E7360, 0x006076B0, 0x0060CC10, 0x006142D0), &zCTriggerTeleport_Destructor::operator() };
+void zCTriggerTeleport_Destructor::operator()()
+{
+	THISCALL(Ivk_zCTriggerTeleport_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

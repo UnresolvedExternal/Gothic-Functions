@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRoute::IsLastTarget(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCRoute::IsLastTarget()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRoute_IsLastTarget : zCRoute { int operator()(); };
+BindedHook Ivk_zCRoute_IsLastTarget{ ZENFOR(0x00709080, 0x00743E60, 0x00753280, 0x007B2D80), &zCRoute_IsLastTarget::operator() };
+int zCRoute_IsLastTarget::operator()()
+{
+	int result = THISCALL(Ivk_zCRoute_IsLastTarget)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

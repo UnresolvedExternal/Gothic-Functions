@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::MatchClass(int, zSTRING const&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCParser::MatchClass(int, zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_MatchClass : zCParser { int operator()(int, zSTRING const&); };
+BindedHook Ivk_zCParser_MatchClass{ ZENFOR(0x006EA180, 0x007231F0, 0x00733AF0, 0x00793530), &zCParser_MatchClass::operator() };
+int zCParser_MatchClass::operator()(int a0, zSTRING const& a1)
+{
+	int result = THISCALL(Ivk_zCParser_MatchClass)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

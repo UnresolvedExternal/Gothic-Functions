@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::CanGo(float, zVEC3&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::CanGo(float, zVEC3&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_CanGo : oCNpc { int operator()(float, zVEC3&); };
+BindedHook Ivk_oCNpc_CanGo{ ZENFOR(0x0074B590, 0x0078CD30, 0x00797650, 0x00680B30), &oCNpc_CanGo::operator() };
+int oCNpc_CanGo::operator()(float a0, zVEC3& a1)
+{
+	int result = THISCALL(Ivk_oCNpc_CanGo)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

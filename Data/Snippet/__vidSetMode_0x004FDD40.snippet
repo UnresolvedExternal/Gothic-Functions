@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[vidSetMode(VIDMODE*): int]]></Title>
+			<Description><![CDATA[int __cdecl vidSetMode(VIDMODE*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_vidSetMode(VIDMODE*);
+BindedHook Ivk_vidSetMode{ ZENFOR(0x004EF800, 0x005020A0, 0x004FB0C0, 0x004FDD40), Hook_vidSetMode };
+int Hook_vidSetMode(VIDMODE* a0)
+{
+	int result = Ivk_vidSetMode(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobLockable::PickLock(oCNpc*, char): int]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall oCMobLockable::PickLock(oCNpc*, char)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobLockable_PickLock : oCMobLockable { int operator()(oCNpc*, char); };
+BindedHook Ivk_oCMobLockable_PickLock{ ZENFOR(0x00682990, 0x006B2260, 0x006C6770, 0x00724800), &oCMobLockable_PickLock::operator() };
+int oCMobLockable_PickLock::operator()(oCNpc* a0, char a1)
+{
+	int result = THISCALL(Ivk_oCMobLockable_PickLock)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

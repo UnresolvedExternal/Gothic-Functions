@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::FontY(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCView::FontY()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_FontY : zCView { int operator()(); };
+BindedHook Ivk_zCView_FontY{ ZENFOR(0x006FFE60, 0x0073A460, 0x00749EF0, 0x007A99F0), &zCView_FontY::operator() };
+int zCView_FontY::operator()()
+{
+	int result = THISCALL(Ivk_zCView_FontY)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

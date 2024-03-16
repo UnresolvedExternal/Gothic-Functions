@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetManager::SendWorldTime(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCNetManager::SendWorldTime()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetManager_SendWorldTime : zCNetManager { void operator()(); };
+BindedHook Ivk_zCNetManager_SendWorldTime{ ZENFOR(0x00456D70, 0x0045DD30, 0x0045B6C0, 0x0045BE10), &zCNetManager_SendWorldTime::operator() };
+void zCNetManager_SendWorldTime::operator()()
+{
+	THISCALL(Ivk_zCNetManager_SendWorldTime)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

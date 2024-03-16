@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneZFogDefault::ThisVobAddedToWorld(zCWorld*): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCZoneZFogDefault::ThisVobAddedToWorld(zCWorld*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZoneZFogDefault_ThisVobAddedToWorld : zCZoneZFogDefault { void operator()(zCWorld*); };
+BindedHook Ivk_zCZoneZFogDefault_ThisVobAddedToWorld{ ZENFOR(0x0060C290, 0x0062E820, 0x00635520, 0x0063CD00), &zCZoneZFogDefault_ThisVobAddedToWorld::operator() };
+void zCZoneZFogDefault_ThisVobAddedToWorld::operator()(zCWorld* a0)
+{
+	THISCALL(Ivk_zCZoneZFogDefault_ThisVobAddedToWorld)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

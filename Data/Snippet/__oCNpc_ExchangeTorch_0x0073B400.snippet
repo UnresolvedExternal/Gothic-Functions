@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::ExchangeTorch(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::ExchangeTorch()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_ExchangeTorch : oCNpc { void operator()(); };
+BindedHook Ivk_oCNpc_ExchangeTorch{ ZENFOR(0x00698000, 0x006C9CB0, 0x006DCC40, 0x0073B400), &oCNpc_ExchangeTorch::operator() };
+void oCNpc_ExchangeTorch::operator()()
+{
+	THISCALL(Ivk_oCNpc_ExchangeTorch)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

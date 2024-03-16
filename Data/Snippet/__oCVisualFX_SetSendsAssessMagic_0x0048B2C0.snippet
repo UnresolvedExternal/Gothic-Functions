@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCVisualFX::SetSendsAssessMagic(int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCVisualFX::SetSendsAssessMagic(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCVisualFX_SetSendsAssessMagic : oCVisualFX { void operator()(int); };
+BindedHook Ivk_oCVisualFX_SetSendsAssessMagic{ ZENFOR(0x00000000, 0x00000000, 0x00489A60, 0x0048B2C0), &oCVisualFX_SetSendsAssessMagic::operator() };
+void oCVisualFX_SetSendsAssessMagic::operator()(int a0)
+{
+	THISCALL(Ivk_oCVisualFX_SetSendsAssessMagic)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::AssessRemoveWeapon_S(oCNpc*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::AssessRemoveWeapon_S(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_AssessRemoveWeapon_S : oCNpc { int operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_AssessRemoveWeapon_S{ ZENFOR(0x006B5B20, 0x006EA390, 0x006FD4C0, 0x0075C440), &oCNpc_AssessRemoveWeapon_S::operator() };
+int oCNpc_AssessRemoveWeapon_S::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_AssessRemoveWeapon_S)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

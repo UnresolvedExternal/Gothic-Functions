@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSManager::CreateOuMessage(): zCEventMessage*]]></Title>
+			<Description><![CDATA[public: virtual zCEventMessage* __thiscall zCCSManager::CreateOuMessage()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSManager_CreateOuMessage : zCCSManager { zCEventMessage* operator()(); };
+BindedHook Ivk_zCCSManager_CreateOuMessage{ ZENFOR(0x00419FA0, 0x0041BF90, 0x0041A490, 0x0041A490), &zCCSManager_CreateOuMessage::operator() };
+zCEventMessage* zCCSManager_CreateOuMessage::operator()()
+{
+	zCEventMessage* result = THISCALL(Ivk_zCCSManager_CreateOuMessage)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCZoneReverb::GetDefaultZoneClass(): zCClassDef* [const]]]></Title>
+			<Description><![CDATA[public: virtual zCClassDef* __thiscall zCZoneReverb::GetDefaultZoneClass() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCZoneReverb_GetDefaultZoneClass : zCZoneReverb { zCClassDef* operator()() const; };
+BindedHook Ivk_zCZoneReverb_GetDefaultZoneClass{ ZENFOR(0x0060EB20, 0x006312B0, 0x00637ED0, 0x0063F6C0), &zCZoneReverb_GetDefaultZoneClass::operator() };
+zCClassDef* zCZoneReverb_GetDefaultZoneClass::operator()() const
+{
+	zCClassDef* result = THISCALL(Ivk_zCZoneReverb_GetDefaultZoneClass)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

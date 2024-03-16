@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zMAT4::SetByDescriptionRot(zSTRING&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zMAT4::SetByDescriptionRot(zSTRING&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zMAT4_SetByDescriptionRot : zMAT4 { void operator()(zSTRING&); };
+BindedHook Ivk_zMAT4_SetByDescriptionRot{ ZENFOR(0x005063F0, 0x0051A450, 0x00513310, 0x005160E0), &zMAT4_SetByDescriptionRot::operator() };
+void zMAT4_SetByDescriptionRot::operator()(zSTRING& a0)
+{
+	THISCALL(Ivk_zMAT4_SetByDescriptionRot)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

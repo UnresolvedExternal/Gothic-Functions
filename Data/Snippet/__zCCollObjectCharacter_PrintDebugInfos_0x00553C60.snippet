@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCollObjectCharacter::PrintDebugInfos(): void]]></Title>
+			<Description><![CDATA[private: void __fastcall zCCollObjectCharacter::PrintDebugInfos()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCollObjectCharacter_PrintDebugInfos : zCCollObjectCharacter { void __fastcall operator()(); };
+BindedHook Ivk_zCCollObjectCharacter_PrintDebugInfos{ ZENFOR(0x0053F510, 0x00556EE0, 0x0054EA40, 0x00553C60), &zCCollObjectCharacter_PrintDebugInfos::operator() };
+void __fastcall zCCollObjectCharacter_PrintDebugInfos::operator()()
+{
+	THISCALL(Ivk_zCCollObjectCharacter_PrintDebugInfos)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

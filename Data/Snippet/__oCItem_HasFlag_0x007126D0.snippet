@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::HasFlag(int): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCItem::HasFlag(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_HasFlag : oCItem { int operator()(int); };
+BindedHook Ivk_oCItem_HasFlag{ ZENFOR(0x00671FC0, 0x0069F920, 0x006B4920, 0x007126D0), &oCItem_HasFlag::operator() };
+int oCItem_HasFlag::operator()(int a0)
+{
+	int result = THISCALL(Ivk_oCItem_HasFlag)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

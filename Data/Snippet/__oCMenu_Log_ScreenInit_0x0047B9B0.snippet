@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenu_Log::ScreenInit(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMenu_Log::ScreenInit()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenu_Log_ScreenInit : oCMenu_Log { void operator()(); };
+BindedHook Ivk_oCMenu_Log_ScreenInit{ ZENFOR(0x00474840, 0x0047DFC0, 0x0047A4E0, 0x0047B9B0), &oCMenu_Log_ScreenInit::operator() };
+void oCMenu_Log_ScreenInit::operator()()
+{
+	THISCALL(Ivk_oCMenu_Log_ScreenInit)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

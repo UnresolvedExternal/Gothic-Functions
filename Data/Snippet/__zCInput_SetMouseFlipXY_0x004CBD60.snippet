@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCInput::SetMouseFlipXY(int, int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCInput::SetMouseFlipXY(int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCInput_SetMouseFlipXY : zCInput { void operator()(int, int); };
+BindedHook Ivk_zCInput_SetMouseFlipXY{ ZENFOR(0x004C2A10, 0x004D2320, 0x004C97F0, 0x004CBD60), &zCInput_SetMouseFlipXY::operator() };
+void zCInput_SetMouseFlipXY::operator()(int a0, int a1)
+{
+	THISCALL(Ivk_zCInput_SetMouseFlipXY)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

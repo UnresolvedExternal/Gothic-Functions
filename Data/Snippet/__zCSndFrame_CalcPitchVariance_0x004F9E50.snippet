@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndFrame::CalcPitchVariance(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCSndFrame::CalcPitchVariance()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndFrame_CalcPitchVariance : zCSndFrame { int operator()(); };
+BindedHook Ivk_zCSndFrame_CalcPitchVariance{ ZENFOR(0x004EB8A0, 0x004FDE00, 0x004F71D0, 0x004F9E50), &zCSndFrame_CalcPitchVariance::operator() };
+int zCSndFrame_CalcPitchVariance::operator()()
+{
+	int result = THISCALL(Ivk_zCSndFrame_CalcPitchVariance)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

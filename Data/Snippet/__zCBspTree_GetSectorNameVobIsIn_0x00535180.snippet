@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBspTree::GetSectorNameVobIsIn(zCVob const*): zSTRING const* [const]]]></Title>
+			<Description><![CDATA[public: zSTRING const* __thiscall zCBspTree::GetSectorNameVobIsIn(zCVob const*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBspTree_GetSectorNameVobIsIn : zCBspTree { zSTRING const* operator()(zCVob const*) const; };
+BindedHook Ivk_zCBspTree_GetSectorNameVobIsIn{ ZENFOR(0x00521920, 0x005377A0, 0x00531E20, 0x00535180), &zCBspTree_GetSectorNameVobIsIn::operator() };
+zSTRING const* zCBspTree_GetSectorNameVobIsIn::operator()(zCVob const* a0) const
+{
+	zSTRING const* result = THISCALL(Ivk_zCBspTree_GetSectorNameVobIsIn)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

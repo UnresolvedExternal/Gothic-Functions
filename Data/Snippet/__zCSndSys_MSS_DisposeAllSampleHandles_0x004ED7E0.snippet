@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::DisposeAllSampleHandles(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCSndSys_MSS::DisposeAllSampleHandles()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_DisposeAllSampleHandles : zCSndSys_MSS { void operator()(); };
+BindedHook Ivk_zCSndSys_MSS_DisposeAllSampleHandles{ ZENFOR(0x004E01E0, 0x004F1A90, 0x004EAB60, 0x004ED7E0), &zCSndSys_MSS_DisposeAllSampleHandles::operator() };
+void zCSndSys_MSS_DisposeAllSampleHandles::operator()()
+{
+	THISCALL(Ivk_zCSndSys_MSS_DisposeAllSampleHandles)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMagFrontier::DisposeWarningFX(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCMagFrontier::DisposeWarningFX()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMagFrontier_DisposeWarningFX : oCMagFrontier { void operator()(); };
+BindedHook Ivk_oCMagFrontier_DisposeWarningFX{ ZENFOR(0x0046E550, 0x00476FD0, 0x00473AD0, 0x00474E70), &oCMagFrontier_DisposeWarningFX::operator() };
+void oCMagFrontier_DisposeWarningFX::operator()()
+{
+	THISCALL(Ivk_oCMagFrontier_DisposeWarningFX)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

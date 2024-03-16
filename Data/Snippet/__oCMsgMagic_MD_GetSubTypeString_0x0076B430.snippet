@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMsgMagic::MD_GetSubTypeString(int): zSTRING]]></Title>
+			<Description><![CDATA[public: virtual zSTRING __thiscall oCMsgMagic::MD_GetSubTypeString(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMsgMagic_MD_GetSubTypeString : oCMsgMagic { zSTRING operator()(int); };
+BindedHook Ivk_oCMsgMagic_MD_GetSubTypeString{ ZENFOR(0x006C4250, 0x006F96E0, 0x0070BEF0, 0x0076B430), &oCMsgMagic_MD_GetSubTypeString::operator() };
+zSTRING oCMsgMagic_MD_GetSubTypeString::operator()(int a0)
+{
+	zSTRING result = THISCALL(Ivk_oCMsgMagic_MD_GetSubTypeString)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

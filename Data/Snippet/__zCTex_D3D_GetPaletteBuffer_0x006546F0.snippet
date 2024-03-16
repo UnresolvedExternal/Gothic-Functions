@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTex_D3D::GetPaletteBuffer(): void*]]></Title>
+			<Description><![CDATA[public: virtual void* __thiscall zCTex_D3D::GetPaletteBuffer()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTex_D3D_GetPaletteBuffer : zCTex_D3D { void* operator()(); };
+BindedHook Ivk_zCTex_D3D_GetPaletteBuffer{ ZENFOR(0x0071BFA0, 0x007583D0, 0x00767D90, 0x006546F0), &zCTex_D3D_GetPaletteBuffer::operator() };
+void* zCTex_D3D_GetPaletteBuffer::operator()()
+{
+	void* result = THISCALL(Ivk_zCTex_D3D_GetPaletteBuffer)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

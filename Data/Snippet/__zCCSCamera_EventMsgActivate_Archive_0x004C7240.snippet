@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCSCamera_EventMsgActivate::Archive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCCSCamera_EventMsgActivate::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCSCamera_EventMsgActivate_Archive : zCCSCamera_EventMsgActivate { void operator()(zCArchiver&); };
+BindedHook Ivk_zCCSCamera_EventMsgActivate_Archive{ ZENFOR(0x004BDDE0, 0x004CD4B0, 0x004C4CD0, 0x004C7240), &zCCSCamera_EventMsgActivate_Archive::operator() };
+void zCCSCamera_EventMsgActivate_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_zCCSCamera_EventMsgActivate_Archive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

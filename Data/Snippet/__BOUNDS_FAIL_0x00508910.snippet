@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[BOUNDS_FAIL(char*, int, int, int, char*, int, zSTRING const&): void]]></Title>
+			<Description><![CDATA[void __cdecl BOUNDS_FAIL(char*, int, int, int, char*, int, zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_BOUNDS_FAIL(char*, int, int, int, char*, int, zSTRING const&);
+BindedHook Ivk_BOUNDS_FAIL{ ZENFOR(0x004F9DF0, 0x0050C940, 0x00505BE0, 0x00508910), Hook_BOUNDS_FAIL };
+void Hook_BOUNDS_FAIL(char* a0, int a1, int a2, int a3, char* a4, int a5, zSTRING const& a6)
+{
+	Ivk_BOUNDS_FAIL(a0, a1, a2, a3, a4, a5, a6);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCTex_D3D::SetTextureInfo(zCTextureInfo const&): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCTex_D3D::SetTextureInfo(zCTextureInfo const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCTex_D3D_SetTextureInfo : zCTex_D3D { int operator()(zCTextureInfo const&); };
+BindedHook Ivk_zCTex_D3D_SetTextureInfo{ ZENFOR(0x0071B670, 0x007579B0, 0x00767460, 0x00653DC0), &zCTex_D3D_SetTextureInfo::operator() };
+int zCTex_D3D_SetTextureInfo::operator()(zCTextureInfo const& a0)
+{
+	int result = THISCALL(Ivk_zCTex_D3D_SetTextureInfo)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

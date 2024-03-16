@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMover::ClearStateInternals(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCMover::ClearStateInternals()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMover_ClearStateInternals : zCMover { void operator()(); };
+BindedHook Ivk_zCMover_ClearStateInternals{ ZENFOR(0x005E40B0, 0x00603FE0, 0x00609880, 0x00610F40), &zCMover_ClearStateInternals::operator() };
+void zCMover_ClearStateInternals::operator()()
+{
+	THISCALL(Ivk_zCMover_ClearStateInternals)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

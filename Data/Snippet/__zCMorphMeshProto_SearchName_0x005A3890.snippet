@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMorphMeshProto::SearchName(zSTRING const&): zCMorphMeshProto*]]></Title>
+			<Description><![CDATA[public: static zCMorphMeshProto* __cdecl zCMorphMeshProto::SearchName(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[zCMorphMeshProto* Hook_zCMorphMeshProto_SearchName(zSTRING const&);
+BindedHook Ivk_zCMorphMeshProto_SearchName{ ZENFOR(0x00583E40, 0x0059E9D0, 0x0059E330, 0x005A3890), Hook_zCMorphMeshProto_SearchName };
+zCMorphMeshProto* Hook_zCMorphMeshProto_SearchName(zSTRING const& a0)
+{
+	zCMorphMeshProto* result = Ivk_zCMorphMeshProto_SearchName(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItem::RotateInInventory(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCItem::RotateInInventory()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItem_RotateInInventory : oCItem { void operator()(); };
+BindedHook Ivk_oCItem_RotateInInventory{ ZENFOR(0x00672910, 0x006A03E0, 0x006B5290, 0x007132E0), &oCItem_RotateInInventory::operator() };
+void oCItem_RotateInInventory::operator()()
+{
+	THISCALL(Ivk_oCItem_RotateInInventory)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

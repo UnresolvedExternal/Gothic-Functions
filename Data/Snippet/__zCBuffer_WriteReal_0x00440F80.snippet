@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBuffer::WriteReal(float, int): unsigned long]]></Title>
+			<Description><![CDATA[public: unsigned long __thiscall zCBuffer::WriteReal(float, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBuffer_WriteReal : zCBuffer { unsigned long operator()(float, int); };
+BindedHook Ivk_zCBuffer_WriteReal{ ZENFOR(0x0043D180, 0x00442340, 0x00440950, 0x00440F80), &zCBuffer_WriteReal::operator() };
+unsigned long zCBuffer_WriteReal::operator()(float a0, int a1)
+{
+	unsigned long result = THISCALL(Ivk_zCBuffer_WriteReal)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

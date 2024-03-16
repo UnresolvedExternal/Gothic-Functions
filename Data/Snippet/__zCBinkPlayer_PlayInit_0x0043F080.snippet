@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBinkPlayer::PlayInit(int): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCBinkPlayer::PlayInit(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBinkPlayer_PlayInit : zCBinkPlayer { int operator()(int); };
+BindedHook Ivk_zCBinkPlayer_PlayInit{ ZENFOR(0x0043B460, 0x00440390, 0x0043EA50, 0x0043F080), &zCBinkPlayer_PlayInit::operator() };
+int zCBinkPlayer_PlayInit::operator()(int a0)
+{
+	int result = THISCALL(Ivk_zCBinkPlayer_PlayInit)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

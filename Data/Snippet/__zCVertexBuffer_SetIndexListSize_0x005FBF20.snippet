@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVertexBuffer::SetIndexListSize(unsigned long): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCVertexBuffer::SetIndexListSize(unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVertexBuffer_SetIndexListSize : zCVertexBuffer { int operator()(unsigned long); };
+BindedHook Ivk_zCVertexBuffer_SetIndexListSize{ ZENFOR(0x005D0E20, 0x005EFF80, 0x005F5130, 0x005FBF20), &zCVertexBuffer_SetIndexListSize::operator() };
+int zCVertexBuffer_SetIndexListSize::operator()(unsigned long a0)
+{
+	int result = THISCALL(Ivk_zCVertexBuffer_SetIndexListSize)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

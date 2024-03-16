@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobContainer::CreateContents(zSTRING const&): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCMobContainer::CreateContents(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobContainer_CreateContents : oCMobContainer { void operator()(zSTRING const&); };
+BindedHook Ivk_oCMobContainer_CreateContents{ ZENFOR(0x00684050, 0x006B3BC0, 0x006C8100, 0x00726190), &oCMobContainer_CreateContents::operator() };
+void oCMobContainer_CreateContents::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_oCMobContainer_CreateContents)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

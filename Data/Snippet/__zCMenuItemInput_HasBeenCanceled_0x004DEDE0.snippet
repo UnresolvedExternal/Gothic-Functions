@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMenuItemInput::HasBeenCanceled(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCMenuItemInput::HasBeenCanceled()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMenuItemInput_HasBeenCanceled : zCMenuItemInput { int operator()(); };
+BindedHook Ivk_zCMenuItemInput_HasBeenCanceled{ ZENFOR(0x004D1F50, 0x004E27B0, 0x004DC430, 0x004DEDE0), &zCMenuItemInput_HasBeenCanceled::operator() };
+int zCMenuItemInput_HasBeenCanceled::operator()()
+{
+	int result = THISCALL(Ivk_zCMenuItemInput_HasBeenCanceled)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

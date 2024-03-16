@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::RenderDecal(zTRenderContext&, int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMesh::RenderDecal(zTRenderContext&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_RenderDecal : zCMesh { void operator()(zTRenderContext&, int); };
+BindedHook Ivk_zCMesh_RenderDecal{ ZENFOR(0x00553D00, 0x0056C3B0, 0x00566B50, 0x0056BDA0), &zCMesh_RenderDecal::operator() };
+void zCMesh_RenderDecal::operator()(zTRenderContext& a0, int a1)
+{
+	THISCALL(Ivk_zCMesh_RenderDecal)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

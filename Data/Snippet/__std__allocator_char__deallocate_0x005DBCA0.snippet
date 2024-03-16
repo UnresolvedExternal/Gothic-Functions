@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::allocator<char>::deallocate(void*, unsigned int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall std::allocator<char>::deallocate(void*, unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__allocator_char__deallocate : std::allocator<char> { void operator()(void*, unsigned int); };
+BindedHook Ivk_std__allocator_char__deallocate{ ZENFOR(0x005B4990, 0x005D1F10, 0x005D4EE0, 0x005DBCA0), &std__allocator_char__deallocate::operator() };
+void std__allocator_char__deallocate::operator()(void* a0, unsigned int a1)
+{
+	THISCALL(Ivk_std__allocator_char__deallocate)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModel::ApplyModelProtoOverlay(zCModelPrototype*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCModel::ApplyModelProtoOverlay(zCModelPrototype*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModel_ApplyModelProtoOverlay : zCModel { int operator()(zCModelPrototype*); };
+BindedHook Ivk_zCModel_ApplyModelProtoOverlay{ ZENFOR(0x0055F000, 0x00577390, 0x00573590, 0x00578840), &zCModel_ApplyModelProtoOverlay::operator() };
+int zCModel_ApplyModelProtoOverlay::operator()(zCModelPrototype* a0)
+{
+	int result = THISCALL(Ivk_zCModel_ApplyModelProtoOverlay)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

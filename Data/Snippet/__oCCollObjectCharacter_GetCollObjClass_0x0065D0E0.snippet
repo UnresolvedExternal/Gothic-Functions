@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCCollObjectCharacter::GetCollObjClass(): zCCollisionObjectDef* [const]]]></Title>
+			<Description><![CDATA[public: virtual zCCollisionObjectDef* __thiscall oCCollObjectCharacter::GetCollObjClass() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCCollObjectCharacter_GetCollObjClass : oCCollObjectCharacter { zCCollisionObjectDef* operator()() const; };
+BindedHook Ivk_oCCollObjectCharacter_GetCollObjClass{ ZENFOR(0x0075AB20, 0x0079D420, 0x007A7CD0, 0x0065D0E0), &oCCollObjectCharacter_GetCollObjClass::operator() };
+zCCollisionObjectDef* oCCollObjectCharacter_GetCollObjClass::operator()() const
+{
+	zCCollisionObjectDef* result = THISCALL(Ivk_oCCollObjectCharacter_GetCollObjClass)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

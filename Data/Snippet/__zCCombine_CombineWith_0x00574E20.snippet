@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCCombine::CombineWith(zCLightMap*, int, int): int]]></Title>
+			<Description><![CDATA[private: int __thiscall zCCombine::CombineWith(zCLightMap*, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCCombine_CombineWith : zCCombine { int operator()(zCLightMap*, int, int); };
+BindedHook Ivk_zCCombine_CombineWith{ ZENFOR(0x0055BA30, 0x00573B70, 0x0056FB70, 0x00574E20), &zCCombine_CombineWith::operator() };
+int zCCombine_CombineWith::operator()(zCLightMap* a0, int a1, int a2)
+{
+	int result = THISCALL(Ivk_zCCombine_CombineWith)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

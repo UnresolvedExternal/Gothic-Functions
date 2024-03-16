@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBinkPlayer::PlayWaitNextFrame(): int]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall zCBinkPlayer::PlayWaitNextFrame()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBinkPlayer_PlayWaitNextFrame : zCBinkPlayer { int operator()(); };
+BindedHook Ivk_zCBinkPlayer_PlayWaitNextFrame{ ZENFOR(0x0043C770, 0x00441870, 0x0043FEF0, 0x00440520), &zCBinkPlayer_PlayWaitNextFrame::operator() };
+int zCBinkPlayer_PlayWaitNextFrame::operator()()
+{
+	int result = THISCALL(Ivk_zCBinkPlayer_PlayWaitNextFrame)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

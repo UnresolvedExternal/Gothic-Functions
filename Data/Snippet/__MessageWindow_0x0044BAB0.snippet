@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[MessageWindow(zSTRING): void]]></Title>
+			<Description><![CDATA[void __cdecl MessageWindow(zSTRING)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_MessageWindow(zSTRING);
+BindedHook Ivk_MessageWindow{ ZENFOR(0x00447490, 0x0044D440, 0x0044B360, 0x0044BAB0), Hook_MessageWindow };
+void Hook_MessageWindow(zSTRING a0)
+{
+	Ivk_MessageWindow(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSavegameManager::GetSlotDirName(int): zSTRING]]></Title>
+			<Description><![CDATA[public: zSTRING __thiscall oCSavegameManager::GetSlotDirName(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSavegameManager_GetSlotDirName : oCSavegameManager { zSTRING operator()(int); };
+BindedHook Ivk_oCSavegameManager_GetSlotDirName{ ZENFOR(0x00436260, 0x0043A650, 0x00439180, 0x004397B0), &oCSavegameManager_GetSlotDirName::operator() };
+zSTRING oCSavegameManager_GetSlotDirName::operator()(int a0)
+{
+	zSTRING result = THISCALL(Ivk_oCSavegameManager_GetSlotDirName)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

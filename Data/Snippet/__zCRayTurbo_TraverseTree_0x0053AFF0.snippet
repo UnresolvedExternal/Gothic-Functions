@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRayTurbo::TraverseTree(zCArray<zCPolygon*>&, zCMeshOctreeNode const&): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCRayTurbo::TraverseTree(zCArray<zCPolygon*>&, zCMeshOctreeNode const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2A
+struct zCRayTurbo_TraverseTree : zCRayTurbo { void operator()(zCArray<zCPolygon*>&, zCMeshOctreeNode const&); };
+BindedHook Ivk_zCRayTurbo_TraverseTree{ ZENFOR(0x00000000, 0x00000000, 0x00000000, 0x0053AFF0), &zCRayTurbo_TraverseTree::operator() };
+void zCRayTurbo_TraverseTree::operator()(zCArray<zCPolygon*>& a0, zCMeshOctreeNode const& a1)
+{
+	THISCALL(Ivk_zCRayTurbo_TraverseTree)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

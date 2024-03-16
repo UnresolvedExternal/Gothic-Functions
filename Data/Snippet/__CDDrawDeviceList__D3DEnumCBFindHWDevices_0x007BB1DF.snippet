@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CDDrawDeviceList::_D3DEnumCBFindHWDevices(char*, char*, _D3DDeviceDesc7*, void*): long]]></Title>
+			<Description><![CDATA[public: static long __stdcall CDDrawDeviceList::_D3DEnumCBFindHWDevices(char*, char*, _D3DDeviceDesc7*, void*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[long __stdcall Hook_CDDrawDeviceList__D3DEnumCBFindHWDevices(char*, char*, _D3DDeviceDesc7*, void*);
+BindedHook Ivk_CDDrawDeviceList__D3DEnumCBFindHWDevices{ ZENFOR(0x00761AEB, 0x007A729F, 0x007AED19, 0x007BB1DF), Hook_CDDrawDeviceList__D3DEnumCBFindHWDevices };
+long __stdcall Hook_CDDrawDeviceList__D3DEnumCBFindHWDevices(char* a0, char* a1, _D3DDeviceDesc7* a2, void* a3)
+{
+	long result = Ivk_CDDrawDeviceList__D3DEnumCBFindHWDevices(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

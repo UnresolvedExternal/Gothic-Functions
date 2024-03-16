@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::Close(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCItemContainer::Close()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCItemContainer_Close : oCItemContainer { void operator()(); };
+BindedHook Ivk_oCItemContainer_Close{ ZENFOR(0x00668C10, 0x00696770, 0x006AB440, 0x00708F30), &oCItemContainer_Close::operator() };
+void oCItemContainer_Close::operator()()
+{
+	THISCALL(Ivk_oCItemContainer_Close)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

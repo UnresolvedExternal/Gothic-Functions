@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[CGameManager::GameInit(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall CGameManager::GameInit()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct CGameManager_GameInit : CGameManager { void operator()(); };
+BindedHook Ivk_CGameManager_GameInit{ ZENFOR(0x00425900, 0x004282F0, 0x00426490, 0x004267D0), &CGameManager_GameInit::operator() };
+void CGameManager_GameInit::operator()()
+{
+	THISCALL(Ivk_CGameManager_GameInit)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

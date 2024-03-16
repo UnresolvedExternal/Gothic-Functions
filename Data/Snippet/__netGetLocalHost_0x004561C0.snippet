@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[netGetLocalHost(): char*]]></Title>
+			<Description><![CDATA[char* __cdecl netGetLocalHost()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[char* Hook_netGetLocalHost();
+BindedHook Ivk_netGetLocalHost{ ZENFOR(0x00451530, 0x00457F10, 0x00455A70, 0x004561C0), Hook_netGetLocalHost };
+char* Hook_netGetLocalHost()
+{
+	char* result = Ivk_netGetLocalHost();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

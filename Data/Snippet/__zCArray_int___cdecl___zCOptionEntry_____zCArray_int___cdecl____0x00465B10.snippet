@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<int(__cdecl*)(zCOptionEntry&)>::~zCArray<int(__cdecl*)(zCOptionEntry&)>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<int(__cdecl*)(zCOptionEntry&)>::~zCArray<int(__cdecl*)(zCOptionEntry&)>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_int___cdecl___zCOptionEntry____Destructor : zCArray<int(__cdecl*)(zCOptionEntry&)> { void operator()(); };
+BindedHook Ivk_zCArray_int___cdecl___zCOptionEntry____Destructor{ ZENFOR(0x004604B0, 0x00467DB0, 0x00464EE0, 0x00465B10), &zCArray_int___cdecl___zCOptionEntry____Destructor::operator() };
+void zCArray_int___cdecl___zCOptionEntry____Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_int___cdecl___zCOptionEntry____Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

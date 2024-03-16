@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCList<zCWay>::DeleteListDatas(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCList<zCWay>::DeleteListDatas()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCList_zCWay__DeleteListDatas : zCList<zCWay> { void operator()(); };
+BindedHook Ivk_zCList_zCWay__DeleteListDatas{ ZENFOR(0x0070A220, 0x007450B0, 0x007543B0, 0x007B3EB0), &zCList_zCWay__DeleteListDatas::operator() };
+void zCList_zCWay__DeleteListDatas::operator()()
+{
+	THISCALL(Ivk_zCList_zCWay__DeleteListDatas)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

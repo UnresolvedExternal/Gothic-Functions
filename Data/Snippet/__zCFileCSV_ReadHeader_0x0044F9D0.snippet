@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFileCSV::ReadHeader(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCFileCSV::ReadHeader()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFileCSV_ReadHeader : zCFileCSV { int operator()(); };
+BindedHook Ivk_zCFileCSV_ReadHeader{ ZENFOR(0x0044B250, 0x00451750, 0x0044F280, 0x0044F9D0), &zCFileCSV_ReadHeader::operator() };
+int zCFileCSV_ReadHeader::operator()()
+{
+	int result = THISCALL(Ivk_zCFileCSV_ReadHeader)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

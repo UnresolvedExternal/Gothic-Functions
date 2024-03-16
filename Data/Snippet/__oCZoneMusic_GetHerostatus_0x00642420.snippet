@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCZoneMusic::GetHerostatus(): oHEROSTATUS]]></Title>
+			<Description><![CDATA[protected: static oHEROSTATUS __cdecl oCZoneMusic::GetHerostatus()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[oHEROSTATUS Hook_oCZoneMusic_GetHerostatus();
+BindedHook Ivk_oCZoneMusic_GetHerostatus{ ZENFOR(0x0070CB90, 0x00747CA0, 0x00756E80, 0x00642420), Hook_oCZoneMusic_GetHerostatus };
+oHEROSTATUS Hook_oCZoneMusic_GetHerostatus()
+{
+	oHEROSTATUS result = Ivk_oCZoneMusic_GetHerostatus();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

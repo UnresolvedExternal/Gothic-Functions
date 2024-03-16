@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRenderer::GetAlphaBlendFunc(): zTRnd_AlphaBlendFunc [const]]]></Title>
+			<Description><![CDATA[public: virtual zTRnd_AlphaBlendFunc __thiscall zCRenderer::GetAlphaBlendFunc() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRenderer_GetAlphaBlendFunc : zCRenderer { zTRnd_AlphaBlendFunc operator()() const; };
+BindedHook Ivk_zCRenderer_GetAlphaBlendFunc{ ZENFOR(0x00713A90, 0x0074F7B0, 0x0075EC40, 0x0064A1E0), &zCRenderer_GetAlphaBlendFunc::operator() };
+zTRnd_AlphaBlendFunc zCRenderer_GetAlphaBlendFunc::operator()() const
+{
+	zTRnd_AlphaBlendFunc result = THISCALL(Ivk_zCRenderer_GetAlphaBlendFunc)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

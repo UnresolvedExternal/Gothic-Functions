@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMOB::SetOwner(zSTRING const&, zSTRING const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCMOB::SetOwner(zSTRING const&, zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMOB_SetOwner : oCMOB { void operator()(zSTRING const&, zSTRING const&); };
+BindedHook Ivk_oCMOB_SetOwner{ ZENFOR(0x0067ADA0, 0x006A94D0, 0x006BDEF0, 0x0071BF80), &oCMOB_SetOwner::operator() };
+void oCMOB_SetOwner::operator()(zSTRING const& a0, zSTRING const& a1)
+{
+	THISCALL(Ivk_oCMOB_SetOwner)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

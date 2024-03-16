@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFont::~zCFont()]]></Title>
+			<Description><![CDATA[public: __thiscall zCFont::~zCFont()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFont_Destructor : zCFont { void operator()(); };
+BindedHook Ivk_zCFont_Destructor{ ZENFOR(0x006DF6A0, 0x00717B60, 0x00728EE0, 0x00788920), &zCFont_Destructor::operator() };
+void zCFont_Destructor::operator()()
+{
+	THISCALL(Ivk_zCFont_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::KnowsPlayer(oCNpc*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::KnowsPlayer(oCNpc*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_KnowsPlayer : oCNpc { int operator()(oCNpc*); };
+BindedHook Ivk_oCNpc_KnowsPlayer{ ZENFOR(0x0069EA10, 0x006D0DB0, 0x006E3BD0, 0x007425E0), &oCNpc_KnowsPlayer::operator() };
+int oCNpc_KnowsPlayer::operator()(oCNpc* a0)
+{
+	int result = THISCALL(Ivk_oCNpc_KnowsPlayer)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

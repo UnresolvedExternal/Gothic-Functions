@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCEventMessage::IsOverlay(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCEventMessage::IsOverlay()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCEventMessage_IsOverlay : zCEventMessage { int operator()(); };
+BindedHook Ivk_zCEventMessage_IsOverlay{ ZENFOR(0x00401E00, 0x00402210, 0x00401F40, 0x00401F40), &zCEventMessage_IsOverlay::operator() };
+int zCEventMessage_IsOverlay::operator()()
+{
+	int result = THISCALL(Ivk_zCEventMessage_IsOverlay)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

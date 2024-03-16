@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[std::map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>>::~map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>>()]]></Title>
+			<Description><![CDATA[public: __thiscall std::map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>>::~map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____Destructor : std::map<zCClassDef*, zCVisual*, std::less<zCClassDef*>, std::allocator<zCVisual*>> { void operator()(); };
+BindedHook Ivk_std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____Destructor{ ZENFOR(0x005D2ED0, 0x005F2140, 0x005F7290, 0x005FE080), &std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____Destructor::operator() };
+void std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____Destructor::operator()()
+{
+	THISCALL(Ivk_std__map_zCClassDef___zCVisual___std__less_zCClassDef____std__allocator_zCVisual____Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

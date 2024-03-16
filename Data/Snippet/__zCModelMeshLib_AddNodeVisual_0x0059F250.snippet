@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelMeshLib::AddNodeVisual(int, zCVisual*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCModelMeshLib::AddNodeVisual(int, zCVisual*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelMeshLib_AddNodeVisual : zCModelMeshLib { void operator()(int, zCVisual*); };
+BindedHook Ivk_zCModelMeshLib_AddNodeVisual{ ZENFOR(0x0057F760, 0x0059A100, 0x00599CF0, 0x0059F250), &zCModelMeshLib_AddNodeVisual::operator() };
+void zCModelMeshLib_AddNodeVisual::operator()(int a0, zCVisual* a1)
+{
+	THISCALL(Ivk_zCModelMeshLib_AddNodeVisual)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

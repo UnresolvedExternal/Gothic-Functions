@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpell::Archive(zCArchiver&): void]]></Title>
+			<Description><![CDATA[private: virtual void __thiscall oCSpell::Archive(zCArchiver&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCSpell_Archive : oCSpell { void operator()(zCArchiver&); };
+BindedHook Ivk_oCSpell_Archive{ ZENFOR(0x0047FB70, 0x0048A770, 0x00485D20, 0x00487340), &oCSpell_Archive::operator() };
+void oCSpell_Archive::operator()(zCArchiver& a0)
+{
+	THISCALL(Ivk_oCSpell_Archive)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

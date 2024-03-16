@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCAIHuman::FightMelee(): int]]></Title>
+			<Description><![CDATA[protected: int __thiscall oCAIHuman::FightMelee()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCAIHuman_FightMelee : oCAIHuman { int operator()(); };
+BindedHook Ivk_oCAIHuman_FightMelee{ ZENFOR(0x00611070, 0x00633DD0, 0x0063A630, 0x00696EC0), &oCAIHuman_FightMelee::operator() };
+int oCAIHuman_FightMelee::operator()()
+{
+	int result = THISCALL(Ivk_oCAIHuman_FightMelee)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

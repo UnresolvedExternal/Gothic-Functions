@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCVobLevelCompo::HasIdentityTrafo(): int [const]]]></Title>
+			<Description><![CDATA[private: int __thiscall zCVobLevelCompo::HasIdentityTrafo() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCVobLevelCompo_HasIdentityTrafo : zCVobLevelCompo { int operator()() const; };
+BindedHook Ivk_zCVobLevelCompo_HasIdentityTrafo{ ZENFOR(0x005D8A90, 0x005F82B0, 0x005FE450, 0x006052E0), &zCVobLevelCompo_HasIdentityTrafo::operator() };
+int zCVobLevelCompo_HasIdentityTrafo::operator()() const
+{
+	int result = THISCALL(Ivk_zCVobLevelCompo_HasIdentityTrafo)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRnd_D3D::Vid_BeginLfbAccess(): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCRnd_D3D::Vid_BeginLfbAccess()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRnd_D3D_Vid_BeginLfbAccess : zCRnd_D3D { void operator()(); };
+BindedHook Ivk_zCRnd_D3D_Vid_BeginLfbAccess{ ZENFOR(0x00713C70, 0x0074F990, 0x00765430, 0x00651D90), &zCRnd_D3D_Vid_BeginLfbAccess::operator() };
+void zCRnd_D3D_Vid_BeginLfbAccess::operator()()
+{
+	THISCALL(Ivk_zCRnd_D3D_Vid_BeginLfbAccess)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

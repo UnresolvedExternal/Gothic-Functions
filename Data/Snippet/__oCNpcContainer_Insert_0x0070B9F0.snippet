@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpcContainer::Insert(oCItem*): oCItem*]]></Title>
+			<Description><![CDATA[public: virtual oCItem* __thiscall oCNpcContainer::Insert(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpcContainer_Insert : oCNpcContainer { oCItem* operator()(oCItem*); };
+BindedHook Ivk_oCNpcContainer_Insert{ ZENFOR(0x0066B2D0, 0x006989A0, 0x006ADF00, 0x0070B9F0), &oCNpcContainer_Insert::operator() };
+oCItem* oCNpcContainer_Insert::operator()(oCItem* a0)
+{
+	oCItem* result = THISCALL(Ivk_oCNpcContainer_Insert)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

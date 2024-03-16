@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetDamageMultiplier(): float]]></Title>
+			<Description><![CDATA[public: float __thiscall oCNpc::GetDamageMultiplier()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetDamageMultiplier : oCNpc { float operator()(); };
+BindedHook Ivk_oCNpc_GetDamageMultiplier{ ZENFOR(0x006B8960, 0x006ED460, 0x00700370, 0x0075F2F0), &oCNpc_GetDamageMultiplier::operator() };
+float oCNpc_GetDamageMultiplier::operator()()
+{
+	float result = THISCALL(Ivk_oCNpc_GetDamageMultiplier)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

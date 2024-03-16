@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyLayerData::~zCSkyLayerData()]]></Title>
+			<Description><![CDATA[public: __thiscall zCSkyLayerData::~zCSkyLayerData()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyLayerData_Destructor : zCSkyLayerData { void operator()(); };
+BindedHook Ivk_zCSkyLayerData_Destructor{ ZENFOR(0x005BB8A0, 0x005D9430, 0x005DD570, 0x005E4320), &zCSkyLayerData_Destructor::operator() };
+void zCSkyLayerData_Destructor::operator()()
+{
+	THISCALL(Ivk_zCSkyLayerData_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

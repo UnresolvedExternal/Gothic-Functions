@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCOutdoorRainFX::zSParticle*>::RemoveIndex(int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCArray<zCOutdoorRainFX::zSParticle*>::RemoveIndex(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1A
+struct zCArray_zCOutdoorRainFX__zSParticle___RemoveIndex : zCArray<zCOutdoorRainFX::zSParticle*> { void operator()(int); };
+BindedHook Ivk_zCArray_zCOutdoorRainFX__zSParticle___RemoveIndex{ ZENFOR(0x00000000, 0x005DF320, 0x00000000, 0x00000000), &zCArray_zCOutdoorRainFX__zSParticle___RemoveIndex::operator() };
+void zCArray_zCOutdoorRainFX__zSParticle___RemoveIndex::operator()(int a0)
+{
+	THISCALL(Ivk_zCArray_zCOutdoorRainFX__zSParticle___RemoveIndex)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

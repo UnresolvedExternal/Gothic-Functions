@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::ReadByte(char const*, unsigned char&): void]]></Title>
+			<Description><![CDATA[public: virtual void __fastcall zCArchiverBinSafe::ReadByte(char const*, unsigned char&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_ReadByte : zCArchiverBinSafe { void __fastcall operator()(char const*, unsigned char&); };
+BindedHook Ivk_zCArchiverBinSafe_ReadByte{ ZENFOR(0x00510880, 0x00525AE0, 0x0051DEF0, 0x00520CC0), &zCArchiverBinSafe_ReadByte::operator() };
+void __fastcall zCArchiverBinSafe_ReadByte::operator()(char const* a0, unsigned char& a1)
+{
+	THISCALL(Ivk_zCArchiverBinSafe_ReadByte)(a0, a1);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

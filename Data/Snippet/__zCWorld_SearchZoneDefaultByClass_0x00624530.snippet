@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::SearchZoneDefaultByClass(zCClassDef*): zCZone*]]></Title>
+			<Description><![CDATA[public: zCZone* __thiscall zCWorld::SearchZoneDefaultByClass(zCClassDef*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_SearchZoneDefaultByClass : zCWorld { zCZone* operator()(zCClassDef*); };
+BindedHook Ivk_zCWorld_SearchZoneDefaultByClass{ ZENFOR(0x005F6060, 0x00617020, 0x0061CDA0, 0x00624530), &zCWorld_SearchZoneDefaultByClass::operator() };
+zCZone* zCWorld_SearchZoneDefaultByClass::operator()(zCClassDef* a0)
+{
+	zCZone* result = THISCALL(Ivk_zCWorld_SearchZoneDefaultByClass)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

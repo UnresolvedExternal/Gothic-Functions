@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDocumentMap::SetPage(int, zSTRING&, int): oCViewDocument*]]></Title>
+			<Description><![CDATA[public: virtual oCViewDocument* __fastcall oCViewDocumentMap::SetPage(int, zSTRING&, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDocumentMap_SetPage : oCViewDocumentMap { oCViewDocument* __fastcall operator()(int, zSTRING&, int); };
+BindedHook Ivk_oCViewDocumentMap_SetPage{ ZENFOR(0x00725F40, 0x00763490, 0x007724F0, 0x0068D520), &oCViewDocumentMap_SetPage::operator() };
+oCViewDocument* __fastcall oCViewDocumentMap_SetPage::operator()(int a0, zSTRING& a1, int a2)
+{
+	oCViewDocument* result = THISCALL(Ivk_oCViewDocumentMap_SetPage)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNetStatistics::AddLostSend(unsigned int): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCNetStatistics::AddLostSend(unsigned int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNetStatistics_AddLostSend : zCNetStatistics { void operator()(unsigned int); };
+BindedHook Ivk_zCNetStatistics_AddLostSend{ ZENFOR(0x0044E7A0, 0x00454ED0, 0x00452870, 0x00452FC0), &zCNetStatistics_AddLostSend::operator() };
+void zCNetStatistics_AddLostSend::operator()(unsigned int a0)
+{
+	THISCALL(Ivk_zCNetStatistics_AddLostSend)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

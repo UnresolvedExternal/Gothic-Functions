@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::MsgPut(zCNetMessage*): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCNet::MsgPut(zCNetMessage*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_MsgPut : zCNet { int operator()(zCNetMessage*); };
+BindedHook Ivk_zCNet_MsgPut{ ZENFOR(0x0044DBB0, 0x004542B0, 0x00451C80, 0x004523D0), &zCNet_MsgPut::operator() };
+int zCNet_MsgPut::operator()(zCNetMessage* a0)
+{
+	int result = THISCALL(Ivk_zCNet_MsgPut)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

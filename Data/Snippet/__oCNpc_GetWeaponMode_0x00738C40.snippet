@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetWeaponMode(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::GetWeaponMode()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetWeaponMode : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_GetWeaponMode{ ZENFOR(0x00695820, 0x006C7230, 0x006DA500, 0x00738C40), &oCNpc_GetWeaponMode::operator() };
+int oCNpc_GetWeaponMode::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_GetWeaponMode)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

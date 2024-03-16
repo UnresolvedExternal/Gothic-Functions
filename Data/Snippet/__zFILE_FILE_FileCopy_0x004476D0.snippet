@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zFILE_FILE::FileCopy(zSTRING, bool): bool]]></Title>
+			<Description><![CDATA[public: virtual bool __thiscall zFILE_FILE::FileCopy(zSTRING, bool)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zFILE_FILE_FileCopy : zFILE_FILE { bool operator()(zSTRING, bool); };
+BindedHook Ivk_zFILE_FILE_FileCopy{ ZENFOR(0x00443770, 0x00449270, 0x004470A0, 0x004476D0), &zFILE_FILE_FileCopy::operator() };
+bool zFILE_FILE_FileCopy::operator()(zSTRING a0, bool a1)
+{
+	bool result = THISCALL(Ivk_zFILE_FILE_FileCopy)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

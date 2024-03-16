@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCExceptionHandler::~zCExceptionHandler()]]></Title>
+			<Description><![CDATA[public: __thiscall zCExceptionHandler::~zCExceptionHandler()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCExceptionHandler_Destructor : zCExceptionHandler { void operator()(); };
+BindedHook Ivk_zCExceptionHandler_Destructor{ ZENFOR(0x004BF4F0, 0x004CEBF0, 0x004C62E0, 0x004C8850), &zCExceptionHandler_Destructor::operator() };
+void zCExceptionHandler_Destructor::operator()()
+{
+	THISCALL(Ivk_zCExceptionHandler_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

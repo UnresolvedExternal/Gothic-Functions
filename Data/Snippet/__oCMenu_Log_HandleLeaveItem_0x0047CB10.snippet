@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMenu_Log::HandleLeaveItem(zCMenuItem*): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall oCMenu_Log::HandleLeaveItem(zCMenuItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMenu_Log_HandleLeaveItem : oCMenu_Log { int operator()(zCMenuItem*); };
+BindedHook Ivk_oCMenu_Log_HandleLeaveItem{ ZENFOR(0x004759A0, 0x0047F240, 0x0047B640, 0x0047CB10), &oCMenu_Log_HandleLeaveItem::operator() };
+int oCMenu_Log_HandleLeaveItem::operator()(zCMenuItem* a0)
+{
+	int result = THISCALL(Ivk_oCMenu_Log_HandleLeaveItem)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

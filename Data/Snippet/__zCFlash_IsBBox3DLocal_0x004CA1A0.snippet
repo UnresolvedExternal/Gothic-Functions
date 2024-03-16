@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCFlash::IsBBox3DLocal(): int]]></Title>
+			<Description><![CDATA[public: virtual int __thiscall zCFlash::IsBBox3DLocal()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCFlash_IsBBox3DLocal : zCFlash { int operator()(); };
+BindedHook Ivk_zCFlash_IsBBox3DLocal{ ZENFOR(0x004C0E60, 0x004D0790, 0x004C7C30, 0x004CA1A0), &zCFlash_IsBBox3DLocal::operator() };
+int zCFlash_IsBBox3DLocal::operator()()
+{
+	int result = THISCALL(Ivk_zCFlash_IsBBox3DLocal)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zTLODEdge::~zTLODEdge()]]></Title>
+			<Description><![CDATA[public: __thiscall zTLODEdge::~zTLODEdge()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G1, G1A
+struct zTLODEdge_Destructor : zTLODEdge { void operator()(); };
+BindedHook Ivk_zTLODEdge_Destructor{ ZENFOR(0x0052A5B0, 0x00540C40, 0x00000000, 0x00000000), &zTLODEdge_Destructor::operator() };
+void zTLODEdge_Destructor::operator()()
+{
+	THISCALL(Ivk_zTLODEdge_Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

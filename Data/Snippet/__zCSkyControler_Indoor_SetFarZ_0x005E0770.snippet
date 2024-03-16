@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Indoor::SetFarZ(float): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall zCSkyControler_Indoor::SetFarZ(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Indoor_SetFarZ : zCSkyControler_Indoor { void operator()(float); };
+BindedHook Ivk_zCSkyControler_Indoor_SetFarZ{ ZENFOR(0x005BB700, 0x005D9290, 0x005D99C0, 0x005E0770), &zCSkyControler_Indoor_SetFarZ::operator() };
+void zCSkyControler_Indoor_SetFarZ::operator()(float a0)
+{
+	THISCALL(Ivk_zCSkyControler_Indoor_SetFarZ)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

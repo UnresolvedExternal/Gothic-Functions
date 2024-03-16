@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::GetPlayingTimeMSEC(zSTRING const&): float]]></Title>
+			<Description><![CDATA[public: virtual float __thiscall zCSndSys_MSS::GetPlayingTimeMSEC(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_GetPlayingTimeMSEC : zCSndSys_MSS { float operator()(zSTRING const&); };
+BindedHook Ivk_zCSndSys_MSS_GetPlayingTimeMSEC{ ZENFOR(0x004E5FA0, 0x004F8060, 0x004F1460, 0x004F40E0), &zCSndSys_MSS_GetPlayingTimeMSEC::operator() };
+float zCSndSys_MSS_GetPlayingTimeMSEC::operator()(zSTRING const& a0)
+{
+	float result = THISCALL(Ivk_zCSndSys_MSS_GetPlayingTimeMSEC)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

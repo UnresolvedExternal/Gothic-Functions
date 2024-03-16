@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCCollObjectCharacter::DontLetHimComeNearer(zCVob const*): int [const]]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall oCCollObjectCharacter::DontLetHimComeNearer(zCVob const*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCCollObjectCharacter_DontLetHimComeNearer : oCCollObjectCharacter { int operator()(zCVob const*) const; };
+BindedHook Ivk_oCCollObjectCharacter_DontLetHimComeNearer{ ZENFOR(0x0075AC10, 0x0079D530, 0x007A7DE0, 0x0065D1F0), &oCCollObjectCharacter_DontLetHimComeNearer::operator() };
+int oCCollObjectCharacter_DontLetHimComeNearer::operator()(zCVob const* a0) const
+{
+	int result = THISCALL(Ivk_oCCollObjectCharacter_DontLetHimComeNearer)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

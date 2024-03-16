@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArray<zCMenuItem*>::~zCArray<zCMenuItem*>()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArray<zCMenuItem*>::~zCArray<zCMenuItem*>()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArray_zCMenuItem___Destructor : zCArray<zCMenuItem*> { void operator()(); };
+BindedHook Ivk_zCArray_zCMenuItem___Destructor{ ZENFOR(0x004D1450, 0x004E1BB0, 0x004DB910, 0x004DE2C0), &zCArray_zCMenuItem___Destructor::operator() };
+void zCArray_zCMenuItem___Destructor::operator()()
+{
+	THISCALL(Ivk_zCArray_zCMenuItem___Destructor)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSurfaceCache_D3D::CacheOutSurface(zCSurfaceCache_D3D::zCSlotIndex*): IDirectDrawSurface7*]]></Title>
+			<Description><![CDATA[public: IDirectDrawSurface7* __thiscall zCSurfaceCache_D3D::CacheOutSurface(zCSurfaceCache_D3D::zCSlotIndex*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSurfaceCache_D3D_CacheOutSurface : zCSurfaceCache_D3D { IDirectDrawSurface7* operator()(zCSurfaceCache_D3D::zCSlotIndex*); };
+BindedHook Ivk_zCSurfaceCache_D3D_CacheOutSurface{ ZENFOR(0x0071A7F0, 0x00756A60, 0x007665E0, 0x00652F40), &zCSurfaceCache_D3D_CacheOutSurface::operator() };
+IDirectDrawSurface7* zCSurfaceCache_D3D_CacheOutSurface::operator()(zCSurfaceCache_D3D::zCSlotIndex* a0)
+{
+	IDirectDrawSurface7* result = THISCALL(Ivk_zCSurfaceCache_D3D_CacheOutSurface)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

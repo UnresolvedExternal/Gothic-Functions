@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArray<zTOverlayIndex, zCModelPrototype*>::DestructData(void*): void [const]]]></Title>
+			<Description><![CDATA[protected: virtual void __thiscall zCSparseArray<zTOverlayIndex, zCModelPrototype*>::DestructData(void*) const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArray_zTOverlayIndex__zCModelPrototype___DestructData : zCSparseArray<zTOverlayIndex, zCModelPrototype*> { void operator()(void*) const; };
+BindedHook Ivk_zCSparseArray_zTOverlayIndex__zCModelPrototype___DestructData{ ZENFOR(0x006BA400, 0x006EF000, 0x00701E40, 0x00761160), &zCSparseArray_zTOverlayIndex__zCModelPrototype___DestructData::operator() };
+void zCSparseArray_zTOverlayIndex__zCModelPrototype___DestructData::operator()(void* a0) const
+{
+	THISCALL(Ivk_zCSparseArray_zTOverlayIndex__zCModelPrototype___DestructData)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

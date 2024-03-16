@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::ReadRawFloat(char const*, void*, unsigned long): void]]></Title>
+			<Description><![CDATA[public: virtual void __fastcall zCArchiverBinSafe::ReadRawFloat(char const*, void*, unsigned long)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_ReadRawFloat : zCArchiverBinSafe { void __fastcall operator()(char const*, void*, unsigned long); };
+BindedHook Ivk_zCArchiverBinSafe_ReadRawFloat{ ZENFOR(0x005107C0, 0x00525A20, 0x0051DE30, 0x00520C00), &zCArchiverBinSafe_ReadRawFloat::operator() };
+void __fastcall zCArchiverBinSafe_ReadRawFloat::operator()(char const* a0, void* a1, unsigned long a2)
+{
+	THISCALL(Ivk_zCArchiverBinSafe_ReadRawFloat)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

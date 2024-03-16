@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCNet::MsgGetFromStream(zCPlayerInfo*, zCNetMessage*&): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCNet::MsgGetFromStream(zCPlayerInfo*, zCNetMessage*&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCNet_MsgGetFromStream : zCNet { int operator()(zCPlayerInfo*, zCNetMessage*&); };
+BindedHook Ivk_zCNet_MsgGetFromStream{ ZENFOR(0x0044DAB0, 0x00454190, 0x00451B80, 0x004522D0), &zCNet_MsgGetFromStream::operator() };
+int zCNet_MsgGetFromStream::operator()(zCPlayerInfo* a0, zCNetMessage*& a1)
+{
+	int result = THISCALL(Ivk_zCNet_MsgGetFromStream)(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

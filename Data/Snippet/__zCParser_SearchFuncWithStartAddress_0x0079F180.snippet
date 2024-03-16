@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCParser::SearchFuncWithStartAddress(int): zCPar_Symbol*]]></Title>
+			<Description><![CDATA[private: zCPar_Symbol* __thiscall zCParser::SearchFuncWithStartAddress(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCParser_SearchFuncWithStartAddress : zCParser { zCPar_Symbol* operator()(int); };
+BindedHook Ivk_zCParser_SearchFuncWithStartAddress{ ZENFOR(0x006F5970, 0x0072F700, 0x0073F740, 0x0079F180), &zCParser_SearchFuncWithStartAddress::operator() };
+zCPar_Symbol* zCParser_SearchFuncWithStartAddress::operator()(int a0)
+{
+	zCPar_Symbol* result = THISCALL(Ivk_zCParser_SearchFuncWithStartAddress)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelPrototype::SaveMDH(zCFileBIN&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCModelPrototype::SaveMDH(zCFileBIN&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelPrototype_SaveMDH : zCModelPrototype { void operator()(zCFileBIN&); };
+BindedHook Ivk_zCModelPrototype_SaveMDH{ ZENFOR(0x00570690, 0x00589BD0, 0x00585860, 0x0058ADC0), &zCModelPrototype_SaveMDH::operator() };
+void zCModelPrototype_SaveMDH::operator()(zCFileBIN& a0)
+{
+	THISCALL(Ivk_zCModelPrototype_SaveMDH)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

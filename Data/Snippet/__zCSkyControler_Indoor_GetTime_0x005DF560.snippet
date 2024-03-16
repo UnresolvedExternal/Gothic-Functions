@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSkyControler_Indoor::GetTime(): float [const]]]></Title>
+			<Description><![CDATA[public: virtual float __thiscall zCSkyControler_Indoor::GetTime() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSkyControler_Indoor_GetTime : zCSkyControler_Indoor { float operator()() const; };
+BindedHook Ivk_zCSkyControler_Indoor_GetTime{ ZENFOR(0x005B7F80, 0x005D5970, 0x005D87A0, 0x005DF560), &zCSkyControler_Indoor_GetTime::operator() };
+float zCSkyControler_Indoor_GetTime::operator()() const
+{
+	float result = THISCALL(Ivk_zCSkyControler_Indoor_GetTime)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

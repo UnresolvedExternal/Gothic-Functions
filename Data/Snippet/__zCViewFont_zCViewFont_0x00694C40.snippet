@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCViewFont::zCViewFont(zCFont*, zCOLOR&, int, zTRnd_AlphaBlendFunc)]]></Title>
+			<Description><![CDATA[public: __thiscall zCViewFont::zCViewFont(zCFont*, zCOLOR&, int, zTRnd_AlphaBlendFunc)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCViewFont_zCViewFont : zCViewFont { zCViewFont* operator()(zCFont*, zCOLOR&, int, zTRnd_AlphaBlendFunc); };
+BindedHook Ivk_zCViewFont_zCViewFont{ ZENFOR(0x00757F90, 0x0079A4B0, 0x007A4E90, 0x00694C40), &zCViewFont_zCViewFont::operator() };
+zCViewFont* zCViewFont_zCViewFont::operator()(zCFont* a0, zCOLOR& a1, int a2, zTRnd_AlphaBlendFunc a3)
+{
+	zCViewFont* result = THISCALL(Ivk_zCViewFont_zCViewFont)(a0, a1, a2, a3);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

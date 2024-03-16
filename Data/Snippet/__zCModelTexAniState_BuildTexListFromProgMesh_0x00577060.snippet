@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCModelTexAniState::BuildTexListFromProgMesh(zCProgMeshProto*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCModelTexAniState::BuildTexListFromProgMesh(zCProgMeshProto*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCModelTexAniState_BuildTexListFromProgMesh : zCModelTexAniState { void operator()(zCProgMeshProto*); };
+BindedHook Ivk_zCModelTexAniState_BuildTexListFromProgMesh{ ZENFOR(0x0055D860, 0x00575C00, 0x00571DB0, 0x00577060), &zCModelTexAniState_BuildTexListFromProgMesh::operator() };
+void zCModelTexAniState_BuildTexListFromProgMesh::operator()(zCProgMeshProto* a0)
+{
+	THISCALL(Ivk_zCModelTexAniState_BuildTexListFromProgMesh)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

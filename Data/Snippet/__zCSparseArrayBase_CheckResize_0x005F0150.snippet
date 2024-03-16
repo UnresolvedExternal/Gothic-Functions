@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSparseArrayBase::CheckResize(): void [const]]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCSparseArrayBase::CheckResize() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSparseArrayBase_CheckResize : zCSparseArrayBase { void operator()() const; };
+BindedHook Ivk_zCSparseArrayBase_CheckResize{ ZENFOR(0x005C56C0, 0x005E3A80, 0x005E93A0, 0x005F0150), &zCSparseArrayBase_CheckResize::operator() };
+void zCSparseArrayBase_CheckResize::operator()() const
+{
+	THISCALL(Ivk_zCSparseArrayBase_CheckResize)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

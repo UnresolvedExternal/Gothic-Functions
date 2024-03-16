@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCRoute::GetNumberOfWaypoints(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall zCRoute::GetNumberOfWaypoints()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCRoute_GetNumberOfWaypoints : zCRoute { int operator()(); };
+BindedHook Ivk_zCRoute_GetNumberOfWaypoints{ ZENFOR(0x00709040, 0x00743E20, 0x00753240, 0x007B2D40), &zCRoute_GetNumberOfWaypoints::operator() };
+int zCRoute_GetNumberOfWaypoints::operator()()
+{
+	int result = THISCALL(Ivk_zCRoute_GetNumberOfWaypoints)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

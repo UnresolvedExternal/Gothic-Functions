@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCPar_SymbolTable::GetLastSymbol(): zCPar_Symbol*]]></Title>
+			<Description><![CDATA[public: zCPar_Symbol* __thiscall zCPar_SymbolTable::GetLastSymbol()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCPar_SymbolTable_GetLastSymbol : zCPar_SymbolTable { zCPar_Symbol* operator()(); };
+BindedHook Ivk_zCPar_SymbolTable_GetLastSymbol{ ZENFOR(0x006FAA80, 0x00734E20, 0x00744AB0, 0x007A44F0), &zCPar_SymbolTable_GetLastSymbol::operator() };
+zCPar_Symbol* zCPar_SymbolTable_GetLastSymbol::operator()()
+{
+	zCPar_Symbol* result = THISCALL(Ivk_zCPar_SymbolTable_GetLastSymbol)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

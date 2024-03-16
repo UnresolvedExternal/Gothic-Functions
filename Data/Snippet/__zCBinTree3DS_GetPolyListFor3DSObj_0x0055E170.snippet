@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCBinTree3DS::GetPolyListFor3DSObj(int, zCArray<int>&, zCArray<int>&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCBinTree3DS::GetPolyListFor3DSObj(int, zCArray<int>&, zCArray<int>&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCBinTree3DS_GetPolyListFor3DSObj : zCBinTree3DS { void operator()(int, zCArray<int>&, zCArray<int>&); };
+BindedHook Ivk_zCBinTree3DS_GetPolyListFor3DSObj{ ZENFOR(0x00547340, 0x0055F270, 0x00558F50, 0x0055E170), &zCBinTree3DS_GetPolyListFor3DSObj::operator() };
+void zCBinTree3DS_GetPolyListFor3DSObj::operator()(int a0, zCArray<int>& a1, zCArray<int>& a2)
+{
+	THISCALL(Ivk_zCBinTree3DS_GetPolyListFor3DSObj)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

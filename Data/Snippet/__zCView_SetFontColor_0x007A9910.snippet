@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCView::SetFontColor(zCOLOR const&): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCView::SetFontColor(zCOLOR const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCView_SetFontColor : zCView { void operator()(zCOLOR const&); };
+BindedHook Ivk_zCView_SetFontColor{ ZENFOR(0x006FFD80, 0x0073A380, 0x00749E10, 0x007A9910), &zCView_SetFontColor::operator() };
+void zCView_SetFontColor::operator()(zCOLOR const& a0)
+{
+	THISCALL(Ivk_zCView_SetFontColor)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

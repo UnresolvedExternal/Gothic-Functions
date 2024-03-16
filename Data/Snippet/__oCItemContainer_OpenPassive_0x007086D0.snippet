@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCItemContainer::OpenPassive(int, int, int): void]]></Title>
+			<Description><![CDATA[public: virtual void __thiscall oCItemContainer::OpenPassive(int, int, int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[// WARNING!!! Supported versions: G2, G2A
+struct oCItemContainer_OpenPassive : oCItemContainer { void operator()(int, int, int); };
+BindedHook Ivk_oCItemContainer_OpenPassive{ ZENFOR(0x00000000, 0x00000000, 0x006AABE0, 0x007086D0), &oCItemContainer_OpenPassive::operator() };
+void oCItemContainer_OpenPassive::operator()(int a0, int a1, int a2)
+{
+	THISCALL(Ivk_oCItemContainer_OpenPassive)(a0, a1, a2);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

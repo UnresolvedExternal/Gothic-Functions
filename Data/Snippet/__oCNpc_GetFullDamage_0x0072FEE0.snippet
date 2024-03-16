@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::GetFullDamage(): int]]></Title>
+			<Description><![CDATA[public: int __thiscall oCNpc::GetFullDamage()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_GetFullDamage : oCNpc { int operator()(); };
+BindedHook Ivk_oCNpc_GetFullDamage{ ZENFOR(0x0068D770, 0x006BDFF0, 0x006D1B10, 0x0072FEE0), &oCNpc_GetFullDamage::operator() };
+int oCNpc_GetFullDamage::operator()()
+{
+	int result = THISCALL(Ivk_oCNpc_GetFullDamage)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

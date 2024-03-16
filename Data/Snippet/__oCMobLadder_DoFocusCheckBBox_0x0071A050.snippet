@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMobLadder::DoFocusCheckBBox(): int]]></Title>
+			<Description><![CDATA[protected: virtual int __thiscall oCMobLadder::DoFocusCheckBBox()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMobLadder_DoFocusCheckBBox : oCMobLadder { int operator()(); };
+BindedHook Ivk_oCMobLadder_DoFocusCheckBBox{ ZENFOR(0x00678E50, 0x006A7480, 0x006BBFC0, 0x0071A050), &oCMobLadder_DoFocusCheckBBox::operator() };
+int oCMobLadder_DoFocusCheckBBox::operator()()
+{
+	int result = THISCALL(Ivk_oCMobLadder_DoFocusCheckBBox)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

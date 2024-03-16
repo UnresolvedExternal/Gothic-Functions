@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCTrajectory::GetKey(int): zMAT4]]></Title>
+			<Description><![CDATA[public: zMAT4 __thiscall oCTrajectory::GetKey(int)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCTrajectory_GetKey : oCTrajectory { zMAT4 operator()(int); };
+BindedHook Ivk_oCTrajectory_GetKey{ ZENFOR(0x00489240, 0x004943F0, 0x0048F6C0, 0x00491060), &oCTrajectory_GetKey::operator() };
+zMAT4 oCTrajectory_GetKey::operator()(int a0)
+{
+	zMAT4 result = THISCALL(Ivk_oCTrajectory_GetKey)(a0);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

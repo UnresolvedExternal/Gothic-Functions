@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCSpawnManager::SetRemoveRange(float): void]]></Title>
+			<Description><![CDATA[public: static void __cdecl oCSpawnManager::SetRemoveRange(float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[void Hook_oCSpawnManager_SetRemoveRange(float);
+BindedHook Ivk_oCSpawnManager_SetRemoveRange{ ZENFOR(0x006CF5F0, 0x00706000, 0x007182B0, 0x00777840), Hook_oCSpawnManager_SetRemoveRange };
+void Hook_oCSpawnManager_SetRemoveRange(float a0)
+{
+	Ivk_oCSpawnManager_SetRemoveRange(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

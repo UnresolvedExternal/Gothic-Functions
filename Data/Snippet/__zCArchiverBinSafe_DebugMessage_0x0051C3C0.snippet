@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiverBinSafe::DebugMessage(zSTRING const&): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCArchiverBinSafe::DebugMessage(zSTRING const&)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiverBinSafe_DebugMessage : zCArchiverBinSafe { void operator()(zSTRING const&); };
+BindedHook Ivk_zCArchiverBinSafe_DebugMessage{ ZENFOR(0x0050C2A0, 0x00521020, 0x005195F0, 0x0051C3C0), &zCArchiverBinSafe_DebugMessage::operator() };
+void zCArchiverBinSafe_DebugMessage::operator()(zSTRING const& a0)
+{
+	THISCALL(Ivk_zCArchiverBinSafe_DebugMessage)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

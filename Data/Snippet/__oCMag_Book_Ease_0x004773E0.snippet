@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCMag_Book::Ease(float, float, float): float]]></Title>
+			<Description><![CDATA[public: float __thiscall oCMag_Book::Ease(float, float, float)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCMag_Book_Ease : oCMag_Book { float operator()(float, float, float); };
+BindedHook Ivk_oCMag_Book_Ease{ ZENFOR(0x00470720, 0x00479610, 0x00476040, 0x004773E0), &oCMag_Book_Ease::operator() };
+float oCMag_Book_Ease::operator()(float a0, float a1, float a2)
+{
+	float result = THISCALL(Ivk_oCMag_Book_Ease)(a0, a1, a2);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

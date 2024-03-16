@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMover::FinishedOpening(): void]]></Title>
+			<Description><![CDATA[protected: void __thiscall zCMover::FinishedOpening()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMover_FinishedOpening : zCMover { void operator()(); };
+BindedHook Ivk_zCMover_FinishedOpening{ ZENFOR(0x005E57C0, 0x00605980, 0x0060B030, 0x006126F0), &zCMover_FinishedOpening::operator() };
+void zCMover_FinishedOpening::operator()()
+{
+	THISCALL(Ivk_zCMover_FinishedOpening)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

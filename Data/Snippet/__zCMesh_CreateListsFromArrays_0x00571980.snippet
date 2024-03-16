@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCMesh::CreateListsFromArrays(): void [const]]]></Title>
+			<Description><![CDATA[public: void __thiscall zCMesh::CreateListsFromArrays() const]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCMesh_CreateListsFromArrays : zCMesh { void operator()() const; };
+BindedHook Ivk_zCMesh_CreateListsFromArrays{ ZENFOR(0x00558AB0, 0x00570B30, 0x0056C6D0, 0x00571980), &zCMesh_CreateListsFromArrays::operator() };
+void zCMesh_CreateListsFromArrays::operator()() const
+{
+	THISCALL(Ivk_zCMesh_CreateListsFromArrays)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[InitDInput(HWND__*, HINSTANCE__*): int]]></Title>
+			<Description><![CDATA[int __cdecl InitDInput(HWND__*, HINSTANCE__*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[int Hook_InitDInput(HWND__*, HINSTANCE__*);
+BindedHook Ivk_InitDInput{ ZENFOR(0x004C78C0, 0x004D7390, 0x004D0DC0, 0x004D3380), Hook_InitDInput };
+int Hook_InitDInput(HWND__* a0, HINSTANCE__* a1)
+{
+	int result = Ivk_InitDInput(a0, a1);
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

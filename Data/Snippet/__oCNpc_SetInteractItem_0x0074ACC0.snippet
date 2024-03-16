@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCNpc::SetInteractItem(oCItem*): void]]></Title>
+			<Description><![CDATA[public: void __thiscall oCNpc::SetInteractItem(oCItem*)]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCNpc_SetInteractItem : oCNpc { void operator()(oCItem*); };
+BindedHook Ivk_oCNpc_SetInteractItem{ ZENFOR(0x006A6670, 0x006D9250, 0x006EBFF0, 0x0074ACC0), &oCNpc_SetInteractItem::operator() };
+void oCNpc_SetInteractItem::operator()(oCItem* a0)
+{
+	THISCALL(Ivk_oCNpc_SetInteractItem)(a0);
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCArchiver::zTChunkRecord::zTChunkRecord()]]></Title>
+			<Description><![CDATA[public: __thiscall zCArchiver::zTChunkRecord::zTChunkRecord()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCArchiver__zTChunkRecord_zTChunkRecord : zCArchiver::zTChunkRecord { void operator()(); };
+BindedHook Ivk_zCArchiver__zTChunkRecord_zTChunkRecord{ ZENFOR(0x00510FA0, 0x00526230, 0x0051E5F0, 0x005213C0), &zCArchiver__zTChunkRecord_zTChunkRecord::operator() };
+void zCArchiver__zTChunkRecord_zTChunkRecord::operator()()
+{
+	THISCALL(Ivk_zCArchiver__zTChunkRecord_zTChunkRecord)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

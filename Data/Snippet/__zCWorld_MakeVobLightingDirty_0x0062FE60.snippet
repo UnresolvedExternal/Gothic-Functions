@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCWorld::MakeVobLightingDirty(): void]]></Title>
+			<Description><![CDATA[private: void __thiscall zCWorld::MakeVobLightingDirty()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCWorld_MakeVobLightingDirty : zCWorld { void operator()(); };
+BindedHook Ivk_zCWorld_MakeVobLightingDirty{ ZENFOR(0x00600BA0, 0x006228C0, 0x006286E0, 0x0062FE60), &zCWorld_MakeVobLightingDirty::operator() };
+void zCWorld_MakeVobLightingDirty::operator()()
+{
+	THISCALL(Ivk_zCWorld_MakeVobLightingDirty)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

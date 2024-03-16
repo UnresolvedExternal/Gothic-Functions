@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[oCViewDialogInventory::GetSelectedItem(): oCItem*]]></Title>
+			<Description><![CDATA[public: oCItem* __fastcall oCViewDialogInventory::GetSelectedItem()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct oCViewDialogInventory_GetSelectedItem : oCViewDialogInventory { oCItem* __fastcall operator()(); };
+BindedHook Ivk_oCViewDialogInventory_GetSelectedItem{ ZENFOR(0x00726B10, 0x00764360, 0x007733F0, 0x00689110), &oCViewDialogInventory_GetSelectedItem::operator() };
+oCItem* __fastcall oCViewDialogInventory_GetSelectedItem::operator()()
+{
+	oCItem* result = THISCALL(Ivk_oCViewDialogInventory_GetSelectedItem)();
+	return result;
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

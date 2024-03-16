@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title><![CDATA[zCSndSys_MSS::RemoveAllActiveSounds(): void]]></Title>
+			<Description><![CDATA[public: void __thiscall zCSndSys_MSS::RemoveAllActiveSounds()]]></Description>
+			<Author>TopLayer</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="cpp"><![CDATA[struct zCSndSys_MSS_RemoveAllActiveSounds : zCSndSys_MSS { void operator()(); };
+BindedHook Ivk_zCSndSys_MSS_RemoveAllActiveSounds{ ZENFOR(0x004E01A0, 0x004F1A60, 0x004EAB20, 0x004ED7A0), &zCSndSys_MSS_RemoveAllActiveSounds::operator() };
+void zCSndSys_MSS_RemoveAllActiveSounds::operator()()
+{
+	THISCALL(Ivk_zCSndSys_MSS_RemoveAllActiveSounds)();
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
